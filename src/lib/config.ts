@@ -1,0 +1,15 @@
+export const SITE_CONFIG = {
+  // Main coordination contact information
+  phone: '+91 99999 99999',
+  phoneRaw: '+919999999999',
+  whatsappRaw: '919999999999',
+  email: 'care@medkerala.com',
+
+  // Pricing policies
+  coordinationFeeEn: 'COMPLIMENTARY',
+  coordinationFeeAr: 'مجاني ✓',
+
+  // Staging / Dev contact details
+  officeAddressEn: 'Hilite Business Park, Near Bypass Junction, Calicut (Kozhikode), Kerala, India',
+  officeAddressAr: 'طريق هيلاند، بالقرب من المستشفى التخصصي، كالكوت (كوزيكود)، كيرلا، الهند',
+};

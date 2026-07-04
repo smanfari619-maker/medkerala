@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-green: #2D6A4F;
+  --color-primary-dark: #1B4332;
+  --color-primary-light: #B7E4C7;
+  --color-accent-gold: #D4A96A;
+  --color-bg-clay: #FAF7F2;
+  --color-text-dark: #1A1A2E;
+  --color-text-muted: #4A4A6A;
+  --color-badge-bg: #F0EDE8;
+
+  --font-lora: var(--font-lora);
+  --font-plus-jakarta: var(--font-plus-jakarta);
+  --font-tajawal: var(--font-tajawal);
+  --font-display: var(--font-lora), Georgia, serif;
+  --font-sans: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #FAF7F2;
+  --foreground: #1A1A2E;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom transitions and scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 169, 106, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 106, 79, 0.6);
+}
+
+/* Clean animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* RTL layouts tweaks: override font families with Tajawal arabic variations */
+[dir="rtl"] {
+  --font-sans: 'Tajawal', var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  --font-display: 'Tajawal', var(--font-lora), Georgia, serif;
+}
+
+[dir="rtl"] body {
+  font-family: 'Tajawal', var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  line-height: 1.75; /* Increase line height for Arabic diacritics and readability */
+}
+
+[dir="rtl"] .font-display {
+  font-family: 'Tajawal', var(--font-lora), Georgia, serif;
+}
+
+/* Reset letter spacing for Arabic text readability (letter spacing ruins Arabic text script connection) */
+[dir="rtl"] *,
+[dir="rtl"] ::placeholder {
+  letter-spacing: 0 !important;
+}
+
+/* Premium Sanctuary Design Easing and Organic Glows */
+.glow-card {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -12px rgba(212, 169, 106, 0.12), 
+              0 8px 32px -8px rgba(45, 106, 79, 0.04);
+}
+
+.glow-card-green:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -12px rgba(45, 106, 79, 0.15), 
+              0 0 40px -10px rgba(212, 169, 106, 0.05);
+}
+
+/* Softer global transitions */
+.transition-sanctuary {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+

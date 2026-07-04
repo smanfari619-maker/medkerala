@@ -1,0 +1,182 @@
+{
+  "Common": {
+    "getEstimate": "Get a Free Estimate",
+    "whatsAppUs": "WhatsApp Us Now",
+    "chatWithUs": "Chat with Us",
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "arabic": "العربية",
+    "english": "English",
+    "learnMore": "Learn More",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Send My Request — Free, No Obligation",
+    "trustMicroText": "Trusted by patients from UAE, UK, Oman, Africa & Europe"
+  },
+  "Nav": {
+    "home": "Home",
+    "treatments": "Treatments",
+    "ayurveda": "Ayurveda",
+    "services": "Services",
+    "hospitals": "Hospitals",
+    "whyKerala": "Why Kerala",
+    "stories": "Patient Stories",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "headline": "Let us carry the burden. You focus on healing.",
+    "subheadline": "We understand how overwhelming medical travel can feel. From your first consultation to your safe return home, our personal coordinators in Calicut walk beside you every single step of the way."
+  },
+  "TrustBar": {
+    "nabh": "NABH Accredited Partner Hospitals",
+    "jci": "JCI Certified Options Available",
+    "patients": "500+ International Patients Served",
+    "languages": "Available in Arabic | English | French",
+    "emergency": "24/7 Emergency Coordinator"
+  },
+  "Services": {
+    "heading": "Every Detail Handled With Care",
+    "subheading": "From airport transfers to hospital check-ins, we take care of all the logistics so you can focus entirely on getting well.",
+    "pickup": {
+      "title": "Airport & Home Pickup",
+      "desc": "We receive you from the airport, railway station, or coordinate door-to-door from your home country."
+    },
+    "hospital": {
+      "title": "Hospital & Treatment Coordination",
+      "desc": "Allopathy and Ayurveda — we shortlist the best facility for your condition and budget."
+    },
+    "estimate": {
+      "title": "Expert Medical Estimate",
+      "desc": "Share your medical records. Our experts analyse and send you a detailed cost estimate within 48 hours."
+    },
+    "video": {
+      "title": "Online Doctor Consultation",
+      "desc": "Speak with the specialist before you travel. Book a video consultation for a small fee."
+    },
+    "hotel": {
+      "title": "Accommodation & Food",
+      "desc": "Comfortable stays near the hospital — from budget guesthouses to premium hotels, with meal options."
+    },
+    "visa": {
+      "title": "Visa & Travel Assistance",
+      "desc": "We guide you through India's medical visa process and handle all paperwork. Optional, on request."
+    },
+    "leaf": {
+      "title": "Kerala Tour Add-On",
+      "desc": "Recover in paradise. We can plan a short cultural tour of Kerala for you and your companion."
+    },
+    "companion": {
+      "title": "Companion Program",
+      "desc": "Your travel companion gets sightseeing options, companion stays, and full support while you recover."
+    },
+    "emergency": {
+      "title": "24/7 Coordinator",
+      "desc": "A dedicated coordinator is available round the clock throughout your stay in Kerala."
+    }
+  },
+  "CostComparison": {
+    "heading": "How Much Could You Save in Kerala?",
+    "subheading": "Compare treatment costs across countries. All prices are estimates — your personalised quote may vary.",
+    "treatmentName": "Treatment / Procedure",
+    "kerala": "Kerala, India",
+    "uk": "United Kingdom",
+    "usa": "United States",
+    "uae": "United Arab Emirates",
+    "savingsText": "Save up to {percent}%",
+    "currencyLabel": "Select Currency",
+    "note": "All prices in {currency} equivalent. MedKerala's coordination services are 100% complimentary for patients. You pay partner hospitals directly with zero markups.",
+    "cta": "Get My Personalised Estimate",
+    "treatments": {
+      "bypass": "Cardiac Bypass Surgery",
+      "hip": "Hip Replacement",
+      "knee": "Knee Replacement",
+      "ivf": "IVF Treatment",
+      "dental": "Dental Implant (per tooth)",
+      "ayurveda": "Panchakarma (14 days)"
+    }
+  },
+  "Journey": {
+    "heading": "Your Simple Path to Healing",
+    "step1": {
+      "title": "Share Your Details",
+      "desc": "Fill our simple form — your condition, records, and preferences. No technical jargon needed."
+    },
+    "step2": {
+      "title": "Expert Review",
+      "desc": "Our medical team reviews your records and matches you to the right hospital or Ayurveda centre."
+    },
+    "step3": {
+      "title": "Receive Your Estimate",
+      "desc": "We send a detailed cost estimate within 48 hours — treatment, stay, travel, and all services."
+    },
+    "step4": {
+      "title": "Optional: Consult Online",
+      "desc": "Speak with the specialist doctor face-to-face online before making any decision."
+    },
+    "step5": {
+      "title": "Confirm & We Start",
+      "desc": "Once you're ready, we handle visa, travel booking, accommodation, and airport arrangements."
+    },
+    "step6": {
+      "title": "Arrive in Kerala",
+      "desc": "We receive you personally. Your coordinator stays with you throughout your entire stay."
+    },
+    "step7": {
+      "title": "Treatment & Recovery",
+      "desc": "Receive world-class care. We coordinate every appointment, report, and query on your behalf."
+    },
+    "step8": {
+      "title": "Safe Return Home",
+      "desc": "We arrange your return travel, send all medical reports, and remain available for follow-up."
+    }
+  },
+  "FAQ": {
+    "heading": "Frequently Asked Questions",
+    "subheading": "Find answers to common questions about medical treatments, travel, and logistics in Kerala.",
+    "q1": "How much does heart surgery cost in Kerala?",
+    "a1": "A Cardiac Bypass Surgery in Kerala typically costs around $4,500 USD, including MedKerala coordination fees. This represents savings of 75% to 90% compared to countries like the UK ($38,000) or USA ($90,000).",
+    "q2": "Is Kerala safe for medical tourism?",
+    "a2": "Yes, Kerala is highly safe and has been recognized as one of India's safest states. It features high literacy rates, widely spoken English, clean environments, and premium private healthcare systems accustomed to international patients.",
+    "q3": "How do I get a medical visa for India?",
+    "a3": "India offers an electronic Medical Visa (e-Medical Visa) which can be applied for online. You will need a formal invitation letter from the treating hospital in Kerala, which MedKerala will arrange for you once you decide to proceed.",
+    "q4": "Which hospitals in Kerala are accredited?",
+    "a4": "We partner with hospitals that hold National Accreditation Board for Hospitals & Healthcare Providers (NABH) accreditation and Joint Commission International (JCI) certifications, ensuring world-class clinical standards.",
+    "q5": "What is Panchakarma treatment?",
+    "a5": "Panchakarma is a comprehensive Ayurvedic detoxification and rejuvenation therapy consisting of five therapeutic procedures (Vamana, Virechana, Basti, Nasya, Raktamokshana) customized by a qualified Ayurvedic doctor."
+  },
+  "Form": {
+    "step": "Step {current} of {total}",
+    "personalTitle": "About You",
+    "medicalTitle": "Your Medical Need",
+    "documentTitle": "Your Documents",
+    "serviceTitle": "Services You Need",
+    "fullName": "Full Name",
+    "country": "Your Country",
+    "age": "Age",
+    "gender": "Gender",
+    "phone": "WhatsApp Number (with country code)",
+    "email": "Email Address",
+    "treatmentType": "Type of Treatment",
+    "speciality": "Medical Speciality / Condition",
+    "conditionDetail": "Describe your condition or procedure (in simple words)",
+    "urgency": "When are you planning to travel?",
+    "reports": "Upload Medical Reports (PDF, Images — optional but helps us give a better estimate)",
+    "prescription": "Current Prescription (if any)",
+    "servicesRequired": "What would you like us to arrange?",
+    "budgetRange": "Approximate Budget (treatment + stay)",
+    "notes": "Anything else we should know?",
+    "submitBtn": "Send My Request — Free, No Obligation",
+    "whatsappFallback": "Prefer WhatsApp? Send us your details directly at +91 9999999999",
+    "thankYou": "Thank you!",
+    "successMessage": "Our team will review your details and reach out within 24 hours via WhatsApp or email."
+  },
+  "Footer": {
+    "tagline": "World-Class Healthcare, Ancient Healing, Kerala Heart",
+    "emergencyLabel": "24/7 Emergency Support",
+    "rights": "All rights reserved. Compliant with India's DPDP Act.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
