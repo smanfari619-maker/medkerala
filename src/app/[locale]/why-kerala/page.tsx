@@ -66,7 +66,7 @@ export default async function WhyKeralaPage({ params }: Props) {
         </div>
 
         {/* Cost Savings Chart Visual */}
-        <div className="max-w-4xl mx-auto bg-white p-8 sm:p-12 rounded-3xl border border-[#D4A96A]/20 shadow-[0_30px_60px_rgba(212,169,106,0.12)] mb-20 space-y-8">
+        <div className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D4A96A]/20 shadow-[0_30px_60px_rgba(212,169,106,0.12)] mb-20 space-y-8">
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl font-semibold font-display text-primary-dark">
               {locale === 'ar' ? 'مقارنة وفورات الجراحة المتوسطة (بالدولار)' : 'Average Surgery Cost Comparison (USD)'}
