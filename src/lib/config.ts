@@ -1,8 +1,8 @@
 export const SITE_CONFIG = {
   // Main coordination contact information
-  phone: '+91 99999 99999',
-  phoneRaw: '+919999999999',
-  whatsappRaw: '919999999999',
+  phone: '+91 94000 18008',
+  phoneRaw: '+919400018008',
+  whatsappRaw: '919400018008',
   email: 'care@medkerala.com',
 
   // Pricing policies
