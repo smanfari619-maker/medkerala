@@ -158,6 +158,10 @@ export default function Footer() {
               <span>🏥</span>
               <span>NABH & JCI STANDARDS</span>
             </span>
+            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-xl border border-white/10 text-amber-400 font-sans font-bold">
+              <span>🛡️</span>
+              <span>{locale === 'ar' ? 'شريك قناة رسمي معتمد' : 'OFFICIAL CHANNEL PARTNER'}</span>
+            </span>
           </div>
           <div className="flex flex-wrap gap-4 text-[10px] font-bold tracking-widest text-[#D4A96A]">
             <span>MEMBER: IMTA (INDIAN MEDICAL TOURISM ASSOCIATION)</span>

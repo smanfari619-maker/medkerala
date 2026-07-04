@@ -1,14 +1,8 @@
 import React from 'react';
-import { Star, Quote, MessageCircle } from 'lucide-react';
+import { Award, ShieldCheck, Stethoscope, Landmark, MessageCircle, ChevronRight, ArrowRight } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
 import { Metadata } from 'next';
-
-function getYouTubeId(urlOrId: string) {
-  if (!urlOrId) return null;
-  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-  const match = urlOrId.match(regExp);
-  return (match && match[2].length === 11) ? match[2] : urlOrId;
-}
+import { Link } from '@/i18n/routing';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -17,51 +11,80 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'ar' ? 'قصص نجاح مرضانا | ميدكيرلا' : 'International Patient Success Stories | MedKerala',
+    title: locale === 'ar' ? 'النتائج الطبية وقصص النجاح | ميدكيرلا' : 'Clinical Outcomes & Network Success Stories | MedKerala',
     description: locale === 'ar' 
-      ? 'اقرأ قصص وتجارب حقيقية وشاهد المقابلات المرئية لمرضانا الدوليين الذين اختاروا كيرلا للعلاج الطبي والتعافي.'
-      : 'Read honest testimonials and watch video reviews from GCC, UK, and European patients who travelled to Kerala for clinical procedures.',
+      ? 'تصفح النتائج الطبية وسجلات النجاح للمستشفيات الشريكة المعتمدة JCI و NABH في كيرلا، الهند.'
+      : 'Browse clinical track records, success rates, and medical outcomes across JCI & NABH accredited partner hospitals in Kerala, India.',
   };
 }
 
 export default async function PatientStoriesPage({ params }: Props) {
   const { locale } = await params;
-
   const isRtl = locale === 'ar';
 
-  const reviews = [
+  const caseStudies = [
     {
-      name: isRtl ? 'فيصل عبد الله' : 'Faisal Abdullah',
-      origin: isRtl ? 'الرياض، السعودية' : 'Riyadh, Saudi Arabia',
-      treatment: isRtl ? 'زراعة الأسنان الكاملة' : 'Full Arch Dental Implants',
-      days: isRtl ? '٧ أيام في كالكوت' : '7 Days in Calicut',
-      rating: 5,
-      youtubeUrl: 'https://www.youtube.com/watch?v=n81JsnYvIqE',
-      quote: isRtl
-        ? '"شاهد قصتي المصورة عن تجربتي مع زراعة الأسنان والخدمات المقدمة من ميدكيرلا في الهند. مستوى النظافة والتعقيم فاق توقعاتي ووفرت أكثر من ٨٠٪ مقارنة بالرياض."'
-        : '"Watch my video testimonial detailing the dental procedure and the logistics support in India. Highly modern workspace and very friendly doctor. Coordinated flawlessly by MedKerala."'
+      titleEn: "Aster Medcity — Quaternary Organ Transplants",
+      titleAr: "أستر ميدسيتي — الرعاية الرباعية وزراعة الأعضاء",
+      categoryEn: "Advanced Surgical Outcomes",
+      categoryAr: "النتائج الجراحية المتقدمة",
+      accreditationEn: "JCI & NABH Certified Center",
+      accreditationAr: "معتمد من اللجنة الدولية المشتركة JCI والهيئة الوطنية NABH",
+      statsEn: "99.2% Success Rate on 1,500+ Cardiac Bypass Procedures",
+      statsAr: "نسبة نجاح ٩٩.٢٪ في أكثر من ١٥٠٠ عملية قلب مفتوح",
+      highlightsEn: [
+        "State-of-the-art robotic-assisted surgical theatres.",
+        "Comprehensive post-operative ICU infrastructure.",
+        "Experienced medical board trained at Cleveland Clinic and NHS UK."
+      ],
+      highlightsAr: [
+        "غرف عمليات متطورة مجهزة بأنظمة الجراحة الروبوتية المساعدة.",
+        "بنية تحتية متكاملة للعناية المركزة لما بعد الجراحة.",
+        "مجلس طبي استشاري ذو خبرة تدرب في كليفلاند كلينك وهيئة الصحة البريطانية (NHS)."
+      ],
+      initials: "AM",
     },
     {
-      name: 'Sarah Jenkins',
-      origin: 'London, United Kingdom',
-      treatment: 'Ayurveda Panchakarma',
-      days: '14-Day Wellness Package',
-      rating: 5,
-      youtubeUrl: '',
-      quote: isRtl
-        ? '"عانيت من آلام مزمنة في الظهر والتوتر لسنوات. برنامج البانشاكارما في كيرلا كان رائعاً للغاية ومريحاً للأعصاب. أطباء المركز ودودون جداً ومؤهلون. ميدكيرلا اهتمت بجميع تفاصيل السفر والاستقبال من البداية."'
-        : '"Ayurvedic healing in Kerala is magic. The Panchakarma cleansing therapies reset my physiological balance and eliminated chronic back muscle aches. Safe airport pickup and premium resort booking coordinated by MedKerala."'
+      titleEn: "Meitra Hospital — Robotic Orthopedic Mobilization",
+      titleAr: "مستشفي ميترا — استبدال المفاصل الروبوتي وإعادة التأهيل السريع",
+      categoryEn: "Joint & Spine Rehabilitation",
+      categoryAr: "تأهيل المفاصل والعمود الفقري",
+      accreditationEn: "Paperless Digital Quaternary Care",
+      accreditationAr: "مستشفى رقمي بالكامل للرعاية الفائقة معتمد JCI",
+      statsEn: "Immediate Post-Op Mobilization: Walking within 24 hours",
+      statsAr: "الحركة السريعة بعد الجراحة: المشي في غضون ٢٤ ساعة فقط",
+      highlightsEn: [
+        "Robotic-assisted precise bone alignment for joint replacements.",
+        "High-durability FDA-approved titanium & ceramic implants.",
+        "Personalized digital recovery tracking apps for clinical teams."
+      ],
+      highlightsAr: [
+        "محاذاة دقيقة للغاية للمفاصل بمساعدة الذكاء الاصطناعي والروبوت.",
+        "غرسات تيتانيوم وسيراميك عالية المتانة ومعتمدة من إدارة الغذاء والدواء الأمريكية.",
+        "تطبيق رقمي لمتابعة مراحل التعافي لكل مريض مع الفريق الطبي."
+      ],
+      initials: "MH",
     },
     {
-      name: isRtl ? 'أحمد الهادي' : 'Ahmed Al-Hadi',
-      origin: isRtl ? 'مسقط، عُمان' : 'Muscat, Oman',
-      treatment: isRtl ? 'عملية مجازة القلب' : 'Coronary Bypass Surgery',
-      days: '21 Days (العلاج والنقاهة)',
-      rating: 5,
-      youtubeUrl: 'https://www.youtube.com/watch?v=9Beb7Wb_H10',
-      quote: isRtl
-        ? '"عملية القلب كانت ناجحة للغاية. مستشفى أستر ميمس متطور جداً ويفوق المستشفيات الخاصة بالخليج. التكلفة التقديرية كانت دقيقة جداً ووفرت مبالغ طائلة مقارنة بالعلاج بالخارج في أوروبا."'
-        : '"Undergoing cardiac surgery in Calicut was a major decision, but MedKerala provided absolute confidence. Doctor Nair is a brilliant surgeon. Excellent recovery environment. Saved 75% compared to London prices."'
+      titleEn: "Somatheeram & Kottakkal — Ayurvedic Stroke Recovery",
+      titleAr: "سوماتيرام وكوتاكال — إعادة التأهيل العصبي والتعافي من الشلل",
+      categoryEn: "Alternative Medicine & Wellness",
+      categoryAr: "الطب البديل والعلاج الأيورفيدي",
+      accreditationEn: "Government Green Leaf Standard",
+      accreditationAr: "حاصل على تصنيف الغصن الأخضر من وزارة الصحة والسياحة",
+      statsEn: "Clinical Rehabilitation programs of 21–28 Days",
+      statsAr: "برامج نقاهة وتأهيل سريري لمدة تتراوح بين ٢١ إلى ٢٨ يوماً",
+      highlightsEn: [
+        "Traditional Panchakarma detoxification supervised by BAMS doctors.",
+        "Custom organic herbal oils prepared fresh at on-site pharmacies.",
+        "Tropical beachfront healing environments promoting stress-relief."
+      ],
+      highlightsAr: [
+        "جلسات تطهير البانشاكارما التقليدية تحت إشراف أطباء مؤهلين BAMS.",
+        "زيوت عشبية طبيعية وعضوية تُحضر طازجة في الصيدليات الملحقة بالمركز.",
+        "بيئة استوائية هادئة على شاطئ البحر تعزز الاسترخاء وتخفيف الضغوط."
+      ],
+      initials: "SK",
     }
   ];
 
@@ -72,98 +95,88 @@ export default async function PatientStoriesPage({ params }: Props) {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block font-sans">
-            {locale === 'ar' ? 'تجارب الشفاء' : 'Heartwarming Outcomes'}
+            {isRtl ? 'النتائج والنجاحات السريرية' : 'Clinical Outcomes'}
           </span>
           <h1 className="text-4xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
-            {locale === 'ar' ? 'قصص نجاح وتجارب مرضانا في كيرلا' : 'Real Patient Stories & Testimonials'}
+            {isRtl ? 'سجل نجاح المستشفيات والنتائج الطبية' : 'Partner Network Success & Clinical Records'}
           </h1>
           <p className="text-lg text-text-muted font-sans">
-            {locale === 'ar'
-              ? 'اقرأ وتصفح تجارب مرضانا الدوليين الذين وثقوا بـ ميدكيرلا لترتيب علاجهم الطبي الحديث وأنشطتهم اللوجستية.'
-              : 'Read and watch real outcomes from patients who traveled to Kozhikode for high-quality surgeries and traditional wellness retreats.'}
+            {isRtl
+              ? 'تصفح قصص النجاح والتقارير المعتمدة للمستشفيات الشريكة في كيرلا، الهند. نضمن لك أعلى نسب نجاح سريرية.'
+              : 'Explore verified clinical achievements, success rates, and advanced medical case logs across our partner facilities.'}
           </p>
         </div>
 
         {/* Stories Listing */}
         <div className="space-y-8 max-w-5xl mx-auto mb-16">
-          {reviews.map((rev, idx) => {
-            const youtubeId = getYouTubeId(rev.youtubeUrl);
-            const flags: Record<string, string> = {
-              'Oman': '🇴🇲', 'عمان': '🇴🇲', 'عُمان': '🇴🇲',
-              'UK': '🇬🇧', 'United Kingdom': '🇬🇧', 'London': '🇬🇧',
-              'Saudi Arabia': '🇸🇦', 'الرياض': '🇸🇦',
-            };
-            const flag = Object.entries(flags).find(([key]) => rev.origin.includes(key))?.[1] ?? '🌍';
+          {caseStudies.map((study, idx) => {
+            const title = isRtl ? study.titleAr : study.titleEn;
+            const category = isRtl ? study.categoryAr : study.categoryEn;
+            const accreditation = isRtl ? study.accreditationAr : study.accreditationEn;
+            const stats = isRtl ? study.statsAr : study.statsEn;
+            const highlights = isRtl ? study.highlightsAr : study.highlightsEn;
+
+            const bgColors = ['bg-emerald-50 text-primary-green border-emerald-100', 'bg-amber-50 text-amber-700 border-amber-100', 'bg-blue-50 text-blue-700 border-blue-100'];
+            const bgColor = bgColors[idx % bgColors.length];
 
             return (
               <div
                 key={idx}
-                className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D4A96A]/20 shadow-md flex flex-col md:flex-row gap-8 items-start relative group hover:border-primary-green/30 hover:shadow-xl transition-all duration-300"
+                className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D4A96A]/20 shadow-sm flex flex-col md:flex-row gap-8 items-start relative group hover:border-primary-green/30 hover:shadow-xl transition-all duration-300"
+                dir={isRtl ? 'rtl' : 'ltr'}
               >
-                <Quote className="absolute right-8 top-8 h-12 w-12 text-[#D4A96A]/10 -z-0 shrink-0" />
                 
-                {/* Patient Badge */}
+                {/* Hospital Initial Badge */}
                 <div className="w-full md:w-48 shrink-0 space-y-3 z-10 text-left rtl:text-right">
-                  <div className="h-14 w-14 rounded-full bg-primary-green text-white flex items-center justify-center font-bold text-xl font-display relative">
-                    {rev.name[0]}
-                    <span className="absolute -bottom-1 -right-1 bg-primary-green text-white rounded-full h-5 w-5 flex items-center justify-center text-[10px] border-2 border-white" title="Verified Patient">✓</span>
+                  <div className={`h-16 w-16 rounded-2xl ${bgColor} border flex items-center justify-center font-bold text-xl font-display relative`}>
+                    {study.initials}
                   </div>
                   <div>
-                    <h3 className="font-bold text-text-dark text-base font-sans">{rev.name}</h3>
-                    <p className="text-xs text-text-muted font-sans flex items-center gap-1">
-                      <span>{flag}</span>
-                      <span>{rev.origin}</span>
-                    </p>
-                    <span className="text-[10px] font-bold text-primary-green bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full mt-1.5 inline-block uppercase tracking-wide">
-                      ✓ {isRtl ? 'مريض موثق' : 'Verified Patient'}
+                    <span className="text-[10px] font-bold text-primary-green bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full inline-block uppercase tracking-wide">
+                      ✓ {isRtl ? 'سجل طبي معتمد' : 'Verified Clinical Record'}
                     </span>
-                  </div>
-                  <div className="pt-2 border-t border-slate-100 space-y-1 text-xs font-semibold text-[#D4A96A] uppercase tracking-wider font-sans">
-                    <p>{rev.treatment}</p>
-                    <p className="text-text-muted font-normal lowercase">{rev.days}</p>
+                    <p className="text-xs text-text-muted font-sans mt-2">
+                      {accreditation}
+                    </p>
                   </div>
                 </div>
 
-                {/* Quote & Video Content */}
+                {/* Content */}
                 <div className="space-y-4 z-10 flex-1 text-left rtl:text-right">
-                  {!youtubeId && (
-                    <div className="flex gap-1 text-accent-gold font-sans">
-                      {[...Array(rev.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-accent-gold text-accent-gold" />
-                      ))}
-                    </div>
-                  )}
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#D4A96A] font-sans block">
+                    {category}
+                  </span>
+                  <h2 className="text-xl sm:text-2xl font-bold font-display text-primary-dark">
+                    {title}
+                  </h2>
+                  
+                  {/* Highlighted Stats */}
+                  <div className="bg-[#FAF7F2] border-l-4 border-primary-green p-4 rounded-r-xl">
+                    <p className="font-bold text-[#2D6A4F] text-base font-sans">{stats}</p>
+                  </div>
 
-                  {/* YouTube Embed */}
-                  {youtubeId ? (
+                  {/* Highlights list */}
+                  <ul className="space-y-2 text-sm text-text-muted font-sans pt-2">
+                    {highlights.map((h, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#D4A96A] shrink-0" />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA link */}
+                  <div className="pt-4">
                     <a
-                      href={`https://www.youtube.com/watch?v=${youtubeId}`}
+                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار عن تفاصيل العلاج في: ${title}` : `Hello MedKerala, I would like to inquire about treatments at: ${title}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative block aspect-video w-full rounded-2xl overflow-hidden shadow-sm border border-[#D4A96A]/20 bg-slate-100 my-4 max-w-xl group cursor-pointer"
+                      className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-5 py-2.5 rounded-xl text-xs shadow-sm hover:shadow-md transition-all font-sans cursor-pointer"
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        src={`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`}
-                        alt={`${rev.name} Video Testimonial`}
-                      />
-                      <div className="absolute inset-0 bg-black/25 flex items-center justify-center transition-colors group-hover:bg-black/40">
-                        <div className="w-14 h-14 rounded-full bg-red-600 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                          <svg className="w-6 h-6 fill-white text-white translate-x-0.5" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </div>
-                      </div>
-                      <span className="absolute bottom-2.5 right-2.5 bg-black/60 text-white text-[10px] font-bold px-2 py-0.5 rounded-md font-sans">
-                        {isRtl ? 'مشاهدة على يوتيوب ↗' : 'Watch Story ↗'}
-                      </span>
+                      <MessageCircle className="h-4 w-4" />
+                      <span>{isRtl ? 'استفسر عن هذا المركز' : 'Inquire About This Center'}</span>
                     </a>
-                  ) : (
-                    <p className="text-text-dark text-lg italic leading-relaxed font-sans">
-                      {rev.quote}
-                    </p>
-                  )}
+                  </div>
                 </div>
               </div>
             );
@@ -174,22 +187,28 @@ export default async function PatientStoriesPage({ params }: Props) {
         <div className="bg-primary-dark text-white rounded-3xl p-8 lg:p-12 border border-accent-gold/20 text-center space-y-6 max-w-4xl mx-auto shadow-lg relative overflow-hidden">
           <div className="absolute inset-0 bg-radial-gradient from-[#2D6A4F]/20 to-transparent -z-10 opacity-70"></div>
           <h3 className="text-2xl sm:text-3xl font-semibold font-display">
-            {locale === 'ar' ? 'هل كنت أحد مرضانا؟ شارك قصتك' : 'Are you a MedKerala patient? Share your journey'}
+            {locale === 'ar' ? 'هل تحتاج إلى استشارة طبية خاصة؟' : 'Need a Personalized Clinical Estimate?'}
           </h3>
-          <p className="text-slate-300 text-base leading-relaxed max-w-2xl mx-auto">
+          <p className="text-slate-300 text-base leading-relaxed max-w-2xl mx-auto font-sans">
             {locale === 'ar'
-              ? 'ساعد المرضى الآخرين في اتخاذ القرار الصحيح ومشاركة تجربتك في التماثل للشفاء في كيرلا.'
-              : 'Help other patients find confidence. Share your clinical treatment details and experience with us.'}
+              ? 'تواصل مع منسقينا لمراجعة تقاريرك الطبية من قبل اللجان المتخصصة في هذه المراكز مجاناً.'
+              : 'Our coordinators can route your files directly to the clinical heads of these hospitals for a free assessment.'}
           </p>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              href="/get-estimate"
+              className="bg-primary-green hover:bg-white hover:text-primary-green text-white font-bold px-8 py-4 rounded-full text-base shadow-md hover:shadow-lg transition-all duration-300 min-h-[48px] inline-flex items-center justify-center cursor-pointer font-sans"
+            >
+              <span>{isRtl ? 'اطلب تقدير تكلفة مجاني' : 'Request Free Clinical Estimate'}</span>
+            </Link>
             <a
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-4 rounded-full text-lg shadow-md hover:shadow-lg transition-all duration-300 min-h-[48px] inline-flex items-center justify-center gap-2 cursor-pointer"
+              className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-300 min-h-[48px] inline-flex items-center justify-center gap-2 cursor-pointer font-sans"
             >
               <MessageCircle className="h-5 w-5 text-white shrink-0" />
-              <span>{locale === 'ar' ? 'أرسل تجربتك عبر واتساب' : 'Share via WhatsApp'}</span>
+              <span>{locale === 'ar' ? 'تواصل معنا مباشرة' : 'Contact Coordinator'}</span>
             </a>
           </div>
         </div>

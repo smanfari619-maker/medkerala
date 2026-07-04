@@ -414,6 +414,9 @@ export default function HospitalsDirectoryPage() {
 
                       {/* Badges */}
                       <div className="flex flex-wrap gap-1.5 justify-end">
+                        <span className="bg-amber-500 text-white font-bold text-[10px] px-2 py-0.5 rounded-full font-sans uppercase tracking-tight flex items-center gap-0.5 shadow-xs">
+                          ⭐ {isRtl ? 'سعر مؤسسي مخفض' : 'Corporate Partner Rate'}
+                        </span>
                         {hospital.accreditations.map((acc, i) => (
                           <span key={i} className="bg-primary-green text-white font-bold text-[10px] px-2 py-0.5 rounded-full font-sans uppercase tracking-tight">
                             {acc}
@@ -437,7 +440,7 @@ export default function HospitalsDirectoryPage() {
                     </p>
 
                     {/* Specialties pills */}
-                    <div className="space-y-2 mb-6">
+                    <div className="space-y-2 mb-4">
                       <span className="text-xs font-bold uppercase tracking-wider text-text-dark font-sans block">
                         {isRtl ? 'أبرز التخصصات الطبية:' : 'Primary Specialties:'}
                       </span>
@@ -449,12 +452,24 @@ export default function HospitalsDirectoryPage() {
                         ))}
                       </div>
                     </div>
+
+                    {/* Best Rate Guarantee info note */}
+                    <div className="bg-[#FAF7F2] border border-amber-500/20 rounded-2xl p-4 mb-6 text-xs text-text-muted flex flex-col gap-1">
+                      <span className="font-bold text-amber-600 flex items-center gap-1">
+                        🛡️ {isRtl ? 'ضمان السعر المؤسسي الأقل + دفع مباشر للمستشفى' : 'Best Institutional Rate Guaranteed + Direct Hospital Pay'}
+                      </span>
+                      <span>
+                        {isRtl 
+                          ? 'بصفتنا شريكاً رسمياً معتمداً، نضمن لك أسعاراً أقل بـ ١٥-٢٠٪ من حجز الأفراد المباشر. الدفع يتم للمستشفى مباشرة مع كافة الخدمات اللوجستية المجانية.' 
+                          : 'As an official network partner, you receive 15-20% institutional discount off direct walk-in international tariffs. All clinical bills paid directly to the hospital.'}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Actions footer */}
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-4 flex-wrap">
                     <a
-                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار عن العلاج في مستشفى: ${name}` : `Hello MedKerala, I would like to inquire about treatment at hospital: ${name}`)}`}
+                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الحصول على عرض السعر المؤسسي المخفض لمستشفى: ${name}` : `Hello MedKerala, I would like to request the discounted corporate partner rate estimate for: ${name}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-4 py-2.5 rounded-xl text-xs shadow-sm hover:shadow-md transition-all font-sans min-h-[40px] cursor-pointer"

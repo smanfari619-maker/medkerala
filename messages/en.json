@@ -32,7 +32,7 @@
   "TrustBar": {
     "nabh": "NABH Accredited Partner Hospitals",
     "jci": "JCI Certified Options Available",
-    "patients": "500+ International Patients Served",
+    "patients": "15,000+ Annual Network Patients",
     "languages": "Available in Arabic | English | French",
     "emergency": "24/7 Emergency Coordinator"
   },
@@ -86,7 +86,7 @@
     "uae": "United Arab Emirates",
     "savingsText": "Save up to {percent}%",
     "currencyLabel": "Select Currency",
-    "note": "All prices in {currency} equivalent. MedKerala's coordination services are 100% complimentary for patients. You pay partner hospitals directly with zero markups.",
+    "note": "All prices in {currency} equivalent. You pay partner hospitals directly. MedKerala guarantees special institutional corporate rates (15-20% lower than standard walk-in international tariffs) + free logistics support.",
     "cta": "Get My Personalised Estimate",
     "treatments": {
       "bypass": "Cardiac Bypass Surgery",
@@ -144,7 +144,11 @@
     "q4": "Which hospitals in Kerala are accredited?",
     "a4": "We partner with hospitals that hold National Accreditation Board for Hospitals & Healthcare Providers (NABH) accreditation and Joint Commission International (JCI) certifications, ensuring world-class clinical standards.",
     "q5": "What is Panchakarma treatment?",
-    "a5": "Panchakarma is a comprehensive Ayurvedic detoxification and rejuvenation therapy consisting of five therapeutic procedures (Vamana, Virechana, Basti, Nasya, Raktamokshana) customized by a qualified Ayurvedic doctor."
+    "a5": "Panchakarma is a comprehensive Ayurvedic detoxification and rejuvenation therapy consisting of five therapeutic procedures (Vamana, Virechana, Basti, Nasya, Raktamokshana) customized by a qualified Ayurvedic doctor.",
+    "q6": "How is MedKerala 100% free? Are there markups on treatment prices?",
+    "a6": "We do not charge patients any coordination fees. MedKerala is fully funded by corporate marketing budgets from our partner hospitals under direct institutional agreements. You pay the hospital directly for your treatment and room charges with zero markups or hidden fees.",
+    "q7": "Can I book directly with the hospital? Why should I book through MedKerala?",
+    "a7": "Yes, you can contact hospitals directly, but booking through MedKerala guarantees you special institutional corporate rates (typically 15-20% lower than standard walk-in international patient tariffs). Additionally, you receive our complete travel concierge bundle—including free visa assistance, Calicut airport reception, an Arabic medical translator, and a local SIM card—fully coordinated at zero charge."
   },
   "Form": {
     "step": "Step {current} of {total}",

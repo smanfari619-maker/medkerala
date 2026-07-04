@@ -83,7 +83,7 @@ export default function Header() {
         <div className="flex items-center justify-between gap-6">
 
           {/* Logo */}
-          <Link href="/" className="flex items-baseline gap-1.5 group flex-shrink-0">
+          <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
             <span className="text-xl font-semibold font-display text-[#2D6A4F] tracking-tight group-hover:text-[#1B4332] transition-colors duration-300">
               {isRtl ? (
                 <>
@@ -94,6 +94,9 @@ export default function Header() {
                   Med<span className="text-[#D4A96A]">Kerala</span>
                 </>
               )}
+            </span>
+            <span className="inline-flex items-center gap-1 bg-[#2D6A4F]/10 border border-[#2D6A4F]/20 text-[#2D6A4F] rounded-md px-1.5 py-0.5 text-[9px] font-bold tracking-tight select-none">
+              🛡️ {isRtl ? 'قناة شريكة معتمدة' : 'Official Partner Channel'}
             </span>
           </Link>
 

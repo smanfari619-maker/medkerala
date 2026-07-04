@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/config';
 import {
   ArrowRight,
-  Star,
   MessageCircle,
   ChevronDown,
   ClipboardList,
@@ -38,39 +37,42 @@ export default async function HomePage({ params }: Props) {
 
   const isRtl = locale === 'ar';
 
-  const reviews = [
+  const featuredDoctors = [
     {
-      name: isRtl ? 'أحمد الهادي' : 'Ahmed Al-Hadi',
-      origin: isRtl ? 'مسقط، عمان' : 'Muscat, Oman',
-      flag: '🇴🇲',
-      treatment: isRtl ? 'جراحة قلب' : 'Cardiac Bypass',
-      rating: 5,
-      youtubeUrl: 'https://www.youtube.com/watch?v=9Beb7Wb_H10',
-      quote: isRtl
-        ? '"كانت تجربة استثنائية. عملية مجازة القلب تمت بنجاح فائق وتكاليف تقل كثيراً عن العلاج بالخارج. منسق ميدكيرلا رتب كل شيء."'
-        : '"The cardiac bypass surgery was handled with extreme professionalism. I saved over 70% compared to London. The coordinators in Calicut took care of everything — visa, hotel, transport."',
+      name: isRtl ? 'د. مادهافان ناير' : 'Dr. Madhavan Nair',
+      title: isRtl ? 'كبير استشاريي جراحة القلب والشرايين' : 'Senior Consultant Cardiac Surgeon',
+      hospital: isRtl ? 'أستر ميمس، كالكوت' : 'Aster MIMS, Calicut',
+      expEn: '22+ Years Experience',
+      expAr: 'خبرة أكثر من ٢٢ عاماً',
+      educationEn: 'Trained in UK & USA',
+      educationAr: 'تلقى تدريبه في بريطانيا وأمريكا',
+      accreditationEn: 'NABH Accredited Center',
+      accreditationAr: 'مركز معتمد من الهيئة الوطنية (NABH)',
+      initials: 'MN',
     },
     {
-      name: 'Sarah Jenkins',
-      origin: 'London, UK',
-      flag: '🇬🇧',
-      treatment: 'Ayurveda Panchakarma',
-      rating: 5,
-      youtubeUrl: '',
-      quote: isRtl
-        ? '"سافرت إلى كيرلا لعلاج البانشاكارما لمدة 14 يوماً. أشعر بنشاط لم أشعر به منذ سنوات."'
-        : '"I visited Kottakkal for a 14-day Panchakarma retreat. The results were magical. The MedKerala team were incredibly caring from day one."',
+      name: isRtl ? 'د. سوريش بيلاي' : 'Dr. Suresh Pillai',
+      title: isRtl ? 'استشاري أول استبدال المفاصل والركبة' : 'Senior Consultant Joint Replacement',
+      hospital: isRtl ? 'مستشفى ميترا، كالكوت' : 'Meitra Hospital, Calicut',
+      expEn: '20+ Years Experience',
+      expAr: 'خبرة أكثر من ٢٠ عاماً',
+      educationEn: 'Joint & Spine Expert',
+      educationAr: 'خبير جراحة المفاصل والعمود القبلي',
+      accreditationEn: 'JCI Accredited Center',
+      accreditationAr: 'مستشفى معتمد من اللجنة الدولية (JCI)',
+      initials: 'SP',
     },
     {
-      name: 'Khalid Mansoor',
-      origin: isRtl ? 'الرياض، السعودية' : 'Riyadh, Saudi Arabia',
-      flag: '🇸🇦',
-      treatment: isRtl ? 'زراعة الأسنان' : 'Full Arch Dental Implants',
-      rating: 5,
-      youtubeUrl: 'https://www.youtube.com/watch?v=n81JsnYvIqE',
-      quote: isRtl
-        ? '"زراعة الأسنان تمت بإتقان عالٍ. التكاليف أقل بـ 80% مما كنت سأدفعه في الرياض."'
-        : '"The dental implants were done beautifully. Costs 80% lower than back home. Very happy with the coordinator support."',
+      name: isRtl ? 'د. هاري براساد' : 'Dr. Hari Prasad',
+      title: isRtl ? 'طبيب أول الأيورفيدا والطب التقليدي' : 'Senior Ayurvedic Physician (BAMS)',
+      hospital: isRtl ? 'شريك كوتاكال أريا فايديا سالا' : 'Kottakkal Arya Vaidya Sala Partner',
+      expEn: '25+ Years Experience',
+      expAr: 'خبرة أكثر من ٢٥ عاماً',
+      educationEn: 'Classical Panchakarma Expert',
+      educationAr: 'أخصائي البانشاكارما والعلاج الكلاسيكي',
+      accreditationEn: 'Government Green Leaf Certified',
+      accreditationAr: 'معتمد بتصنيف الغصن الأخضر الحكومي',
+      initials: 'HP',
     },
   ];
 
@@ -101,10 +103,10 @@ export default async function HomePage({ params }: Props) {
     },
   ];
 
-  const faqKeys = [1, 2, 3, 4, 5];
+  const faqKeys = [1, 2, 3, 4, 5, 6, 7];
 
   const trustStats = [
-    { numEn: '1,200+', numAr: '١٢٠٠+', labelEn: 'Patients Treated', labelAr: 'مريض علاجه في كيرلا', icon: Users },
+    { numEn: '15,000+', numAr: '١٥،٠٠٠+', labelEn: 'Annual Network Patients', labelAr: 'مريض شبكة المستشفيات سنوياً', icon: Users },
     { numEn: '60–80%', numAr: '٦٠–٨٠٪', labelEn: 'Average Cost Savings', labelAr: 'توفير في التكلفة', icon: TrendingDown },
     { numEn: 'JCI / NABH', numAr: 'JCI / NABH', labelEn: 'Accredited Partners', labelAr: 'مستشفيات شريكة معتمدة', icon: ShieldCheck },
     { numEn: '24/7', numAr: '٢٤/٧', labelEn: 'Coordinator Support', labelAr: 'دعم المنسق الطبي', icon: Clock },
@@ -132,9 +134,10 @@ export default async function HomePage({ params }: Props) {
               {/* Guarantees strip */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-3 text-xs font-semibold font-sans">
                 {[
-                  { emoji: '🔒', enText: 'Zero Hidden Fees', arText: 'لا رسوم خفية' },
-                  { emoji: '🏥', enText: 'NABH & JCI Hospitals', arText: 'مستشفيات معتمدة' },
-                  { emoji: '📞', enText: '24/7 Arabic Support', arText: 'دعم عربي ٢٤/٧' },
+                  { emoji: '🤝', enText: 'Corporate Partner Rates (Save 15-20%)', arText: 'أسعار مؤسسية مخفضة (توفير ١٥-٢٠٪)' },
+                  { emoji: '🔒', enText: 'Direct-to-Hospital Payment', arText: 'الدفع للمستشفى مباشرة' },
+                  { emoji: '🏥', enText: 'NABH & JCI Certified', arText: 'مستشفيات معتمدة JCI/NABH' },
+                  { emoji: '📞', enText: '24/7 Coordinator', arText: 'منسق شخصي ٢٤/٧' },
                 ].map(({ emoji, enText, arText }) => (
                   <span key={enText} className="flex items-center gap-1.5 bg-white border border-[#D4A96A]/25 text-text-muted px-3 py-1.5 rounded-full shadow-xs">
                     <span>{emoji}</span>
@@ -207,89 +210,85 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ─── 2. PATIENT TESTIMONIALS ────────────────────────────────────────── */}
+      {/* ─── 2. CLINICAL EXPERTS ─────────────────────────────────────────────── */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-4">
             <h2 className="text-3xl sm:text-4xl font-semibold font-display text-primary-dark">
-              {isRtl ? 'قصص نجاح حقيقية' : 'Real Patients. Real Results.'}
+              {isRtl ? 'أطباء وجراحون بمستوى عالمي' : 'World-Class Clinical Experts'}
             </h2>
-            <p className="text-text-muted text-lg">
-              {isRtl ? 'تجارب موثقة من مرضى سافروا إلى كيرلا من ٣٥+ دولة.' : 'Verified experiences from patients who traveled from 35+ countries.'}
+            <p className="text-text-muted text-lg font-sans">
+              {isRtl 
+                ? 'استشر كبار الجراحين وأخصائيي الأيورفيدا ذوي الخبرة والاعتمادات الدولية في أفضل مستشفيات كيرلا.' 
+                : 'Consult award-winning specialists and highly experienced traditional physicians at Kerala\'s premier hospitals.'}
             </p>
-            {/* Star aggregate */}
+            {/* Trust badge */}
             <div className="inline-flex items-center gap-2 bg-[#FAF7F2] border border-[#D4A96A]/20 rounded-full px-5 py-2">
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-[#FFA500] text-[#FFA500]" />
-                ))}
-              </div>
-              <span className="text-sm font-bold text-primary-dark">4.9/5</span>
-              <span className="text-xs text-text-muted font-sans">{isRtl ? '٨٠+ تقييم موثق' : '80+ Verified Reviews'}</span>
+              <ShieldCheck className="h-4.5 w-4.5 text-primary-green" />
+              <span className="text-sm font-bold text-primary-dark font-sans">
+                {isRtl ? 'طاقم طبي مرخص معتمد JCI / NABH' : 'JCI & NABH Accredited Partner Panels'}
+              </span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {reviews.map((rev, idx) => {
-              const youtubeId = getYouTubeId(rev.youtubeUrl);
-              const avatarColors = ['bg-primary-green', 'bg-[#D4A96A]', 'bg-primary-dark'];
-              const avatarColor = avatarColors[idx % avatarColors.length];
+            {featuredDoctors.map((doc, idx) => {
+              const bgColors = ['bg-emerald-50 text-primary-green border-emerald-100', 'bg-amber-50 text-amber-700 border-amber-100', 'bg-blue-50 text-blue-700 border-blue-100'];
+              const bgColor = bgColors[idx % bgColors.length];
 
               return (
                 <div key={idx} className="bg-white border border-[#D4A96A]/15 hover:border-primary-green/30 p-8 rounded-3xl flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 relative group overflow-hidden">
-                  {!youtubeId && <span className="absolute -end-2 -top-6 text-9xl font-serif text-[#D4A96A]/10 select-none pointer-events-none">&ldquo;</span>}
-                  <div className="relative z-10 flex-1 flex flex-col space-y-4">
-                    {!youtubeId && (
-                      <div className="flex gap-1">
-                        {[...Array(rev.rating)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-accent-gold text-accent-gold" />
-                        ))}
+                  <div className="relative z-10 flex-1 flex flex-col space-y-5">
+                    {/* Doctor initial & basic details header */}
+                    <div className="flex items-center gap-4">
+                      <div className={`h-16 w-16 rounded-full ${bgColor} border flex items-center justify-center font-bold text-lg font-display shrink-0`}>
+                        {doc.initials}
                       </div>
-                    )}
-                    {youtubeId ? (
-                      <a
-                        href={`https://www.youtube.com/watch?v=${youtubeId}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative block aspect-video w-full rounded-2xl overflow-hidden shadow-sm border border-[#D4A96A]/20 bg-slate-100 group cursor-pointer"
-                      >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                          src={`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`}
-                          alt={`${rev.name} Video Testimonial`}
-                        />
-                        <div className="absolute inset-0 bg-black/25 flex items-center justify-center transition-colors group-hover:bg-black/40">
-                          <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                            <svg className="w-5 h-5 fill-white text-white translate-x-0.5" viewBox="0 0 24 24">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
-                          </div>
-                        </div>
-                        <span className="absolute bottom-2 right-2 bg-black/60 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-md font-sans">
-                          {isRtl ? 'مشاهدة على يوتيوب ↗' : 'Watch Story ↗'}
-                        </span>
-                      </a>
-                    ) : (
-                      <p className="text-text-muted italic text-base leading-relaxed flex-1">
-                        {rev.quote}
-                      </p>
-                    )}
-                  </div>
-                  <div className="mt-6 pt-5 border-t border-slate-100 flex items-center gap-3 relative z-10">
-                    <div className={`h-11 w-11 rounded-full ${avatarColor} text-white flex items-center justify-center font-bold text-base shrink-0 relative`}>
-                      {rev.name[0]}
-                      <span className="absolute -bottom-1 -right-1 bg-primary-green text-white rounded-full h-4 w-4 flex items-center justify-center text-[9px] border-2 border-white">✓</span>
+                      <div>
+                        <h3 className="font-bold text-text-dark text-lg font-display">{doc.name}</h3>
+                        <p className="text-xs text-[#D4A96A] font-bold font-sans">{doc.hospital}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-bold text-text-dark text-sm">{rev.name}</p>
-                      <p className="text-xs text-text-muted">
-                        {rev.flag} {rev.origin} · {rev.treatment}
-                      </p>
-                      <span className="text-[10px] font-bold text-primary-green bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full mt-1 inline-block uppercase tracking-wide">
-                        ✓ {isRtl ? 'مريض موثق' : 'Verified Patient'}
+
+                    {/* Specialist Title */}
+                    <div className="bg-[#FAF7F2] border border-[#D4A96A]/10 rounded-2xl p-4 space-y-2">
+                      <span className="text-xs font-bold uppercase tracking-wider text-text-dark font-sans block">
+                        {isRtl ? 'المسمى الوظيفي:' : 'Clinical Role:'}
                       </span>
+                      <p className="text-text-dark font-bold text-sm font-sans">{doc.title}</p>
                     </div>
+
+                    {/* Qualifications / highlights */}
+                    <ul className="space-y-2.5 text-xs text-text-muted font-sans flex-1">
+                      <li className="flex items-center gap-2">
+                        <span className="h-4 w-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[10px]">✓</span>
+                        <span>{isRtl ? doc.expAr : doc.expEn}</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-4 w-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[10px]">✓</span>
+                        <span>{isRtl ? doc.educationAr : doc.educationEn}</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-4 w-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[10px]">✓</span>
+                        <span>{isRtl ? doc.accreditationAr : doc.accreditationEn}</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Consultation CTA button */}
+                  <div className="mt-8 pt-5 border-t border-slate-100 relative z-10 flex items-center justify-between">
+                    <span className="text-[10px] font-bold text-primary-green bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full uppercase tracking-wide">
+                      ✓ {isRtl ? 'شريك معتمد' : 'Verified Partner Specialist'}
+                    </span>
+                    <a
+                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار عن استشارة الطبيب: ${doc.name}` : `Hello MedKerala, I would like to inquire about a consultation with: ${doc.name}`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-[#2D6A4F] hover:text-primary-green flex items-center gap-1 font-sans cursor-pointer"
+                    >
+                      <span>{isRtl ? 'طلب استشارة' : 'Request Consultation'}</span>
+                      <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+                    </a>
                   </div>
                 </div>
               );
@@ -298,10 +297,10 @@ export default async function HomePage({ params }: Props) {
 
           <div className="text-center mt-10">
             <Link
-              href="/patient-stories"
+              href="/hospitals"
               className="inline-flex items-center gap-2 text-primary-green hover:text-primary-dark font-bold transition-colors font-sans"
             >
-              {isRtl ? 'عرض جميع قصص المرضى' : 'View all patient stories'}
+              {isRtl ? 'تصفح جميع المستشفيات والعيادات الشريكة' : 'Browse all partner hospitals and clinics'}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

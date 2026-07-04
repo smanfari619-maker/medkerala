@@ -54,8 +54,8 @@ const ADDON_SERVICES: AddonService[] = [
   { id: 'translator', labelEn: 'Arabic Medical Translator',         labelAr: 'مترجم طبي للغة العربية',          priceNoteEn: 'INCLUDED FREE', priceNoteAr: 'مشمول مجاناً',  costPerDay: 0,  costFixed: 0,   isIncluded: true  },
   { id: 'visa',       labelEn: 'Hospital Visa Invitation Letter',   labelAr: 'خطاب دعوة التأشيرة',             priceNoteEn: 'INCLUDED FREE', priceNoteAr: 'مشمول مجاناً',  costPerDay: 0,  costFixed: 0,   isIncluded: true  },
   { id: 'sim',        labelEn: 'Local Indian SIM Card on Arrival',  labelAr: 'شريحة اتصال هندية عند الوصول',   priceNoteEn: 'INCLUDED FREE', priceNoteAr: 'مشمول مجاناً',  costPerDay: 0,  costFixed: 0,   isIncluded: true  },
-  { id: 'meals',      labelEn: 'Daily Meal Arrangement',            labelAr: 'ترتيب الوجبات اليومية',           priceNoteEn: '~$20 / day',    priceNoteAr: '~٢٠ دولار/يوم', costPerDay: 20, costFixed: 0,   isIncluded: false },
-  { id: 'tour',       labelEn: 'Kerala Sightseeing Tour (1 Day)',   labelAr: 'جولة سياحية في كيرلا (يوم كامل)', priceNoteEn: '~$100 flat',    priceNoteAr: '~١٠٠ دولار',   costPerDay: 0,  costFixed: 100, isIncluded: false },
+  { id: 'meals',      labelEn: 'Daily Meal Arrangement',            labelAr: 'ترتيب الوجبات اليومية',           priceNoteEn: 'from ~$20 / day base (varies by requirements)', priceNoteAr: 'من ~٢٠ دولار/يوم (يتغير حسب متطلباتك)', costPerDay: 20, costFixed: 0,   isIncluded: false },
+  { id: 'tour',       labelEn: 'Kerala Sightseeing Tour (1 Day)',   labelAr: 'جولة سياحية في كيرلا (يوم كامل)', priceNoteEn: 'from ~$250 base (varies by requirements)', priceNoteAr: 'من ~٢٥٠ دولار (يتغير حسب متطلباتك)', costPerDay: 0,  costFixed: 250, isIncluded: false },
   { id: 'companion',  labelEn: 'Companion Support Program',         labelAr: 'برنامج رعاية المرافق',            priceNoteEn: '~$50 / day',    priceNoteAr: '~٥٠ دولار/يوم', costPerDay: 50, costFixed: 0,   isIncluded: false },
 ];
 
@@ -130,9 +130,9 @@ export default function GetEstimatePage() {
     
     // Average price per night based on tier
     const accommodationRates: Record<AccommodationType, number> = {
-      apartment: 45,
-      budget: 35,
-      premium: 100,
+      apartment: 80,
+      budget: 60,
+      premium: 180,
       none: 0
     };
     
@@ -211,9 +211,9 @@ export default function GetEstimatePage() {
     if (!validateStep(2)) return;
 
     const accommLabel = {
-      apartment: isRtl ? 'شقة مفروشة مخصصة للمرضى (~٤٥$/ليلة)' : 'Patient Serviced Suite (~$45/night)',
-      budget: isRtl ? 'فندق اقتصادي ٣ نجوم (~٣٥$/ليلة)' : '3-Star Budget Hotel (~$35/night)',
-      premium: isRtl ? 'فندق فاخر ٤-٥ نجوم (~١٠٠$/ليلة)' : '4/5-Star Premium Hotel (~$100/night)',
+      apartment: isRtl ? 'شقة مفروشة مخصصة للمرضى (~٨٠$/ليلة)' : 'Patient Serviced Suite (~$80/night)',
+      budget: isRtl ? 'فندق اقتصادي ٣ نجوم (~٦٠$/ليلة)' : '3-Star Budget Hotel (~$60/night)',
+      premium: isRtl ? 'فندق فاخر ٤-٥ نجوم (~١٨٠$/ليلة)' : '4/5-Star Premium Hotel (~$180/night)',
       none: isRtl ? 'سأقوم بحجز السكن بنفسي' : 'I will book my own stay'
     }[data.accommodationType];
 
@@ -404,19 +404,87 @@ export default function GetEstimatePage() {
                 </div>
               </div>
 
-              {/* Accommodation Preference Dropdown */}
-              <div className="space-y-1.5">
-                <label className="block text-sm font-bold text-text-dark font-sans">{isRtl ? 'فئة السكن المفضلة' : 'Accommodation Preference'} *</label>
-                <select
-                  value={data.accommodationType}
-                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => updateData({ accommodationType: e.target.value as AccommodationType })}
-                  className="w-full bg-[#FAF7F2]/50 border border-slate-200 rounded-xl py-3 px-4 focus:outline-none focus:border-primary-green text-sm text-text-dark font-sans font-medium cursor-pointer min-h-[48px]"
-                >
-                  <option value="apartment">{isRtl ? '🏠 شقة مفروشة مخصصة للمرضى (~٤٥$ / ليلة)' : '🏠 Patient Serviced Apartment (~$45 / night)'}</option>
-                  <option value="budget">{isRtl ? '🏨 فندق اقتصادي ٣ نجوم مريح (~٣٥$ / ليلة)' : '🏨 3-Star Budget Hotel (~$35 / night)'}</option>
-                  <option value="premium">{isRtl ? '⭐ فندق فاخر ٤-٥ نجوم (~١٠٠$ / ليلة)' : '⭐ 4/5-Star Premium Hotel (~$100 / night)'}</option>
-                  <option value="none">{isRtl ? '❌ لا أحتاج سكن (سأقوم بالحجز بنفسي)' : '❌ No accommodation needed (I will book my own)'}</option>
-                </select>
+              {/* Accommodation Preference Custom Grid Selector */}
+              <div className="space-y-3">
+                <label className="block text-sm font-bold text-text-dark font-sans">
+                  {isRtl ? 'فئة السكن المفضلة' : 'Accommodation Preference'} *
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    {
+                      id: 'apartment' as const,
+                      icon: '🏠',
+                      titleEn: 'Patient Serviced Suite',
+                      titleAr: 'شقة مفروشة للمرضى',
+                      priceEn: '~$80 / night',
+                      priceAr: '~٨٠ دولار / ليلة',
+                      descEn: 'Fully furnished, kitchen access, patient-friendly setup',
+                      descAr: 'مفروشة بالكامل، إمكانية استخدام المطبخ، مجهزة ومريحة للمرضى',
+                    },
+                    {
+                      id: 'budget' as const,
+                      icon: '🏨',
+                      titleEn: '3-Star Budget Hotel',
+                      titleAr: 'فندق اقتصادي ٣ نجوم',
+                      priceEn: '~$60 / night',
+                      priceAr: '~٦٠ دولار / ليلة',
+                      descEn: 'Clean standard rooms, near hospitals, breakfast options',
+                      descAr: 'غرف قياسية نظيفة، بالقرب من المستشفى، خيارات الإفطار',
+                    },
+                    {
+                      id: 'premium' as const,
+                      icon: '⭐',
+                      titleEn: '4/5-Star Premium Hotel',
+                      titleAr: 'فندق فاخر ٤-٥ نجوم',
+                      priceEn: '~$180 / night',
+                      priceAr: '~١٨٠ دولار / ليلة',
+                      descEn: 'Premium luxury, laundry, full room service, swimming pool',
+                      descAr: 'فخامة ورفاهية متكاملة، خدمة غرف، غسيل ملابس، مسبح',
+                    },
+                    {
+                      id: 'none' as const,
+                      icon: '❌',
+                      titleEn: 'I Will Book My Own',
+                      titleAr: 'سأقوم بحجز السكن بنفسي',
+                      priceEn: 'Self-arranged',
+                      priceAr: 'ترتيب ذاتي',
+                      descEn: 'We will coordinate logistics to your chosen hotel address',
+                      descAr: 'سنقوم بتنسيق النقل واللوجستيات لعنوان سكنك المختار',
+                    },
+                  ].map((tier) => {
+                    const active = data.accommodationType === tier.id;
+                    return (
+                      <button
+                        key={tier.id}
+                        type="button"
+                        onClick={() => updateData({ accommodationType: tier.id })}
+                        className={`flex items-start gap-3.5 p-4 rounded-2xl border-2 transition-all text-start cursor-pointer w-full group relative overflow-hidden ${
+                          active
+                            ? 'border-primary-green bg-primary-green/5 shadow-md'
+                            : 'border-slate-200 bg-white hover:border-primary-green/40 hover:shadow-xs'
+                        }`}
+                      >
+                        <span className="text-2xl shrink-0 mt-0.5">{tier.icon}</span>
+                        <div className="space-y-1 z-10 flex-grow">
+                          <div className="flex justify-between items-baseline gap-2 flex-wrap">
+                            <h4 className="font-bold text-text-dark text-sm group-hover:text-primary-green transition-colors">
+                              {isRtl ? tier.titleAr : tier.titleEn}
+                            </h4>
+                            <span className={`text-xs font-bold font-sans ${active ? 'text-primary-green' : 'text-[#D4A96A]'}`}>
+                              {isRtl ? tier.priceAr : tier.priceEn}
+                            </span>
+                          </div>
+                          <p className="text-[11px] text-text-muted leading-relaxed font-sans font-normal">
+                            {isRtl ? tier.descAr : tier.descEn}
+                          </p>
+                        </div>
+                        {active && (
+                          <div className="absolute top-0 right-0 w-3 h-3 bg-primary-green rounded-bl-lg" />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               {/* Logistics/Addon Services Checklist */}
@@ -598,6 +666,24 @@ export default function GetEstimatePage() {
                           ? 'لا توجد أي رسوم أو عمولات خفية. الأسعار المعروضة تدفع للمستشفيات الشريكة مباشرة.'
                           : 'Zero markups. You pay partner JCI/NABH hospitals directly for clinical rooms and procedures.'}
                       </p>
+                    </div>
+                  </div>
+
+                  {/* Best Rate Guarantee block */}
+                  <div className="bg-white rounded-3xl p-6 border border-amber-500/25 shadow-xs space-y-3">
+                    <div className="flex items-center gap-2 text-amber-600 font-bold text-sm">
+                      <span>🛡️</span>
+                      <h4>{isRtl ? 'ضمان أفضل الأسعار وتوفير حقيقي' : 'Best Rate Guarantee Policy'}</h4>
+                    </div>
+                    <p className="text-xs text-text-muted leading-relaxed font-sans">
+                      {isRtl 
+                        ? 'حجزك عبر ميدكيرلا يضمن لك الحصول على الأسعار المؤسسية المخفضة (أقل بـ ١٥-٢٠٪ من حجز الأفراد المباشر). إذا حصلت على سعر أقل بشكل مباشر من نفس المستشفى، فسنقوم بمطابقة السعر فوراً مع توفير جولة سياحية مجانية ليوم كامل في كيرلا.' 
+                        : 'Booking through MedKerala guarantees you special institutional rates (15-20% lower than direct individual inquiries). If you receive a lower quote directly from the same hospital, we will match the rate and include a free full-day tour of Kerala for you and your companion.'}
+                    </p>
+                    <div className="pt-1 text-[11px] font-bold text-[#2D6A4F] flex items-center gap-1.5 flex-wrap">
+                      <span>✓ {isRtl ? 'دفع مباشر للمستشفى' : '100% Direct Hospital Billing'}</span>
+                      <span className="text-text-muted select-none">•</span>
+                      <span>✓ {isRtl ? 'بدون رسوم إضافية' : 'Zero Hidden Fees'}</span>
                     </div>
                   </div>
                 </div>
