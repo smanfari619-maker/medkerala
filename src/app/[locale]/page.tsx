@@ -233,61 +233,69 @@ export default async function HomePage({ params }: Props) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredDoctors.map((doc, idx) => {
-              const bgColors = ['bg-emerald-50 text-primary-green border-emerald-100', 'bg-amber-50 text-amber-700 border-amber-100', 'bg-blue-50 text-blue-700 border-blue-100'];
-              const bgColor = bgColors[idx % bgColors.length];
+              const bgGradients = [
+                'from-emerald-500 to-teal-400',
+                'from-amber-500 to-orange-400',
+                'from-blue-500 to-indigo-400'
+              ];
+              const bgGradient = bgGradients[idx % bgGradients.length];
 
               return (
-                <div key={idx} className="bg-white border border-[#D4A96A]/15 hover:border-primary-green/30 p-8 rounded-3xl flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 relative group overflow-hidden">
+                <div key={idx} className="bg-white border border-[#D4A96A]/20 hover:border-primary-green/40 p-8 rounded-3xl flex flex-col justify-between shadow-xs hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden">
                   <div className="relative z-10 flex-1 flex flex-col space-y-5">
+                    {/* Top verified badge row */}
+                    <div className="flex justify-between items-center flex-wrap gap-2">
+                      <span className="text-[9px] font-bold text-primary-green bg-emerald-50 border border-emerald-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                        ✓ {isRtl ? 'شريك معتمد' : 'Verified Partner'}
+                      </span>
+                    </div>
+
                     {/* Doctor initial & basic details header */}
                     <div className="flex items-center gap-4">
-                      <div className={`h-16 w-16 rounded-full ${bgColor} border flex items-center justify-center font-bold text-lg font-display shrink-0`}>
+                      <div className={`h-14 w-14 rounded-2xl bg-gradient-to-tr ${bgGradient} text-white flex items-center justify-center font-bold text-lg font-display shrink-0 shadow-sm`}>
                         {doc.initials}
                       </div>
                       <div>
-                        <h3 className="font-bold text-text-dark text-lg font-display">{doc.name}</h3>
+                        <h3 className="font-bold text-text-dark text-base sm:text-lg font-display group-hover:text-primary-green transition-colors duration-200">{doc.name}</h3>
                         <p className="text-xs text-[#D4A96A] font-bold font-sans">{doc.hospital}</p>
                       </div>
                     </div>
 
                     {/* Specialist Title */}
-                    <div className="bg-[#FAF7F2] border border-[#D4A96A]/10 rounded-2xl p-4 space-y-2">
-                      <span className="text-xs font-bold uppercase tracking-wider text-text-dark font-sans block">
-                        {isRtl ? 'المسمى الوظيفي:' : 'Clinical Role:'}
+                    <div className="border-s-4 border-primary-green bg-[#FAF7F2] p-4 rounded-e-xl space-y-1">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A96A] font-sans block">
+                        {isRtl ? 'المسمى الطبي:' : 'Clinical Specialty:'}
                       </span>
-                      <p className="text-text-dark font-bold text-sm font-sans">{doc.title}</p>
+                      <p className="text-text-dark font-extrabold text-sm font-sans leading-snug">{doc.title}</p>
                     </div>
 
                     {/* Qualifications / highlights */}
-                    <ul className="space-y-2.5 text-xs text-text-muted font-sans flex-1">
-                      <li className="flex items-center gap-2">
-                        <span className="h-4 w-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[10px]">✓</span>
+                    <ul className="space-y-3 text-xs text-text-muted font-sans flex-1 pt-2">
+                      <li className="flex items-center gap-3">
+                        <span className="h-5 w-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[10px] shrink-0 border border-emerald-100">✓</span>
                         <span>{isRtl ? doc.expAr : doc.expEn}</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <span className="h-4 w-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[10px]">✓</span>
+                      <li className="flex items-center gap-3">
+                        <span className="h-5 w-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[10px] shrink-0 border border-emerald-100">✓</span>
                         <span>{isRtl ? doc.educationAr : doc.educationEn}</span>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <span className="h-4 w-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[10px]">✓</span>
+                      <li className="flex items-center gap-3">
+                        <span className="h-5 w-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[10px] shrink-0 border border-emerald-100">✓</span>
                         <span>{isRtl ? doc.accreditationAr : doc.accreditationEn}</span>
                       </li>
                     </ul>
                   </div>
 
                   {/* Consultation CTA button */}
-                  <div className="mt-8 pt-5 border-t border-slate-100 relative z-10 flex items-center justify-between">
-                    <span className="text-[10px] font-bold text-primary-green bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full uppercase tracking-wide">
-                      ✓ {isRtl ? 'شريك معتمد' : 'Verified Partner Specialist'}
-                    </span>
+                  <div className="mt-8 pt-5 border-t border-slate-100 relative z-10">
                     <a
-                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار عن استشارة الطبيب: ${doc.name}` : `Hello MedKerala, I would like to inquire about a consultation with: ${doc.name}`)}`}
+                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار عن حجز استشارة مع الدكتور: ${doc.name}` : `Hello MedKerala, I would like to request a consultation with: ${doc.name}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-bold text-[#2D6A4F] hover:text-primary-green flex items-center gap-1 font-sans cursor-pointer"
+                      className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-center py-3.5 px-6 rounded-2xl text-xs sm:text-sm font-bold font-sans flex items-center justify-center gap-2 shadow-xs hover:shadow-md transition-all duration-300 min-h-[44px] cursor-pointer"
                     >
-                      <span>{isRtl ? 'طلب استشارة' : 'Request Consultation'}</span>
-                      <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+                      <MessageCircle className="h-4.5 w-4.5 text-white shrink-0" />
+                      <span>{isRtl ? 'حجز استشارة فورية' : 'Book Specialist Consultation'}</span>
                     </a>
                   </div>
                 </div>
