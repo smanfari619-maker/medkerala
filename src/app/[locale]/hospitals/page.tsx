@@ -5,7 +5,8 @@ import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import {
   Building2, Stethoscope, Leaf, MapPin,
-  Search, ChevronRight, MessageCircle
+  Search, ChevronRight, MessageCircle,
+  LayoutGrid, X
 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
 
@@ -330,56 +331,117 @@ export default function HospitalsDirectoryPage() {
         </div>
 
         {/* Search & Filter Controls */}
-        <div className="bg-white border border-[#D4A96A]/20 rounded-3xl p-5 shadow-xs mb-10 max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-            
-            {/* Search Input */}
-            <div className="relative md:col-span-6">
-              <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-text-muted/60" />
-              </div>
-              <input
-                type="text"
-                placeholder={isRtl ? 'ابحث باسم المستشفى، التخصص، أو المدينة...' : 'Search by hospital name, specialty, or city...'}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-10 py-3 bg-[#FAF7F2] border border-[#D4A96A]/25 rounded-2xl focus:outline-hidden focus:border-primary-green focus:ring-1 focus:ring-primary-green text-sm text-text-dark placeholder-text-muted/50 transition-all font-sans"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="absolute inset-y-0 right-3 flex items-center px-2 text-text-muted/60 hover:text-primary-green transition-colors cursor-pointer"
-                  aria-label="Clear search"
-                >
-                  <span className="text-xs">✕</span>
-                </button>
-              )}
-            </div>
-
-            {/* Filter Tabs */}
-            <div className="md:col-span-6 flex gap-2 justify-end">
-              {[
-                { key: 'all' as const, labelEn: 'All Streams', labelAr: 'الجميع' },
-                { key: 'allopathy' as const, labelEn: 'Modern (Allopathy)', labelAr: 'الطب الحديث' },
-                { key: 'ayurveda' as const, labelEn: 'Traditional (Ayurveda)', labelAr: 'الأيورفيدا' }
-              ].map((tab) => {
-                const active = activeType === tab.key;
-                return (
+        <div className="bg-white border border-[#D4A96A]/20 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 mb-10 max-w-4xl mx-auto relative overflow-hidden">
+          {/* Decorative ambient background glows */}
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-green/5 rounded-full filter blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-gold/5 rounded-full filter blur-3xl pointer-events-none" />
+          
+          <div className="relative z-10 space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+              
+              {/* Search Input Container */}
+              <div className="lg:col-span-7 relative group">
+                <div className="absolute inset-y-0 start-4 flex items-center pointer-events-none text-text-muted/40 transition-colors duration-200 group-focus-within:text-primary-green">
+                  <Search className="h-5 w-5" />
+                </div>
+                <input
+                  type="text"
+                  placeholder={isRtl ? 'ابحث باسم المستشفى، التخصص، أو المدينة...' : 'Search by hospital name, specialty, or city...'}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full ps-12 pe-10 py-3 bg-[#FAF7F2]/60 hover:bg-[#FAF7F2] focus:bg-white border border-[#D4A96A]/20 hover:border-primary-green/30 focus:border-primary-green rounded-2xl focus:outline-hidden focus:ring-2 focus:ring-primary-green/10 text-sm text-text-dark placeholder-text-muted/40 transition-all duration-300 font-sans"
+                />
+                {searchQuery && (
                   <button
-                    key={tab.key}
-                    onClick={() => setActiveType(tab.key)}
-                    className={`px-4 py-2.5 rounded-xl border text-xs font-bold transition-all cursor-pointer font-sans min-h-[42px] flex-1 md:flex-initial ${
-                      active
-                        ? 'bg-primary-green border-primary-green text-white shadow-sm'
-                        : 'bg-[#FAF7F2] border-[#D4A96A]/25 text-[#4A4A6A] hover:text-primary-green hover:border-primary-green/50'
-                    }`}
+                    onClick={() => setSearchQuery('')}
+                    className="absolute inset-y-0 end-3 flex items-center px-2 text-text-muted/40 hover:text-primary-green transition-colors cursor-pointer"
+                    aria-label="Clear search"
                   >
-                    {isRtl ? tab.labelAr : tab.labelEn}
+                    <X className="h-4 w-4" />
                   </button>
-                );
-              })}
+                )}
+              </div>
+
+              {/* Filter Tabs - Premium Segmented Controls */}
+              <div className="lg:col-span-5 flex p-1 bg-[#FAF7F2] border border-[#D4A96A]/15 rounded-2xl gap-1">
+                {[
+                  { key: 'all' as const, labelEn: 'All Streams', labelAr: 'الجميع', icon: LayoutGrid },
+                  { key: 'allopathy' as const, labelEn: 'Modern', labelAr: 'الطب الحديث', icon: Stethoscope },
+                  { key: 'ayurveda' as const, labelEn: 'Traditional', labelAr: 'الأيورفيدا', icon: Leaf }
+                ].map((tab) => {
+                  const active = activeType === tab.key;
+                  const TabIcon = tab.icon;
+                  return (
+                    <button
+                      key={tab.key}
+                      onClick={() => setActiveType(tab.key)}
+                      className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all duration-300 cursor-pointer font-sans min-h-[38px] flex-1 ${
+                        active
+                          ? 'bg-primary-green text-white shadow-xs'
+                          : 'text-[#4A4A6A] hover:text-primary-green hover:bg-white/60'
+                      }`}
+                    >
+                      <TabIcon className="h-3.5 w-3.5 shrink-0" />
+                      <span className="truncate">{isRtl ? tab.labelAr : tab.labelEn}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
             </div>
 
+            {/* Quick Search Tags & Match Counter */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-t border-[#D4A96A]/10 text-xs">
+              
+              {/* Popular tags list */}
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="text-text-muted/50 font-medium font-sans">
+                  {isRtl ? 'الكلمات الشائعة:' : 'Popular:'}
+                </span>
+                {(isRtl 
+                  ? [
+                      { label: 'كوتشي', val: 'كوتشي' },
+                      { label: 'كالكوت', val: 'كالكوت' },
+                      { label: 'القلب', val: 'القلب' },
+                      { label: 'الأيورفيدا', val: 'الأيورفيدا' },
+                      { label: 'العمود الفقري', val: 'العمود الفقري' }
+                    ]
+                  : [
+                      { label: 'Kochi', val: 'Kochi' },
+                      { label: 'Calicut', val: 'Calicut' },
+                      { label: 'Cardiology', val: 'Cardiology' },
+                      { label: 'Ayurveda', val: 'Ayurveda' },
+                      { label: 'Spine Care', val: 'Spine' }
+                    ]
+                ).map((tag) => {
+                  const isSelected = searchQuery.toLowerCase() === tag.val.toLowerCase();
+                  return (
+                    <button
+                      key={tag.label}
+                      onClick={() => setSearchQuery(isSelected ? '' : tag.val)}
+                      className={`px-2.5 py-1 rounded-lg border transition-all duration-200 cursor-pointer font-sans ${
+                        isSelected
+                          ? 'bg-primary-green/10 border-primary-green/30 text-primary-green font-semibold'
+                          : 'bg-[#FAF7F2] border-[#D4A96A]/15 text-text-muted hover:border-primary-green/30 hover:text-primary-green'
+                      }`}
+                    >
+                      {tag.label}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Dynamic Matches Counter */}
+              <div className="text-text-muted/70 font-semibold font-sans flex items-center gap-1.5 shrink-0 bg-[#FAF7F2] border border-[#D4A96A]/10 px-3 py-1.5 rounded-full shadow-2xs self-start sm:self-auto">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary-green animate-pulse" />
+                <span>
+                  {isRtl
+                    ? `تم العثور على ${filteredHospitals.length} مستشفى`
+                    : `${filteredHospitals.length} ${filteredHospitals.length === 1 ? 'hospital' : 'hospitals'} matching`}
+                </span>
+              </div>
+
+            </div>
           </div>
         </div>
 
