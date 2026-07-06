@@ -74,10 +74,10 @@ export const TREATMENTS: Treatment[] = [
       'تتضمن برامج تأهيل متكاملة للقلب بعد الجراحة.'
     ],
     costTable: {
-      kerala: 4500,
-      uk: 38000,
-      usa: 90000,
-      uae: 22000
+      kerala: 6000,
+      uk: 40000,
+      usa: 120000,
+      uae: 28000
     },
     doctors: [
       {
@@ -140,10 +140,10 @@ export const TREATMENTS: Treatment[] = [
       'غرسات ممتازة ومضمونة لمدة تصل إلى 15-20 عاماً.'
     ],
     costTable: {
-      kerala: 5000,
-      uk: 22000,
+      kerala: 5500,
+      uk: 19000,
       usa: 45000,
-      uae: 15000
+      uae: 20000
     },
     doctors: [
       {
@@ -190,10 +190,10 @@ export const TREATMENTS: Treatment[] = [
       'علاجات خالية من الألم مع خيارات التخدير الواعي.'
     ],
     costTable: {
-      kerala: 400,
-      uk: 2500,
+      kerala: 600,
+      uk: 2800,
       usa: 4500,
-      uae: 1800
+      uae: 2200
     },
     doctors: [
       {
@@ -240,10 +240,10 @@ export const TREATMENTS: Treatment[] = [
       'تكاليف أقل بكثير لدورات الأدوية والفحوصات المخبرية.'
     ],
     costTable: {
-      kerala: 2000,
-      uk: 8000,
-      usa: 15000,
-      uae: 7000
+      kerala: 2800,
+      uk: 9000,
+      usa: 16500,
+      uae: 9500
     },
     doctors: [
       {
@@ -290,10 +290,10 @@ export const TREATMENTS: Treatment[] = [
       'أعشاب طبية يتم الحصول عليها مباشرة من مزارع عضوية في غاتس الغربية.'
     ],
     costTable: {
-      kerala: 800,
-      uk: 6000,
-      usa: 9000,
-      uae: 4000
+      kerala: 1800,
+      uk: 5500,
+      usa: 8500,
+      uae: 4200
     },
     doctors: [
       {
@@ -340,10 +340,10 @@ export const TREATMENTS: Treatment[] = [
       'توفير أكثر من 75% مقارنة بعلاجات الأورام في الغرب والشرق الأوسط.'
     ],
     costTable: {
-      kerala: 8000,
-      uk: 60000,
-      usa: 140000,
-      uae: 35000
+      kerala: 9000,
+      uk: 65000,
+      usa: 150000,
+      uae: 38000
     },
     doctors: [
       {
@@ -406,10 +406,10 @@ export const TREATMENTS: Treatment[] = [
       'تأهيل عصبي متكامل وعلاج طبيعي بعد الجراحة.'
     ],
     costTable: {
-      kerala: 6500,
-      uk: 35000,
-      usa: 85000,
-      uae: 25000
+      kerala: 7500,
+      uk: 38000,
+      usa: 95000,
+      uae: 28000
     },
     doctors: [
       {
@@ -456,10 +456,10 @@ export const TREATMENTS: Treatment[] = [
       'غرف عناية مركزة متقدمة وأجنحة عزل بعد الزراعة لمنع العدوى.'
     ],
     costTable: {
-      kerala: 28000,
-      uk: 120000,
-      usa: 280000,
-      uae: 95000
+      kerala: 30000,
+      uk: 130000,
+      usa: 290000,
+      uae: 105000
     },
     doctors: [
       {
@@ -506,10 +506,10 @@ export const TREATMENTS: Treatment[] = [
       'توفير كبير جداً في خدمات وجراحات العيون الراقية.'
     ],
     costTable: {
-      kerala: 1200,
-      uk: 8000,
-      usa: 15000,
-      uae: 5000
+      kerala: 1500,
+      uk: 8500,
+      usa: 16000,
+      uae: 5500
     },
     doctors: [
       {
@@ -545,8 +545,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Costs & Savings',
     categoryAr: 'التكاليف والوفورات',
     readTime: '5 min read',
-    content: 'Coronary artery bypass grafting (CABG) is a lifesaver, but in many western and Middle Eastern nations, it represents a catastrophic financial burden. In the United States, a cardiac bypass surgery can average $90,000. In the United Kingdom, private treatment costs around $38,000, and even in private hospitals in the UAE, the cost sits near $22,000. In comparison, accredited super-speciality hospitals in Calicut, Kerala provide the exact same surgical procedure — using US FDA-approved consumables, modular cardiovascular theatres, and highly experienced surgeons — for approximately $4,500. This includes the medical coordination fees, hospital room stay, diagnostic workups, and medical officer charges.',
-    contentAr: 'تعتبر عملية مجازة الشريان التاجي منقذة للحياة، ولكنها تشكل عبئاً مالياً هائلاً في الدول الغربية والشرق الأوسط. في الولايات المتحدة يبلغ متوسط تكلفتها 90 ألف دولار. وفي بريطانيا حوالي 38 ألف دولار، بينما تقترب في المستشفيات الخاصة بالإمارات من 22 ألف دولار. في المقابل، تقدم مستشفيات كيرلا المعتمدة الإجراء نفسه تماماً باستخدام مستلزمات طبية معتمدة أمريكياً وأحدث غرف عمليات القلب بتكلفة تقارب 4500 دولار فقط، تشمل التنسيق الطبي والإقامة والفحوصات.'
+    content: 'Coronary artery bypass grafting (CABG) is a lifesaver, but in many western and Middle Eastern nations, it represents a catastrophic financial burden. In the United States, a cardiac bypass surgery can average $120,000. In the United Kingdom, private treatment costs around $40,000, and even in private hospitals in the UAE, the cost sits near $28,000. In comparison, accredited super-speciality hospitals in Calicut, Kerala provide the exact same surgical procedure — using US FDA-approved consumables, modular cardiovascular theatres, and highly experienced surgeons — for approximately $6,000. This includes the medical coordination fees, hospital room stay, diagnostic workups, and medical officer charges.',
+    contentAr: 'تعتبر عملية مجازة الشريان التاجي منقذة للحياة، ولكنها تشكل عبئاً مالياً هائلاً في الدول الغربية والشرق الأوسط. في الولايات المتحدة يبلغ متوسط تكلفتها 120 ألف دولار. وفي بريطانيا حوالي 40 ألف دولار، بينما تقترب في المستشفيات الخاصة بالإمارات من 28 ألف دولار. في المقابل، تقدم مستشفيات كيرلا المعتمدة الإجراء نفسه تماماً باستخدام مستلزمات طبية معتمدة أمريكياً وأحدث غرف عمليات القلب بتكلفة تقارب 6000 دولار فقط، تشمل التنسيق الطبي والإقامة والفحوصات.'
   },
   {
     slug: 'best-cardiac-hospitals-calicut',

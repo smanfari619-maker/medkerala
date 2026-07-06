@@ -30,12 +30,12 @@ export default function CostComparison() {
   };
 
   const treatments: TreatmentCost[] = [
-    { key: 'bypass', kerala: 4500, uk: 38000, usa: 90000, uae: 22000 },
-    { key: 'hip', kerala: 5000, uk: 22000, usa: 45000, uae: 15000 },
-    { key: 'knee', kerala: 4500, uk: 20000, usa: 42000, uae: 14000 },
-    { key: 'ivf', kerala: 2000, uk: 8000, usa: 15000, uae: 7000 },
-    { key: 'dental', kerala: 400, uk: 2500, usa: 4500, uae: 1800 },
-    { key: 'ayurveda', kerala: 800, uk: 6000, usa: 9000, uae: 4000 },
+    { key: 'bypass', kerala: 6000, uk: 40000, usa: 120000, uae: 28000 },
+    { key: 'hip', kerala: 5500, uk: 19000, usa: 45000, uae: 20000 },
+    { key: 'knee', kerala: 5000, uk: 18000, usa: 40000, uae: 18000 },
+    { key: 'ivf', kerala: 2800, uk: 9000, usa: 16500, uae: 9500 },
+    { key: 'dental', kerala: 600, uk: 2800, usa: 4500, uae: 2200 },
+    { key: 'ayurveda', kerala: 1800, uk: 5500, usa: 8500, uae: 4200 },
   ];
 
   const formatPrice = (val: number, cur: Currency) => {

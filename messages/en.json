@@ -79,7 +79,7 @@
   },
   "CostComparison": {
     "heading": "How Much Could You Save in Kerala?",
-    "subheading": "Compare treatment costs across countries. All prices are estimates — your personalised quote may vary.",
+    "subheading": "Compare typical treatment costs across countries. Note: These figures are indicative estimates for conceptual comparison only; actual prices depend on hospital choice, patient condition, and specific treatment plans.",
     "treatmentName": "Treatment / Procedure",
     "kerala": "Kerala, India",
     "uk": "United Kingdom",
@@ -87,7 +87,7 @@
     "uae": "United Arab Emirates",
     "savingsText": "Save up to {percent}%",
     "currencyLabel": "Select Currency",
-    "note": "All prices in {currency} equivalent. You pay partner hospitals directly. MedKerala guarantees special institutional corporate rates (15-20% lower than standard walk-in international tariffs) + free logistics support.",
+    "note": "All prices in {currency} equivalent. Note: These are conceptual estimates for general comparison and do not represent actual final billing. You pay partner hospitals directly. MedKerala guarantees special institutional corporate rates (15-20% lower than standard walk-in international tariffs) + free logistics support.",
     "cta": "Get My Personalised Estimate",
     "treatments": {
       "bypass": "Cardiac Bypass Surgery",
@@ -109,12 +109,12 @@
       "desc": "Our medical team reviews your records and matches you to the right hospital or Ayurveda centre."
     },
     "step3": {
-      "title": "Receive Your Estimate",
-      "desc": "We send a detailed cost estimate within 48 hours — treatment, stay, travel, and all services."
+      "title": "Receive Estimate",
+      "desc": "Get a detailed cost estimate within 48 hours — covering treatment, lodging, travel, and support."
     },
     "step4": {
-      "title": "Optional: Consult Online",
-      "desc": "Speak with the specialist doctor face-to-face online before making any decision."
+      "title": "Video Call",
+      "desc": "Consult your treating specialist in Kerala over a secure video call before you finalize details."
     },
     "step5": {
       "title": "Confirm & We Start",
@@ -137,7 +137,7 @@
     "heading": "Frequently Asked Questions",
     "subheading": "Find answers to common questions about medical treatments, travel, and logistics in Kerala.",
     "q1": "How much does heart surgery cost in Kerala?",
-    "a1": "A Cardiac Bypass Surgery in Kerala typically costs around $4,500 USD, including MedKerala coordination fees. This represents savings of 75% to 90% compared to countries like the UK ($38,000) or USA ($90,000).",
+    "a1": "A Cardiac Bypass Surgery in Kerala typically costs around $6,000 USD, including MedKerala coordination fees. This represents savings of 80% to 95% compared to countries like the UK ($40,000) or USA ($120,000).",
     "q2": "Is Kerala safe for medical tourism?",
     "a2": "Yes, Kerala is highly safe and has been recognized as one of India's safest states. It features high literacy rates, widely spoken English, clean environments, and premium private healthcare systems accustomed to international patients.",
     "q3": "How do I get a medical visa for India?",
