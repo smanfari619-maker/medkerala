@@ -9,6 +9,7 @@ import WhatsAppFAB from '@/components/layout/WhatsAppFAB';
 import MobileBottomNav from '@/components/layout/MobileBottomNav';
 import { Lora, Plus_Jakarta_Sans, Tajawal } from 'next/font/google';
 import '../globals.css';
+import { getMedicalOrganizationSchema } from '@/lib/schemas';
 
 const lora = Lora({
   subsets: ['latin'],
@@ -70,6 +71,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   const isRtl = locale === 'ar';
+  const medicalSchema = getMedicalOrganizationSchema(locale);
 
   return (
     <html
@@ -77,7 +79,12 @@ export default async function LocaleLayout({ children, params }: Props) {
       dir={isRtl ? 'rtl' : 'ltr'}
       className={`${lora.variable} ${plusJakartaSans.variable} ${tajawal.variable} scroll-smooth`}
     >
-      <head />
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }}
+        />
+      </head>
       <body className="bg-[#FAF7F2] text-[#1A1A2E] font-sans antialiased flex flex-col min-h-screen">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <Header />

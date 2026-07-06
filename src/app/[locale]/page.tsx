@@ -26,6 +26,7 @@ import {
   Percent,
 } from 'lucide-react';
 import CostComparison from '@/components/home/CostComparison';
+import { getFAQSchema } from '@/lib/schemas';
 
 function getYouTubeId(urlOrId: string) {
   if (!urlOrId) return null;
@@ -121,8 +122,18 @@ export default async function HomePage({ params }: Props) {
     { numEn: '24/7', numAr: '٢٤/٧', labelEn: 'Coordinator Support', labelAr: 'دعم المنسق الطبي', icon: Clock },
   ];
 
+  const faqs = faqKeys.map((key) => ({
+    q: tFAQ(`q${key}`),
+    a: tFAQ(`a${key}`),
+  }));
+  const faqSchema = getFAQSchema(faqs);
+
   return (
     <div className="flex flex-col w-full overflow-x-hidden animate-fade-in">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       {/* ─── 1. HERO ────────────────────────────────────────────────────────── */}
       <section className="relative bg-[#FAF7F2] pt-16 pb-20 lg:pt-20 lg:pb-24 overflow-hidden border-b border-[#D4A96A]/35">

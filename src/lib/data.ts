@@ -599,6 +599,32 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '4 min read',
     content: 'Preparing for a medical trip involves distinct packing needs. First, organize all physical medical reports, recent scans (on CDs/pen drives), prescription bottles, and laboratory reports in a separate waterproof folder. For clothing, pack light, loose-fitting cotton outfits suitable for Kerala\'s warm, tropical climate. If undergoing joint replacement or cardiac surgery, front-open shirts and loose sweatpants are highly recommended. Don\'t forget to pack UK/India standard plug adapters (Type D/G), some local currency (INR) for small transactions, and your regular medication supplies to last the entire trip.',
     contentAr: 'تحضير حقيبة السفر للعلاج يختلف قليلاً. أولاً، رتب جميع التقارير الطبية المطبوعة والأشعة الأخيرة (على أقراص مضغوطة) في ملف مقاوم للماء. بالنسبة للملابس، احزم ملابس قطنية خفيفة وفضفاضة تناسب مناخ كيرلا الاستوائي الدافئ. في حال جراحات المفاصل أو القلب، نوصي بقمصان تفتح من الأمام وبنطلونات فضفاضة. لا تنسَ محولات الكهرباء ونقوداً هندية محلية (روبية) للمعاملات الصغيرة.'
+  },
+  {
+    slug: 'joint-replacement-kerala-gcc-guide',
+    title: 'Joint Replacement in Kerala: A Guide for Omani & GCC Patients',
+    titleAr: 'استبدال المفاصل في كيرلا: دليل شامل لمرضى عمان والخليج العربي',
+    excerpt: 'Why GCC patients travel to Kozhikode (Calicut) for JCI-accredited knee and hip replacements. Connective flights, halal compliance, and recovery timelines.',
+    excerptAr: 'لماذا يسافر مرضى الخليج إلى كوزيكود لإجراء جراحات استبدال الركبة والورك مع اعتمادات JCI. الرحلات المباشرة، الأطعمة الحلال وفترات النقاهة.',
+    date: 'June 28, 2026',
+    category: 'GCC Patient Guides',
+    categoryAr: 'أدلة المرضى الخليجيين',
+    readTime: '6 min read',
+    content: 'Joint replacement surgery (knee and hip arthroplasty) in Kerala has become a premier destination for patients from Oman, UAE, and Qatar. Key private hospitals in Calicut like Aster MIMS and Meitra hold Joint Commission International (JCI) accreditation, using US-made FDA-approved titanium implants. The primary attraction for Omani patients is direct flight connectivity (Calicut is just 3.5 hours from Muscat and Salalah via Oman Air and Air India Express). Furthermore, Calicut is fully hospitable to GCC cultures: hotels and hospital suites serve Halal food, and TreatInKerala provides dedicated Arabic medical translators free of charge. A typical knee replacement stay requires 10 to 14 days, including customized physiotherapy to restore complete, pain-free mobility before you fly back.',
+    contentAr: 'أصبحت جراحات استبدال المفاصل (الركبة والورك) في كيرلا خياراً مفضلاً لمرضى سلطنة عمان والإمارات وقطر. تضم كوزيكود (كالكوت) مشافي رائدة معتمدة دولياً من اللجنة الدولية (JCI) مثل أستر ميمس وميترا، وتستخدم الغرسات الطبية المصنوعة من التيتانيوم والمعتمدة من إدارة الغذاء والدواء الأمريكية. يتمثل عامل الجذب الأساسي للمرضى العمانيين في رحلات الطيران المباشرة والقصيرة (حوالي ٣ ساعات ونصف من مسقط وصلالة). بالإضافة إلى ذلك، كيرلا مهيأة بالكامل للثقافة العربية: حيث تتوفر الأطعمة الحلال في الفنادق وأجنحة المشافي، وتقدم خدمة تريت إن كيرلا مترجمين طبيين يتحدثون العربية بطلاقة مجاناً. تتطلب الرحلة عادةً إقامة لمدة ١٠ إلى ١٤ يوماً تشمل جلسات العلاج الطبيعي والتأهيل الطبي المكثف لضمان الحركة السهلة قبل السفر للوطن.'
+  },
+  {
+    slug: 'ayurveda-wellness-kerala-uk-europe-guide',
+    title: 'Ayurveda Rejuvenation & Executive Checkups: A Guide for UK & European Patients',
+    titleAr: 'الأيورفيدا والفحوصات الشاملة: دليل المرضى والسياح من بريطانيا وأوروبا',
+    excerpt: 'How UK and European visitors combine authentic Panchakarma detoxification retreats with advanced medical health checkups in Kerala.',
+    excerptAr: 'كيف يدمج السياح من بريطانيا وأوروبا بين علاجات تنقية الجسم بالبانشاكارما والفحوصات الطبية التنفيذية الشاملة في كيرلا.',
+    date: 'June 25, 2026',
+    category: 'International Wellness',
+    categoryAr: 'الاستشفاء الدولي',
+    readTime: '5 min read',
+    content: 'For visitors from the United Kingdom and Europe, Kerala offers a unique combination of traditional Ayurvedic healing and world-class preventive modern medicine. Many patients travel to Kozhikode for a 14-day Panchakarma detoxification cycle to treat stress, chronic pain, and digestive issues at premium, government-certified green leaf wellness retreats. During the same trip, patients undergo comprehensive executive health screenings at accredited hospitals for a fraction of private GP costs in London or Munich. Under the supervision of qualified Ayurvedic doctors (Vaidyas) and modern clinical experts, this dual approach ensures complete mental and physical restoration. Flights to Calicut are convenient via major hubs in the GCC, and English is widely spoken by all clinical personnel.',
+    contentAr: 'بالنسبة للزوار والسياح من المملكة المتحدة وأوروبا، توفر كيرلا مزيجاً فريداً يجمع بين علاجات الأيورفيدا التقليدية والطب الحديث الوقائي بمستويات عالمية. يسافر العديد من المرضى إلى كوزيكود لقضاء دورة تنقية السموم بالبانشاكارما (١٤ يوماً) لعلاج التوتر والآلام المزمنة والتهابات المفاصل في منتجعات استشفائية بيئية معتمدة بتصنيف الغصن الأخضر الحكومي. وفي الوقت نفسه، يستغل السياح الفرصة لإجراء فحوصات طبية وتنفيذية شاملة في المستشفيات الحديثة المعتمدة بتكلفة رمزية مقارنة بالعيادات الخاصة في لندن أو ميونخ. وتحت إشراف أطباء الأيورفيدا الاستشاريين والأطباء الاختصاصيين، يضمن هذا النهج المزدوج تجديداً كاملاً للنشاط الجسدي والنفسي، مع انتشار واسع للغة الإنجليزية لدى كافة الطواقم الطبية.'
   }
 ];
 
