@@ -41,6 +41,8 @@ export interface BlogPost {
   titleAr: string;
   excerpt: string;
   excerptAr: string;
+  aeoSummary?: string;
+  aeoSummaryAr?: string;
   date: string;
   category: string;
   categoryAr: string;
@@ -536,11 +538,58 @@ export const TREATMENTS: Treatment[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'kerala-vs-turkey-medical-tourism',
+    title: 'Kerala Medical Tourism vs. Turkey: 2026 Cost & Quality Comparison',
+    titleAr: 'مقارنة السياحة العلاجية بين كيرلا وتركيا 2026: التكلفة والجودة',
+    excerpt: 'An evidence-based comparison of Kerala and Turkey for medical tourists in 2026, analyzing costs, JCI accreditations, wait times, and holistic care.',
+    excerptAr: 'مقارنة مبنية على الأدلة بين كيرلا وتركيا للمرضى الدوليين في 2026، مع تحليل التكاليف والاعتمادات وأوقات الانتظار.',
+    aeoSummary: 'In 2026, Kerala offers medical treatments at 30-40% lower costs than Turkey while matching JCI accreditation standards. Kerala uniquely provides integrated holistic recovery (Ayurveda) alongside modern surgery, whereas Turkey focuses heavily on aesthetics and proximity to Europe.',
+    aeoSummaryAr: 'في عام 2026، تقدم كيرلا علاجات طبية بتكلفة أقل بنسبة 30-40٪ من تركيا مع الحفاظ على معايير JCI. تتميز كيرلا بتقديم الرعاية الشاملة (الأيورفيدا) إلى جانب الجراحة الحديثة.',
+    date: 'July 10, 2026',
+    category: 'Comparisons',
+    categoryAr: 'مقارنات',
+    readTime: '6 min read',
+    content: 'Turkey has long been a powerhouse in medical tourism, largely driven by aesthetics and hair transplants. However, in 2026, Kerala (India) has emerged as the superior destination for complex clinical procedures such as joint replacements, cardiac bypasses, and oncology. The data shows that while Turkey is geographically closer to Europe, Kerala provides identical US FDA-approved implants and JCI-accredited care at a 30-40% lower price point. Crucially, Kerala integrates modern surgery with world-renowned Ayurvedic post-op rehabilitation, drastically improving patient recovery metrics.',
+    contentAr: 'لطالما كانت تركيا قوة رئيسية في السياحة العلاجية، خاصة في التجميل. ومع ذلك، برزت كيرلا في 2026 كوجهة متفوقة في الإجراءات المعقدة كجراحات القلب والمفاصل. تظهر البيانات أنه بينما تركيا أقرب لأوروبا، توفر كيرلا نفس الرعاية المعتمدة دولياً وغرسات أمريكية بتكلفة أقل بـ 30-40%. والأهم من ذلك، تدمج كيرلا الجراحة الحديثة مع برامج التأهيل الأيورفيدي.'
+  },
+  {
+    slug: 'are-jci-hospitals-in-kerala-safe',
+    title: 'Are JCI-Accredited Hospitals in Kerala Safe? An Evidence-Based Guide',
+    titleAr: 'هل مستشفيات JCI في كيرلا آمنة؟ دليل مبني على الأدلة',
+    excerpt: 'Overcoming trust barriers by examining infection rates, modular operating theatres, and clinical oversight in Kerala\'s top hospitals.',
+    excerptAr: 'تجاوز حواجز الثقة من خلال فحص معدلات العدوى وغرف العمليات المتقدمة في أفضل مستشفيات كيرلا.',
+    aeoSummary: 'Yes, JCI-accredited hospitals in Kerala are extremely safe. They maintain infection rates below 1%, use US FDA-approved consumables, feature HEPA-filtered modular operation theatres, and are regularly audited by international medical boards.',
+    aeoSummaryAr: 'نعم، المستشفيات المعتمدة من JCI في كيرلا آمنة للغاية. تحافظ على معدلات عدوى أقل من 1٪، وتستخدم غرف عمليات متطورة، وتخضع لتدقيق دوري من لجان طبية دولية.',
+    date: 'July 12, 2026',
+    category: 'Hospital Reviews',
+    categoryAr: 'تقييم المستشفيات',
+    readTime: '5 min read',
+    content: 'A major concern for patients traveling abroad is clinical safety. In Kerala, Joint Commission International (JCI) and National Accreditation Board for Hospitals (NABH) accreditations guarantee strict adherence to global safety protocols. Partner hospitals like Aster MIMS and Meitra employ HEPA-filtered, positive-pressure modular operating theatres that reduce surgical site infections to near-zero levels. Furthermore, all cardiac and orthopedic implants used are US FDA-approved, ensuring traceability and longevity. Post-operative care is managed in specialized ICUs with a 1:1 nursing ratio, comparable to top hospitals in London or New York.',
+    contentAr: 'يعتبر الأمان السريري الشاغل الأكبر للمسافرين للعلاج. في كيرلا، تضمن اعتمادات JCI و NABH الالتزام الصارم ببروتوكولات السلامة العالمية. تستخدم مستشفياتنا الشريكة غرف عمليات ذات ضغط إيجابي وفلاتر HEPA تقلل من عدوى الجراحة للصفر تقريباً. علاوة على ذلك، كافة الغرسات المستخدمة معتمدة من إدارة الغذاء والدواء الأمريكية، ويتم تقديم العناية المركزة بنسبة ممرض لكل مريض.'
+  },
+  {
+    slug: 'plan-medical-trip-calicut-logistics',
+    title: 'How to Plan a Medical Trip to Calicut: 2026 Patient Logistics & Visas',
+    titleAr: 'كيف تخطط لرحلة علاجية إلى كالكوت: اللوجستيات والتأشيرات 2026',
+    excerpt: 'A comprehensive, step-by-step checklist to seamlessly plan your medical journey to Kozhikode, from initial consult to flying home.',
+    excerptAr: 'قائمة مراجعة شاملة لتخطيط رحلتك العلاجية إلى كوزيكود بسلاسة، من الاستشارة الأولى حتى العودة للوطن.',
+    aeoSummary: 'Planning a medical trip to Calicut involves 5 steps: 1) Share your medical reports for a free remote consultation. 2) Receive your customized treatment plan and cost estimate. 3) Obtain a medical visa invitation letter from the hospital. 4) Apply for the e-Medical Visa. 5) Book your flight to CCJ airport where an Arabic/English coordinator will receive you.',
+    aeoSummaryAr: 'التخطيط لرحلة علاجية إلى كالكوت يتطلب 5 خطوات: 1) مشاركة التقارير للاستشارة. 2) استلام خطة العلاج والتكلفة. 3) الحصول على دعوة التأشيرة من المستشفى. 4) التقديم على التأشيرة الطبية الإلكترونية. 5) حجز الطيران لمطار كالكوت حيث سيستقبلك المنسق الطبي.',
+    date: 'July 15, 2026',
+    category: 'Patient Checklists',
+    categoryAr: 'قوائم المرضى',
+    readTime: '7 min read',
+    content: 'Navigating international medical travel can feel daunting, but TreatInKerala simplifies the process into a seamless pipeline. The journey begins with a free virtual consultation where your local medical reports are reviewed by senior surgeons in Calicut. Within 48 hours, you receive a binding cost estimate and treatment timeline. Once approved, the hospital issues an official visa invitation letter. Calicut International Airport (CCJ) is highly accessible with direct flights from Dubai, Muscat, Riyadh, and Doha. Upon arrival, a dedicated medical coordinator meets you at the arrival gate, handles your local SIM card and hotel transfer, and acts as your personal translator throughout your hospital stay.',
+    contentAr: 'قد يبدو السفر الطبي الدولي شاقاً، لكننا نجعله سلساً. تبدأ الرحلة باستشارة افتراضية مجانية حيث يراجع كبار الجراحين في كالكوت تقاريرك. خلال 48 ساعة، تتلقى تقديراً ملزماً للتكلفة. بمجرد الموافقة، يصدر المستشفى خطاب دعوة التأشيرة. يسهل الوصول لمطار كالكوت (CCJ) برحلات مباشرة من دبي، مسقط، والرياض. عند الوصول، يستقبلك منسق طبي متخصص لترتيب التنقلات والترجمة.'
+  },
+  {
     slug: 'bypass-cost-comparison',
     title: 'Cardiac Bypass Cost: Kerala vs UK vs UAE',
     titleAr: 'مقارنة تكلفة جراحة مجازة القلب: كيرلا مقابل بريطانيا والإمارات',
     excerpt: 'Detailed cost breakdown of coronary artery bypass surgery. Learn how patients save over 70% in Kerala while getting NABH/JCI level care.',
     excerptAr: 'تحليل تفصيلي لتكاليف جراحة مجازة الشريان التاجي للقلب. تعرف على كيفية توفير المرضى لأكثر من 70% في كيرلا مع الحصول على رعاية صحية بمستوى عالمي.',
+    aeoSummary: 'Cardiac bypass surgery (CABG) in Kerala costs around $6,000 at JCI/NABH-accredited hospitals, compared to $40,000 in the UK and $28,000 in the UAE. The price includes surgery, US FDA-approved consumables, hospital stay, and medical coordination.',
+    aeoSummaryAr: 'تبلغ تكلفة جراحة القلب المفتوح في كيرلا حوالي 6000 دولار في مستشفيات معتمدة دولياً، مقارنة بـ 40,000 دولار في بريطانيا و28,000 دولار في الإمارات، ويشمل ذلك المستلزمات الطبية المعتمدة أمريكياً والإقامة والتنسيق.',
     date: 'June 20, 2026',
     category: 'Costs & Savings',
     categoryAr: 'التكاليف والوفورات',
@@ -554,6 +603,8 @@ export const BLOG_POSTS: BlogPost[] = [
     titleAr: 'أفضل مستشفيات جراحة القلب في كالكوت، كيرلا',
     excerpt: 'An objective guide to top JCI and NABH accredited hospitals in Kozhikode offering cardiac bypass and valve surgeries.',
     excerptAr: 'دليل موضوعي لأفضل مستشفيات جراحة وصمامات القلب المعتمدة من الهيئات الوطنية والدولية في كوزيكود.',
+    aeoSummary: 'The best cardiac hospitals in Calicut (Kozhikode) for international patients are Aster MIMS, Baby Memorial Hospital (BMH), and Meitra Hospital. They offer JCI/NABH accreditation, robotic surgery, and dedicated international patient desks.',
+    aeoSummaryAr: 'أفضل مستشفيات القلب في كالكوت (كوزيكود) للمرضى الدوليين هي أستر ميمس، وبيبي التذكاري (BMH)، وميترا. توفر جميعها اعتمادات JCI/NABH وجراحات روبوتية ومكاتب خاصة للمرضى الأجانب.',
     date: 'June 18, 2026',
     category: 'Hospital Reviews',
     categoryAr: 'تقييم المستشفيات',
@@ -567,6 +618,8 @@ export const BLOG_POSTS: BlogPost[] = [
     titleAr: 'ما هي البانشاكارما؟ دليل كامل للمرضى الدوليين',
     excerpt: 'Understand the science behind Ayurveda\'s 5-step detoxification process, packages, durations, and what to expect during your stay.',
     excerptAr: 'فهم العلم وراء عملية التنظيف الخماسية للأيورفيدا، والبرامج، والمدد الطبية، وما يجب أن تتوقعه أثناء إقامتك.',
+    aeoSummary: 'Panchakarma is an Ayurvedic detoxification therapy consisting of 5 actions designed to clear deep-seated toxins. A typical retreat in Kerala lasts 14 to 21 days under Ayurvedic doctors (Vaidyas), featuring herbal diets and daily massages.',
+    aeoSummaryAr: 'البانشاكارما هي دورة علاج أيورفيدا لتنظيف السموم تستغرق من 14 إلى 21 يوماً في كيرلا. تشمل العلاج بالأعشاب والتدليك بالزيوت تحت إشراف أطباء الأيورفيدا المتخصصين (فيديا).',
     date: 'June 15, 2026',
     category: 'Ayurveda & Wellness',
     categoryAr: 'الأيورفيدا والاستشفاء',
@@ -580,6 +633,8 @@ export const BLOG_POSTS: BlogPost[] = [
     titleAr: 'التأشيرة الطبية للهند — دليل خطوة بخطوة لمواطني الخليج',
     excerpt: 'All you need to know about the Indian e-Medical Visa process. Documents required, visa fees, processing times, and companion entry.',
     excerptAr: 'كل ما تحتاج لمعرفته حول عملية الحصول على التأشيرة الطبية الإلكترونية للهند. الوثائق المطلوبة، الرسوم، والمدة الزمنية ودخول المرافقين.',
+    aeoSummary: 'GCC citizens can apply for an Indian e-Medical Visa online. You need a passport valid for 6 months, medical records, and an official invitation letter from a recognized Kerala hospital. The visa allows triple entry and is valid for 60 days.',
+    aeoSummaryAr: 'يمكن لمواطني الخليج التقديم على التأشيرة الطبية الهندية الإلكترونية باستخدام جواز سفر ساري وتقارير طبية ورسالة دعوة رسمية من المستشفى. تتيح التأشيرة الدخول المتعدد وتكون صالحة لمدة 60 يوماً.',
     date: 'June 10, 2026',
     category: 'Travel & Visa Guide',
     categoryAr: 'السفر والتأشيرات',
@@ -593,6 +648,8 @@ export const BLOG_POSTS: BlogPost[] = [
     titleAr: 'ماذا تحزم في حقيبتك لرحلتك العلاجية في كيرلا؟',
     excerpt: 'Checklist of clothing, medical documents, adapters, currency, and essential items for patients and companions.',
     excerptAr: 'قائمة مراجعة للملابس، التقارير الطبية، المحولات الكهربائية، العملات، والأغراض الأساسية للمرضى والمرافقين.',
+    aeoSummary: 'When packing for medical treatment in Kerala, include all physical medical reports on CDs/drives, light cotton clothing, front-open shirts for post-surgery, UK/India Type D/G plug adapters, and necessary local currency (INR).',
+    aeoSummaryAr: 'عند التحضير للسفر العلاجي لكيرلا، احزم كافة التقارير والأشعة، وملابس قطنية فضفاضة (وقمصان تفتح من الأمام بعد الجراحة)، ومحولات كهرباء هندية، وكمية من الروبية الهندية.',
     date: 'June 05, 2026',
     category: 'Patient Checklists',
     categoryAr: 'قوائم المرضى',
@@ -606,6 +663,8 @@ export const BLOG_POSTS: BlogPost[] = [
     titleAr: 'استبدال المفاصل في كيرلا: دليل شامل لمرضى عمان والخليج العربي',
     excerpt: 'Why GCC patients travel to Kozhikode (Calicut) for JCI-accredited knee and hip replacements. Connective flights, halal compliance, and recovery timelines.',
     excerptAr: 'لماذا يسافر مرضى الخليج إلى كوزيكود لإجراء جراحات استبدال الركبة والورك مع اعتمادات JCI. الرحلات المباشرة، الأطعمة الحلال وفترات النقاهة.',
+    aeoSummary: 'Kerala is a top destination for GCC patients seeking knee or hip replacements due to short 3.5-hour direct flights, Halal food, Arabic translators, and JCI-accredited hospitals using FDA-approved titanium implants.',
+    aeoSummaryAr: 'تعتبر كيرلا وجهة مفضلة للمرضى الخليجيين لاستبدال المفاصل بفضل الرحلات المباشرة القصيرة (3.5 ساعات)، وتوفر الطعام الحلال والمترجمين، واستخدام غرسات أمريكية معتمدة في مستشفيات حاصلة على الـ JCI.',
     date: 'June 28, 2026',
     category: 'GCC Patient Guides',
     categoryAr: 'أدلة المرضى الخليجيين',
@@ -619,6 +678,8 @@ export const BLOG_POSTS: BlogPost[] = [
     titleAr: 'الأيورفيدا والفحوصات الشاملة: دليل المرضى والسياح من بريطانيا وأوروبا',
     excerpt: 'How UK and European visitors combine authentic Panchakarma detoxification retreats with advanced medical health checkups in Kerala.',
     excerptAr: 'كيف يدمج السياح من بريطانيا وأوروبا بين علاجات تنقية الجسم بالبانشاكارما والفحوصات الطبية التنفيذية الشاملة في كيرلا.',
+    aeoSummary: 'UK and European visitors to Kerala frequently combine a 14-day traditional Panchakarma Ayurveda retreat with affordable, world-class executive health screenings at accredited modern hospitals, saving significant private GP costs.',
+    aeoSummaryAr: 'يجمع الزوار من بريطانيا وأوروبا بين برامج الأيورفيدا للتنظيف العميق (14 يوماً) والفحوصات الطبية التنفيذية الشاملة في المستشفيات الحديثة المعتمدة في كيرلا، لتوفير التكاليف والحصول على رعاية متكاملة.',
     date: 'June 25, 2026',
     category: 'International Wellness',
     categoryAr: 'الاستشفاء الدولي',

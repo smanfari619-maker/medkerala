@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { BLOG_POSTS } from '@/lib/data';
-import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Zap } from 'lucide-react';
 import { Metadata } from 'next';
 
 interface Props {
@@ -48,11 +48,40 @@ export default async function BlogPostPage({ params }: Props) {
   const category = isRtl ? post.categoryAr : post.category;
   const content = isRtl ? post.contentAr : post.content;
 
+  const aeoSummary = isRtl ? post.aeoSummaryAr : post.aeoSummary;
+
   // Get related posts (excluding current)
   const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 2);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: isRtl ? post.excerptAr : post.excerpt,
+    articleSection: category,
+    datePublished: post.date,
+    author: {
+      '@type': 'Organization',
+      name: 'TreatInKerala Medical Panel',
+      url: 'https://treatinkerala.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'TreatInKerala',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://treatinkerala.com/${locale}/blog/${slug}`,
+    },
+  };
+
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Link */}
@@ -92,9 +121,21 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
 
+          {aeoSummary && (
+            <div className="bg-slate-50 border border-primary-green/20 rounded-2xl p-6 shadow-sm my-6 flex flex-col gap-3">
+              <div className="flex items-center gap-2 text-primary-green font-bold">
+                <Zap className="h-5 w-5 fill-primary-green" />
+                <span>{locale === 'ar' ? 'ملخص سريع (إجابة الذكاء الاصطناعي)' : 'AI Quick Answer'}</span>
+              </div>
+              <p className="text-text-dark text-lg leading-relaxed font-medium">
+                {aeoSummary}
+              </p>
+            </div>
+          )}
+
           {/* Long-form content */}
           <div className="text-text-dark text-lg leading-relaxed font-sans space-y-6 border-b border-slate-100 pb-10">
-            <p>{content}</p>
+            <p className="whitespace-pre-line">{content}</p>
             
             <div className="bg-[#FAF7F2] p-6 rounded-2xl border-l-4 border-primary-green text-base text-text-muted mt-8 leading-relaxed">
               {locale === 'ar'
@@ -164,5 +205,6 @@ export default async function BlogPostPage({ params }: Props) {
         )}
       </div>
     </div>
+    </>
   );
 }
