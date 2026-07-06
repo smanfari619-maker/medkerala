@@ -180,7 +180,7 @@ export default async function AyurvedaPage({ params }: Props) {
               return (
                 <div
                   key={t.en.name}
-                  className="bg-white rounded-3xl p-8 border border-[#D4A96A]/15 hover:border-[#2D6A4F]/30 hover:shadow-xl transition-all duration-300 group flex flex-col"
+                  className="bg-white rounded-3xl p-8 border border-[#D4A96A]/30 hover:border-[#2D6A4F]/30 hover:shadow-xl transition-all duration-300 group flex flex-col"
                 >
                   <div className="h-12 w-12 rounded-2xl bg-[#2D6A4F]/10 flex items-center justify-center mb-5 group-hover:bg-[#2D6A4F] transition-colors duration-300">
                     <t.icon className="h-6 w-6 text-[#2D6A4F] group-hover:text-white transition-colors duration-300" />
@@ -222,7 +222,7 @@ export default async function AyurvedaPage({ params }: Props) {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {conditions.map((c) => (
-                  <div key={c.en} className="flex items-center gap-3 bg-[#FAF7F2] border border-[#D4A96A]/15 rounded-xl px-4 py-3">
+                  <div key={c.en} className="flex items-center gap-3 bg-[#FAF7F2] border border-[#D4A96A]/30 rounded-xl px-4 py-3">
                     <CheckCircle className="h-4.5 w-4.5 text-[#2D6A4F] shrink-0" />
                     <span className="text-text-dark font-medium text-sm">{isRtl ? c.ar : c.en}</span>
                   </div>

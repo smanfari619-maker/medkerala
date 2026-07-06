@@ -29,7 +29,7 @@ export default async function BlogPage({ params }: Props) {
   const regularPosts = BLOG_POSTS.slice(1);
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -49,11 +49,11 @@ export default async function BlogPage({ params }: Props) {
 
         {/* Featured Post Card */}
         {featuredPost && (
-          <div className="bg-white rounded-3xl border border-[#D4A96A]/20 overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 mb-16 grid grid-cols-1 lg:grid-cols-12">
+          <div className="bg-white rounded-3xl border border-[#D4A96A]/35 overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 mb-16 grid grid-cols-1 lg:grid-cols-12">
             <div className="p-8 sm:p-12 lg:col-span-8 space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-text-muted">
-                  <span className="bg-[#FAF7F2] border border-[#D4A96A]/20 text-[#D4A96A] px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span className="bg-[#FAF7F2] border border-[#D4A96A]/35 text-[#D4A96A] px-3 py-1 rounded-full uppercase tracking-wider">
                     {isRtl ? featuredPost.categoryAr : featuredPost.category}
                   </span>
                   <span className="flex items-center gap-1">
@@ -92,7 +92,7 @@ export default async function BlogPage({ params }: Props) {
               </div>
             </div>
             {/* Visual placeholder box */}
-            <div className="lg:col-span-4 bg-primary-dark border-l border-[#D4A96A]/20 flex items-center justify-center p-8 text-center min-h-[220px]">
+            <div className="lg:col-span-4 bg-primary-dark border-l border-[#D4A96A]/35 flex items-center justify-center p-8 text-center min-h-[220px]">
               <BookOpen className="h-16 w-16 text-[#D4A96A]" />
             </div>
           </div>
@@ -103,11 +103,11 @@ export default async function BlogPage({ params }: Props) {
           {regularPosts.map((post) => (
             <div
               key={post.slug}
-              className="bg-white rounded-3xl p-8 border border-[#D4A96A]/20 hover:border-primary-green/40 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-3xl p-8 border border-[#D4A96A]/35 hover:border-primary-green/40 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
             >
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-3.5 text-xs text-text-muted font-semibold">
-                  <span className="bg-[#FAF7F2] border border-[#D4A96A]/20 text-[#D4A96A] px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                  <span className="bg-[#FAF7F2] border border-[#D4A96A]/35 text-[#D4A96A] px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                     {isRtl ? post.categoryAr : post.category}
                   </span>
                   <span className="flex items-center gap-1">

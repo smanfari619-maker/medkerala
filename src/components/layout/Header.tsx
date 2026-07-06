@@ -68,7 +68,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#FAF7F2]/96 backdrop-blur-md shadow-sm border-b border-[#D4A96A]/20 py-2'
+          ? 'bg-[#FAF7F2]/96 backdrop-blur-md shadow-sm border-b border-[#D4A96A]/35 py-2'
           : 'bg-[#FAF7F2] py-3.5'
       }`}
     >
@@ -127,7 +127,7 @@ export default function Header() {
               </button>
 
               {moreOpen && (
-                <div className="absolute top-full mt-2 left-0 w-48 bg-white rounded-2xl shadow-xl border border-[#D4A96A]/15 py-2 z-50 animate-fade-in">
+                <div className="absolute top-full mt-2 left-0 w-48 bg-white rounded-2xl shadow-xl border border-[#D4A96A]/30 py-2 z-50 animate-fade-in">
                   {/* subtle divider between sections */}
                   {secondaryNav.map((item, i) => {
                     const Icon = item.icon;
@@ -135,7 +135,7 @@ export default function Header() {
                     return (
                       <React.Fragment key={item.href}>
                         {i === 2 && (
-                          <div className="my-1.5 mx-3 border-t border-[#D4A96A]/15" />
+                          <div className="my-1.5 mx-3 border-t border-[#D4A96A]/30" />
                         )}
                         <Link
                           href={item.href}

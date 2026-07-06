@@ -109,7 +109,7 @@ export default async function PrivacyPage({ params }: Props) {
         </div>
 
         {/* Content Cards */}
-        <div className="bg-white rounded-3xl border border-[#D4A96A]/20 shadow-xl p-8 sm:p-10 space-y-8">
+        <div className="bg-white rounded-3xl border border-[#D4A96A]/35 shadow-xl p-8 sm:p-10 space-y-8">
           {content.sections.map((sec, idx) => {
             const Icon = sec.icon;
             return (

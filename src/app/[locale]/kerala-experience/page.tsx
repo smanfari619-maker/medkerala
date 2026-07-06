@@ -55,7 +55,7 @@ export default async function KeralaExperiencePage({ params }: Props) {
   ];
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -80,11 +80,11 @@ export default async function KeralaExperiencePage({ params }: Props) {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-3xl p-8 border border-[#D4A96A]/20 hover:border-primary-green/40 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-3xl p-8 border border-[#D4A96A]/35 hover:border-primary-green/40 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-xs font-bold text-[#D4A96A] bg-[#FAF7F2] border border-[#D4A96A]/20 px-3 py-1 rounded-full flex items-center gap-1">
+                    <span className="text-xs font-bold text-[#D4A96A] bg-[#FAF7F2] border border-[#D4A96A]/35 px-3 py-1 rounded-full flex items-center gap-1">
                       <MapPin className="h-3.5 w-3.5 shrink-0" />
                       <span>{pkg.loc}</span>
                     </span>

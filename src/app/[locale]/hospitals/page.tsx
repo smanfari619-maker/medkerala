@@ -344,7 +344,7 @@ export default function HospitalsDirectoryPage() {
   }, [activeType, searchQuery]);
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
@@ -363,7 +363,7 @@ export default function HospitalsDirectoryPage() {
         </div>
 
         {/* Search & Filter Controls */}
-        <div className="bg-white border border-[#D4A96A]/20 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 mb-10 max-w-4xl mx-auto relative overflow-hidden">
+        <div className="bg-white border border-[#D4A96A]/35 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 mb-10 max-w-4xl mx-auto relative overflow-hidden">
           {/* Decorative ambient background glows */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-green/5 rounded-full filter blur-3xl pointer-events-none" />
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-gold/5 rounded-full filter blur-3xl pointer-events-none" />
@@ -381,7 +381,7 @@ export default function HospitalsDirectoryPage() {
                   placeholder={isRtl ? 'ابحث باسم المستشفى، التخصص، أو المدينة...' : 'Search by hospital name, specialty, or city...'}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full ps-12 pe-10 py-3 bg-[#FAF7F2]/60 hover:bg-[#FAF7F2] focus:bg-white border border-[#D4A96A]/20 hover:border-primary-green/30 focus:border-primary-green rounded-2xl focus:outline-hidden focus:ring-2 focus:ring-primary-green/10 text-sm text-text-dark placeholder-text-muted/40 transition-all duration-300 font-sans"
+                  className="w-full ps-12 pe-10 py-3 bg-[#FAF7F2]/60 hover:bg-[#FAF7F2] focus:bg-white border border-[#D4A96A]/35 hover:border-primary-green/30 focus:border-primary-green rounded-2xl focus:outline-hidden focus:ring-2 focus:ring-primary-green/10 text-sm text-text-dark placeholder-text-muted/40 transition-all duration-300 font-sans"
                 />
                 {searchQuery && (
                   <button
@@ -395,7 +395,7 @@ export default function HospitalsDirectoryPage() {
               </div>
 
               {/* Filter Tabs - Premium Segmented Controls */}
-              <div className="lg:col-span-5 flex p-1 bg-[#FAF7F2] border border-[#D4A96A]/15 rounded-2xl gap-1">
+              <div className="lg:col-span-5 flex p-1 bg-[#FAF7F2] border border-[#D4A96A]/30 rounded-2xl gap-1">
                 {[
                   { key: 'all' as const, labelEn: 'All Streams', labelAr: 'الجميع', icon: LayoutGrid },
                   { key: 'allopathy' as const, labelEn: 'Modern', labelAr: 'الطب الحديث', icon: Stethoscope },
@@ -423,7 +423,7 @@ export default function HospitalsDirectoryPage() {
             </div>
 
             {/* Quick Search Tags & Match Counter */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-t border-[#D4A96A]/10 text-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-t border-[#D4A96A]/40 text-xs">
               
               {/* Popular tags list */}
               <div className="flex items-center gap-1.5 flex-wrap">
@@ -454,7 +454,7 @@ export default function HospitalsDirectoryPage() {
                       className={`px-2.5 py-1 rounded-lg border transition-all duration-200 cursor-pointer font-sans ${
                         isSelected
                           ? 'bg-primary-green/10 border-primary-green/30 text-primary-green font-semibold'
-                          : 'bg-[#FAF7F2] border-[#D4A96A]/15 text-text-muted hover:border-primary-green/30 hover:text-primary-green'
+                          : 'bg-[#FAF7F2] border-[#D4A96A]/30 text-text-muted hover:border-primary-green/30 hover:text-primary-green'
                       }`}
                     >
                       {tag.label}
@@ -464,7 +464,7 @@ export default function HospitalsDirectoryPage() {
               </div>
 
               {/* Dynamic Matches Counter */}
-              <div className="text-text-muted/70 font-semibold font-sans flex items-center gap-1.5 shrink-0 bg-[#FAF7F2] border border-[#D4A96A]/10 px-3 py-1.5 rounded-full shadow-2xs self-start sm:self-auto">
+              <div className="text-text-muted/70 font-semibold font-sans flex items-center gap-1.5 shrink-0 bg-[#FAF7F2] border border-[#D4A96A]/40 px-3 py-1.5 rounded-full shadow-2xs self-start sm:self-auto">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary-green animate-pulse" />
                 <span>
                   {isRtl
@@ -491,7 +491,7 @@ export default function HospitalsDirectoryPage() {
               return (
                 <div
                   key={hospital.id}
-                  className="bg-white rounded-3xl p-6 sm:p-8 border border-[#D4A96A]/20 hover:border-primary-green/40 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group glow-card-green"
+                  className="bg-white rounded-3xl p-6 sm:p-8 border border-[#D4A96A]/35 hover:border-primary-green/40 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group glow-card-green"
                   dir={isRtl ? 'rtl' : 'ltr'}
                 >
                   <div>
@@ -586,7 +586,7 @@ export default function HospitalsDirectoryPage() {
           </div>
         ) : (
           /* Empty Search Result */
-          <div className="text-center py-20 bg-white border border-[#D4A96A]/20 rounded-3xl max-w-2xl mx-auto space-y-6 shadow-xs px-6 mb-16">
+          <div className="text-center py-20 bg-white border border-[#D4A96A]/35 rounded-3xl max-w-2xl mx-auto space-y-6 shadow-xs px-6 mb-16">
             <Building2 className="h-12 w-12 text-[#D4A96A]/60 mx-auto" />
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-text-dark font-sans">

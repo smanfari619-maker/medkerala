@@ -31,12 +31,12 @@ export default async function TreatmentsPage({ params }: Props) {
   const costsFromText = isRtl ? 'أسعار تبدأ من' : 'Costs from';
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="flex justify-center">
-            <span className="inline-flex items-center gap-1.5 bg-white border border-[#D4A96A]/20 text-xs font-bold text-primary-dark px-3 py-1 rounded-full shadow-xs">
+            <span className="inline-flex items-center gap-1.5 bg-white border border-[#D4A96A]/35 text-xs font-bold text-primary-dark px-3 py-1 rounded-full shadow-xs">
               <span className="text-[#FFA500]">★</span>
               <span>4.9/5</span>
               <span className="text-slate-300">|</span>
@@ -59,7 +59,7 @@ export default async function TreatmentsPage({ params }: Props) {
         </div>
 
         {/* Pricing Transparency Explainer Banner */}
-        <div className="bg-white border border-[#D4A96A]/20 rounded-2xl p-4 mb-8 flex gap-3 items-center text-xs text-text-muted justify-between flex-wrap shadow-xs">
+        <div className="bg-white border border-[#D4A96A]/35 rounded-2xl p-4 mb-8 flex gap-3 items-center text-xs text-text-muted justify-between flex-wrap shadow-xs">
           <div className="flex gap-2.5 items-center">
             <span className="text-base">ℹ️</span>
             <p className="font-sans">

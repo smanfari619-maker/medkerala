@@ -129,7 +129,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
     <div className="space-y-10">
       {/* Segmented Toggle Control */}
       <div className="flex justify-center mb-6">
-        <div className="bg-white border border-[#D4A96A]/20 p-1.5 rounded-2xl inline-flex shadow-xs gap-1.5">
+        <div className="bg-white border border-[#D4A96A]/35 p-1.5 rounded-2xl inline-flex shadow-xs gap-1.5">
           <button
             onClick={() => {
               setActiveTab('procedures');
@@ -160,7 +160,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
       </div>
 
       {/* Search, Filter & Sort Controls Panel */}
-      <div className="bg-white border border-[#D4A96A]/20 rounded-3xl p-5 shadow-xs space-y-4">
+      <div className="bg-white border border-[#D4A96A]/35 rounded-3xl p-5 shadow-xs space-y-4">
         {/* Mobile Specialty Scrollable Pills */}
         {activeTab === 'procedures' && (
           <div className="md:hidden overflow-x-auto no-scrollbar scroll-mask-fade flex gap-2 pb-1.5 -mx-5 px-5 scroll-momentum">
@@ -173,7 +173,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
                   className={`px-4 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 tap-active border ${
                     isSelected
                       ? 'bg-primary-green border-primary-green text-white shadow-xs'
-                      : 'bg-[#FAF7F2] border-[#D4A96A]/20 text-text-muted'
+                      : 'bg-[#FAF7F2] border-[#D4A96A]/35 text-text-muted'
                   }`}
                 >
                   {isRtl ? spec.ar : spec.en}
@@ -198,7 +198,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
               }
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-10 py-3 bg-[#FAF7F2] border border-[#D4A96A]/25 rounded-2xl focus:outline-hidden focus:border-primary-green focus:ring-1 focus:ring-primary-green text-sm text-text-dark placeholder-text-muted/50 transition-all font-sans animate-fade-in"
+              className="w-full pl-12 pr-10 py-3 bg-[#FAF7F2] border border-[#D4A96A]/40 rounded-2xl focus:outline-hidden focus:border-primary-green focus:ring-1 focus:ring-primary-green text-sm text-text-dark placeholder-text-muted/50 transition-all font-sans animate-fade-in"
             />
             {searchQuery && (
               <button
@@ -217,7 +217,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
               <select
                 value={selectedSpeciality}
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedSpeciality(e.target.value)}
-                className="w-full bg-[#FAF7F2] border border-[#D4A96A]/25 rounded-2xl py-3 px-4 focus:outline-hidden focus:border-primary-green text-sm text-text-dark font-sans font-medium cursor-pointer"
+                className="w-full bg-[#FAF7F2] border border-[#D4A96A]/40 rounded-2xl py-3 px-4 focus:outline-hidden focus:border-primary-green text-sm text-text-dark font-sans font-medium cursor-pointer"
               >
                 {specialities.map((spec) => (
                   <option key={spec.key} value={spec.key}>
@@ -233,7 +233,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
             <select
               value={sortBy}
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as 'default' | 'price-asc' | 'price-desc')}
-              className="w-full bg-[#FAF7F2] border border-[#D4A96A]/25 rounded-2xl py-3 px-4 focus:outline-hidden focus:border-primary-green text-sm text-text-dark font-sans font-medium cursor-pointer"
+              className="w-full bg-[#FAF7F2] border border-[#D4A96A]/40 rounded-2xl py-3 px-4 focus:outline-hidden focus:border-primary-green text-sm text-text-dark font-sans font-medium cursor-pointer"
             >
               <option value="default">{isRtl ? 'الترتيب: الموصى به' : 'Sort: Recommended'}</option>
               <option value="price-asc">{isRtl ? 'السعر: من الأقل للأعلى' : 'Price: Low to High'}</option>
@@ -258,11 +258,11 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
               return (
                 <div
                   key={treatment.slug}
-                  className="bg-white rounded-3xl p-8 border border-[#D4A96A]/20 hover:border-primary-green/40 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group glow-card-green"
+                  className="bg-white rounded-3xl p-8 border border-[#D4A96A]/35 hover:border-primary-green/40 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group glow-card-green"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#D4A96A] bg-[#FAF7F2] border border-[#D4A96A]/20 px-3 py-1 rounded-full font-sans">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#D4A96A] bg-[#FAF7F2] border border-[#D4A96A]/35 px-3 py-1 rounded-full font-sans">
                         {speciality}
                       </span>
                       <div className="h-10 w-10 rounded-xl bg-primary-green/10 flex items-center justify-center group-hover:bg-primary-green transition-colors duration-300">
@@ -361,8 +361,8 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
           </div>
         ) : (
           /* Treatments Empty State */
-          <div className="text-center py-16 bg-white border border-[#D4A96A]/20 rounded-3xl max-w-2xl mx-auto space-y-6 shadow-xs px-6">
-            <div className="h-16 w-16 bg-[#FAF7F2] border border-[#D4A96A]/20 text-[#D4A96A] rounded-full flex items-center justify-center mx-auto">
+          <div className="text-center py-16 bg-white border border-[#D4A96A]/35 rounded-3xl max-w-2xl mx-auto space-y-6 shadow-xs px-6">
+            <div className="h-16 w-16 bg-[#FAF7F2] border border-[#D4A96A]/35 text-[#D4A96A] rounded-full flex items-center justify-center mx-auto">
               <svg className="h-8 w-8 animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
             </div>
             <div className="space-y-2">
@@ -388,7 +388,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
                   setSelectedSpeciality('All');
                   setSortBy('default');
                 }}
-                className="bg-[#FAF7F2] border border-[#D4A96A]/25 text-[#4A4A6A] hover:text-primary-green hover:border-primary-green/50 font-semibold px-6 py-3 rounded-full text-sm transition-all font-sans min-h-[44px] flex items-center justify-center cursor-pointer"
+                className="bg-[#FAF7F2] border border-[#D4A96A]/40 text-[#4A4A6A] hover:text-primary-green hover:border-primary-green/50 font-semibold px-6 py-3 rounded-full text-sm transition-all font-sans min-h-[44px] flex items-center justify-center cursor-pointer"
               >
                 <span>{isRtl ? 'إعادة تعيين البحث' : 'Reset Search'}</span>
               </button>
@@ -410,7 +410,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
               return (
                 <div
                   key={pkg.id}
-                  className="bg-white rounded-3xl p-8 border border-[#D4A96A]/20 hover:border-primary-green/40 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group glow-card-green"
+                  className="bg-white rounded-3xl p-8 border border-[#D4A96A]/35 hover:border-primary-green/40 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group glow-card-green"
                   dir={isRtl ? 'rtl' : 'ltr'}
                 >
                   <div>
@@ -486,7 +486,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
           </div>
         ) : (
           /* Packages Empty state */
-          <div className="text-center py-20 bg-white border border-[#D4A96A]/20 rounded-3xl max-w-2xl mx-auto space-y-6 shadow-xs px-6">
+          <div className="text-center py-20 bg-white border border-[#D4A96A]/35 rounded-3xl max-w-2xl mx-auto space-y-6 shadow-xs px-6">
             <Shield className="h-12 w-12 text-[#D4A96A]/60 mx-auto" />
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-text-dark font-sans">

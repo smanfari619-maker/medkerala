@@ -44,7 +44,7 @@ export default function WhatsAppFAB() {
       {/* Tooltip chat bubble */}
       {tooltipOpen && (
         <div
-          className={`flex items-start gap-2 bg-white rounded-2xl shadow-xl border border-[#D4A96A]/20 p-4 max-w-[240px]`}
+          className={`flex items-start gap-2 bg-white rounded-2xl shadow-xl border border-[#D4A96A]/35 p-4 max-w-[240px]`}
           style={{ animation: 'fadeInUp 0.3s ease-out' }}
         >
           <div className="flex-1 min-w-0 text-left rtl:text-right">

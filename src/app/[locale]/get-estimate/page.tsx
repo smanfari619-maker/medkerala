@@ -243,7 +243,7 @@ export default function GetEstimatePage() {
     return (
       <div className="py-16 bg-[#FAF7F2] min-h-screen">
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <div className="bg-white rounded-3xl p-10 sm:p-14 border border-[#D4A96A]/20 shadow-xl text-center space-y-6">
+          <div className="bg-white rounded-3xl p-10 sm:p-14 border border-[#D4A96A]/35 shadow-xl text-center space-y-6">
             <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto">
               <CheckCircle className="h-10 w-10 text-emerald-600" />
             </div>
@@ -255,7 +255,7 @@ export default function GetEstimatePage() {
                 ? 'لقد فتحنا محادثة واتساب تحتوي على ملخص طلبك. سيتواصل معك أحد منسقينا الطبيين قريباً لتزويدك بعرض أسعار مؤكد.'
                 : 'We opened WhatsApp with a full summary of your requirements. Our medical coordinator will reach out shortly to discuss your custom estimate.'}
             </p>
-            <div className="bg-[#FAF7F2] rounded-2xl p-5 text-start border border-[#D4A96A]/20 space-y-2">
+            <div className="bg-[#FAF7F2] rounded-2xl p-5 text-start border border-[#D4A96A]/35 space-y-2">
               <p className="text-sm font-bold text-primary-dark font-sans">{isRtl ? 'ما هي الخطوات التالية؟' : 'What happens next?'}</p>
               {[
                 isRtl ? 'يستعرض فريقنا تفاصيل حالتك الطبية' : 'Our team reviews your medical condition details',
@@ -298,7 +298,7 @@ export default function GetEstimatePage() {
         </div>
 
         {/* Step Progress — sticky at the top on mobile */}
-        <div className="sticky top-[60px] lg:top-[76px] z-30 mb-8 bg-[#FAF7F2]/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-[#D4A96A]/15 shadow-sm">
+        <div className="sticky top-[60px] lg:top-[76px] z-30 mb-8 bg-[#FAF7F2]/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-[#D4A96A]/30 shadow-sm">
           <div className="flex items-center justify-between text-xs font-bold text-text-muted mb-4 font-sans">
             <span>{isRtl ? `الخطوة ${step} من ${TOTAL_STEPS}` : `Step ${step} of ${TOTAL_STEPS}`}</span>
             <span className="text-primary-green">{isRtl ? STEPS[step - 1].titleAr : STEPS[step - 1].titleEn}</span>
@@ -330,7 +330,7 @@ export default function GetEstimatePage() {
         </div>
 
         {/* Form Card */}
-        <div className="bg-white rounded-3xl border border-[#D4A96A]/20 shadow-xl overflow-hidden" dir={isRtl ? 'rtl' : 'ltr'}>
+        <div className="bg-white rounded-3xl border border-[#D4A96A]/35 shadow-xl overflow-hidden" dir={isRtl ? 'rtl' : 'ltr'}>
 
           {/* ── STEP 1: Medical Details & Logistics ── */}
           {step === 1 && (
@@ -598,7 +598,7 @@ export default function GetEstimatePage() {
                   </div>
 
                   {/* Security/HIPAA badge */}
-                  <div className="bg-[#FAF7F2] border border-[#D4A96A]/25 rounded-2xl p-4 flex gap-3 items-start text-xs text-text-muted leading-relaxed">
+                  <div className="bg-[#FAF7F2] border border-[#D4A96A]/40 rounded-2xl p-4 flex gap-3 items-start text-xs text-text-muted leading-relaxed">
                     <span className="text-lg shrink-0 mt-0.5">🔒</span>
                     <p className="font-sans">
                       {isRtl

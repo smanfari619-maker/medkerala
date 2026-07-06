@@ -71,7 +71,7 @@ export default function JourneyTimeline() {
   ];
 
   return (
-    <section className="py-24 bg-[#FAF7F2] border-t border-[#D4A96A]/20">
+    <section className="py-24 bg-[#FAF7F2] border-t border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
@@ -93,7 +93,7 @@ export default function JourneyTimeline() {
           {phases.map((phase) => (
             <div key={phase.phaseNum} className="space-y-10 relative">
               {/* Phase Header */}
-              <div className="space-y-3 pb-6 border-b border-[#D4A96A]/20">
+              <div className="space-y-3 pb-6 border-b border-[#D4A96A]/35">
                 <div className="text-xs font-bold text-accent-gold uppercase tracking-wider flex items-center gap-2">
                   <span>{isRtl ? 'المرحلة' : 'Phase'}</span>
                   <span>{phase.phaseNum}</span>
@@ -113,7 +113,7 @@ export default function JourneyTimeline() {
                   return (
                     <div key={step.num} className="flex gap-5 items-start group">
                       {/* Minimal clean icon circle */}
-                      <div className="w-10 h-10 rounded-full bg-white border border-[#D4A96A]/20 flex items-center justify-center shrink-0 text-primary-green shadow-xs transition-all duration-500 group-hover:bg-primary-green group-hover:text-white group-hover:scale-105">
+                      <div className="w-10 h-10 rounded-full bg-white border border-[#D4A96A]/35 flex items-center justify-center shrink-0 text-primary-green shadow-xs transition-all duration-500 group-hover:bg-primary-green group-hover:text-white group-hover:scale-105">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div className="space-y-1 text-left rtl:text-right">

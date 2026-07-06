@@ -33,7 +33,7 @@ export default async function WhyKeralaPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -51,7 +51,7 @@ export default async function WhyKeralaPage({ params }: Props) {
         </div>
 
         {/* Stats Listing - Compact Strip */}
-        <div className="bg-white border border-[#D4A96A]/20 rounded-3xl p-6 sm:p-8 mb-16 shadow-[0_20px_50px_rgba(212,169,106,0.1)]">
+        <div className="bg-white border border-[#D4A96A]/35 rounded-3xl p-6 sm:p-8 mb-16 shadow-[0_20px_50px_rgba(212,169,106,0.1)]">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center divide-y lg:divide-y-0 lg:divide-x divide-slate-100 rtl:divide-x-reverse">
             {stats.map((stat, idx) => (
               <div key={idx} className="space-y-1.5 pt-4 first:pt-0 lg:pt-0">
@@ -66,7 +66,7 @@ export default async function WhyKeralaPage({ params }: Props) {
         </div>
 
         {/* Cost Savings Chart Visual */}
-        <div className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D4A96A]/20 shadow-[0_30px_60px_rgba(212,169,106,0.12)] mb-20 space-y-8">
+        <div className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D4A96A]/35 shadow-[0_30px_60px_rgba(212,169,106,0.12)] mb-20 space-y-8">
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl font-semibold font-display text-primary-dark">
               {locale === 'ar' ? 'مقارنة وفورات الجراحة المتوسطة (بالدولار)' : 'Average Surgery Cost Comparison (USD)'}
@@ -188,7 +188,7 @@ export default async function WhyKeralaPage({ params }: Props) {
         </div>
 
         {/* Tamil Nadu extension block */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-white border border-[#D4A96A]/20 p-8 sm:p-12 rounded-3xl shadow-xs">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-white border border-[#D4A96A]/35 p-8 sm:p-12 rounded-3xl shadow-xs">
           <div className="space-y-6 order-last lg:order-first">
             <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
               {locale === 'ar' ? 'التوسع الجغرافي: تاميل نادو' : 'Regional Extension: Tamil Nadu'}
@@ -202,7 +202,7 @@ export default async function WhyKeralaPage({ params }: Props) {
                 : 'To offer the widest scope of specialized care, we have expanded our network to include the medical giants of neighboring Tamil Nadu. Through our partnerships with Christian Medical College (CMC Vellore) and Apollo Hospitals in Chennai, patients can access world-renowned hematology, proton oncology, and complex neurological treatments.'}
             </p>
           </div>
-          <div className="bg-[#FAF7F2] p-8 rounded-2xl border border-[#D4A96A]/15 space-y-4">
+          <div className="bg-[#FAF7F2] p-8 rounded-2xl border border-[#D4A96A]/30 space-y-4">
             <h4 className="font-bold text-text-dark font-display text-lg">
               {locale === 'ar' ? 'الوجهات الطبية المضافة:' : 'Added Medical Hubs:'}
             </h4>

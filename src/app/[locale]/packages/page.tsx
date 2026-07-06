@@ -48,13 +48,13 @@ export default async function PackagesPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="flex justify-center">
-            <span className="inline-flex items-center gap-1 bg-white border border-[#D4A96A]/20 text-xs font-bold text-primary-green px-3 py-1 rounded-full shadow-xs">
+            <span className="inline-flex items-center gap-1 bg-white border border-[#D4A96A]/35 text-xs font-bold text-primary-green px-3 py-1 rounded-full shadow-xs">
               <Award className="h-3.5 w-3.5 text-[#D4A96A]" />
               <span>{isRtl ? 'إدارة طبية متكاملة' : 'End-to-End Care Management'}</span>
             </span>
@@ -71,7 +71,7 @@ export default async function PackagesPage({ params }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20 items-stretch">
           
           {/* Card 1: Essential */}
-          <div className="bg-white border border-[#D4A96A]/20 rounded-3xl p-8 lg:p-10 flex flex-col justify-between shadow-xs hover:shadow-xl transition-all duration-300 relative group overflow-hidden">
+          <div className="bg-white border border-[#D4A96A]/35 rounded-3xl p-8 lg:p-10 flex flex-col justify-between shadow-xs hover:shadow-xl transition-all duration-300 relative group overflow-hidden">
             <div className="space-y-6">
               <div className="space-y-2">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-[#D4A96A] font-sans block">
@@ -169,7 +169,7 @@ export default async function PackagesPage({ params }: Props) {
         </div>
 
         {/* 2. HYBRID PRICING TRANSPARENCY SECTION */}
-        <section className="bg-white border border-[#D4A96A]/20 rounded-3xl p-8 lg:p-12 mb-20 shadow-xs relative overflow-hidden">
+        <section className="bg-white border border-[#D4A96A]/35 rounded-3xl p-8 lg:p-12 mb-20 shadow-xs relative overflow-hidden">
           <div className="absolute top-0 right-0 bg-[#D4A96A]/10 w-48 h-48 rounded-full blur-3xl -z-10"></div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
@@ -201,7 +201,7 @@ export default async function PackagesPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="lg:col-span-4 bg-[#FAF7F2] p-6 rounded-2xl border border-[#D4A96A]/15 space-y-4">
+            <div className="lg:col-span-4 bg-[#FAF7F2] p-6 rounded-2xl border border-[#D4A96A]/30 space-y-4">
               <h4 className="font-bold text-text-dark font-display text-lg">
                 {isRtl ? 'مزايا التسعير الهجين:' : 'Hybrid Model Advantages:'}
               </h4>
@@ -244,7 +244,7 @@ export default async function PackagesPage({ params }: Props) {
               { title: t('step2Title'), desc: t('step2Desc'), emoji: '🏥' },
               { title: t('step3Title'), desc: t('step3Desc'), emoji: '✈️' }
             ].map((step, idx) => (
-              <div key={idx} className="relative z-10 bg-white border border-[#D4A96A]/20 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col gap-3">
+              <div key={idx} className="relative z-10 bg-white border border-[#D4A96A]/35 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col gap-3">
                 <span className="text-3xl">{step.emoji}</span>
                 <h4 className="font-bold text-text-dark font-display text-lg">{step.title}</h4>
                 <p className="text-sm text-text-muted leading-relaxed font-sans">{step.desc}</p>

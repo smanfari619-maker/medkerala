@@ -41,13 +41,13 @@ export default function MobileBottomNav() {
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#FAF7F2]/90 backdrop-blur-lg border-t border-[#D4A96A]/20 pb-[env(safe-area-inset-bottom)] md:hidden shadow-[0_-4px_16px_rgba(0,0,0,0.06)]">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-[#D4A96A]/35 pb-[env(safe-area-inset-bottom)] md:hidden shadow-[0_-4px_16px_rgba(0,0,0,0.06)]">
         <nav className="flex justify-around items-center h-16 px-2" dir={isRtl ? 'rtl' : 'ltr'}>
           {/* Home */}
           <Link
             href="/"
             className={`flex flex-col items-center justify-center flex-1 h-full tap-active ${
-              activeLink('/') ? 'text-[#2D6A4F]' : 'text-[#4A4A6A]'
+              activeLink('/') ? 'text-[#2D6A4F]' : 'text-text-muted'
             }`}
           >
             <Home className="h-5 w-5 mb-0.5" />
@@ -58,7 +58,7 @@ export default function MobileBottomNav() {
           <Link
             href="/treatments"
             className={`flex flex-col items-center justify-center flex-1 h-full tap-active ${
-              activeLink('/treatments') ? 'text-[#2D6A4F]' : 'text-[#4A4A6A]'
+              activeLink('/treatments') ? 'text-[#2D6A4F]' : 'text-text-muted'
             }`}
           >
             <Stethoscope className="h-5 w-5 mb-0.5" />
@@ -84,7 +84,7 @@ export default function MobileBottomNav() {
           <Link
             href="/get-estimate"
             className={`flex flex-col items-center justify-center flex-1 h-full tap-active ${
-              activeLink('/get-estimate') ? 'text-[#2D6A4F]' : 'text-[#4A4A6A]'
+              activeLink('/get-estimate') ? 'text-[#2D6A4F]' : 'text-text-muted'
             }`}
           >
             <FileText className="h-5 w-5 mb-0.5" />
@@ -94,7 +94,7 @@ export default function MobileBottomNav() {
           {/* More menu trigger */}
           <button
             onClick={() => setDrawerOpen(true)}
-            className="flex flex-col items-center justify-center flex-1 h-full tap-active text-[#4A4A6A] cursor-pointer"
+            className="flex flex-col items-center justify-center flex-1 h-full tap-active text-text-muted cursor-pointer"
           >
             <MoreHorizontal className="h-5 w-5 mb-0.5" />
             <span className="text-[10px] font-medium leading-none">{isRtl ? 'المزيد' : 'More'}</span>
@@ -113,7 +113,7 @@ export default function MobileBottomNav() {
 
           {/* Bottom Card */}
           <div
-            className="absolute bottom-0 left-0 right-0 bg-[#FAF7F2] rounded-t-3xl border-t border-[#D4A96A]/20 pb-[calc(2rem+env(safe-area-inset-bottom))] p-6 space-y-6 max-h-[80vh] overflow-y-auto"
+            className="absolute bottom-0 left-0 right-0 bg-[#FAF7F2] rounded-t-3xl border-t border-[#D4A96A]/35 pb-[calc(2rem+env(safe-area-inset-bottom))] p-6 space-y-6 max-h-[80vh] overflow-y-auto"
             style={{ animation: 'fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}
           >
             {/* Grabber line */}
@@ -144,7 +144,7 @@ export default function MobileBottomNav() {
                     className={`flex items-center gap-3 p-3.5 rounded-2xl border text-sm font-medium tap-active ${
                       isActive
                         ? 'bg-primary-green/8 border-primary-green/20 text-primary-green'
-                        : 'bg-white border-[#D4A96A]/10 text-[#1A1A2E] hover:bg-slate-50'
+                        : 'bg-white border-[#D4A96A]/40 text-[#1A1A2E] hover:bg-slate-50'
                     }`}
                   >
                     <span className={`p-1.5 rounded-lg shrink-0 ${isActive ? 'bg-primary-green/10 text-primary-green' : 'bg-[#D4A96A]/10 text-[#D4A96A]'}`}>

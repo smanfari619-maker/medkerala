@@ -116,7 +116,7 @@ export default async function HomePage({ params }: Props) {
     <div className="flex flex-col w-full overflow-x-hidden animate-fade-in">
 
       {/* ─── 1. HERO ────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#FAF7F2] pt-16 pb-20 lg:pt-20 lg:pb-24 overflow-hidden border-b border-[#D4A96A]/20">
+      <section className="relative bg-[#FAF7F2] pt-16 pb-20 lg:pt-20 lg:pb-24 overflow-hidden border-b border-[#D4A96A]/35">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -139,7 +139,7 @@ export default async function HomePage({ params }: Props) {
                   { emoji: '🏥', enText: 'NABH & JCI Certified', arText: 'مستشفيات معتمدة JCI/NABH' },
                   { emoji: '📞', enText: '24/7 Coordinator', arText: 'منسق شخصي ٢٤/٧' },
                 ].map(({ emoji, enText, arText }) => (
-                  <span key={enText} className="flex items-center gap-1.5 bg-white border border-[#D4A96A]/20 text-text-muted px-3.5 py-2 rounded-full shadow-xs shrink-0">
+                  <span key={enText} className="flex items-center gap-1.5 bg-white border border-[#D4A96A]/35 text-text-muted px-3.5 py-2 rounded-full shadow-xs shrink-0">
                     <span>{emoji}</span>
                     <span>{isRtl ? arText : enText}</span>
                   </span>
@@ -181,7 +181,7 @@ export default async function HomePage({ params }: Props) {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/50 to-transparent" />
 
                 {/* Floating savings badge */}
-                <div className="absolute bottom-4 left-4 sm:bottom-5 sm:left-5 bg-white rounded-2xl px-4 py-3 shadow-xl border border-[#D4A96A]/20 flex items-center gap-3">
+                <div className="absolute bottom-4 left-4 sm:bottom-5 sm:left-5 bg-white rounded-2xl px-4 py-3 shadow-xl border border-[#D4A96A]/35 flex items-center gap-3">
                   <span className="text-xl sm:text-2xl font-extrabold text-primary-green font-display">60–80%</span>
                   <span className="text-[10px] sm:text-xs text-text-muted font-sans leading-tight max-w-[80px]">
                     {isRtl ? 'توفير مقارنة بالغرب' : 'Lower than UK / GCC costs'}
@@ -192,7 +192,7 @@ export default async function HomePage({ params }: Props) {
           </div>
 
           {/* Compact Trust Bar */}
-          <div className="mt-16 pt-10 border-t border-[#D4A96A]/20">
+          <div className="mt-16 pt-10 border-t border-[#D4A96A]/35">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               {trustStats.map(({ numEn, numAr, labelEn, labelAr, icon: Icon }) => (
                 <div key={labelEn} className="flex items-center gap-3 group">
@@ -223,7 +223,7 @@ export default async function HomePage({ params }: Props) {
                 : 'Consult award-winning specialists and highly experienced traditional physicians at Kerala\'s premier hospitals.'}
             </p>
             {/* Trust badge */}
-            <div className="inline-flex items-center gap-2 bg-[#FAF7F2] border border-[#D4A96A]/20 rounded-full px-5 py-2">
+            <div className="inline-flex items-center gap-2 bg-[#FAF7F2] border border-[#D4A96A]/35 rounded-full px-5 py-2">
               <ShieldCheck className="h-4.5 w-4.5 text-primary-green" />
               <span className="text-sm font-bold text-primary-dark font-sans">
                 {isRtl ? 'طاقم طبي مرخص معتمد JCI / NABH' : 'JCI & NABH Accredited Partner Panels'}
@@ -241,7 +241,7 @@ export default async function HomePage({ params }: Props) {
               const bgGradient = bgGradients[idx % bgGradients.length];
 
               return (
-                <div key={idx} className="w-[85vw] sm:w-[45vw] md:w-auto shrink-0 snap-start bg-white border border-[#D4A96A]/20 hover:border-primary-green/40 p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-xs hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden">
+                <div key={idx} className="w-[85vw] sm:w-[45vw] md:w-auto shrink-0 snap-start bg-white border border-[#D4A96A]/35 hover:border-primary-green/40 p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-xs hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden">
                   <div className="relative z-10 flex-1 flex flex-col space-y-5">
                     {/* Top verified badge row */}
                     <div className="flex justify-between items-center flex-wrap gap-2">
@@ -316,7 +316,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── 3. HOW IT WORKS ────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#FAF7F2] border-y border-[#D4A96A]/15">
+      <section className="py-24 bg-[#FAF7F2] border-y border-[#D4A96A]/30">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block font-sans">
@@ -341,7 +341,7 @@ export default async function HomePage({ params }: Props) {
             {steps.map((step, idx) => {
               const Icon = step.icon;
               return (
-                <div key={idx} className="relative z-10 bg-white border border-[#D4A96A]/20 rounded-3xl p-5 sm:p-8 shadow-xs hover:shadow-xl hover:border-primary-green/30 transition-all duration-300 flex flex-row md:flex-col gap-4 md:gap-5 hover:-translate-y-1 group">
+                <div key={idx} className="relative z-10 bg-white border border-[#D4A96A]/35 rounded-3xl p-5 sm:p-8 shadow-xs hover:shadow-xl hover:border-primary-green/30 transition-all duration-300 flex flex-row md:flex-col gap-4 md:gap-5 hover:-translate-y-1 group">
                   <div className="flex flex-col items-center shrink-0">
                     <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl sm:rounded-2xl bg-primary-green/10 group-hover:bg-primary-green flex items-center justify-center shrink-0 transition-colors duration-300">
                       <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary-green group-hover:text-white transition-colors duration-300" />
@@ -450,7 +450,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── 6. FAQ ─────────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#FAF7F2] border-t border-[#D4A96A]/35">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 space-y-3">
             <h2 className="text-3xl sm:text-4xl font-semibold font-display text-primary-dark">
@@ -465,7 +465,7 @@ export default async function HomePage({ params }: Props) {
             {faqKeys.map((key) => (
               <details
                 key={key}
-                className="group border border-slate-200/60 rounded-2xl bg-white p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:border-[#D4A96A]/50 hover:shadow-md"
+                className="group border border-[#D4A96A]/35 rounded-2xl bg-white p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer transition-all duration-300 hover:border-[#D4A96A]/60 hover:shadow-md"
               >
                 <summary className="flex items-center justify-between gap-4 focus:outline-hidden min-h-[44px]">
                   <h3 className="text-lg font-semibold text-primary-dark transition-colors duration-300 group-hover:text-primary-green text-left rtl:text-right">
@@ -493,7 +493,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── 7. FINAL CTA ───────────────────────────────────────────────────── */}
-      <section className="bg-[#FAF7F2] border-t border-[#D4A96A]/20 py-20">
+      <section className="bg-[#FAF7F2] border-t border-[#D4A96A]/35 py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-semibold font-display text-primary-dark">
             {isRtl ? 'هل أنت مستعد لبدء رحلتك العلاجية؟' : 'Ready to Start Your Healing Journey?'}

@@ -89,7 +89,7 @@ export default async function PatientStoriesPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -122,7 +122,7 @@ export default async function PatientStoriesPage({ params }: Props) {
             return (
               <div
                 key={idx}
-                className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D4A96A]/20 shadow-sm flex flex-col md:flex-row gap-8 items-start relative group hover:border-primary-green/30 hover:shadow-xl transition-all duration-300"
+                className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D4A96A]/35 shadow-sm flex flex-col md:flex-row gap-8 items-start relative group hover:border-primary-green/30 hover:shadow-xl transition-all duration-300"
                 dir={isRtl ? 'rtl' : 'ltr'}
               >
                 

@@ -50,7 +50,7 @@ export default function CostComparison() {
   };
 
   return (
-    <section className="py-20 bg-[#FAF7F2] border-y border-[#D4A96A]/20">
+    <section className="py-20 bg-[#FAF7F2] border-y border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -63,7 +63,7 @@ export default function CostComparison() {
         </div>
 
         {/* Currency Switcher Pill Box */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-[#F0EDE8] p-3 rounded-2xl border border-[#D4A96A]/10">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-[#F0EDE8] p-3 rounded-2xl border border-[#D4A96A]/40">
           <div className="flex items-center gap-2">
             <Landmark className="h-5 w-5 text-primary-green shrink-0" />
             <span className="font-semibold text-text-dark text-base">{t('currencyLabel')}:</span>
@@ -86,11 +86,11 @@ export default function CostComparison() {
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-[#D4A96A]/20">
+        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-[#D4A96A]/35">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse min-w-[700px]" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
               <thead>
-                <tr className="bg-primary-dark text-white text-base sm:text-lg font-medium border-b border-[#D4A96A]/20">
+                <tr className="bg-primary-dark text-white text-base sm:text-lg font-medium border-b border-[#D4A96A]/35">
                   <th className="py-5 px-6 font-display">{t('treatmentName')}</th>
                   <th className="py-5 px-6 text-center font-display bg-primary-green text-white shadow-inner">
                     {t('kerala')}

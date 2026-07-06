@@ -52,7 +52,7 @@ export default async function BlogPostPage({ params }: Props) {
   const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Link */}
@@ -67,9 +67,9 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         {/* Article Header */}
-        <article className="bg-white rounded-3xl p-8 sm:p-12 border border-[#D4A96A]/20 shadow-xl space-y-6">
+        <article className="bg-white rounded-3xl p-8 sm:p-12 border border-[#D4A96A]/35 shadow-xl space-y-6">
           <div className="space-y-4">
-            <span className="inline-block bg-[#FAF7F2] border border-[#D4A96A]/20 text-[#D4A96A] px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+            <span className="inline-block bg-[#FAF7F2] border border-[#D4A96A]/35 text-[#D4A96A] px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
               {category}
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold font-display text-primary-dark leading-tight tracking-tight">
@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {/* Inline CTA */}
-          <div className="bg-[#FAF7F2] rounded-2xl p-6 sm:p-8 border border-[#D4A96A]/25 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="bg-[#FAF7F2] rounded-2xl p-6 sm:p-8 border border-[#D4A96A]/40 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-1.5 text-center sm:text-left">
               <h4 className="font-bold text-lg text-text-dark">
                 {locale === 'ar' ? 'هل ترغب في الحصول على استشارة مخصصة؟' : 'Need details for your condition?'}
@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Related Posts Section */}
         {relatedPosts.length > 0 && (
           <div className="mt-16 space-y-6">
-            <h3 className="text-xl sm:text-2xl font-bold font-display text-primary-dark pb-2 border-b border-[#D4A96A]/20 flex items-center gap-2">
+            <h3 className="text-xl sm:text-2xl font-bold font-display text-primary-dark pb-2 border-b border-[#D4A96A]/35 flex items-center gap-2">
               <BookOpen className="h-5 w-5 text-primary-green" />
               <span>{locale === 'ar' ? 'مقالات ذات صلة' : 'Related Articles'}</span>
             </h3>

@@ -119,7 +119,7 @@ export default async function FAQPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+      <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 space-y-4">
@@ -142,7 +142,7 @@ export default async function FAQPage({ params }: Props) {
               const CatIcon = cat.icon;
               return (
                 <div key={catIdx} className="space-y-6">
-                  <div className="flex items-center gap-2 pb-2 border-b border-[#D4A96A]/20">
+                  <div className="flex items-center gap-2 pb-2 border-b border-[#D4A96A]/35">
                     <CatIcon className="h-6 w-6 text-primary-green shrink-0" />
                     <h2 className="text-xl sm:text-2xl font-bold font-display text-primary-dark">
                       {cat.title}
@@ -153,7 +153,7 @@ export default async function FAQPage({ params }: Props) {
                     {cat.items.map((item, itemIdx) => (
                       <details
                         key={itemIdx}
-                        className="group border border-[#D4A96A]/20 rounded-2xl bg-white p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer"
+                        className="group border border-[#D4A96A]/35 rounded-2xl bg-white p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer"
                       >
                         <summary className="flex items-center justify-between gap-1.5 focus:outline-hidden min-h-[44px]">
                           <h3 className="text-base sm:text-lg font-bold text-text-dark flex items-start gap-2">

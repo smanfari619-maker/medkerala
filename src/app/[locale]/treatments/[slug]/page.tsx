@@ -167,7 +167,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
             </div>
 
             {/* Why Kerala Right */}
-            <div className="lg:col-span-5 bg-[#FAF7F2] border border-[#D4A96A]/20 p-8 rounded-3xl space-y-6 shadow-xs">
+            <div className="lg:col-span-5 bg-[#FAF7F2] border border-[#D4A96A]/35 p-8 rounded-3xl space-y-6 shadow-xs">
               <div className="flex items-center gap-2">
                 <Icon className="h-6 w-6 text-primary-green shrink-0" />
                 <h3 className="text-xl font-bold text-text-dark">
@@ -188,7 +188,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
       </section>
 
       {/* 3. COST COMPARISON TABLE */}
-      <section className="py-16 bg-[#FAF7F2] border-y border-[#D4A96A]/20">
+      <section className="py-16 bg-[#FAF7F2] border-y border-[#D4A96A]/35">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-semibold font-display text-primary-dark">
@@ -270,7 +270,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
             {treatment.doctors.map((doc, idx) => (
               <div
                 key={idx}
-                className="bg-[#FAF7F2] p-8 rounded-3xl border border-[#D4A96A]/20 shadow-xs space-y-4 text-center md:text-left flex flex-col items-center md:items-start"
+                className="bg-[#FAF7F2] p-8 rounded-3xl border border-[#D4A96A]/35 shadow-xs space-y-4 text-center md:text-left flex flex-col items-center md:items-start"
               >
                 <div className="h-16 w-16 rounded-full bg-primary-green/10 flex items-center justify-center mb-2">
                   <Stethoscope className="h-8 w-8 text-primary-green" />
@@ -305,7 +305,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
       </section>
 
       {/* 5. TREATMENT FAQS */}
-      <section className="py-20 bg-[#FAF7F2] border-t border-[#D4A96A]/20">
+      <section className="py-20 bg-[#FAF7F2] border-t border-[#D4A96A]/35">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl font-semibold font-display text-primary-dark">
@@ -322,7 +322,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
             {treatment.faqs.map((faq, idx) => (
               <details
                 key={idx}
-                className="group border border-[#D4A96A]/20 rounded-2xl bg-white p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer"
+                className="group border border-[#D4A96A]/35 rounded-2xl bg-white p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer"
               >
                 <summary className="flex items-center justify-between gap-1.5 focus:outline-hidden min-h-[44px]">
                   <h3 className="text-base sm:text-lg font-bold text-text-dark">

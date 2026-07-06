@@ -75,7 +75,7 @@ export default async function ServicesPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -104,7 +104,7 @@ export default async function ServicesPage({ params }: Props) {
             return (
               <div
                 key={svc.key}
-                className="bg-white rounded-3xl p-8 border border-[#D4A96A]/20 hover:border-primary-green/40 shadow-xs hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-3xl p-8 border border-[#D4A96A]/35 hover:border-primary-green/40 shadow-xs hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="h-12 w-12 rounded-2xl bg-primary-green/10 flex items-center justify-center mb-6 group-hover:bg-primary-green transition-colors duration-300">
                   <Icon className="h-6 w-6 text-primary-green group-hover:text-white transition-colors duration-300" />
@@ -133,7 +133,7 @@ export default async function ServicesPage({ params }: Props) {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl overflow-hidden shadow-md border border-[#D4A96A]/10">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-md border border-[#D4A96A]/40">
             <table className="w-full text-left border-collapse" dir={isRtl ? 'rtl' : 'ltr'}>
               <thead>
                 <tr className="bg-primary-dark text-white font-medium text-base sm:text-lg border-b border-accent-gold/25">
@@ -166,7 +166,7 @@ export default async function ServicesPage({ params }: Props) {
         </div>
 
         {/* Compressed Financial Transparency Policy */}
-        <div className="max-w-4xl mx-auto mb-20 bg-white rounded-3xl p-6 sm:p-8 border border-[#D4A96A]/20 shadow-lg text-center space-y-6">
+        <div className="max-w-4xl mx-auto mb-20 bg-white rounded-3xl p-6 sm:p-8 border border-[#D4A96A]/35 shadow-lg text-center space-y-6">
           <h2 className="text-xl sm:text-2xl font-semibold font-display text-primary-dark">
             {locale === 'ar' ? 'نموذج العمل والشفافية المالية' : '100% Transparent Financial Policy'}
           </h2>
@@ -194,7 +194,7 @@ export default async function ServicesPage({ params }: Props) {
                 descAr: 'يتم تمويل شبكة دعمنا مباشرة من قبل المستشفيات المعتمدة من ميزانيات التسويق الدولي الخاصة بها.'
               }
             ].map(({ emoji, titleEn, titleAr, descEn, descAr }) => (
-              <div key={titleEn} className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#D4A96A]/15 space-y-2 text-left rtl:text-right">
+              <div key={titleEn} className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#D4A96A]/30 space-y-2 text-left rtl:text-right">
                 <div className="text-lg font-bold text-primary-green flex items-center gap-2">
                   <span>{emoji}</span>
                   <span className="font-display text-base font-bold text-primary-dark">{locale === 'ar' ? titleAr : titleEn}</span>

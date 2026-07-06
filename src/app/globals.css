@@ -7,8 +7,14 @@
   --color-accent-gold: #D4A96A;
   --color-bg-clay: #FAF7F2;
   --color-text-dark: #1A1A2E;
-  --color-text-muted: #4A4A6A;
+  --color-text-muted: #3D3D5C;
   --color-badge-bg: #F0EDE8;
+
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 2px 8px rgba(45, 106, 79, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(45, 106, 79, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 12px 32px rgba(45, 106, 79, 0.18), 0 4px 12px rgba(0, 0, 0, 0.10);
+  --shadow-2xl: 0 24px 48px rgba(45, 106, 79, 0.22), 0 8px 24px rgba(0, 0, 0, 0.14);
 
   --font-lora: var(--font-lora);
   --font-plus-jakarta: var(--font-plus-jakarta);

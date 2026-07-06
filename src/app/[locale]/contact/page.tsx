@@ -63,7 +63,7 @@ export default function ContactPage() {
   const isRtl = locale === 'ar';
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/20">
+    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -83,7 +83,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Col: Contact Info & Address */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white p-8 rounded-3xl border border-[#D4A96A]/20 shadow-xs space-y-6">
+            <div className="bg-white p-8 rounded-3xl border border-[#D4A96A]/35 shadow-xs space-y-6">
               <h2 className="text-2xl font-bold text-text-dark pb-3 border-b border-slate-100">
                 {locale === 'ar' ? 'معلومات الاتصال المباشر' : 'Direct Contact'}
               </h2>
@@ -153,7 +153,7 @@ export default function ContactPage() {
               </ul>
             </div>
             {/* Process / Trust Card */}
-            <div className="bg-[#FAF7F2] border border-[#D4A96A]/20 p-6 rounded-3xl space-y-4">
+            <div className="bg-[#FAF7F2] border border-[#D4A96A]/35 p-6 rounded-3xl space-y-4">
               <h3 className="font-bold text-primary-dark font-display flex items-center gap-2">
                 <span>⏱️</span>
                 {locale === 'ar' ? 'ماذا يحدث بعد الإرسال؟' : 'What Happens Next?'}
@@ -177,7 +177,7 @@ export default function ContactPage() {
 
           {/* Right Col: Contact Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white p-8 rounded-3xl border border-[#D4A96A]/20 shadow-xl space-y-6">
+            <div className="bg-white p-8 rounded-3xl border border-[#D4A96A]/35 shadow-xl space-y-6">
               <div>
                 <h2 className="text-2xl font-bold text-text-dark font-display">
                   {locale === 'ar' ? 'أرسل لنا استفساراً سريعاً' : 'Quick Enquiry Form'}
@@ -280,7 +280,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Security/HIPAA badge */}
-                  <div className="bg-[#FAF7F2] border border-[#D4A96A]/25 rounded-2xl p-4 flex gap-3 items-start text-xs text-text-muted leading-relaxed">
+                  <div className="bg-[#FAF7F2] border border-[#D4A96A]/40 rounded-2xl p-4 flex gap-3 items-start text-xs text-text-muted leading-relaxed">
                     <span className="text-lg shrink-0 mt-0.5">🔒</span>
                     <p className="font-sans">
                       {locale === 'ar'
