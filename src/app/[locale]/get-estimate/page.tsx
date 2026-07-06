@@ -297,8 +297,8 @@ export default function GetEstimatePage() {
           </p>
         </div>
 
-        {/* Step Progress — sticky at the top on mobile */}
-        <div className="sticky top-[60px] lg:top-[76px] z-30 mb-8 bg-[#FAF7F2]/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-[#D4A96A]/30 shadow-sm">
+        {/* Step Progress */}
+        <div className="relative z-10 mb-8 bg-[#FAF7F2]/95 rounded-2xl p-4 sm:p-5 border border-[#D4A96A]/30 shadow-sm">
           <div className="flex items-center justify-between text-xs font-bold text-text-muted mb-4 font-sans">
             <span>{isRtl ? `الخطوة ${step} من ${TOTAL_STEPS}` : `Step ${step} of ${TOTAL_STEPS}`}</span>
             <span className="text-primary-green">{isRtl ? STEPS[step - 1].titleAr : STEPS[step - 1].titleEn}</span>
