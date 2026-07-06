@@ -147,6 +147,38 @@ const HOSPITALS_DATA: Hospital[] = [
     specialitiesAr: ['القلب والشرايين', 'التشخيص والفحوصات المتقدمة', 'الجراحة العامة', 'أطباء الأعصاب'],
     website: 'https://www.marsleevamedcity.com/'
   },
+  {
+    id: 'cmc-vellore',
+    nameEn: 'Christian Medical College (CMC Vellore)',
+    nameAr: 'مستشفى كلية الطب المسيحية (CMC فيلور)',
+    type: 'allopathy',
+    cityEn: 'Vellore, Tamil Nadu',
+    cityAr: 'فيلور، تاميل نادو',
+    accreditations: ['NABH Certified', 'Institutional Excellence', 'NABL'],
+    overviewEn: 'One of India\'s most prestigious, historical, and largest quaternary medical facilities, internationally renowned for treating complex clinical cases.',
+    overviewAr: 'واحد من أكثر المرافق الطبية المرموقة والتاريخية والأكبر في الهند، ويحظى بشهرة دولية واسعة في علاج الحالات الطبية والسريرية المعقدة.',
+    focusEn: 'Specialized international patient care coordination, multi-lingual translators, custom clinical queues, and close liaison with consulates.',
+    focusAr: 'تنسيق رعاية المرضى الدوليين المتخصص، مترجمون متعددو اللغات، طوابير سريرية مخصصة، وتواصل وثيق مع القنصليات والبعثات الدبلوماسية.',
+    specialitiesEn: ['Haematology & Oncology', 'Neurosurgery', 'Pediatrics', 'Rheumatology', 'Endocrinology'],
+    specialitiesAr: ['أمراض الدم والأورام', 'جراحة المخ والأعصاب', 'طب الأطفال وجراحتها', 'الروماتيزم والمفاصل', 'الغدد الصماء والهرمونات'],
+    website: 'https://www.cmch-vellore.edu/'
+  },
+  {
+    id: 'apollo-greams-road',
+    nameEn: 'Apollo Hospital, Greams Road (Chennai)',
+    nameAr: 'مستشفى أبولو، طريق غريمز (تشيناي)',
+    type: 'allopathy',
+    cityEn: 'Chennai, Tamil Nadu',
+    cityAr: 'تشيناي، تاميل نادو',
+    accreditations: ['JCI Accredited', 'NABH Certified', 'Apollo Centers of Excellence'],
+    overviewEn: 'The flagship hospital of the Apollo Group, globally acclaimed for pioneer work in cardiac surgeries, oncology treatments, and organ transplants.',
+    overviewAr: 'المستشفى الرئيسي لمجموعة أبولو الشهيرة، وحائز على تقدير عالمي كبير لدوره الريادي في جراحات القلب وعلاجات الأورام وزراعة الأعضاء.',
+    focusEn: 'Comprehensive foreign client coordinator, luxury inpatient suites, fast-track consultation bookings, and embassy support.',
+    focusAr: 'منسق شامل للعملاء الأجانب، أجنحة تنويم فاخرة، حجز سريع للاستشارات مع كبار الأطباء، ودعم كامل للبعثات والملحقيات.',
+    specialitiesEn: ['Cardiology & CABG', 'Oncology (Proton Therapy)', 'Liver & Renal Transplant', 'Orthopaedics', 'Robotic Spine Surgery'],
+    specialitiesAr: ['القلب وجراحة الصدر', 'الأورام والعلاج بالبروتونات', 'زراعة الكبد والكلى', 'جراحة العظام والمفاصل', 'جراحة العمود الفقري الروبوتية'],
+    website: 'https://www.apollohospitals.com/'
+  },
 
   // ── AYURVEDA & wellness ──
   {
@@ -320,7 +352,7 @@ export default function HospitalsDirectoryPage() {
           <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block font-sans">
             {isRtl ? 'المستشفيات الشريكة المعتمدة' : 'Accredited Partner Directory'}
           </span>
-          <h1 className="text-4xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
             {isRtl ? 'مستشفيات كبار الجراحين ومراكز الاستشفاء' : 'Premier Hospitals & Healing Centres in Kerala'}
           </h1>
           <p className="text-lg text-text-muted font-sans">

@@ -6,7 +6,7 @@ import { routing } from '@/i18n/routing';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppFAB from '@/components/layout/WhatsAppFAB';
-import MobileStickyCTA from '@/components/layout/MobileStickyCTA';
+import MobileBottomNav from '@/components/layout/MobileBottomNav';
 import { Lora, Plus_Jakarta_Sans, Tajawal } from 'next/font/google';
 import '../globals.css';
 
@@ -81,12 +81,12 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="bg-[#FAF7F2] text-[#1A1A2E] font-sans antialiased flex flex-col min-h-screen">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <Header />
-          <main className="flex-grow">
+          <main className="flex-grow pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
             {children}
           </main>
           <Footer />
           <WhatsAppFAB />
-          <MobileStickyCTA />
+          <MobileBottomNav />
         </NextIntlClientProvider>
       </body>
     </html>

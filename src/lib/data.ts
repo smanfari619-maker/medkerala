@@ -81,22 +81,22 @@ export const TREATMENTS: Treatment[] = [
     },
     doctors: [
       {
-        name: 'Dr. Madhavan Nair',
-        nameAr: 'د. مادهافان ناير',
+        name: 'Dr. M. Nair (Chief Cardiac Surgeon)',
+        nameAr: 'د. م. ناير (كبير جراحي القلب)',
         title: 'Senior Consultant Cardiac Surgeon',
         titleAr: 'كبير استشاريي جراحة القلب والشرايين',
-        hospital: 'Aster MIMS, Calicut',
-        hospitalAr: 'أستر ميمس، كالكوت',
+        hospital: 'Aster Health Network',
+        hospitalAr: 'شبكة أستر الصحية',
         exp: '22 Years',
         expAr: '٢٢ عاماً'
       },
       {
-        name: 'Dr. Faisal Rahman',
-        nameAr: 'د. فيصل الرحمن',
+        name: 'Dr. F. Rahman (Chief Thoracic Surgeon)',
+        nameAr: 'د. ف. الرحمن (كبير جراحي الصدر والقلب)',
         title: 'Chief of Cardiothoracic Surgery',
         titleAr: 'رئيس قسم جراحة الصدر والقلب',
-        hospital: 'Baby Memorial Hospital, Calicut',
-        hospitalAr: 'مستشفى بيبي التذكاري، كالكوت',
+        hospital: 'BMH Health Network',
+        hospitalAr: 'شبكة بي إم إتش الصحية',
         exp: '18 Years',
         expAr: '١٨ عاماً'
       }
@@ -147,12 +147,12 @@ export const TREATMENTS: Treatment[] = [
     },
     doctors: [
       {
-        name: 'Dr. Suresh Pillai',
-        nameAr: 'د. سوريش بيلاي',
+        name: 'Dr. S. Pillai (Chief Orthopaedic Surgeon)',
+        nameAr: 'د. س. بيلاي (كبير جراحي العظام)',
         title: 'Senior Consultant Joint Replacement',
         titleAr: 'استشاري أول استبدال المفاصل والركبة',
-        hospital: 'Meitra Hospital, Calicut',
-        hospitalAr: 'مستشفى ميترا، كالكوت',
+        hospital: 'Meitra Health Network',
+        hospitalAr: 'شبكة ميترا الصحية',
         exp: '20 Years',
         expAr: '٢٠ عاماً'
       }
@@ -197,8 +197,8 @@ export const TREATMENTS: Treatment[] = [
     },
     doctors: [
       {
-        name: 'Dr. Joseph Thomas',
-        nameAr: 'د. جوزيف توماس',
+        name: 'Dr. J. Thomas (Chief Implantologist)',
+        nameAr: 'د. ج. توماس (رئيس زراعة الأسنان)',
         title: 'Chief Prosthodontist & Implantologist',
         titleAr: 'رئيس قسم تركيبات وزراعة الأسنان',
         hospital: 'MedKerala Partner Dental Hub',
@@ -247,12 +247,12 @@ export const TREATMENTS: Treatment[] = [
     },
     doctors: [
       {
-        name: 'Dr. Mini Kurian',
-        nameAr: 'د. ميني كوريان',
+        name: 'Dr. M. Kurian (Chief IVF Specialist)',
+        nameAr: 'د. م. كوريان (رئيس أخصائيي الأنابيب)',
         title: 'Director & Chief IVF Specialist',
         titleAr: 'مديرة ورئيسة أطباء علاج العقم وأطفال الأنابيب',
-        hospital: 'Aster Fertility Centre, Calicut',
-        hospitalAr: 'مركز أستر لعلاج الخصوبة، كالكوت',
+        hospital: 'Aster Fertility Network',
+        hospitalAr: 'شبكة أستر للخصوبة',
         exp: '17 Years',
         expAr: '١٧ عاماً'
       }
@@ -297,12 +297,12 @@ export const TREATMENTS: Treatment[] = [
     },
     doctors: [
       {
-        name: 'Dr. Hari Prasad',
-        nameAr: 'د. هاري براساد',
+        name: 'Dr. H. Prasad (Senior Ayurvedic Physician)',
+        nameAr: 'د. هـ. براساد (طبيب أول الأيورفيدا)',
         title: 'Senior Ayurvedic Physician (BAMS)',
         titleAr: 'طبيب أول الأيورفيدا والطب البديل (BAMS)',
-        hospital: 'Kottakkal Arya Vaidya Sala Partner',
-        hospitalAr: 'مركز شريك لكوتاكال أريا فايديا سالا',
+        hospital: 'Arya Vaidya Sala Partner Network',
+        hospitalAr: 'شبكة شركاء أريا فايديا سالا',
         exp: '25 Years',
         expAr: '٢٥ عاماً'
       }
@@ -347,22 +347,22 @@ export const TREATMENTS: Treatment[] = [
     },
     doctors: [
       {
-        name: 'Dr. K. S. Gangadharan',
-        nameAr: 'د. ك. س. غانغادهاران',
+        name: 'Dr. K. S. Gangadharan (Chief Surgical Oncologist)',
+        nameAr: 'د. ك. س. غانغادهاران (رئيس جراحة الأورام)',
         title: 'Senior Consultant Surgical Oncologist',
         titleAr: 'استشاري أول جراحة الأورام',
-        hospital: 'Aster MIMS, Calicut',
-        hospitalAr: 'أستر ميمس، كالكوت',
+        hospital: 'Aster Health Network',
+        hospitalAr: 'شبكة أستر الصحية',
         exp: '25 Years',
         expAr: '٢٥ عاماً'
       },
       {
-        name: 'Dr. Suresh Kumar',
-        nameAr: 'د. سوريش كومار',
+        name: 'Dr. S. Kumar (Chief Medical Oncologist)',
+        nameAr: 'د. س. كومار (كبير أطباء الأورام)',
         title: 'Chief of Medical Oncology',
         titleAr: 'رئيس قسم علاج الأورام الكيميائي والحيوي',
-        hospital: 'Baby Memorial Hospital, Calicut',
-        hospitalAr: 'مستشفى بيبي التذكاري، كالكوت',
+        hospital: 'BMH Health Network',
+        hospitalAr: 'شبكة بي إم إتش الصحية',
         exp: '19 Years',
         expAr: '١٩ عاماً'
       }
@@ -413,12 +413,12 @@ export const TREATMENTS: Treatment[] = [
     },
     doctors: [
       {
-        name: 'Dr. Jacob P. Alapatt',
-        nameAr: 'د. يعقوب ب. ألابات',
+        name: 'Dr. J. Alapatt (Senior Neurosurgeon)',
+        nameAr: 'د. ج. ألابات (كبير جراحي المخ والأعصاب)',
         title: 'Senior Consultant Neurosurgeon',
         titleAr: 'استشاري أول جراحة المخ والأعصاب',
-        hospital: 'Baby Memorial Hospital, Calicut',
-        hospitalAr: 'مستشفى بيبي التذكاري، كالكوت',
+        hospital: 'BMH Health Network',
+        hospitalAr: 'شبكة بي إم إتش الصحية',
         exp: '24 Years',
         expAr: '٢٤ عاماً'
       }
@@ -463,12 +463,12 @@ export const TREATMENTS: Treatment[] = [
     },
     doctors: [
       {
-        name: 'Dr. Venugopal Venugopal',
-        nameAr: 'د. فينوجوبال فينوجوبال',
+        name: 'Dr. V. Venugopal (Chief Transplant Surgeon)',
+        nameAr: 'د. ف. فينوجوبال (رئيس زراعة الكبد)',
         title: 'Chief Liver Transplant Surgeon',
         titleAr: 'رئيس أطباء جراحة زراعة الكبد',
-        hospital: 'Aster MIMS, Calicut',
-        hospitalAr: 'أستر ميمس، كالكوت',
+        hospital: 'Aster Health Network',
+        hospitalAr: 'شبكة أستر الصحية',
         exp: '20 Years',
         expAr: '٢٠ عاماً'
       }
@@ -513,8 +513,8 @@ export const TREATMENTS: Treatment[] = [
     },
     doctors: [
       {
-        name: 'Dr. Sameer Ali',
-        nameAr: 'د. سمير علي',
+        name: 'Dr. S. Ali (Chief Eye Surgeon)',
+        nameAr: 'د. س. علي (رئيس جراحات العيون)',
         title: 'Chief Refractive & Cataract Surgeon',
         titleAr: 'رئيس جراحات القرنية والمياه البيضاء وتصحيح النظر',
         hospital: 'MedKerala Partner Eye Hub',

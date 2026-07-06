@@ -46,7 +46,7 @@ export default async function TreatmentsPage({ params }: Props) {
           <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block font-sans">
             {locale === 'ar' ? 'التخصصات العلاجية' : 'Medical Specialities'}
           </span>
-          <h1 className="text-4xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
             {locale === 'ar' 
               ? 'العلاجات الطبية والتقليدية في كيرلا' 
               : 'Medical & Traditional Treatments in Kerala'}

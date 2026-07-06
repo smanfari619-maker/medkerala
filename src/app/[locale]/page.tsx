@@ -39,9 +39,9 @@ export default async function HomePage({ params }: Props) {
 
   const featuredDoctors = [
     {
-      name: isRtl ? 'د. مادهافان ناير' : 'Dr. Madhavan Nair',
+      name: isRtl ? 'د. م. ناير (كبير جراحي القلب)' : 'Dr. M. Nair (Chief Cardiac Surgeon)',
       title: isRtl ? 'كبير استشاريي جراحة القلب والشرايين' : 'Senior Consultant Cardiac Surgeon',
-      hospital: isRtl ? 'أستر ميمس، كالكوت' : 'Aster MIMS, Calicut',
+      hospital: isRtl ? 'مستشفى شريك - مجموعة أستر' : 'Partner Hospital - Aster Group',
       expEn: '22+ Years Experience',
       expAr: 'خبرة أكثر من ٢٢ عاماً',
       educationEn: 'Trained in UK & USA',
@@ -51,9 +51,9 @@ export default async function HomePage({ params }: Props) {
       initials: 'MN',
     },
     {
-      name: isRtl ? 'د. سوريش بيلاي' : 'Dr. Suresh Pillai',
+      name: isRtl ? 'د. س. بيلاي (كبير جراحي العظام)' : 'Dr. S. Pillai (Chief Orthopaedic Surgeon)',
       title: isRtl ? 'استشاري أول استبدال المفاصل والركبة' : 'Senior Consultant Joint Replacement',
-      hospital: isRtl ? 'مستشفى ميترا، كالكوت' : 'Meitra Hospital, Calicut',
+      hospital: isRtl ? 'مستشفى شريك - مجموعة ميترا' : 'Partner Hospital - Meitra Group',
       expEn: '20+ Years Experience',
       expAr: 'خبرة أكثر من ٢٠ عاماً',
       educationEn: 'Joint & Spine Expert',
@@ -63,9 +63,9 @@ export default async function HomePage({ params }: Props) {
       initials: 'SP',
     },
     {
-      name: isRtl ? 'د. هاري براساد' : 'Dr. Hari Prasad',
+      name: isRtl ? 'د. هـ. براساد (طبيب أول الأيورفيدا)' : 'Dr. H. Prasad (Senior Ayurvedic Physician)',
       title: isRtl ? 'طبيب أول الأيورفيدا والطب التقليدي' : 'Senior Ayurvedic Physician (BAMS)',
-      hospital: isRtl ? 'شريك كوتاكال أريا فايديا سالا' : 'Kottakkal Arya Vaidya Sala Partner',
+      hospital: isRtl ? 'شريك كوتاكال أريا فايديا سالا كيرلا' : 'Kottakkal Arya Vaidya Sala Partner',
       expEn: '25+ Years Experience',
       expAr: 'خبرة أكثر من ٢٥ عاماً',
       educationEn: 'Classical Panchakarma Expert',
@@ -122,44 +122,44 @@ export default async function HomePage({ params }: Props) {
 
             {/* Left: Copy + CTAs */}
             <div className="lg:col-span-6 space-y-8 text-center lg:text-left rtl:lg:text-right">
-              <div className="space-y-5">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold font-display text-primary-dark leading-tight tracking-tight">
+              <div className="space-y-4">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold font-display text-primary-dark leading-tight tracking-tight">
                   {tHero('headline')}
                 </h1>
-                <p className="text-lg sm:text-xl text-text-muted leading-relaxed max-w-xl mx-auto lg:mx-0">
+                <p className="text-base sm:text-xl text-text-muted leading-relaxed max-w-xl mx-auto lg:mx-0">
                   {tHero('subheadline')}
                 </p>
               </div>
 
-              {/* Guarantees strip */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-3 text-xs font-semibold font-sans">
+              {/* Guarantees strip — horizontal scroll on mobile, wrap on desktop */}
+              <div className="flex overflow-x-auto no-scrollbar scroll-mask-fade pb-2 lg:pb-0 justify-start lg:justify-start lg:flex-wrap gap-2.5 text-xs font-semibold font-sans -mx-4 px-4 lg:mx-0 lg:px-0">
                 {[
                   { emoji: '🤝', enText: 'Corporate Partner Rates (Save 15-20%)', arText: 'أسعار مؤسسية مخفضة (توفير ١٥-٢٠٪)' },
                   { emoji: '🔒', enText: 'Direct-to-Hospital Payment', arText: 'الدفع للمستشفى مباشرة' },
                   { emoji: '🏥', enText: 'NABH & JCI Certified', arText: 'مستشفيات معتمدة JCI/NABH' },
                   { emoji: '📞', enText: '24/7 Coordinator', arText: 'منسق شخصي ٢٤/٧' },
                 ].map(({ emoji, enText, arText }) => (
-                  <span key={enText} className="flex items-center gap-1.5 bg-white border border-[#D4A96A]/25 text-text-muted px-3 py-1.5 rounded-full shadow-xs">
+                  <span key={enText} className="flex items-center gap-1.5 bg-white border border-[#D4A96A]/20 text-text-muted px-3.5 py-2 rounded-full shadow-xs shrink-0">
                     <span>{emoji}</span>
                     <span>{isRtl ? arText : enText}</span>
                   </span>
                 ))}
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              {/* CTAs — hidden on mobile (bottom nav handles these) */}
+              <div className="hidden sm:flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
                 <a
                   href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-4 rounded-full text-lg shadow-md hover:shadow-lg transition-all duration-300 min-h-[52px] text-center flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-4 rounded-full text-base shadow-md hover:shadow-lg transition-all duration-300 min-h-[52px] text-center flex items-center justify-center gap-2 cursor-pointer tap-active"
                 >
                   <MessageCircle className="h-5 w-5 text-white shrink-0" />
                   <span>{tCommon('whatsAppUs')}</span>
                 </a>
                 <Link
                   href="/get-estimate"
-                  className="w-full sm:w-auto bg-white border-2 border-primary-green hover:bg-emerald-50/30 text-[#2D6A4F] font-bold px-8 py-4 rounded-full text-lg shadow-xs hover:shadow-sm transition-all duration-300 min-h-[52px] text-center flex items-center justify-center cursor-pointer"
+                  className="w-full sm:w-auto bg-white border-2 border-primary-green hover:bg-emerald-50/30 text-[#2D6A4F] font-bold px-8 py-4 rounded-full text-base shadow-xs hover:shadow-sm transition-all duration-300 min-h-[52px] text-center flex items-center justify-center cursor-pointer tap-active"
                 >
                   {tCommon('getEstimate')}
                 </Link>
@@ -167,9 +167,9 @@ export default async function HomePage({ params }: Props) {
             </div>
 
             {/* Right: Hero Image */}
-            <div className="lg:col-span-6 relative w-full aspect-[4/3] max-w-[520px] mx-auto lg:max-w-none">
-              <div className="absolute inset-0 bg-primary-green rounded-[40px] transform rotate-2 scale-95 border-2 border-accent-gold/30 -z-10 shadow-lg" />
-              <div className="relative w-full h-full rounded-[40px] overflow-hidden shadow-2xl border border-accent-gold/25">
+            <div className="lg:col-span-6 relative w-full aspect-[16/10] sm:aspect-[4/3] max-w-[520px] mx-auto lg:max-w-none">
+              <div className="absolute inset-0 bg-primary-green rounded-[32px] sm:rounded-[40px] transform rotate-1 scale-95 border-2 border-accent-gold/30 -z-10 shadow-lg" />
+              <div className="relative w-full h-full rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-2xl border border-accent-gold/25">
                 <Image
                   src="/images/caring_doctor_patient_hero.png"
                   alt={isRtl ? 'منسقة ميدكيرلا ترافق مريضاً في كيرلا' : 'MedKerala coordinator supporting a patient in Kerala'}
@@ -181,9 +181,9 @@ export default async function HomePage({ params }: Props) {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/50 to-transparent" />
 
                 {/* Floating savings badge */}
-                <div className="absolute bottom-5 left-5 bg-white rounded-2xl px-4 py-3 shadow-xl border border-[#D4A96A]/20 flex items-center gap-3">
-                  <span className="text-2xl font-extrabold text-primary-green font-display">60–80%</span>
-                  <span className="text-xs text-text-muted font-sans leading-tight max-w-[80px]">
+                <div className="absolute bottom-4 left-4 sm:bottom-5 sm:left-5 bg-white rounded-2xl px-4 py-3 shadow-xl border border-[#D4A96A]/20 flex items-center gap-3">
+                  <span className="text-xl sm:text-2xl font-extrabold text-primary-green font-display">60–80%</span>
+                  <span className="text-[10px] sm:text-xs text-text-muted font-sans leading-tight max-w-[80px]">
                     {isRtl ? 'توفير مقارنة بالغرب' : 'Lower than UK / GCC costs'}
                   </span>
                 </div>
@@ -231,7 +231,7 @@ export default async function HomePage({ params }: Props) {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-6 pb-6 -mx-4 px-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:mx-0 md:pb-0 scroll-momentum">
             {featuredDoctors.map((doc, idx) => {
               const bgGradients = [
                 'from-emerald-500 to-teal-400',
@@ -241,7 +241,7 @@ export default async function HomePage({ params }: Props) {
               const bgGradient = bgGradients[idx % bgGradients.length];
 
               return (
-                <div key={idx} className="bg-white border border-[#D4A96A]/20 hover:border-primary-green/40 p-8 rounded-3xl flex flex-col justify-between shadow-xs hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden">
+                <div key={idx} className="w-[85vw] sm:w-[45vw] md:w-auto shrink-0 snap-start bg-white border border-[#D4A96A]/20 hover:border-primary-green/40 p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-xs hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden">
                   <div className="relative z-10 flex-1 flex flex-col space-y-5">
                     {/* Top verified badge row */}
                     <div className="flex justify-between items-center flex-wrap gap-2">
@@ -292,7 +292,7 @@ export default async function HomePage({ params }: Props) {
                       href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار عن حجز استشارة مع الدكتور: ${doc.name}` : `Hello MedKerala, I would like to request a consultation with: ${doc.name}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-center py-3.5 px-6 rounded-2xl text-xs sm:text-sm font-bold font-sans flex items-center justify-center gap-2 shadow-xs hover:shadow-md transition-all duration-300 min-h-[44px] cursor-pointer"
+                      className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-center py-3.5 px-6 rounded-2xl text-xs sm:text-sm font-bold font-sans flex items-center justify-center gap-2 shadow-xs hover:shadow-md transition-all duration-300 min-h-[44px] cursor-pointer tap-active"
                     >
                       <MessageCircle className="h-4.5 w-4.5 text-white shrink-0" />
                       <span>{isRtl ? 'حجز استشارة فورية' : 'Book Specialist Consultation'}</span>
@@ -332,25 +332,27 @@ export default async function HomePage({ params }: Props) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <div className="relative flex flex-col md:grid md:grid-cols-3 gap-8">
             {/* Connecting line on desktop */}
             <div className="hidden md:block absolute top-12 left-1/4 right-1/4 h-px bg-[#D4A96A]/25 z-0" />
+            {/* Connecting line on mobile (aligned with icons) */}
+            <div className="absolute top-8 bottom-8 left-9 rtl:left-auto rtl:right-9 w-0.5 bg-[#D4A96A]/25 md:hidden z-0" />
 
             {steps.map((step, idx) => {
               const Icon = step.icon;
               return (
-                <div key={idx} className="relative z-10 bg-white border border-[#D4A96A]/20 rounded-3xl p-8 shadow-xs hover:shadow-xl hover:border-primary-green/30 transition-all duration-300 flex flex-col gap-5 hover:-translate-y-1 group">
-                  <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-2xl bg-primary-green/10 group-hover:bg-primary-green flex items-center justify-center shrink-0 transition-colors duration-300">
-                      <Icon className="h-6 w-6 text-primary-green group-hover:text-white transition-colors duration-300" />
+                <div key={idx} className="relative z-10 bg-white border border-[#D4A96A]/20 rounded-3xl p-5 sm:p-8 shadow-xs hover:shadow-xl hover:border-primary-green/30 transition-all duration-300 flex flex-row md:flex-col gap-4 md:gap-5 hover:-translate-y-1 group">
+                  <div className="flex flex-col items-center shrink-0">
+                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl sm:rounded-2xl bg-primary-green/10 group-hover:bg-primary-green flex items-center justify-center shrink-0 transition-colors duration-300">
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary-green group-hover:text-white transition-colors duration-300" />
                     </div>
-                    <span className="text-5xl font-extrabold font-display text-slate-100 select-none">{step.num}</span>
+                    <span className="text-xl sm:text-3xl font-extrabold font-display text-slate-200 select-none mt-1.5">{step.num}</span>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-primary-dark mb-2 font-display">
+                  <div className="space-y-1 md:space-y-2 text-left rtl:text-right">
+                    <h3 className="text-base sm:text-xl font-bold text-primary-dark font-display">
                       {isRtl ? step.titleAr : step.titleEn}
                     </h3>
-                    <p className="text-text-muted leading-relaxed font-sans">
+                    <p className="text-text-muted text-xs sm:text-base leading-relaxed font-sans">
                       {isRtl ? step.descAr : step.descEn}
                     </p>
                   </div>

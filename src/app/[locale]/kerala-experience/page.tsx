@@ -63,7 +63,7 @@ export default async function KeralaExperiencePage({ params }: Props) {
           <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
             {locale === 'ar' ? 'سياحة ونقاهة في الجنة' : 'Recuperation in Paradise'}
           </span>
-          <h1 className="text-4xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
             {locale === 'ar' ? 'اكتشف كيرلا — جنة النقاهة والاستشفاء الطبيعي' : 'Kerala Culture & Tour Add-ons'}
           </h1>
           <p className="text-lg text-text-muted">

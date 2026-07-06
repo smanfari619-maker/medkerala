@@ -82,7 +82,7 @@ export default async function ServicesPage({ params }: Props) {
           <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
             {locale === 'ar' ? 'مظلة الرعاية الشاملة' : 'End-to-End Care'}
           </span>
-          <h1 className="text-4xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
             {locale === 'ar' 
               ? 'الخدمات التي تقدمها ميدكيرلا' 
               : 'Our Complete Medical Tourism Services'}

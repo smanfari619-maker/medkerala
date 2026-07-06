@@ -106,7 +106,7 @@ export default async function AyurvedaPage({ params }: Props) {
               <Leaf className="h-4 w-4 text-[#D4A96A]" />
               {isRtl ? 'الطب الأيورفيدي الأصيل — كيرلا' : 'Authentic Ayurveda — Kerala'}
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold font-display leading-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold font-display leading-tight mb-6">
               {isRtl
                 ? 'الشفاء العميق بقوة طب الأيورفيدا في كيرلا'
                 : 'Heal Deeply with Kerala\'s Ancient Ayurveda Wisdom'}

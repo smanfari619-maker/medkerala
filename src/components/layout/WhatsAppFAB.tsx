@@ -38,7 +38,7 @@ export default function WhatsAppFAB() {
 
   return (
     <div
-      className={`fixed bottom-24 md:bottom-6 ${isRtl ? 'left-6' : 'right-6'} z-50 flex flex-col ${isRtl ? 'items-start' : 'items-end'} gap-3`}
+      className={`hidden lg:flex fixed bottom-6 ${isRtl ? 'left-6' : 'right-6'} z-50 flex-col ${isRtl ? 'items-start' : 'items-end'} gap-3`}
       style={{ animation: 'fadeInUp 0.4s ease-out' }}
     >
       {/* Tooltip chat bubble */}

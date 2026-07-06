@@ -126,7 +126,7 @@ export default async function FAQPage({ params }: Props) {
             <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
               {locale === 'ar' ? 'إجابات على استفساراتك' : 'Questions & Answers'}
             </span>
-            <h1 className="text-4xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+            <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
               {locale === 'ar' ? 'الأسئلة الشائعة حول العلاج والسفر في كيرلا' : 'Medical Tourism FAQ — Kerala'}
             </h1>
             <p className="text-lg text-text-muted">

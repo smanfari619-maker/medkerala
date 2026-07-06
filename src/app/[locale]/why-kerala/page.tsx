@@ -40,13 +40,13 @@ export default async function WhyKeralaPage({ params }: Props) {
           <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
             {locale === 'ar' ? 'الرعاية الصحية الأفضل تكلفة' : 'The Healthcare Capital'}
           </span>
-          <h1 className="text-4xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
-            {locale === 'ar' ? 'لماذا يختار المرضى كيرلا للعلاج؟' : 'Why Choose Kerala for Medical Tourism?'}
+          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+            {locale === 'ar' ? 'لماذا يختار المرضى جنوب الهند (كيرلا وتاميل نادو) للعلاج؟' : 'Why Choose South India (Kerala & Tamil Nadu) for Treatment?'}
           </h1>
           <p className="text-lg text-text-muted">
             {locale === 'ar'
-              ? 'تجمع كيرلا بين البنية التحتية الطبية المتطورة والبيئة الاستوائية الهادئة والتكلفة المنخفضة، مما يجعلها المكان المثالي للتعافي.'
-              : 'Discover how Kerala blends JCI-accredited super-speciality clinics, highly qualified doctors, and a serene recovery atmosphere.'}
+              ? 'يجمع جنوب الهند (كيرلا وتاميل نادو) بين المستشفيات الحاصلة على اعتمادات JCI/NABH، والأطباء والعلماء الطبيين المتميزين، والتعافي الهادئ للأيورفيدا، بأقل من ربع تكاليف العلاج في دول الغرب والخليج.'
+              : 'South India (Kerala & Tamil Nadu) combines world-class JCI/NABH accredited hospital facilities, highly qualified specialists, and serene Ayurvedic rejuvenation settings at a fraction of Western costs.'}
           </p>
         </div>
 
@@ -186,6 +186,39 @@ export default async function WhyKeralaPage({ params }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Tamil Nadu extension block */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-white border border-[#D4A96A]/20 p-8 sm:p-12 rounded-3xl shadow-xs">
+          <div className="space-y-6 order-last lg:order-first">
+            <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
+              {locale === 'ar' ? 'التوسع الجغرافي: تاميل نادو' : 'Regional Extension: Tamil Nadu'}
+            </span>
+            <h2 className="text-3xl font-semibold font-display text-primary-dark">
+              {locale === 'ar' ? 'شراكات النخبة في تشيناي وفيلور' : 'Elite Partnerships in Chennai & Vellore'}
+            </h2>
+            <p className="text-text-muted text-base leading-relaxed">
+              {locale === 'ar'
+                ? 'لتوفير أوسع خيارات الرعاية الممكنة، قمنا بتوسيع شبكتنا لتشمل كبار عمالقة الطب في تاميل نادو المجاورة، مثل مستشفى كلية الطب المسيحية المرموقة (CMC Vellore) ومستشفيات أبولو الرائدة في تشيناي. هذا يضمن لمرضانا الوصول الفوري لأشهر الجراحين والعلماء في مجالات علاج الدم والأورام والسرطان والعمود الفقري المعقد.'
+                : 'To offer the widest scope of specialized care, we have expanded our network to include the medical giants of neighboring Tamil Nadu. Through our partnerships with Christian Medical College (CMC Vellore) and Apollo Hospitals in Chennai, patients can access world-renowned hematology, proton oncology, and complex neurological treatments.'}
+            </p>
+          </div>
+          <div className="bg-[#FAF7F2] p-8 rounded-2xl border border-[#D4A96A]/15 space-y-4">
+            <h4 className="font-bold text-text-dark font-display text-lg">
+              {locale === 'ar' ? 'الوجهات الطبية المضافة:' : 'Added Medical Hubs:'}
+            </h4>
+            <ul className="space-y-3.5 text-sm text-text-muted font-sans">
+              <li>
+                <span className="font-bold text-primary-dark block">{locale === 'ar' ? 'CMC فيلور' : 'CMC Vellore'}</span>
+                <span>{locale === 'ar' ? 'أفضل مستشفى في الهند لعلاجات الدم والسرطان المعقدة وزراعة النخاع.' : 'Ranked #1 for complex hematology, bone marrow transplant and pediatrics.'}</span>
+              </li>
+              <li>
+                <span className="font-bold text-primary-dark block">{locale === 'ar' ? 'أبولو تشيناي' : 'Apollo Chennai'}</span>
+                <span>{locale === 'ar' ? 'مركز التميز الطبي الشهير عالمياً بجراحات القلب والروبوت وعلاج الأورام بالبروتونات.' : 'World-famous flagship hospital for pioneering cardiac and proton-therapy cancer care.'}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   );

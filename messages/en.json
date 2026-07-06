@@ -17,6 +17,7 @@
     "home": "Home",
     "treatments": "Treatments",
     "ayurveda": "Ayurveda",
+    "packages": "Packages",
     "services": "Services",
     "hospitals": "Hospitals",
     "whyKerala": "Why Kerala",
@@ -182,5 +183,26 @@
     "rights": "All rights reserved. Compliant with India's DPDP Act.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "Packages": {
+    "heading": "Transparent Concierge Packages",
+    "subheading": "We handle the stress of planning, translation, accommodation, and transport so you can focus entirely on healing. Select the service level that fits your travel needs.",
+    "essentialTitle": "Essential Concierge",
+    "essentialPrice": "299",
+    "essentialDesc": "Perfect for independent travelers who want baseline medical logistics and pickup services.",
+    "premiumTitle": "Premium VIP Concierge",
+    "premiumPrice": "999",
+    "premiumDesc": "Full-service luxury care coordination. Ideal for GCC patients traveling with family companions.",
+    "whatsIncluded": "What's Included",
+    "hybridNoteTitle": "Important: Understanding Our Treatment Pricing",
+    "hybridNoteDesc": "Treatment prices in India are highly variable and depend on your actual clinical diagnosis. We do not publish flat-rate treatment costs to prevent misleading quotes. Instead, we provide custom quotes from 2-3 top hospitals within 24 hours.",
+    "howItWorks": "How to Book Your Package",
+    "step1Title": "1. Upload Reports",
+    "step1Desc": "Send your recent scans or medical records via our secure portal or WhatsApp.",
+    "step2Title": "2. Compare Opinions",
+    "step2Desc": "Receive verified medical opinions and exact cost estimates from 2-3 top hospitals.",
+    "step3Title": "3. Select & Travel",
+    "step3Desc": "Choose your hospital and concierge package. We handle the visa, lodging, and pickup.",
+    "bookBtn": "Select Package & Consult"
   }
 }

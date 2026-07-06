@@ -160,7 +160,29 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
       </div>
 
       {/* Search, Filter & Sort Controls Panel */}
-      <div className="bg-white border border-[#D4A96A]/20 rounded-3xl p-5 shadow-xs">
+      <div className="bg-white border border-[#D4A96A]/20 rounded-3xl p-5 shadow-xs space-y-4">
+        {/* Mobile Specialty Scrollable Pills */}
+        {activeTab === 'procedures' && (
+          <div className="md:hidden overflow-x-auto no-scrollbar scroll-mask-fade flex gap-2 pb-1.5 -mx-5 px-5 scroll-momentum">
+            {specialities.map((spec) => {
+              const isSelected = selectedSpeciality === spec.key;
+              return (
+                <button
+                  key={spec.key}
+                  onClick={() => setSelectedSpeciality(spec.key)}
+                  className={`px-4 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 tap-active border ${
+                    isSelected
+                      ? 'bg-primary-green border-primary-green text-white shadow-xs'
+                      : 'bg-[#FAF7F2] border-[#D4A96A]/20 text-text-muted'
+                  }`}
+                >
+                  {isRtl ? spec.ar : spec.en}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
           {/* Search Bar */}
           <div className={activeTab === 'procedures' ? "relative md:col-span-6" : "relative md:col-span-8"}>
@@ -176,7 +198,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
               }
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-10 py-3 bg-[#FAF7F2] border border-[#D4A96A]/25 rounded-2xl focus:outline-hidden focus:border-primary-green focus:ring-1 focus:ring-primary-green text-sm text-text-dark placeholder-text-muted/50 transition-all font-sans"
+              className="w-full pl-12 pr-10 py-3 bg-[#FAF7F2] border border-[#D4A96A]/25 rounded-2xl focus:outline-hidden focus:border-primary-green focus:ring-1 focus:ring-primary-green text-sm text-text-dark placeholder-text-muted/50 transition-all font-sans animate-fade-in"
             />
             {searchQuery && (
               <button
@@ -189,9 +211,9 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
             )}
           </div>
 
-          {/* Specialty Filter Dropdown (Only for procedures) */}
+          {/* Specialty Filter Dropdown (Only for desktop) */}
           {activeTab === 'procedures' && (
-            <div className="md:col-span-3">
+            <div className="hidden md:block md:col-span-3">
               <select
                 value={selectedSpeciality}
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedSpeciality(e.target.value)}

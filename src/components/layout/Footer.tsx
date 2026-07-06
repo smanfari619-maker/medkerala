@@ -63,83 +63,156 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-6 pb-2 border-b border-white/10 relative">
-              <span className="absolute left-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
-              {locale === 'ar' ? 'روابط سريعة' : 'Quick Links'}
-            </h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="flex items-center gap-1 hover:text-white hover:translate-x-1 transition-all duration-200 py-1 min-h-[44px]"
-                  >
-                    <ChevronRight className="h-4 w-4 text-[#D4A96A] shrink-0" />
-                    <span>{link.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="border-b border-white/5 md:border-none pb-2 md:pb-0">
+            {/* Mobile Accordion */}
+            <details className="md:hidden group">
+              <summary className="flex items-center justify-between text-white text-base font-semibold py-2.5 list-none cursor-pointer focus:outline-hidden [&::-webkit-details-marker]:hidden">
+                <span>{locale === 'ar' ? 'روابط سريعة' : 'Quick Links'}</span>
+                <ChevronRight className="h-4 w-4 text-[#D4A96A] transition-transform duration-200 group-open:rotate-90 rtl:rotate-180" />
+              </summary>
+              <ul className="space-y-1 mt-2 pb-2">
+                {quickLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="flex items-center gap-2 text-sm text-slate-400 hover:text-white py-1.5 min-h-[44px]">
+                      <ChevronRight className="h-3.5 w-3.5 text-[#D4A96A] shrink-0 rtl:rotate-180" />
+                      <span>{link.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+
+            {/* Desktop Flat View */}
+            <div className="hidden md:block">
+              <h3 className="text-white text-lg font-semibold mb-6 pb-2 border-b border-white/10 relative">
+                <span className="absolute left-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
+                {locale === 'ar' ? 'روابط سريعة' : 'Quick Links'}
+              </h3>
+              <ul className="space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="flex items-center gap-1 hover:text-white hover:translate-x-1 transition-all duration-200 py-1 min-h-[44px]"
+                    >
+                      <ChevronRight className="h-4 w-4 text-[#D4A96A] shrink-0 rtl:rotate-180" />
+                      <span>{link.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Treatments Col */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-6 pb-2 border-b border-white/10 relative">
-              <span className="absolute left-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
-              {tNav('treatments')}
-            </h3>
-            <ul className="space-y-3">
-              {treatmentLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="flex items-center gap-1 hover:text-white hover:translate-x-1 transition-all duration-200 py-1 min-h-[44px]"
-                  >
-                    <ChevronRight className="h-4 w-4 text-[#D4A96A] shrink-0" />
-                    <span>{link.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="border-b border-white/5 md:border-none pb-2 md:pb-0">
+            {/* Mobile Accordion */}
+            <details className="md:hidden group">
+              <summary className="flex items-center justify-between text-white text-base font-semibold py-2.5 list-none cursor-pointer focus:outline-hidden [&::-webkit-details-marker]:hidden">
+                <span>{tNav('treatments')}</span>
+                <ChevronRight className="h-4 w-4 text-[#D4A96A] transition-transform duration-200 group-open:rotate-90 rtl:rotate-180" />
+              </summary>
+              <ul className="space-y-1 mt-2 pb-2">
+                {treatmentLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="flex items-center gap-2 text-sm text-slate-400 hover:text-white py-1.5 min-h-[44px]">
+                      <ChevronRight className="h-3.5 w-3.5 text-[#D4A96A] shrink-0 rtl:rotate-180" />
+                      <span>{link.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+
+            {/* Desktop Flat View */}
+            <div className="hidden md:block">
+              <h3 className="text-white text-lg font-semibold mb-6 pb-2 border-b border-white/10 relative">
+                <span className="absolute left-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
+                {tNav('treatments')}
+              </h3>
+              <ul className="space-y-3">
+                {treatmentLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="flex items-center gap-1 hover:text-white hover:translate-x-1 transition-all duration-200 py-1 min-h-[44px]"
+                    >
+                      <ChevronRight className="h-4 w-4 text-[#D4A96A] shrink-0 rtl:rotate-180" />
+                      <span>{link.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Office Contact Info */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-6 pb-2 border-b border-white/10 relative">
-              <span className="absolute left-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
-              {locale === 'ar' ? 'مكتبنا الرئيسي' : 'Head Office'}
-            </h3>
-            <ul className="space-y-4 text-base">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-[#D4A96A] shrink-0 mt-0.5" />
-                <span className="text-slate-400">
-                  {locale === 'ar'
-                    ? SITE_CONFIG.officeAddressAr
-                    : SITE_CONFIG.officeAddressEn}
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-[#D4A96A] shrink-0" />
-                <a
-                  href={`mailto:${SITE_CONFIG.email}`}
-                  className="hover:text-white text-slate-400 min-h-[44px] flex items-center"
-                >
-                  {SITE_CONFIG.email}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <MessageCircle className="h-5 w-5 text-[#D4A96A] shrink-0" />
-                <a
-                  href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
-                  className="hover:text-white text-slate-400 min-h-[44px] flex items-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {SITE_CONFIG.phone}
-                </a>
-              </li>
-            </ul>
+          <div className="pb-2 md:pb-0">
+            {/* Mobile Accordion */}
+            <details className="md:hidden group">
+              <summary className="flex items-center justify-between text-white text-base font-semibold py-2.5 list-none cursor-pointer focus:outline-hidden [&::-webkit-details-marker]:hidden">
+                <span>{locale === 'ar' ? 'مكتبنا الرئيسي' : 'Head Office'}</span>
+                <ChevronRight className="h-4 w-4 text-[#D4A96A] transition-transform duration-200 group-open:rotate-90 rtl:rotate-180" />
+              </summary>
+              <ul className="space-y-3 mt-2 pb-2 text-sm">
+                <li className="flex items-start gap-3 py-1.5">
+                  <MapPin className="h-5 w-5 text-[#D4A96A] shrink-0 mt-0.5" />
+                  <span className="text-slate-400">
+                    {locale === 'ar' ? SITE_CONFIG.officeAddressAr : SITE_CONFIG.officeAddressEn}
+                  </span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-[#D4A96A] shrink-0" />
+                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-slate-400 hover:text-white py-1.5 min-h-[44px] flex items-center">
+                    {SITE_CONFIG.email}
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <MessageCircle className="h-5 w-5 text-[#D4A96A] shrink-0" />
+                  <a href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`} className="text-slate-400 hover:text-white py-1.5 min-h-[44px] flex items-center" target="_blank" rel="noopener noreferrer">
+                    {SITE_CONFIG.phone}
+                  </a>
+                </li>
+              </ul>
+            </details>
+
+            {/* Desktop Flat View */}
+            <div className="hidden md:block">
+              <h3 className="text-white text-lg font-semibold mb-6 pb-2 border-b border-white/10 relative">
+                <span className="absolute left-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
+                {locale === 'ar' ? 'مكتبنا الرئيسي' : 'Head Office'}
+              </h3>
+              <ul className="space-y-4 text-base">
+                <li className="flex items-start gap-3">
+                  <MapPin className="h-5 w-5 text-[#D4A96A] shrink-0 mt-0.5" />
+                  <span className="text-slate-400">
+                    {locale === 'ar'
+                      ? SITE_CONFIG.officeAddressAr
+                      : SITE_CONFIG.officeAddressEn}
+                  </span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-[#D4A96A] shrink-0" />
+                  <a
+                    href={`mailto:${SITE_CONFIG.email}`}
+                    className="hover:text-white text-slate-400 min-h-[44px] flex items-center"
+                  >
+                    {SITE_CONFIG.email}
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <MessageCircle className="h-5 w-5 text-[#D4A96A] shrink-0" />
+                  <a
+                    href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
+                    className="hover:text-white text-slate-400 min-h-[44px] flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {SITE_CONFIG.phone}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
