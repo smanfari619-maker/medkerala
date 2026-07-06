@@ -15,6 +15,15 @@ import {
   Clock,
   Building,
   TrendingDown,
+  Lock,
+  RefreshCw,
+  Globe,
+  HeartPulse,
+  Award,
+  Tag,
+  PhoneCall,
+  UserRound,
+  Percent,
 } from 'lucide-react';
 import CostComparison from '@/components/home/CostComparison';
 
@@ -117,6 +126,17 @@ export default async function HomePage({ params }: Props) {
 
       {/* ─── 1. HERO ────────────────────────────────────────────────────────── */}
       <section className="relative bg-[#FAF7F2] pt-16 pb-20 lg:pt-20 lg:pb-24 overflow-hidden border-b border-[#D4A96A]/35">
+        {/* Organic Background Curves */}
+        <div className="absolute inset-0 z-0 opacity-10 select-none pointer-events-none">
+          <svg className="absolute right-0 top-0 h-full w-auto text-[#D4A96A]" fill="none" viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+            <path d="M400,0 C300,100 200,300 250,500 C300,700 100,800 0,800 L400,800 Z" fill="currentColor" opacity="0.03" />
+            <path d="M400,200 C320,280 250,450 300,600 C350,750 200,800 50,800" stroke="currentColor" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.07" />
+          </svg>
+          <svg className="absolute left-0 bottom-0 h-[60%] w-auto text-primary-green" fill="none" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,600 C100,500 150,350 100,200 C50,50 120,0 200,0" stroke="currentColor" strokeWidth="2" opacity="0.04" />
+          </svg>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -134,13 +154,13 @@ export default async function HomePage({ params }: Props) {
               {/* Guarantees strip — horizontal scroll on mobile, wrap on desktop */}
               <div className="flex overflow-x-auto no-scrollbar scroll-mask-fade pb-2 lg:pb-0 justify-start lg:justify-start lg:flex-wrap gap-2.5 text-xs font-semibold font-sans -mx-4 px-4 lg:mx-0 lg:px-0">
                 {[
-                  { emoji: '🤝', enText: 'Corporate Partner Rates (Save 15-20%)', arText: 'أسعار مؤسسية مخفضة (توفير ١٥-٢٠٪)' },
-                  { emoji: '🔒', enText: 'Direct-to-Hospital Payment', arText: 'الدفع للمستشفى مباشرة' },
-                  { emoji: '🏥', enText: 'NABH & JCI Certified', arText: 'مستشفيات معتمدة JCI/NABH' },
-                  { emoji: '📞', enText: '24/7 Coordinator', arText: 'منسق شخصي ٢٤/٧' },
-                ].map(({ emoji, enText, arText }) => (
-                  <span key={enText} className="flex items-center gap-1.5 bg-white border border-[#D4A96A]/35 text-text-muted px-3.5 py-2 rounded-full shadow-xs shrink-0">
-                    <span>{emoji}</span>
+                  { icon: Percent, enText: 'Corporate Partner Rates (Save 15-20%)', arText: 'أسعار مؤسسية مخفضة (توفير ١٥-٢٠٪)' },
+                  { icon: Lock, enText: 'Direct-to-Hospital Payment', arText: 'الدفع للمستشفى مباشرة' },
+                  { icon: Award, enText: 'NABH & JCI Certified', arText: 'مستشفيات معتمدة JCI/NABH' },
+                  { icon: PhoneCall, enText: '24/7 Coordinator', arText: 'منسق شخصي ٢٤/٧' },
+                ].map(({ icon: Icon, enText, arText }) => (
+                  <span key={enText} className="flex items-center gap-2 bg-white/90 backdrop-blur-xs border border-[#D4A96A]/45 hover:border-primary-green/30 text-text-muted hover:text-primary-green px-3.5 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-300 shrink-0 group">
+                    <Icon className="h-3.5 w-3.5 text-[#D4A96A] group-hover:text-primary-green transition-colors duration-300" />
                     <span>{isRtl ? arText : enText}</span>
                   </span>
                 ))}
@@ -193,15 +213,15 @@ export default async function HomePage({ params }: Props) {
 
           {/* Compact Trust Bar */}
           <div className="mt-16 pt-10 border-t border-[#D4A96A]/35">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
               {trustStats.map(({ numEn, numAr, labelEn, labelAr, icon: Icon }) => (
-                <div key={labelEn} className="flex items-center gap-3 group">
-                  <div className="w-10 h-10 rounded-xl bg-primary-green/8 text-primary-green flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-white transition-all duration-300 shadow-xs">
-                    <Icon className="h-5 w-5" />
+                <div key={labelEn} className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-[#D4A96A]/30 hover:border-primary-green/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+                  <div className="w-12 h-12 rounded-xl bg-primary-green/8 text-primary-green flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-white transition-all duration-300 shadow-xs">
+                    <Icon className="h-5.5 w-5.5" />
                   </div>
                   <div className="text-left rtl:text-right">
-                    <p className="text-base font-bold text-primary-dark font-display">{isRtl ? numAr : numEn}</p>
-                    <p className="text-xs text-text-muted font-sans">{isRtl ? labelAr : labelEn}</p>
+                    <p className="text-lg sm:text-xl font-bold text-primary-dark font-display leading-tight">{isRtl ? numAr : numEn}</p>
+                    <p className="text-xs text-text-muted font-sans mt-0.5">{isRtl ? labelAr : labelEn}</p>
                   </div>
                 </div>
               ))}
@@ -252,8 +272,13 @@ export default async function HomePage({ params }: Props) {
 
                     {/* Doctor initial & basic details header */}
                     <div className="flex items-center gap-4">
-                      <div className={`h-14 w-14 rounded-2xl bg-gradient-to-tr ${bgGradient} text-white flex items-center justify-center font-bold text-lg font-display shrink-0 shadow-sm`}>
-                        {doc.initials}
+                      <div className="relative shrink-0">
+                        <div className={`h-14 w-14 rounded-2xl bg-gradient-to-tr ${bgGradient} text-white flex items-center justify-center shrink-0 shadow-md border-2 border-white`}>
+                          <UserRound className="h-7 w-7 opacity-85" />
+                        </div>
+                        <span className="absolute -bottom-1 -right-1 h-5 w-5 bg-white border border-[#D4A96A]/45 rounded-full flex items-center justify-center text-[9px] font-bold text-[#D4A96A] shadow-xs">
+                          {doc.initials}
+                        </span>
                       </div>
                       <div>
                         <h3 className="font-bold text-text-dark text-base sm:text-lg font-display group-hover:text-primary-green transition-colors duration-200">{doc.name}</h3>
@@ -433,15 +458,17 @@ export default async function HomePage({ params }: Props) {
             {/* Right: Commitment cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {[
-                { emoji: '🔒', en: 'Zero Hidden Fees', ar: 'لا رسوم خفية', descEn: 'You pay hospitals directly. Our coordination is 100% complimentary.', descAr: 'تدفع للمستشفى مباشرة. التنسيق مجاني كلياً.' },
-                { emoji: '🔄', en: 'Free Rebooking', ar: 'إعادة جدولة مجانية', descEn: 'Any complication? We rearrange everything at zero charge.', descAr: 'أي مضاعفات؟ نعيد الترتيب بدون أي تكلفة إضافية.' },
-                { emoji: '🌍', en: '35+ Countries Served', ar: '٣٥+ دولة خدمناها', descEn: '1,200+ international patients treated across Kerala.', descAr: 'أكثر من ١٢٠٠ مريض دولي علاجه في كيرلا.' },
-                { emoji: '📞', en: '30-Day Post-Care', ar: '٣٠ يوم رعاية بعد العودة', descEn: 'WhatsApp follow-up for 30 days after you return home.', descAr: 'متابعة واتساب ٣٠ يوماً بعد عودتك لبلدك.' },
-              ].map(({ emoji, en, ar, descEn, descAr }) => (
-                <div key={en} className="bg-white/8 border border-white/10 rounded-2xl p-5 hover:bg-white/15 transition-all duration-300 space-y-2">
-                  <div className="text-2xl">{emoji}</div>
-                  <h4 className="font-bold text-white font-display">{isRtl ? ar : en}</h4>
-                  <p className="text-slate-300 text-sm leading-relaxed font-sans">{isRtl ? descAr : descEn}</p>
+                { icon: Lock, en: 'Zero Hidden Fees', ar: 'لا رسوم خفية', descEn: 'You pay hospitals directly. Our coordination is 100% complimentary.', descAr: 'تدفع للمستشفى مباشرة. التنسيق مجاني كلياً.' },
+                { icon: RefreshCw, en: 'Free Rebooking', ar: 'إعادة جدولة مجانية', descEn: 'Any complication? We rearrange everything at zero charge.', descAr: 'أي مضاعفات؟ نعيد الترتيب بدون أي تكلفة إضافية.' },
+                { icon: Globe, en: '35+ Countries Served', ar: '٣٥+ دولة خدمناها', descEn: '1,200+ international patients treated across Kerala.', descAr: 'أكثر من ١٢٠٠ مريض دولي علاجه في كيرلا.' },
+                { icon: HeartPulse, en: '30-Day Post-Care', ar: '٣٠ يوم رعاية بعد العودة', descEn: 'WhatsApp follow-up for 30 days after you return home.', descAr: 'متابعة واتساب ٣٠ يوماً بعد عودتك لبلدك.' },
+              ].map(({ icon: Icon, en, ar, descEn, descAr }) => (
+                <div key={en} className="bg-white/8 border border-white/10 rounded-2xl p-5 hover:bg-white/15 hover:border-[#D4A96A]/40 hover:shadow-lg transition-all duration-300 space-y-3 group">
+                  <div className="h-10 w-10 rounded-xl bg-primary-green/20 text-[#D4A96A] group-hover:text-white group-hover:bg-primary-green flex items-center justify-center transition-all duration-300 shrink-0">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h4 className="font-bold text-white font-display text-base">{isRtl ? ar : en}</h4>
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-sans">{isRtl ? descAr : descEn}</p>
                 </div>
               ))}
             </div>

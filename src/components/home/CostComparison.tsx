@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { Landmark, ArrowRight, CirclePercent } from 'lucide-react';
+import { Landmark, ArrowRight, CirclePercent, Heart, Activity, Smile, Baby, Leaf, Stethoscope } from 'lucide-react';
 
 type Currency = 'USD' | 'AED' | 'GBP' | 'EUR' | 'OMR';
 
@@ -19,6 +19,15 @@ export default function CostComparison() {
   const t = useTranslations('CostComparison');
   const locale = useLocale();
   const [currency, setCurrency] = useState<Currency>('USD');
+
+  const treatmentIcons: Record<string, React.ComponentType<any>> = {
+    bypass: Heart,
+    hip: Activity,
+    knee: Activity,
+    ivf: Baby,
+    dental: Smile,
+    ayurveda: Leaf,
+  };
 
   // Exchange rates relative to 1 USD
   const exchangeRates: Record<Currency, { rate: number; symbol: string; align: 'left' | 'right' }> = {
@@ -104,10 +113,16 @@ export default function CostComparison() {
               <tbody className="divide-y divide-slate-100 text-base sm:text-lg">
                 {treatments.map((tr) => {
                   const ukSavings = calculateSavings(tr.kerala, tr.uk);
+                  const Icon = treatmentIcons[tr.key] || Stethoscope;
                   return (
-                    <tr key={tr.key} className="hover:bg-slate-50 transition-colors duration-150">
+                    <tr key={tr.key} className="hover:bg-slate-50 transition-colors duration-150 group">
                       <td className="py-5 px-6 font-bold text-text-dark">
-                        {t(`treatments.${tr.key}`)}
+                        <div className="flex items-center gap-3">
+                          <div className="h-9 w-9 rounded-lg bg-primary-green/8 text-primary-green flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-white transition-all duration-300">
+                            <Icon className="h-4.5 w-4.5" />
+                          </div>
+                          <span>{t(`treatments.${tr.key}`)}</span>
+                        </div>
                       </td>
                       <td className="py-5 px-6 text-center font-extrabold text-primary-green bg-primary-light/10 shadow-xs">
                         {formatPrice(tr.kerala, currency)}
@@ -122,9 +137,18 @@ export default function CostComparison() {
                         {formatPrice(tr.uae, currency)}
                       </td>
                       <td className="py-5 px-6 text-center font-bold text-emerald-600 bg-emerald-50/50">
-                        <div className="flex items-center justify-center gap-1">
-                          <CirclePercent className="h-4.5 w-4.5 text-emerald-600 shrink-0" />
-                          <span>{t('savingsText', { percent: ukSavings })}</span>
+                        <div className="flex flex-col items-center justify-center gap-1.5 min-w-[120px]">
+                          <div className="flex items-center gap-1">
+                            <CirclePercent className="h-4.5 w-4.5 text-emerald-600 shrink-0" />
+                            <span className="font-extrabold text-sm sm:text-base">{t('savingsText', { percent: ukSavings })}</span>
+                          </div>
+                          {/* Progress bar container */}
+                          <div className="w-24 h-1.5 bg-emerald-100 rounded-full overflow-hidden shadow-inner hidden sm:block">
+                            <div 
+                              className="h-full bg-emerald-600 rounded-full transition-all duration-500"
+                              style={{ width: `${ukSavings}%` }}
+                            />
+                          </div>
                         </div>
                       </td>
                     </tr>
