@@ -192,7 +192,7 @@ export default async function HomePage({ params }: Props) {
               <div className="relative w-full h-full rounded-[32px] sm:rounded-[40px] overflow-hidden shadow-2xl border border-accent-gold/25">
                 <Image
                   src="/images/caring_doctor_patient_hero.png"
-                  alt={isRtl ? 'منسقة ميدكيرلا ترافق مريضاً في كيرلا' : 'MedKerala coordinator supporting a patient in Kerala'}
+                  alt={isRtl ? 'منسقة علاج في كيرلا ترافق مريضاً في كيرلا' : 'TreatInKerala coordinator supporting a patient in Kerala'}
                   fill
                   sizes="(max-width: 768px) 100vw, 560px"
                   priority
@@ -314,7 +314,7 @@ export default async function HomePage({ params }: Props) {
                   {/* Consultation CTA button */}
                   <div className="mt-8 pt-5 border-t border-slate-100 relative z-10">
                     <a
-                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار عن حجز استشارة مع الدكتور: ${doc.name}` : `Hello MedKerala, I would like to request a consultation with: ${doc.name}`)}`}
+                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار عن حجز استشارة مع الدكتور: ${doc.name}` : `Hello TreatInKerala, I would like to request a consultation with: ${doc.name}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-center py-3.5 px-6 rounded-2xl text-xs sm:text-sm font-bold font-sans flex items-center justify-center gap-2 shadow-xs hover:shadow-md transition-all duration-300 min-h-[44px] cursor-pointer tap-active"

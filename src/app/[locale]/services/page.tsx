@@ -23,7 +23,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'ar' ? 'الخدمات الطبية والتنسيقية | ميدكيرلا' : 'End-to-End Coordination Services | MedKerala',
+    title: locale === 'ar' ? 'الخدمات الطبية والتنسيقية | علاج في كيرلا' : 'End-to-End Coordination Services | TreatInKerala',
     description: locale === 'ar' 
       ? 'تعرف على خدماتنا الشاملة للسياحة العلاجية في كيرلا - استشارات الأطباء، التأشيرات، الاستقبال، الإقامة، المترجم الطبي، وجولات التعافي.'
       : 'Explore our complete medical travel services in Kerala. We arrange hospital bookings, medical visas, airport pickup, accommodation, and translator support.',
@@ -84,7 +84,7 @@ export default async function ServicesPage({ params }: Props) {
           </span>
           <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
             {locale === 'ar' 
-              ? 'الخدمات التي تقدمها ميدكيرلا' 
+              ? 'الخدمات التي تقدمها علاج في كيرلا' 
               : 'Our Complete Medical Tourism Services'}
           </h1>
           <p className="text-lg text-text-muted">
@@ -129,7 +129,7 @@ export default async function ServicesPage({ params }: Props) {
             <p className="text-text-muted text-base mt-2">
               {locale === 'ar'
                 ? 'نوضح لك بالتفصيل الخدمات المشمولة في باقاتنا والخدمات الاختيارية الإضافية.'
-                : 'Clear distinction between MedKerala core coordination features and optional personal expenditures.'}
+                : 'Clear distinction between TreatInKerala core coordination features and optional personal expenditures.'}
             </p>
           </div>
 
@@ -176,8 +176,8 @@ export default async function ServicesPage({ params }: Props) {
                 emoji: '✓',
                 titleEn: 'Zero Fees for Patients',
                 titleAr: 'خدمة مجانية بالكامل',
-                descEn: 'MedKerala coordination, translator, and airport pickup are 100% free with no registration costs.',
-                descAr: 'تنسيق ميدكيرلا والمترجم والاستقبال من المطار مجانية بالكامل دون أي رسوم تسجيل.'
+                descEn: 'TreatInKerala coordination, translator, and airport pickup are 100% free with no registration costs.',
+                descAr: 'تنسيق علاج في كيرلا والمترجم والاستقبال من المطار مجانية بالكامل دون أي رسوم تسجيل.'
               },
               {
                 emoji: '💡',

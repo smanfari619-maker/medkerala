@@ -12,7 +12,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'ar' ? 'لماذا العلاج في كيرلا؟ | ميدكيرلا' : 'Why Choose Kerala for Treatment | MedKerala',
+    title: locale === 'ar' ? 'لماذا العلاج في كيرلا؟ | علاج في كيرلا' : 'Why Choose Kerala for Treatment | TreatInKerala',
     description: locale === 'ar' 
       ? 'اكتشف مزايا السياحة العلاجية في كيرلا - مستشفيات ذات معايير عالمية، أطباء متميزين، وتوفير 60-80% في التكاليف الطبية.'
       : 'Learn why Kerala is a top destination for medical care. World-class hospital facilities, foreign-trained doctors, and massive cost savings.',
@@ -82,7 +82,7 @@ export default async function WhyKeralaPage({ params }: Props) {
             {/* Kerala Bar */}
             <div className="space-y-2">
               <div className="flex justify-between font-bold text-sm text-primary-green">
-                <span>{locale === 'ar' ? 'كيرلا، الهند (ميدكيرلا)' : 'Kerala, India (MedKerala)'}</span>
+                <span>{locale === 'ar' ? 'كيرلا، الهند (علاج في كيرلا)' : 'Kerala, India (TreatInKerala)'}</span>
                 <span className="font-display font-extrabold text-base">$4,700</span>
               </div>
               <div className="w-full bg-slate-100 h-6 rounded-full overflow-hidden shadow-inner">
@@ -142,7 +142,7 @@ export default async function WhyKeralaPage({ params }: Props) {
             </h2>
             <p className="text-text-muted text-base leading-relaxed">
               {locale === 'ar'
-                ? 'تعتبر مدينة كالكوت الساحلية قاعدة رئيسية لميدكيرلا. وتتميز بمطار دولي حديث، وتعد موطناً لأبرز المستشفيات التخصصية الفائزة بجوائز الرعاية الصحية في الهند. وتتمتع المدينة بأجواء طبيعية هادئة ومأكولات بحرية صحية وشطآن هادئة مثالية للنقاهة والتعافي بعد الجراحة.'
+                ? 'تعتبر مدينة كالكوت الساحلية قاعدة رئيسية لعلاج في كيرلا. وتتميز بمطار دولي حديث، وتعد موطناً لأبرز المستشفيات التخصصية الفائزة بجوائز الرعاية الصحية في الهند. وتتمتع المدينة بأجواء طبيعية هادئة ومأكولات بحرية صحية وشطآن هادئة مثالية للنقاهة والتعافي بعد الجراحة.'
                 : 'Calicut (Kozhikode) represents a pristine beachside city in Kerala that avoids the metropolitan noise of larger cities while housing the highest density of accredited hospitals. It features a modern international airport (CCJ) connected directly to major GCC hubs and is famous worldwide for organic spices, delicious local cuisine, and historical hospitality.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2">

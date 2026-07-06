@@ -32,8 +32,8 @@ export default function WhatsAppFAB() {
 
   const waUrl = `https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(
     isRtl
-      ? 'مرحباً ميدكيرلا، أود الاستفسار عن العلاج الطبي في كيرلا.'
-      : 'Hello MedKerala, I would like to inquire about medical treatment in Kerala.'
+      ? 'مرحباً علاج في كيرلا، أود الاستفسار عن العلاج الطبي في كيرلا.'
+      : 'Hello TreatInKerala, I would like to inquire about medical treatment in Kerala.'
   )}`;
 
   return (

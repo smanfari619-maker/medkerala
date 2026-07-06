@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   return {
     title: locale === 'ar' 
-      ? 'باقات التنسيق والرعاية الطبية الممتازة | ميدكيرلا' 
-      : 'Premium Medical Concierge & Care Packages | MedKerala',
+      ? 'باقات التنسيق والرعاية الطبية الممتازة | علاج في كيرلا' 
+      : 'Premium Medical Concierge & Care Packages | TreatInKerala',
     description: locale === 'ar'
       ? 'قارن بين باقات التنسيق الطبي الأساسية والراقية للرعاية والترجمة والمرافقة الطبية في كيرلا وجنوب الهند.'
       : 'Compare Essential and Premium VIP concierge packages for medical travel coordination, Arabic translation, transport, and family companion support in Kerala & South India.',
@@ -104,7 +104,7 @@ export default async function PackagesPage({ params }: Props) {
 
             <div className="mt-8 pt-6 border-t border-slate-100">
               <a
-                href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار وحجز الباقة الأساسية ($299)` : `Hello MedKerala, I would like to inquire about the Essential Concierge package ($299)`)}`}
+                href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار وحجز الباقة الأساسية ($299)` : `Hello TreatInKerala, I would like to inquire about the Essential Concierge package ($299)`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-[#FAF7F2] border-2 border-primary-green hover:bg-emerald-50/30 text-primary-green text-center py-4 px-6 rounded-2xl text-base font-bold font-sans flex items-center justify-center gap-2 transition-all duration-300 min-h-[48px] cursor-pointer"
@@ -155,7 +155,7 @@ export default async function PackagesPage({ params }: Props) {
 
             <div className="mt-8 pt-6 border-t border-slate-100">
               <a
-                href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار وحجز باقة الـ VIP الراقية ($999)` : `Hello MedKerala, I would like to inquire about the Premium VIP Concierge package ($999)`)}`}
+                href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار وحجز باقة الـ VIP الراقية ($999)` : `Hello TreatInKerala, I would like to inquire about the Premium VIP Concierge package ($999)`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-[#2D6A4F] hover:bg-[#1B4332] text-white text-center py-4 px-6 rounded-2xl text-base font-bold font-sans flex items-center justify-center gap-2 transition-all duration-300 min-h-[48px] cursor-pointer shadow-md"

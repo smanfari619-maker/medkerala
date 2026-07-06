@@ -463,7 +463,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
                   {/* Actions */}
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-4 flex-wrap">
                     <a
-                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار عن حزمة العلاج الشاملة: ${name}` : `Hello MedKerala, I would like to inquire about all-inclusive package: ${name}`)}`}
+                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار عن حزمة العلاج الشاملة: ${name}` : `Hello TreatInKerala, I would like to inquire about all-inclusive package: ${name}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-text-muted hover:text-[#25D366] transition-colors min-h-[40px] font-sans"

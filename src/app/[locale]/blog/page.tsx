@@ -13,9 +13,9 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'ar' ? 'المدونة الطبية والتعليمية | ميدكيرلا' : 'Medical Blog & Resources | MedKerala',
+    title: locale === 'ar' ? 'المدونة الطبية والتعليمية | علاج في كيرلا' : 'Medical Blog & Resources | TreatInKerala',
     description: locale === 'ar' 
-      ? 'نصائح طبية وإرشادات صحية موثوقة من أطباء ميدكيرلا حول السياحة العلاجية والتعافي في كيرلا.' 
+      ? 'نصائح طبية وإرشادات صحية موثوقة من أطباء علاج في كيرلا حول السياحة العلاجية والتعافي في كيرلا.' 
       : 'Explore healthcare guides, medical tourism tips, and wellness articles written by our medical coordinators in Kerala.',
   };
 }
@@ -38,7 +38,7 @@ export default async function BlogPage({ params }: Props) {
             {locale === 'ar' ? 'المدونة الطبية والإرشادية' : 'Guides & Expert Resources'}
           </span>
           <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
-            {locale === 'ar' ? 'دليل السياحة العلاجية والتعافي في كيرلا' : 'MedKerala Travel & Health Guide'}
+            {locale === 'ar' ? 'دليل السياحة العلاجية والتعافي في كيرلا' : 'TreatInKerala Travel & Health Guide'}
           </h1>
           <p className="text-lg text-text-muted">
             {locale === 'ar'
@@ -80,7 +80,7 @@ export default async function BlogPage({ params }: Props) {
               <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-sm text-text-muted">
                   <User className="h-4.5 w-4.5 text-primary-green" />
-                  <span>{locale === 'ar' ? 'بواسطة ميدكيرلا' : 'By MedKerala'}</span>
+                  <span>{locale === 'ar' ? 'بواسطة علاج في كيرلا' : 'By TreatInKerala'}</span>
                 </div>
                 <Link
                   href={`/blog/${featuredPost.slug}`}

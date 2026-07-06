@@ -563,7 +563,7 @@ export default function HospitalsDirectoryPage() {
                   {/* Actions footer */}
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-4 flex-wrap">
                     <a
-                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الحصول على عرض السعر المؤسسي المخفض لمستشفى: ${name}` : `Hello MedKerala, I would like to request the discounted corporate partner rate estimate for: ${name}`)}`}
+                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الحصول على عرض السعر المؤسسي المخفض لمستشفى: ${name}` : `Hello TreatInKerala, I would like to request the discounted corporate partner rate estimate for: ${name}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-4 py-2.5 rounded-xl text-xs shadow-sm hover:shadow-md transition-all font-sans min-h-[40px] cursor-pointer"

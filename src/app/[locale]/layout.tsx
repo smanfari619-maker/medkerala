@@ -43,11 +43,11 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>) {
   
   return {
     title: locale === 'ar' 
-      ? 'السياحة العلاجية في كيرلا | رعاية صحية عالمية التكلفة | MedKerala' 
-      : 'Kerala Medical Tourism | World-Class Care at a Fraction of the Cost | MedKerala',
+      ? 'السياحة العلاجية في كيرلا | رعاية صحية عالمية التكلفة | TreatInKerala' 
+      : 'Kerala Medical Tourism | World-Class Care at a Fraction of the Cost | TreatInKerala',
     description: locale === 'ar'
-      ? 'تربط ميدكيرلا المرضى الدوليين بأفضل المستشفيات ومراكز الأيورفيدا في كيرلا. خدمات متكاملة للسياحة العلاجية من كالكوت - تأشيرات، سفر، إقامة، وتنسيق العلاج.'
-      : 'MedKerala connects international patients to Kerala\'s best hospitals and Ayurveda centres. End-to-end medical tourism services from Calicut — visa, travel, accommodation, treatment coordination and more.',
+      ? 'تربط علاج في كيرلا المرضى الدوليين بأفضل المستشفيات ومراكز الأيورفيدا في كيرلا. خدمات متكاملة للسياحة العلاجية من كالكوت - تأشيرات، سفر، إقامة، وتنسيق العلاج.'
+      : 'TreatInKerala connects international patients to Kerala\'s best hospitals and Ayurveda centres. End-to-end medical tourism services from Calicut — visa, travel, accommodation, treatment coordination and more.',
     alternates: {
       canonical: locale === 'en' ? '/en' : '/ar',
       languages: {

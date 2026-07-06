@@ -11,7 +11,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'ar' ? 'تجربة السياحة في كيرلا والتعافي | ميدكيرلا' : 'Kerala Tourism & Rejuvenation | MedKerala',
+    title: locale === 'ar' ? 'تجربة السياحة في كيرلا والتعافي | علاج في كيرلا' : 'Kerala Tourism & Rejuvenation | TreatInKerala',
     description: locale === 'ar' 
       ? 'استمتع بالاستشفاء في أحضان الطبيعة الاستوائية بكيرلا. جولات قوارب هادئة، منتجعات صحية وتلال خضراء تساعدك على التعافي السريع.'
       : 'Combine world-class healthcare with serene nature. Explore Kerala houseboats, hill stations, and tropical climates optimized for healing.',
@@ -115,12 +115,12 @@ export default async function KeralaExperiencePage({ params }: Props) {
               {locale === 'ar' ? 'رعاية مخصصة لمرافق السفر' : 'Support for Family & Friends'}
             </span>
             <h2 className="text-3xl font-semibold font-display text-primary-dark">
-              {locale === 'ar' ? 'برنامج ميدكيرلا لمرافقي المرضى' : 'MedKerala Companion Support Program'}
+              {locale === 'ar' ? 'برنامج علاج في كيرلا لمرافقي المرضى' : 'TreatInKerala Companion Support Program'}
             </h2>
             <p className="text-text-muted text-base leading-relaxed">
               {locale === 'ar'
                 ? 'ندرك تماماً أن مرافق السفر يحتاج للراحة والدعم أيضاً. بينما يتلقى المريض العلاج في المستشفى، نقوم بترتيب جولات سياحية محلية ممتعة للمرافق، وتنقلات تسوق للمنتجات والحرير، وترتيب إقامة إضافية مريحة بالقرب من المريض مع توفير خطوط اتصال طوارئ مخصصة.'
-                : 'We understand that family members and companions traveling with patients need support, comfort, and options to relax. While the patient undergoes clinical procedures or stays at the hospital, MedKerala arranges companion sightseeing outings, organic spice shopping drives, comfortable companion stays at luxury hotels, and dedicated local communication support.'}
+                : 'We understand that family members and companions traveling with patients need support, comfort, and options to relax. While the patient undergoes clinical procedures or stays at the hospital, TreatInKerala arranges companion sightseeing outings, organic spice shopping drives, comfortable companion stays at luxury hotels, and dedicated local communication support.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <div className="flex items-center gap-2 text-text-dark font-semibold">

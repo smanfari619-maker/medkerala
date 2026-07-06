@@ -79,9 +79,9 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
             <span className="text-xl font-semibold font-display text-[#2D6A4F] tracking-tight group-hover:text-[#1B4332] transition-colors duration-300">
               {isRtl ? (
-                <>ميد<span className="text-[#D4A96A]">كيرلا</span></>
+                <>علاج في <span className="text-[#D4A96A]">كيرلا</span></>
               ) : (
-                <>Med<span className="text-[#D4A96A]">Kerala</span></>
+                <>TreatIn<span className="text-[#D4A96A]">Kerala</span></>
               )}
             </span>
             {/* Slim trust badge — icon only on smaller widths */}

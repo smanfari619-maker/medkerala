@@ -9,7 +9,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'ar' ? 'الأسئلة الشائعة | ميدكيرلا' : 'Frequently Asked Questions | MedKerala',
+    title: locale === 'ar' ? 'الأسئلة الشائعة | علاج في كيرلا' : 'Frequently Asked Questions | TreatInKerala',
     description: locale === 'ar' 
       ? 'إجابات شاملة على كافة الأسئلة المتعلقة بالتكاليف، المستشفيات، تأشيرات السفر الطبية، وخدمات التنسيق في كيرلا.'
       : 'Find detailed answers to common questions about medical treatments, hospital accreditations, visa letters, and travel costs in India.',
@@ -32,10 +32,10 @@ export default async function FAQPage({ params }: Props) {
             : 'The lower cost is primarily due to lower operational costs, favorable currency exchange rates (INR vs USD/GBP/AED), and the structured healthcare economy in India. Doctors and hospitals maintain high efficiency without the excessive administrative overhead seen in Western countries.'
         },
         {
-          q: isRtl ? 'هل تشمل الأسعار المعلنة رسوم منسقي ميدكيرلا؟' : 'Are there any hidden coordination fees with MedKerala?',
+          q: isRtl ? 'هل تشمل الأسعار المعلنة رسوم منسقي علاج في كيرلا؟' : 'Are there any hidden coordination fees with TreatInKerala?',
           a: isRtl
             ? 'لا توجد أي رسوم خفية. الأسعار والتقديرات الطبية التي نرسلها لك تشمل كافة رسوم التنسيق الطبي، والاستقبال من المطار، والمرافقة اليومية. ستدفع للمستشفى مباشرة مقابل علاجك الفعلي.'
-            : 'No, we believe in 100% transparency. Our estimates include all MedKerala services, local pick-up, and translation support. Patients pay the treating hospital directly for clinical procedures and rooms, ensuring no hidden mark-ups.'
+            : 'No, we believe in 100% transparency. Our estimates include all TreatInKerala services, local pick-up, and translation support. Patients pay the treating hospital directly for clinical procedures and rooms, ensuring no hidden mark-ups.'
         }
       ]
     },
@@ -46,11 +46,11 @@ export default async function FAQPage({ params }: Props) {
         {
           q: isRtl ? 'كيف يمكنني الحصول على تأشيرة طبية للهند؟' : 'How do I obtain an Indian Medical Visa?',
           a: isRtl
-            ? 'يحتاج المرضى إلى تأشيرة طبية إلكترونية (e-Medical Visa). ستقوم ميدكيرلا بتوفير رسالة دعوة رسمية من المستشفى المعالج في كيرلا لمرفق طلبك. التقديم يتم عبر الإنترنت ويستغرق من 3 إلى 5 أيام عمل فقط.'
-            : 'Patients need an e-Medical Visa to enter India. Once you confirm your treatment, MedKerala coordinates with the hospital to issue a formal Visa Invitation Letter on their letterhead within 24 hours. You can then apply online via the official government portal, and approvals take 3–5 working days.'
+            ? 'يحتاج المرضى إلى تأشيرة طبية إلكترونية (e-Medical Visa). ستقوم علاج في كيرلا بتوفير رسالة دعوة رسمية من المستشفى المعالج في كيرلا لمرفق طلبك. التقديم يتم عبر الإنترنت ويستغرق من 3 إلى 5 أيام عمل فقط.'
+            : 'Patients need an e-Medical Visa to enter India. Once you confirm your treatment, TreatInKerala coordinates with the hospital to issue a formal Visa Invitation Letter on their letterhead within 24 hours. You can then apply online via the official government portal, and approvals take 3–5 working days.'
         },
         {
-          q: isRtl ? 'هل تقدم ميدكيرلا خدمات استقبال من مطارات أخرى؟' : 'Which airports do you provide pickups from?',
+          q: isRtl ? 'هل تقدم علاج في كيرلا خدمات استقبال من مطارات أخرى؟' : 'Which airports do you provide pickups from?',
           a: isRtl
             ? 'نقدم خدمات استقبال وإرجاع مجانية من مطار كالكوت الدولي (CCJ). وإذا كانت رحلتك تهبط في مطار كوشين (COK) أو مطار تريفاندروم (TRV)، يمكننا ترتيب تنقلات برية أو رحلات طيران داخلية إضافية حسب الطلب.'
             : 'We provide free personalized pickups and dropoffs from Calicut International Airport (CCJ). If your flight lands at Cochin (COK) or Trivandrum (TRV), we can coordinate domestic connecting flights or private road transfers on request.'
@@ -70,8 +70,8 @@ export default async function FAQPage({ params }: Props) {
         {
           q: isRtl ? 'هل يتحدث الأطباء والكوادر الطبية اللغة العربية؟' : 'Do clinical staffs speak Arabic?',
           a: isRtl
-            ? 'يتحدث الأطباء والممرضون الإنجليزية بطلاقة تامة. ولضمان تواصل دقيق وخالٍ من سوء الفهم، توفر ميدكيرلا مترجماً طبياً يرافقك طوال فترة إقامتك واستشاراتك الطبية لمساعدتك باللغة العربية.'
-            : 'Clinical specialists and nursing staff speak fluent English. For Arabic-speaking patients, MedKerala assigns a dedicated medical translator who accompanies you to all consultations, procedures, and daily check-ins.'
+            ? 'يتحدث الأطباء والممرضون الإنجليزية بطلاقة تامة. ولضمان تواصل دقيق وخالٍ من سوء الفهم، توفر علاج في كيرلا مترجماً طبياً يرافقك طوال فترة إقامتك واستشاراتك الطبية لمساعدتك باللغة العربية.'
+            : 'Clinical specialists and nursing staff speak fluent English. For Arabic-speaking patients, TreatInKerala assigns a dedicated medical translator who accompanies you to all consultations, procedures, and daily check-ins.'
         }
       ]
     },

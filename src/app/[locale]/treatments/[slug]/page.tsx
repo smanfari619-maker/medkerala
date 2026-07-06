@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = locale === 'ar' ? treatment.taglineAr : treatment.tagline;
 
   return {
-    title: `${title} | MedKerala Treatments`,
+    title: `${title} | TreatInKerala Treatments`,
     description,
   };
 }
@@ -134,7 +134,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
             <a
-              href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار عن تكلفة علاج: ${title}` : `Hello MedKerala, I would like to inquire about the cost of: ${title}`)}`}
+              href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار عن تكلفة علاج: ${title}` : `Hello TreatInKerala, I would like to inquire about the cost of: ${title}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-3.5 rounded-full text-base transition-all duration-300 shadow-md hover:shadow-lg min-h-[48px] flex items-center justify-center gap-1.5 cursor-pointer font-sans"
@@ -213,7 +213,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
               <tbody className="divide-y divide-slate-100 text-base sm:text-lg text-text-muted">
                 {/* Kerala */}
                 <tr className="bg-emerald-50/20 font-bold text-primary-green">
-                  <td className="py-4 px-4 text-left sm:px-6 font-display">{locale === 'ar' ? 'كيرلا، الهند (ميدكيرلا)' : 'Kerala, India (MedKerala)'}</td>
+                  <td className="py-4 px-4 text-left sm:px-6 font-display">{locale === 'ar' ? 'كيرلا، الهند (علاج في كيرلا)' : 'Kerala, India (TreatInKerala)'}</td>
                   <td className="py-4 px-4 sm:px-6 font-extrabold text-lg">{formatCost(treatment.costTable.kerala)}</td>
                   <td className="py-4 px-4 sm:px-6 text-emerald-600">—</td>
                 </tr>
@@ -245,8 +245,8 @@ export default async function TreatmentDetailPage({ params }: Props) {
             </table>
             <div className="bg-slate-50 py-4 px-6 border-t border-slate-100 text-xs text-text-muted text-center">
               {locale === 'ar'
-                ? '* تشمل تكاليف كيرلا رسوم تنسيق ميدكيرلا والاستقبال والإقامة.'
-                : '* Kerala prices include MedKerala coordination fees, local pickup, and support.'}
+                ? '* تشمل تكاليف كيرلا رسوم تنسيق علاج في كيرلا والاستقبال والإقامة.'
+                : '* Kerala prices include TreatInKerala coordination fees, local pickup, and support.'}
             </div>
           </div>
         </div>
@@ -289,7 +289,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
                     <span>{locale === 'ar' ? 'خبرة سريرية:' : 'Clinical Experience:'} {isRtl ? doc.expAr : doc.exp}</span>
                   </div>
                   <a
-                    href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود استشارة الدكتور ${doc.nameAr.replace('د. ', '')} بخصوص علاج: ${title}` : `Hello MedKerala, I would like to consult Dr. ${doc.name} regarding: ${title}`)}`}
+                    href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود استشارة الدكتور ${doc.nameAr.replace('د. ', '')} بخصوص علاج: ${title}` : `Hello TreatInKerala, I would like to consult Dr. ${doc.name} regarding: ${title}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 w-full bg-primary-green hover:bg-primary-dark text-white font-bold py-2.5 rounded-xl text-xs transition-all text-center flex items-center justify-center gap-1.5 font-sans min-h-[38px] shadow-xs cursor-pointer"

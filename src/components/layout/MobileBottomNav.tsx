@@ -24,8 +24,8 @@ export default function MobileBottomNav() {
 
   const waUrl = `https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(
     isRtl
-      ? 'مرحباً ميدكيرلا، أود الاستفسار عن العلاج الطبي في كيرلا.'
-      : 'Hello MedKerala, I would like to inquire about medical treatment in Kerala.'
+      ? 'مرحباً علاج في كيرلا، أود الاستفسار عن العلاج الطبي في كيرلا.'
+      : 'Hello TreatInKerala, I would like to inquire about medical treatment in Kerala.'
   )}`;
 
   // Secondary items for bottom sheet
@@ -121,7 +121,7 @@ export default function MobileBottomNav() {
 
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold font-display text-primary-dark">
-                {isRtl ? 'ميد كيرلا - القائمة' : 'MedKerala Directory'}
+                {isRtl ? 'ميد كيرلا - القائمة' : 'TreatInKerala Directory'}
               </h3>
               <button
                 onClick={() => setDrawerOpen(false)}

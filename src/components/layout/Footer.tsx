@@ -36,11 +36,11 @@ export default function Footer() {
               <span className="text-2xl font-bold font-display text-white tracking-tight">
                 {locale === 'ar' ? (
                   <>
-                    ميد<span className="text-[#D4A96A]">كيرلا</span>
+                    علاج في <span className="text-[#D4A96A]">كيرلا</span>
                   </>
                 ) : (
                   <>
-                    Med<span className="text-[#D4A96A]">Kerala</span>
+                    TreatIn<span className="text-[#D4A96A]">Kerala</span>
                   </>
                 )}
               </span>
@@ -243,7 +243,7 @@ export default function Footer() {
 
         {/* Legal & Copyright */}
         <div className="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} MedKerala. {t('rights')}</p>
+          <p>© {new Date().getFullYear()} TreatInKerala. {t('rights')}</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-slate-400 min-h-[44px] flex items-center">
               {t('privacy')}

@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   phone: '+91 94000 18008',
   phoneRaw: '+919400018008',
   whatsappRaw: '919400018008',
-  email: 'care@medkerala.com',
+  email: 'care@treatinkerala.com',
 
   // Pricing policies
   coordinationFeeEn: 'COMPLIMENTARY',

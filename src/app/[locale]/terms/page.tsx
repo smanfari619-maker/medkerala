@@ -11,10 +11,10 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'ar' ? 'شروط الخدمة | ميدكيرلا' : 'Terms of Service | MedKerala',
+    title: locale === 'ar' ? 'شروط الخدمة | علاج في كيرلا' : 'Terms of Service | TreatInKerala',
     description: locale === 'ar' 
-      ? 'اقرأ شروط وأحكام استخدام موقع ميدكيرلا ودورنا كمنسقين للخدمات الطبية واللوجستية.'
-      : 'Read MedKerala\'s terms of service defining our medical coordination, concierge, and patient support parameters.',
+      ? 'اقرأ شروط وأحكام استخدام موقع علاج في كيرلا ودورنا كمنسقين للخدمات الطبية واللوجستية.'
+      : 'Read TreatInKerala\'s terms of service defining our medical coordination, concierge, and patient support parameters.',
   };
 }
 
@@ -25,12 +25,12 @@ export default async function TermsPage({ params }: Props) {
   const content = isRtl ? {
     title: 'شروط الخدمة',
     subtitle: 'آخر تحديث: يونيو ٢٠٢٦',
-    intro: 'يرجى قراءة شروط الخدمة هذه بعناية. باستخدامك لموقع ميدكيرلا وطلب تقدير التكلفة، فإنك توافق على الالتزام بهذه الشروط والأحكام.',
+    intro: 'يرجى قراءة شروط الخدمة هذه بعناية. باستخدامك لموقع علاج في كيرلا وطلب تقدير التكلفة، فإنك توافق على الالتزام بهذه الشروط والأحكام.',
     sections: [
       {
-        title: '١. دور ميدكيرلا كمنسق طبي',
+        title: '١. دور علاج في كيرلا كمنسق طبي',
         icon: Award,
-        text: 'ميدكيرلا هي شركة تنسيق وخدمات لوجستية (كونسيرج) لتسهيل السياحة العلاجية في كيرلا، الهند. نحن لسنا جهة طبية ولا نقدم استشارات طبية أو تشخيصات أو علاجات سريرية بأنفسنا. جميع الإجراءات الطبية يتم توفيرها وإدارتها من قبل المستشفيات والجهات المرخصة الشريكة.'
+        text: 'علاج في كيرلا هي شركة تنسيق وخدمات لوجستية (كونسيرج) لتسهيل السياحة العلاجية في كيرلا، الهند. نحن لسنا جهة طبية ولا نقدم استشارات طبية أو تشخيصات أو علاجات سريرية بأنفسنا. جميع الإجراءات الطبية يتم توفيرها وإدارتها من قبل المستشفيات والجهات المرخصة الشريكة.'
       },
       {
         title: '٢. دقة تقديرات التكلفة والأسعار',
@@ -40,29 +40,29 @@ export default async function TermsPage({ params }: Props) {
       {
         title: '٣. الدفع والتعامل المالي الشفاف',
         icon: Landmark,
-        text: 'يلتزم المريض بدفع تكاليف العلاج الطبي وغرفة الإقامة مباشرة إلى المستشفى المعالج وفقاً لسياسات الدفع الخاصة بهم وبدون أي رسوم خفية أو إضافية من ميدكيرلا. خدمات التنسيق الأساسية التي نقدمها (الاستقبال، المترجم، خطاب التأشيرة) مجانية أو مشمولة في الباقات المحددة صراحة.'
+        text: 'يلتزم المريض بدفع تكاليف العلاج الطبي وغرفة الإقامة مباشرة إلى المستشفى المعالج وفقاً لسياسات الدفع الخاصة بهم وبدون أي رسوم خفية أو إضافية من علاج في كيرلا. خدمات التنسيق الأساسية التي نقدمها (الاستقبال، المترجم، خطاب التأشيرة) مجانية أو مشمولة في الباقات المحددة صراحة.'
       },
       {
         title: '٤. الخدمات اللوجستية والسفر',
         icon: PlaneTakeoff,
-        text: 'تسهل ميدكيرلا خدمات حجز السكن الخارجي والنقل المحلي بناءً على تفضيلاتك. نحن نختار شركاء ذوي موثوقية عالية، إلا أننا لا نتحمل المسؤولية القانونية عن أي تأخير في الرحلات الجوية أو مشاكل تتعلق بإصدار التأشيرات أو ظروف خارجة عن إرادتنا.'
+        text: 'تسهل علاج في كيرلا خدمات حجز السكن الخارجي والنقل المحلي بناءً على تفضيلاتك. نحن نختار شركاء ذوي موثوقية عالية، إلا أننا لا نتحمل المسؤولية القانونية عن أي تأخير في الرحلات الجوية أو مشاكل تتعلق بإصدار التأشيرات أو ظروف خارجة عن إرادتنا.'
       },
       {
         title: '٥. المسؤولية القانونية',
         icon: ShieldAlert,
-        text: 'القرارات المتعلقة بنوع العلاج واختيار المستشفى والأطباء هي مسؤولية المريض بالكامل. لا تتحمل ميدكيرلا المسؤولية عن أي مضاعفات طبية أو نتائج علاجية أو خلافات تنشأ بين المريض والمستشفى المعالج.'
+        text: 'القرارات المتعلقة بنوع العلاج واختيار المستشفى والأطباء هي مسؤولية المريض بالكامل. لا تتحمل علاج في كيرلا المسؤولية عن أي مضاعفات طبية أو نتائج علاجية أو خلافات تنشأ بين المريض والمستشفى المعالج.'
       }
     ],
     footer: 'لأي استفسارات قانونية أو توضيحات إضافية حول شروط الخدمة، يرجى التواصل معنا.'
   } : {
     title: 'Terms of Service',
     subtitle: 'Last Updated: June 2026',
-    intro: 'Please read these Terms of Service carefully. By using the MedKerala website, submitting an estimate request, or engaging our concierge services, you agree to comply with and be bound by the following terms.',
+    intro: 'Please read these Terms of Service carefully. By using the TreatInKerala website, submitting an estimate request, or engaging our concierge services, you agree to comply with and be bound by the following terms.',
     sections: [
       {
-        title: '1. MedKerala as a Facilitator',
+        title: '1. TreatInKerala as a Facilitator',
         icon: Award,
-        text: 'MedKerala is a medical tourism facilitator and logistics concierge company. We are NOT healthcare providers, and we do not provide clinical diagnoses, treatments, or medical advice. All medical procedures and care are provided independently by our licensed partner hospitals and clinics in Kerala.'
+        text: 'TreatInKerala is a medical tourism facilitator and logistics concierge company. We are NOT healthcare providers, and we do not provide clinical diagnoses, treatments, or medical advice. All medical procedures and care are provided independently by our licensed partner hospitals and clinics in Kerala.'
       },
       {
         title: '2. Cost Estimates & Financial Disclaimers',
@@ -72,17 +72,17 @@ export default async function TermsPage({ params }: Props) {
       {
         title: '3. Direct Hospital Payments',
         icon: Landmark,
-        text: 'Patients pay all clinical and hospital room bills directly to the treating hospital. MedKerala does not charge hidden markups or clinical commission fees to the patient. Basic coordination services (airport transfers, translation, invitation letters) are complimentary unless explicitly stated otherwise.'
+        text: 'Patients pay all clinical and hospital room bills directly to the treating hospital. TreatInKerala does not charge hidden markups or clinical commission fees to the patient. Basic coordination services (airport transfers, translation, invitation letters) are complimentary unless explicitly stated otherwise.'
       },
       {
         title: '4. Travel, Accommodation, & Visas',
         icon: PlaneTakeoff,
-        text: 'MedKerala assists patients with local accommodation selection, visa invitation letters, and airport transfers. While we select reliable local hospitality partners, MedKerala is not legally responsible for visa delays, flight issues, or guest-house operational disputes.'
+        text: 'TreatInKerala assists patients with local accommodation selection, visa invitation letters, and airport transfers. While we select reliable local hospitality partners, TreatInKerala is not legally responsible for visa delays, flight issues, or guest-house operational disputes.'
       },
       {
         title: '5. Limitation of Clinical Liability',
         icon: ShieldAlert,
-        text: 'All decisions regarding medical treatment, surgery choices, and doctor selections are the sole responsibility of the patient. MedKerala holds no liability for surgical outcomes, clinical complications, or treatment disputes that may arise between the patient and the hospital.'
+        text: 'All decisions regarding medical treatment, surgery choices, and doctor selections are the sole responsibility of the patient. TreatInKerala holds no liability for surgical outcomes, clinical complications, or treatment disputes that may arise between the patient and the hospital.'
       }
     ],
     footer: 'For any legal inquiries or clarifications regarding these terms, please contact our support team.'

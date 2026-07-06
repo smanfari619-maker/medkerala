@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = locale === 'ar' ? post.excerptAr : post.excerpt;
 
   return {
-    title: `${title} | MedKerala Blog`,
+    title: `${title} | TreatInKerala Blog`,
     description,
   };
 }
@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-text-muted border-b border-slate-100 pb-6 pt-2">
               <span className="flex items-center gap-1">
                 <User className="h-4.5 w-4.5 text-primary-green" />
-                <span>{locale === 'ar' ? 'فريق ميدكيرلا الطبي' : 'MedKerala Medical Panel'}</span>
+                <span>{locale === 'ar' ? 'فريق علاج في كيرلا الطبي' : 'TreatInKerala Medical Panel'}</span>
               </span>
               <span className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />

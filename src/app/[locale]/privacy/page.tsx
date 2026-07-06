@@ -11,10 +11,10 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'ar' ? 'سياسة الخصوصية | ميدكيرلا' : 'Privacy Policy | MedKerala',
+    title: locale === 'ar' ? 'سياسة الخصوصية | علاج في كيرلا' : 'Privacy Policy | TreatInKerala',
     description: locale === 'ar' 
-      ? 'تعرف على سياسة الخصوصية الخاصة بميدكيرلا وكيفية حماية بياناتك الطبية والشخصية وسريتها.'
-      : 'Review MedKerala\'s privacy policy to understand how we protect and manage your personal details and medical records.',
+      ? 'تعرف على سياسة الخصوصية الخاصة بعلاج في كيرلا وكيفية حماية بياناتك الطبية والشخصية وسريتها.'
+      : 'Review TreatInKerala\'s privacy policy to understand how we protect and manage your personal details and medical records.',
   };
 }
 
@@ -25,7 +25,7 @@ export default async function PrivacyPage({ params }: Props) {
   const content = isRtl ? {
     title: 'سياسة الخصوصية',
     subtitle: 'آخر تحديث: يونيو ٢٠٢٦',
-    intro: 'في ميدكيرلا، نلتزم بحماية خصوصيتك وسرية بياناتك الطبية والشخصية. توضح هذه السياسة كيفية جمع واستخدام وحماية معلوماتك عند استخدام نموذج التقدير والخدمات التابعة لنا.',
+    intro: 'في علاج في كيرلا، نلتزم بحماية خصوصيتك وسرية بياناتك الطبية والشخصية. توضح هذه السياسة كيفية جمع واستخدام وحماية معلوماتك عند استخدام نموذج التقدير والخدمات التابعة لنا.',
     sections: [
       {
         title: '١. المعلومات التي نجمعها',
@@ -57,7 +57,7 @@ export default async function PrivacyPage({ params }: Props) {
   } : {
     title: 'Privacy Policy',
     subtitle: 'Last Updated: June 2026',
-    intro: 'At MedKerala, we are committed to protecting your privacy and the confidentiality of your medical and personal details. This policy describes how we collect, use, and safeguard your information when using our estimate forms and concierge services.',
+    intro: 'At TreatInKerala, we are committed to protecting your privacy and the confidentiality of your medical and personal details. This policy describes how we collect, use, and safeguard your information when using our estimate forms and concierge services.',
     sections: [
       {
         title: '1. Information We Collect',

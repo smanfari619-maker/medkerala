@@ -9,10 +9,10 @@ type Props = {
 export async function generateMetadata({ params }: Omit<Props, 'children'>): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'ar' ? 'اتصل بنا | ميدكيرلا' : 'Contact MedKerala | Get in Touch',
+    title: locale === 'ar' ? 'اتصل بنا | علاج في كيرلا' : 'Contact TreatInKerala | Get in Touch',
     description: locale === 'ar' 
       ? 'تواصل مع فريق التنسيق الطبي لدينا في كيرلا، الهند. نحن هنا للإجابة على استفساراتك وتوفير الدعم الطبي على مدار الساعة.'
-      : 'Contact MedKerala\'s patient coordinators. Get support for medical visas, hospital options, and travel logistics in Calicut.',
+      : 'Contact TreatInKerala\'s patient coordinators. Get support for medical visas, hospital options, and travel logistics in Calicut.',
   };
 }
 

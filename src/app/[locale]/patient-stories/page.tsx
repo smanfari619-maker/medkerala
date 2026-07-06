@@ -11,7 +11,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === 'ar' ? 'النتائج الطبية وقصص النجاح | ميدكيرلا' : 'Clinical Outcomes & Network Success Stories | MedKerala',
+    title: locale === 'ar' ? 'النتائج الطبية وقصص النجاح | علاج في كيرلا' : 'Clinical Outcomes & Network Success Stories | TreatInKerala',
     description: locale === 'ar' 
       ? 'تصفح النتائج الطبية وسجلات النجاح للمستشفيات الشريكة المعتمدة JCI و NABH في كيرلا، الهند.'
       : 'Browse clinical track records, success rates, and medical outcomes across JCI & NABH accredited partner hospitals in Kerala, India.',
@@ -168,7 +168,7 @@ export default async function PatientStoriesPage({ params }: Props) {
                   {/* CTA link */}
                   <div className="pt-4">
                     <a
-                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً ميدكيرلا، أود الاستفسار عن تفاصيل العلاج في: ${title}` : `Hello MedKerala, I would like to inquire about treatments at: ${title}`)}`}
+                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار عن تفاصيل العلاج في: ${title}` : `Hello TreatInKerala, I would like to inquire about treatments at: ${title}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-5 py-2.5 rounded-xl text-xs shadow-sm hover:shadow-md transition-all font-sans cursor-pointer"

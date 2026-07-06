@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { TREATMENTS, BLOG_POSTS } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://medkerala.com';
+  const baseUrl = 'https://treatinkerala.com';
   const locales = ['en', 'ar'];
 
   const staticPages = [

@@ -24,11 +24,11 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
   const { locale } = await params;
   return {
     title: locale === 'ar'
-      ? 'علاج الأيورفيدا في كيرلا | بانشاكارما وشيروداهارا | MedKerala'
-      : 'Ayurveda Treatment in Kerala | Panchakarma & Shirodhara | MedKerala',
+      ? 'علاج الأيورفيدا في كيرلا | بانشاكارما وشيروداهارا | TreatInKerala'
+      : 'Ayurveda Treatment in Kerala | Panchakarma & Shirodhara | TreatInKerala',
     description: locale === 'ar'
       ? 'اكتشف قوة طب الأيورفيدا الأصيل في كيرلا. برامج بانشاكارما، شيروداهارا، وعلاجات التطهير والتجديد في أفضل المراكز الأيورفيدية في كالكوت وكيرلا.'
-      : 'Discover authentic Ayurveda healing in Kerala — Panchakarma detox, Shirodhara, herbal therapies and holistic wellness programmes coordinated by MedKerala from Calicut.',
+      : 'Discover authentic Ayurveda healing in Kerala — Panchakarma detox, Shirodhara, herbal therapies and holistic wellness programmes coordinated by TreatInKerala from Calicut.',
   };
 }
 

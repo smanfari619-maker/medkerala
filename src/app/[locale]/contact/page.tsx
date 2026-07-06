@@ -71,7 +71,7 @@ export default function ContactPage() {
             {locale === 'ar' ? 'تواصل معنا' : 'Get in Touch'}
           </span>
           <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
-            {locale === 'ar' ? 'نحن هنا لمساعدتك في رحلتك العلاجية' : 'Contact MedKerala'}
+            {locale === 'ar' ? 'نحن هنا لمساعدتك في رحلتك العلاجية' : 'Contact TreatInKerala'}
           </h1>
           <p className="text-lg text-text-muted">
             {locale === 'ar'
@@ -129,10 +129,10 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-bold text-text-dark">{locale === 'ar' ? 'البريد الإلكتروني للرعاية' : 'Patient Support Email'}</h4>
                     <a
-                      href="mailto:care@medkerala.com"
+                      href="mailto:care@treatinkerala.com"
                       className="text-text-dark hover:text-primary-green font-semibold block text-lg min-h-[44px] flex items-center"
                     >
-                      care@medkerala.com
+                      care@treatinkerala.com
                     </a>
                   </div>
                 </li>

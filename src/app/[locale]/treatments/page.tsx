@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   return {
     title: locale === 'ar' 
-      ? 'العلاجات الطبية والتقليدية في كيرلا | ميدكيرلا' 
-      : 'Medical & Traditional Treatments in Kerala | MedKerala',
+      ? 'العلاجات الطبية والتقليدية في كيرلا | علاج في كيرلا' 
+      : 'Medical & Traditional Treatments in Kerala | TreatInKerala',
     description: locale === 'ar'
       ? 'استكشف قائمة العلاجات والعمليات الطبية والتقليدية في كيرلا بالهند. جراحة القلب، استبدال المفاصل، علاج العقم، الأيورفيدا، علاج الأورام وجراحة الأعصاب بأسعار منافسة.'
       : 'Explore medical, surgical, and traditional Ayurvedic treatments in Kerala, India. Low cost cardiac bypass, orthopaedics, dental care, IVF, oncology, neurosurgery, and gastroenterology.',
@@ -54,7 +54,7 @@ export default async function TreatmentsPage({ params }: Props) {
           <p className="text-lg text-text-muted font-sans">
             {locale === 'ar'
               ? 'اختر من بين التخصصات الطبية الحديثة والجراحة المتقدمة، أو استكشف برامج الاستشفاء وتطهير الجسم باللأيورفيدا الأصيلة.'
-              : 'Browse our range of high-quality allopathic surgical treatments and authentic traditional Ayurvedic healing packages coordinated by MedKerala.'}
+              : 'Browse our range of high-quality allopathic surgical treatments and authentic traditional Ayurvedic healing packages coordinated by TreatInKerala.'}
           </p>
         </div>
 

@@ -201,8 +201,8 @@ export const TREATMENTS: Treatment[] = [
         nameAr: 'د. ج. توماس (رئيس زراعة الأسنان)',
         title: 'Chief Prosthodontist & Implantologist',
         titleAr: 'رئيس قسم تركيبات وزراعة الأسنان',
-        hospital: 'MedKerala Partner Dental Hub',
-        hospitalAr: 'مركز ميدكيرلا الشريك لطب الأسنان',
+        hospital: 'TreatInKerala Partner Dental Hub',
+        hospitalAr: 'مركز علاج في كيرلا الشريك لطب الأسنان',
         exp: '15 Years',
         expAr: '١٥ عاماً'
       }
@@ -377,8 +377,8 @@ export const TREATMENTS: Treatment[] = [
       {
         q: 'How long do I need to stay in India for radiation therapy?',
         qAr: 'ما هي مدة الإقامة المطلوبة في الهند للعلاج الإشعاعي؟',
-        a: 'A typical radiation cycle requires daily treatments for 4 to 6 weeks. MedKerala coordinates accommodation in comfortable service apartments/hotels near the hospital for you and your companion during this period.',
-        aAr: 'تتطلب دورة العلاج الإشعاعي المعتادة جلسات يومية لمدة تتراوح بين 4 إلى 6 أسابيع. تنسق ميدكيرلا إقامة مريحة في شقق مفروشة أو فنادق قريبة من المستشفى لك ولمرافقك خلال هذه الفترة.'
+        a: 'A typical radiation cycle requires daily treatments for 4 to 6 weeks. TreatInKerala coordinates accommodation in comfortable service apartments/hotels near the hospital for you and your companion during this period.',
+        aAr: 'تتطلب دورة العلاج الإشعاعي المعتادة جلسات يومية لمدة تتراوح بين 4 إلى 6 أسابيع. تنسق علاج في كيرلا إقامة مريحة في شقق مفروشة أو فنادق قريبة من المستشفى لك ولمرافقك خلال هذه الفترة.'
       }
     ]
   },
@@ -517,8 +517,8 @@ export const TREATMENTS: Treatment[] = [
         nameAr: 'د. س. علي (رئيس جراحات العيون)',
         title: 'Chief Refractive & Cataract Surgeon',
         titleAr: 'رئيس جراحات القرنية والمياه البيضاء وتصحيح النظر',
-        hospital: 'MedKerala Partner Eye Hub',
-        hospitalAr: 'مركز العيون الشريك لميدكيرلا',
+        hospital: 'TreatInKerala Partner Eye Hub',
+        hospitalAr: 'مركز العيون الشريك لعلاج في كيرلا',
         exp: '16 Years',
         expAr: '١٦ عاماً'
       }
@@ -584,8 +584,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Travel & Visa Guide',
     categoryAr: 'السفر والتأشيرات',
     readTime: '6 min read',
-    content: 'Traveling to India for medical treatment requires an Indian Medical Visa or e-Medical Visa. Citizens of GCC nations (Saudi Arabia, UAE, Oman, Qatar, Bahrain, Kuwait) can apply online via the official Government of India portal. To apply, you need a valid passport (minimum 6 months validity), a copy of your local medical records, and a formal invitation letter on the hospital letterhead in Kerala. MedKerala coordinates directly with the hospital\'s international desk to generate this visa invitation letter within 24 hours. The e-Medical visa allows triple entry into India and is valid for 60 days, with options for extensions if required for long-term treatments like orthopaedics or oncology.',
-    contentAr: 'تتطلب رحلة العلاج في الهند الحصول على تأشيرة طبية أو تأشيرة طبية إلكترونية. يمكن لمواطني دول مجلس التعاون الخليجي التقديم عبر الإنترنت بسهولة. للتقديم تحتاج إلى جواز سفر ساري المفعول لـ6 أشهر على الأقل، ونسخة من تقاريرك الطبية المحلية، ورسالة دعوة رسمية من المستشفى المعالج في كيرلا، وهو ما ستقوم ميدكيرلا بتجهيزه لك في غضون 24 ساعة. تتيح التأشيرة الدخول المتعدد للهند وصلاحية لـ60 يوماً.'
+    content: 'Traveling to India for medical treatment requires an Indian Medical Visa or e-Medical Visa. Citizens of GCC nations (Saudi Arabia, UAE, Oman, Qatar, Bahrain, Kuwait) can apply online via the official Government of India portal. To apply, you need a valid passport (minimum 6 months validity), a copy of your local medical records, and a formal invitation letter on the hospital letterhead in Kerala. TreatInKerala coordinates directly with the hospital\'s international desk to generate this visa invitation letter within 24 hours. The e-Medical visa allows triple entry into India and is valid for 60 days, with options for extensions if required for long-term treatments like orthopaedics or oncology.',
+    contentAr: 'تتطلب رحلة العلاج في الهند الحصول على تأشيرة طبية أو تأشيرة طبية إلكترونية. يمكن لمواطني دول مجلس التعاون الخليجي التقديم عبر الإنترنت بسهولة. للتقديم تحتاج إلى جواز سفر ساري المفعول لـ6 أشهر على الأقل، ونسخة من تقاريرك الطبية المحلية، ورسالة دعوة رسمية من المستشفى المعالج في كيرلا، وهو ما ستقوم علاج في كيرلا بتجهيزه لك في غضون 24 ساعة. تتيح التأشيرة الدخول المتعدد للهند وصلاحية لـ60 يوماً.'
   },
   {
     slug: 'what-to-pack-for-treatment-kerala',
