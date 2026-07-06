@@ -20,7 +20,6 @@ import {
   Globe,
   HeartPulse,
   Award,
-  Tag,
   PhoneCall,
   UserRound,
   Percent,
@@ -28,12 +27,6 @@ import {
 import CostComparison from '@/components/home/CostComparison';
 import { getFAQSchema } from '@/lib/schemas';
 
-function getYouTubeId(urlOrId: string) {
-  if (!urlOrId) return null;
-  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-  const match = urlOrId.match(regExp);
-  return (match && match[2].length === 11) ? match[2] : urlOrId;
-}
 
 interface Props {
   params: Promise<{ locale: string }>;

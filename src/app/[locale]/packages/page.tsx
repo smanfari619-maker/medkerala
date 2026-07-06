@@ -1,7 +1,7 @@
 import React from 'react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { Check, ShieldCheck, HelpCircle, ArrowRight, MessageCircle, FileText, Info, Award, Star } from 'lucide-react';
+import { ArrowRight, MessageCircle, Info, Award, Star } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
 
 interface Props {
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function PackagesPage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Packages' });
-  const tCommon = await getTranslations({ locale, namespace: 'Common' });
+
   const isRtl = locale === 'ar';
 
   const essentialIncludes = [

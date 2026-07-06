@@ -20,7 +20,7 @@ export default function CostComparison() {
   const locale = useLocale();
   const [currency, setCurrency] = useState<Currency>('USD');
 
-  const treatmentIcons: Record<string, React.ComponentType<any>> = {
+  const treatmentIcons: Record<string, React.ComponentType<{ className?: string }>> = {
     bypass: Heart,
     hip: Activity,
     knee: Activity,

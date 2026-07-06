@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ShieldCheck, Stethoscope, Landmark, MessageCircle, ChevronRight, ArrowRight } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
 import { Metadata } from 'next';
 import { Link } from '@/i18n/routing';
