@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
 import {
   Home, Stethoscope, FileText, MessageCircle, MoreHorizontal,
-  Leaf, Package, Building2, HelpCircle, ShieldAlert, X, PhoneCall
+  Leaf, Package, Building2, HelpCircle, ShieldAlert, X, PhoneCall, BookOpen
 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
 
@@ -35,6 +35,7 @@ export default function MobileBottomNav() {
     { href: '/hospitals', label: t('hospitals'), icon: Building2 },
     { href: '/services', label: t('services'), icon: FileText },
     { href: '/why-kerala', label: t('whyKerala'), icon: ShieldAlert },
+    { href: '/blog', label: t('blog'), icon: BookOpen },
     { href: '/faq', label: t('faq'), icon: HelpCircle },
     { href: '/contact', label: t('contact'), icon: PhoneCall },
   ];

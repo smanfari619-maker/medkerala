@@ -21,6 +21,7 @@ export default function Footer() {
   const quickLinks = [
     { href: '/services', label: tNav('services') },
     { href: '/why-kerala', label: tNav('whyKerala') },
+    { href: '/blog', label: tNav('blog') },
     { href: '/faq', label: tNav('faq') },
     { href: '/contact', label: tNav('contact') },
     { href: '/get-estimate', label: tCommon('getEstimate') },
