@@ -1,8 +1,9 @@
 import React from 'react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { ArrowRight, MessageCircle, Info, Award, Star } from 'lucide-react';
+import { ArrowRight, MessageCircle, Info, Award, Star, MapPin, Clock, HeartPulse } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
+import Image from 'next/image';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -167,6 +168,74 @@ export default async function PackagesPage({ params }: Props) {
           </div>
 
         </div>
+
+        {/* NEW TOUR PACKAGES SECTION */}
+        <section className="mb-24 pt-8 border-t border-[#D4A96A]/20">
+          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+            <div className="flex justify-center">
+              <span className="inline-flex items-center gap-1 bg-white border border-primary-green/30 text-xs font-bold text-primary-green px-3 py-1 rounded-full shadow-xs">
+                <HeartPulse className="h-3.5 w-3.5 text-primary-green" />
+                <span>{isRtl ? 'الاستجمام السياحي' : 'Medical Wellness Tours'}</span>
+              </span>
+            </div>
+            <h2 className="text-3xl font-semibold font-display text-primary-dark">
+              {t('tourHeading')}
+            </h2>
+            <p className="text-text-muted text-base font-sans leading-relaxed">
+              {t('tourSubheading')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {['houseboat', 'munnar', 'kochi'].map((key) => (
+              <div key={key} className="bg-white border border-[#D4A96A]/35 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                <div className="relative h-56 w-full overflow-hidden">
+                  <Image
+                    src={`/images/tours_${key}.png`}
+                    alt={t(`tours.${key}.title`)}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-primary-dark font-sans flex items-center gap-1 shadow-sm">
+                    <Clock className="h-3 w-3 text-primary-green" />
+                    <span>{t(`tours.${key}.duration`)}</span>
+                  </div>
+                </div>
+                
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    <h3 className="text-xl font-bold text-text-dark font-display">{t(`tours.${key}.title`)}</h3>
+                  </div>
+                  
+                  <div className="flex items-center gap-1.5 text-xs text-text-muted font-bold font-sans mb-4">
+                    <MapPin className="h-3.5 w-3.5 text-[#D4A96A]" />
+                    <span>{t(`tours.${key}.location`)}</span>
+                  </div>
+                  
+                  <p className="text-sm text-text-muted leading-relaxed font-sans flex-grow">
+                    {t(`tours.${key}.desc`)}
+                  </p>
+                  
+                  <div className="mt-5 pt-4 border-t border-slate-100 space-y-4">
+                    <div className="flex items-center gap-2 text-xs font-bold text-primary-green bg-emerald-50/50 p-2.5 rounded-lg border border-emerald-100">
+                      <HeartPulse className="h-4 w-4 shrink-0" />
+                      <span>{t(`tours.${key}.benefit`)}</span>
+                    </div>
+                    
+                    <a
+                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً، أود الاستفسار عن جولة ${t(`tours.${key}.title`)}` : `Hello, I would like to inquire about the ${t(`tours.${key}.title`)} add-on.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-white border border-primary-green text-primary-green hover:bg-primary-green hover:text-white text-center py-3 px-4 rounded-xl text-sm font-bold font-sans flex items-center justify-center transition-all duration-300"
+                    >
+                      {t('tourBookBtn')}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* 2. HYBRID PRICING TRANSPARENCY SECTION */}
         <section className="bg-white border border-[#D4A96A]/35 rounded-3xl p-8 lg:p-12 mb-20 shadow-xs relative overflow-hidden">

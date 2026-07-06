@@ -203,6 +203,32 @@
     "step2Desc": "Receive verified medical opinions and exact cost estimates from 2-3 top hospitals.",
     "step3Title": "3. Select & Travel",
     "step3Desc": "Choose your hospital and concierge package. We handle the visa, lodging, and pickup.",
-    "bookBtn": "Select Package & Consult"
+    "bookBtn": "Select Package & Consult",
+    "tourHeading": "Post-Treatment Recuperation & Tours",
+    "tourSubheading": "Vetted medical-safe getaways designed for relaxation, wheelchair accessibility, and zero physical strain. Perfect for post-surgery healing or companion sightseeing.",
+    "tours": {
+      "houseboat": {
+        "title": "The Backwater Retreat",
+        "location": "Alleppey / Kumarakom",
+        "duration": "2 Days / 1 Night",
+        "desc": "The ultimate post-surgery recovery. Float through serene backwaters in a luxury AC houseboat with zero physical exertion. Organic customized meals included.",
+        "benefit": "Ideal for post-surgery rest"
+      },
+      "munnar": {
+        "title": "High-Altitude Wellness",
+        "location": "Munnar Hill Station",
+        "duration": "3 Days / 2 Nights",
+        "desc": "Breathe pure mountain air in Kerala's premium hill station. Perfect for Ayurvedic detoxes, stress relief, and pre-treatment relaxation.",
+        "benefit": "Great for Ayurvedic wellness"
+      },
+      "kochi": {
+        "title": "Coastal Heritage",
+        "location": "Kochi & Marari",
+        "duration": "Full Day / Overnight",
+        "desc": "A light, wheelchair-accessible cultural tour for family companions. Includes historic Fort Kochi and a relaxing evening by the Arabian Sea.",
+        "benefit": "Perfect for family companions"
+      }
+    },
+    "tourBookBtn": "Inquire About This Tour"
   }
 }
