@@ -121,7 +121,7 @@ export default function MobileBottomNav() {
 
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold font-display text-primary-dark">
-                {isRtl ? 'ميد كيرلا - القائمة' : 'TreatInKerala Directory'}
+                {isRtl ? 'علاج في كيرلا - القائمة' : 'TreatInKerala Directory'}
               </h3>
               <button
                 onClick={() => setDrawerOpen(false)}
