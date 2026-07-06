@@ -129,7 +129,7 @@ export default async function HomePage({ params }: Props) {
       />
 
       {/* ─── 1. HERO ────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#FAF7F2] pt-16 pb-20 lg:pt-20 lg:pb-24 overflow-hidden border-b border-[#D4A96A]/35">
+      <section className="relative bg-[#FAF7F2] pt-8 pb-12 lg:pt-20 lg:pb-24 overflow-hidden border-b border-[#D4A96A]/35">
         {/* Organic Background Curves */}
         <div className="absolute inset-0 z-0 opacity-10 select-none pointer-events-none">
           <svg className="absolute right-0 top-0 h-full w-auto text-[#D4A96A]" fill="none" viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +142,7 @@ export default async function HomePage({ params }: Props) {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
             {/* Left: Copy + CTAs */}
             <div className="lg:col-span-6 space-y-8 text-center lg:text-left rtl:lg:text-right">
@@ -156,7 +156,7 @@ export default async function HomePage({ params }: Props) {
               </div>
 
               {/* Guarantees strip — horizontal scroll on mobile, wrap on desktop */}
-              <div className="flex overflow-x-auto no-scrollbar scroll-mask-fade pb-2 lg:pb-0 justify-start lg:justify-start lg:flex-wrap gap-2.5 text-xs font-semibold font-sans -mx-4 px-4 lg:mx-0 lg:px-0">
+              <div className="flex overflow-x-auto no-scrollbar scroll-mask-fade pb-2 lg:pb-0 justify-start lg:justify-start lg:flex-wrap gap-2 lg:gap-2.5 text-sm font-semibold font-sans -mx-4 px-4 lg:mx-0 lg:px-0">
                 {[
                   { icon: Percent, enText: 'Corporate Partner Rates (Save 15-20%)', arText: 'أسعار مؤسسية مخفضة (توفير ١٥-٢٠٪)' },
                   { icon: Lock, enText: 'Direct-to-Hospital Payment', arText: 'الدفع للمستشفى مباشرة' },
@@ -216,8 +216,8 @@ export default async function HomePage({ params }: Props) {
           </div>
 
           {/* Compact Trust Bar */}
-          <div className="mt-16 pt-10 border-t border-[#D4A96A]/35">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-10 pt-8 lg:mt-16 lg:pt-10 border-t border-[#D4A96A]/35">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5">
               {trustStats.map(({ numEn, numAr, labelEn, labelAr, icon: Icon }) => (
                 <div key={labelEn} className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-[#D4A96A]/30 hover:border-primary-green/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
                   <div className="w-12 h-12 rounded-xl bg-primary-green/8 text-primary-green flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-white transition-all duration-300 shadow-xs">
@@ -225,7 +225,7 @@ export default async function HomePage({ params }: Props) {
                   </div>
                   <div className="text-left rtl:text-right">
                     <p className="text-lg sm:text-xl font-bold text-primary-dark font-display leading-tight">{isRtl ? numAr : numEn}</p>
-                    <p className="text-xs text-text-muted font-sans mt-0.5">{isRtl ? labelAr : labelEn}</p>
+                    <p className="text-sm text-text-muted font-sans mt-0.5">{isRtl ? labelAr : labelEn}</p>
                   </div>
                 </div>
               ))}
@@ -235,7 +235,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── 2. CLINICAL EXPERTS ─────────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-4">
             <h2 className="text-3xl sm:text-4xl font-semibold font-display text-primary-dark">
@@ -345,7 +345,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── 3. HOW IT WORKS ────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[#FAF7F2] border-y border-[#D4A96A]/30">
+      <section className="py-12 lg:py-24 bg-[#FAF7F2] border-y border-[#D4A96A]/30">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block font-sans">
@@ -406,10 +406,10 @@ export default async function HomePage({ params }: Props) {
       <CostComparison />
 
       {/* ─── 5. TRUST SECTION ───────────────────────────────────────────────── */}
-      <section className="py-20 bg-primary-dark text-white relative overflow-hidden">
+      <section className="py-12 lg:py-20 bg-primary-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-gradient from-primary-green/25 to-transparent opacity-60 -z-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
 
             {/* Left: Copy */}
             <div className="space-y-6">
@@ -481,7 +481,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── 6. FAQ ─────────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#FAF7F2] border-t border-[#D4A96A]/35">
+      <section className="py-12 lg:py-20 bg-[#FAF7F2] border-t border-[#D4A96A]/35">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 space-y-3">
             <h2 className="text-3xl sm:text-4xl font-semibold font-display text-primary-dark">
@@ -524,7 +524,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── 7. FINAL CTA ───────────────────────────────────────────────────── */}
-      <section className="bg-[#FAF7F2] border-t border-[#D4A96A]/35 py-20">
+      <section className="bg-[#FAF7F2] border-t border-[#D4A96A]/35 py-12 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-semibold font-display text-primary-dark">
             {isRtl ? 'هل أنت مستعد لبدء رحلتك العلاجية؟' : 'Ready to Start Your Healing Journey?'}

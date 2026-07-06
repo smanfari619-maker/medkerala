@@ -72,7 +72,7 @@ export default function CostComparison() {
         </div>
 
         {/* Currency Switcher Pill Box */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-[#F0EDE8] p-3 rounded-2xl border border-[#D4A96A]/40">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-white/50 backdrop-blur-sm p-3 rounded-2xl shadow-sm border border-slate-200">
           <div className="flex items-center gap-2">
             <Landmark className="h-5 w-5 text-primary-green shrink-0" />
             <span className="font-semibold text-text-dark text-base">{t('currencyLabel')}:</span>
@@ -95,49 +95,49 @@ export default function CostComparison() {
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-[#D4A96A]/35">
-          <div className="overflow-x-auto">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl overflow-hidden border border-slate-100">
+          <div className="overflow-x-auto no-scrollbar scroll-mask-fade">
             <table className="w-full text-left border-collapse min-w-[700px]" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
               <thead>
-                <tr className="bg-primary-dark text-white text-base sm:text-lg font-medium border-b border-[#D4A96A]/35">
-                  <th className="py-5 px-6 font-display">{t('treatmentName')}</th>
-                  <th className="py-5 px-6 text-center font-display bg-primary-green text-white shadow-inner">
+                <tr className="bg-primary-dark text-white text-sm sm:text-base font-medium border-b border-primary-dark">
+                  <th className="py-3 px-4 sm:py-5 sm:px-6 font-display whitespace-nowrap">{t('treatmentName')}</th>
+                  <th className="py-3 px-4 sm:py-5 sm:px-6 text-center font-display bg-primary-green text-white shadow-inner">
                     {t('kerala')}
                   </th>
-                  <th className="py-5 px-6 text-center font-display">{t('uk')}</th>
-                  <th className="py-5 px-6 text-center font-display">{t('usa')}</th>
-                  <th className="py-5 px-6 text-center font-display">{t('uae')}</th>
-                  <th className="py-5 px-6 text-center font-display text-accent-gold">{locale === 'ar' ? 'الوفورات' : 'Savings'}</th>
+                  <th className="py-3 px-4 sm:py-5 sm:px-6 text-center font-display">{t('uk')}</th>
+                  <th className="py-3 px-4 sm:py-5 sm:px-6 text-center font-display">{t('usa')}</th>
+                  <th className="py-3 px-4 sm:py-5 sm:px-6 text-center font-display">{t('uae')}</th>
+                  <th className="py-3 px-4 sm:py-5 sm:px-6 text-center font-display text-accent-gold">{locale === 'ar' ? 'الوفورات' : 'Savings'}</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 text-base sm:text-lg">
+              <tbody className="divide-y divide-slate-100 text-sm sm:text-base">
                 {treatments.map((tr) => {
                   const ukSavings = calculateSavings(tr.kerala, tr.uk);
                   const Icon = treatmentIcons[tr.key] || Stethoscope;
                   return (
                     <tr key={tr.key} className="hover:bg-slate-50 transition-colors duration-150 group">
-                      <td className="py-5 px-6 font-bold text-text-dark">
+                      <td className="py-3 px-4 sm:py-5 sm:px-6 font-bold text-text-dark whitespace-nowrap">
                         <div className="flex items-center gap-3">
-                          <div className="h-9 w-9 rounded-lg bg-primary-green/8 text-primary-green flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-white transition-all duration-300">
-                            <Icon className="h-4.5 w-4.5" />
+                          <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-lg bg-primary-green/8 text-primary-green flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-white transition-all duration-300">
+                            <Icon className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
                           </div>
                           <span>{t(`treatments.${tr.key}`)}</span>
                         </div>
                       </td>
-                      <td className="py-5 px-6 text-center font-extrabold text-primary-green bg-primary-light/10 shadow-xs">
+                      <td className="py-3 px-4 sm:py-5 sm:px-6 text-center font-extrabold text-primary-green bg-primary-light/10 shadow-xs">
                         {formatPrice(tr.kerala, currency)}
                       </td>
-                      <td className="py-5 px-6 text-center text-text-muted">
+                      <td className="py-3 px-4 sm:py-5 sm:px-6 text-center text-text-muted">
                         {formatPrice(tr.uk, currency)}
                       </td>
-                      <td className="py-5 px-6 text-center text-text-muted">
+                      <td className="py-3 px-4 sm:py-5 sm:px-6 text-center text-text-muted">
                         {formatPrice(tr.usa, currency)}
                       </td>
-                      <td className="py-5 px-6 text-center text-text-muted">
+                      <td className="py-3 px-4 sm:py-5 sm:px-6 text-center text-text-muted">
                         {formatPrice(tr.uae, currency)}
                       </td>
-                      <td className="py-5 px-6 text-center font-bold text-emerald-600 bg-emerald-50/50">
-                        <div className="flex flex-col items-center justify-center gap-1.5 min-w-[120px]">
+                      <td className="py-3 px-4 sm:py-5 sm:px-6 text-center font-bold text-emerald-600 bg-emerald-50/50">
+                        <div className="flex flex-col items-center justify-center gap-1.5 min-w-[100px] sm:min-w-[120px]">
                           <div className="flex items-center gap-1">
                             <CirclePercent className="h-4.5 w-4.5 text-emerald-600 shrink-0" />
                             <span className="font-extrabold text-sm sm:text-base">{t('savingsText', { percent: ukSavings })}</span>
