@@ -129,10 +129,10 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-bold text-text-dark">{locale === 'ar' ? 'البريد الإلكتروني للرعاية' : 'Patient Support Email'}</h4>
                     <a
-                      href="mailto:care@treatinkerala.com"
+                      href={`mailto:${SITE_CONFIG.email}`}
                       className="text-text-dark hover:text-primary-green font-semibold block text-lg min-h-[44px] flex items-center"
                     >
-                      care@treatinkerala.com
+                      {SITE_CONFIG.email}
                     </a>
                   </div>
                 </li>

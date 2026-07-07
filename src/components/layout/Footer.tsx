@@ -233,7 +233,7 @@ export default function Footer() {
             </span>
           </div>
           <div className="flex flex-wrap gap-4 text-[10px] font-bold tracking-widest text-[#D4A96A]">
-            <span>MEMBER: IMTA (INDIAN MEDICAL TOURISM ASSOCIATION)</span>
+            <span>NETWORK: JCI & NABH ACCREDITED HOSPITALS</span>
           </div>
         </div>
 

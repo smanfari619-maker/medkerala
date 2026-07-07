@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { useLocale } from 'next-intl';
 import { SITE_CONFIG } from '@/lib/config';
+import { submitEnquiry } from '@/app/actions/enquiry';
 import {
   User, Stethoscope,
   DollarSign, CheckCircle, MessageCircle, ChevronRight, ChevronLeft,
@@ -92,7 +93,6 @@ export default function GetEstimatePage() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [contactMethod, setContactMethod] = useState<'whatsapp' | 'email'>('whatsapp');
 
   const [data, setData] = useState<FormData>({
     fullName: '',
@@ -177,10 +177,11 @@ export default function GetEstimatePage() {
       if (!data.country.trim()) {
         e.country = isRtl ? 'الدولة مطلوبة' : 'Country is required';
       }
+      if (!data.email.trim() || !data.email.includes('@')) {
+        e.email = isRtl ? 'البريد الإلكتروني مطلوب' : 'Valid email address is required';
+      }
       if (!data.phone.trim()) {
-        e.phone = contactMethod === 'whatsapp'
-          ? (isRtl ? 'رقم واتساب مطلوب مع رمز الدولة' : 'WhatsApp number is required')
-          : (isRtl ? 'البريد الإلكتروني مطلوب' : 'Email address is required');
+        e.phone = isRtl ? 'رقم الهاتف/الواتساب مطلوب' : 'Phone/WhatsApp number is required';
       }
     }
     setErrors(e);
@@ -226,86 +227,14 @@ export default function GetEstimatePage() {
       .map(s => (isRtl ? s!.labelAr : s!.labelEn))
       .join('\n  • ');
 
-    if (contactMethod === 'whatsapp') {
-      const msg = isRtl
-        ? `مرحباً علاج في كيرلا 👋\n\nأطلب تقدير تكلفة تفصيلي لرحلتي العلاجية.\n\n👤 *البيانات الشخصية*\nالاسم: ${data.fullName}\nالدولة: ${data.country}\nالواتساب: ${data.phone}${data.email ? `\nالإيميل: ${data.email}` : ''}\n\n🏥 *المتطلب الطبي*\nالتخصص: ${data.speciality}\nالحالة: ${data.conditionDetail}\nموعد السفر: ${data.urgency}\n\n🏨 *الإقامة والمدة*\nالمدة المطلوبة: ${data.totalDays} يوم\nالمرافقون: ${data.companions === 0 ? 'بمفردي' : `${data.companions} مرافق`}\nفئة السكن المفضلة: ${accommLabel}\n\n📋 *الخدمات اللوجستية*\n  • ${svcList}\n\n📝 *ملاحظات إضافية*\n${data.additionalNotes || 'لا توجد'}\n\n💰 *التقدير الأولي المتوقع*\nالعلاج: $${costEstimate.treatmentMin.toLocaleString()} – $${costEstimate.treatmentMax.toLocaleString()}\nالإقامة: $${costEstimate.accommodation.toLocaleString()}\nالمجموع التقديري: $${costEstimate.totalMin.toLocaleString()} – $${costEstimate.totalMax.toLocaleString()}\n\nيرجى مراجعة طلبي وإفادتي. شكراً 🙏`
-        : `Hello TreatInKerala 👋\n\nI'd like a detailed medical estimate for my trip.\n\n👤 *Personal Details*\nName: ${data.fullName}\nCountry: ${data.country}\nWhatsApp: ${data.phone}${data.email ? `\nEmail: ${data.email}` : ''}\n\n🏥 *Medical Requirement*\nSpeciality: ${data.speciality}\nCondition: ${data.conditionDetail}\nTravel Urgency: ${data.urgency}\n\n🏨 *Stay & Accommodation*\nTotal Stay: ${data.totalDays} days\nCompanions: ${data.companions === 0 ? 'Travelling alone' : `${data.companions} companion(s)`}\nAccommodation Preference: ${accommLabel}\n\n📋 *Logistics Services*\n  • ${svcList}\n\n📝 *Additional Notes*\n${data.additionalNotes || 'None'}\n\n💰 *Preliminary Estimate (Calculated)*\nTreatment: $${costEstimate.treatmentMin.toLocaleString()} – $${costEstimate.treatmentMax.toLocaleString()}\nAccommodation: $${costEstimate.accommodation.toLocaleString()}\nEstimated Total: $${costEstimate.totalMin.toLocaleString()} – $${costEstimate.totalMax.toLocaleString()}\n\nPlease send me a precise quote. Thank you 🙏`;
+    // Call submitEnquiry in the background to log estimate details and send patient confirmation email
+    submitEnquiry({
+      name: data.fullName,
+      email: data.email,
+      phone: data.phone,
+      message: `Calculated Treatment Quote Request:\n- Speciality: ${data.speciality}\n- Condition: ${data.conditionDetail}\n- Travel Urgency: ${data.urgency}\n- Accommodation: ${accommLabel}\n- Companions: ${data.companions}\n- Expected stay: ${data.totalDays} days\n- Preliminary cost estimate: $${costEstimate.totalMin} - $${costEstimate.totalMax}\n- Logistics services: ${svcList || 'None'}\n- Notes: ${data.additionalNotes || 'None'}`
+    }).catch(err => console.error('Failed to submit estimate details to backend:', err));
 
-      window.open(`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(msg)}`, '_blank');
-    } else {
-      // Send via Email mailto
-      const subject = isRtl 
-        ? `طلب خطة أسعار طبية - المريض: ${data.fullName}`
-        : `Medical Treatment Quote Request - Patient: ${data.fullName}`;
-
-      const body = isRtl
-        ? `مرحباً فريق علاج في كيرلا،
-
-أطلب تقدير تكلفة تفصيلي لرحلتي العلاجية. إليك متطلباتي:
-
-👤 البيانات الشخصية:
-الاسم الكامل: ${data.fullName}
-بلد الإقامة: ${data.country}
-البريد الإلكتروني للتواصل: ${data.phone}
-
-🏥 المتطلب الطبي:
-التخصص الطبي: ${data.speciality}
-تفاصيل الحالة: ${data.conditionDetail}
-موعد السفر: ${data.urgency}
-
-🏨 الإقامة والمدة:
-عدد أيام الإقامة: ${data.totalDays} يوم
-المرافقون: ${data.companions === 0 ? 'بمفردي' : `${data.companions} مرافق`}
-فئة السكن المفضلة: ${accommLabel}
-
-📋 الخدمات اللوجستية:
-  • ${svcList}
-
-📝 ملاحظات إضافية:
-${data.additionalNotes || 'لا توجد'}
-
-💰 التقدير الأولي التلقائي المحسوب:
-العلاج المبدئي: $${costEstimate.treatmentMin.toLocaleString()} – $${costEstimate.treatmentMax.toLocaleString()}
-سكن وإقامة: $${costEstimate.accommodation.toLocaleString()}
-المجموع الكلي المقدر: $${costEstimate.totalMin.toLocaleString()} – $${costEstimate.totalMax.toLocaleString()}
-
-يرجى مراجعة طلبي وإرسال عروض الأسعار والبدائل الطبية عبر البريد الإلكتروني. شكراً لكم.`
-        : `Dear TreatInKerala Team,
-
-I'd like to request a detailed clinical estimate for my treatment trip. Here are my details:
-
-👤 Personal Details:
-Full Name: ${data.fullName}
-Country: ${data.country}
-Contact Email: ${data.phone}
-
-🏥 Medical Requirement:
-Speciality: ${data.speciality}
-Condition details: ${data.conditionDetail}
-Travel Urgency: ${data.urgency}
-
-🏨 Stay & Accommodation:
-Requested Stay: ${data.totalDays} days
-Companions: ${data.companions === 0 ? 'Solo' : `${data.companions} companions`}
-Accommodation Option: ${accommLabel}
-
-📋 Logistics Addons:
-  • ${svcList}
-
-📝 Special Requirements:
-${data.additionalNotes || 'None'}
-
-💰 Auto-Calculated Estimate:
-Treatment: $${costEstimate.treatmentMin.toLocaleString()} – $${costEstimate.treatmentMax.toLocaleString()}
-Accommodation: $${costEstimate.accommodation.toLocaleString()}
-Estimated Total: $${costEstimate.totalMin.toLocaleString()} – $${costEstimate.totalMax.toLocaleString()}
-
-Please coordinate quotes from partner super-specialty hospitals and reply to this email address.
-
-Thank you.`;
-
-      window.open(`mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_self');
-    }
     setSubmitted(true);
   };
 
@@ -331,13 +260,9 @@ Thank you.`;
             </h1>
             
             <p className="text-text-muted text-base leading-relaxed max-w-md mx-auto font-sans font-light">
-              {contactMethod === 'whatsapp' 
-                ? (isRtl 
-                    ? 'لقد تم توجيهك إلى واتساب لإرسال ملخص متطلباتك. سيتصل بك منسقنا الطبي لتأكيد خيارات الرعاية.'
-                    : 'Your details have been loaded to WhatsApp. Send the message to instantly activate our medical desk support.')
-                : (isRtl 
-                    ? 'لقد تم فتح بريدك الإلكتروني لإرسال متطلباتك. سنقوم بالتواصل معك عبر البريد مع خطة الأسعار قريباً.'
-                    : 'We opened your mail client with your requirements template. Send the email, and our coordinator will respond shortly.')}
+              {isRtl 
+                ? 'تم تسجيل طلبك الطبي بنجاح. لقد أرسلنا رسالة تأكيد إلى بريدك الإلكتروني، وسيتواصل معك منسقنا الطبي المختص بخطة الأسعار وخيارات الرعاية قريباً.'
+                : 'Your clinical quote request has been securely received! We have sent a confirmation email to your inbox, and our dedicated coordinator will follow up with your detailed treatment options shortly.'}
             </p>
 
             <div className="bg-[#FAF7F2] rounded-2xl p-6 text-start border border-[#D4A96A]/15 space-y-3">
@@ -670,65 +595,13 @@ Thank you.`;
                     placeholder={isRtl ? 'عمان، السعودية، الإمارات، قطر...' : 'e.g. Oman, Saudi Arabia, UAE'}
                     value={data.country} onChange={v => updateData({ country: v })} error={errors.country} />
 
-                  {/* Channel Toggle */}
-                  <div className="space-y-2">
-                    <label className="block text-sm font-bold text-text-dark font-sans">
-                      {isRtl ? 'قناة التواصل المفضلة' : 'Preferred Contact Channel'} *
-                    </label>
-                    <div className="grid grid-cols-2 gap-2 bg-[#FAF7F2] p-1 rounded-xl border border-[#D4A96A]/15">
-                      <button
-                        type="button"
-                        onClick={() => { setContactMethod('whatsapp'); updateData({ phone: '' }); }}
-                        className={`py-2 px-3 text-center rounded-lg text-xs font-bold transition-all cursor-pointer ${contactMethod === 'whatsapp' ? 'bg-[#2D6A4F] text-white shadow-sm' : 'text-slate-600 hover:bg-slate-200'}`}
-                      >
-                        {isRtl ? 'واتساب' : 'WhatsApp'}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => { setContactMethod('email'); updateData({ phone: '' }); }}
-                        className={`py-2 px-3 text-center rounded-lg text-xs font-bold transition-all cursor-pointer ${contactMethod === 'email' ? 'bg-[#2D6A4F] text-white shadow-sm' : 'text-slate-600 hover:bg-slate-200'}`}
-                      >
-                        {isRtl ? 'البريد الإلكتروني' : 'Email Address'}
-                      </button>
-                    </div>
-                  </div>
+                  <InputField id="email" label={isRtl ? 'البريد الإلكتروني' : 'Email Address'} required type="email"
+                    placeholder="patient@example.com"
+                    value={data.email} onChange={v => updateData({ email: v })} error={errors.email} />
 
-                  <div className="space-y-1.5">
-                    <label className="block text-sm font-bold text-[#1B4332] font-sans">
-                      {contactMethod === 'whatsapp'
-                        ? (isRtl ? 'رقم واتساب (مع رمز الدولة)' : 'WhatsApp Number (with country code)')
-                        : (isRtl ? 'البريد الإلكتروني' : 'Email Address')} *
-                    </label>
-                    <div className="relative">
-                      {contactMethod === 'whatsapp' ? (
-                        <Phone className={`absolute top-1/2 -translate-y-1/2 h-4.5 w-4.5 text-slate-400 ${isRtl ? 'end-3.5' : 'start-3.5'}`} />
-                      ) : (
-                        <Mail className={`absolute top-1/2 -translate-y-1/2 h-4.5 w-4.5 text-slate-400 ${isRtl ? 'end-3.5' : 'start-3.5'}`} />
-                      )}
-                      
-                      <input
-                        type={contactMethod === 'whatsapp' ? 'tel' : 'email'}
-                        dir={contactMethod === 'whatsapp' ? 'ltr' : 'auto'}
-                        className={`w-full ${isRtl ? 'pe-11 ps-4' : 'ps-11 pe-4'} py-3.5 rounded-2xl border text-base bg-[#FAF7F2]/30 min-h-[48px] focus:outline-none focus:border-[#2D6A4F]/60 transition-all font-sans text-[#1B4332] ${errors.phone ? 'border-red-400' : 'border-slate-200'}`}
-                        placeholder={contactMethod === 'whatsapp' ? '+968 9900 0000' : 'patient@example.com'}
-                        value={data.phone}
-                        onChange={e => updateData({ phone: e.target.value })}
-                      />
-                    </div>
-                    {errors.phone && <p className="text-red-500 text-xs font-semibold font-sans">{errors.phone}</p>}
-                  </div>
-
-                  {/* Optional Email/Phone alternate fallback input */}
-                  {contactMethod === 'whatsapp' && (
-                    <div className="space-y-1.5">
-                      <label className="block text-sm font-bold text-text-dark font-sans">
-                        {isRtl ? 'البريد الإلكتروني (اختياري)' : 'Email Address (optional)'}
-                      </label>
-                      <input type="email"
-                        className="w-full px-4 py-3.5 rounded-2xl border border-slate-200 text-base bg-[#FAF7F2]/30 min-h-[48px] focus:outline-none focus:border-[#2D6A4F]/60 transition-all font-sans text-[#1B4332]"
-                        placeholder="patient@example.com" value={data.email} onChange={e => updateData({ email: e.target.value })} />
-                    </div>
-                  )}
+                  <InputField id="phone" label={isRtl ? 'رقم الهاتف/الواتساب (مع رمز الدولة)' : 'Phone/WhatsApp Number (with country code)'} required type="tel"
+                    placeholder="+968 9900 0000"
+                    value={data.phone} onChange={v => updateData({ phone: v })} error={errors.phone} />
 
                   <div className="space-y-1.5">
                     <label className="block text-sm font-bold text-text-dark font-sans">
@@ -854,18 +727,10 @@ Thank you.`;
               </button>
             ) : (
               <button type="button" onClick={handleSubmit}
-                className={`text-white font-bold px-6 sm:px-8 py-3.5 rounded-full text-sm sm:text-base transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 cursor-pointer min-h-[48px] font-sans ${contactMethod === 'whatsapp' ? 'bg-[#25D366] hover:bg-[#20ba5a]' : 'bg-[#2D6A4F] hover:bg-[#1B4332]'}`}>
-                {contactMethod === 'whatsapp' ? (
-                  <>
-                    <MessageCircle className="h-5 w-5 shrink-0" />
-                    <span>{isRtl ? 'إرسال الطلب عبر واتساب' : 'Send Request via WhatsApp'}</span>
-                  </>
-                ) : (
-                  <>
-                    <Mail className="h-5 w-5 shrink-0" />
-                    <span>{isRtl ? 'إرسال الطلب عبر البريد' : 'Send Request via Email'}</span>
-                  </>
-                )}
+                className="bg-[#2D6A4F] hover:bg-[#1B4332] text-white font-bold px-6 sm:px-8 py-3.5 rounded-full text-sm sm:text-base transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 cursor-pointer min-h-[48px] font-sans"
+              >
+                <Mail className="h-5 w-5 shrink-0" />
+                <span>{isRtl ? 'إرسال طلب تقدير التكلفة' : 'Submit for Free Quote'}</span>
               </button>
             )}
           </div>

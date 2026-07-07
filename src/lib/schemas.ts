@@ -9,7 +9,7 @@ export function getMedicalOrganizationSchema(locale: string) {
     'description': isAr 
       ? 'تربط تريت إن كيرلا المرضى الدوليين بأفضل مستشفيات كيرلا الحاصلة على اعتمادات JCI و NABH.' 
       : 'TreatInKerala connects international patients to Kerala\'s premier JCI and NABH accredited hospitals and Ayurveda centres.',
-    'email': 'care@treatinkerala.com',
+    'email': 'treatinkerala@gmail.com',
     'telephone': '+919400018008',
     'address': {
       '@type': 'PostalAddress',
@@ -136,7 +136,7 @@ export function getLocalBusinessSchema(locale: string) {
     'image': 'https://treatinkerala.com/images/logo.svg',
     'url': 'https://treatinkerala.com',
     'telephone': '+919400018008',
-    'email': 'care@treatinkerala.com',
+    'email': 'treatinkerala@gmail.com',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': 'Hilite Business Park, Near Bypass Junction',

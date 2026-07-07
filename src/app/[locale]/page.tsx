@@ -478,7 +478,7 @@ export default async function HomePage({ params }: Props) {
             {/* Connecting Line — Desktop Only */}
             <div className="hidden md:block absolute top-[60px] left-[12%] right-[12%] h-0.5 border-t border-dashed border-[#D4A96A]/30 z-0" />
 
-            <div className="flex overflow-x-auto no-scrollbar scroll-momentum snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 md:gap-8 sm:gap-12 relative z-10 pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0" dir={isRtl ? 'rtl' : 'ltr'}>
+            <div className="flex overflow-x-auto no-scrollbar scroll-momentum snap-x snap-mandatory md:grid md:grid-cols-3 md:overflow-visible gap-6 md:gap-8 sm:gap-12 relative z-10 pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0" dir={isRtl ? 'rtl' : 'ltr'}>
               {steps.map((step, idx) => {
                 const Icon = step.icon;
                 return (
