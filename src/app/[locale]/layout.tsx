@@ -77,6 +77,11 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>) {
       description,
       images: ['https://treatinkerala.com/images/caring_doctor_patient_hero.png'],
     },
+    icons: {
+      icon: '/favicon.ico',
+      shortcut: '/favicon.ico',
+      apple: '/icon.png',
+    },
   };
 }
 
