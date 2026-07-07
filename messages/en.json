@@ -24,11 +24,18 @@
     "stories": "Patient Stories",
     "blog": "Blog",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "about": "About Us"
   },
   "Hero": {
-    "headline": "Let us carry the burden. You focus on healing.",
-    "subheadline": "We understand how overwhelming medical travel can feel. From your first consultation to your safe return home, our personal coordinators in Calicut walk beside you every single step of the way."
+    "headline": "Every step, coordinated. Every detail, handled. You focus on healing.",
+    "headlineLine1": "Every step, coordinated.",
+    "headlineLine2": "Every detail, handled.",
+    "headlineLine3": "You focus on healing.",
+    "subheadline": "We understand how overwhelming medical travel can feel. From your first consultation to your safe return home, our personal coordinators in Calicut walk beside you every single step of the way.",
+    "subheadlineShort": "From consultation to homecoming — your personal coordinator handles every step so you don't have to.",
+    "counterLabel": "Patients coordinated this year:",
+    "partnerLabel": "Partner hospitals in our network"
   },
   "TrustBar": {
     "nabh": "NABH Accredited Partner Hospitals",

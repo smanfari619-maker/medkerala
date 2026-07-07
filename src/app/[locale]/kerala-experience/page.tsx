@@ -10,11 +10,19 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const isAr = locale === 'ar';
   return {
-    title: locale === 'ar' ? 'تجربة السياحة في كيرلا والتعافي | علاج في كيرلا' : 'Kerala Tourism & Rejuvenation | TreatInKerala',
-    description: locale === 'ar' 
+    title: isAr ? 'تجربة السياحة في كيرلا والتعافي | علاج في كيرلا' : 'Kerala Tourism & Rejuvenation | TreatInKerala',
+    description: isAr 
       ? 'استمتع بالاستشفاء في أحضان الطبيعة الاستوائية بكيرلا. جولات قوارب هادئة، منتجعات صحية وتلال خضراء تساعدك على التعافي السريع.'
       : 'Combine world-class healthcare with serene nature. Explore Kerala houseboats, hill stations, and tropical climates optimized for healing.',
+    alternates: {
+      canonical: isAr ? '/ar/kerala-experience' : '/en/kerala-experience',
+      languages: {
+        en: '/en/kerala-experience',
+        ar: '/ar/kerala-experience',
+      },
+    },
   };
 }
 
@@ -55,15 +63,19 @@ export default async function KeralaExperiencePage({ params }: Props) {
   ];
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+    <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
-            {locale === 'ar' ? 'سياحة ونقاهة في الجنة' : 'Recuperation in Paradise'}
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <span className="h-px w-8 bg-[#D4A96A]" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+              {locale === 'ar' ? 'سياحة ونقاهة في الجنة' : 'Recuperation in Paradise'}
+            </span>
+            <span className="h-px w-8 bg-[#D4A96A]" />
+          </div>
+          <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
             {locale === 'ar' ? 'اكتشف كيرلا — جنة النقاهة والاستشفاء الطبيعي' : 'Kerala Culture & Tour Add-ons'}
           </h1>
           <p className="text-lg text-text-muted">
@@ -80,11 +92,11 @@ export default async function KeralaExperiencePage({ params }: Props) {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-3xl p-8 border border-[#D4A96A]/35 hover:border-primary-green/40 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-xs font-bold text-[#D4A96A] bg-[#FAF7F2] border border-[#D4A96A]/35 px-3 py-1 rounded-full flex items-center gap-1">
+                    <span className="text-xs font-bold text-[#D4A96A] bg-[#FAF7F2] border border-[#D4A96A]/20 px-3 py-1 rounded-full flex items-center gap-1">
                       <MapPin className="h-3.5 w-3.5 shrink-0" />
                       <span>{pkg.loc}</span>
                     </span>
@@ -111,10 +123,13 @@ export default async function KeralaExperiencePage({ params }: Props) {
         {/* Companion Program Detail */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
-              {locale === 'ar' ? 'رعاية مخصصة لمرافق السفر' : 'Support for Family & Friends'}
-            </span>
-            <h2 className="text-3xl font-semibold font-display text-primary-dark">
+            <div className="flex items-center gap-3 mb-2 rtl:flex-row-reverse rtl:justify-end">
+              <span className="h-px w-8 bg-[#D4A96A]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+                {locale === 'ar' ? 'رعاية مخصصة لمرافق السفر' : 'Support for Family & Friends'}
+              </span>
+            </div>
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332]">
               {locale === 'ar' ? 'برنامج علاج في كيرلا لمرافقي المرضى' : 'TreatInKerala Companion Support Program'}
             </h2>
             <p className="text-text-muted text-base leading-relaxed">

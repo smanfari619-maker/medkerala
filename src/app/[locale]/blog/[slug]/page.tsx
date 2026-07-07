@@ -5,6 +5,7 @@ import { Link } from '@/i18n/routing';
 import { BLOG_POSTS } from '@/lib/data';
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Zap } from 'lucide-react';
 import { Metadata } from 'next';
+import { getBreadcrumbSchema, getHowToSchema } from '@/lib/schemas';
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -22,6 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${title} | TreatInKerala Blog`,
     description,
+    alternates: {
+      canonical: locale === 'ar' ? `/ar/blog/${slug}` : `/en/blog/${slug}`,
+      languages: {
+        en: `/en/blog/${slug}`,
+        ar: `/ar/blog/${slug}`,
+      },
+    },
   };
 }
 
@@ -75,13 +83,66 @@ export default async function BlogPostPage({ params }: Props) {
     },
   };
 
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: isRtl ? 'الرئيسية' : 'Home', url: `https://treatinkerala.com/${locale}` },
+    { name: isRtl ? 'المدونة' : 'Blog', url: `https://treatinkerala.com/${locale}/blog` },
+    { name: title, url: `https://treatinkerala.com/${locale}/blog/${slug}` }
+  ]);
+
+  let howToSchema: any = null;
+  if (slug === 'medical-visa-india-step-by-step') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيفية الحصول على تأشيرة طبية للهند' : 'How to Obtain an Indian Medical Visa',
+      isRtl ? [
+        { name: 'الخطوة الأولى: جهز المستندات', text: 'تأكد من صلاحية جواز السفر لـ 6 أشهر على الأقل وجهز تقاريرك الطبية المحلية.' },
+        { name: 'الخطوة الثانية: احصل على خطاب دعوة المستشفى', text: 'تقوم خدمة علاج في كيرلا بتنسيق خطاب دعوة رسمي من المستشفى في الهند خلال 24 ساعة.' },
+        { name: 'الخطوة الثالثة: قدم الطلب عبر الإنترنت', text: 'املأ نموذج التأشيرة الطبية الإلكترونية على البوابة الحكومية الرسمية.' },
+        { name: 'الخطوة الرابعة: ادفع الرسوم', text: 'ادفع رسوم التأشيرة الطبية الإلكترونية باستخدام البطاقة الائتمانية.' },
+        { name: 'الخطوة الخامسة: استلم التأشيرة', text: 'تصلك موافقة التأشيرة عبر البريد الإلكتروني خلال 3 إلى 4 أيام.' }
+      ] : [
+        { name: 'Step 1: Gather your documents', text: 'Ensure your passport is valid for at least 6 months and gather your local medical reports.' },
+        { name: 'Step 2: Receive the hospital invitation letter', text: 'TreatInKerala will coordinate with the hospital to issue a formal e-Medical visa invitation letter within 24 hours.' },
+        { name: 'Step 3: Complete the online application', text: 'Fill the official Indian e-Medical Visa form on the government portal.' },
+        { name: 'Step 4: Pay the fee', text: 'Pay the e-visa processing fee online using your credit or debit card.' },
+        { name: 'Step 5: Get your e-visa', text: 'Receive your approved e-visa via email within 3 to 4 days.' }
+      ]
+    );
+  } else if (slug === 'plan-medical-trip-calicut-logistics') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيفية التخطيط لرحلتك العلاجية إلى كالكوت' : 'How to Plan Your Medical Journey to Calicut',
+      isRtl ? [
+        { name: 'الخطوة الأولى: أرسل التقارير للاستشارة', text: 'شارك تقاريرك الطبية الحالية عبر بوابتنا الإلكترونية أو واتساب للحصول على استشارة مجانية.' },
+        { name: 'الخطوة الثانية: استلم تقدير التكلفة', text: 'احصل على عرض أسعار وخطة علاج متكاملة مخصصة لحالتك خلال 48 ساعة.' },
+        { name: 'الخطوة الثالثة: اطلب خطاب التأشيرة', text: 'اختر المستشفى المفضل وسنصدر لك خطاب دعوة التأشيرة فوراً.' },
+        { name: 'الخطوة الرابعة: قدم على التأشيرة الإلكترونية', text: 'املأ نموذج التأشيرة الطبية للهند عبر الإنترنت بـ 5 دقائق.' },
+        { name: 'الخطوة الخامسة: احجز تذكرتك لكالكوت', text: 'احجز طيرانك لمطار كالكوت الدولي (CCJ) وسيكون منسقنا في استقبالك ببطاقة ترحيب وشريحة اتصال.' }
+      ] : [
+        { name: 'Step 1: Submit your medical reports', text: 'Share your latest medical scans and files via our secure form or WhatsApp.' },
+        { name: 'Step 2: Receive treatment plan & estimate', text: 'Get a binding cost proposal and recovery timeline custom-tailored within 48 hours.' },
+        { name: 'Step 3: Request official visa invitation', text: 'Select your hospital network and we will generate the medical invitation letter immediately.' },
+        { name: 'Step 4: Apply for e-Medical Visa', text: 'Complete the online application forms in 5 minutes with our guide.' },
+        { name: 'Step 5: Book your flight to Calicut (CCJ)', text: 'Book travel. A personal coordinator will receive you at Kozhikode Airport with a local SIM card.' }
+      ]
+    );
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {howToSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        />
+      )}
+      <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Link */}

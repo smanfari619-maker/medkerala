@@ -7,20 +7,15 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppFAB from '@/components/layout/WhatsAppFAB';
 import MobileBottomNav from '@/components/layout/MobileBottomNav';
-import { Lora, Plus_Jakarta_Sans, Tajawal } from 'next/font/google';
+import { Inter, Tajawal } from 'next/font/google';
 import '../globals.css';
-import { getMedicalOrganizationSchema } from '@/lib/schemas';
+import { getMedicalOrganizationSchema, getLocalBusinessSchema, getAggregateRatingSchema } from '@/lib/schemas';
 
-const lora = Lora({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-lora',
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-plus-jakarta',
+  variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700'],
 });
 
 const tajawal = Tajawal({
@@ -42,19 +37,45 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Omit<Props, 'children'>) {
   const { locale } = await params;
   
+  const title = locale === 'ar' 
+    ? 'السياحة العلاجية في كيرلا | رعاية صحية عالمية التكلفة | TreatInKerala' 
+    : 'Kerala Medical Tourism | World-Class Care at a Fraction of the Cost | TreatInKerala';
+
+  const description = locale === 'ar'
+    ? 'تربط علاج في كيرلا المرضى الدوليين بأفضل المستشفيات ومراكز الأيورفيدا في كيرلا. خدمات متكاملة للسياحة العلاجية من كالكوت - تأشيرات، سفر، إقامة، وتنسيق العلاج.'
+    : 'TreatInKerala connects international patients to Kerala\'s best hospitals and Ayurveda centres. End-to-end medical tourism services from Calicut — visa, travel, accommodation, treatment coordination and more.';
+
   return {
-    title: locale === 'ar' 
-      ? 'السياحة العلاجية في كيرلا | رعاية صحية عالمية التكلفة | TreatInKerala' 
-      : 'Kerala Medical Tourism | World-Class Care at a Fraction of the Cost | TreatInKerala',
-    description: locale === 'ar'
-      ? 'تربط علاج في كيرلا المرضى الدوليين بأفضل المستشفيات ومراكز الأيورفيدا في كيرلا. خدمات متكاملة للسياحة العلاجية من كالكوت - تأشيرات، سفر، إقامة، وتنسيق العلاج.'
-      : 'TreatInKerala connects international patients to Kerala\'s best hospitals and Ayurveda centres. End-to-end medical tourism services from Calicut — visa, travel, accommodation, treatment coordination and more.',
+    title,
+    description,
     alternates: {
       canonical: locale === 'en' ? '/en' : '/ar',
       languages: {
         en: '/en',
         ar: '/ar',
       },
+    },
+    openGraph: {
+      title,
+      description,
+      url: 'https://treatinkerala.com',
+      siteName: 'TreatInKerala',
+      locale: locale === 'ar' ? 'ar_SA' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: 'https://treatinkerala.com/images/caring_doctor_patient_hero.png',
+          width: 800,
+          height: 1000,
+          alt: locale === 'ar' ? 'علاج في كيرلا' : 'TreatInKerala',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://treatinkerala.com/images/caring_doctor_patient_hero.png'],
     },
   };
 }
@@ -72,17 +93,27 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const isRtl = locale === 'ar';
   const medicalSchema = getMedicalOrganizationSchema(locale);
+  const localBusinessSchema = getLocalBusinessSchema(locale);
+  const aggregateRatingSchema = getAggregateRatingSchema(locale);
 
   return (
     <html
       lang={locale}
       dir={isRtl ? 'rtl' : 'ltr'}
-      className={`${lora.variable} ${plusJakartaSans.variable} ${tajawal.variable} scroll-smooth`}
+      className={`${inter.variable} ${tajawal.variable} scroll-smooth`}
     >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
         />
       </head>
       <body className="bg-[#FAF7F2] text-[#1A1A2E] font-sans antialiased flex flex-col min-h-screen">

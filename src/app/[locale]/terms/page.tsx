@@ -10,11 +10,19 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const isAr = locale === 'ar';
   return {
-    title: locale === 'ar' ? 'شروط الخدمة | علاج في كيرلا' : 'Terms of Service | TreatInKerala',
-    description: locale === 'ar' 
+    title: isAr ? 'شروط الخدمة | علاج في كيرلا' : 'Terms of Service | TreatInKerala',
+    description: isAr 
       ? 'اقرأ شروط وأحكام استخدام موقع علاج في كيرلا ودورنا كمنسقين للخدمات الطبية واللوجستية.'
       : 'Read TreatInKerala\'s terms of service defining our medical coordination, concierge, and patient support parameters.',
+    alternates: {
+      canonical: isAr ? '/ar/terms' : '/en/terms',
+      languages: {
+        en: '/en/terms',
+        ar: '/ar/terms',
+      },
+    },
   };
 }
 
@@ -89,7 +97,7 @@ export default async function TermsPage({ params }: Props) {
   };
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Header */}

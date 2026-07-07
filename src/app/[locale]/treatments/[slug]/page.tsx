@@ -23,6 +23,7 @@ import {
   Eye
 } from 'lucide-react';
 import { Metadata } from 'next';
+import { getMedicalProcedureSchema, getBreadcrumbSchema } from '@/lib/schemas';
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -35,11 +36,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
   const title = locale === 'ar' ? treatment.nameAr : treatment.name;
-  const description = locale === 'ar' ? treatment.taglineAr : treatment.tagline;
+  const desc = locale === 'ar' ? treatment.overviewAr : treatment.overview;
+  const description = desc.length > 155 ? desc.slice(0, 155) + '...' : desc;
 
   return {
     title: `${title} | TreatInKerala Treatments`,
     description,
+    alternates: {
+      canonical: locale === 'ar' ? `/ar/treatments/${slug}` : `/en/treatments/${slug}`,
+      languages: {
+        en: `/en/treatments/${slug}`,
+        ar: `/ar/treatments/${slug}`,
+      },
+    },
   };
 }
 
@@ -97,54 +106,84 @@ export default async function TreatmentDetailPage({ params }: Props) {
     return Math.round(((compare - kerala) / compare) * 100);
   };
 
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: isRtl ? 'الرئيسية' : 'Home', url: `https://treatinkerala.com/${locale}` },
+    { name: isRtl ? 'العلاجات' : 'Treatments', url: `https://treatinkerala.com/${locale}/treatments` },
+    { name: title, url: `https://treatinkerala.com/${locale}/treatments/${slug}` }
+  ]);
+
+  const medicalProcedureSchema = getMedicalProcedureSchema(locale, treatment);
+
   return (
-    <div className="flex flex-col w-full overflow-x-hidden animate-fade-in">
+    <div className="flex flex-col w-full overflow-x-hidden animate-fade-in pt-32 lg:pt-40 bg-[#FAF7F2]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalProcedureSchema) }}
+      />
       {/* 1. HERO SECTION */}
-      <section className="bg-primary-dark text-white py-16 border-b border-accent-gold/25 relative overflow-hidden">
-        <div className="absolute inset-0 bg-radial-gradient from-primary-green/20 to-transparent -z-10 opacity-70"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <section className="pb-16 lg:pb-24 border-b border-[#D4A96A]/35 relative overflow-hidden">
+        {/* Large Background Vector Watermark */}
+        <div className="absolute -bottom-24 -right-24 rtl:-left-24 rtl:-right-auto h-96 w-96 opacity-[0.02] text-[#2D6A4F] pointer-events-none transition-all duration-700 ease-out">
+          <Icon className="w-full h-full" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
           <div className="flex items-center justify-center gap-2">
-            <span className="text-xs font-bold bg-[#FAF7F2]/10 border border-white/10 text-accent-gold px-3.5 py-1 rounded-full uppercase tracking-wider">
+            <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block font-sans">
               {speciality}
             </span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-semibold font-display tracking-tight max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight max-w-4xl mx-auto">
             {title}
           </h1>
-          <p className="text-accent-gold font-serif italic text-lg sm:text-xl max-w-2xl mx-auto font-medium">
+          <p className="text-text-muted text-lg sm:text-xl max-w-2xl mx-auto font-sans leading-relaxed">
             {tagline}
           </p>
 
-          {/* Price & Savings Pill */}
-          <div className="inline-flex flex-col sm:flex-row items-center gap-2.5 sm:gap-4 bg-white/10 border border-white/10 rounded-2xl px-5 py-3.5 max-w-lg mx-auto backdrop-blur-md">
-            <div className="text-center sm:text-left rtl:sm:text-right">
-              <span className="text-xs text-slate-300 block leading-tight">{isRtl ? 'تبدأ الأسعار في كيرلا من:' : 'Kerala Price Starts From:'}</span>
-              <span className="text-xl sm:text-2xl font-black text-[#25D366] font-display">{formatCost(treatment.costTable.kerala)}</span>
-            </div>
-            <div className="hidden sm:block w-px h-8 bg-white/20" />
-            <div className="text-center sm:text-left rtl:sm:text-right">
-              <span className="text-xs text-slate-300 block leading-tight">{isRtl ? 'معدل الوفورات الطبية:' : 'Average Cost Savings:'}</span>
-              <span className="text-lg sm:text-xl font-bold text-accent-gold font-sans">
-                {isRtl 
-                  ? `وفر حتى ${calculateSavings(treatment.costTable.kerala, treatment.costTable.uk)}%` 
-                  : `Save up to ${calculateSavings(treatment.costTable.kerala, treatment.costTable.uk)}%`}
-              </span>
+          {/* Bento Price & Savings Grid */}
+          <div className="pt-8">
+            <div className="inline-flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-2xl mx-auto">
+              {/* Price Card */}
+              <div className="bg-white border border-[#D4A96A]/35 rounded-2xl px-8 py-5 shadow-sm text-center sm:text-left rtl:sm:text-right flex flex-col justify-center">
+                <span className="text-xs font-bold uppercase tracking-wider text-text-muted block mb-1">
+                  {isRtl ? 'تبدأ الأسعار في كيرلا من:' : 'Kerala Price Starts From:'}
+                </span>
+                <span className="text-3xl sm:text-4xl font-extrabold text-[#2D6A4F] font-display">
+                  {formatCost(treatment.costTable.kerala)}
+                </span>
+              </div>
+              
+              {/* Savings Card */}
+              <div className="bg-[#FAF7F2] border border-[#D4A96A]/35 rounded-2xl px-8 py-5 shadow-sm text-center sm:text-left rtl:sm:text-right flex flex-col justify-center">
+                <span className="text-xs font-bold uppercase tracking-wider text-text-muted block mb-1">
+                  {isRtl ? 'معدل الوفورات الطبية:' : 'Average Cost Savings:'}
+                </span>
+                <span className="text-3xl sm:text-4xl font-extrabold text-[#D4A96A] font-display">
+                  {isRtl 
+                    ? `وفر حتى ${calculateSavings(treatment.costTable.kerala, treatment.costTable.uk)}%` 
+                    : `Save up to ${calculateSavings(treatment.costTable.kerala, treatment.costTable.uk)}%`}
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
             <a
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار عن تكلفة علاج: ${title}` : `Hello TreatInKerala, I would like to inquire about the cost of: ${title}`)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-3.5 rounded-full text-base transition-all duration-300 shadow-md hover:shadow-lg min-h-[48px] flex items-center justify-center gap-1.5 cursor-pointer font-sans"
+              className="w-full sm:w-auto bg-[#2D6A4F] hover:bg-[#1B4332] text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 font-sans whitespace-nowrap"
             >
-              <MessageCircle className="h-4.5 w-4.5 text-white" />
+              <MessageCircle className="h-5 w-5 text-white shrink-0" />
               <span>{isRtl ? 'استشارة فورية عبر واتساب' : 'WhatsApp Inquiry'}</span>
             </a>
             <Link
               href="/get-estimate"
-              className="w-full sm:w-auto bg-white border border-[#2D6A4F] text-[#2D6A4F] hover:bg-slate-50 font-bold px-8 py-3.5 rounded-full text-base transition-all duration-300 shadow-xs hover:shadow-md min-h-[48px] flex items-center justify-center cursor-pointer"
+              className="w-full sm:w-auto bg-white border-2 border-[#2D6A4F] text-[#2D6A4F] hover:bg-slate-50 font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 shadow-sm hover:shadow-md min-h-[48px] flex items-center justify-center whitespace-nowrap"
             >
               {tCommon('getEstimate')}
             </Link>
@@ -153,97 +192,110 @@ export default async function TreatmentDetailPage({ params }: Props) {
       </section>
 
       {/* 2. OVERVIEW & WHY KERALA */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Overview Left */}
-            <div className="lg:col-span-7 space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Overview Left - Bento Card */}
+            <div className="lg:col-span-7 bg-white border border-[#D4A96A]/35 p-8 sm:p-10 rounded-[24px] shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-center space-y-6">
               <h2 className="text-2xl sm:text-3xl font-semibold font-display text-primary-dark">
                 {locale === 'ar' ? 'نظرة عامة على الإجراء' : 'Procedure Overview'}
               </h2>
-              <p className="text-text-muted text-lg leading-relaxed">
+              <p className="text-text-muted text-lg leading-relaxed font-sans">
                 {overview}
               </p>
             </div>
 
-            {/* Why Kerala Right */}
-            <div className="lg:col-span-5 bg-[#FAF7F2] border border-[#D4A96A]/35 p-8 rounded-3xl space-y-6 shadow-xs">
-              <div className="flex items-center gap-2">
-                <Icon className="h-6 w-6 text-primary-green shrink-0" />
-                <h3 className="text-xl font-bold text-text-dark">
-                  {locale === 'ar' ? 'التعافي في كيرلا' : 'Recovery in Kerala'}
-                </h3>
+            {/* Why Kerala Right - Bento Card */}
+            <div className="lg:col-span-5 bg-white border border-[#D4A96A]/35 p-8 sm:p-10 rounded-[24px] shadow-sm hover:shadow-lg transition-all duration-300 space-y-6 relative overflow-hidden group">
+              <div className="absolute -top-10 -right-10 rtl:-left-10 rtl:-right-auto h-40 w-40 opacity-[0.03] text-[#2D6A4F] pointer-events-none group-hover:scale-[1.1] group-hover:rotate-6 transition-all duration-700 ease-out origin-top-right">
+                <Icon className="w-full h-full" />
               </div>
-              <ul className="space-y-4">
-                {whyKeralaList.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle className="h-5.5 w-5.5 text-primary-green shrink-0 mt-0.5" />
-                    <span className="text-text-muted text-base leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-10 w-10 rounded-xl bg-[#FAF7F2] flex items-center justify-center border border-[#D4A96A]/35">
+                    <Icon className="h-5 w-5 text-[#2D6A4F]" />
+                  </div>
+                  <h3 className="text-xl font-bold text-text-dark font-sans">
+                    {locale === 'ar' ? 'التعافي في كيرلا' : 'Recovery in Kerala'}
+                  </h3>
+                </div>
+                <ul className="space-y-4">
+                  {whyKeralaList.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle className="h-5.5 w-5.5 text-primary-green shrink-0 mt-0.5" />
+                      <span className="text-text-muted text-base leading-relaxed font-sans">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 3. COST COMPARISON TABLE */}
-      <section className="py-16 bg-[#FAF7F2] border-y border-[#D4A96A]/35">
+      <section className="py-20 bg-white border-y border-[#D4A96A]/35">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-semibold font-display text-primary-dark">
+            <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block mb-4 font-sans">
+              {locale === 'ar' ? 'الشفافية في الأسعار' : 'Transparent Pricing'}
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-semibold font-display text-primary-dark">
               {locale === 'ar' ? 'مقارنة تكلفة العلاج التقديرية' : 'Estimated Cost Comparison'}
             </h2>
-            <p className="text-text-muted text-base mt-2">
+            <p className="text-text-muted text-lg mt-4 font-sans max-w-2xl mx-auto">
               {locale === 'ar'
                 ? 'قارن تكلفة هذا العلاج في كيرلا بالدول الغربية ودول الخليج.'
                 : 'Compare treatment estimates across major international medical destinations.'}
             </p>
           </div>
 
-          <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-md">
+          <div className="bg-white border border-[#D4A96A]/35 rounded-[24px] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
             <table className="w-full text-center border-collapse" dir={isRtl ? 'rtl' : 'ltr'}>
               <thead>
-                <tr className="bg-primary-dark text-white font-medium text-base sm:text-lg border-b border-accent-gold/25">
-                  <th className="py-4 px-4 text-left sm:px-6 font-display">{locale === 'ar' ? 'البلد / الوجهة' : 'Country / Destination'}</th>
-                  <th className="py-4 px-4 sm:px-6 font-display">{locale === 'ar' ? 'تقدير التكلفة' : 'Estimated Cost'}</th>
-                  <th className="py-4 px-4 sm:px-6 font-display text-accent-gold">{locale === 'ar' ? 'نسبة الوفورات' : 'Savings Percentage'}</th>
+                <tr className="bg-[#FAF7F2] font-semibold text-base sm:text-lg border-b border-[#D4A96A]/35">
+                  <th className="py-5 px-5 text-left rtl:text-right sm:px-8 font-display text-primary-dark">{locale === 'ar' ? 'البلد / الوجهة' : 'Country / Destination'}</th>
+                  <th className="py-5 px-5 sm:px-8 font-display text-primary-dark">{locale === 'ar' ? 'تقدير التكلفة' : 'Estimated Cost'}</th>
+                  <th className="py-5 px-5 sm:px-8 font-display text-primary-dark">{locale === 'ar' ? 'نسبة الوفورات' : 'Savings Percentage'}</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 text-base sm:text-lg text-text-muted">
+              <tbody className="divide-y divide-[#D4A96A]/20 text-base sm:text-lg text-text-muted font-sans">
                 {/* Kerala */}
-                <tr className="bg-emerald-50/20 font-bold text-primary-green">
-                  <td className="py-4 px-4 text-left sm:px-6 font-display">{locale === 'ar' ? 'كيرلا، الهند (علاج في كيرلا)' : 'Kerala, India (TreatInKerala)'}</td>
-                  <td className="py-4 px-4 sm:px-6 font-extrabold text-lg">{formatCost(treatment.costTable.kerala)}</td>
-                  <td className="py-4 px-4 sm:px-6 text-emerald-600">—</td>
+                <tr className="bg-emerald-50/30 font-bold text-primary-green">
+                  <td className="py-5 px-5 text-left rtl:text-right sm:px-8 font-display flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-primary-green animate-pulse"></span>
+                    {locale === 'ar' ? 'كيرلا، الهند' : 'Kerala, India'}
+                  </td>
+                  <td className="py-5 px-5 sm:px-8 font-extrabold text-xl">{formatCost(treatment.costTable.kerala)}</td>
+                  <td className="py-5 px-5 sm:px-8 text-emerald-600">—</td>
                 </tr>
                 {/* UK */}
-                <tr>
-                  <td className="py-4 px-4 text-left sm:px-6">{locale === 'ar' ? 'المملكة المتحدة' : 'United Kingdom'}</td>
-                  <td className="py-4 px-4 sm:px-6">{formatCost(treatment.costTable.uk)}</td>
-                  <td className="py-4 px-4 sm:px-6 font-semibold text-emerald-600">
+                <tr className="hover:bg-slate-50 transition-colors duration-150">
+                  <td className="py-5 px-5 text-left rtl:text-right sm:px-8">{locale === 'ar' ? 'المملكة المتحدة' : 'United Kingdom'}</td>
+                  <td className="py-5 px-5 sm:px-8">{formatCost(treatment.costTable.uk)}</td>
+                  <td className="py-5 px-5 sm:px-8 font-semibold text-[#D4A96A]">
                     {calculateSavings(treatment.costTable.kerala, treatment.costTable.uk)}%
                   </td>
                 </tr>
                 {/* USA */}
-                <tr>
-                  <td className="py-4 px-4 text-left sm:px-6">{locale === 'ar' ? 'الولايات المتحدة' : 'United States'}</td>
-                  <td className="py-4 px-4 sm:px-6">{formatCost(treatment.costTable.usa)}</td>
-                  <td className="py-4 px-4 sm:px-6 font-semibold text-emerald-600">
+                <tr className="hover:bg-slate-50 transition-colors duration-150">
+                  <td className="py-5 px-5 text-left rtl:text-right sm:px-8">{locale === 'ar' ? 'الولايات المتحدة' : 'United States'}</td>
+                  <td className="py-5 px-5 sm:px-8">{formatCost(treatment.costTable.usa)}</td>
+                  <td className="py-5 px-5 sm:px-8 font-semibold text-[#D4A96A]">
                     {calculateSavings(treatment.costTable.kerala, treatment.costTable.usa)}%
                   </td>
                 </tr>
                 {/* UAE */}
-                <tr>
-                  <td className="py-4 px-4 text-left sm:px-6">{locale === 'ar' ? 'الإمارات العربية المتحدة' : 'United Arab Emirates'}</td>
-                  <td className="py-4 px-4 sm:px-6">{formatCost(treatment.costTable.uae)}</td>
-                  <td className="py-4 px-4 sm:px-6 font-semibold text-emerald-600">
+                <tr className="hover:bg-slate-50 transition-colors duration-150">
+                  <td className="py-5 px-5 text-left rtl:text-right sm:px-8">{locale === 'ar' ? 'الإمارات العربية المتحدة' : 'United Arab Emirates'}</td>
+                  <td className="py-5 px-5 sm:px-8">{formatCost(treatment.costTable.uae)}</td>
+                  <td className="py-5 px-5 sm:px-8 font-semibold text-[#D4A96A]">
                     {calculateSavings(treatment.costTable.kerala, treatment.costTable.uae)}%
                   </td>
                 </tr>
               </tbody>
             </table>
-            <div className="bg-slate-50 py-4 px-6 border-t border-slate-100 text-xs text-text-muted text-center">
+            <div className="bg-[#FAF7F2] py-4 px-6 border-t border-[#D4A96A]/35 text-xs text-text-muted font-sans text-center">
               {locale === 'ar'
                 ? '* تشمل تكاليف كيرلا رسوم تنسيق علاج في كيرلا والاستقبال والإقامة.'
                 : '* Kerala prices include TreatInKerala coordination fees, local pickup, and support.'}

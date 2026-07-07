@@ -16,11 +16,10 @@
   --shadow-xl: 0 12px 32px rgba(45, 106, 79, 0.18), 0 4px 12px rgba(0, 0, 0, 0.10);
   --shadow-2xl: 0 24px 48px rgba(45, 106, 79, 0.22), 0 8px 24px rgba(0, 0, 0, 0.14);
 
-  --font-lora: var(--font-lora);
-  --font-plus-jakarta: var(--font-plus-jakarta);
+  --font-inter: var(--font-inter);
   --font-tajawal: var(--font-tajawal);
-  --font-display: var(--font-lora), Georgia, serif;
-  --font-sans: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -31,6 +30,10 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
 }
 
 /* Custom transitions and scrollbar */
@@ -60,17 +63,17 @@ body {
 
 /* RTL layouts tweaks: override font families with Tajawal arabic variations */
 [dir="rtl"] {
-  --font-sans: 'Tajawal', var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
-  --font-display: 'Tajawal', var(--font-lora), Georgia, serif;
+  --font-sans:    var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
 }
 
 [dir="rtl"] body {
-  font-family: 'Tajawal', var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
-  line-height: 1.75; /* Increase line height for Arabic diacritics and readability */
+  font-family: var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.75;
 }
 
 [dir="rtl"] .font-display {
-  font-family: 'Tajawal', var(--font-lora), Georgia, serif;
+  font-family: var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Reset letter spacing for Arabic text readability (letter spacing ruins Arabic text script connection) */
@@ -139,4 +142,107 @@ html, body {
   -webkit-mask-image: linear-gradient(to left, transparent, white 20px, white 90%, transparent);
 }
 
+/* Hero Cinematic Animations */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float-card {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float-card {
+  animation: float-card 6s ease-in-out infinite;
+}
+
+.animate-float-card-delayed {
+  animation: float-card 6s ease-in-out infinite;
+  animation-delay: -3s; /* Starts halfway through the cycle for staggered effect */
+}
+
+@keyframes bar-grow {
+  from { height: 0; }
+  to { height: var(--bar-h); }
+}
+
+.animate-bar-grow {
+  animation: bar-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-hero-fade-up {
+  opacity: 0;
+  animation: hero-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Blob morph animation */
+@keyframes blob-morph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25%       { border-radius: 40% 60% 70% 30% / 50% 60% 30% 60%; }
+  50%       { border-radius: 30% 60% 60% 40% / 70% 40% 60% 30%; }
+  75%       { border-radius: 60% 40% 30% 60% / 30% 70% 50% 60%; }
+}
+
+.animate-blob {
+  animation: blob-morph 18s ease-in-out infinite;
+}
+
+/* Ticker scrolling marquee keyframes */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Reverse ticker for RTL layout so it flows naturally in Arabic */
+@keyframes ticker-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+.animate-ticker-ltr {
+  display: flex;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+
+.animate-ticker-rtl {
+  display: flex;
+  width: max-content;
+  animation: ticker-rtl 30s linear infinite;
+}
+
+/* Premium staggered title slide-up animations */
+@keyframes title-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-title-slide {
+  opacity: 0;
+  animation: title-slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 

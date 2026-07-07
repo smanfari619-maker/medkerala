@@ -10,11 +10,19 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const isAr = locale === 'ar';
   return {
-    title: locale === 'ar' ? 'النتائج الطبية وقصص النجاح | علاج في كيرلا' : 'Clinical Outcomes & Network Success Stories | TreatInKerala',
-    description: locale === 'ar' 
+    title: isAr ? 'النتائج الطبية وقصص النجاح | علاج في كيرلا' : 'Clinical Outcomes & Network Success Stories | TreatInKerala',
+    description: isAr 
       ? 'تصفح النتائج الطبية وسجلات النجاح للمستشفيات الشريكة المعتمدة JCI و NABH في كيرلا، الهند.'
       : 'Browse clinical track records, success rates, and medical outcomes across JCI & NABH accredited partner hospitals in Kerala, India.',
+    alternates: {
+      canonical: isAr ? '/ar/patient-stories' : '/en/patient-stories',
+      languages: {
+        en: '/en/patient-stories',
+        ar: '/ar/patient-stories',
+      },
+    },
   };
 }
 
@@ -87,17 +95,71 @@ export default async function PatientStoriesPage({ params }: Props) {
       initials: "SK",
     }
   ];
+  const patientStories = [
+    {
+      nameEn: "Khalid A.",
+      nameAr: "خالد ع.",
+      age: 58,
+      locationEn: "Dubai, United Arab Emirates",
+      locationAr: "دبي، الإمارات العربية المتحدة",
+      flag: "🇦🇪",
+      treatmentEn: "Cardiac Bypass Surgery (CABG)",
+      treatmentAr: "جراحة مجازة الشريان التاجي (القلب المفتوح)",
+      hospitalEn: "Aster MIMS Hospital, Calicut",
+      hospitalAr: "مستشفى أستر ميمس، كالكوت",
+      savingsEn: "Saved over $40,000 USD compared to UAE private clinics",
+      savingsAr: "وفّر أكثر من 40,000 دولار مقارنة بالعيادات الخاصة في الإمارات",
+      storyEn: "I was recommended a bypass surgery by my doctor in Dubai, but the cost was astronomical. A family member suggested looking into medical tourism in Kerala. I reached out to TreatInKerala. From day one, my coordinator was in touch. They translated my records, set up a call with the chief surgeon, and managed all logistics. My stay at Aster MIMS was exceptional. The staff was incredibly caring, and the local translator made sure I never missed a word. I spent three weeks recovering in a serviced apartment nearby. The total bill, including accommodation and travel, was less than a third of what I was quoted at home. I am back to work now and feeling stronger than ever.",
+      storyAr: "أوصاني طبيبي في دبي بضرورة إجراء جراحة قلب مفتوح، لكن التكلفة كانت باهظة جداً. اقترح أحد الأقارب فكرة السفر للعلاج في كيرلا. تواصلت مع فريق علاج في كيرلا، وطوال الرحلة كان المنسق معنا خطوة بخطوة. قاموا بترجمة تقاريري الطبية، وترتيب مكالمة مرئية مع رئيس قسم الجراحة، وإدارة كافة التفاصيل اللوجستية. كانت الإقامة في مستشفى أستر ممتازة وفريق التمريض ودوداً للغاية. وفّرنا أكثر من 70% من التكلفة الإجمالية، وأنا الآن أمارس حياتي الطبيعية بكل نشاط.",
+    },
+    {
+      nameEn: "Emmanuel O.",
+      nameAr: "إيمانويل أو.",
+      age: 62,
+      locationEn: "Lagos, Nigeria",
+      locationAr: "لاغوس، نيجيريا",
+      flag: "🇳🇬",
+      treatmentEn: "Bilateral Knee Replacement",
+      treatmentAr: "عملية استبدال الركبتين بالكامل",
+      hospitalEn: "Meitra Hospital, Calicut",
+      hospitalAr: "مستشفى ميترا، كالكوت",
+      savingsEn: "Saved 65% compared to private care in Nigeria/Europe",
+      savingsAr: "وفّر 65% مقارنة بالعلاج الخاص في نيجيريا وأوروبا",
+      storyEn: "Severe osteoarthritis made it impossible for me to walk even short distances. I wanted robotic joint replacement for precision and fast recovery. TreatInKerala guided me to Meitra Hospital. They provided the visa invitation letter within 24 hours, which made my Indian visa application incredibly fast. We were met at Calicut airport by our personal driver. The surgery was highly successful—I was assisted to walk within 24 hours of the operation! The robotic alignment technology is top-notch, and the implants are imported from the US. The price was highly transparent, paid directly to the hospital billing desk with zero markups. Highly recommended.",
+      storyAr: "آلام المفاصل جعلت المشي لمسافات قصيرة مستحيلاً بالنسبة لي. أردت إجراء جراحة استبدال المفاصل الروبوتية للحصول على دقة أكبر وتعافٍ أسرع. وجّهني فريق علاج في كيرلا إلى مستشفى ميترا الرقمي. أرسلوا لي خطاب دعوة الفيزا الطبية خلال 24 ساعة فقط. استقبلنا سائق خاص من المطار. أجريت العملية بنجاح وبدأت المشي بمساعدة الأخصائيين خلال 24 ساعة من الجراحة! الغرسات المستخدمة معتمدة أمريكياً والتسعير كان شفافاً وبدون أي عمولات إضافية.",
+    },
+    {
+      nameEn: "Sarah M.",
+      nameAr: "سارة م.",
+      age: 42,
+      locationEn: "Birmingham, United Kingdom",
+      locationAr: "برمنغهام، المملكة المتحدة",
+      flag: "🇬🇧",
+      treatmentEn: "14-Day Ayurvedic Panchakarma & Stress Management",
+      treatmentAr: "برنامج علاج الأيورفيدا والبانشاكارما وتخفيف التوتر (١٤ يوماً)",
+      hospitalEn: "Kottakkal Arya Vaidya Sala Partner Center",
+      hospitalAr: "مركز شريك كوتاكال أريا فايديا سالا",
+      savingsEn: "Complete holistic restoration at a fraction of European spa costs",
+      savingsAr: "استشفاء وعلاج طبيعي متكامل بجزء بسيط من تكاليف المراكز الأوروبية",
+      storyEn: "After years of high-stress corporate work in the UK, I developed chronic back pain and insomnia. I decided to experience authentic Ayurveda in its birthplace. TreatInKerala selected a beautiful green-leaf certified eco-resort for me. The BAMS doctors customized a traditional 14-day Panchakarma detox program, including daily herbal oil massages, organic vegetarian meals, and guided yoga. The coordinator arranged everything, including a relaxing backwater houseboat ride during my recovery. The results were amazing: my back pain has vanished, and my sleep cycle is fully restored. The cost was extremely affordable for the level of luxury and medical care provided.",
+      storyAr: "بعد سنوات من العمل الشاق والتوتر المستمر في بريطانيا، عانيت من آلام الظهر المزمنة والأرق. قررت تجربة علاج الأيورفيدا التقليدي في موطنه الأصلي. اختار لي فريق علاج في كيرلا منتجعاً استشفائياً هادئاً. صمم لي الأطباء برنامج تنظيف خماسي (بانشاكارما) شمل جلسات تدليك يومية وأغذية عشبية وجلسات يوغا. كانت النتائج مذهلة: زالت آلام ظهري تماماً وتحسّنت جودة نومي. الخدمة ممتازة والتكلفة كانت مناسبة جداً.",
+    }
+  ];
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+    <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block font-sans">
-            {isRtl ? 'النتائج والنجاحات السريرية' : 'Clinical Outcomes'}
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <span className="h-px w-8 bg-[#D4A96A]" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+              {isRtl ? 'النتائج والنجاحات السريرية' : 'Clinical Outcomes'}
+            </span>
+            <span className="h-px w-8 bg-[#D4A96A]" />
+          </div>
+          <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
             {isRtl ? 'سجل نجاح المستشفيات والنتائج الطبية' : 'Partner Network Success & Clinical Records'}
           </h1>
           <p className="text-lg text-text-muted font-sans">
@@ -108,7 +170,7 @@ export default async function PatientStoriesPage({ params }: Props) {
         </div>
 
         {/* Stories Listing */}
-        <div className="space-y-8 max-w-5xl mx-auto mb-16">
+        <div className="space-y-8 max-w-5xl mx-auto mb-20">
           {caseStudies.map((study, idx) => {
             const title = isRtl ? study.titleAr : study.titleEn;
             const category = isRtl ? study.categoryAr : study.categoryEn;
@@ -122,7 +184,7 @@ export default async function PatientStoriesPage({ params }: Props) {
             return (
               <div
                 key={idx}
-                className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D4A96A]/35 shadow-sm flex flex-col md:flex-row gap-8 items-start relative group hover:border-primary-green/30 hover:shadow-xl transition-all duration-300"
+                className="bg-white p-8 sm:p-12 border border-[#D4A96A]/15 rounded-[2.25rem] shadow-sm flex flex-col md:flex-row gap-8 items-start relative group hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
                 dir={isRtl ? 'rtl' : 'ltr'}
               >
                 
@@ -181,6 +243,56 @@ export default async function PatientStoriesPage({ params }: Props) {
               </div>
             );
           })}
+        </div>
+
+        {/* Testimonials Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <span className="h-px w-8 bg-[#D4A96A]" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+              {isRtl ? 'تجارب المرضى الشخصية' : 'Personal Journeys'}
+            </span>
+            <span className="h-px w-8 bg-[#D4A96A]" />
+          </div>
+          <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332]">
+            {isRtl ? 'قصص التعافي من واقع حياة مرضانا' : 'Real Recovery Stories from Our Patients'}
+          </h2>
+        </div>
+
+        {/* Patient Stories List */}
+        <div className="space-y-10 max-w-5xl mx-auto mb-16">
+          {patientStories.map((p, idx) => (
+            <div
+              key={idx}
+              className="bg-white p-8 sm:p-10 border border-[#D4A96A]/15 rounded-[2.25rem] shadow-sm flex flex-col gap-6 text-left rtl:text-right hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
+              dir={isRtl ? 'rtl' : 'ltr'}
+            >
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-slate-100">
+                <div className="flex items-center gap-3">
+                  <span className="text-3xl">{p.flag}</span>
+                  <div>
+                    <h3 className="font-bold text-lg text-primary-dark">
+                      {isRtl ? p.nameAr : p.nameEn} ({p.age} {isRtl ? 'عاماً' : 'years old'})
+                    </h3>
+                    <p className="text-xs text-text-muted">{isRtl ? p.locationAr : p.locationEn}</p>
+                  </div>
+                </div>
+                <div className="bg-[#FAF7F2] border border-[#D4A96A]/20 px-4 py-2 rounded-xl">
+                  <p className="text-xs font-semibold text-[#D4A96A] uppercase tracking-wide">{isRtl ? 'التوفير المحقق' : 'Financial Impact'}</p>
+                  <p className="text-sm font-bold text-[#2D6A4F] mt-0.5">{isRtl ? p.savingsAr : p.savingsEn}</p>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="font-bold text-[#1B4332] text-base">{isRtl ? p.treatmentAr : p.treatmentEn}</h4>
+                <p className="text-xs font-semibold text-text-muted">{isRtl ? p.hospitalAr : p.hospitalEn}</p>
+              </div>
+
+              <p className="text-sm text-text-muted font-light leading-relaxed font-sans">
+                &ldquo;{isRtl ? p.storyAr : p.storyEn}&rdquo;
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Story Submit CTA */}

@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
 import {
   FileText, ChevronDown, HelpCircle,
-  ShieldAlert, Building2, Package, MessageCircle, BookOpen,
+  ShieldAlert, Building2, Package, MessageCircle, BookOpen, Info,
 } from 'lucide-react';
 import LocaleSwitcher from './LocaleSwitcher';
 import { SITE_CONFIG } from '@/lib/config';
@@ -47,6 +47,7 @@ export default function Header() {
 
   // Everything else lives under "More"
   const secondaryNav = [
+    { href: '/about',       label: t('about'),      icon: Info },
     { href: '/packages',    label: t('packages'),   icon: Package },
     { href: '/hospitals',   label: t('hospitals'),  icon: Building2 },
     { href: '/services',    label: t('services'),   icon: FileText },
@@ -67,10 +68,10 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-300 ${
+      className={`left-0 right-0 top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#FAF7F2]/96 backdrop-blur-md shadow-sm border-b border-[#D4A96A]/35 py-2'
-          : 'bg-[#FAF7F2] py-3.5'
+          ? 'fixed bg-[#FAF7F2]/96 backdrop-blur-md shadow-sm border-b border-[#D4A96A]/20 py-2'
+          : 'absolute bg-transparent py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,17 +79,11 @@ export default function Header() {
 
           {/* ── Logo ── */}
           <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
-            <span className="text-xl font-semibold font-display text-[#2D6A4F] tracking-tight group-hover:text-[#1B4332] transition-colors duration-300">
-              {isRtl ? (
-                <>علاج في <span className="text-[#D4A96A]">كيرلا</span></>
-              ) : (
-                <>TreatIn<span className="text-[#D4A96A]">Kerala</span></>
-              )}
-            </span>
-            {/* Slim trust badge — icon only on smaller widths */}
-            <span className="hidden sm:inline-flex items-center gap-1 bg-[#2D6A4F]/8 border border-[#2D6A4F]/15 text-[#2D6A4F] rounded-md px-1.5 py-0.5 text-[9px] font-bold tracking-tight select-none leading-tight">
-              🛡️ {isRtl ? 'شريك معتمد' : 'Partner'}
-            </span>
+            <img
+              src="/images/logo.svg"
+              alt="TreatInKerala Logo"
+              className="h-4.5 w-auto object-contain"
+            />
           </Link>
 
           {/* ── Desktop Navigation ── */}
@@ -182,7 +177,12 @@ export default function Header() {
 
             <Link
               href="/get-estimate"
-              className="bg-[#2D6A4F] hover:bg-[#1B4332] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md whitespace-nowrap"
+              className="text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md whitespace-nowrap inline-flex items-center justify-center cursor-pointer"
+              style={{
+                background: 'linear-gradient(135deg, rgba(186,215,176,1) 0%, rgba(154,207,136,1) 100%)',
+                boxShadow: 'inset 0 0 20px rgba(255,255,255,0.3)',
+                color: '#2D5A27',
+              }}
             >
               {tCommon('getEstimate')}
             </Link>

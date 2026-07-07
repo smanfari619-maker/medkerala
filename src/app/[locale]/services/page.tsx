@@ -22,11 +22,19 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const isAr = locale === 'ar';
   return {
-    title: locale === 'ar' ? 'الخدمات الطبية والتنسيقية | علاج في كيرلا' : 'End-to-End Coordination Services | TreatInKerala',
-    description: locale === 'ar' 
+    title: isAr ? 'الخدمات الطبية والتنسيقية | علاج في كيرلا' : 'End-to-End Coordination Services | TreatInKerala',
+    description: isAr 
       ? 'تعرف على خدماتنا الشاملة للسياحة العلاجية في كيرلا - استشارات الأطباء، التأشيرات، الاستقبال، الإقامة، المترجم الطبي، وجولات التعافي.'
       : 'Explore our complete medical travel services in Kerala. We arrange hospital bookings, medical visas, airport pickup, accommodation, and translator support.',
+    alternates: {
+      canonical: isAr ? '/ar/services' : '/en/services',
+      languages: {
+        en: '/en/services',
+        ar: '/ar/services',
+      },
+    },
   };
 }
 
@@ -75,14 +83,18 @@ export default async function ServicesPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+    <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
-            {locale === 'ar' ? 'مظلة الرعاية الشاملة' : 'End-to-End Care'}
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <span className="h-px w-8 bg-[#D4A96A]" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+              {locale === 'ar' ? 'مظلة الرعاية الشاملة' : 'End-to-End Care'}
+            </span>
+            <span className="h-px w-8 bg-[#D4A96A]" />
+          </div>
+          <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
             {locale === 'ar' 
               ? 'الخدمات التي تقدمها علاج في كيرلا' 
               : 'Our Complete Medical Tourism Services'}
@@ -104,17 +116,21 @@ export default async function ServicesPage({ params }: Props) {
             return (
               <div
                 key={svc.key}
-                className="bg-white rounded-3xl p-8 border border-[#D4A96A]/35 hover:border-primary-green/40 shadow-xs hover:shadow-xl transition-all duration-300 group"
+                className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 flex flex-col relative overflow-hidden group hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
               >
-                <div className="h-12 w-12 rounded-2xl bg-primary-green/10 flex items-center justify-center mb-6 group-hover:bg-primary-green transition-colors duration-300">
-                  <Icon className="h-6 w-6 text-primary-green group-hover:text-white transition-colors duration-300" />
+                <div className="relative z-10 space-y-3">
+                  <h3 className="text-[22px] font-medium text-[#2C3E35]">
+                    {title}
+                  </h3>
+                  <p className="text-[#5D6B64] text-sm leading-relaxed">
+                    {desc}
+                  </p>
                 </div>
-                <h2 className="text-xl font-bold text-text-dark mb-3">
-                  {title}
-                </h2>
-                <p className="text-text-muted text-base leading-relaxed">
-                  {desc}
-                </p>
+                
+                {/* Large Background Vector */}
+                <div className="absolute -bottom-6 -left-4 rtl:-right-4 rtl:-left-auto h-32 w-32 opacity-[0.05] text-[#2D6A4F] pointer-events-none group-hover:scale-[1.2] group-hover:-rotate-12 transition-all duration-700 ease-out origin-bottom-left">
+                  <Icon className="w-full h-full" strokeWidth={1.5} />
+                </div>
               </div>
             );
           })}
@@ -122,11 +138,17 @@ export default async function ServicesPage({ params }: Props) {
 
         {/* Table comparison Included vs Optional */}
         <div className="max-w-4xl mx-auto mb-16 space-y-8">
-          <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-semibold font-display text-primary-dark">
-              {locale === 'ar' ? 'الشفافية في الخدمات: ما الذي تتضمنه التكلفة؟' : 'Transparent Pricing: What is Included?'}
+          <div className="mb-12 space-y-3 rtl:text-right">
+              <div className="flex items-center gap-3 mb-4 rtl:flex-row-reverse rtl:justify-end">
+                <span className="h-px w-8 bg-[#D4A96A]" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+                  {locale === 'ar' ? 'الشفافية في الخدمات' : 'Transparent Pricing'}
+                </span>
+              </div>
+            <h2 className="font-display font-normal tracking-[-0.025em] leading-[1.1] text-3xl sm:text-4xl text-[#1B4332]">
+              {locale === 'ar' ? 'ما الذي تتضمنه التكلفة؟' : 'What is Included?'}
             </h2>
-            <p className="text-text-muted text-base mt-2">
+            <p className="text-text-muted font-light leading-[1.65] text-base sm:text-lg max-w-2xl">
               {locale === 'ar'
                 ? 'نوضح لك بالتفصيل الخدمات المشمولة في باقاتنا والخدمات الاختيارية الإضافية.'
                 : 'Clear distinction between TreatInKerala core coordination features and optional personal expenditures.'}
@@ -166,8 +188,15 @@ export default async function ServicesPage({ params }: Props) {
         </div>
 
         {/* Compressed Financial Transparency Policy */}
-        <div className="max-w-4xl mx-auto mb-20 bg-white rounded-3xl p-6 sm:p-8 border border-[#D4A96A]/35 shadow-lg text-center space-y-6">
-          <h2 className="text-xl sm:text-2xl font-semibold font-display text-primary-dark">
+        <div className="max-w-4xl mx-auto mb-20 bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 sm:p-10 shadow-lg text-center space-y-6 hover:border-[#2D6A4F]/25 transition-all duration-300">
+          <div className="flex items-center justify-center gap-3 mb-1">
+            <span className="h-px w-8 bg-[#D4A96A]" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+              {locale === 'ar' ? 'السياسة المالية' : 'Financial Policy'}
+            </span>
+            <span className="h-px w-8 bg-[#D4A96A]" />
+          </div>
+          <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-2xl sm:text-3xl text-[#1B4332]">
             {locale === 'ar' ? 'نموذج العمل والشفافية المالية' : '100% Transparent Financial Policy'}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">

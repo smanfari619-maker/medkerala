@@ -129,7 +129,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
     <div className="space-y-10">
       {/* Segmented Toggle Control */}
       <div className="flex justify-center mb-6">
-        <div className="bg-white border border-[#D4A96A]/35 p-1.5 rounded-2xl inline-flex shadow-xs gap-1.5">
+        <div className="bg-white border border-[#D4A96A]/15 p-1.5 rounded-2xl inline-flex shadow-sm gap-1.5">
           <button
             onClick={() => {
               setActiveTab('procedures');
@@ -159,11 +159,11 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
         </div>
       </div>
 
-      {/* Search, Filter & Sort Controls Panel */}
-      <div className="bg-white border border-[#D4A96A]/35 rounded-3xl p-5 shadow-xs space-y-4">
+      {/* Search, Filter & Sort Controls Panel - Glassmorphic Pill */}
+      <div className="bg-white border border-[#D4A96A]/15 rounded-[2rem] md:rounded-full p-2 sm:p-3 shadow-md hover:shadow-lg transition-all duration-300 max-w-5xl mx-auto mb-12 relative z-20">
         {/* Mobile Specialty Scrollable Pills */}
         {activeTab === 'procedures' && (
-          <div className="md:hidden overflow-x-auto no-scrollbar scroll-mask-fade flex gap-2 pb-1.5 -mx-5 px-5 scroll-momentum">
+          <div className="md:hidden overflow-x-auto no-scrollbar scroll-mask-fade flex gap-2 pb-3 pt-1 px-2 scroll-momentum">
             {specialities.map((spec) => {
               const isSelected = selectedSpeciality === spec.key;
               return (
@@ -173,7 +173,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
                   className={`px-4 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 tap-active border ${
                     isSelected
                       ? 'bg-primary-green border-primary-green text-white shadow-xs'
-                      : 'bg-[#FAF7F2] border-[#D4A96A]/35 text-text-muted'
+                      : 'bg-[#FAF7F2] border-[#D4A96A]/20 text-text-muted'
                   }`}
                 >
                   {isRtl ? spec.ar : spec.en}
@@ -183,11 +183,11 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+        <div className="flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-[#D4A96A]/20 rtl:divide-x-reverse w-full">
           {/* Search Bar */}
-          <div className={activeTab === 'procedures' ? "relative md:col-span-6" : "relative md:col-span-8"}>
-            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-text-muted/60" />
+          <div className={`relative w-full ${activeTab === 'procedures' ? "md:flex-1" : "md:w-3/5"} py-2 md:py-0 px-2 md:px-4`}>
+            <div className="absolute inset-y-0 left-4 md:left-6 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-[#D4A96A]" />
             </div>
             <input
               type="text"
@@ -198,12 +198,12 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
               }
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-10 py-3 bg-[#FAF7F2] border border-[#D4A96A]/40 rounded-2xl focus:outline-hidden focus:border-primary-green focus:ring-1 focus:ring-primary-green text-sm text-text-dark placeholder-text-muted/50 transition-all font-sans animate-fade-in"
+              className="w-full pl-11 md:pl-12 pr-10 py-2.5 bg-transparent border-transparent focus:border-transparent focus:ring-0 text-sm md:text-base text-primary-dark placeholder-text-muted/60 transition-all font-sans font-medium"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute inset-y-0 right-3 flex items-center px-2 text-text-muted/60 hover:text-primary-green transition-colors cursor-pointer"
+                className="absolute inset-y-0 right-4 flex items-center px-2 text-text-muted/60 hover:text-primary-green transition-colors cursor-pointer"
                 aria-label="Clear search"
               >
                 <X className="h-4 w-4" />
@@ -213,11 +213,11 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
 
           {/* Specialty Filter Dropdown (Only for desktop) */}
           {activeTab === 'procedures' && (
-            <div className="hidden md:block md:col-span-3">
+            <div className="hidden md:block relative w-full md:w-auto md:min-w-[220px] py-2 md:py-0 px-2 md:px-4">
               <select
                 value={selectedSpeciality}
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedSpeciality(e.target.value)}
-                className="w-full bg-[#FAF7F2] border border-[#D4A96A]/40 rounded-2xl py-3 px-4 focus:outline-hidden focus:border-primary-green text-sm text-text-dark font-sans font-medium cursor-pointer"
+                className="w-full bg-transparent border-transparent focus:border-transparent focus:ring-0 py-2.5 px-4 text-sm md:text-base text-primary-dark font-sans font-bold cursor-pointer appearance-none"
               >
                 {specialities.map((spec) => (
                   <option key={spec.key} value={spec.key}>
@@ -225,20 +225,26 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
                   </option>
                 ))}
               </select>
+              <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-[#D4A96A]">
+                <ChevronRight className="h-4 w-4 rotate-90" />
+              </div>
             </div>
           )}
 
           {/* Sort Dropdown */}
-          <div className={activeTab === 'procedures' ? "md:col-span-3" : "md:col-span-4"}>
+          <div className={`relative w-full ${activeTab === 'procedures' ? "md:min-w-[220px]" : "md:w-2/5"} md:w-auto py-2 md:py-0 px-2 md:px-4`}>
             <select
               value={sortBy}
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as 'default' | 'price-asc' | 'price-desc')}
-              className="w-full bg-[#FAF7F2] border border-[#D4A96A]/40 rounded-2xl py-3 px-4 focus:outline-hidden focus:border-primary-green text-sm text-text-dark font-sans font-medium cursor-pointer"
+              className="w-full bg-transparent border-transparent focus:border-transparent focus:ring-0 py-2.5 px-4 text-sm md:text-base text-primary-dark font-sans font-bold cursor-pointer appearance-none"
             >
               <option value="default">{isRtl ? 'الترتيب: الموصى به' : 'Sort: Recommended'}</option>
               <option value="price-asc">{isRtl ? 'السعر: من الأقل للأعلى' : 'Price: Low to High'}</option>
               <option value="price-desc">{isRtl ? 'السعر: من الأعلى للأقل' : 'Price: High to Low'}</option>
             </select>
+            <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-[#D4A96A]">
+              <ChevronRight className="h-4 w-4 rotate-90" />
+            </div>
           </div>
         </div>
       </div>
@@ -258,58 +264,63 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
               return (
                 <div
                   key={treatment.slug}
-                  className="bg-white rounded-3xl p-8 border border-[#D4A96A]/35 hover:border-primary-green/40 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group glow-card-green"
+                  className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 sm:p-10 hover:border-[#2D6A4F]/30 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between group relative overflow-hidden"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#D4A96A] bg-[#FAF7F2] border border-[#D4A96A]/35 px-3 py-1 rounded-full font-sans">
+                  {/* Dynamic Watermark */}
+                  <div className="absolute -bottom-6 -right-6 rtl:-left-6 rtl:-right-auto h-40 w-40 opacity-[0.03] text-[#2D6A4F] pointer-events-none group-hover:scale-[1.2] group-hover:-rotate-12 group-hover:opacity-[0.05] transition-all duration-700 ease-out origin-center">
+                    <Icon className="w-full h-full" />
+                  </div>
+                  
+                  {/* Subtle Hover Gradient Glow */}
+                  <div className="absolute inset-0 bg-radial-gradient from-emerald-50/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-8">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#D4A96A] font-sans">
                         {speciality}
                       </span>
-                      <div className="h-10 w-10 rounded-xl bg-primary-green/10 flex items-center justify-center group-hover:bg-primary-green transition-colors duration-300">
-                        <Icon className="h-5 w-5 text-primary-green group-hover:text-white transition-colors duration-300" />
+                      <div className="h-12 w-12 rounded-2xl bg-[#FAF7F2] border border-[#D4A96A]/20 flex items-center justify-center group-hover:bg-primary-green group-hover:border-primary-green transition-all duration-300 shadow-xs">
+                        <Icon className="h-6 w-6 text-primary-green group-hover:text-white transition-colors duration-300" />
                       </div>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-text-dark mb-2 group-hover:text-primary-green transition-colors duration-200">
+                    <h2 className="text-2xl sm:text-3xl font-bold font-display text-primary-dark mb-3 group-hover:text-primary-green transition-colors duration-300">
                       {title}
                     </h2>
-                    <p className="text-accent-gold font-serif italic text-base mb-4 font-medium min-h-[48px] line-clamp-2">
+                    <p className="text-accent-gold font-serif italic text-lg mb-8 font-medium line-clamp-2">
                       {tagline}
-                    </p>
-                    <p className="text-text-muted text-base leading-relaxed mb-6 line-clamp-3 font-sans">
-                      {overview}
                     </p>
                   </div>
 
-                  <div className="pt-5 border-t border-slate-100 flex flex-col gap-4">
-                    <div className="flex items-center justify-between">
+                  <div className="pt-6 border-t border-slate-100 flex flex-col gap-5 relative z-10">
+                    <div className="flex flex-wrap items-center justify-between gap-4">
                       <div className="flex flex-col">
-                        <span className="text-xs text-text-muted font-sans">
+                        <span className="text-[11px] uppercase tracking-wider font-bold text-text-muted font-sans mb-1">
                           {costsFromText}
                         </span>
-                        <span className="text-primary-green font-extrabold text-2xl">
+                        <span className="text-primary-dark group-hover:text-primary-green font-display font-extrabold text-3xl transition-colors duration-300">
                           ${treatment.costTable.kerala.toLocaleString()}
                         </span>
                       </div>
 
                       {savings > 0 && (
-                        <div className="flex items-center gap-1 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-2xl border border-emerald-100 text-xs font-bold font-sans">
-                          <TrendingDown className="h-3.5 w-3.5" />
+                        <div className="flex items-center gap-1.5 bg-[#FAF7F2] text-[#D4A96A] px-3.5 py-2 rounded-xl border border-[#D4A96A]/20 text-xs font-bold font-sans shadow-xs">
+                          <TrendingDown className="h-4 w-4" />
                           <span>{isRtl ? `وفر حتى ${savings}%` : `Save up to ${savings}%`}</span>
                         </div>
                       )}
                     </div>
 
-                    <div className="flex items-center justify-between pt-1">
-                      <span className="text-xs text-text-muted/80 font-sans">
-                        {isRtl ? 'يشمل الاستقبال والإقامة' : 'Includes pickup & stay'}
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="text-xs font-medium text-text-muted/80 font-sans flex items-center gap-1.5">
+                        <Stethoscope className="h-3.5 w-3.5 text-[#D4A96A]" />
+                        {isRtl ? 'استشارة مجانية متاحة' : 'Free consult available'}
                       </span>
                       <Link
                         href={`/treatments/${treatment.slug}`}
-                        className="inline-flex items-center gap-1.5 font-bold text-primary-green group-hover:text-primary-dark transition-colors duration-200 min-h-[44px] font-sans"
+                        className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[#FAF7F2] border border-[#D4A96A]/20 text-[#2D6A4F] group-hover:bg-[#2D6A4F] group-hover:text-white group-hover:border-[#2D6A4F] transition-all duration-300 shadow-sm group-hover:shadow-lg transform group-hover:-translate-y-1"
                       >
-                        <span>{learnMoreText}</span>
-                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="h-5 w-5 rtl:-scale-x-100" />
                       </Link>
                     </div>
                   </div>
@@ -317,52 +328,12 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
               );
             })}
 
-            {/* Custom request card */}
-            <div
-              className="bg-primary-dark text-white rounded-3xl p-8 border border-accent-gold/25 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-radial-gradient from-primary-green/20 to-transparent -z-10 opacity-70"></div>
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs font-bold uppercase tracking-wider text-accent-gold bg-white/10 px-3 py-1 rounded-full font-sans">
-                    {isRtl ? 'طلب خاص' : 'Custom Request'}
-                  </span>
-                  <div className="h-10 w-10 rounded-xl bg-accent-gold/25 flex items-center justify-center">
-                    <Stethoscope className="h-5 w-5 text-accent-gold" />
-                  </div>
-                </div>
 
-                <h2 className="text-2xl font-bold text-white mb-2">
-                  {isRtl ? 'علاج غير مدرج؟' : 'Other Treatments?'}
-                </h2>
-                <p className="text-accent-gold font-serif italic text-base mb-4 font-medium min-h-[48px] line-clamp-2">
-                  {isRtl ? 'يمكننا مساعدتك في أي حالة' : 'We can help you with any clinical need'}
-                </p>
-                <p className="text-slate-300 text-base leading-relaxed mb-6 font-sans line-clamp-4">
-                  {isRtl
-                    ? 'يقدم شركاؤنا من المستشفيات التخصصية الكبرى جميع العمليات الجراحية والعلاجية. أخبرنا بمتطلباتك وسنرتب لك كل شيء.'
-                    : 'Our accredited hospital network covers all medical procedures, diagnostics, and therapies. Share your requirement with us for a free estimate.'}
-                </p>
-              </div>
-
-              <div className="pt-5 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xs text-slate-400 font-sans">
-                  {isRtl ? 'تقدير مجاني 100%' : '100% Free Estimate'}
-                </span>
-                <Link
-                  href="/get-estimate"
-                  className="inline-flex items-center gap-1.5 font-bold text-accent-gold hover:text-white transition-colors duration-200 min-h-[44px] font-sans"
-                >
-                  <span>{isRtl ? 'أرسل متطلباتك' : 'Ask/Send Requirements'}</span>
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
           </div>
         ) : (
           /* Treatments Empty State */
-          <div className="text-center py-16 bg-white border border-[#D4A96A]/35 rounded-3xl max-w-2xl mx-auto space-y-6 shadow-xs px-6">
-            <div className="h-16 w-16 bg-[#FAF7F2] border border-[#D4A96A]/35 text-[#D4A96A] rounded-full flex items-center justify-center mx-auto">
+          <div className="text-center py-16 bg-white border border-[#D4A96A]/15 rounded-[2.25rem] max-w-2xl mx-auto space-y-6 shadow-sm px-6">
+            <div className="h-16 w-16 bg-[#FAF7F2] border border-[#D4A96A]/20 text-[#D4A96A] rounded-full flex items-center justify-center mx-auto">
               <svg className="h-8 w-8 animate-pulse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
             </div>
             <div className="space-y-2">
@@ -410,7 +381,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
               return (
                 <div
                   key={pkg.id}
-                  className="bg-white rounded-3xl p-8 border border-[#D4A96A]/35 hover:border-primary-green/40 shadow-xs hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group glow-card-green"
+                  className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 hover:border-[#2D6A4F]/30 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between group glow-card-green"
                   dir={isRtl ? 'rtl' : 'ltr'}
                 >
                   <div>
@@ -486,7 +457,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
           </div>
         ) : (
           /* Packages Empty state */
-          <div className="text-center py-20 bg-white border border-[#D4A96A]/35 rounded-3xl max-w-2xl mx-auto space-y-6 shadow-xs px-6">
+          <div className="text-center py-20 bg-white border border-[#D4A96A]/15 rounded-[2.25rem] max-w-2xl mx-auto space-y-6 shadow-sm px-6">
             <Shield className="h-12 w-12 text-[#D4A96A]/60 mx-auto" />
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-text-dark font-sans">

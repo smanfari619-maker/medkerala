@@ -10,11 +10,19 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const isAr = locale === 'ar';
   return {
-    title: locale === 'ar' ? 'سياسة الخصوصية | علاج في كيرلا' : 'Privacy Policy | TreatInKerala',
-    description: locale === 'ar' 
+    title: isAr ? 'سياسة الخصوصية | علاج في كيرلا' : 'Privacy Policy | TreatInKerala',
+    description: isAr 
       ? 'تعرف على سياسة الخصوصية الخاصة بعلاج في كيرلا وكيفية حماية بياناتك الطبية والشخصية وسريتها.'
       : 'Review TreatInKerala\'s privacy policy to understand how we protect and manage your personal details and medical records.',
+    alternates: {
+      canonical: isAr ? '/ar/privacy' : '/en/privacy',
+      languages: {
+        en: '/en/privacy',
+        ar: '/ar/privacy',
+      },
+    },
   };
 }
 
@@ -89,7 +97,7 @@ export default async function PrivacyPage({ params }: Props) {
   };
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen" dir={isRtl ? 'rtl' : 'ltr'}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Header */}

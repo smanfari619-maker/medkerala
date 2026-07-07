@@ -1,7 +1,7 @@
 import React from 'react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { ArrowRight, MessageCircle, Info, Award, Star, MapPin, Clock, HeartPulse } from 'lucide-react';
+import { ArrowRight, MessageCircle, Info, Star, MapPin, Clock, HeartPulse, ShieldCheck } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
 import Image from 'next/image';
 
@@ -11,13 +11,21 @@ interface Props {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const isAr = locale === 'ar';
   return {
-    title: locale === 'ar' 
+    title: isAr 
       ? 'باقات التنسيق والرعاية الطبية الممتازة | علاج في كيرلا' 
       : 'Premium Medical Concierge & Care Packages | TreatInKerala',
-    description: locale === 'ar'
+    description: isAr
       ? 'قارن بين باقات التنسيق الطبي الأساسية والراقية للرعاية والترجمة والمرافقة الطبية في كيرلا وجنوب الهند.'
       : 'Compare Essential and Premium VIP concierge packages for medical travel coordination, Arabic translation, transport, and family companion support in Kerala & South India.',
+    alternates: {
+      canonical: isAr ? '/ar/packages' : '/en/packages',
+      languages: {
+        en: '/en/packages',
+        ar: '/ar/packages',
+      },
+    },
   };
 }
 
@@ -49,30 +57,48 @@ export default async function PackagesPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+    <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="flex justify-center">
-            <span className="inline-flex items-center gap-1 bg-white border border-[#D4A96A]/35 text-xs font-bold text-primary-green px-3 py-1 rounded-full shadow-xs">
-              <Award className="h-3.5 w-3.5 text-[#D4A96A]" />
-              <span>{isRtl ? 'إدارة طبية متكاملة' : 'End-to-End Care Management'}</span>
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <span className="h-px w-8 bg-[#D4A96A]" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+              {isRtl ? 'إدارة طبية متكاملة' : 'End-to-End Care Management'}
             </span>
+            <span className="h-px w-8 bg-[#D4A96A]" />
           </div>
-          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+          <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
             {t('heading')}
           </h1>
           <p className="text-lg text-text-muted font-sans leading-relaxed">
             {t('subheading')}
           </p>
+
+          {/* Pricing Clarification Box */}
+          <div className="mt-8 max-w-4xl mx-auto bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-left rtl:text-right flex flex-col md:flex-row items-start md:items-center gap-5">
+            <div className="h-10 w-10 rounded-xl bg-emerald-100 text-[#2D6A4F] flex items-center justify-center shrink-0 border border-emerald-200">
+              <ShieldCheck className="h-6 w-6" />
+            </div>
+            <div className="space-y-1">
+              <h4 className="font-bold text-[#1B4332] text-sm">
+                {isRtl ? 'هل التنسيق الطبي مجاني حقاً؟' : 'Is medical coordination really free?'}
+              </h4>
+              <p className="text-xs text-[#2D6A4F] leading-relaxed">
+                {isRtl
+                  ? 'نعم، التنسيق الطبي والربط بينك وبين المستشفيات والاستشارات عن بعد مجانية بنسبة 100% وممولة بالكامل من المستشفيات الشريكة. هذه الباقات المعروضة أدناه هي خيارات راقية إضافية للتنقلات الخاصة والسائق الشخصي والترجمة الطبية الميدانية الفورية والرحلات الاستجمامية.'
+                  : 'Yes! Our core hospital coordination, remote consultations, and medical advice are 100% free and funded by partner hospitals. These optional paid Concierge Packages are add-on premium services for dedicated private drivers, personal in-person interpreters, fast-track visa processing, and leisure wellness tours.'}
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Dynamic Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 items-stretch">
           
           {/* Card 1: Essential */}
-          <div className="bg-white border border-[#D4A96A]/35 rounded-3xl p-8 lg:p-10 flex flex-col justify-between shadow-xs hover:shadow-xl transition-all duration-300 relative group overflow-hidden">
+          <div className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 lg:p-10 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
             <div className="space-y-6">
               <div className="space-y-2">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-[#D4A96A] font-sans block">
@@ -103,7 +129,7 @@ export default async function PackagesPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-slate-100">
+            <div className="relative z-10 mt-8 pt-6 border-t border-slate-100">
               <a
                 href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار وحجز الباقة الأساسية ($299)` : `Hello TreatInKerala, I would like to inquire about the Essential Concierge package ($299)`)}`}
                 target="_blank"
@@ -114,10 +140,15 @@ export default async function PackagesPage({ params }: Props) {
                 <span>{t('bookBtn')}</span>
               </a>
             </div>
+            
+            {/* Large Background Vector */}
+            <div className="absolute -bottom-6 -left-4 rtl:-right-4 rtl:-left-auto h-48 w-48 opacity-[0.03] text-[#2D6A4F] pointer-events-none group-hover:scale-[1.1] group-hover:-rotate-6 transition-all duration-700 ease-out origin-bottom-left">
+              <ShieldCheck className="w-full h-full" strokeWidth={1.5} />
+            </div>
           </div>
 
           {/* Card 2: Premium VIP (Best Choice / Highlighted) */}
-          <div className="bg-white border-2 border-primary-green rounded-3xl p-8 lg:p-10 flex flex-col justify-between shadow-lg hover:shadow-2xl transition-all duration-300 relative group overflow-hidden">
+          <div className="bg-white border-2 border-[#2D6A4F] rounded-[2.25rem] p-8 lg:p-10 flex flex-col justify-between shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
             {/* VIP Label ribbon */}
             <div className="absolute top-5 right-5 bg-primary-green text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase flex items-center gap-1 shadow-xs">
               <Star className="h-3 w-3 fill-accent-gold text-accent-gold" />
@@ -154,7 +185,7 @@ export default async function PackagesPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-slate-100">
+            <div className="relative z-10 mt-8 pt-6 border-t border-slate-100">
               <a
                 href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار وحجز باقة الـ VIP الراقية ($999)` : `Hello TreatInKerala, I would like to inquire about the Premium VIP Concierge package ($999)`)}`}
                 target="_blank"
@@ -165,28 +196,33 @@ export default async function PackagesPage({ params }: Props) {
                 <span>{t('bookBtn')}</span>
               </a>
             </div>
+
+            {/* Large Background Vector */}
+            <div className="absolute -bottom-6 -left-4 rtl:-right-4 rtl:-left-auto h-48 w-48 opacity-[0.03] text-[#2D6A4F] pointer-events-none group-hover:scale-[1.1] group-hover:-rotate-6 transition-all duration-700 ease-out origin-bottom-left">
+              <Star className="w-full h-full" strokeWidth={1.5} />
+            </div>
           </div>
 
         </div>
 
         {/* NEW TOUR PACKAGES SECTION */}
         <section className="mb-24 pt-8 border-t border-[#D4A96A]/20">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-            <div className="flex justify-center">
-              <span className="inline-flex items-center gap-1 bg-white border border-primary-green/30 text-xs font-bold text-primary-green px-3 py-1 rounded-full shadow-xs">
-                <HeartPulse className="h-3.5 w-3.5 text-primary-green" />
-                <span>{isRtl ? 'الاستجمام السياحي' : 'Medical Wellness Tours'}</span>
+          <div className="mb-12 space-y-3 rtl:text-right">
+            <div className="flex items-center gap-3 mb-4 rtl:flex-row-reverse rtl:justify-end">
+              <span className="h-px w-8 bg-[#D4A96A]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+                {isRtl ? 'الاستجمام السياحي' : 'Medical Wellness Tours'}
               </span>
             </div>
-            <h2 className="text-3xl font-semibold font-display text-primary-dark">
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332]">
               {t('tourHeading')}
             </h2>
-            <p className="text-text-muted text-base font-sans leading-relaxed">
+            <p className="text-text-muted font-light leading-[1.65] text-base sm:text-lg max-w-2xl">
               {t('tourSubheading')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {['houseboat', 'munnar', 'kochi'].map((key) => (
               <div key={key} className="bg-white border border-[#D4A96A]/35 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
                 <div className="relative h-56 w-full overflow-hidden">
@@ -238,7 +274,7 @@ export default async function PackagesPage({ params }: Props) {
         </section>
 
         {/* 2. HYBRID PRICING TRANSPARENCY SECTION */}
-        <section className="bg-white border border-[#D4A96A]/35 rounded-3xl p-8 lg:p-12 mb-20 shadow-xs relative overflow-hidden">
+        <section className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 lg:p-12 mb-20 shadow-sm relative overflow-hidden hover:shadow-lg transition-all duration-300">
           <div className="absolute top-0 right-0 bg-[#D4A96A]/10 w-48 h-48 rounded-full blur-3xl -z-10"></div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
@@ -294,7 +330,14 @@ export default async function PackagesPage({ params }: Props) {
         {/* 3. STEP BY STEP FLOW */}
         <section className="space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <h2 className="text-3xl font-semibold font-display text-primary-dark">
+            <div className="flex items-center justify-center gap-3 mb-1">
+              <span className="h-px w-8 bg-[#D4A96A]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+                {isRtl ? 'خطوات الحجز' : 'Booking Timeline'}
+              </span>
+              <span className="h-px w-8 bg-[#D4A96A]" />
+            </div>
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332]">
               {t('howItWorks')}
             </h2>
             <p className="text-text-muted text-base">
@@ -313,7 +356,7 @@ export default async function PackagesPage({ params }: Props) {
               { title: t('step2Title'), desc: t('step2Desc'), emoji: '🏥' },
               { title: t('step3Title'), desc: t('step3Desc'), emoji: '✈️' }
             ].map((step, idx) => (
-              <div key={idx} className="relative z-10 bg-white border border-[#D4A96A]/35 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col gap-3">
+              <div key={idx} className="relative z-10 bg-white border border-[#D4A96A]/15 rounded-[2rem] p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 flex flex-col gap-3">
                 <span className="text-3xl">{step.emoji}</span>
                 <h4 className="font-bold text-text-dark font-display text-lg">{step.title}</h4>
                 <p className="text-sm text-text-muted leading-relaxed font-sans">{step.desc}</p>

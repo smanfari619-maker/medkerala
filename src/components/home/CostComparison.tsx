@@ -59,117 +59,131 @@ export default function CostComparison() {
   };
 
   return (
-    <section className="py-20 bg-[#FAF7F2] border-y border-[#D4A96A]/35">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl font-semibold font-display text-primary-dark mb-4">
-            {t('heading')}
-          </h2>
-          <p className="text-lg text-text-muted">
-            {t('subheading')}
-          </p>
-        </div>
+        
+        {/* Dark forest green container card */}
+        <div className="bg-[#1B4332] text-white rounded-[24px] p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+          {/* Decorative background glow */}
+          <div className="absolute inset-0 bg-radial-gradient from-primary-green/20 to-transparent opacity-65 -z-10" />
 
-        {/* Currency Switcher Pill Box */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-white/50 backdrop-blur-sm p-3 rounded-2xl shadow-sm border border-slate-200">
-          <div className="flex items-center gap-2">
-            <Landmark className="h-5 w-5 text-primary-green shrink-0" />
-            <span className="font-semibold text-text-dark text-base">{t('currencyLabel')}:</span>
+          {/* Section Header */}
+          <div className="max-w-3xl mb-12 space-y-4 text-left rtl:text-right">
+            {/* Eyebrow */}
+            <span className="text-xs font-medium uppercase tracking-[0.08em] text-[#BAD7B0]">
+              {locale === 'ar' ? 'مقارنة التكاليف' : 'Cost Comparison'}
+            </span>
+            
+            {/* Two-tone Heading on dark background */}
+            <h2 className="font-display font-normal tracking-[-0.025em] leading-[1.1] text-3xl sm:text-4xl lg:text-5xl">
+              <span className="block text-white">{t('heading')}</span>
+            </h2>
+            <p className="text-slate-300 font-light leading-[1.65] text-base sm:text-lg">
+              {t('subheading')}
+            </p>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {(Object.keys(exchangeRates) as Currency[]).map((cur) => (
-              <button
-                key={cur}
-                onClick={() => setCurrency(cur)}
-                className={`px-4 py-2 rounded-xl text-base font-bold transition-all duration-300 cursor-pointer min-h-[44px] min-w-[64px] ${
-                  currency === cur
-                    ? 'bg-primary-green text-white shadow-md'
-                    : 'bg-white hover:bg-slate-50 text-text-muted hover:text-primary-green border border-slate-200'
-                }`}
+
+          {/* Currency Switcher Pill Box */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/15">
+            <div className="flex items-center gap-2">
+              <Landmark className="h-5 w-5 text-[#9ACF88] shrink-0" />
+              <span className="font-medium text-white text-base">{t('currencyLabel')}:</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {(Object.keys(exchangeRates) as Currency[]).map((cur) => (
+                <button
+                  key={cur}
+                  onClick={() => setCurrency(cur)}
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 cursor-pointer min-h-[40px] min-w-[60px] ${
+                    currency === cur
+                      ? 'bg-[#BAD7B0] text-[#1B4332] shadow-sm'
+                      : 'bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10'
+                  }`}
+                >
+                  {cur}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Comparison Table */}
+          <div className="bg-white text-text-dark rounded-[20px] overflow-hidden border border-slate-100 shadow-lg">
+            <div className="overflow-x-auto no-scrollbar scroll-mask-fade">
+              <table className="w-full text-left border-collapse min-w-[700px]" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                <thead>
+                  <tr className="bg-[#F5F8F4] text-[#1B4332] text-xs font-semibold uppercase tracking-[0.08em] border-b border-slate-100">
+                    <th className="py-4 px-6 whitespace-nowrap">{t('treatmentName')}</th>
+                    <th className="py-4 px-6 text-center bg-emerald-50/50 text-[#1B4332] font-semibold">
+                      {t('kerala')}
+                    </th>
+                    <th className="py-4 px-6 text-center font-normal">{t('uk')}</th>
+                    <th className="py-4 px-6 text-center font-normal">{t('usa')}</th>
+                    <th className="py-4 px-6 text-center font-normal">{t('uae')}</th>
+                    <th className="py-4 px-6 text-center text-emerald-600 font-semibold">{locale === 'ar' ? 'الوفورات' : 'Savings'}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-sm sm:text-base">
+                  {treatments.map((tr) => {
+                    const ukSavings = calculateSavings(tr.kerala, tr.uk);
+                    const Icon = treatmentIcons[tr.key] || Stethoscope;
+                    return (
+                      <tr key={tr.key} className="hover:bg-slate-50 transition-colors duration-150 group">
+                        <td className="py-4 px-6 font-bold text-text-dark whitespace-nowrap">
+                          <div className="flex items-center gap-3">
+                            <div className="h-8 w-8 rounded-lg bg-primary-green/8 text-primary-green flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-white transition-all duration-300">
+                              <Icon className="h-4 w-4" />
+                            </div>
+                            <span className="font-medium text-[#1B4332]">{t(`treatments.${tr.key}`)}</span>
+                          </div>
+                        </td>
+                        <td className="py-4 px-6 text-center font-extrabold text-primary-green bg-primary-light/5">
+                          {formatPrice(tr.kerala, currency)}
+                        </td>
+                        <td className="py-4 px-6 text-center text-text-muted">
+                          {formatPrice(tr.uk, currency)}
+                        </td>
+                        <td className="py-4 px-6 text-center text-text-muted">
+                          {formatPrice(tr.usa, currency)}
+                        </td>
+                        <td className="py-4 px-6 text-center text-text-muted">
+                          {formatPrice(tr.uae, currency)}
+                        </td>
+                        <td className="py-4 px-6 text-center font-bold text-emerald-600">
+                          <div className="flex flex-col items-center justify-center gap-1.5 min-w-[100px] sm:min-w-[120px]">
+                            <div className="flex items-center gap-1">
+                              <CirclePercent className="h-4.5 w-4.5 text-emerald-600 shrink-0" />
+                              <span className="font-extrabold text-sm sm:text-base">{t('savingsText', { percent: ukSavings })}</span>
+                            </div>
+                            {/* Progress bar container */}
+                            <div className="w-24 h-1.5 bg-emerald-100 rounded-full overflow-hidden shadow-inner hidden sm:block">
+                              <div 
+                                className="h-full bg-emerald-600 rounded-full transition-all duration-500"
+                                style={{ width: `${ukSavings}%` }}
+                              />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="py-4 px-6 bg-slate-50 border-t border-slate-100 text-xs text-text-muted flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p>{t('note', { currency })}</p>
+              <Link
+                href="/get-estimate"
+                className="inline-flex items-center gap-1.5 text-primary-green hover:text-primary-dark font-medium text-sm transition-all duration-300 group min-h-[44px]"
               >
-                {cur}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Comparison Table */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl overflow-hidden border border-slate-100">
-          <div className="overflow-x-auto no-scrollbar scroll-mask-fade">
-            <table className="w-full text-left border-collapse min-w-[700px]" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-              <thead>
-                <tr className="bg-primary-dark text-white text-sm sm:text-base font-medium border-b border-primary-dark">
-                  <th className="py-3 px-4 sm:py-5 sm:px-6 font-display whitespace-nowrap">{t('treatmentName')}</th>
-                  <th className="py-3 px-4 sm:py-5 sm:px-6 text-center font-display bg-primary-green text-white shadow-inner">
-                    {t('kerala')}
-                  </th>
-                  <th className="py-3 px-4 sm:py-5 sm:px-6 text-center font-display">{t('uk')}</th>
-                  <th className="py-3 px-4 sm:py-5 sm:px-6 text-center font-display">{t('usa')}</th>
-                  <th className="py-3 px-4 sm:py-5 sm:px-6 text-center font-display">{t('uae')}</th>
-                  <th className="py-3 px-4 sm:py-5 sm:px-6 text-center font-display text-accent-gold">{locale === 'ar' ? 'الوفورات' : 'Savings'}</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 text-sm sm:text-base">
-                {treatments.map((tr) => {
-                  const ukSavings = calculateSavings(tr.kerala, tr.uk);
-                  const Icon = treatmentIcons[tr.key] || Stethoscope;
-                  return (
-                    <tr key={tr.key} className="hover:bg-slate-50 transition-colors duration-150 group">
-                      <td className="py-3 px-4 sm:py-5 sm:px-6 font-bold text-text-dark whitespace-nowrap">
-                        <div className="flex items-center gap-3">
-                          <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-lg bg-primary-green/8 text-primary-green flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-white transition-all duration-300">
-                            <Icon className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
-                          </div>
-                          <span>{t(`treatments.${tr.key}`)}</span>
-                        </div>
-                      </td>
-                      <td className="py-3 px-4 sm:py-5 sm:px-6 text-center font-extrabold text-primary-green bg-primary-light/10 shadow-xs">
-                        {formatPrice(tr.kerala, currency)}
-                      </td>
-                      <td className="py-3 px-4 sm:py-5 sm:px-6 text-center text-text-muted">
-                        {formatPrice(tr.uk, currency)}
-                      </td>
-                      <td className="py-3 px-4 sm:py-5 sm:px-6 text-center text-text-muted">
-                        {formatPrice(tr.usa, currency)}
-                      </td>
-                      <td className="py-3 px-4 sm:py-5 sm:px-6 text-center text-text-muted">
-                        {formatPrice(tr.uae, currency)}
-                      </td>
-                      <td className="py-3 px-4 sm:py-5 sm:px-6 text-center font-bold text-emerald-600 bg-emerald-50/50">
-                        <div className="flex flex-col items-center justify-center gap-1.5 min-w-[100px] sm:min-w-[120px]">
-                          <div className="flex items-center gap-1">
-                            <CirclePercent className="h-4.5 w-4.5 text-emerald-600 shrink-0" />
-                            <span className="font-extrabold text-sm sm:text-base">{t('savingsText', { percent: ukSavings })}</span>
-                          </div>
-                          {/* Progress bar container */}
-                          <div className="w-24 h-1.5 bg-emerald-100 rounded-full overflow-hidden shadow-inner hidden sm:block">
-                            <div 
-                              className="h-full bg-emerald-600 rounded-full transition-all duration-500"
-                              style={{ width: `${ukSavings}%` }}
-                            />
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="py-5 px-6 bg-slate-50 border-t border-slate-100 text-sm text-text-muted flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>{t('note', { currency })}</p>
-            <Link
-              href="/get-estimate"
-              className="inline-flex items-center gap-2 text-primary-green hover:text-primary-dark font-semibold text-base transition-colors duration-300 group min-h-[44px]"
-            >
-              <span>{t('cta')}</span>
-              <ArrowRight className="h-4.5 w-4.5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+                <span>{t('cta')}</span>
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+

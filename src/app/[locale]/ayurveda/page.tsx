@@ -92,65 +92,58 @@ export default async function AyurvedaPage({ params }: Props) {
   const isRtl = locale === 'ar';
 
   return (
-    <div className="flex flex-col w-full overflow-x-hidden">
+    <div className="flex flex-col w-full overflow-x-hidden pt-24 bg-[#FAF7F2]">
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-[#1B4332] via-[#2D6A4F] to-[#40916C] text-white py-20 lg:py-28 overflow-hidden">
-        {/* decorative circles */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#D4A96A]/10 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-bold mb-6 tracking-wide">
-              <Leaf className="h-4 w-4 text-[#D4A96A]" />
-              {isRtl ? 'الطب الأيورفيدي الأصيل — كيرلا' : 'Authentic Ayurveda — Kerala'}
-            </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold font-display leading-tight mb-6">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 border-b border-[#D4A96A]/35">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <span className="h-px w-8 bg-[#D4A96A]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+                {isRtl ? 'الطب الأيورفيدي الأصيل — كيرلا' : 'Authentic Ayurveda — Kerala'}
+              </span>
+              <span className="h-px w-8 bg-[#D4A96A]" />
+            </div>
+            <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
               {isRtl
                 ? 'الشفاء العميق بقوة طب الأيورفيدا في كيرلا'
                 : 'Heal Deeply with Kerala\'s Ancient Ayurveda Wisdom'}
             </h1>
-            <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-lg text-text-muted font-sans">
               {isRtl
                 ? 'كيرلا هي مهد طب الأيورفيدا الأصيل. أكثر من 5,000 سنة من الحكمة الطبية مُدمجة في برامج علاج حديثة تحت إشراف أطباء أيورفيديين معتمدين.'
                 : 'Kerala is the birthplace of authentic Ayurveda. Over 5,000 years of medical wisdom integrated into modern healing programmes — supervised by certified Ayurvedic physicians.'}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-6">
               <Link
                 href="/get-estimate"
-                className="bg-[#D4A96A] hover:bg-[#c49355] text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2"
+                className="bg-[#2D6A4F] hover:bg-[#1B4332] text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2"
               >
                 <span>{isRtl ? 'احصل على برنامجك المخصص' : 'Get Your Custom Programme'}</span>
                 <ArrowRight className="h-5 w-5 shrink-0" />
               </Link>
-              <a
-                href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2"
-              >
-                <MessageCircle className="h-5 w-5 shrink-0" />
-                <span>{isRtl ? 'تحدث معنا' : 'Chat with Us'}</span>
-              </a>
             </div>
           </div>
-        </div>
 
-        {/* Stats bar */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 relative z-10">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[
-              { val: '5,000+', label: isRtl ? 'سنة من الحكمة الطبية' : 'Years of Medical Wisdom' },
-              { val: '200+', label: isRtl ? 'مركز أيورفيدي معتمد' : 'Certified Ayurveda Centres' },
-              { val: '60%', label: isRtl ? 'توفير مقارنة بالغرب' : 'Savings vs Western Costs' },
-              { val: '24/7', label: isRtl ? 'دعم منسق مرافق' : 'Coordinator Support' },
-            ].map((stat) => (
-              <div key={stat.val} className="bg-white/10 border border-white/20 rounded-2xl p-5 text-center">
-                <p className="text-3xl font-extrabold font-display text-[#D4A96A]">{stat.val}</p>
-                <p className="text-sm text-white/70 mt-1 font-medium">{stat.label}</p>
-              </div>
-            ))}
+          {/* Stats bar */}
+          <div className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-6 sm:p-8 shadow-[0_20px_50px_rgba(212,169,106,0.06)]">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center divide-y lg:divide-y-0 lg:divide-x divide-slate-100 rtl:divide-x-reverse">
+              {[
+                { val: '5,000+', label: isRtl ? 'سنة من الحكمة الطبية' : 'Years of Medical Wisdom' },
+                { val: '200+', label: isRtl ? 'مركز أيورفيدي معتمد' : 'Certified Ayurveda Centres' },
+                { val: '60%', label: isRtl ? 'توفير مقارنة بالغرب' : 'Savings vs Western Costs' },
+                { val: '24/7', label: isRtl ? 'دعم منسق مرافق' : 'Coordinator Support' },
+              ].map((stat) => (
+                <div key={stat.val} className="space-y-1.5 pt-4 first:pt-0 lg:pt-0">
+                  <span className="text-3xl sm:text-4xl font-extrabold font-display text-primary-green block">
+                    {stat.val}
+                  </span>
+                  <h3 className="text-sm font-bold text-text-dark font-sans">{stat.label}</h3>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -161,10 +154,14 @@ export default async function AyurvedaPage({ params }: Props) {
       <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block mb-3">
-              {isRtl ? 'العلاجات الأيورفيدية الرئيسية' : 'Core Ayurvedic Treatments'}
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-semibold font-display text-[#1B4332] mb-4">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <span className="h-px w-8 bg-[#D4A96A]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+                {isRtl ? 'العلاجات الأيورفيدية الرئيسية' : 'Core Ayurvedic Treatments'}
+              </span>
+              <span className="h-px w-8 bg-[#D4A96A]" />
+            </div>
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332] mb-4">
               {isRtl ? 'علاجات كيرلا الأيورفيدية الأصيلة' : 'Authentic Kerala Ayurveda Therapies'}
             </h2>
             <p className="text-text-muted text-lg">
@@ -180,7 +177,7 @@ export default async function AyurvedaPage({ params }: Props) {
               return (
                 <div
                   key={t.en.name}
-                  className="bg-white rounded-3xl p-8 border border-[#D4A96A]/30 hover:border-[#2D6A4F]/30 hover:shadow-xl transition-all duration-300 group flex flex-col"
+                  className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group flex flex-col"
                 >
                   <div className="h-12 w-12 rounded-2xl bg-[#2D6A4F]/10 flex items-center justify-center mb-5 group-hover:bg-[#2D6A4F] transition-colors duration-300">
                     <t.icon className="h-6 w-6 text-[#2D6A4F] group-hover:text-white transition-colors duration-300" />
@@ -209,10 +206,13 @@ export default async function AyurvedaPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block mb-4">
-                {isRtl ? 'الحالات التي يعالجها الأيورفيدا' : 'Conditions Treated'}
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-semibold font-display text-[#1B4332] mb-6">
+              <div className="flex items-center gap-3 mb-3 rtl:flex-row-reverse rtl:justify-end">
+                <span className="h-px w-8 bg-[#D4A96A]" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+                  {isRtl ? 'الحالات التي يعالجها الأيورفيدا' : 'Conditions Treated'}
+                </span>
+              </div>
+              <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332] mb-6">
                 {isRtl ? 'ما الذي يمكن للأيورفيدا علاجه؟' : 'What Can Ayurveda Treat?'}
               </h2>
               <p className="text-text-muted text-lg leading-relaxed mb-8">
@@ -222,7 +222,7 @@ export default async function AyurvedaPage({ params }: Props) {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {conditions.map((c) => (
-                  <div key={c.en} className="flex items-center gap-3 bg-[#FAF7F2] border border-[#D4A96A]/30 rounded-xl px-4 py-3">
+                  <div key={c.en} className="flex items-center gap-3 bg-white border border-[#D4A96A]/15 rounded-[2rem] px-4 py-3 hover:border-[#2D6A4F]/25 hover:shadow-xs transition-all duration-300">
                     <CheckCircle className="h-4.5 w-4.5 text-[#2D6A4F] shrink-0" />
                     <span className="text-text-dark font-medium text-sm">{isRtl ? c.ar : c.en}</span>
                   </div>
@@ -231,7 +231,7 @@ export default async function AyurvedaPage({ params }: Props) {
             </div>
 
             {/* Why Kerala box */}
-            <div className="bg-gradient-to-br from-[#1B4332] to-[#2D6A4F] text-white rounded-3xl p-10 space-y-6">
+            <div className="bg-[#1B4332] text-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 sm:p-10 space-y-6 shadow-lg">
               <h3 className="text-2xl font-bold font-display">
                 {isRtl ? 'لماذا كيرلا تحديداً للأيورفيدا؟' : 'Why Kerala Specifically for Ayurveda?'}
               </h3>
@@ -266,12 +266,16 @@ export default async function AyurvedaPage({ params }: Props) {
 
 
       {/* ── CTA BAND ─────────────────────────────────────────── */}
-      <section className="bg-[#1B4332] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
-            {isRtl ? 'ابدأ رحلة شفائك' : 'Start Your Healing Journey'}
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-semibold font-display text-white">
+      <section className="bg-[#1B4332] border-t border-[#D4A96A]/20 py-16 lg:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <span className="h-px w-8 bg-[#D4A96A]" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+              {isRtl ? 'ابدأ رحلة شفائك' : 'Start Your Healing Journey'}
+            </span>
+            <span className="h-px w-8 bg-[#D4A96A]" />
+          </div>
+          <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-white">
             {isRtl
               ? 'دعنا نُصمم برنامجك الأيورفيدي الشخصي'
               : 'Let Us Design Your Personal Ayurveda Programme'}

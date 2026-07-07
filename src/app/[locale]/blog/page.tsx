@@ -5,6 +5,7 @@ import { Calendar, Clock, BookOpen, ArrowRight, User } from 'lucide-react';
 
 
 import { Metadata } from 'next';
+import { getBreadcrumbSchema } from '@/lib/schemas';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -12,11 +13,19 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const isAr = locale === 'ar';
   return {
-    title: locale === 'ar' ? 'المدونة الطبية والتعليمية | علاج في كيرلا' : 'Medical Blog & Resources | TreatInKerala',
-    description: locale === 'ar' 
+    title: isAr ? 'المدونة الطبية والتعليمية | علاج في كيرلا' : 'Medical Blog & Resources | TreatInKerala',
+    description: isAr 
       ? 'نصائح طبية وإرشادات صحية موثوقة من أطباء علاج في كيرلا حول السياحة العلاجية والتعافي في كيرلا.' 
       : 'Explore healthcare guides, medical tourism tips, and wellness articles written by our medical coordinators in Kerala.',
+    alternates: {
+      canonical: isAr ? '/ar/blog' : '/en/blog',
+      languages: {
+        en: '/en/blog',
+        ar: '/ar/blog',
+      },
+    },
   };
 }
 
@@ -28,8 +37,17 @@ export default async function BlogPage({ params }: Props) {
   const featuredPost = BLOG_POSTS[0];
   const regularPosts = BLOG_POSTS.slice(1);
 
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: isRtl ? 'الرئيسية' : 'Home', url: `https://treatinkerala.com/${locale}` },
+    { name: isRtl ? 'المدونة' : 'Blog', url: `https://treatinkerala.com/${locale}/blog` }
+  ]);
+
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+    <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

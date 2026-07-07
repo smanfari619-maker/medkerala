@@ -6,4 +6,4 @@ Disallow: /_next/
 Disallow: /_vercel/
 Disallow: /api/
 
-Sitemap: https://medkerala.com/sitemap.xml
+Sitemap: https://treatinkerala.com/sitemap.xml

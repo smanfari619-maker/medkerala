@@ -19,6 +19,7 @@ export default function Footer() {
   ];
 
   const quickLinks = [
+    { href: '/about', label: tNav('about') },
     { href: '/services', label: tNav('services') },
     { href: '/why-kerala', label: tNav('whyKerala') },
     { href: '/blog', label: tNav('blog') },
@@ -28,23 +29,17 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#1A1A2E] text-slate-300 pt-16 pb-8 border-t border-[#D4A96A]/35">
+    <footer className="bg-[#0A1C15] text-slate-300 pt-16 pb-8 border-t border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Col */}
           <div className="space-y-6">
             <Link href="/" className="inline-block">
-              <span className="text-2xl font-bold font-display text-white tracking-tight">
-                {locale === 'ar' ? (
-                  <>
-                    علاج في <span className="text-[#D4A96A]">كيرلا</span>
-                  </>
-                ) : (
-                  <>
-                    TreatIn<span className="text-[#D4A96A]">Kerala</span>
-                  </>
-                )}
-              </span>
+              <img
+                src="/images/logo.svg"
+                alt="TreatInKerala Logo"
+                className="h-7.5 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="text-slate-400 text-base leading-relaxed font-sans max-w-sm">
               {t('tagline')}

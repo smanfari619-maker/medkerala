@@ -12,4 +12,7 @@ export const SITE_CONFIG = {
   // Staging / Dev contact details
   officeAddressEn: 'Hilite Business Park, Near Bypass Junction, Calicut (Kozhikode), Kerala, India',
   officeAddressAr: 'طريق هيلاند، بالقرب من المستشفى التخصصي، كالكوت (كوزيكود)، كيرلا، الهند',
+
+  // Live Stats
+  monthlyPatientsServed: 127,
 };

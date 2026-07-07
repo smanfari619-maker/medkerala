@@ -1,7 +1,7 @@
 import React from 'react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { Award, Compass, PhoneCall, MessageCircle } from 'lucide-react';
+import { Award, Compass, PhoneCall, MessageCircle, TrendingDown } from 'lucide-react';
 import { Metadata } from 'next';
 import { SITE_CONFIG } from '@/lib/config';
 
@@ -11,11 +11,19 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const isAr = locale === 'ar';
   return {
-    title: locale === 'ar' ? 'لماذا العلاج في كيرلا؟ | علاج في كيرلا' : 'Why Choose Kerala for Treatment | TreatInKerala',
-    description: locale === 'ar' 
+    title: isAr ? 'لماذا العلاج في كيرلا؟ | علاج في كيرلا' : 'Why Choose Kerala for Treatment | TreatInKerala',
+    description: isAr 
       ? 'اكتشف مزايا السياحة العلاجية في كيرلا - مستشفيات ذات معايير عالمية، أطباء متميزين، وتوفير 60-80% في التكاليف الطبية.'
       : 'Learn why Kerala is a top destination for medical care. World-class hospital facilities, foreign-trained doctors, and massive cost savings.',
+    alternates: {
+      canonical: isAr ? '/ar/why-kerala' : '/en/why-kerala',
+      languages: {
+        en: '/en/why-kerala',
+        ar: '/ar/why-kerala',
+      },
+    },
   };
 }
 
@@ -33,14 +41,18 @@ export default async function WhyKeralaPage({ params }: Props) {
   ];
 
   return (
-    <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+    <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
-            {locale === 'ar' ? 'الرعاية الصحية الأفضل تكلفة' : 'The Healthcare Capital'}
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <span className="h-px w-8 bg-[#D4A96A]" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+              {locale === 'ar' ? 'الرعاية الصحية الأفضل تكلفة' : 'The Healthcare Capital'}
+            </span>
+            <span className="h-px w-8 bg-[#D4A96A]" />
+          </div>
+          <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
             {locale === 'ar' ? 'لماذا يختار المرضى جنوب الهند (كيرلا وتاميل نادو) للعلاج؟' : 'Why Choose South India (Kerala & Tamil Nadu) for Treatment?'}
           </h1>
           <p className="text-lg text-text-muted">
@@ -51,7 +63,7 @@ export default async function WhyKeralaPage({ params }: Props) {
         </div>
 
         {/* Stats Listing - Compact Strip */}
-        <div className="bg-white border border-[#D4A96A]/35 rounded-3xl p-6 sm:p-8 mb-16 shadow-[0_20px_50px_rgba(212,169,106,0.1)]">
+        <div className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-6 sm:p-8 mb-16 shadow-[0_20px_50px_rgba(212,169,106,0.06)]">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center divide-y lg:divide-y-0 lg:divide-x divide-slate-100 rtl:divide-x-reverse">
             {stats.map((stat, idx) => (
               <div key={idx} className="space-y-1.5 pt-4 first:pt-0 lg:pt-0">
@@ -66,78 +78,94 @@ export default async function WhyKeralaPage({ params }: Props) {
         </div>
 
         {/* Cost Savings Chart Visual */}
-        <div className="bg-white p-8 sm:p-12 rounded-3xl border border-[#D4A96A]/35 shadow-[0_30px_60px_rgba(212,169,106,0.12)] mb-20 space-y-8">
-          <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-semibold font-display text-primary-dark">
-              {locale === 'ar' ? 'مقارنة وفورات الجراحة المتوسطة (بالدولار)' : 'Average Surgery Cost Comparison (USD)'}
-            </h2>
-            <p className="text-text-muted text-base mt-2 font-sans">
+        <div className="bg-white border border-[#D4A96A]/15 p-8 sm:p-12 rounded-[2.25rem] relative overflow-hidden group shadow-sm hover:shadow-lg transition-all duration-300 mb-20 border border-transparent">
+          <div className="relative z-10 space-y-8">
+            <div className="mb-12 space-y-3 rtl:text-right">
+              <div className="flex items-center gap-3 mb-4 rtl:flex-row-reverse rtl:justify-end">
+                <span className="h-px w-8 bg-[#D4A96A]" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+                  {locale === 'ar' ? 'مقارنة التكاليف' : 'Cost Savings'}
+                </span>
+              </div>
+              <h2 className="font-display font-normal tracking-[-0.025em] leading-[1.1] text-3xl sm:text-4xl text-[#1B4332]">
+                {locale === 'ar' ? 'مقارنة وفورات الجراحة المتوسطة (بالدولار)' : 'Average Surgery Cost Comparison (USD)'}
+              </h2>
+              <p className="text-text-muted font-light leading-[1.65] text-base sm:text-lg max-w-2xl">
+                {locale === 'ar'
+                  ? 'تكلفة نموذجية لعمليات جراحية رئيسية (مثل استبدال المفاصل أو القلب).'
+                  : 'Representative cost for major cardiovascular or orthopedic surgeries.'}
+              </p>
+            </div>
+
+            <div className="space-y-6 pt-4 font-sans">
+              {/* Kerala Bar */}
+              <div className="space-y-2">
+                <div className="flex justify-between font-bold text-sm text-primary-green">
+                  <span>{locale === 'ar' ? 'كيرلا، الهند (علاج في كيرلا)' : 'Kerala, India (TreatInKerala)'}</span>
+                  <span className="font-display font-extrabold text-base">$4,700</span>
+                </div>
+                <div className="w-full bg-slate-100 h-6 rounded-full overflow-hidden shadow-inner">
+                  <div className="bg-gradient-to-r from-primary-green to-[#25D366] h-full rounded-full transition-all duration-1000 w-[10%] shadow-[0_0_10px_rgba(37,211,102,0.3)]"></div>
+                </div>
+              </div>
+
+              {/* UAE Bar */}
+              <div className="space-y-2">
+                <div className="flex justify-between font-bold text-sm text-text-dark">
+                  <span>{locale === 'ar' ? 'الإمارات العربية المتحدة' : 'United Arab Emirates'}</span>
+                  <span className="font-display font-extrabold text-base">$18,000</span>
+                </div>
+                <div className="w-full bg-slate-100 h-6 rounded-full overflow-hidden shadow-inner">
+                  <div className="bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] h-full rounded-full transition-all duration-1000 w-[38%]"></div>
+                </div>
+              </div>
+
+              {/* UK Bar */}
+              <div className="space-y-2">
+                <div className="flex justify-between font-bold text-sm text-text-dark">
+                  <span>{locale === 'ar' ? 'المملكة المتحدة (خاص)' : 'United Kingdom (Private)'}</span>
+                  <span className="font-display font-extrabold text-base">$26,000</span>
+                </div>
+                <div className="w-full bg-slate-100 h-6 rounded-full overflow-hidden shadow-inner">
+                  <div className="bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] h-full rounded-full transition-all duration-1000 w-[55%]"></div>
+                </div>
+              </div>
+
+              {/* USA Bar */}
+              <div className="space-y-2">
+                <div className="flex justify-between font-bold text-sm text-text-dark">
+                  <span>{locale === 'ar' ? 'الولايات المتحدة الأمريكية' : 'United States'}</span>
+                  <span className="font-display font-extrabold text-base">$48,000</span>
+                </div>
+                <div className="w-full bg-slate-100 h-6 rounded-full overflow-hidden shadow-inner">
+                  <div className="bg-gradient-to-r from-[#D4A96A] to-[#E3C293] h-full rounded-full transition-all duration-1000 w-[95%]"></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center text-xs text-text-muted border-t border-slate-100 pt-6 font-sans">
               {locale === 'ar'
-                ? 'تكلفة نموذجية لعمليات جراحية رئيسية (مثل استبدال المفاصل أو القلب).'
-                : 'Representative cost for major cardiovascular or orthopedic surgeries.'}
-            </p>
-          </div>
-
-          <div className="space-y-6 pt-4 font-sans">
-            {/* Kerala Bar */}
-            <div className="space-y-2">
-              <div className="flex justify-between font-bold text-sm text-primary-green">
-                <span>{locale === 'ar' ? 'كيرلا، الهند (علاج في كيرلا)' : 'Kerala, India (TreatInKerala)'}</span>
-                <span className="font-display font-extrabold text-base">$4,700</span>
-              </div>
-              <div className="w-full bg-slate-100 h-6 rounded-full overflow-hidden shadow-inner">
-                <div className="bg-gradient-to-r from-primary-green to-[#25D366] h-full rounded-full transition-all duration-1000 w-[10%] shadow-[0_0_10px_rgba(37,211,102,0.3)]"></div>
-              </div>
-            </div>
-
-            {/* UAE Bar */}
-            <div className="space-y-2">
-              <div className="flex justify-between font-bold text-sm text-text-dark">
-                <span>{locale === 'ar' ? 'الإمارات العربية المتحدة' : 'United Arab Emirates'}</span>
-                <span className="font-display font-extrabold text-base">$18,000</span>
-              </div>
-              <div className="w-full bg-slate-100 h-6 rounded-full overflow-hidden shadow-inner">
-                <div className="bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] h-full rounded-full transition-all duration-1000 w-[38%]"></div>
-              </div>
-            </div>
-
-            {/* UK Bar */}
-            <div className="space-y-2">
-              <div className="flex justify-between font-bold text-sm text-text-dark">
-                <span>{locale === 'ar' ? 'المملكة المتحدة (خاص)' : 'United Kingdom (Private)'}</span>
-                <span className="font-display font-extrabold text-base">$26,000</span>
-              </div>
-              <div className="w-full bg-slate-100 h-6 rounded-full overflow-hidden shadow-inner">
-                <div className="bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] h-full rounded-full transition-all duration-1000 w-[55%]"></div>
-              </div>
-            </div>
-
-            {/* USA Bar */}
-            <div className="space-y-2">
-              <div className="flex justify-between font-bold text-sm text-text-dark">
-                <span>{locale === 'ar' ? 'الولايات المتحدة الأمريكية' : 'United States'}</span>
-                <span className="font-display font-extrabold text-base">$48,000</span>
-              </div>
-              <div className="w-full bg-slate-100 h-6 rounded-full overflow-hidden shadow-inner">
-                <div className="bg-gradient-to-r from-[#D4A96A] to-[#E3C293] h-full rounded-full transition-all duration-1000 w-[95%]"></div>
-              </div>
+                ? '* تشمل التكاليف التقديرية الإقامة والمتابعة الطبية والتنسيق.'
+                : '* Costs represented are averages across orthopedic and cardiac specialties.'}
             </div>
           </div>
-
-          <div className="text-center text-xs text-text-muted border-t border-slate-100 pt-6 font-sans">
-            {locale === 'ar'
-              ? '* تشمل التكاليف التقديرية الإقامة والمتابعة الطبية والتنسيق.'
-              : '* Costs represented are averages across orthopedic and cardiac specialties.'}
+          
+          {/* Large Background Vector */}
+          <div className="absolute -bottom-10 -right-10 rtl:-left-10 rtl:-right-auto h-64 w-64 opacity-[0.03] text-[#2D6A4F] pointer-events-none group-hover:scale-[1.1] group-hover:rotate-6 transition-all duration-700 ease-out origin-bottom-right">
+            <TrendingDown className="w-full h-full" strokeWidth={1.5} />
           </div>
         </div>
 
         {/* Calicut highlight */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6">
-            <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
-              {locale === 'ar' ? 'الوجهة المفضلّة: كالكوت' : 'Calicut: Our Primary Base'}
-            </span>
-            <h2 className="text-3xl font-semibold font-display text-primary-dark">
+            <div className="flex items-center gap-3 mb-2 rtl:flex-row-reverse rtl:justify-end">
+              <span className="h-px w-8 bg-[#D4A96A]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+                {locale === 'ar' ? 'الوجهة المفضلّة: كالكوت' : 'Calicut: Our Primary Base'}
+              </span>
+            </div>
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332]">
               {locale === 'ar' ? 'كوزيكود (كالكوت) — عاصمة الرعاية والضيافة كيرلا' : 'Calicut (Kozhikode) — The Gateway to Healing'}
             </h2>
             <p className="text-text-muted text-base leading-relaxed">
@@ -188,12 +216,15 @@ export default async function WhyKeralaPage({ params }: Props) {
         </div>
 
         {/* Tamil Nadu extension block */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-white border border-[#D4A96A]/35 p-8 sm:p-12 rounded-3xl shadow-xs">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-white border border-[#D4A96A]/15 p-8 sm:p-12 rounded-[2.25rem] shadow-sm hover:shadow-lg transition-all duration-300">
           <div className="space-y-6 order-last lg:order-first">
-            <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
-              {locale === 'ar' ? 'التوسع الجغرافي: تاميل نادو' : 'Regional Extension: Tamil Nadu'}
-            </span>
-            <h2 className="text-3xl font-semibold font-display text-primary-dark">
+            <div className="flex items-center gap-3 mb-2 rtl:flex-row-reverse rtl:justify-end">
+              <span className="h-px w-8 bg-[#D4A96A]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+                {locale === 'ar' ? 'التوسع الجغرافي: تاميل نادو' : 'Regional Extension: Tamil Nadu'}
+              </span>
+            </div>
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332]">
               {locale === 'ar' ? 'شراكات النخبة في تشيناي وفيلور' : 'Elite Partnerships in Chennai & Vellore'}
             </h2>
             <p className="text-text-muted text-base leading-relaxed">
@@ -202,7 +233,7 @@ export default async function WhyKeralaPage({ params }: Props) {
                 : 'To offer the widest scope of specialized care, we have expanded our network to include the medical giants of neighboring Tamil Nadu. Through our partnerships with Christian Medical College (CMC Vellore) and Apollo Hospitals in Chennai, patients can access world-renowned hematology, proton oncology, and complex neurological treatments.'}
             </p>
           </div>
-          <div className="bg-[#FAF7F2] p-8 rounded-2xl border border-[#D4A96A]/30 space-y-4">
+          <div className="bg-[#FAF7F2] p-8 rounded-[2rem] border border-[#D4A96A]/20 space-y-4">
             <h4 className="font-bold text-text-dark font-display text-lg">
               {locale === 'ar' ? 'الوجهات الطبية المضافة:' : 'Added Medical Hubs:'}
             </h4>

@@ -8,11 +8,19 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const isAr = locale === 'ar';
   return {
-    title: locale === 'ar' ? 'الأسئلة الشائعة | علاج في كيرلا' : 'Frequently Asked Questions | TreatInKerala',
-    description: locale === 'ar' 
+    title: isAr ? 'الأسئلة الشائعة | علاج في كيرلا' : 'Frequently Asked Questions | TreatInKerala',
+    description: isAr 
       ? 'إجابات شاملة على كافة الأسئلة المتعلقة بالتكاليف، المستشفيات، تأشيرات السفر الطبية، وخدمات التنسيق في كيرلا.'
       : 'Find detailed answers to common questions about medical treatments, hospital accreditations, visa letters, and travel costs in India.',
+    alternates: {
+      canonical: isAr ? '/ar/faq' : '/en/faq',
+      languages: {
+        en: '/en/faq',
+        ar: '/ar/faq',
+      },
+    },
   };
 }
 
@@ -119,14 +127,18 @@ export default async function FAQPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="py-16 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+      <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 space-y-4">
-            <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
-              {locale === 'ar' ? 'إجابات على استفساراتك' : 'Questions & Answers'}
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <span className="h-px w-8 bg-[#D4A96A]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+                {locale === 'ar' ? 'إجابات على استفساراتك' : 'Questions & Answers'}
+              </span>
+              <span className="h-px w-8 bg-[#D4A96A]" />
+            </div>
+            <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
               {locale === 'ar' ? 'الأسئلة الشائعة حول العلاج والسفر في كيرلا' : 'Medical Tourism FAQ — Kerala'}
             </h1>
             <p className="text-lg text-text-muted">
@@ -144,7 +156,7 @@ export default async function FAQPage({ params }: Props) {
                 <div key={catIdx} className="space-y-6">
                   <div className="flex items-center gap-2 pb-2 border-b border-[#D4A96A]/35">
                     <CatIcon className="h-6 w-6 text-primary-green shrink-0" />
-                    <h2 className="text-xl sm:text-2xl font-bold font-display text-primary-dark">
+                    <h2 className="font-display font-normal tracking-[-0.025em] text-xl sm:text-2xl text-[#1B4332]">
                       {cat.title}
                     </h2>
                   </div>
@@ -153,7 +165,7 @@ export default async function FAQPage({ params }: Props) {
                     {cat.items.map((item, itemIdx) => (
                       <details
                         key={itemIdx}
-                        className="group border border-[#D4A96A]/35 rounded-2xl bg-white p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer"
+                        className="group border border-[#D4A96A]/15 rounded-2xl bg-white p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer hover:border-[#2D6A4F]/30 hover:shadow-md transition-all duration-300"
                       >
                         <summary className="flex items-center justify-between gap-1.5 focus:outline-hidden min-h-[44px]">
                           <h3 className="text-base sm:text-lg font-bold text-text-dark flex items-start gap-2">
