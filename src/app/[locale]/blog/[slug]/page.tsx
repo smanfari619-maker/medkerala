@@ -69,8 +69,9 @@ export default async function BlogPostPage({ params }: Props) {
     articleSection: category,
     datePublished: post.date,
     author: {
-      '@type': 'Organization',
-      name: 'TreatInKerala Medical Panel',
+      '@type': 'Person',
+      name: 'Muhsina TP',
+      jobTitle: 'Chief Medical Coordinator',
       url: 'https://treatinkerala.com',
     },
     publisher: {
@@ -169,7 +170,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-text-muted border-b border-slate-100 pb-6 pt-2">
               <span className="flex items-center gap-1">
                 <User className="h-4.5 w-4.5 text-primary-green" />
-                <span>{locale === 'ar' ? 'فريق علاج في كيرلا الطبي' : 'TreatInKerala Medical Panel'}</span>
+                <span>{locale === 'ar' ? 'بواسطة محسنة تي بي' : 'By Muhsina TP'}</span>
               </span>
               <span className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />

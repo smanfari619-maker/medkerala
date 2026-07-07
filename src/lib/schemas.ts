@@ -77,8 +77,9 @@ export function getBlogPostingSchema(post: {
     'url': `https://treatinkerala.com/${post.locale}/blog/${post.slug}`,
     'datePublished': post.date,
     'author': {
-      '@type': 'Organization',
-      'name': 'TreatInKerala Medical Panel'
+      '@type': 'Person',
+      'name': 'Muhsina TP',
+      'jobTitle': 'Chief Medical Coordinator'
     },
     'publisher': {
       '@type': 'Organization',

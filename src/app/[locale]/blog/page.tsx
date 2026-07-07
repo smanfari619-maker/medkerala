@@ -98,7 +98,7 @@ export default async function BlogPage({ params }: Props) {
               <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-sm text-text-muted">
                   <User className="h-4.5 w-4.5 text-primary-green" />
-                  <span>{locale === 'ar' ? 'بواسطة علاج في كيرلا' : 'By TreatInKerala'}</span>
+                  <span>{locale === 'ar' ? 'بواسطة محسنة تي بي' : 'By Muhsina TP'}</span>
                 </div>
                 <Link
                   href={`/blog/${featuredPost.slug}`}
