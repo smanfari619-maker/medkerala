@@ -135,7 +135,7 @@ export default async function HomePage({ params }: Props) {
       />
 
       {/* ─── 1. HERO ────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#FAF7F2]">
+      <section className="relative min-h-0 lg:min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#FAF7F2]">
 
         {/* Abstract morphing blob — right side */}
         <div
@@ -155,10 +155,10 @@ export default async function HomePage({ params }: Props) {
 
         {/* Main content — vertically centered */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-20 flex-grow flex items-center w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full">
             
             {/* Left Column: Premium Text & CTA (8 cols) */}
-            <div className={`lg:col-span-8 flex flex-col justify-center space-y-6 sm:space-y-8 ${isRtl ? 'order-1 lg:order-2 rtl:text-right' : 'order-1 lg:order-1'}`}>
+            <div className={`lg:col-span-8 flex flex-col justify-center space-y-6 sm:space-y-8 w-full ${isRtl ? 'order-1 lg:order-2 rtl:text-right' : 'order-1 lg:order-1'}`}>
               
               {/* Trust Badge / Live Status */}
               <div className={`flex items-center gap-2 text-sm animate-title-slide ${isRtl ? 'justify-start' : ''}`} style={{ animationDelay: '0ms' }}>
@@ -190,12 +190,12 @@ export default async function HomePage({ params }: Props) {
               </p>
 
               {/* CTAs ─── gradient button matches Camber's style */}
-              <div className={`flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-2 animate-title-slide ${isRtl ? 'sm:flex-row-reverse sm:justify-end' : ''}`} style={{ animationDelay: '700ms' }}>
+              <div className={`flex flex-col sm:flex-row items-center gap-5 pt-2 animate-title-slide w-full ${isRtl ? 'sm:flex-row-reverse sm:justify-end' : ''}`} style={{ animationDelay: '700ms' }}>
                 <a
                   href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 font-medium px-7 py-3.5 rounded-full text-base transition-all duration-300 cursor-pointer tap-active shadow-sm hover:shadow-md"
+                  className="inline-flex items-center justify-center gap-2.5 font-medium px-7 py-3.5 rounded-full text-base transition-all duration-300 cursor-pointer tap-active shadow-sm hover:shadow-md w-full sm:w-auto text-center"
                   style={{
                     background: 'linear-gradient(135deg, rgba(186,215,176,1) 0%, rgba(154,207,136,1) 100%)',
                     boxShadow: 'inset 0 0 20px rgba(255,255,255,0.3)',
@@ -207,7 +207,7 @@ export default async function HomePage({ params }: Props) {
                 </a>
                 <Link
                   href="/get-estimate"
-                  className="inline-flex items-center gap-2 text-[#2D6A4F] font-medium text-base hover:gap-3 transition-all duration-300 group"
+                  className="inline-flex items-center justify-center gap-2 text-[#2D6A4F] font-medium text-base hover:gap-3 transition-all duration-300 group w-full sm:w-auto py-2.5"
                 >
                   <span>{tCommon('getEstimate')}</span>
                   <ArrowRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
@@ -217,7 +217,7 @@ export default async function HomePage({ params }: Props) {
             </div>
 
             {/* Right Column: Premium Visual Panel (4 cols) */}
-            <div className={`lg:col-span-4 relative w-full flex justify-center lg:justify-end ${isRtl ? 'order-2 lg:order-1' : 'order-2 lg:order-2'}`}>
+            <div className={`lg:col-span-4 relative w-full flex justify-center lg:justify-end mt-8 lg:mt-0 ${isRtl ? 'order-2 lg:order-1' : 'order-2 lg:order-2'}`}>
               
               {/* Blur backdrop behind the frame */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-[#74B49B]/10 to-[#D4A96A]/10 rounded-[2.5rem] blur-xl animate-pulse" />
@@ -239,7 +239,7 @@ export default async function HomePage({ params }: Props) {
               </div>
 
               {/* Floating Card 1: 5.0 Star Rating */}
-              <div className={`absolute -top-4 bg-white/95 backdrop-blur-md shadow-xl border border-emerald-50/50 rounded-2xl p-4 flex items-center gap-3 animate-bounce-slow z-20 ${isRtl ? 'left-4 lg:-left-6' : 'right-4 lg:-right-6'}`}>
+              <div className={`hidden md:flex absolute -top-4 bg-white/95 backdrop-blur-md shadow-xl border border-emerald-50/50 rounded-2xl p-4 flex-row items-center gap-3 animate-bounce-slow z-20 ${isRtl ? 'left-4 lg:-left-6' : 'right-4 lg:-right-6'}`}>
                 <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-500 shrink-0">
                   <Star className="h-5 w-5 fill-current" />
                 </div>
@@ -255,7 +255,7 @@ export default async function HomePage({ params }: Props) {
               </div>
 
               {/* Floating Card 2: Support Coordinator */}
-              <div className={`absolute -bottom-4 bg-white/95 backdrop-blur-md shadow-xl border border-emerald-50/50 rounded-2xl p-4 flex items-center gap-3 z-20 ${isRtl ? 'right-4 lg:-right-6' : 'left-4 lg:-left-6'}`}>
+              <div className={`hidden md:flex absolute -bottom-4 bg-white/95 backdrop-blur-md shadow-xl border border-emerald-50/50 rounded-2xl p-4 flex-row items-center gap-3 z-20 ${isRtl ? 'right-4 lg:-right-6' : 'left-4 lg:-left-6'}`}>
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-[#2D6A4F] shrink-0">
                   <HeartHandshake className="h-5 w-5" />
                 </div>
@@ -279,7 +279,7 @@ export default async function HomePage({ params }: Props) {
         {/* Partner Hospitals Marquee Ticker — also inside Hero 100vh */}
         <div className="relative z-10 py-4 border-t border-[#D4A96A]/20 bg-[#FAF7F2]/80 overflow-hidden select-none w-full">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 justify-start">
+            <div className="flex flex-row items-center gap-4 md:gap-8 justify-start w-full">
               <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-text-muted/50 whitespace-nowrap shrink-0">
                 {tHero('partnerLabel')}:
               </span>
@@ -322,7 +322,7 @@ export default async function HomePage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[640px]">
 
           {/* LEFT — Full bleed image with overlay cards */}
-          <div className={`relative overflow-hidden ${isRtl ? 'order-2' : 'order-1'}`}>
+          <div className={`relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-full ${isRtl ? 'order-2' : 'order-1'}`}>
             <Image
               src="/images/kerala_hero_bg.png"
               alt={isRtl ? 'مناظر كيرلا الطبيعية الخلابة' : 'Kerala backwaters at golden hour'}
@@ -478,13 +478,13 @@ export default async function HomePage({ params }: Props) {
             {/* Connecting Line — Desktop Only */}
             <div className="hidden md:block absolute top-[60px] left-[12%] right-[12%] h-0.5 border-t border-dashed border-[#D4A96A]/30 z-0" />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 relative z-10">
+            <div className="flex overflow-x-auto no-scrollbar scroll-momentum snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 md:gap-8 sm:gap-12 relative z-10 pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0" dir={isRtl ? 'rtl' : 'ltr'}>
               {steps.map((step, idx) => {
                 const Icon = step.icon;
                 return (
                   <div
                     key={idx}
-                    className="relative bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 flex flex-col gap-8 hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group"
+                    className="relative bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 flex flex-col gap-8 hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group snap-start shrink-0 w-[85vw] md:w-auto"
                   >
                     <div className="flex items-center justify-between w-full">
                       {/* Number Indicator Pill */}
@@ -677,9 +677,9 @@ export default async function HomePage({ params }: Props) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="flex overflow-x-auto no-scrollbar scroll-momentum snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0" dir={isRtl ? 'rtl' : 'ltr'}>
             {testimonials.map((t, idx) => (
-              <div key={idx} className="bg-[#F5F8F4] rounded-[24px] p-7 flex flex-col gap-5 border border-[#E8EDE6] hover:border-[#2D6A4F]/25 hover:shadow-lg transition-all duration-300 group rtl:text-right">
+              <div key={idx} className="bg-[#F5F8F4] rounded-[24px] p-7 flex flex-col gap-5 border border-[#E8EDE6] hover:border-[#2D6A4F]/25 hover:shadow-lg transition-all duration-300 group rtl:text-right snap-start shrink-0 w-[85vw] md:w-auto">
                 {/* Stars */}
                 <div className="flex gap-1 rtl:flex-row-reverse">
                   {[...Array(5)].map((_, i) => (

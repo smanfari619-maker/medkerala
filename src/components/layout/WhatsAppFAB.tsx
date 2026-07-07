@@ -214,7 +214,7 @@ Thank you.`;
   };
 
   return (
-    <div className={`fixed bottom-6 ${isRtl ? 'left-6' : 'right-6'} z-50 flex flex-col ${isRtl ? 'items-start' : 'items-end'} gap-4`}>
+    <div className={`hidden md:flex fixed bottom-6 ${isRtl ? 'left-6' : 'right-6'} z-50 flex-col ${isRtl ? 'items-start' : 'items-end'} gap-4`}>
       
       {/* ─── CHAT WINDOW ────────────────────────────────────────────────────── */}
       {isOpen && (

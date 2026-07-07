@@ -56,6 +56,19 @@ export default function Header() {
     { href: '/faq',         label: t('faq'),        icon: HelpCircle },
   ];
 
+  const tabletNav = [
+    { href: '/treatments', label: t('treatments') },
+    { href: '/ayurveda', label: t('ayurveda') },
+    { href: '/packages', label: t('packages') },
+    { href: '/hospitals', label: t('hospitals') },
+    { href: '/services', label: t('services') },
+    { href: '/why-kerala', label: t('whyKerala') },
+    { href: '/blog', label: t('blog') },
+    { href: '/faq', label: t('faq') },
+    { href: '/about', label: t('about') },
+    { href: '/contact', label: t('contact') },
+  ];
+
 
 
   const activeLink = (path: string) => {
@@ -188,12 +201,47 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Actions: Only LocaleSwitcher */}
-          <div className="flex lg:hidden items-center gap-2">
+          {/* Mobile/Tablet Actions */}
+          <div className="flex lg:hidden items-center gap-2.5 flex-shrink-0">
             <LocaleSwitcher />
+            <Link
+              href="/get-estimate"
+              className="hidden md:inline-flex text-xs font-semibold px-4 py-2 rounded-full transition-all duration-300 shadow-sm hover:shadow-md whitespace-nowrap items-center justify-center cursor-pointer"
+              style={{
+                background: 'linear-gradient(135deg, rgba(186,215,176,1) 0%, rgba(154,207,136,1) 100%)',
+                boxShadow: 'inset 0 0 20px rgba(255,255,255,0.3)',
+                color: '#2D5A27',
+              }}
+            >
+              {tCommon('getEstimate')}
+            </Link>
           </div>
 
         </div>
+
+        {/* Tablet Horizontal Scrollable Pill Navigation */}
+        <div 
+          className="hidden md:flex lg:hidden mt-3 border-t border-[#D4A96A]/15 pt-2.5 overflow-x-auto no-scrollbar scroll-momentum items-center gap-2 px-1 scroll-mask-fade pb-1"
+          dir={isRtl ? 'rtl' : 'ltr'}
+        >
+          {tabletNav.map((item) => {
+            const isActive = activeLink(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 whitespace-nowrap ${
+                  isActive
+                    ? 'text-white bg-[#2D6A4F] font-semibold'
+                    : 'text-[#4A4A6A] bg-white border border-[#D4A96A]/20 hover:text-[#2D6A4F] hover:bg-[#2D6A4F]/5'
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </div>
+
       </div>
     </header>
   );

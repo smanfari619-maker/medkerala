@@ -29,7 +29,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0A1C15] text-slate-300 pt-16 pb-8 border-t border-[#D4A96A]/35">
+    <footer className="bg-[#0A1C15] text-slate-300 pt-16 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-8 border-t border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Col */}
@@ -214,22 +214,22 @@ export default function Footer() {
 
         {/* Accreditations Strip */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400">
-            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-xl border border-white/10">
-              <Heart className="h-4 w-4 text-[#D4A96A]" />
-              {tCommon('trustMicroText')}
+          <div className="flex flex-wrap items-center gap-2 text-[10px] sm:text-xs text-slate-400">
+            <span className="flex items-center gap-1 bg-white/5 rounded-lg border border-white/10 px-2 py-1">
+              <Heart className="h-3.5 w-3.5 text-[#D4A96A] shrink-0" />
+              <span>{tCommon('trustMicroText')}</span>
             </span>
-            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-xl border border-white/10 text-emerald-400 font-sans font-bold">
+            <span className="flex items-center gap-1 bg-white/5 rounded-lg border border-white/10 px-2 py-1 text-emerald-400 font-sans font-bold">
               <span>🔒</span>
               <span>SSL SECURED</span>
             </span>
-            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-xl border border-white/10 text-[#D4A96A] font-sans font-bold">
+            <span className="flex items-center gap-1 bg-white/5 rounded-lg border border-white/10 px-2 py-1 text-[#D4A96A] font-sans font-bold">
               <span>🏥</span>
               <span>NABH & JCI STANDARDS</span>
             </span>
-            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-xl border border-white/10 text-amber-400 font-sans font-bold">
+            <span className="flex items-center gap-1 bg-white/5 rounded-lg border border-white/10 px-2 py-1 text-amber-400 font-sans font-bold">
               <span>🛡️</span>
-              <span>{locale === 'ar' ? 'شريك قناة رسمي معتمد' : 'OFFICIAL CHANNEL PARTNER'}</span>
+              <span>{locale === 'ar' ? 'شريك رسمي معتمد' : 'OFFICIAL PARTNER'}</span>
             </span>
           </div>
           <div className="flex flex-wrap gap-4 text-[10px] font-bold tracking-widest text-[#D4A96A]">

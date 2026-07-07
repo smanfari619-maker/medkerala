@@ -5,10 +5,13 @@ import { getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import WhatsAppFAB from '@/components/layout/WhatsAppFAB';
-import MobileBottomNav from '@/components/layout/MobileBottomNav';
 import { Inter, Tajawal } from 'next/font/google';
+import dynamic from 'next/dynamic';
 import '../globals.css';
+
+const WhatsAppFAB = dynamic(() => import('@/components/layout/WhatsAppFAB'));
+
+const MobileBottomNav = dynamic(() => import('@/components/layout/MobileBottomNav'));
 import { getMedicalOrganizationSchema, getLocalBusinessSchema, getAggregateRatingSchema } from '@/lib/schemas';
 
 const inter = Inter({
