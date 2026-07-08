@@ -206,7 +206,7 @@ export default async function AyurvedaPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="flex items-center gap-3 mb-3 rtl:flex-row-reverse rtl:justify-end">
+              <div className="flex items-center gap-3 mb-3">
                 <span className="h-px w-8 bg-[#D4A96A]" />
                 <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
                   {isRtl ? 'الحالات التي يعالجها الأيورفيدا' : 'Conditions Treated'}

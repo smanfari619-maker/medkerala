@@ -1,4 +1,5 @@
 'use client';
+/* eslint-disable react-hooks/set-state-in-effect */
 
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, HeartHandshake, Mail, Phone, CheckCircle2, User, Globe, Stethoscope } from 'lucide-react';
@@ -318,7 +319,7 @@ Thank you.`;
 
             {/* BOT WELCOME */}
             <div className="flex flex-col items-start space-y-1.5">
-              <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-tl-none p-3.5 text-xs sm:text-sm shadow-xs leading-relaxed max-w-[85%] text-left rtl:text-right">
+              <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-ss-none p-3.5 text-xs sm:text-sm shadow-xs leading-relaxed max-w-[85%] text-left rtl:text-right">
                 {t.welcome}
               </div>
             </div>
@@ -326,7 +327,7 @@ Thank you.`;
             {/* USER NAME */}
             {step > 1 && name && (
               <div className="flex flex-col items-end space-y-1">
-                <div className="bg-[#2D6A4F] text-white rounded-2xl rounded-tr-none p-3.5 text-xs sm:text-sm shadow-sm max-w-[85%] text-left rtl:text-right">
+                <div className="bg-[#2D6A4F] text-white rounded-2xl rounded-se-none p-3.5 text-xs sm:text-sm shadow-sm max-w-[85%] text-left rtl:text-right">
                   {name}
                 </div>
               </div>
@@ -335,7 +336,7 @@ Thank you.`;
             {/* BOT COUNTRY */}
             {step > 1 && (
               <div className="flex flex-col items-start space-y-1.5">
-                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-tl-none p-3.5 text-xs sm:text-sm shadow-xs leading-relaxed max-w-[85%] text-left rtl:text-right">
+                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-ss-none p-3.5 text-xs sm:text-sm shadow-xs leading-relaxed max-w-[85%] text-left rtl:text-right">
                   {t.country.replace('{name}', name)}
                 </div>
               </div>
@@ -344,7 +345,7 @@ Thank you.`;
             {/* USER COUNTRY */}
             {step > 2 && country && (
               <div className="flex flex-col items-end space-y-1">
-                <div className="bg-[#2D6A4F] text-white rounded-2xl rounded-tr-none p-3.5 text-xs sm:text-sm shadow-sm max-w-[85%] text-left rtl:text-right">
+                <div className="bg-[#2D6A4F] text-white rounded-2xl rounded-se-none p-3.5 text-xs sm:text-sm shadow-sm max-w-[85%] text-left rtl:text-right">
                   {country}
                 </div>
               </div>
@@ -353,7 +354,7 @@ Thank you.`;
             {/* BOT TREATMENT */}
             {step > 2 && (
               <div className="flex flex-col items-start space-y-1.5">
-                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-tl-none p-3.5 text-xs sm:text-sm shadow-xs leading-relaxed max-w-[85%] text-left rtl:text-right">
+                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-ss-none p-3.5 text-xs sm:text-sm shadow-xs leading-relaxed max-w-[85%] text-left rtl:text-right">
                   {t.treatment}
                 </div>
               </div>
@@ -362,7 +363,7 @@ Thank you.`;
             {/* USER TREATMENT */}
             {step > 3 && treatment && (
               <div className="flex flex-col items-end space-y-1">
-                <div className="bg-[#2D6A4F] text-white rounded-2xl rounded-tr-none p-3.5 text-xs sm:text-sm shadow-sm max-w-[85%] text-left rtl:text-right">
+                <div className="bg-[#2D6A4F] text-white rounded-2xl rounded-se-none p-3.5 text-xs sm:text-sm shadow-sm max-w-[85%] text-left rtl:text-right">
                   {treatment}
                 </div>
               </div>
@@ -371,7 +372,7 @@ Thank you.`;
             {/* BOT EMAIL */}
             {step > 3 && (
               <div className="flex flex-col items-start space-y-1.5">
-                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-tl-none p-3.5 text-xs sm:text-sm shadow-xs leading-relaxed max-w-[85%] text-left rtl:text-right">
+                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-ss-none p-3.5 text-xs sm:text-sm shadow-xs leading-relaxed max-w-[85%] text-left rtl:text-right">
                   {t.emailPrompt}
                 </div>
               </div>
@@ -380,7 +381,7 @@ Thank you.`;
             {/* USER EMAIL */}
             {step > 4 && email && (
               <div className="flex flex-col items-end space-y-1">
-                <div className="bg-[#2D6A4F] text-white rounded-2xl rounded-tr-none p-3.5 text-xs sm:text-sm shadow-sm max-w-[85%] text-left rtl:text-right">
+                <div className="bg-[#2D6A4F] text-white rounded-2xl rounded-se-none p-3.5 text-xs sm:text-sm shadow-sm max-w-[85%] text-left rtl:text-right">
                   {email}
                 </div>
               </div>
@@ -389,7 +390,7 @@ Thank you.`;
             {/* BOT PHONE */}
             {step > 4 && (
               <div className="flex flex-col items-start space-y-1.5">
-                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-tl-none p-3.5 text-xs sm:text-sm shadow-xs leading-relaxed max-w-[85%] text-left rtl:text-right">
+                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-ss-none p-3.5 text-xs sm:text-sm shadow-xs leading-relaxed max-w-[85%] text-left rtl:text-right">
                   {t.phonePrompt}
                 </div>
               </div>
@@ -398,7 +399,7 @@ Thank you.`;
             {/* USER PHONE */}
             {step > 5 && phone && (
               <div className="flex flex-col items-end space-y-1">
-                <div className="bg-[#2D6A4F] text-white rounded-2xl rounded-tr-none p-3.5 text-xs sm:text-sm shadow-sm max-w-[85%] text-left rtl:text-right">
+                <div className="bg-[#2D6A4F] text-white rounded-2xl rounded-se-none p-3.5 text-xs sm:text-sm shadow-sm max-w-[85%] text-left rtl:text-right">
                   {phone}
                 </div>
               </div>
@@ -407,7 +408,7 @@ Thank you.`;
             {/* BOT COMPLETE (Step 6) */}
             {step === 6 && (
               <div className="flex flex-col items-start space-y-3">
-                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-tl-none p-4 text-xs sm:text-sm shadow-md leading-relaxed max-w-[85%] text-left rtl:text-right flex flex-col gap-2">
+                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-ss-none p-4 text-xs sm:text-sm shadow-md leading-relaxed max-w-[85%] text-left rtl:text-right flex flex-col gap-2">
                   <div className="flex items-center gap-2 text-[#2D6A4F] font-bold">
                     <CheckCircle2 className="h-5 w-5 text-[#2D6A4F]" />
                     <span>{isRtl ? 'مراجعة الاستفسار' : 'Confirm Inquiry'}</span>
@@ -420,7 +421,7 @@ Thank you.`;
             {/* SUCCESS SCREEN (Step 7) */}
             {step === 7 && (
               <div className="flex flex-col items-start space-y-3">
-                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-tl-none p-4 text-xs sm:text-sm shadow-md leading-relaxed max-w-[85%] text-left rtl:text-right flex flex-col gap-2">
+                <div className="bg-white border border-[#D4A96A]/15 text-[#1B4332] rounded-2xl rounded-ss-none p-4 text-xs sm:text-sm shadow-md leading-relaxed max-w-[85%] text-left rtl:text-right flex flex-col gap-2">
                   <div className="flex items-center gap-2 text-emerald-600 font-bold">
                     <CheckCircle2 className="h-5 w-5 text-emerald-600" />
                     <span>{isRtl ? 'تم الإرسال بنجاح' : 'Submitted Successfully'}</span>

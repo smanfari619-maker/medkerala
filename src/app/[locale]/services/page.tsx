@@ -139,7 +139,7 @@ export default async function ServicesPage({ params }: Props) {
         {/* Table comparison Included vs Optional */}
         <div className="max-w-4xl mx-auto mb-16 space-y-8">
           <div className="mb-12 space-y-3 rtl:text-right">
-              <div className="flex items-center gap-3 mb-4 rtl:flex-row-reverse rtl:justify-end">
+              <div className="flex items-center gap-3 mb-4">
                 <span className="h-px w-8 bg-[#D4A96A]" />
                 <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
                   {locale === 'ar' ? 'الشفافية في الخدمات' : 'Transparent Pricing'}

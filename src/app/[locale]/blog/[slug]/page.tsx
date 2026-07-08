@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: Props) {
     { name: title, url: `https://treatinkerala.com/${locale}/blog/${slug}` }
   ]);
 
-  let howToSchema: any = null;
+  let howToSchema: Record<string, unknown> | null = null;
   if (slug === 'medical-visa-india-step-by-step') {
     howToSchema = getHowToSchema(
       isRtl ? 'كيفية الحصول على تأشيرة طبية للهند' : 'How to Obtain an Indian Medical Visa',

@@ -93,7 +93,7 @@ export default async function AboutPage({ params }: Props) {
 
           {/* Right Column: Founder's Story */}
           <div className="p-8 sm:p-12 lg:col-span-7 space-y-6 text-left rtl:text-right">
-            <div className="flex items-center gap-3 mb-2 rtl:flex-row-reverse rtl:justify-end">
+            <div className="flex items-center gap-3 mb-2">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
                 {isRtl ? 'كلمة المؤسس' : 'A Message from the Founder'}

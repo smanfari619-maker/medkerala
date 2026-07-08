@@ -11,11 +11,11 @@ export default function Footer() {
   const locale = useLocale();
 
   const treatmentLinks = [
-    { href: '/treatments/cardiac', label: 'Cardiac Bypass Surgery' },
-    { href: '/treatments/orthopaedics', label: 'Joint & Hip Replacement' },
-    { href: '/treatments/dental', label: 'Premium Dental Care' },
-    { href: '/ayurveda', label: 'Ayurveda & Panchakarma' },
-    { href: '/treatments/fertility', label: 'IVF & Fertility Care' },
+    { href: '/treatments/cardiac', label: locale === 'ar' ? 'جراحة مجازة الشريان التاجي' : 'Cardiac Bypass Surgery' },
+    { href: '/treatments/orthopaedics', label: locale === 'ar' ? 'استبدال المفاصل والركبة' : 'Joint & Hip Replacement' },
+    { href: '/treatments/dental', label: locale === 'ar' ? 'رعاية الأسنان المتميزة' : 'Premium Dental Care' },
+    { href: '/ayurveda', label: locale === 'ar' ? 'الأيورفيدا والبانشاكارما' : 'Ayurveda & Panchakarma' },
+    { href: '/treatments/fertility', label: locale === 'ar' ? 'تلقيح الأنابيب وعلاق العقم' : 'IVF & Fertility Care' },
   ];
 
   const quickLinks = [
@@ -81,7 +81,7 @@ export default function Footer() {
             {/* Desktop Flat View */}
             <div className="hidden md:block">
               <h3 className="text-white text-lg font-semibold mb-6 pb-2 border-b border-white/10 relative">
-                <span className="absolute left-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
+                <span className="absolute start-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
                 {locale === 'ar' ? 'روابط سريعة' : 'Quick Links'}
               </h3>
               <ul className="space-y-3">
@@ -89,7 +89,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-1 hover:text-white hover:translate-x-1 transition-all duration-200 py-1 min-h-[44px]"
+                      className="flex items-center gap-1 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all duration-200 py-1 min-h-[44px]"
                     >
                       <ChevronRight className="h-4 w-4 text-[#D4A96A] shrink-0 rtl:rotate-180" />
                       <span>{link.label}</span>
@@ -123,7 +123,7 @@ export default function Footer() {
             {/* Desktop Flat View */}
             <div className="hidden md:block">
               <h3 className="text-white text-lg font-semibold mb-6 pb-2 border-b border-white/10 relative">
-                <span className="absolute left-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
+                <span className="absolute start-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
                 {tNav('treatments')}
               </h3>
               <ul className="space-y-3">
@@ -131,7 +131,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-1 hover:text-white hover:translate-x-1 transition-all duration-200 py-1 min-h-[44px]"
+                      className="flex items-center gap-1 hover:text-white hover:translate-x-1 rtl:hover:-translate-x-1 transition-all duration-200 py-1 min-h-[44px]"
                     >
                       <ChevronRight className="h-4 w-4 text-[#D4A96A] shrink-0 rtl:rotate-180" />
                       <span>{link.label}</span>
@@ -175,7 +175,7 @@ export default function Footer() {
             {/* Desktop Flat View */}
             <div className="hidden md:block">
               <h3 className="text-white text-lg font-semibold mb-6 pb-2 border-b border-white/10 relative">
-                <span className="absolute left-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
+                <span className="absolute start-0 bottom-0 w-8 h-0.5 bg-[#D4A96A]"></span>
                 {locale === 'ar' ? 'مكتبنا الرئيسي' : 'Head Office'}
               </h3>
               <ul className="space-y-4 text-base">
