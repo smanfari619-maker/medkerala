@@ -37,7 +37,7 @@ export default async function TreatmentsPage({ params }: Props) {
   const isRtl = locale === 'ar';
 
   const learnMoreText = tCommon('learnMore');
-  const costsFromText = isRtl ? 'أسعار تبدأ من' : 'Costs from';
+  const costsFromText = isRtl ? 'المدى التقديري' : 'Est. Range';
 
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: isRtl ? 'الرئيسية' : 'Home', url: `https://treatinkerala.com/${locale}` },

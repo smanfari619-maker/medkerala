@@ -70,7 +70,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
 
   // Handle Treatments Search, Filter & Sort
   const filteredTreatments = useMemo(() => {
-    const result = treatments.filter((t) => {
+    return treatments.filter((t) => {
       // 1. Speciality filter
       if (selectedSpeciality !== 'All' && t.speciality !== selectedSpeciality) return false;
 
@@ -85,16 +85,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
 
       return true;
     });
-
-    // 3. Sorting
-    if (sortBy === 'price-asc') {
-      result.sort((a, b) => a.costTable.kerala - b.costTable.kerala);
-    } else if (sortBy === 'price-desc') {
-      result.sort((a, b) => b.costTable.kerala - a.costTable.kerala);
-    }
-
-    return result;
-  }, [treatments, selectedSpeciality, searchQuery, sortBy]);
+  }, [treatments, selectedSpeciality, searchQuery]);
 
   // Handle Packages Search & Sort
   const filteredPackages = useMemo(() => {
@@ -108,21 +99,14 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
       result = result.filter(pkg => nameMatch(pkg) || descMatch(pkg));
     }
 
-    // 2. Sorting by cost
-    if (sortBy === 'price-asc') {
-      result.sort((a, b) => a.cost - b.cost);
-    } else if (sortBy === 'price-desc') {
-      result.sort((a, b) => b.cost - a.cost);
-    }
-
     return result;
-  }, [packages, searchQuery, sortBy]);
+  }, [packages, searchQuery]);
 
   const getMaxSavings = (t: Treatment) => {
     const comparePrices = [t.costTable.uk, t.costTable.usa, t.costTable.uae].filter(p => p > 0);
     if (comparePrices.length === 0) return 0;
     const maxCompare = Math.max(...comparePrices);
-    return Math.round(((maxCompare - t.costTable.kerala) / maxCompare) * 100);
+    return Math.round(((maxCompare - t.costTable.keralaMin) / maxCompare) * 100);
   };
 
   return (
@@ -185,7 +169,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
 
         <div className="flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-[#D4A96A]/20 rtl:divide-x-reverse w-full">
           {/* Search Bar */}
-          <div className={`relative w-full ${activeTab === 'procedures' ? "md:flex-1" : "md:w-3/5"} py-2 md:py-0 px-2 md:px-4`}>
+          <div className="relative w-full md:flex-1 py-2 md:py-0 px-2 md:px-4">
             <div className="absolute inset-y-0 left-4 md:left-6 flex items-center pointer-events-none">
               <Search className="h-5 w-5 text-[#D4A96A]" />
             </div>
@@ -213,7 +197,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
 
           {/* Specialty Filter Dropdown (Only for desktop) */}
           {activeTab === 'procedures' && (
-            <div className="hidden md:block relative w-full md:w-auto md:min-w-[220px] py-2 md:py-0 px-2 md:px-4">
+            <div className="hidden md:block relative w-full md:w-auto md:min-w-[280px] py-2 md:py-0 px-2 md:px-4">
               <select
                 value={selectedSpeciality}
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedSpeciality(e.target.value)}
@@ -230,22 +214,6 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
               </div>
             </div>
           )}
-
-          {/* Sort Dropdown */}
-          <div className={`relative w-full ${activeTab === 'procedures' ? "md:min-w-[220px]" : "md:w-2/5"} md:w-auto py-2 md:py-0 px-2 md:px-4`}>
-            <select
-              value={sortBy}
-              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as 'default' | 'price-asc' | 'price-desc')}
-              className="w-full bg-transparent border-transparent focus:border-transparent focus:ring-0 py-2.5 px-4 text-sm md:text-base text-primary-dark font-sans font-bold cursor-pointer appearance-none"
-            >
-              <option value="default">{isRtl ? 'الترتيب: الموصى به' : 'Sort: Recommended'}</option>
-              <option value="price-asc">{isRtl ? 'السعر: من الأقل للأعلى' : 'Price: Low to High'}</option>
-              <option value="price-desc">{isRtl ? 'السعر: من الأعلى للأقل' : 'Price: High to Low'}</option>
-            </select>
-            <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-[#D4A96A]">
-              <ChevronRight className="h-4 w-4 rotate-90" />
-            </div>
-          </div>
         </div>
       </div>
 
@@ -298,8 +266,11 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
                         <span className="text-[11px] uppercase tracking-wider font-bold text-text-muted font-sans mb-1">
                           {costsFromText}
                         </span>
-                        <span className="text-primary-dark group-hover:text-primary-green font-display font-extrabold text-3xl transition-colors duration-300">
-                          ${treatment.costTable.kerala.toLocaleString()}
+                        <span className="text-primary-dark group-hover:text-primary-green font-display font-extrabold text-2xl sm:text-3xl transition-colors duration-300">
+                          ${treatment.costTable.keralaMin.toLocaleString()} – ${treatment.costTable.keralaMax.toLocaleString()}
+                        </span>
+                        <span className="text-[10px] text-text-muted/70 font-sans mt-0.5">
+                          {isRtl ? 'بناءً على التقييم السريري' : 'Confirmed after assessment'}
                         </span>
                       </div>
 
@@ -395,7 +366,10 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
                           {isRtl ? 'الحزمة الشاملة' : 'All-Inclusive Bundle'}
                         </span>
                         <span className="text-2xl font-extrabold text-primary-green font-display">
-                          ${pkg.cost.toLocaleString()}
+                          ${pkg.costMin.toLocaleString()} – ${pkg.costMax.toLocaleString()}
+                        </span>
+                        <span className="text-[10px] text-text-muted/70 font-sans block text-right rtl:text-left mt-0.5">
+                          {isRtl ? 'بناءً على التقييم السريري' : 'Confirmed after assessment'}
                         </span>
                       </div>
                     </div>

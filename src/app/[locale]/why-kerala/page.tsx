@@ -102,7 +102,7 @@ export default async function WhyKeralaPage({ params }: Props) {
               <div className="space-y-2">
                 <div className="flex justify-between font-bold text-sm text-primary-green">
                   <span>{locale === 'ar' ? 'كيرلا، الهند (علاج في كيرلا)' : 'Kerala, India (TreatInKerala)'}</span>
-                  <span className="font-display font-extrabold text-base">$4,700</span>
+                  <span className="font-display font-extrabold text-base">{locale === 'ar' ? '٤,٥٠٠ - ٨,٥٠٠ دولار' : '$4,500 – $8,500'}</span>
                 </div>
                 <div className="w-full bg-slate-100 h-6 rounded-full overflow-hidden shadow-inner">
                   <div className="bg-gradient-to-r from-primary-green to-[#25D366] h-full rounded-full transition-all duration-1000 w-[10%] shadow-[0_0_10px_rgba(37,211,102,0.3)]"></div>

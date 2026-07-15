@@ -7,6 +7,73 @@ import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Zap } from 'luc
 import { Metadata } from 'next';
 import { getBreadcrumbSchema, getHowToSchema } from '@/lib/schemas';
 
+// ── Inline rich-text renderer ────────────────────────────────
+// Converts a plain string with lightweight markdown conventions into
+// styled React elements. Supports:
+//   ## H2 headings
+//   ### H3 headings
+//   **bold** inline
+//   - bullet list items
+//   blank lines → paragraph breaks
+function RichContent({ content }: { content: string }) {
+  const lines = content.split('\n');
+  const elements: React.ReactNode[] = [];
+  let bulletBuffer: string[] = [];
+
+  const flushBullets = (key: string) => {
+    if (bulletBuffer.length === 0) return;
+    elements.push(
+      <ul key={key} className="list-none space-y-2 my-4">
+        {bulletBuffer.map((item, i) => (
+          <li key={i} className="flex items-start gap-3 text-slate-700 text-base leading-relaxed">
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#2D6A4F] shrink-0" />
+            <span dangerouslySetInnerHTML={{ __html: parseBold(item) }} />
+          </li>
+        ))}
+      </ul>
+    );
+    bulletBuffer = [];
+  };
+
+  const parseBold = (text: string) =>
+    text.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-[#1B4332]">$1</strong>');
+
+  lines.forEach((line, idx) => {
+    const trimmed = line.trim();
+
+    if (trimmed.startsWith('## ')) {
+      flushBullets(`bl-${idx}`);
+      elements.push(
+        <h2 key={idx} className="text-2xl font-bold text-[#1B4332] mt-10 mb-4 pb-2 border-b border-slate-100 font-sans">
+          {trimmed.slice(3)}
+        </h2>
+      );
+    } else if (trimmed.startsWith('### ')) {
+      flushBullets(`bl-${idx}`);
+      elements.push(
+        <h3 key={idx} className="text-lg font-bold text-[#2D6A4F] mt-6 mb-2 font-sans">
+          {trimmed.slice(4)}
+        </h3>
+      );
+    } else if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+      bulletBuffer.push(trimmed.slice(2));
+    } else if (trimmed === '') {
+      flushBullets(`bl-${idx}`);
+    } else {
+      flushBullets(`bl-${idx}`);
+      elements.push(
+        <p key={idx} className="text-slate-700 text-base leading-[1.85] mb-0"
+          dangerouslySetInnerHTML={{ __html: parseBold(trimmed) }}
+        />
+      );
+    }
+  });
+
+  flushBullets('final');
+
+  return <div className="space-y-3">{elements}</div>;
+}
+
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
 }
@@ -23,6 +90,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${title} | TreatInKerala Blog`,
     description,
+    openGraph: {
+      images: post.image ? [{ url: `https://treatinkerala.com${post.image}`, width: 1200, height: 630 }] : undefined,
+    },
+    twitter: {
+      images: post.image ? [`https://treatinkerala.com${post.image}`] : undefined,
+    },
     alternates: {
       canonical: locale === 'ar' ? `/ar/blog/${slug}` : `/en/blog/${slug}`,
       languages: {
@@ -125,6 +198,57 @@ export default async function BlogPostPage({ params }: Props) {
         { name: 'Step 5: Book your flight to Calicut (CCJ)', text: 'Book travel. A personal coordinator will receive you at Kozhikode Airport with a local SIM card.' }
       ]
     );
+  } else if (slug === 'panchakarma-ayurveda-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيف تعمل علاجات البانشاكارما' : 'How Panchakarma Detoxification Works',
+      isRtl ? [
+        { name: 'فامانا (التقيؤ العلاجي)', text: 'إزالة السموم من الجهاز التنفسي العلوي.' },
+        { name: 'فيريتشانا (التطهير)', text: 'تنقية الكبد والجهاز الهضمي.' },
+        { name: 'باستي (الحقن العشبية)', text: 'إعادة توازن طاقات الجسم الحيوية.' },
+        { name: 'ناسيا (علاج الأنف)', text: 'استخدام الزيوت الطبية للجيوب الأنفية وصحة الأعصاب.' },
+        { name: 'راكتاموكشانا (تنقية الدم)', text: 'معالجة مشاكل الدورة الدموية والجلد.' }
+      ] : [
+        { name: 'Vamana (Therapeutic Emesis)', text: 'Clearing toxins from the upper respiratory tract.' },
+        { name: 'Virechana (Purgation Therapy)', text: 'Detoxifying the liver and digestive system.' },
+        { name: 'Basti (Medicated Enemas)', text: 'Balancing vital bodily humors using herbal formulations.' },
+        { name: 'Nasya (Nasal Administration)', text: 'Applying medical oils for sinus and neurological health.' },
+        { name: 'Raktamokshana (Blood Purification)', text: 'Guided purification to address skin and circulatory concerns.' }
+      ]
+    );
+  } else if (slug === 'what-to-pack-for-treatment-kerala') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيف تحضر حقيبتك لرحلة العلاج' : 'How to Pack for Your Medical Trip',
+      isRtl ? [
+        { name: 'تجهيز المستندات الطبية', text: 'رتب التقارير والأشعة والوصفات الطبية في ملف مقاوم للماء.' },
+        { name: 'اختيار الملابس المناسبة', text: 'احزم ملابس قطنية خفيفة وفضفاضة تناسب المناخ الاستوائي.' },
+        { name: 'ملابس ما بعد الجراحة', text: 'تأكد من إحضار قمصان تفتح من الأمام لتسهيل الحركة.' },
+        { name: 'تجهيز الإلكترونيات والمحولات', text: 'أحضر محولات كهرباء متوافقة مع النظام الهندي/البريطاني.' },
+        { name: 'العملة المحلية', text: 'احصل على مبلغ بسيط من الروبية الهندية للمعاملات اليومية.' }
+      ] : [
+        { name: 'Organize Medical Documents', text: 'Keep physical reports, CDs, and active prescriptions in a waterproof folder.' },
+        { name: 'Choose the Right Clothing', text: 'Pack light, loose-fitting cotton outfits for Kerala\'s warm climate.' },
+        { name: 'Prepare Surgical Recovery Wear', text: 'Include front-open shirts and loose sweatpants if undergoing joint or cardiac surgery.' },
+        { name: 'Pack Electronics and Adapters', text: 'Bring UK/India standard plug adapters (Type D/G).' },
+        { name: 'Organize Local Currency', text: 'Carry a small amount of Indian Rupees (INR) for local transactions.' }
+      ]
+    );
+  } else if (slug === 'joint-replacement-kerala-gcc-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيف تخطط لاستبدال المفاصل في كيرلا' : 'How to Plan Joint Replacement in Kerala',
+      isRtl ? [
+        { name: 'الاستشارة والتقييم', text: 'أرسل أشعة X-ray للركبة أو الورك لتقييم الحالة مجاناً.' },
+        { name: 'اختيار الغرسات الطبية', text: 'يستخدم جراحونا غرسات التيتانيوم المعتمدة من FDA الأمريكية.' },
+        { name: 'السفر والإقامة', text: 'رحلات مباشرة قصيرة (3.5 ساعات من مسقط) وإقامات ملائمة للثقافة الخليجية.' },
+        { name: 'العملية الجراحية', text: 'تتم الجراحة في مستشفيات حاصلة على اعتماد JCI.' },
+        { name: 'التأهيل ما بعد الجراحة', text: 'جلسات علاج طبيعي يومية لاستعادة الحركة قبل العودة للوطن.' }
+      ] : [
+        { name: 'Initial Consultation', text: 'Share your X-rays for a free preliminary evaluation by our orthopedic surgeons.' },
+        { name: 'Implant Selection', text: 'We exclusively use US FDA-approved titanium implants for long-lasting results.' },
+        { name: 'Travel & Accommodation', text: 'Enjoy short 3.5-hour direct flights from GCC and culturally customized Halal stays.' },
+        { name: 'The Surgical Procedure', text: 'Surgery is performed at a JCI-accredited facility with advanced modular operating theatres.' },
+        { name: 'Post-Surgery Rehabilitation', text: 'Undergo customized daily physiotherapy for 10-14 days to restore pain-free mobility.' }
+      ]
+    );
   }
 
   return (
@@ -181,6 +305,16 @@ export default async function BlogPostPage({ params }: Props) {
                 <span>{post.readTime}</span>
               </span>
             </div>
+
+            {post.image && (
+              <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden my-6 border border-slate-100 bg-slate-50">
+                <img
+                  src={post.image}
+                  alt={isRtl ? post.titleAr : post.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+            )}
           </div>
 
           {aeoSummary && (
@@ -196,10 +330,10 @@ export default async function BlogPostPage({ params }: Props) {
           )}
 
           {/* Long-form content */}
-          <div className="text-text-dark text-lg leading-relaxed font-sans space-y-6 border-b border-slate-100 pb-10">
-            <p className="whitespace-pre-line">{content}</p>
-            
-            <div className="bg-[#FAF7F2] p-6 rounded-2xl border-l-4 border-primary-green text-base text-text-muted mt-8 leading-relaxed">
+          <div className="border-b border-slate-100 pb-10">
+            <RichContent content={content} />
+
+            <div className="bg-[#FAF7F2] p-6 rounded-2xl border-l-4 border-[#2D6A4F] text-sm text-slate-500 mt-10 leading-relaxed">
               {locale === 'ar'
                 ? 'ملاحظة: المعلومات الواردة في هذه المقالة هي لأغراض إرشادية وتثقيفية فقط، ولا تحل محل الاستشارة الطبية المباشرة من الطبيب المعالج.'
                 : 'Note: The medical statistics and estimates presented are for educational purposes. Personal treatment costs are generated based on your diagnostic reports.'}

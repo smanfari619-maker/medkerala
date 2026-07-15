@@ -29,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: page === '' ? 'daily' : 'weekly',
         priority: page === '' ? 1.0 : 0.8,
+        alternates: {
+          languages: {
+            en: `${baseUrl}/en${page}`,
+            ar: `${baseUrl}/ar${page}`,
+          },
+        },
       });
     });
   });
@@ -41,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.8,
+        alternates: {
+          languages: {
+            en: `${baseUrl}/en/treatments/${treatment.slug}`,
+            ar: `${baseUrl}/ar/treatments/${treatment.slug}`,
+          },
+        },
       });
     });
   });
@@ -53,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.6,
+        alternates: {
+          languages: {
+            en: `${baseUrl}/en/blog/${post.slug}`,
+            ar: `${baseUrl}/ar/blog/${post.slug}`,
+          },
+        },
       });
     });
   });

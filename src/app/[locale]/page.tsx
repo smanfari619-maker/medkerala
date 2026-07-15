@@ -2,7 +2,7 @@ import React from 'react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
-import { SITE_CONFIG } from '@/lib/config';
+import { SITE_CONFIG, getMonthlyPatientsServed } from '@/lib/config';
 import {
   ArrowRight,
   MessageCircle,
@@ -167,7 +167,7 @@ export default async function HomePage({ params }: Props) {
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#25D366]"></span>
                 </span>
                 <span className="font-sans text-text-muted">
-                  <span className="font-bold text-[#1B4332]">127</span>{' '}
+                  <span className="font-bold text-[#1B4332]">{getMonthlyPatientsServed()}</span>{' '}
                   {isRtl ? 'مريضاً تم خدمتهم هذا الشهر' : 'patients served this month'}
                 </span>
               </div>
@@ -226,7 +226,7 @@ export default async function HomePage({ params }: Props) {
               <div className="absolute inset-0 border border-[#D4A96A]/25 rounded-[2rem] translate-x-3 translate-y-3 pointer-events-none" />
 
               {/* Main image container */}
-              <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border border-white/50 bg-[#FAF7F2]">
+              <div className="relative w-full max-w-[420px] aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl border border-white/50 bg-[#FAF7F2]">
                 <HeroSlider
                   isRtl={isRtl}
                   slides={[
@@ -239,31 +239,31 @@ export default async function HomePage({ params }: Props) {
               </div>
 
               {/* Floating Card 1: 5.0 Star Rating */}
-              <div className={`hidden md:flex absolute -top-4 bg-white/95 backdrop-blur-md shadow-xl border border-emerald-50/50 rounded-2xl p-4 flex-row items-center gap-3 animate-bounce-slow z-20 ${isRtl ? 'left-4 lg:-left-6' : 'right-4 lg:-right-6'}`}>
-                <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-500 shrink-0">
-                  <Star className="h-5 w-5 fill-current" />
+              <div className={`hidden md:flex absolute top-4 bg-white/90 backdrop-blur-md shadow-lg border border-white/60 rounded-xl px-3 py-2 flex-row items-center gap-2 animate-bounce-slow z-20 ${isRtl ? 'left-3' : 'right-3'}`}>
+                <div className="w-7 h-7 rounded-lg bg-amber-50 flex items-center justify-center text-amber-500 shrink-0">
+                  <Star className="h-3.5 w-3.5 fill-current" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-1">
-                    <span className="text-sm font-bold text-[#1B4332]">5.0</span>
-                    <span className="text-xs text-text-muted">/ 5.0</span>
+                  <div className="flex items-center gap-0.5">
+                    <span className="text-xs font-bold text-[#1B4332]">5.0</span>
+                    <span className="text-[10px] text-text-muted">/ 5.0</span>
                   </div>
-                  <p className="text-[10px] text-text-muted/85 font-medium whitespace-nowrap">
+                  <p className="text-[9px] text-text-muted/80 font-medium whitespace-nowrap leading-none mt-0.5">
                     {isRtl ? '١٢٠٠+ قصة نجاح للمرضى' : '1,200+ global patient stories'}
                   </p>
                 </div>
               </div>
 
               {/* Floating Card 2: Support Coordinator */}
-              <div className={`hidden md:flex absolute -bottom-4 bg-white/95 backdrop-blur-md shadow-xl border border-emerald-50/50 rounded-2xl p-4 flex-row items-center gap-3 z-20 ${isRtl ? 'right-4 lg:-right-6' : 'left-4 lg:-left-6'}`}>
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-[#2D6A4F] shrink-0">
-                  <HeartHandshake className="h-5 w-5" />
+              <div className={`hidden md:flex absolute bottom-4 bg-white/90 backdrop-blur-md shadow-lg border border-white/60 rounded-xl px-3 py-2 flex-row items-center gap-2 z-20 ${isRtl ? 'right-3' : 'left-3'}`}>
+                <div className="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-[#2D6A4F] shrink-0">
+                  <HeartHandshake className="h-3.5 w-3.5" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-[#1B4332]">
+                  <p className="text-xs font-bold text-[#1B4332] whitespace-nowrap">
                     {isRtl ? 'منسق شخصي مخصص' : 'Dedicated Personal Liaison'}
                   </p>
-                  <p className="text-[10px] text-text-muted/85 font-medium whitespace-nowrap">
+                  <p className="text-[9px] text-text-muted/80 font-medium whitespace-nowrap leading-none mt-0.5">
                     {isRtl ? 'مستشفيات معتمدة JCI & NABH' : 'JCI & NABH network hospitals'}
                   </p>
                 </div>
@@ -677,7 +677,7 @@ export default async function HomePage({ params }: Props) {
             </p>
           </div>
 
-          <div className="flex overflow-x-auto no-scrollbar scroll-momentum snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0" dir={isRtl ? 'rtl' : 'ltr'}>
+          <div className="flex overflow-x-auto md:overflow-visible no-scrollbar scroll-momentum snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0" dir={isRtl ? 'rtl' : 'ltr'}>
             {testimonials.map((t, idx) => (
               <div key={idx} className="bg-[#F5F8F4] rounded-[24px] p-7 flex flex-col gap-5 border border-[#E8EDE6] hover:border-[#2D6A4F]/25 hover:shadow-lg transition-all duration-300 group rtl:text-right snap-start shrink-0 w-[85vw] md:w-auto">
                 {/* Stars */}

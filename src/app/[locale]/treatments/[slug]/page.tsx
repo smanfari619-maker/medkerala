@@ -23,7 +23,7 @@ import {
   Eye
 } from 'lucide-react';
 import { Metadata } from 'next';
-import { getMedicalProcedureSchema, getBreadcrumbSchema } from '@/lib/schemas';
+import { getMedicalProcedureSchema, getBreadcrumbSchema, getFAQSchema } from '@/lib/schemas';
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -113,6 +113,12 @@ export default async function TreatmentDetailPage({ params }: Props) {
   ]);
 
   const medicalProcedureSchema = getMedicalProcedureSchema(locale, treatment);
+  const faqSchema = getFAQSchema(
+    treatment.faqs.map(faq => ({
+      q: isRtl ? faq.qAr : faq.q,
+      a: isRtl ? faq.aAr : faq.a
+    }))
+  );
 
   return (
     <div className="flex flex-col w-full overflow-x-hidden animate-fade-in pt-32 lg:pt-40 bg-[#FAF7F2]">
@@ -123,6 +129,10 @@ export default async function TreatmentDetailPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalProcedureSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {/* 1. HERO SECTION */}
       <section className="pb-16 lg:pb-24 border-b border-[#D4A96A]/35 relative overflow-hidden">
@@ -150,10 +160,10 @@ export default async function TreatmentDetailPage({ params }: Props) {
               {/* Price Card */}
               <div className="bg-white border border-[#D4A96A]/35 rounded-2xl px-8 py-5 shadow-sm text-center sm:text-left rtl:sm:text-right flex flex-col justify-center">
                 <span className="text-xs font-bold uppercase tracking-wider text-text-muted block mb-1">
-                  {isRtl ? 'تبدأ الأسعار في كيرلا من:' : 'Kerala Price Starts From:'}
+                  {isRtl ? 'النطاق التقديري في كيرلا:' : 'Kerala Est. Range:'}
                 </span>
-                <span className="text-3xl sm:text-4xl font-extrabold text-[#2D6A4F] font-display">
-                  {formatCost(treatment.costTable.kerala)}
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#2D6A4F] font-display">
+                  {formatCost(treatment.costTable.keralaMin)} – {formatCost(treatment.costTable.keralaMax)}
                 </span>
               </div>
               
@@ -164,8 +174,8 @@ export default async function TreatmentDetailPage({ params }: Props) {
                 </span>
                 <span className="text-3xl sm:text-4xl font-extrabold text-[#D4A96A] font-display">
                   {isRtl 
-                    ? `وفر حتى ${calculateSavings(treatment.costTable.kerala, treatment.costTable.uk)}%` 
-                    : `Save up to ${calculateSavings(treatment.costTable.kerala, treatment.costTable.uk)}%`}
+                    ? `وفر حتى ${calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}%` 
+                    : `Save up to ${calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}%`}
                 </span>
               </div>
             </div>
@@ -266,7 +276,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
                     <span className="h-2 w-2 rounded-full bg-primary-green animate-pulse"></span>
                     {locale === 'ar' ? 'كيرلا، الهند' : 'Kerala, India'}
                   </td>
-                  <td className="py-5 px-5 sm:px-8 font-extrabold text-xl">{formatCost(treatment.costTable.kerala)}</td>
+                  <td className="py-5 px-5 sm:px-8 font-extrabold text-xl">{formatCost(treatment.costTable.keralaMin)} – {formatCost(treatment.costTable.keralaMax)}</td>
                   <td className="py-5 px-5 sm:px-8 text-emerald-600">—</td>
                 </tr>
                 {/* UK */}
@@ -274,7 +284,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
                   <td className="py-5 px-5 text-left rtl:text-right sm:px-8">{locale === 'ar' ? 'المملكة المتحدة' : 'United Kingdom'}</td>
                   <td className="py-5 px-5 sm:px-8">{formatCost(treatment.costTable.uk)}</td>
                   <td className="py-5 px-5 sm:px-8 font-semibold text-[#D4A96A]">
-                    {calculateSavings(treatment.costTable.kerala, treatment.costTable.uk)}%
+                    {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}%
                   </td>
                 </tr>
                 {/* USA */}
@@ -282,7 +292,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
                   <td className="py-5 px-5 text-left rtl:text-right sm:px-8">{locale === 'ar' ? 'الولايات المتحدة' : 'United States'}</td>
                   <td className="py-5 px-5 sm:px-8">{formatCost(treatment.costTable.usa)}</td>
                   <td className="py-5 px-5 sm:px-8 font-semibold text-[#D4A96A]">
-                    {calculateSavings(treatment.costTable.kerala, treatment.costTable.usa)}%
+                    {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.usa)}%
                   </td>
                 </tr>
                 {/* UAE */}
@@ -290,15 +300,15 @@ export default async function TreatmentDetailPage({ params }: Props) {
                   <td className="py-5 px-5 text-left rtl:text-right sm:px-8">{locale === 'ar' ? 'الإمارات العربية المتحدة' : 'United Arab Emirates'}</td>
                   <td className="py-5 px-5 sm:px-8">{formatCost(treatment.costTable.uae)}</td>
                   <td className="py-5 px-5 sm:px-8 font-semibold text-[#D4A96A]">
-                    {calculateSavings(treatment.costTable.kerala, treatment.costTable.uae)}%
+                    {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uae)}%
                   </td>
                 </tr>
               </tbody>
             </table>
             <div className="bg-[#FAF7F2] py-4 px-6 border-t border-[#D4A96A]/35 text-xs text-text-muted font-sans text-center">
               {locale === 'ar'
-                ? '* تشمل تكاليف كيرلا رسوم تنسيق علاج في كيرلا والاستقبال والإقامة.'
-                : '* Kerala prices include TreatInKerala coordination fees, local pickup, and support.'}
+                ? '* نطاق الأسعار أعلاه تقديري لعام ٢٠٢٦ وقد يختلف حسب اختيارك للمستشفى وحالتك السريرية الخاصة. تشمل أسعار كيرلا التنسيق اللوجستي الكامل.'
+                : '* Price ranges are 2026 estimates and vary depending on hospital choice and clinical requirements. Kerala ranges include full travel coordination and logistics.'}
             </div>
           </div>
         </div>

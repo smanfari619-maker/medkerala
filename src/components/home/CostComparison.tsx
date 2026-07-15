@@ -9,7 +9,8 @@ type Currency = 'USD' | 'AED' | 'GBP' | 'EUR' | 'OMR';
 
 interface TreatmentCost {
   key: string;
-  kerala: number;
+  keralaMin: number;
+  keralaMax: number;
   uk: number;
   usa: number;
   uae: number;
@@ -39,12 +40,12 @@ export default function CostComparison() {
   };
 
   const treatments: TreatmentCost[] = [
-    { key: 'bypass', kerala: 6000, uk: 40000, usa: 120000, uae: 28000 },
-    { key: 'hip', kerala: 5500, uk: 19000, usa: 45000, uae: 20000 },
-    { key: 'knee', kerala: 5000, uk: 18000, usa: 40000, uae: 18000 },
-    { key: 'ivf', kerala: 2800, uk: 9000, usa: 16500, uae: 9500 },
-    { key: 'dental', kerala: 600, uk: 2800, usa: 4500, uae: 2200 },
-    { key: 'ayurveda', kerala: 1800, uk: 5500, usa: 8500, uae: 4200 },
+    { key: 'bypass', keralaMin: 6000, keralaMax: 10000, uk: 40000, usa: 120000, uae: 28000 },
+    { key: 'hip', keralaMin: 4500, keralaMax: 8000, uk: 19000, usa: 45000, uae: 20000 },
+    { key: 'knee', keralaMin: 4500, keralaMax: 8000, uk: 18000, usa: 40000, uae: 18000 },
+    { key: 'ivf', keralaMin: 2500, keralaMax: 5500, uk: 9000, usa: 16500, uae: 9500 },
+    { key: 'dental', keralaMin: 500, keralaMax: 4500, uk: 2800, usa: 4500, uae: 2200 },
+    { key: 'ayurveda', keralaMin: 1500, keralaMax: 3500, uk: 5500, usa: 8500, uae: 4200 },
   ];
 
   const formatPrice = (val: number, cur: Currency) => {
@@ -124,7 +125,7 @@ export default function CostComparison() {
                 </thead>
                 <tbody className="divide-y divide-slate-100 text-sm sm:text-base">
                   {treatments.map((tr) => {
-                    const ukSavings = calculateSavings(tr.kerala, tr.uk);
+                    const ukSavings = calculateSavings(tr.keralaMin, tr.uk);
                     const Icon = treatmentIcons[tr.key] || Stethoscope;
                     return (
                       <tr key={tr.key} className="hover:bg-slate-50 transition-colors duration-150 group">
@@ -137,7 +138,7 @@ export default function CostComparison() {
                           </div>
                         </td>
                         <td className="py-4 px-6 text-center font-extrabold text-primary-green bg-primary-light/5">
-                          {formatPrice(tr.kerala, currency)}
+                          {formatPrice(tr.keralaMin, currency)} – {formatPrice(tr.keralaMax, currency)}
                         </td>
                         <td className="py-4 px-6 text-center text-text-muted">
                           {formatPrice(tr.uk, currency)}
