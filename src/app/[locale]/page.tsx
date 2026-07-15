@@ -140,7 +140,7 @@ export default async function HomePage({ params }: Props) {
         {/* Abstract morphing blob — right side */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-[-8%] w-[55%] flex items-center"
+          className={`pointer-events-none absolute inset-y-0 w-[55%] flex items-center ${isRtl ? 'left-[-8%]' : 'right-[-8%]'}`}
         >
           <div
             className="animate-blob w-full aspect-square"
@@ -158,7 +158,7 @@ export default async function HomePage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full">
             
             {/* Left Column: Premium Text & CTA (8 cols) */}
-            <div className={`lg:col-span-8 flex flex-col justify-center space-y-6 sm:space-y-8 w-full ${isRtl ? 'order-1 lg:order-2 rtl:text-right' : 'order-1 lg:order-1'}`}>
+            <div className="lg:col-span-8 flex flex-col justify-center space-y-6 sm:space-y-8 w-full order-1 text-left rtl:text-right">
               
               {/* Trust Badge / Live Status */}
               <div className={`flex items-center gap-2 text-sm animate-title-slide ${isRtl ? 'justify-start' : ''}`} style={{ animationDelay: '0ms' }}>
@@ -172,7 +172,7 @@ export default async function HomePage({ params }: Props) {
                 </span>
               </div>
 
-              <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.06] text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.75rem] max-w-4xl">
+              <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.06] rtl:leading-[1.16] text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.75rem] max-w-4xl">
                 <span className="block text-[#1B4332] animate-title-slide" style={{ animationDelay: '100ms' }}>
                   {tHero('headlineLine1')}
                 </span>
@@ -190,7 +190,7 @@ export default async function HomePage({ params }: Props) {
               </p>
 
               {/* CTAs ─── gradient button matches Camber's style */}
-              <div className={`flex flex-col sm:flex-row items-center gap-5 pt-2 animate-title-slide w-full ${isRtl ? 'sm:flex-row-reverse sm:justify-end' : ''}`} style={{ animationDelay: '700ms' }}>
+              <div className="flex flex-col sm:flex-row items-center gap-5 pt-2 animate-title-slide w-full" style={{ animationDelay: '700ms' }}>
                 <a
                   href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
                   target="_blank"
@@ -210,14 +210,14 @@ export default async function HomePage({ params }: Props) {
                   className="inline-flex items-center justify-center gap-2 text-[#2D6A4F] font-medium text-base hover:gap-3 transition-all duration-300 group w-full sm:w-auto py-2.5"
                 >
                   <span>{tCommon('getEstimate')}</span>
-                  <ArrowRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
+                  <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
                 </Link>
               </div>
 
             </div>
 
             {/* Right Column: Premium Visual Panel (4 cols) */}
-            <div className={`lg:col-span-4 relative w-full flex justify-center lg:justify-end mt-8 lg:mt-0 ${isRtl ? 'order-2 lg:order-1' : 'order-2 lg:order-2'}`}>
+            <div className="lg:col-span-4 relative w-full flex justify-center lg:justify-end mt-8 lg:mt-0 order-2">
               
               {/* Blur backdrop behind the frame */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-[#74B49B]/10 to-[#D4A96A]/10 rounded-[2.5rem] blur-xl animate-pulse" />
@@ -322,7 +322,7 @@ export default async function HomePage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[640px]">
 
           {/* LEFT — Full bleed image with overlay cards */}
-          <div className={`relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-full ${isRtl ? 'order-2' : 'order-1'}`}>
+          <div className="relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-full order-1">
             <Image
               src="/images/kerala_hero_bg.png"
               alt={isRtl ? 'مناظر كيرلا الطبيعية الخلابة' : 'Kerala backwaters at golden hour'}
@@ -367,13 +367,13 @@ export default async function HomePage({ params }: Props) {
           </div>
 
           {/* RIGHT — Premium content panel */}
-          <div className={`relative flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-16 lg:py-20 bg-[#FAF7F2] ${isRtl ? 'order-1 text-right' : 'order-2'}`}>
+          <div className="relative flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-16 lg:py-20 bg-[#FAF7F2] order-2 text-left rtl:text-right rtl:items-start">
 
             {/* Subtle decorative circle */}
             <div className="absolute top-0 right-0 rtl:right-auto rtl:left-0 w-72 h-72 rounded-full bg-[#2D6A4F]/5 translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-6 rtl:flex-row-reverse rtl:justify-end">
+            <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
                 {isRtl ? 'لماذا كيرلا؟' : 'Why Kerala?'}
@@ -383,7 +383,7 @@ export default async function HomePage({ params }: Props) {
             {/* Headline */}
             <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332] mb-6">
               {isRtl
-                ? <>رعاية طبية <span className="text-[#74B49B]">عالمية</span>، بتكلفة أقل بنسبة <span className="text-[#74B49B]">60–80%</span>.</>
+                ? <>رعاية طبية <span className="text-[#74B49B]">عالمية</span>، بتكلفة أقل بنسبة <span className="text-[#74B49B] inline-block whitespace-nowrap" dir="ltr">60–80%</span>.</>
                 : <>World-class care, at <span className="text-[#74B49B]">60–80%</span> lower cost.</>
               }
             </h2>
@@ -414,9 +414,9 @@ export default async function HomePage({ params }: Props) {
                   icon: '✦',
                 },
               ].map((f, i) => (
-                <div key={i} className={`flex items-start gap-3 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                <div key={i} className="flex items-start gap-3">
                   <span className="text-[#D4A96A] text-xs mt-1 shrink-0">{f.icon}</span>
-                  <p className="text-[#4A5C52] text-sm leading-relaxed">
+                  <p className="text-[#4A5C52] text-sm leading-relaxed rtl:text-right">
                     {isRtl ? f.ar : f.en}
                   </p>
                 </div>
@@ -424,13 +424,13 @@ export default async function HomePage({ params }: Props) {
             </div>
 
             {/* CTA */}
-            <div className={`flex items-center gap-6 ${isRtl ? 'flex-row-reverse justify-end' : ''}`}>
+            <div className="flex items-center gap-6">
               <Link
                 href="/why-kerala"
                 className="inline-flex items-center gap-2.5 bg-[#1B4332] hover:bg-[#2D6A4F] text-white font-medium text-sm px-7 py-3.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md group"
               >
                 <span>{isRtl ? 'اكتشف لماذا كيرلا' : 'Discover Why Kerala'}</span>
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
               </Link>
               <Link
                 href="/get-estimate"
@@ -454,7 +454,7 @@ export default async function HomePage({ params }: Props) {
           
           {/* Section Header */}
           <div className="mb-16 space-y-4 rtl:text-right max-w-3xl">
-            <div className="flex items-center gap-3 rtl:flex-row-reverse rtl:justify-end">
+            <div className="flex items-center gap-3">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
                 {isRtl ? 'خطوات التنسيق' : 'Coordination Process'}
@@ -518,7 +518,7 @@ export default async function HomePage({ params }: Props) {
               className="inline-flex items-center gap-2.5 bg-[#1B4332] hover:bg-[#2D6A4F] text-white font-medium text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-sm hover:shadow-md group"
             >
               <span>{isRtl ? 'بدء التنسيق الطبي مجاناً' : 'Begin Free Coordination'}</span>
-              <ArrowRight className={`h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
+              <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
             </Link>
           </div>
         </div>
@@ -529,7 +529,7 @@ export default async function HomePage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 space-y-3 rtl:text-right">
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-4 rtl:flex-row-reverse rtl:justify-end">
+            <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
                 {isRtl ? 'التزاماتنا' : 'Our Commitments'}
@@ -553,17 +553,17 @@ export default async function HomePage({ params }: Props) {
                 </p>
               </div>
               
-              <div className="flex items-end justify-end mt-8 relative z-10 w-full rtl:flex-row-reverse">
+              <div className="flex items-end justify-end mt-8 relative z-10 w-full">
                 {/* Large Background Vector */}
-                <div className="h-32 w-32 opacity-[0.06] text-[#2D6A4F] pointer-events-none absolute -bottom-6 -left-4 rtl:-right-4 rtl:-left-auto group-hover:scale-[1.2] group-hover:-rotate-12 transition-all duration-700 ease-out origin-bottom-left">
+                <div className="h-32 w-32 opacity-[0.06] text-[#2D6A4F] pointer-events-none absolute -bottom-6 -start-4 group-hover:scale-[1.2] group-hover:-rotate-12 transition-all duration-700 ease-out origin-bottom-left">
                   <ShieldCheck className="w-full h-full" strokeWidth={1.5} />
                 </div>
                 
                 {/* 100% Text */}
-                <div className="flex items-baseline gap-1 text-right rtl:text-left">
+                <div className="flex items-baseline gap-1">
                   <span className="text-[#A4B2AA] text-[56px] leading-none font-light tracking-tighter">100</span>
                   <span className="text-[#A4B2AA] text-3xl font-light leading-none">%</span>
-                  <span className="text-[#84948B] text-[10px] font-medium tracking-wider uppercase ml-2 mb-2 rtl:ml-0 rtl:mr-2">
+                  <span className="text-[#84948B] text-[10px] font-medium tracking-wider uppercase ms-2 mb-2">
                     {isRtl ? 'شفافية' : 'TRANSPARENT'}
                   </span>
                 </div>
@@ -581,17 +581,17 @@ export default async function HomePage({ params }: Props) {
                 </p>
               </div>
 
-              <div className="flex items-end justify-end mt-8 relative z-10 w-full rtl:flex-row-reverse">
+              <div className="flex items-end justify-end mt-8 relative z-10 w-full">
                 {/* Large Background Vector */}
-                <div className="h-32 w-32 opacity-[0.06] text-[#2D6A4F] pointer-events-none absolute -bottom-6 -left-4 rtl:-right-4 rtl:-left-auto group-hover:scale-[1.2] group-hover:rotate-[25deg] transition-all duration-700 ease-out origin-bottom-left">
+                <div className="h-32 w-32 opacity-[0.06] text-[#2D6A4F] pointer-events-none absolute -bottom-6 -start-4 group-hover:scale-[1.2] group-hover:rotate-[25deg] transition-all duration-700 ease-out origin-bottom-left">
                   <Globe className="w-full h-full" strokeWidth={1.5} />
                 </div>
 
                 {/* 1,200+ Text */}
-                <div className="flex items-baseline gap-1.5 text-right rtl:text-left">
+                <div className="flex items-baseline gap-1.5">
                   <span className="text-[#A4B2AA] text-[56px] leading-none font-light tracking-tighter">1,200</span>
                   <span className="text-[#A4B2AA] text-3xl font-light leading-none">+</span>
-                  <span className="text-[#84948B] text-[10px] font-medium tracking-wider uppercase ml-2 mb-2 rtl:ml-0 rtl:mr-2">
+                  <span className="text-[#84948B] text-[10px] font-medium tracking-wider uppercase ms-2 mb-2">
                     {isRtl ? 'مريض دولي' : 'GLOBAL PATIENTS'}
                   </span>
                 </div>
@@ -609,16 +609,16 @@ export default async function HomePage({ params }: Props) {
                 </p>
               </div>
 
-              <div className="flex items-end justify-end mt-8 relative z-10 w-full rtl:flex-row-reverse">
+              <div className="flex items-end justify-end mt-8 relative z-10 w-full">
                 {/* Large Background Vector */}
-                <div className="h-32 w-32 opacity-[0.06] text-[#2D6A4F] pointer-events-none absolute -bottom-6 -left-4 rtl:-right-4 rtl:-left-auto group-hover:scale-[1.2] group-hover:-rotate-12 transition-all duration-700 ease-out origin-bottom-left">
+                <div className="h-32 w-32 opacity-[0.06] text-[#2D6A4F] pointer-events-none absolute -bottom-6 -start-4 group-hover:scale-[1.2] group-hover:-rotate-12 transition-all duration-700 ease-out origin-bottom-left">
                   <CalendarCheck className="w-full h-full" strokeWidth={1.5} />
                 </div>
 
                 {/* $0 Text */}
-                <div className="flex items-baseline gap-1.5 text-right rtl:text-left">
+                <div className="flex items-baseline gap-1.5">
                   <span className="text-[#A4B2AA] text-[56px] leading-none font-light tracking-tighter">$0</span>
-                  <span className="text-[#84948B] text-[10px] font-medium tracking-wider uppercase ml-2 mb-2 rtl:ml-0 rtl:mr-2">
+                  <span className="text-[#84948B] text-[10px] font-medium tracking-wider uppercase ms-2 mb-2">
                     {isRtl ? 'رسوم التعديل' : 'CHANGE FEES'}
                   </span>
                 </div>
@@ -636,15 +636,15 @@ export default async function HomePage({ params }: Props) {
                 </p>
               </div>
 
-              <div className="flex items-end justify-end mt-8 relative z-10 w-full rtl:flex-row-reverse">
+              <div className="flex items-end justify-end mt-8 relative z-10 w-full">
                 {/* Large Background Vector */}
-                <div className="h-32 w-32 opacity-[0.06] text-[#2D6A4F] pointer-events-none absolute -bottom-6 -left-4 rtl:-right-4 rtl:-left-auto group-hover:scale-[1.2] group-hover:-rotate-12 transition-all duration-700 ease-out origin-bottom-left">
+                <div className="h-32 w-32 opacity-[0.06] text-[#2D6A4F] pointer-events-none absolute -bottom-6 -start-4 group-hover:scale-[1.2] group-hover:-rotate-12 transition-all duration-700 ease-out origin-bottom-left">
                   <HeartHandshake className="w-full h-full" strokeWidth={1.5} />
                 </div>
 
-                <div className="flex items-baseline gap-1.5 text-right rtl:text-left">
+                <div className="flex items-baseline gap-1.5">
                   <span className="text-[#A4B2AA] text-[56px] leading-none font-light tracking-tighter">30</span>
-                  <span className="text-[#84948B] text-[10px] font-medium tracking-wider uppercase ml-2 mb-2 rtl:ml-0 rtl:mr-2">
+                  <span className="text-[#84948B] text-[10px] font-medium tracking-wider uppercase ms-2 mb-2">
                     {isRtl ? 'يوم متابعة' : 'DAYS SUPPORT'}
                   </span>
                 </div>
@@ -660,7 +660,7 @@ export default async function HomePage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 space-y-3 rtl:text-right">
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-4 rtl:flex-row-reverse rtl:justify-end">
+            <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
                 {isRtl ? 'قصص المرضى' : 'Patient Experiences'}
@@ -681,7 +681,7 @@ export default async function HomePage({ params }: Props) {
             {testimonials.map((t, idx) => (
               <div key={idx} className="bg-[#F5F8F4] rounded-[24px] p-7 flex flex-col gap-5 border border-[#E8EDE6] hover:border-[#2D6A4F]/25 hover:shadow-lg transition-all duration-300 group rtl:text-right snap-start shrink-0 w-[85vw] md:w-auto">
                 {/* Stars */}
-                <div className="flex gap-1 rtl:flex-row-reverse">
+                <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-[#D4A96A] text-[#D4A96A]" />
                   ))}
@@ -704,7 +704,7 @@ export default async function HomePage({ params }: Props) {
                     <p className="text-[11px] text-text-muted/70 mt-0.5">{isRtl ? t.countryAr : t.countryEn}</p>
                     <p className="text-[11px] font-medium text-[#2D6A4F] mt-0.5">{isRtl ? t.treatmentAr : t.treatmentEn}</p>
                   </div>
-                  <div className="text-right rtl:text-left shrink-0">
+                  <div className="text-end shrink-0">
                     <span className="text-xl font-bold text-[#2D6A4F] font-display">{t.saving}</span>
                     <p className="text-[10px] text-text-muted/60 uppercase tracking-wide">{isRtl ? 'توفير' : 'saved'}</p>
                   </div>
@@ -719,7 +719,7 @@ export default async function HomePage({ params }: Props) {
               className="inline-flex items-center gap-2 text-[#2D6A4F] font-medium text-base hover:gap-3 transition-all duration-300 group"
             >
               <span>{isRtl ? 'قراءة المزيد من القصص' : 'Read more patient stories'}</span>
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
             </Link>
           </div>
         </div>
@@ -730,7 +730,7 @@ export default async function HomePage({ params }: Props) {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 space-y-3 rtl:text-right">
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-4 rtl:flex-row-reverse rtl:justify-end">
+            <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
                 {isRtl ? 'الأسئلة الشائعة' : 'Support FAQ'}
@@ -753,12 +753,12 @@ export default async function HomePage({ params }: Props) {
                 className="group py-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer"
               >
                 <summary className="flex items-center justify-between gap-4 focus:outline-hidden min-h-[44px]">
-                  <h3 className="text-base sm:text-lg font-medium text-primary-dark transition-colors duration-300 group-hover:text-[#2D6A4F] text-left rtl:text-right">
+                  <h3 className="text-base sm:text-lg font-medium text-primary-dark transition-colors duration-300 group-hover:text-[#2D6A4F] text-start">
                     {tFAQ(`q${key}`)}
                   </h3>
                   <ChevronDown className="h-4.5 w-4.5 text-text-muted/60 transition-transform duration-300 group-open:-rotate-180 shrink-0" />
                 </summary>
-                <p className="mt-2 text-text-muted font-light leading-[1.65] text-sm sm:text-base text-left rtl:text-right">
+                <p className="mt-2 text-text-muted font-light leading-[1.65] text-sm sm:text-base text-start">
                   {tFAQ(`a${key}`)}
                 </p>
               </details>
@@ -771,7 +771,7 @@ export default async function HomePage({ params }: Props) {
               className="inline-flex items-center gap-2 text-[#2D6A4F] font-medium text-base hover:gap-3 transition-all duration-300 group"
             >
               <span>{isRtl ? 'عرض جميع الأسئلة' : 'View all FAQs'}</span>
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
             </Link>
           </div>
         </div>
@@ -821,16 +821,17 @@ export default async function HomePage({ params }: Props) {
               className="inline-flex items-center gap-2 text-[#2D6A4F] font-medium text-base hover:gap-3 transition-all duration-300 group"
             >
               <span>{tCommon('getEstimate')}</span>
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
             </Link>
           </div>
 
           <div className="pt-4">
             <Link
               href="/faq"
-              className="text-[#74B49B] hover:text-[#2D6A4F] font-medium text-sm font-sans underline transition-colors"
+              className="inline-flex items-center gap-1 text-[#74B49B] hover:text-[#2D6A4F] font-medium text-sm font-sans underline transition-colors group"
             >
-              {isRtl ? 'لديك استفسارات أخرى؟ اقرأ الأسئلة الشائعة ←' : 'Still researching? Read our FAQ →'}
+              <span>{isRtl ? 'لديك استفسارات أخرى؟ اقرأ الأسئلة الشائعة' : 'Still researching? Read our FAQ'}</span>
+              <ArrowRight className={`h-3.5 w-3.5 transition-transform duration-300 no-underline ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
             </Link>
           </div>
         </div>

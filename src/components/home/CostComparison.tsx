@@ -178,7 +178,7 @@ export default function CostComparison() {
                 className="inline-flex items-center gap-1.5 text-primary-green hover:text-primary-dark font-medium text-sm transition-all duration-300 group min-h-[44px]"
               >
                 <span>{t('cta')}</span>
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className={`h-4 w-4 transition-transform ${locale === 'ar' ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
               </Link>
             </div>
           </div>

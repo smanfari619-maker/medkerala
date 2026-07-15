@@ -123,7 +123,7 @@ export default async function KeralaExperiencePage({ params }: Props) {
         {/* Companion Program Detail */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
           <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center gap-3 mb-2 rtl:flex-row-reverse rtl:justify-end">
+            <div className="flex items-center gap-3 mb-2">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
                 {locale === 'ar' ? 'رعاية مخصصة لمرافق السفر' : 'Support for Family & Friends'}

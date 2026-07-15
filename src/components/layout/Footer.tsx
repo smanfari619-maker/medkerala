@@ -83,7 +83,7 @@ export default function Footer() {
             {/* Desktop Flat View */}
             <div className="hidden md:block">
               <h3 className="text-white/90 text-xs uppercase tracking-[0.2em] font-bold mb-6 pb-3 border-b border-white/10 relative">
-                <span className="absolute left-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
+                <span className="absolute start-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
                 {locale === 'ar' ? 'روابط سريعة' : 'Quick Links'}
               </h3>
               <ul className="space-y-3">
@@ -124,7 +124,7 @@ export default function Footer() {
             {/* Desktop Flat View */}
             <div className="hidden md:block">
               <h3 className="text-white/90 text-xs uppercase tracking-[0.2em] font-bold mb-6 pb-3 border-b border-white/10 relative">
-                <span className="absolute left-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
+                <span className="absolute start-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
                 {tNav('treatments')}
               </h3>
               <ul className="space-y-3">
@@ -175,7 +175,7 @@ export default function Footer() {
             {/* Desktop Flat View */}
             <div className="hidden md:block">
               <h3 className="text-white/90 text-xs uppercase tracking-[0.2em] font-bold mb-6 pb-3 border-b border-white/10 relative">
-                <span className="absolute left-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
+                <span className="absolute start-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
                 {locale === 'ar' ? 'مكتبنا الرئيسي' : 'Head Office'}
               </h3>
               <ul className="space-y-4 text-sm">

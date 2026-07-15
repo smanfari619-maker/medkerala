@@ -69,11 +69,25 @@ body {
 
 [dir="rtl"] body {
   font-family: var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
-  line-height: 1.75;
+  line-height: 1.8;
+  font-weight: 400;
 }
 
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
 [dir="rtl"] .font-display {
   font-family: var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.25;
+}
+
+/* Adjust font weights in Arabic for better visual weight and legibility */
+[dir="rtl"] .font-light {
+  font-weight: 400 !important;
+}
+[dir="rtl"] .font-normal {
+  font-weight: 500 !important;
 }
 
 /* Reset letter spacing for Arabic text readability (letter spacing ruins Arabic text script connection) */

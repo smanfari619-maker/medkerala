@@ -68,7 +68,7 @@ export default async function WhyKeralaPage({ params }: Props) {
             {stats.map((stat, idx) => (
               <div key={idx} className="space-y-1.5 pt-4 first:pt-0 lg:pt-0">
                 <span className="text-3xl sm:text-4xl font-extrabold font-display text-primary-green block">
-                  {stat.value}
+                  <span className="inline-block" dir="ltr">{stat.value}</span>
                 </span>
                 <h3 className="text-sm font-bold text-text-dark font-sans">{stat.label}</h3>
                 <p className="text-[13px] text-text-muted max-w-[200px] mx-auto leading-relaxed font-sans">{stat.desc}</p>
@@ -81,7 +81,7 @@ export default async function WhyKeralaPage({ params }: Props) {
         <div className="bg-white border border-[#D4A96A]/15 p-8 sm:p-12 rounded-[2.25rem] relative overflow-hidden group shadow-sm hover:shadow-lg transition-all duration-300 mb-20 border border-transparent">
           <div className="relative z-10 space-y-8">
             <div className="mb-12 space-y-3 rtl:text-right">
-              <div className="flex items-center gap-3 mb-4 rtl:flex-row-reverse rtl:justify-end">
+              <div className="flex items-center gap-3 mb-4">
                 <span className="h-px w-8 bg-[#D4A96A]" />
                 <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
                   {locale === 'ar' ? 'مقارنة التكاليف' : 'Cost Savings'}
@@ -159,7 +159,7 @@ export default async function WhyKeralaPage({ params }: Props) {
         {/* Calicut highlight */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6">
-            <div className="flex items-center gap-3 mb-2 rtl:flex-row-reverse rtl:justify-end">
+            <div className="flex items-center gap-3 mb-2">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
                 {locale === 'ar' ? 'الوجهة المفضلّة: كالكوت' : 'Calicut: Our Primary Base'}
@@ -218,7 +218,7 @@ export default async function WhyKeralaPage({ params }: Props) {
         {/* Tamil Nadu extension block */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-white border border-[#D4A96A]/15 p-8 sm:p-12 rounded-[2.25rem] shadow-sm hover:shadow-lg transition-all duration-300">
           <div className="space-y-6 order-last lg:order-first">
-            <div className="flex items-center gap-3 mb-2 rtl:flex-row-reverse rtl:justify-end">
+            <div className="flex items-center gap-3 mb-2">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
                 {locale === 'ar' ? 'التوسع الجغرافي: تاميل نادو' : 'Regional Extension: Tamil Nadu'}
