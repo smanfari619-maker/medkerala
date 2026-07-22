@@ -6,6 +6,11 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '10mb',
+    },
+  },
   images: {
     qualities: [75, 90],
   },

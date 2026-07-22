@@ -66,20 +66,20 @@ export default function MobileBottomNav() {
             <span className="text-[10px] font-medium leading-none">{t('treatments')}</span>
           </Link>
 
-          {/* WhatsApp CTA (Middle / Primary Action) */}
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center flex-1 h-full relative group tap-active"
+          {/* AI Live Chat CTA (Middle / Primary Action) */}
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+            className="flex flex-col items-center justify-center flex-1 h-full relative group tap-active cursor-pointer"
+            aria-label="Open AI Live Chat"
           >
-            <div className="absolute -top-3 bg-[#25D366] text-white p-3 rounded-full shadow-[0_4px_12px_rgba(37,211,102,0.35)] flex items-center justify-center transition-transform">
-              <MessageCircle className="h-5.5 w-5.5 fill-white" />
+            <div className="absolute -top-3 bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] text-white p-3 rounded-full shadow-[0_4px_14px_rgba(27,67,50,0.4)] border border-[#D4A96A]/40 flex items-center justify-center transition-transform group-active:scale-95">
+              <MessageCircle className="h-5.5 w-5.5 text-[#BAD7B0]" />
             </div>
-            <span className="text-[10px] font-bold text-[#2D6A4F] mt-7 leading-none">
-              {isRtl ? 'اتصال' : 'Chat'}
+            <span className="text-[10px] font-bold text-[#1B4332] mt-7 leading-none">
+              {isRtl ? 'محادثة مباشرة' : 'AI Chat'}
             </span>
-          </a>
+          </button>
 
           {/* Get Estimate */}
           <Link
