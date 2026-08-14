@@ -351,6 +351,32 @@ export function getRecoveryProductsForTreatment(slug: string): RecoveryProduct[]
   return RECOVERY_PRODUCTS.slice(0, 3);
 }
 
+export function getRecoveryProductsForBlog(blogSlug: string, category: string = ''): RecoveryProduct[] {
+  const lower = (blogSlug + ' ' + category).toLowerCase();
+  if (lower.includes('ayurveda') || lower.includes('panchakarma') || lower.includes('herb')) {
+    return RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('ayurveda'));
+  }
+  if (lower.includes('cardiac') || lower.includes('bypass') || lower.includes('heart')) {
+    return RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('cardiac'));
+  }
+  if (lower.includes('joint') || lower.includes('knee') || lower.includes('ortho')) {
+    return RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('orthopaedics'));
+  }
+  if (lower.includes('supplement') || lower.includes('recovery')) {
+    return [
+      RECOVERY_PRODUCTS.find(p => p.id === 'ortho-collagen')!,
+      RECOVERY_PRODUCTS.find(p => p.id === 'cardiac-coq10')!,
+      RECOVERY_PRODUCTS.find(p => p.id === 'gastro-probiotics')!
+    ].filter(Boolean);
+  }
+  // Default to top 3 broad wellness items
+  return [
+    RECOVERY_PRODUCTS.find(p => p.id === 'cardiac-omega3')!,
+    RECOVERY_PRODUCTS.find(p => p.id === 'ayurveda-ashwagandha')!,
+    RECOVERY_PRODUCTS.find(p => p.id === 'ortho-joint-complex')!
+  ].filter(Boolean);
+}
+
 export function getProductReferralUrl(product: RecoveryProduct): string {
   return getIherbUrl(product.searchQuery);
 }

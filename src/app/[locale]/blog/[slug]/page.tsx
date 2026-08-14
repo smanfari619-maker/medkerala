@@ -6,6 +6,8 @@ import { BLOG_POSTS } from '@/lib/data';
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Zap } from 'lucide-react';
 import { Metadata } from 'next';
 import { getBreadcrumbSchema, getHowToSchema } from '@/lib/schemas';
+import BlogRecoveryCallout from '@/components/blog/BlogRecoveryCallout';
+import { getRecoveryProductsForBlog } from '@/lib/recoveryProducts';
 
 // ── Inline rich-text renderer ────────────────────────────────
 // Converts a plain string with lightweight markdown conventions into
@@ -339,6 +341,12 @@ export default async function BlogPostPage({ params }: Props) {
                 : 'Note: The medical statistics and estimates presented are for educational purposes. Personal treatment costs are generated based on your diagnostic reports.'}
             </div>
           </div>
+
+          {/* Contextual Product Referral Callout (iHerb Rewards) */}
+          <BlogRecoveryCallout
+            locale={locale}
+            products={getRecoveryProductsForBlog(slug, post.category)}
+          />
 
           {/* Inline CTA */}
           <div className="bg-[#FAF7F2] rounded-2xl p-6 sm:p-8 border border-[#D4A96A]/40 flex flex-col sm:flex-row items-center justify-between gap-6">
