@@ -24,6 +24,8 @@ import {
 } from 'lucide-react';
 import { Metadata } from 'next';
 import { getMedicalProcedureSchema, getBreadcrumbSchema, getFAQSchema } from '@/lib/schemas';
+import RecoveryEssentialsSection from '@/components/treatments/RecoveryEssentialsSection';
+import { getRecoveryProductsForTreatment } from '@/lib/recoveryProducts';
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -151,6 +153,8 @@ export default async function TreatmentDetailPage({ params }: Props) {
       a: isRtl ? faq.aAr : faq.a
     }))
   );
+
+  const recoveryProducts = getRecoveryProductsForTreatment(slug);
 
   return (
     <div className="flex flex-col w-full overflow-x-hidden animate-fade-in pt-32 lg:pt-40 bg-[#FAF7F2]">
@@ -398,7 +402,15 @@ export default async function TreatmentDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 5. TREATMENT FAQS */}
+      {/* 5. POST-OP RECOVERY ESSENTIALS (iHerb Rewards Referral) */}
+      <RecoveryEssentialsSection
+        locale={locale}
+        treatmentName={title}
+        treatmentSlug={slug}
+        products={recoveryProducts}
+      />
+
+      {/* 6. TREATMENT FAQS */}
       <section className="py-20 bg-[#FAF7F2] border-t border-[#D4A96A]/35">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">

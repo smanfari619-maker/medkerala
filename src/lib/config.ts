@@ -16,7 +16,27 @@ export const SITE_CONFIG = {
   // Live Stats — base count resets on the 1st of every month.
   // Use getMonthlyPatientsServed() wherever you need the live figure.
   monthlyPatientsBase: 80,
+
+  // Trusted Partner Referrals (iHerb Rewards & Recovery Essentials)
+  iherbRewardsCode: 'QAO6090',
+  iherbDiscountPercent: '5–10%',
 };
+
+export function getIherbUrl(searchTermOrPath?: string): string {
+  const code = SITE_CONFIG.iherbRewardsCode;
+  if (!searchTermOrPath) {
+    return `https://www.iherb.com?rcode=${code}`;
+  }
+  if (searchTermOrPath.startsWith('http')) {
+    const u = new URL(searchTermOrPath);
+    u.searchParams.set('rcode', code);
+    return u.toString();
+  }
+  if (searchTermOrPath.startsWith('/')) {
+    return `https://www.iherb.com${searchTermOrPath}?rcode=${code}`;
+  }
+  return `https://www.iherb.com/search?kw=${encodeURIComponent(searchTermOrPath)}&rcode=${code}`;
+}
 
 /**
  * Returns a deterministic patient count that:
