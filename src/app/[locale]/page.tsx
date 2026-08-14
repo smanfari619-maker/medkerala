@@ -46,6 +46,10 @@ export default async function HomePage({ params }: Props) {
       flagEmoji: '🇦🇪',
       treatmentEn: 'Cardiac Bypass Surgery',
       treatmentAr: 'جراحة القلب المفتوح',
+      hospitalEn: 'Aster MIMS Hospital, Calicut',
+      hospitalAr: 'مستشفى أستر ميمز، كالكوت',
+      stayEn: '14 Days Stay',
+      stayAr: 'إقامة ١٤ يوماً',
       quoteEn: 'My cardiologist in Dubai quoted me AED 220,000. TreatInKerala arranged the same surgery at Aster MIMS for a fraction of that. The coordinator met me at the airport, stayed with us daily, and handled every single thing. My wife felt completely at ease. We saved over 70% and I\'m fully recovered.',
       quoteAr: 'طلب مني طبيبي في دبي 220,000 درهم. رتّب لي فريق علاج في كيرلا نفس الجراحة في مستشفى أستر بجزء بسيط من تلك التكلفة. استقبلنا المنسق في المطار وكان معنا كل يوم. وفّرنا أكثر من 70% وتعافيت تماماً.',
       saving: '70%+',
@@ -58,6 +62,10 @@ export default async function HomePage({ params }: Props) {
       flagEmoji: '🇳🇬',
       treatmentEn: 'Knee Replacement',
       treatmentAr: 'استبدال الركبة',
+      hospitalEn: 'Baby Memorial Hospital',
+      hospitalAr: 'مستشفى بيبي ميموريال',
+      stayEn: '18 Days Stay',
+      stayAr: 'إقامة ١٨ يوماً',
       quoteEn: 'I had been living with severe knee pain for two years. A friend told me about TreatInKerala. Within 48 hours of sending my MRI, I had a full cost breakdown. The hospital stay was clean, the surgeons were brilliant, and the team sorted out my visa letter without any hassle. I walked without pain for the first time in years.',
       quoteAr: 'عانيت من آلام الركبة الشديدة لمدة عامين. أخبرني صديق عن علاج في كيرلا. خلال 48 ساعة من إرسال صور الأشعة، تلقيت تفاصيل التكلفة الكاملة. كان المستشفى نظيفاً والجراحون رائعين والفريق رتّب لي التأشيرة بدون أي متاعب.',
       saving: '65%+',
@@ -70,6 +78,10 @@ export default async function HomePage({ params }: Props) {
       flagEmoji: '🇬🇧',
       treatmentEn: 'Ayurveda & Panchakarma',
       treatmentAr: 'الأيورفيدا والبانشاكارما',
+      hospitalEn: 'Kottakkal Arya Vaidya Sala Partner',
+      hospitalAr: 'مركز شريك لكوتاكال أريا فايديا سالا',
+      stayEn: '21 Days Retreat',
+      stayAr: 'إقامة ٢١ يوماً',
       quoteEn: 'I came for a 14-day Panchakarma retreat after burning out completely at work. The coordinator arranged everything — the wellness resort, the Ayurvedic doctors, even a short backwater houseboat trip during my recovery week. I left feeling like a completely different person. I\'m already planning my return.',
       quoteAr: 'جئت لإجراء دورة بانشاكارما لمدة 14 يوماً بعد إرهاق شديد في العمل. رتّب المنسق كل شيء — المنتجع وأطباء الأيورفيدا وحتى رحلة بالقارب خلال أسبوع التعافي. غادرت وأنا شخص مختلف تماماً.',
       saving: 'Transformed',
@@ -80,26 +92,32 @@ export default async function HomePage({ params }: Props) {
     {
       num: '01',
       icon: ClipboardList,
+      badgeEn: 'Free Medical Review',
+      badgeAr: 'مراجعة طبية مجانية',
       titleEn: 'Send Your Requirements',
       titleAr: 'أرسل متطلباتك الطبية',
-      descEn: 'Share your medical reports via WhatsApp or our estimate form. We review within 24 hours.',
-      descAr: 'شارك تقاريرك الطبية عبر واتساب أو نموذج التقدير. نراجعها خلال ٢٤ ساعة.',
+      descEn: 'Share your medical reports securely via WhatsApp or our estimate form. Our medical doctor coordinator reviews them within 24 hours.',
+      descAr: 'شارك تقاريرك الطبية بأمان عبر واتساب أو نموذج التقدير. يراجعها طبيبنا المنسق خلال ٢٤ ساعة.',
     },
     {
       num: '02',
       icon: Stethoscope,
-      titleEn: 'Get a Confirmed Quote',
-      titleAr: 'احصل على عرض سعر مؤكد',
-      descEn: 'We coordinate with NABH/JCI hospitals and send you a confirmed treatment plan with full cost breakdown.',
-      descAr: 'ننسق مع المستشفيات المعتمدة ونرسل لك خطة علاجية مؤكدة مع تفاصيل التكاليف الكاملة.',
+      badgeEn: 'Direct Hospital Quote',
+      badgeAr: 'تسعير مباشر من المستشفى',
+      titleEn: 'Get a Confirmed Treatment Plan',
+      titleAr: 'احصل على خطة علاجية مؤكدة',
+      descEn: 'We consult top senior surgeons at JCI/NABH hospitals and send you official itemized cost breakdowns with zero markup.',
+      descAr: 'نستشير كبار الجراحين في مستشفيات JCI/NABH المعتمدة ونرسل لك تفاصيل التكاليف الرسمية بدون أي هوامش ربحية.',
     },
     {
       num: '03',
       icon: HeartHandshake,
-      titleEn: 'We Handle Everything Else',
-      titleAr: 'نتولى كل شيء آخر',
-      descEn: 'Visa letter, airport pickup, hotel booking, hospital admission, translator — all at zero extra charge.',
-      descAr: 'خطاب التأشيرة، الاستقبال من المطار، حجز الفندق، التنسيق الطبي، المترجم — كل هذا بدون رسوم إضافية.',
+      badgeEn: 'All-Inclusive Coordination',
+      badgeAr: 'تنسيق شامل مجاني',
+      titleEn: 'We Handle Everything on the Ground',
+      titleAr: 'نتولى كل شيء على أرض الواقع',
+      descEn: 'Medical visa invitation letter, airport pickup, hospital admissions, Arabic interpreter, and 30-day post-discharge checkups.',
+      descAr: 'خطاب التأشيرة الطبية، الاستقبال من المطار، إجراءات الدخول، مترجم عربي مرافق، ومتابعة طبية لمدة ٣٠ يوماً بعد التعافي.',
     },
   ];
 
@@ -113,12 +131,12 @@ export default async function HomePage({ params }: Props) {
   ];
 
   const partnerHospitals = [
-    { name: 'Aster MIMS', badge: 'JCI' },
-    { name: 'Baby Memorial', badge: 'NABH' },
-    { name: 'Meitra Hospital', badge: 'JCI' },
-    { name: 'VPS Lakeshore', badge: 'NABH' },
-    { name: 'KIMS Health', badge: 'NABH' },
-    { name: 'PVS Memorial', badge: 'NABH' },
+    { name: 'Aster MIMS', badge: 'JCI Accredited' },
+    { name: 'Baby Memorial', badge: 'NABH Super Specialty' },
+    { name: 'Meitra Hospital', badge: 'JCI Accredited' },
+    { name: 'VPS Lakeshore', badge: 'NABH Accredited' },
+    { name: 'KIMS Health', badge: 'NABH Accredited' },
+    { name: 'PVS Memorial', badge: 'NABH Accredited' },
   ];
 
   const faqs = faqKeys.map((key) => ({
@@ -292,21 +310,19 @@ export default async function HomePage({ params }: Props) {
                 <div className={isRtl ? 'animate-ticker-rtl' : 'animate-ticker-ltr'}>
                   {/* List repeated 3 times to guarantee smooth infinite scroll */}
                   {Array.from({ length: 3 }).map((_, repeatIdx) => (
-                    <div key={repeatIdx} className="flex items-center gap-12 pr-12 rtl:pr-0 rtl:pl-12">
-                      {[
-                        'Aster MIMS',
-                        'Baby Memorial',
-                        'Meitra Hospital',
-                        'VPS Lakeshore',
-                        'KIMS Health',
-                        'PVS Memorial',
-                      ].map((name) => (
-                        <span
-                          key={`${repeatIdx}-${name}`}
-                          className="text-sm font-medium text-[#4A4A6A]/45 hover:text-[#2D6A4F] transition-colors duration-200 cursor-default whitespace-nowrap"
+                    <div key={repeatIdx} className="flex items-center gap-10 pr-10 rtl:pr-0 rtl:pl-10">
+                      {partnerHospitals.map((hospital) => (
+                        <div
+                          key={`${repeatIdx}-${hospital.name}`}
+                          className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/70 border border-[#D4A96A]/20 shadow-2xs whitespace-nowrap"
                         >
-                          {name}
-                        </span>
+                          <span className="text-xs font-semibold text-[#1B4332]">
+                            {hospital.name}
+                          </span>
+                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#2D6A4F]/8 text-[#2D6A4F] font-medium tracking-wide">
+                            {hospital.badge}
+                          </span>
+                        </div>
                       ))}
                     </div>
                   ))}
@@ -486,19 +502,24 @@ export default async function HomePage({ params }: Props) {
                     key={idx}
                     className="relative bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 flex flex-col gap-8 hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group snap-start shrink-0 w-[85vw] md:w-auto"
                   >
-                    <div className="flex items-center justify-between w-full">
-                      {/* Number Indicator Pill */}
-                      <span className="w-9 h-9 rounded-full bg-[#FAF7F2] text-[#D4A96A] border border-[#D4A96A]/25 flex items-center justify-center text-xs font-semibold font-display shadow-inner">
-                        {step.num}
-                      </span>
-                      {/* Premium Double Circle Icon Holder */}
-                      <div className="w-14 h-14 rounded-2xl bg-[#FAF7F2] text-[#2D6A4F] border border-[#2D6A4F]/10 flex items-center justify-center shrink-0 shadow-sm relative group-hover:scale-110 transition-all duration-300">
-                        <Icon className="h-6 w-6" />
+                    <div className="flex items-center justify-between w-full gap-2">
+                      {/* Number Indicator & Badge Pill */}
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="w-9 h-9 rounded-full bg-[#FAF7F2] text-[#D4A96A] border border-[#D4A96A]/25 flex items-center justify-center text-xs font-semibold font-display shadow-inner shrink-0">
+                          {step.num}
+                        </span>
+                        <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#2D6A4F]/8 text-[#2D6A4F] border border-[#2D6A4F]/15 whitespace-nowrap">
+                          {isRtl ? step.badgeAr : step.badgeEn}
+                        </span>
+                      </div>
+                      {/* Premium Circle Icon Holder */}
+                      <div className="w-13 h-13 rounded-2xl bg-[#FAF7F2] text-[#2D6A4F] border border-[#2D6A4F]/10 flex items-center justify-center shrink-0 shadow-sm relative group-hover:scale-105 transition-all duration-300">
+                        <Icon className="h-5.5 w-5.5" />
                       </div>
                     </div>
 
                     <div className="space-y-3 text-left rtl:text-right">
-                      <h3 className="text-xl font-display font-normal text-[#1B4332] tracking-tight">
+                      <h3 className="text-xl font-display font-medium text-[#1B4332] tracking-tight">
                         {isRtl ? step.titleAr : step.titleEn}
                       </h3>
                       <p className="text-[#4A5C52] text-sm font-light leading-relaxed">
@@ -680,11 +701,16 @@ export default async function HomePage({ params }: Props) {
           <div className="flex overflow-x-auto md:overflow-visible no-scrollbar scroll-momentum snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0" dir={isRtl ? 'rtl' : 'ltr'}>
             {testimonials.map((t, idx) => (
               <div key={idx} className="bg-[#F5F8F4] rounded-[24px] p-7 flex flex-col gap-5 border border-[#E8EDE6] hover:border-[#2D6A4F]/25 hover:shadow-lg transition-all duration-300 group rtl:text-right snap-start shrink-0 w-[85vw] md:w-auto">
-                {/* Stars */}
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-[#D4A96A] text-[#D4A96A]" />
-                  ))}
+                {/* Header: Stars & Stay Badge */}
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-[#D4A96A] text-[#D4A96A]" />
+                    ))}
+                  </div>
+                  <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white text-[#2D6A4F] border border-[#2D6A4F]/15 shadow-2xs">
+                    {isRtl ? t.stayAr : t.stayEn}
+                  </span>
                 </div>
 
                 {/* Quote */}
@@ -695,12 +721,22 @@ export default async function HomePage({ params }: Props) {
                   </p>
                 </div>
 
+                {/* Hospital Badge Tag */}
+                <div className="pt-2">
+                  <span className="text-[11px] text-[#4A5C52] bg-white/80 border border-[#D4A96A]/20 px-2.5 py-1 rounded-md inline-block">
+                    🏥 {isRtl ? t.hospitalAr : t.hospitalEn}
+                  </span>
+                </div>
+
                 {/* Footer */}
                 <div className="mt-auto pt-4 border-t border-[#E8EDE6] flex items-center justify-between gap-3">
                   <div>
-                    <p className="font-semibold text-[#1B4332] text-sm">
-                      {t.flagEmoji} {isRtl ? t.nameAr : t.nameEn}
-                    </p>
+                    <div className="flex items-center gap-1.5">
+                      <p className="font-semibold text-[#1B4332] text-sm">
+                        {t.flagEmoji} {isRtl ? t.nameAr : t.nameEn}
+                      </p>
+                      <ShieldCheck className="h-3.5 w-3.5 text-[#2D6A4F]" />
+                    </div>
                     <p className="text-[11px] text-text-muted/70 mt-0.5">{isRtl ? t.countryAr : t.countryEn}</p>
                     <p className="text-[11px] font-medium text-[#2D6A4F] mt-0.5">{isRtl ? t.treatmentAr : t.treatmentEn}</p>
                   </div>

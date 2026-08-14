@@ -297,21 +297,21 @@ export default function GetEstimatePage() {
 
         {/* Page Header */}
         <div className="text-center mb-10 space-y-4">
-          <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200/60 rounded-full px-4 py-1.5 mb-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-[11px] font-bold uppercase tracking-widest text-emerald-700 font-sans">
-              {isRtl ? 'تقدير تكلفة مخصص وشفاف' : 'Personalised & Transparent Cost Estimate'}
+          <div className="inline-flex items-center gap-2 bg-[#FAF7F2] border border-[#D4A96A]/30 rounded-full px-4 py-1.5 mb-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2D6A4F] animate-pulse" />
+            <span className="text-[11px] font-medium uppercase tracking-widest text-[#2D6A4F] font-sans">
+              {isRtl ? 'تقدير تكلفة مخصص وشفاف • بدون أي التزام' : 'Personalised & Transparent Cost Estimate • 100% Free'}
             </span>
           </div>
           
-          <h1 className="font-sans font-bold tracking-tight leading-tight text-4xl sm:text-5xl text-[#1B4332]">
+          <h1 className="font-display font-medium tracking-[-0.02em] leading-tight text-4xl sm:text-5xl text-[#1B4332]">
             {isRtl ? 'احصل على تقدير فوري لرحلتك العلاجية' : 'Get Your Free Medical Journey Quote'}
           </h1>
           
-          <p className="text-slate-500 max-w-xl mx-auto text-base leading-relaxed font-sans font-light">
+          <p className="text-text-muted max-w-xl mx-auto text-base leading-relaxed font-light mt-3">
             {isRtl
-              ? 'أخبرنا بنوع العلاج الذي تبحث عنه، وسنحسب لك تقديراً أولياً شاملاً. يستغرق ملء النموذج دقيقة واحدة فقط.'
-              : 'Tell us about your treatment needs and instantly get a preliminary cost breakdown. Takes less than a minute.'}
+              ? 'أخبرنا بنوع العلاج الذي تبحث عنه، وسنحسب لك تقديراً أولياً شاملاً. يستغرق ملء النموذج دقيقة واحدة فقط وبدون أي التزام مالي.'
+              : 'Tell us about your treatment needs and instantly get a preliminary cost breakdown. Takes less than a minute with zero financial commitment.'}
           </p>
         </div>
 
@@ -327,9 +327,9 @@ export default function GetEstimatePage() {
                   <div className="flex flex-col items-center gap-2 flex-1">
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
                       done
-                        ? 'bg-[#1B4332] text-white shadow-lg shadow-emerald-200'
+                        ? 'bg-[#1B4332] text-white shadow-md shadow-emerald-200'
                         : cur
-                        ? 'bg-white border-2 border-[#2D6A4F] text-[#2D6A4F] shadow-md shadow-emerald-100'
+                        ? 'bg-white border-2 border-[#2D6A4F] text-[#2D6A4F] shadow-sm shadow-emerald-100'
                         : 'bg-white border-2 border-slate-200 text-slate-300'
                     }`}>
                       {done ? <CheckCircle className="h-5 w-5" /> : <Icon className="h-5 w-5" />}
@@ -341,7 +341,7 @@ export default function GetEstimatePage() {
                     </span>
                   </div>
                   {idx < STEPS.length - 1 && (
-                    <div className={`h-0.5 flex-1 mb-5 transition-all duration-500 ${done ? 'bg-[#1B4332]' : 'bg-slate-200'}`} />
+                    <div className={`h-0.5 flex-1 mb-5 transition-all duration-500 ${done ? 'bg-gradient-to-r from-[#D4A96A] to-[#2D6A4F]' : 'bg-slate-200'}`} />
                   )}
                 </React.Fragment>
               );
@@ -362,11 +362,12 @@ export default function GetEstimatePage() {
                   <Stethoscope className="h-7 w-7" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-[#1B4332] font-sans">
+                  <h2 className="text-2xl font-display font-medium text-[#1B4332]">
                     {isRtl ? 'حالتك الطبية وتفضيلاتك' : 'Medical Needs & Preferences'}
                   </h2>
-                  <p className="text-sm text-slate-400 mt-0.5 font-sans font-light">
-                    {isRtl ? 'حدد التخصص الطبي وتفاصيل إقامتك لبدء حساب التكاليف التقديرية' : 'Select your speciality and preferences to begin your instant estimate'}
+                  <p className="text-sm text-text-muted mt-1 font-light flex items-center gap-2">
+                    <span>{isRtl ? 'حدد التخصص وتفاصيل الإقامة لبدء حساب التكاليف' : 'Select your speciality and preferences to begin your instant estimate'}</span>
+                    <span className="text-[11px] px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-medium">🔒 {isRtl ? 'بيانات سرية 100%' : '100% Confidential'}</span>
                   </p>
                 </div>
               </div>
@@ -569,11 +570,11 @@ export default function GetEstimatePage() {
                   <User className="h-7 w-7" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-[#1B4332] font-sans">
+                  <h2 className="text-2xl font-display font-medium text-[#1B4332]">
                     {isRtl ? 'بيانات الاتصال والتقدير الأولي' : 'Contact Details & Preliminary Quote'}
                   </h2>
-                  <p className="text-sm text-slate-400 mt-0.5 font-sans font-light">
-                    {isRtl ? 'أدخل بياناتك لعرض تقدير التكلفة وتفعيل الدعم والمتابعة مباشرة' : 'Provide your contact info to view your cost estimate and activate coordinator support'}
+                  <p className="text-sm text-text-muted mt-1 font-light flex items-center gap-2">
+                    <span>{isRtl ? 'أدخل بياناتك لعرض تقدير التكلفة وتفعيل المتابعة الفورية' : 'Provide your contact info to view your cost estimate and activate personal coordinator support'}</span>
                   </p>
                 </div>
               </div>

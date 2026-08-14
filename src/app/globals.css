@@ -18,8 +18,10 @@
 
   --font-inter: var(--font-inter);
   --font-tajawal: var(--font-tajawal);
-  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sora: var(--font-display-heading);
+  --font-serif: var(--font-display-heading), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-heading), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -65,6 +67,7 @@ body {
 [dir="rtl"] {
   --font-sans:    var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
+  --font-serif:   var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
 }
 
 [dir="rtl"] body {
@@ -77,7 +80,8 @@ body {
 [dir="rtl"] h2,
 [dir="rtl"] h3,
 [dir="rtl"] h4,
-[dir="rtl"] .font-display {
+[dir="rtl"] .font-display,
+[dir="rtl"] .font-serif {
   font-family: var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
   line-height: 1.25;
 }

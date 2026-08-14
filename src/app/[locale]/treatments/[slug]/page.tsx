@@ -35,19 +35,51 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!treatment) {
     return {};
   }
-  const title = locale === 'ar' ? treatment.nameAr : treatment.name;
-  const desc = locale === 'ar' ? treatment.overviewAr : treatment.overview;
-  const description = desc.length > 155 ? desc.slice(0, 155) + '...' : desc;
+  const isAr = locale === 'ar';
+  const minCost = treatment.costTable ? `$${treatment.costTable.keralaMin.toLocaleString()}` : '$1,500';
+
+  const title = isAr
+    ? `${treatment.nameAr} في كيرلا — التكلفة تبدأ من ${minCost} | مستشفيات معتمدة JCI`
+    : `${treatment.name} in Kerala — Cost from ${minCost} | JCI Accredited Hospitals`;
+
+  const description = isAr
+    ? `احصل على ${treatment.nameAr} في أفضل مستشفيات كيرلا الحاصلة على اعتمادات JCI وNABH. وفر 60-80% مقارنة بالإمارات وأمريكا. تنسيق مجاني، مترجم عربي، واستقبال من المطار.`
+    : `World-class ${treatment.name.toLowerCase()} in Kerala at JCI & NABH accredited hospitals. Save 60–80% vs UAE, UK, or USA. Includes free medical visa assistance, airport pickup, and dedicated liaison.`;
 
   return {
-    title: `${title} | TreatInKerala Treatments`,
+    title,
     description,
+    keywords: isAr
+      ? [treatment.nameAr, 'علاج في كيرلا', 'تكلفة العلاج في الهند', 'مستشفيات كيرلا المعتمدة', 'سياحة علاجية من الإمارات', 'سياحة علاجية من عمان']
+      : [treatment.name, 'Kerala medical tourism', 'cost of surgery in India', 'JCI hospitals Kerala', 'medical travel UAE to India', 'Oman to Kerala hospital'],
     alternates: {
-      canonical: locale === 'ar' ? `/ar/treatments/${slug}` : `/en/treatments/${slug}`,
+      canonical: isAr ? `/ar/treatments/${slug}` : `/en/treatments/${slug}`,
       languages: {
         en: `/en/treatments/${slug}`,
         ar: `/ar/treatments/${slug}`,
       },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://treatinkerala.com/${locale}/treatments/${slug}`,
+      siteName: isAr ? 'علاج في كيرلا' : 'TreatInKerala',
+      locale: isAr ? 'ar_SA' : 'en_US',
+      type: 'article',
+      images: [
+        {
+          url: 'https://treatinkerala.com/images/caring_doctor_patient_hero.png',
+          width: 800,
+          height: 1000,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://treatinkerala.com/images/caring_doctor_patient_hero.png'],
     },
   };
 }

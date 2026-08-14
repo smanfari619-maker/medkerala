@@ -41,7 +41,7 @@ export default function Footer() {
                 className="h-5 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
               />
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed font-sans max-w-sm">
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-serif italic max-w-sm opacity-90">
               {t('tagline')}
             </p>
             <div className="bg-gradient-to-br from-white/5 to-transparent rounded-2xl p-5 border border-white/10 space-y-2 backdrop-blur-sm">

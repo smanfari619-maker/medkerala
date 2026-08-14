@@ -47,23 +47,29 @@ export default function MobileBottomNav() {
           {/* Home */}
           <Link
             href="/"
-            className={`flex flex-col items-center justify-center flex-1 h-full tap-active ${
-              activeLink('/') ? 'text-[#2D6A4F]' : 'text-text-muted'
+            className={`flex flex-col items-center justify-center flex-1 h-full tap-active relative ${
+              activeLink('/') ? 'text-[#2D6A4F] font-semibold' : 'text-text-muted'
             }`}
           >
             <Home className="h-5 w-5 mb-0.5" />
-            <span className="text-[10px] font-medium leading-none">{t('home')}</span>
+            <span className="text-[10px] leading-none">{t('home')}</span>
+            {activeLink('/') && (
+              <span className="w-1 h-1 rounded-full bg-[#2D6A4F] absolute bottom-1.5" />
+            )}
           </Link>
 
           {/* Treatments */}
           <Link
             href="/treatments"
-            className={`flex flex-col items-center justify-center flex-1 h-full tap-active ${
-              activeLink('/treatments') ? 'text-[#2D6A4F]' : 'text-text-muted'
+            className={`flex flex-col items-center justify-center flex-1 h-full tap-active relative ${
+              activeLink('/treatments') ? 'text-[#2D6A4F] font-semibold' : 'text-text-muted'
             }`}
           >
             <Stethoscope className="h-5 w-5 mb-0.5" />
-            <span className="text-[10px] font-medium leading-none">{t('treatments')}</span>
+            <span className="text-[10px] leading-none">{t('treatments')}</span>
+            {activeLink('/treatments') && (
+              <span className="w-1 h-1 rounded-full bg-[#2D6A4F] absolute bottom-1.5" />
+            )}
           </Link>
 
           {/* AI Live Chat CTA (Middle / Primary Action) */}
@@ -84,12 +90,15 @@ export default function MobileBottomNav() {
           {/* Get Estimate */}
           <Link
             href="/get-estimate"
-            className={`flex flex-col items-center justify-center flex-1 h-full tap-active ${
-              activeLink('/get-estimate') ? 'text-[#2D6A4F]' : 'text-text-muted'
+            className={`flex flex-col items-center justify-center flex-1 h-full tap-active relative ${
+              activeLink('/get-estimate') ? 'text-[#2D6A4F] font-semibold' : 'text-text-muted'
             }`}
           >
             <FileText className="h-5 w-5 mb-0.5" />
-            <span className="text-[10px] font-medium leading-none">{isRtl ? 'تسعيرة' : 'Estimate'}</span>
+            <span className="text-[10px] leading-none">{isRtl ? 'تسعيرة' : 'Estimate'}</span>
+            {activeLink('/get-estimate') && (
+              <span className="w-1 h-1 rounded-full bg-[#2D6A4F] absolute bottom-1.5" />
+            )}
           </Link>
 
           {/* More menu trigger */}

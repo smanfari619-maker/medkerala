@@ -5,7 +5,7 @@ import { getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { Inter, Tajawal } from 'next/font/google';
+import { Inter, Tajawal, Sora } from 'next/font/google';
 import dynamic from 'next/dynamic';
 import '../globals.css';
 
@@ -19,6 +19,13 @@ const inter = Inter({
   display: 'swap',
   variable: '--font-inter',
   weight: ['300', '400', '500', '600', '700'],
+});
+
+const sora = Sora({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-display-heading',
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
 const tajawal = Tajawal({
@@ -108,9 +115,10 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html
       lang={locale}
       dir={isRtl ? 'rtl' : 'ltr'}
-      className={`${inter.variable} ${tajawal.variable} scroll-smooth`}
+      className={`${inter.variable} ${tajawal.variable} ${sora.variable} scroll-smooth`}
     >
       <head>
+        <meta name="impact-site-verification" value="d28f0a67-f14f-4afc-9573-31765d537d5f" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }}

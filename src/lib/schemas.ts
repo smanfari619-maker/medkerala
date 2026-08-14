@@ -105,18 +105,37 @@ export function getBreadcrumbSchema(paths: { name: string; url: string }[]) {
   };
 }
 
-export function getMedicalProcedureSchema(locale: string, treatment: { name: string; nameAr: string; overview: string; overviewAr: string; slug: string; speciality: string; specialityAr: string }) {
+export function getMedicalProcedureSchema(locale: string, treatment: {
+  name: string;
+  nameAr: string;
+  overview: string;
+  overviewAr: string;
+  slug: string;
+  speciality: string;
+  specialityAr: string;
+  costTable?: {
+    keralaMin: number;
+    keralaMax: number;
+    uk: number;
+    usa: number;
+    uae: number;
+  };
+}) {
   const isAr = locale === 'ar';
+  const minCost = treatment.costTable ? treatment.costTable.keralaMin : 1500;
+  const maxCost = treatment.costTable ? treatment.costTable.keralaMax : 8000;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'MedicalProcedure',
     'name': isAr ? treatment.nameAr : treatment.name,
     'description': isAr ? treatment.overviewAr : treatment.overview,
+    'url': `https://treatinkerala.com/${locale}/treatments/${treatment.slug}`,
     'procedureType': {
       '@type': 'MedicalProcedureType',
-      'name': 'Surgical'
+      'name': 'TherapeuticProcedure'
     },
-    'category': 'Treatment',
+    'category': 'MedicalTourismProcedure',
     'status': {
       '@type': 'MedicalStatus',
       'name': 'Active'
@@ -124,6 +143,79 @@ export function getMedicalProcedureSchema(locale: string, treatment: { name: str
     'relevantSpecialty': {
       '@type': 'MedicalSpecialty',
       'name': isAr ? treatment.specialityAr : treatment.speciality
+    },
+    'offers': {
+      '@type': 'AggregateOffer',
+      'priceCurrency': 'USD',
+      'lowPrice': minCost,
+      'highPrice': maxCost,
+      'offerCount': '1',
+      'priceValidUntil': '2027-12-31',
+      'description': isAr 
+        ? `تكلفة شاملة للرعاية الطبية في كيرلا تشمل الاستقبال من المطار والتنسيق الطبي، وتوفير 60-80% مقارنة بالإمارات وأمريكا.`
+        : `All-inclusive medical coordination and procedure in Kerala with 60–80% savings vs UAE, UK, or USA. Includes airport pickup and dedicated liaison.`
+    },
+    'provider': {
+      '@type': 'MedicalOrganization',
+      'name': isAr ? 'مستشفيات كيرلا المعتمدة JCI و NABH' : 'JCI & NABH Accredited Partner Hospitals in Kerala',
+      'url': 'https://treatinkerala.com'
+    },
+    'audience': {
+      '@type': 'Audience',
+      'geographicArea': [
+        { '@type': 'Country', 'name': 'United Arab Emirates' },
+        { '@type': 'Country', 'name': 'Saudi Arabia' },
+        { '@type': 'Country', 'name': 'Oman' },
+        { '@type': 'Country', 'name': 'Qatar' },
+        { '@type': 'Country', 'name': 'Kuwait' },
+        { '@type': 'Country', 'name': 'Nigeria' },
+        { '@type': 'Country', 'name': 'United Kingdom' }
+      ]
+    },
+    'speakable': {
+      '@type': 'SpeakableSpecification',
+      'cssSelector': ['h1', '.treatment-overview', '.cost-summary']
+    }
+  };
+}
+
+export function getMedicalWebPageSchema(locale: string, pageData: {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished?: string;
+  dateModified?: string;
+}) {
+  const isAr = locale === 'ar';
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    'name': pageData.title,
+    'description': pageData.description,
+    'url': `https://treatinkerala.com/${locale}/${pageData.slug}`,
+    'inLanguage': isAr ? 'ar' : 'en',
+    'datePublished': pageData.datePublished || '2026-01-15',
+    'dateModified': pageData.dateModified || '2026-07-20',
+    'lastReviewed': '2026-07-15',
+    'author': {
+      '@type': 'Person',
+      'name': 'Muhsina TP',
+      'jobTitle': isAr ? 'كبير المنسقين الطبيين' : 'Chief Medical Coordinator',
+      'worksFor': {
+        '@type': 'MedicalOrganization',
+        'name': 'TreatInKerala'
+      }
+    },
+    'reviewedBy': {
+      '@type': 'Person',
+      'name': 'Dr. M. Nair (Senior Medical Consultant)',
+      'jobTitle': 'Senior Consultant & Clinical Advisor'
+    },
+    'publisher': {
+      '@type': 'MedicalOrganization',
+      'name': 'TreatInKerala',
+      'url': 'https://treatinkerala.com',
+      'logo': 'https://treatinkerala.com/images/logo.svg'
     }
   };
 }
