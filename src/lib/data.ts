@@ -1364,6 +1364,195 @@ For medical travelers originating from Oman, UAE, Saudi Arabia, Kuwait, and Qata
 - اختر **تايلاند** للفحوصات الطبية الشاملة السريعة أو الإجراءات التجميلية وتجميل الأسنان.
 - اختر **كيرلا** للجراحات الطبية الدقيقة (القلب، العظام، الأورام، الأعصاب)، ولتحقيق أعلى نسبة توفير مع الحفاظ على أعلى معايير الجودة JCI، وللحصول على فترة نقاهة وتأهيل أيورفيدي أصيل.`,
     image: '/images/kerala_hero_bg.png'
+  },
+  {
+    slug: 'post-surgery-recovery-supplements-guide',
+    title: 'Best Post-Surgery Recovery Supplements: What Clinical Data Supports in 2026',
+    titleAr: 'أفضل مكملات التعافي بعد العمليات الجراحية: دليل سريري مبني على الأدلة لعام 2026',
+    excerpt: 'A clinical guide to the most effective nutritional supplements for wound healing, joint repair, cardiac recovery, and inflammation control after surgery.',
+    excerptAr: 'دليل سريري لأكثر المكملات الغذائية فعالية لسرعة التئام الجروح، وترميم المفاصل، وتعافي عضلة القلب ومكافحة الالتهابات بعد الجراحة.',
+    aeoSummary: 'Key evidence-based supplements for post-surgical recovery in 2026 include: (1) Hydrolyzed Collagen Peptides & Vitamin C for rapid wound and tendon tensile strength; (2) CoQ10 (Ubiquinol) 200mg for cellular ATP energy following cardiac procedures; (3) Glucosamine, Chondroitin & MSM for joint arthroplasty rehabilitation; (4) Magnesium Glycinate for smooth muscle relaxation and sleep; and (5) Multi-strain Probiotics to rebuild the gut microbiome after prophylactic hospital antibiotics.',
+    aeoSummaryAr: 'أهم المكملات المبنية على الأدلة للتعافي بعد الجراحة في 2026 تشمل: (1) ببتيدات الكولاجين المتحللة وفيتامين سي لسرعة التئام الأنسجة؛ (2) مساعد الإنزيم كيو-10 (CoQ10) لإنتاج طاقة خلايا القلب؛ (3) الجلوكوزامين والكوندرويتين لترميم المفاصل بعد استبدال الركبة؛ (4) مغنيسيوم جلايسينات لاسترخاء العضلات؛ و(5) البروبيوتيك لإعادة توازن بكتيريا الأمعاء بعد المضادات الحيوية.',
+    date: 'July 22, 2026',
+    category: 'Recovery & Supplements',
+    categoryAr: 'التعافي والمكملات',
+    readTime: '7 min read',
+    content: `Undergoing surgery — whether an orthopedic knee replacement, coronary artery bypass grafting (CABG), or laparoscopic intervention — places substantial metabolic stress on the body. While surgical precision and clinical nursing in Kerala provide the foundation, nutritional supplementation accelerates tissue regeneration, reduces systemic inflammation, and shortens convalescence.
+
+Here is an evidence-based overview of the most valuable clinical recovery supplements recommended by physicians in 2026.
+
+## 1. Hydrolyzed Collagen Peptides + Vitamin C (Wound & Ligament Healing)
+
+During surgical wound healing, your body rapidly depletes amino acids like proline, glycine, and hydroxyproline to synthesize new extracellular collagen.
+
+- **Why It Matters:** Hydrolyzed Type I and Type III collagen peptides are broken into micro-peptides that are absorbed within 60 minutes. When paired with 1000mg of Vitamin C (a critical enzymatic cofactor), collagen synthesis in surgical incisions and tendon repairs increases significantly.
+- **Recommended Dosing:** 10g to 20g daily in morning smoothies or water.
+- **Top Curated Brands:** *Sports Research Hydrolyzed Collagen*, *Vital Proteins*.
+
+## 2. CoQ10 (Ubiquinol) 200mg (Cardiac & Cellular Vitality)
+
+For cardiac surgery, valve replacement, or vascular intervention patients, mitochondrial recovery is paramount.
+
+- **Why It Matters:** Coenzyme Q10 in active Ubiquinol form fuels mitochondrial ATP production in myocardial tissue. It also counteracts statin-induced muscle fatigue and oxidative stress following bypass surgery.
+- **Recommended Dosing:** 100mg to 200mg daily with a fat-containing meal.
+- **Top Curated Brands:** *California Gold Nutrition CoQ10*, *Doctor's Best High Absorption CoQ10 with BioPerine*.
+
+## 3. Glucosamine, Chondroitin & MSM (Joint Arthroplasty Recovery)
+
+For patients who underwent total knee or hip replacement in Kerala, rehabilitation requires joint lubrication and cartilage stabilization around the prosthetic implant.
+
+- **Why It Matters:** Glucosamine sulfate stimulates proteoglycan production, while MSM (Methylsulfonylmethane) supplies organic sulfur to calm postoperative peri-articular inflammation.
+- **Top Curated Brands:** *Doctor's Best Glucosamine Chondroitin MSM*, *Solgar Extra Strength Glucosamine*.
+
+## 4. Magnesium Glycinate (Muscle Relaxation & Deep Sleep)
+
+Postoperative discomfort, stiffness, and travel fatigue frequently disrupt sleep architecture, which is when the majority of human growth hormone (HGH) is secreted for tissue repair.
+
+- **Why It Matters:** Unlike magnesium oxide which causes digestive upset, chelated Magnesium Glycinate is gentle on the stomach and crosses neural pathways to soothe muscle spasms and promote restorative REM sleep.
+- **Recommended Dosing:** 200mg to 400mg approximately 45 minutes before bedtime.
+
+## 5. Multi-Strain Probiotics (Post-Antibiotic Gut Restoration)
+
+Virtually all major surgeries require prophylactic intravenous antibiotics to eliminate infection risks. However, broad-spectrum antibiotics deplete healthy gut microbiome diversity.
+
+- **Why It Matters:** A 50 Billion CFU shelf-stable probiotic featuring diverse *Lactobacillus* and *Bifidobacterium* strains prevents post-hospital dysbiosis, supports immune response, and improves nutrient absorption.
+- **Top Curated Brands:** *California Gold Nutrition LactoBif 50*, *Garden of Life RAW Probiotics*.
+
+---
+
+### Patient Partner Savings
+*TreatInKerala has partnered with iHerb to provide international patients with direct access to certified authentic brands with global express delivery to the UAE, Saudi Arabia, Oman, Kuwait, and the UK. Use code **QAO6090** at checkout for **5% to 10% off** your recovery order.*`,
+    contentAr: `إن الخضوع لعملية جراحية — سواء كانت استبدال مفصل الركبة، أو مجازة الشريان التاجي (القلب المفتوح)، أو التدخلات بالمنظار — يضع الجسم تحت ضغط تمثيلي وغذائي كبير. وبينما تمثل الدقة الجراحية في مستشفيات كيرلا حجر الأساس، فإن المكملات الغذائية الدقيقة تسرع إعادة بناء الأنسجة، وتقلل الالتهاب، وتقصر مدة فترة النقاهة بشكل ملحوظ.
+
+يقدم هذا الدليل مراجعة سريرية لأهم المكملات الغذائية الموصى بها طبياً لعام 2026.
+
+## 1. ببتيدات الكولاجين المتحللة مع فيتامين سي (لالتئام الجروح والأربطة)
+
+أثناء التئام الشقوق الجراحية، يستهلك الجسم كميات هائلة من الأحماض الأمينية لبناء نسيج كولاجيني جديد.
+
+- **الأهمية السريرية:** ببتيدات الكولاجين من النوعين الأول والثالث يتم امتصاصها سريعاً في غضون 60 دقيقة. وعند دمجها مع 1000 ملغ من فيتامين سي، يتضاعف تصنيع الكولاجين في الجروح والأنسجة الضامة.
+- **الجرعة المعتادة:** 10 إلى 20 غراماً يومياً مع الماء أو العصير.
+
+## 2. مساعد الإنزيم كيو-10 (CoQ10 Ubiquinol) 200 ملغ (لصحة القلب)
+
+بالنسبة لمرضى جراحة القلب وتغيير الصمامات والقسطرة، فإن تعافي الميتوكوندريا الخلوية أمر أساسي.
+
+- **الأهمية السريرية:** يعزز CoQ10 إنتاج الطاقة الخلوية (ATP) في عضلة القلب ويقلل الإجهاد التأكسدي بعد الجراحة.
+
+## 3. الجلوكوزامين والكوندرويتين مع MSM (لعمليات استبدال المفاصل)
+
+لمرضى استبدال الركبة أو الورك، يتطلب التأهيل الطبي تزييت المفاصل وتثبيت العظام المحيطة بالغرسة.
+
+- **الأهمية السريرية:** يحفز الجلوكوزامين إنتاج السائل الزليلي، بينما يمد MSM الأنسجة بالكبريت العضوي لتهدئة التورم والالتهاب حول المفصل.
+
+## 4. مغنيسيوم جلايسينات (لاسترخاء العضلات والنوم العميق)
+
+يساعد المغنيسيوم المخلب في تخفيف تشنجات العضلات بعد الجراحة وتعزيز النوم العميق الذي يتم خلاله إفراز هرمونات النمو وترميم الأنسجة الطبيعية.
+
+## 5. البروبيوتيك 50 مليار مستعمرة (لاستعادة توازن الأمعاء بعد المضادات الحيوية)
+
+تتطلب معظم العمليات مضادات حيوية وقائية أثناء الإقامة في المستشفى. يساعد البروبيوتيك المتعدد السلالات في إعادة بناء البكتيريا النافعة، ومنع الاضطرابات الهضمية، وتقوية المناعة.
+
+---
+
+### خصم حصري للمرضى
+*توفر علاج في كيرلا للمرضى إمكانية طلب هذه المكملات الموثوقة عبر iHerb مع شحن سريع إلى الإمارات والسعودية وعمان والكويت وبريطانيا. استخدم الرمز **QAO6090** عند الدفع للحصول على **خصم 5% إلى 10%** على طلبك.*`,
+    image: '/images/allopathy_treatment_hero.png'
+  },
+  {
+    slug: 'top-kerala-ayurvedic-herbs-supplements-guide',
+    title: 'Top 5 Authentic Kerala Ayurvedic Herbs to Take Home for Stress, Joints & Vitality',
+    titleAr: 'أهم 5 أعشاب أيورفيدية أصيلة من كيرلا لدعم المفاصل، تخفيف التوتر وتجديد النشاط',
+    excerpt: 'The complete buyer guide to certified Ayurvedic herbal extracts: KSM-66 Ashwagandha, Triphala, Standardized Curcumin, Brahmi, and Shallaki.',
+    excerptAr: 'دليل المشتري الشامل لأشهر المستخلصات العشبية الأيورفيدية المعتمدة: الأشواغاندا، التريفالا، الكركمين عالي النقاء، والبراهمي.',
+    aeoSummary: 'The top 5 authentic Kerala Ayurvedic herbs in 2026 are: (1) KSM-66 Organic Ashwagandha for cortisol reduction and energy; (2) Organic Triphala for natural colon detoxification; (3) 95% Standardized Curcumin with BioPerine for joint inflammation; (4) Brahmi (Bacopa Monnieri) for cognitive function and memory; and (5) Boswellia (Shallaki) for osteoarthritis pain relief.',
+    aeoSummaryAr: 'أفضل 5 أعشاب أيورفيدية كيرلية لعام 2026: (1) الأشواغاندا العضوية KSM-66 لخفض التوتر وتجديد الحيوية؛ (2) التريفالا العضوية لتنقية القولون؛ (3) الكركمين المركز بنسبة 95% لالتهابات المفاصل؛ (4) البراهمي لصحة الدماغ والذاكرة؛ و(5) اللبان الهندي (الشلاكي) لآلام خشونة المفاصل.',
+    date: 'July 24, 2026',
+    category: 'Ayurveda Wellness',
+    categoryAr: 'عافية الأيورفيدا',
+    readTime: '6 min read',
+    content: `Kerala is universally recognized as the cradle of authentic Ayurveda. Every year, thousands of international wellness travelers complete Panchakarma detoxification retreats at centers in Kottakkal, Kozhikode, and Wayanad.
+
+However, once you complete your Kerala retreat, continuing your herbal regimen at home is essential for sustaining long-term vitality. Here are the five highest-potency Ayurvedic herbal extracts with international quality testing you can order directly to your doorstep.
+
+## 1. Organic KSM-66® Ashwagandha (Withania Somnifera)
+
+Ashwagandha is the premier *Rasayana* (rejuvenator) of Ayurvedic pharmacology.
+
+- **What It Does:** KSM-66 is the highest-concentration full-spectrum root extract available today. Clinical trials prove it significantly reduces serum cortisol levels, alleviates anxiety, improves sleep quality, and enhances physical stamina.
+- **Best For:** Chronic stress, adrenal fatigue, hormonal balance, and post-travel burnout.
+- **Top Curated Brands:** *Organic India Ashwagandha*, *Doctor's Best KSM-66 Ashwagandha*.
+
+## 2. Certified Organic Triphala (The Three Sacred Fruits)
+
+Formulated with Amalaki (*Emblica officinalis*), Bibhitaki (*Terminalia bellirica*), and Haritaki (*Terminalia chebula*), Triphala is the foundation of Ayurvedic digestive cleansing.
+
+- **What It Does:** Gently tones the intestinal tract, improves bowel regularity without causing dependency, and provides high concentrations of natural Vitamin C and bioflavonoids.
+- **Best For:** Digestive sluggishness, gentle daily detox, and microbiome balance.
+- **Top Curated Brands:** *Organic India Triphala*, *Planetary Herbals Triphala*.
+
+## 3. Curcumin 95% Curcuminoids with BioPerine® (Turmeric Extract)
+
+While traditional golden milk is popular, clinical joint healing requires concentrated curcumin standardized to 95% active curcuminoids.
+
+- **What It Does:** Strongly inhibits inflammatory prostaglandins and NF-kB pathways. Adding piperine (BioPerine black pepper extract) enhances bioavailability by up to 2000%.
+- **Best For:** Joint stiffness, osteoarthritis, sports recovery, and systemic inflammation.
+- **Top Curated Brands:** *Doctor's Best Curcumin with BioPerine*, *Solgar Full Spectrum Curcumin*.
+
+## 4. Bacopa Monnieri (Brahmi — The Mind Herb)
+
+In traditional Kerala texts, Brahmi is revered as a *Medhya Rasayana* — an herb that sharpens intellect and mental clarity.
+
+- **What It Does:** Supports synaptic transmission and stimulates neural repair. Widely used to counter brain fog, boost memory retention, and protect neurological tissue.
+- **Best For:** Focus, cognitive longevity, student/executive performance, and post-stroke mental rehabilitation.
+
+## 5. Boswellia Serrata (Shallaki / Indian Frankincense)
+
+Harvested in dry deciduous forests across the Indian subcontinent, Shallaki resin contains potent boswellic acids (AKBA).
+
+- **What It Does:** Clinically demonstrated to reduce joint swelling and preserve cartilage thickness in patients with knee osteoarthritis.
+- **Best For:** Morning stiffness, knee and spinal joint comfort.
+
+---
+
+### Where to Buy Certified Authentic Herbs
+*Ensure your Ayurvedic herbs are third-party tested for heavy metals and purity. TreatInKerala patients receive **5% to 10% off** authentic Ayurvedic brands on iHerb using partner code **QAO6090** with fast shipping to the GCC and worldwide.*`,
+    contentAr: `تعتبر كيرلا الموطن التاريخي الأول لطب الأيورفيدا الأصيل. كل عام، يكمل آلاف الزوار الدوليين برامج تنقية الجسم (البانشاكارما) في مراكز كوتاكال وكوزيكود وواياناد.
+
+ولكن بعد انتهاء فترة إقامتك في كيرلا، فإن مواصلة البرنامج العشبي في منزلك أمر ضروري للحفاظ على نتائج الشفاء والنشاط الدائم. فيما يلي أهم 5 مستخلصات عشبية أيورفيدية موثقة سريرياً يمكن طلبها مع شحن دولي مباشر لمنزلك.
+
+## 1. الأشواغاندا العضوية KSM-66 (ملك الأعشاب الأيورفيدية)
+
+تعتبر الأشواغاندا العشبة التكيفية الأولى لتجديد الحيوية والشباب (*راسايانا*).
+
+- **الفوائد المثبتة:** مستخلص KSM-66 هو الأعلى تركيزاً عالمياً، حيث أثبتت الدراسات قدرته على خفض هرمون التوتر (الكورتيزول)، وتحسين جودة النوم، وتعزيز طاقة الجسم.
+- **مثالية لـ:** الإرهاق المزمن، التوتر وضغوط العمل، وتوازن الهرمونات.
+
+## 2. التريفالا العضوية المعتمدة (الفواكه الثلاث المقدسة)
+
+تتكون من فواكه الأملج والبهيبتاكي والهاريتاكي لتطهير وتنظيم حركة الأمعاء بلطف.
+
+- **الفوائد:** تنقي القولون من السموم، وتحسن الهضم وامتصاص الغذاء دون التسبب في أي تعود أو مغص.
+
+## 3. الكركمين المركز 95% مع البيوبيرين (مستخلص الكركم الذهبي)
+
+للحصول على التأثير العلاجي للمفاصل، يجب استخدام مستخلص الكركمين النقي المعزز بمستخلص الفلفل الأسود لرفع الامتصاص بنسبة تصل إلى 2000%.
+
+- **مثالي لـ:** تخفيف آلام المفاصل والتهابات الركبة والفقرات والتعافي الرياضي.
+
+## 4. البراهمي (عشبة صفاء الذهن والذاكرة)
+
+تُعرف عشبة البراهمي في كتب الأيورفيدا التقليدية بقدرتها الفائقة على تعزيز الروابط العصبية والتركيز ومقاومة الإجهاد الذهني.
+
+## 5. اللبان الهندي الشلاكي (Boswellia Serrata)
+
+مستخلص صمغ اللبان الهندي الغني بأحماض البوزويلك الفعالة في حماية غضاريف الركبة والفقرات من التآكل.
+
+---
+
+### طلب الأعشاب الأصلية المعتمدة
+*احرص دائماً على اختيار مكملات خالية من المعادن الثقيلة ومختبرة معملياً. يستفيد مرضى وزوار علاج في كيرلا من **خصم 5% إلى 10%** على ماركات الأيورفيدا المعتمدة على iHerb باستخدام الرمز **QAO6090** مع شحن سريع إلى دول الخليج وكافة أنحاء العالم.*`,
+    image: '/images/ayurveda_treatment_hero.png'
   }
 ];
 
