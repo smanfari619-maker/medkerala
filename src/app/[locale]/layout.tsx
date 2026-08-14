@@ -65,6 +65,9 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>) {
         ar: '/ar',
       },
     },
+    other: {
+      'impact-site-verification': 'd28f0a67-f14f-4afc-9573-31765d537d5f',
+    },
     openGraph: {
       title,
       description,
@@ -118,7 +121,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       className={`${inter.variable} ${tajawal.variable} ${sora.variable} scroll-smooth`}
     >
       <head>
-        <meta name="impact-site-verification" value="d28f0a67-f14f-4afc-9573-31765d537d5f" />
+        <meta name="impact-site-verification" content="d28f0a67-f14f-4afc-9573-31765d537d5f" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }}
