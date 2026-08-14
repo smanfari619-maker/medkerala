@@ -16,6 +16,8 @@ import {
   Shield,
   Sparkles,
 } from 'lucide-react';
+import RecoveryEssentialsSection from '@/components/treatments/RecoveryEssentialsSection';
+import { getRecoveryProductsForTreatment } from '@/lib/recoveryProducts';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -98,8 +100,10 @@ export default async function AyurvedaPage({ params }: Props) {
   const { locale } = await params;
   const isRtl = locale === 'ar';
 
+  const ayurvedaProducts = getRecoveryProductsForTreatment('ayurveda');
+
   return (
-    <div className="flex flex-col w-full overflow-x-hidden pt-24 bg-[#FAF7F2]">
+    <div className="flex flex-col w-full overflow-x-hidden bg-[#FAF7F2] text-[#1A1A2E] pt-32 lg:pt-40">
 
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 relative overflow-hidden">
@@ -315,7 +319,13 @@ export default async function AyurvedaPage({ params }: Props) {
         </div>
       </section>
 
-
+      {/* ── AUTHENTIC AYURVEDIC ESSENTIALS (iHerb Rewards Referral) ── */}
+      <RecoveryEssentialsSection
+        locale={locale}
+        treatmentName={isRtl ? 'علاجات الأيورفيدا والبانشاكارما' : 'Ayurveda & Panchakarma'}
+        treatmentSlug="ayurveda"
+        products={ayurvedaProducts}
+      />
 
       {/* ── CTA BAND ─────────────────────────────────────────── */}
       <section className="bg-[#1B4332] border-t border-[#D4A96A]/20 py-16 lg:py-24">

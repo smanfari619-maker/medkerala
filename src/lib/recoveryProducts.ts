@@ -13,6 +13,7 @@ export interface RecoveryProduct {
   reviewCount: number;
   estimatedPrice: string;
   searchQuery: string;
+  imageUrl: string;
   badge?: string;
   badgeAr?: string;
   treatmentSlugs: string[];
@@ -33,6 +34,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 14200,
     estimatedPrice: '$22 – $34',
     searchQuery: 'CoQ10 200mg',
+    imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80',
     badge: 'Cardiologist Recommended',
     badgeAr: 'موصى به لمرضى القلب',
     treatmentSlugs: ['cardiac']
@@ -50,6 +52,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 38500,
     estimatedPrice: '$24 – $38',
     searchQuery: 'Triple Strength Omega 3 Fish Oil',
+    imageUrl: 'https://images.unsplash.com/photo-1550572017-edd951aa8f72?w=600&auto=format&fit=crop&q=80',
     badge: 'Best Seller',
     badgeAr: 'الأكثر مبيعاً',
     treatmentSlugs: ['cardiac', 'neurosurgery', 'ophthalmology']
@@ -67,6 +70,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 22100,
     estimatedPrice: '$16 – $26',
     searchQuery: 'High Absorption Magnesium Glycinate',
+    imageUrl: 'https://images.unsplash.com/photo-1577401239170-897942555fb3?w=600&auto=format&fit=crop&q=80',
     treatmentSlugs: ['cardiac', 'ayurveda', 'orthopaedics']
   },
 
@@ -84,6 +88,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 19800,
     estimatedPrice: '$28 – $45',
     searchQuery: 'Glucosamine Chondroitin MSM Joint Support',
+    imageUrl: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=600&auto=format&fit=crop&q=80',
     badge: 'Orthopaedic Choice',
     badgeAr: 'خيار أطباء العظام',
     treatmentSlugs: ['orthopaedics']
@@ -101,6 +106,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 31200,
     estimatedPrice: '$32 – $48',
     searchQuery: 'Collagen Peptides Hydrolyzed',
+    imageUrl: 'https://images.unsplash.com/photo-1556760544-74068565f05c?w=600&auto=format&fit=crop&q=80',
     badge: 'Rapid Healing',
     badgeAr: 'التئام سريع',
     treatmentSlugs: ['orthopaedics', 'dental']
@@ -118,6 +124,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 16400,
     estimatedPrice: '$18 – $29',
     searchQuery: 'Calcium D3 K2 Bone Complex',
+    imageUrl: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=600&auto=format&fit=crop&q=80',
     treatmentSlugs: ['orthopaedics', 'dental']
   },
 
@@ -135,6 +142,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 26700,
     estimatedPrice: '$18 – $28',
     searchQuery: 'Organic KSM-66 Ashwagandha',
+    imageUrl: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600&auto=format&fit=crop&q=80',
     badge: 'Ayurvedic Classic',
     badgeAr: 'أيورفيدا كلاسيكي',
     treatmentSlugs: ['ayurveda', 'fertility']
@@ -152,6 +160,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 11900,
     estimatedPrice: '$14 – $22',
     searchQuery: 'Organic Triphala Capsules',
+    imageUrl: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&auto=format&fit=crop&q=80',
     treatmentSlugs: ['ayurveda', 'gastroenterology']
   },
   {
@@ -167,6 +176,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 28400,
     estimatedPrice: '$20 – $34',
     searchQuery: 'Curcumin with BioPerine',
+    imageUrl: 'https://images.unsplash.com/photo-1615485290196-857501a3556d?w=600&auto=format&fit=crop&q=80',
     treatmentSlugs: ['ayurveda', 'orthopaedics', 'oncology']
   },
 
@@ -184,6 +194,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 18700,
     estimatedPrice: '$26 – $42',
     searchQuery: 'Prenatal Multivitamin Methylfolate DHA',
+    imageUrl: 'https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=600&auto=format&fit=crop&q=80',
     badge: 'Fertility Must-Have',
     badgeAr: 'أساسي لبرامج الخصوبة',
     treatmentSlugs: ['fertility']
@@ -201,6 +212,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 15300,
     estimatedPrice: '$24 – $36',
     searchQuery: 'Myo-Inositol D-Chiro Inositol 40:1',
+    imageUrl: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=600&auto=format&fit=crop&q=80',
     treatmentSlugs: ['fertility']
   },
 
@@ -218,6 +230,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 9400,
     estimatedPrice: '$32 – $52',
     searchQuery: 'Turkey Tail Reishi Mushroom Complex',
+    imageUrl: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&auto=format&fit=crop&q=80',
     badge: 'Immune Support',
     badgeAr: 'دعم المناعة',
     treatmentSlugs: ['oncology']
@@ -235,6 +248,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 12800,
     estimatedPrice: '$28 – $46',
     searchQuery: 'Liposomal Vitamin C Liquid or Capsules',
+    imageUrl: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=600&auto=format&fit=crop&q=80',
     treatmentSlugs: ['oncology', 'dental']
   },
 
@@ -252,6 +266,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 16900,
     estimatedPrice: '$24 – $38',
     searchQuery: 'Organic Lions Mane Mushroom Extract',
+    imageUrl: 'https://images.unsplash.com/photo-1512867697637-29509f62e8ec?w=600&auto=format&fit=crop&q=80',
     badge: 'Neuro Choice',
     badgeAr: 'خيار صحة الأعصاب',
     treatmentSlugs: ['neurosurgery']
@@ -269,6 +284,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 11400,
     estimatedPrice: '$32 – $48',
     searchQuery: 'Magnesium L-Threonate Magtein',
+    imageUrl: 'https://images.unsplash.com/photo-1577401239170-897942555fb3?w=600&auto=format&fit=crop&q=80',
     treatmentSlugs: ['neurosurgery']
   },
 
@@ -286,6 +302,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 36500,
     estimatedPrice: '$22 – $36',
     searchQuery: '50 Billion Probiotics Multi Strain',
+    imageUrl: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=600&auto=format&fit=crop&q=80',
     badge: 'Gut Health',
     badgeAr: 'صحة الجهاز الهضمي',
     treatmentSlugs: ['gastroenterology', 'ayurveda']
@@ -303,6 +320,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 8800,
     estimatedPrice: '$18 – $30',
     searchQuery: 'Zinc Carnosine PepZin GI',
+    imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80',
     treatmentSlugs: ['gastroenterology']
   },
 
@@ -320,6 +338,7 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     reviewCount: 14100,
     estimatedPrice: '$19 – $32',
     searchQuery: 'Lutein Zeaxanthin Astaxanthin Eye Health',
+    imageUrl: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&auto=format&fit=crop&q=80',
     badge: 'Vision Shield',
     badgeAr: 'حماية النظر',
     treatmentSlugs: ['ophthalmology']
@@ -329,7 +348,6 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
 export function getRecoveryProductsForTreatment(slug: string): RecoveryProduct[] {
   const matching = RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes(slug));
   if (matching.length > 0) return matching;
-  // Fallback to top general wellness items
   return RECOVERY_PRODUCTS.slice(0, 3);
 }
 

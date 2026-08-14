@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { RecoveryProduct, getProductReferralUrl } from '@/lib/recoveryProducts';
 import { SITE_CONFIG } from '@/lib/config';
 import { Sparkles, ExternalLink, Star, ShieldCheck, Check, Copy, HeartPulse, Award } from 'lucide-react';
@@ -101,35 +102,49 @@ export default function RecoveryEssentialsSection({
                 key={product.id}
                 className="bg-white rounded-2xl border border-gray-200/80 hover:border-[#D4A96A]/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden group"
               >
-                <div className="p-6 space-y-4">
-                  {/* Badge & Category */}
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-[11px] font-semibold text-[#2D6A4F] bg-[#2D6A4F]/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                {/* Product Imagery Header */}
+                <div className="relative w-full h-44 bg-slate-100 overflow-hidden border-b border-gray-100">
+                  <Image
+                    src={product.imageUrl}
+                    alt={title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+
+                  {/* Badges Over Image */}
+                  <div className="absolute top-3 inset-x-3 flex items-center justify-between gap-2 z-10">
+                    <span className="text-[11px] font-semibold text-white bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs">
                       {category}
                     </span>
                     {badge && (
-                      <span className="text-[11px] font-medium text-[#D4A96A] bg-[#D4A96A]/10 px-2.5 py-1 rounded-full flex items-center gap-1">
-                        <Sparkles className="w-3 h-3" />
+                      <span className="text-[11px] font-medium text-amber-900 bg-amber-100/95 backdrop-blur-md px-2.5 py-1 rounded-full flex items-center gap-1 shadow-xs">
+                        <Sparkles className="w-3 h-3 text-amber-600" />
                         {badge}
                       </span>
                     )}
                   </div>
+                </div>
 
-                  {/* Product Title & Brand */}
-                  <div className="space-y-1">
-                    <h3 className="font-display font-bold text-lg text-[#1A1A2E] leading-snug group-hover:text-[#2D6A4F] transition-colors">
-                      {title}
-                    </h3>
-                    <p className="text-xs text-gray-400 font-sans">{product.brand}</p>
+                <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                  <div className="space-y-3">
+                    {/* Product Title & Brand */}
+                    <div className="space-y-1">
+                      <h3 className="font-display font-bold text-base sm:text-lg text-[#1A1A2E] leading-snug group-hover:text-[#2D6A4F] transition-colors">
+                        {title}
+                      </h3>
+                      <p className="text-xs text-gray-400 font-sans">{product.brand}</p>
+                    </div>
+
+                    {/* Clinical Benefit Rationale */}
+                    <p className="text-xs text-gray-600 leading-relaxed font-sans bg-[#FAF7F2] p-3 rounded-xl border border-[#D4A96A]/15">
+                      {benefit}
+                    </p>
                   </div>
 
-                  {/* Clinical Benefit Rationale */}
-                  <p className="text-xs text-gray-600 leading-relaxed font-sans bg-[#FAF7F2] p-3 rounded-xl border border-[#D4A96A]/15">
-                    {benefit}
-                  </p>
-
                   {/* Rating & Review Counter */}
-                  <div className="flex items-center justify-between text-xs pt-1 text-gray-500 border-t border-gray-100">
+                  <div className="flex items-center justify-between text-xs pt-3 text-gray-500 border-t border-gray-100">
                     <div className="flex items-center gap-1 text-amber-500 font-semibold">
                       <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                       <span>{product.rating}</span>
