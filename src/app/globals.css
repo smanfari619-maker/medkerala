@@ -126,6 +126,26 @@ body {
 html, body {
   overscroll-behavior-y: contain; /* Prevent body bounce scroll on iOS */
   -webkit-tap-highlight-color: transparent; /* Disable browser gray tap highlight */
+  touch-action: manipulation;
+}
+
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Prevent auto-zoom on inputs in iOS Safari */
+@media screen and (max-width: 767px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Safe area padding utilities for notched devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 16px);
 }
 
 /* Momentum scroll on iOS */
@@ -135,10 +155,26 @@ html, body {
 
 /* Interactive elements haptic simulation scaling */
 .tap-active {
-  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.12s ease;
 }
 .tap-active:active {
   transform: scale(0.96) !important;
+  opacity: 0.92;
+}
+
+@keyframes slideUpSheet {
+  from {
+    transform: translateY(100%);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-sheet-up {
+  animation: slideUpSheet 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Hide scrollbars for app-like horizontally scrolling carousels */

@@ -18,11 +18,13 @@ import {
   CalendarCheck,
   Star,
   Quote,
+  Building2,
 } from 'lucide-react';
 import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import { getFAQSchema } from '@/lib/schemas';
 import CostComparison from '@/components/home/CostComparison';
 import HeroSlider from '@/components/home/HeroSlider';
+import HowWeChoose from '@/components/home/HowWeChoose';
 
 
 interface Props {
@@ -172,48 +174,36 @@ export default async function HomePage({ params }: Props) {
         </div>
 
         {/* Main content — vertically centered */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-20 flex-grow flex items-center w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-20 flex-grow flex items-center w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center w-full">
             
             {/* Left Column: Premium Text & CTA (8 cols) */}
-            <div className="lg:col-span-8 flex flex-col justify-center space-y-6 sm:space-y-8 w-full order-1 text-left rtl:text-right">
+            <div className="lg:col-span-8 flex flex-col justify-center space-y-4 sm:space-y-6 lg:space-y-8 w-full order-1 text-left rtl:text-right">
               
-              {/* Trust Badge / Live Status */}
-              <div className={`flex items-center gap-2 text-sm animate-title-slide ${isRtl ? 'justify-start' : ''}`} style={{ animationDelay: '0ms' }}>
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#25D366]"></span>
-                </span>
-                <span className="font-sans text-text-muted">
-                  <span className="font-bold text-[#1B4332]">{getMonthlyPatientsServed()}</span>{' '}
-                  {isRtl ? 'مريضاً تم خدمتهم هذا الشهر' : 'patients served this month'}
-                </span>
-              </div>
-
-              <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.06] rtl:leading-[1.16] text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.75rem] max-w-4xl">
+              <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.12] sm:leading-[1.06] rtl:leading-[1.2] text-3xl sm:text-5xl lg:text-[4rem] xl:text-[4.75rem] max-w-4xl">
                 <span className="block text-[#1B4332] animate-title-slide" style={{ animationDelay: '100ms' }}>
                   {tHero('headlineLine1')}
                 </span>
                 <span className="block text-[#1B4332] animate-title-slide" style={{ animationDelay: '250ms' }}>
                   {tHero('headlineLine2')}
                 </span>
-                <span className="block text-[#74B49B] mt-2 animate-title-slide" style={{ animationDelay: '400ms' }}>
+                <span className="block text-[#2D6A4F] mt-1 sm:mt-2 animate-title-slide" style={{ animationDelay: '400ms' }}>
                   {tHero('headlineLine3')}
                 </span>
               </h1>
 
               {/* Subheadline — light weight, generous line height */}
-              <p className="text-lg sm:text-xl text-text-muted font-light leading-[1.65] max-w-[540px] animate-title-slide" style={{ animationDelay: '550ms' }}>
+              <p className="text-base sm:text-lg lg:text-xl text-[#3D3D5C] font-light leading-[1.65] max-w-[540px] animate-title-slide" style={{ animationDelay: '550ms' }}>
                 {tHero('subheadlineShort')}
               </p>
 
-              {/* CTAs ─── gradient button matches Camber's style */}
-              <div className="flex flex-col sm:flex-row items-center gap-5 pt-2 animate-title-slide w-full" style={{ animationDelay: '700ms' }}>
+              {/* CTAs ─── Mobile first: Full-width stacked on mobile */}
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 pt-1 sm:pt-2 animate-title-slide w-full" style={{ animationDelay: '700ms' }}>
                 <a
                   href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 font-medium px-7 py-3.5 rounded-full text-base transition-all duration-300 cursor-pointer tap-active shadow-sm hover:shadow-md w-full sm:w-auto text-center"
+                  className="inline-flex items-center justify-center gap-2.5 font-semibold px-7 h-13 sm:h-auto sm:py-3.5 rounded-full text-base transition-all duration-300 cursor-pointer tap-active shadow-sm hover:shadow-md w-full sm:w-auto text-center"
                   style={{
                     background: 'linear-gradient(135deg, rgba(186,215,176,1) 0%, rgba(154,207,136,1) 100%)',
                     boxShadow: 'inset 0 0 20px rgba(255,255,255,0.3)',
@@ -225,26 +215,44 @@ export default async function HomePage({ params }: Props) {
                 </a>
                 <Link
                   href="/get-estimate"
-                  className="inline-flex items-center justify-center gap-2 text-[#2D6A4F] font-medium text-base hover:gap-3 transition-all duration-300 group w-full sm:w-auto py-2.5"
+                  className="inline-flex items-center justify-center gap-2 text-[#2D6A4F] font-semibold text-base hover:gap-3 transition-all duration-300 group w-full sm:w-auto h-12 sm:h-auto py-2.5 px-6 rounded-full border border-[#2D6A4F]/20 bg-white/60 sm:bg-transparent sm:border-0 shadow-2xs sm:shadow-none"
                 >
                   <span>{tCommon('getEstimate')}</span>
                   <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
                 </Link>
               </div>
 
+              {/* Trust Indicators Bar on Mobile & Desktop */}
+              <div className="flex flex-wrap items-center justify-start gap-y-2 gap-x-3 sm:gap-x-4 pt-2 text-xs text-[#5D6B64] animate-title-slide" style={{ animationDelay: '850ms' }}>
+                <span className="flex items-center gap-1.5 font-medium">
+                  <ShieldCheck className="h-3.5 w-3.5 text-[#2D6A4F] shrink-0" />
+                  <span>{isRtl ? 'تنسيق مجاني 100%' : '100% Free Coordination'}</span>
+                </span>
+                <span className="text-[#D4A96A]">•</span>
+                <span className="flex items-center gap-1.5 font-medium">
+                  <Building2 className="h-3.5 w-3.5 text-[#2D6A4F] shrink-0" />
+                  <span>{isRtl ? 'مستشفيات معتمدة JCI' : 'JCI Accredited'}</span>
+                </span>
+                <span className="text-[#D4A96A]">•</span>
+                <span className="flex items-center gap-1.5 font-medium">
+                  <HeartHandshake className="h-3.5 w-3.5 text-[#2D6A4F] shrink-0" />
+                  <span>{isRtl ? 'مترجم عربي مخصص' : 'Arabic & English Liaison'}</span>
+                </span>
+              </div>
+
             </div>
 
             {/* Right Column: Premium Visual Panel (4 cols) */}
-            <div className="lg:col-span-4 relative w-full flex justify-center lg:justify-end mt-8 lg:mt-0 order-2">
+            <div className="lg:col-span-4 relative w-full flex justify-center lg:justify-end mt-4 sm:mt-8 lg:mt-0 order-2">
               
               {/* Blur backdrop behind the frame */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-[#74B49B]/10 to-[#D4A96A]/10 rounded-[2.5rem] blur-xl animate-pulse" />
               
               {/* Gold decorative border offset */}
-              <div className="absolute inset-0 border border-[#D4A96A]/25 rounded-[2rem] translate-x-3 translate-y-3 pointer-events-none" />
+              <div className="absolute inset-0 border border-[#D4A96A]/25 rounded-[2rem] translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 pointer-events-none" />
 
               {/* Main image container */}
-              <div className="relative w-full max-w-[420px] aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl border border-white/50 bg-[#FAF7F2]">
+              <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-[420px] aspect-[16/10] sm:aspect-[4/3] lg:aspect-[3/4] rounded-[1.75rem] sm:rounded-[2rem] overflow-hidden shadow-xl sm:shadow-2xl border border-white/50 bg-[#FAF7F2]">
                 <HeroSlider
                   isRtl={isRtl}
                   slides={[
@@ -257,7 +265,7 @@ export default async function HomePage({ params }: Props) {
               </div>
 
               {/* Floating Card 1: 5.0 Star Rating */}
-              <div className={`hidden md:flex absolute top-4 bg-white/90 backdrop-blur-md shadow-lg border border-white/60 rounded-xl px-3 py-2 flex-row items-center gap-2 animate-bounce-slow z-20 ${isRtl ? 'left-3' : 'right-3'}`}>
+              <div className={`hidden sm:flex absolute top-4 bg-white/90 backdrop-blur-md shadow-lg border border-white/60 rounded-xl px-3 py-2 flex-row items-center gap-2 animate-bounce-slow z-20 ${isRtl ? 'left-3' : 'right-3'}`}>
                 <div className="w-7 h-7 rounded-lg bg-amber-50 flex items-center justify-center text-amber-500 shrink-0">
                   <Star className="h-3.5 w-3.5 fill-current" />
                 </div>
@@ -273,7 +281,7 @@ export default async function HomePage({ params }: Props) {
               </div>
 
               {/* Floating Card 2: Support Coordinator */}
-              <div className={`hidden md:flex absolute bottom-4 bg-white/90 backdrop-blur-md shadow-lg border border-white/60 rounded-xl px-3 py-2 flex-row items-center gap-2 z-20 ${isRtl ? 'right-3' : 'left-3'}`}>
+              <div className={`hidden sm:flex absolute bottom-4 bg-white/90 backdrop-blur-md shadow-lg border border-white/60 rounded-xl px-3 py-2 flex-row items-center gap-2 z-20 ${isRtl ? 'right-3' : 'left-3'}`}>
                 <div className="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-[#2D6A4F] shrink-0">
                   <HeartHandshake className="h-3.5 w-3.5" />
                 </div>
@@ -335,7 +343,7 @@ export default async function HomePage({ params }: Props) {
 
       {/* ─── 2. WHY KERALA ─────────────────────────────────────────────────────── */}
       <section className="relative bg-[#FAF7F2] overflow-hidden border-b border-[#D4A96A]/20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[640px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[640px]">
 
           {/* LEFT — Full bleed image with overlay cards */}
           <div className="relative overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-full order-1">
@@ -343,6 +351,7 @@ export default async function HomePage({ params }: Props) {
               src="/images/kerala_hero_bg.png"
               alt={isRtl ? 'مناظر كيرلا الطبيعية الخلابة' : 'Kerala backwaters at golden hour'}
               fill
+              loading="lazy"
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
@@ -397,7 +406,7 @@ export default async function HomePage({ params }: Props) {
             </div>
 
             {/* Headline */}
-            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332] mb-6">
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl lg:text-5xl text-[#1B4332] mb-6">
               {isRtl
                 ? <>رعاية طبية <span className="text-[#74B49B]">عالمية</span>، بتكلفة أقل بنسبة <span className="text-[#74B49B] inline-block whitespace-nowrap" dir="ltr">60–80%</span>.</>
                 : <>World-class care, at <span className="text-[#74B49B]">60–80%</span> lower cost.</>
@@ -440,7 +449,7 @@ export default async function HomePage({ params }: Props) {
             </div>
 
             {/* CTA */}
-            <div className="flex items-center gap-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
               <Link
                 href="/why-kerala"
                 className="inline-flex items-center gap-2.5 bg-[#1B4332] hover:bg-[#2D6A4F] text-white font-medium text-sm px-7 py-3.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md group"
@@ -461,7 +470,7 @@ export default async function HomePage({ params }: Props) {
 
 
       {/* ─── 4. HOW IT WORKS ────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-[#FAF7F2] border-y border-[#D4A96A]/20 relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-28 bg-[#FAF7F2] border-y border-[#D4A96A]/20 relative overflow-hidden">
         
         {/* Decorative ambient leaf circle */}
         <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#2D6A4F]/5 blur-3xl pointer-events-none" />
@@ -469,7 +478,7 @@ export default async function HomePage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           
           {/* Section Header */}
-          <div className="mb-16 space-y-4 rtl:text-right max-w-3xl">
+          <div className="mb-10 sm:mb-16 space-y-4 rtl:text-right max-w-3xl">
             <div className="flex items-center gap-3">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
@@ -477,7 +486,7 @@ export default async function HomePage({ params }: Props) {
               </span>
             </div>
             
-            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl lg:text-5xl text-[#1B4332]">
               {isRtl ? 'كيف نرتب علاجك؟ ثلاث خطوات بسيطة.' : 'How we coordinate your medical journey.'}
             </h2>
             
@@ -546,7 +555,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── 6. OUR COMMITMENTS (BENTO GRID) ─────────────────────────────────── */}
-      <section className="py-16 lg:py-24 bg-white border-b border-[#D4A96A]/20">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white border-b border-[#D4A96A]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 space-y-3 rtl:text-right">
             {/* Eyebrow */}
@@ -557,7 +566,7 @@ export default async function HomePage({ params }: Props) {
               </span>
             </div>
             {/* Title */}
-            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl lg:text-5xl text-[#1B4332]">
               {isRtl ? 'نظام دعم متكامل لرحلتك العلاجية' : 'A complete support system for your medical journey'}
             </h2>
           </div>
@@ -675,9 +684,11 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
+      {/* ─── 7. HOW WE CHOOSE (TRANSPARENCY & METHODOLOGY) ──────────────────── */}
+      <HowWeChoose />
 
       {/* ─── 7b. PATIENT TESTIMONIALS ────────────────────────────────────────── */}
-      <section className="py-16 lg:py-24 bg-white border-b border-[#D4A96A]/20">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white border-b border-[#D4A96A]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 space-y-3 rtl:text-right">
             {/* Eyebrow */}
@@ -688,7 +699,7 @@ export default async function HomePage({ params }: Props) {
               </span>
             </div>
             {/* Title */}
-            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl lg:text-5xl text-[#1B4332]">
               {isRtl ? 'ماذا يقول مرضانا؟' : 'Heard from our patients'}
             </h2>
             <p className="text-text-muted font-light leading-[1.65] text-base sm:text-lg max-w-2xl">
@@ -762,7 +773,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── 8. FAQ ─────────────────────────────────────────────────────────── */}
-      <section className="py-16 lg:py-24 bg-white border-t border-[#D4A96A]/20">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white border-t border-[#D4A96A]/20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 space-y-3 rtl:text-right">
             {/* Eyebrow */}
@@ -773,7 +784,7 @@ export default async function HomePage({ params }: Props) {
               </span>
             </div>
             {/* Title */}
-            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
+            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl lg:text-5xl text-[#1B4332]">
               {isRtl ? 'لديك أسئلة؟ لدينا إجابات.' : 'Have questions? We have answers.'}
             </h2>
             {/* Description */}
@@ -814,7 +825,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── 9. FINAL CTA ───────────────────────────────────────────────────── */}
-      <section className="bg-[#F5F8F4] border-t border-[#D4A96A]/20 py-16 lg:py-24">
+      <section className="bg-[#F5F8F4] border-t border-[#D4A96A]/20 py-12 sm:py-16 lg:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -826,7 +837,7 @@ export default async function HomePage({ params }: Props) {
           </div>
 
           {/* Two-tone Heading */}
-          <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-[#1B4332]">
+          <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl lg:text-5xl text-[#1B4332]">
             {isRtl ? 'هل أنت مستعد لبدء رحلتك العلاجية؟' : 'Ready to start your healing journey?'}
           </h2>
 
@@ -837,12 +848,12 @@ export default async function HomePage({ params }: Props) {
               : 'Chat directly with our medical coordinator now. We respond within minutes to help you organize every detail.'}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4">
             <a
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 font-medium px-8 py-4 rounded-full text-base transition-all duration-300 cursor-pointer tap-active shadow-sm hover:shadow-md"
+              className="inline-flex items-center justify-center gap-2.5 font-medium px-8 py-4 rounded-full text-base transition-all duration-300 cursor-pointer tap-active shadow-sm hover:shadow-md w-full sm:w-auto h-14 sm:h-auto"
               style={{
                 background: 'linear-gradient(135deg, rgba(186,215,176,1) 0%, rgba(154,207,136,1) 100%)',
                 boxShadow: 'inset 0 0 20px rgba(255,255,255,0.3)',

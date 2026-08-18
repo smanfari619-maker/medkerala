@@ -95,7 +95,7 @@ export default function Header() {
             <img
               src="/images/logo.svg"
               alt="TreatInKerala Logo"
-              className="h-4.5 w-auto object-contain"
+              className="h-5 w-auto object-contain"
             />
           </Link>
 

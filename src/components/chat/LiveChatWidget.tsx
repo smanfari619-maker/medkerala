@@ -230,59 +230,71 @@ export default function LiveChatWidget() {
       ];
 
   return (
-    <div className={`fixed bottom-[4.25rem] md:bottom-5 ${isRtl ? 'left-2.5 sm:left-5' : 'right-2.5 sm:right-5'} z-[70] font-sans flex flex-col items-end rtl:items-start`}>
-      {/* Compact Floating Chat Launcher Button — desktop only (mobile uses bottom nav) */}
-      {!isOpen && (
-        <button
+    <>
+      {/* Mobile Backdrop when chat is open */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-[#1A1A2E]/60 backdrop-blur-xs z-[68] md:hidden transition-opacity"
           onClick={toggleChat}
-          aria-label="Live Chat with Maya"
-          className="hidden md:flex relative group items-center gap-2.5 bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] text-white px-3.5 py-2.5 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 border border-[#D4A96A]/40"
-        >
-          {/* Online status indicator */}
-          <span className="relative flex h-2.5 w-2.5 shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#25D366]"></span>
-          </span>
-
-          <MessageSquare className="w-4 h-4 text-[#BAD7B0] shrink-0" />
-
-          <span className="text-xs font-semibold tracking-tight text-white whitespace-nowrap">
-            {isRtl ? 'تحدث مع مايا' : 'Chat with Maya'}
-          </span>
-
-          {unreadCount > 0 && (
-            <span className="bg-[#D4A96A] text-[#1B4332] text-[10px] font-bold px-1.5 py-0.2 rounded-full leading-none">
-              1
-            </span>
-          )}
-        </button>
+        />
       )}
 
-      {/* Live Chat Window */}
-      {isOpen && (
-        <div className="w-[calc(100vw-1.25rem)] max-w-[400px] sm:w-[400px] h-[520px] max-h-[75vh] md:max-h-[85vh] bg-[#FAF7F2] rounded-2xl shadow-2xl border border-[#D4A96A]/30 flex flex-col overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-5">
-          {/* Always-mounted hidden file input */}
-          <input
-            type="file"
-            ref={fileInputRef}
-            onChange={handleFileChange}
-            accept=".pdf,.png,.jpg,.jpeg,.doc,.docx"
-            className="hidden"
-          />
+      <div className={`fixed bottom-[4.25rem] md:bottom-5 ${isRtl ? 'left-0 sm:left-5' : 'right-0 sm:right-5'} z-[70] font-sans flex flex-col items-end rtl:items-start w-full sm:w-auto pointer-events-none`}>
+        {/* Compact Floating Chat Launcher Button — desktop only (mobile uses bottom nav) */}
+        {!isOpen && (
+          <button
+            onClick={toggleChat}
+            aria-label="Live Chat with Maya"
+            className="hidden md:flex pointer-events-auto relative group items-center gap-2.5 bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] text-white px-3.5 py-2.5 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 border border-[#D4A96A]/40"
+          >
+            {/* Online status indicator */}
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#25D366]"></span>
+            </span>
 
-          {/* Header */}
-          <div className="bg-gradient-to-r from-[#1B4332] via-[#2D6A4F] to-[#1B4332] text-white p-4 flex items-center justify-between shadow-md border-b border-[#D4A96A]/30">
-            <div className="flex items-center gap-3">
-              <div className="relative">
-                <div className="w-11 h-11 rounded-full bg-[#D4A96A] p-0.5 flex items-center justify-center shadow">
-                  <div className="w-full h-full rounded-full bg-[#1B4332] flex items-center justify-center text-white font-bold text-lg">
-                    M
+            <MessageSquare className="w-4 h-4 text-[#BAD7B0] shrink-0" />
+
+            <span className="text-xs font-semibold tracking-tight text-white whitespace-nowrap">
+              {isRtl ? 'تحدث مع مايا' : 'Chat with Maya'}
+            </span>
+
+            {unreadCount > 0 && (
+              <span className="bg-[#D4A96A] text-[#1B4332] text-[10px] font-bold px-1.5 py-0.2 rounded-full leading-none">
+                1
+              </span>
+            )}
+          </button>
+        )}
+
+        {/* Live Chat Window / Mobile Bottom Sheet */}
+        {isOpen && (
+          <div className="pointer-events-auto fixed inset-x-0 bottom-0 md:static w-full md:w-[400px] h-[85vh] md:h-[520px] max-h-[85vh] bg-[#FAF7F2] rounded-t-[2.25rem] md:rounded-2xl shadow-2xl border-t md:border border-[#D4A96A]/30 flex flex-col overflow-hidden transition-all duration-300 animate-sheet-up md:animate-in">
+            {/* Grabber line for mobile */}
+            <div className="w-12 h-1 bg-[#D4A96A]/40 rounded-full mx-auto my-2 md:hidden shrink-0" />
+
+            {/* Always-mounted hidden file input */}
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleFileChange}
+              accept=".pdf,.png,.jpg,.jpeg,.doc,.docx"
+              className="hidden"
+            />
+
+            {/* Header */}
+            <div className="bg-gradient-to-r from-[#1B4332] via-[#2D6A4F] to-[#1B4332] text-white p-4 flex items-center justify-between shadow-md border-b border-[#D4A96A]/30">
+              <div className="flex items-center gap-3">
+                <div className="relative">
+                  <div className="w-11 h-11 rounded-full bg-[#D4A96A] p-0.5 flex items-center justify-center shadow">
+                    <div className="w-full h-full rounded-full bg-[#1B4332] flex items-center justify-center text-white font-bold text-lg">
+                      M
+                    </div>
                   </div>
+                  <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#25D366] border-2 border-[#1B4332] rounded-full"></span>
                 </div>
-                <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#25D366] border-2 border-[#1B4332] rounded-full"></span>
-              </div>
 
-              <div>
+                <div>
                 <div className="flex items-center gap-1.5">
                   <h3 className="font-semibold text-base leading-tight text-white">Maya</h3>
                   <span className="bg-[#D4A96A]/20 text-[#BAD7B0] text-[10px] uppercase font-bold px-1.5 py-0.5 rounded border border-[#D4A96A]/30">
@@ -479,7 +491,7 @@ export default function LiveChatWidget() {
           </div>
 
           {/* Input Footer */}
-          <div className="p-3 bg-white border-t border-[#E2E8F0] flex flex-col gap-1.5">
+          <div className="p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom,12px))] md:pb-3 bg-white border-t border-[#E2E8F0] flex flex-col gap-1.5 shrink-0">
             {selectedAttachment && (
               <div className="flex items-center justify-between bg-[#E8F0EC] px-3 py-1 rounded-full text-[11px] text-[#1B4332]">
                 <span className="flex items-center gap-1 truncate">
@@ -496,22 +508,22 @@ export default function LiveChatWidget() {
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 title={isRtl ? 'إرفاق تقرير طبي' : 'Attach Medical Report (PDF/Image)'}
-                className="w-8 h-8 rounded-full bg-[#FAF7F2] hover:bg-[#E8F0EC] text-[#1B4332] border border-gray-200 flex items-center justify-center transition shrink-0"
+                className="w-9 h-9 rounded-full bg-[#FAF7F2] hover:bg-[#E8F0EC] text-[#1B4332] border border-gray-200 flex items-center justify-center transition shrink-0 tap-active"
               >
                 <Paperclip className="w-4 h-4 text-[#2D6A4F]" />
               </button>
               <input
                 type="text"
-                placeholder={isRtl ? 'اكتب استفسارك هنا...' : 'Ask Maya anything about treatment in Kerala...'}
+                placeholder={isRtl ? 'اكتب استفسارك هنا...' : 'Ask Maya anything about Kerala care...'}
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-                className="flex-1 px-3.5 py-2 text-xs border border-gray-200 rounded-full focus:outline-none focus:ring-1 focus:ring-[#1B4332] bg-[#FAF7F2]"
+                className="flex-1 px-4 py-2.5 text-base md:text-xs border border-gray-200 rounded-full focus:outline-none focus:ring-1 focus:ring-[#1B4332] bg-[#FAF7F2]"
               />
               <button
                 onClick={() => handleSendMessage()}
                 disabled={(!inputValue.trim() && !selectedAttachment) || isTyping}
-                className="w-8 h-8 rounded-full bg-[#1B4332] text-white flex items-center justify-center hover:bg-[#2D6A4F] transition disabled:opacity-50 shadow shrink-0"
+                className="w-9 h-9 rounded-full bg-[#1B4332] text-white flex items-center justify-center hover:bg-[#2D6A4F] transition disabled:opacity-50 shadow shrink-0 tap-active"
                 aria-label="Send message"
               >
                 <Send className="w-4 h-4 rtl:rotate-180" />
@@ -520,6 +532,7 @@ export default function LiveChatWidget() {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 }

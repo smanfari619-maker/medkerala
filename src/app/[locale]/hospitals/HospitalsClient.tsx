@@ -6,7 +6,9 @@ import { Link } from '@/i18n/routing';
 import {
   Building2, Stethoscope, Leaf, MapPin,
   Search, ChevronRight, MessageCircle,
-  LayoutGrid, X
+  LayoutGrid, X, Check, Scale, Sparkles,
+  ChevronDown, ChevronUp, CheckSquare, Square,
+  ShieldCheck, ArrowRight, Info
 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
 
@@ -321,6 +323,29 @@ export default function HospitalsDirectoryPage() {
 
   const [activeType, setActiveType] = useState<'all' | HospitalType>('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCompare, setSelectedCompare] = useState<string[]>([]);
+  const [expandedWhy, setExpandedWhy] = useState<Record<string, boolean>>({});
+  const [isCompareOpen, setIsCompareOpen] = useState(false);
+
+  const toggleCompare = (id: string) => {
+    setSelectedCompare((prev) => {
+      if (prev.includes(id)) {
+        return prev.filter((item) => item !== id);
+      }
+      if (prev.length >= 3) {
+        return prev;
+      }
+      return [...prev, id];
+    });
+  };
+
+  const toggleWhy = (id: string) => {
+    setExpandedWhy((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  const comparedHospitals = useMemo(() => {
+    return HOSPITALS_DATA.filter((h) => selectedCompare.includes(h.id));
+  }, [selectedCompare]);
 
   const filteredHospitals = useMemo(() => {
     return HOSPITALS_DATA.filter((h) => {
@@ -495,11 +520,15 @@ export default function HospitalsDirectoryPage() {
               return (
                 <div
                   key={hospital.id}
-                  className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-6 sm:p-8 hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between group glow-card-green"
+                  className={`bg-white border rounded-[2.25rem] p-6 sm:p-8 hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between group glow-card-green relative ${
+                    selectedCompare.includes(hospital.id)
+                      ? 'border-[#2D6A4F] ring-2 ring-[#2D6A4F]/20'
+                      : 'border-[#D4A96A]/15'
+                  }`}
                   dir={isRtl ? 'rtl' : 'ltr'}
                 >
                   <div>
-                    {/* Upper row: Stream & Accreditations */}
+                    {/* Upper row: Stream & Accreditations & Compare button */}
                     <div className="flex items-start justify-between gap-4 mb-4 flex-wrap">
                       <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold font-sans uppercase tracking-wider ${
                         isAllopathy 
@@ -510,8 +539,26 @@ export default function HospitalsDirectoryPage() {
                         <span>{isAllopathy ? (isRtl ? 'طب حديث' : 'Allopathy') : (isRtl ? 'أيورفيدا' : 'Ayurveda')}</span>
                       </span>
 
-                      {/* Badges */}
-                      <div className="flex flex-wrap gap-1.5 justify-end">
+                      {/* Badges & Compare selector */}
+                      <div className="flex flex-wrap gap-1.5 items-center justify-end">
+                        <button
+                          type="button"
+                          onClick={() => toggleCompare(hospital.id)}
+                          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold font-sans transition-all cursor-pointer ${
+                            selectedCompare.includes(hospital.id)
+                              ? 'bg-[#1B4332] text-white shadow-xs'
+                              : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
+                          }`}
+                          title={selectedCompare.length >= 3 && !selectedCompare.includes(hospital.id) ? (isRtl ? 'الحد الأقصى للمقارنة ٣ مستشفيات' : 'Max 3 hospitals can be compared') : undefined}
+                        >
+                          <Scale className="h-3 w-3" />
+                          <span>
+                            {selectedCompare.includes(hospital.id)
+                              ? (isRtl ? 'تم اختياره للمقارنة ✓' : 'Added to Compare ✓')
+                              : (isRtl ? '+ مقارنة' : '+ Compare')}
+                          </span>
+                        </button>
+
                         <span className="bg-amber-500 text-white font-bold text-[10px] px-2 py-0.5 rounded-full font-sans uppercase tracking-tight flex items-center gap-0.5 shadow-xs">
                           ⭐ {isRtl ? 'سعر مؤسسي مخفض' : 'Corporate Partner Rate'}
                         </span>
@@ -533,17 +580,46 @@ export default function HospitalsDirectoryPage() {
                     </div>
 
                     {/* Overview */}
-                    <p className="text-text-muted text-sm leading-relaxed mb-4 font-sans">
+                    <p className="text-text-muted text-sm leading-relaxed mb-4 font-sans font-light">
                       {overview}
                     </p>
+
+                    {/* Why Recommended in Network Accordion */}
+                    <div className="mb-4 bg-[#F5F8F4] border border-[#2D6A4F]/15 rounded-2xl p-4 transition-all">
+                      <button
+                        type="button"
+                        onClick={() => toggleWhy(hospital.id)}
+                        className="w-full flex items-center justify-between gap-2 text-start text-xs font-bold text-[#1B4332] cursor-pointer"
+                      >
+                        <span className="flex items-center gap-1.5">
+                          <Sparkles className="h-3.5 w-3.5 text-[#D4A96A] shrink-0" />
+                          <span>{isRtl ? 'لماذا اخترنا هذا المستشفى لشبكتنا؟' : 'Why this hospital is in our network:'}</span>
+                        </span>
+                        {expandedWhy[hospital.id] ? (
+                          <ChevronUp className="h-4 w-4 text-[#2D6A4F]" />
+                        ) : (
+                          <ChevronDown className="h-4 w-4 text-text-muted" />
+                        )}
+                      </button>
+
+                      {expandedWhy[hospital.id] ? (
+                        <div className="mt-2.5 pt-2.5 border-t border-[#2D6A4F]/10 text-xs text-[#4A5C52] leading-relaxed animate-fade-in font-light">
+                          <p>{isRtl ? hospital.focusAr : hospital.focusEn}</p>
+                        </div>
+                      ) : (
+                        <p className="mt-1 text-[11px] text-text-muted/80 line-clamp-1 font-light">
+                          {isRtl ? hospital.focusAr : hospital.focusEn}
+                        </p>
+                      )}
+                    </div>
 
                     {/* Specialties pills */}
                     <div className="space-y-2 mb-4">
                       <span className="text-xs font-bold uppercase tracking-wider text-text-dark font-sans block">
-                        {isRtl ? 'أبرز التخصصات الطبية:' : 'Primary Specialties:'}
+                        {isRtl ? 'أبرز التخصصات المعتمدة:' : 'Recommended Specialities:'}
                       </span>
                       <div className="flex flex-wrap gap-1.5">
-                        {specs.slice(0, 3).map((sp, idx) => (
+                        {specs.map((sp, idx) => (
                           <span key={idx} className="bg-slate-100 border border-slate-200 text-text-dark text-xs font-semibold px-2.5 py-1 rounded-lg font-sans">
                             {sp}
                           </span>
@@ -567,7 +643,7 @@ export default function HospitalsDirectoryPage() {
                   {/* Actions footer */}
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-4 flex-wrap">
                     <a
-                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الحصول على عرض السعر المؤسسي المخفض لمستشفى: ${name}` : `Hello TreatInKerala, I would like to request the discounted corporate partner rate estimate for: ${name}`)}`}
+                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الحصول على عرض السعر المؤسسي لمستشفى: ${name}` : `Hello TreatInKerala, I would like to request the discounted corporate partner rate estimate for: ${name}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-4 py-2.5 rounded-xl text-xs shadow-sm hover:shadow-md transition-all font-sans min-h-[40px] cursor-pointer"
@@ -646,6 +722,214 @@ export default function HospitalsDirectoryPage() {
         </div>
 
       </div>
+
+      {/* ─── STICKY FLOATING COMPARE DRAWER ────────────────────────────────── */}
+      {selectedCompare.length > 0 && (
+        <div className="fixed bottom-6 inset-x-0 z-50 px-4 pointer-events-none animate-slide-up">
+          <div className="max-w-3xl mx-auto bg-[#1B4332] text-white rounded-2xl p-4 sm:p-5 shadow-2xl border border-[#D4A96A]/40 flex flex-col sm:flex-row items-center justify-between gap-4 pointer-events-auto backdrop-blur-md">
+            <div className="flex items-center gap-3 w-full sm:w-auto">
+              <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] text-[#1B4332] flex items-center justify-center font-bold text-sm shrink-0 shadow-xs">
+                <Scale className="h-5 w-5 text-[#1B4332]" />
+              </div>
+              <div className="text-start">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-sm text-[#FAF7F2]">
+                    {isRtl ? `تم تحديد ${selectedCompare.length} من أصل ٣ مستشفيات` : `${selectedCompare.length} of 3 hospitals selected`}
+                  </span>
+                </div>
+                <p className="text-xs text-white/70 truncate max-w-xs sm:max-w-sm">
+                  {comparedHospitals.map(h => isRtl ? h.nameAr : h.nameEn).join(' • ')}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
+              <button
+                type="button"
+                onClick={() => setSelectedCompare([])}
+                className="text-xs text-white/70 hover:text-white underline px-2 py-1.5 cursor-pointer font-sans"
+              >
+                {isRtl ? 'إلغاء التحديد' : 'Clear'}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setIsCompareOpen(true)}
+                disabled={selectedCompare.length < 2}
+                className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs shadow-md transition-all font-sans cursor-pointer ${
+                  selectedCompare.length >= 2
+                    ? 'bg-[#D4A96A] hover:bg-[#c29656] text-[#1B4332] hover:scale-105'
+                    : 'bg-white/20 text-white/50 cursor-not-allowed'
+                }`}
+              >
+                <span>{isRtl ? 'قارن جنباً إلى جنب' : 'Compare Side-by-Side'}</span>
+                <ArrowRight className={`h-3.5 w-3.5 ${isRtl ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ─── SIDE-BY-SIDE COMPARISON MODAL ─────────────────────────────────── */}
+      {isCompareOpen && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto animate-fade-in">
+          <div
+            className="bg-[#FAF7F2] rounded-[2rem] border border-[#D4A96A]/30 w-full max-w-5xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col relative my-auto text-start"
+            dir={isRtl ? 'rtl' : 'ltr'}
+          >
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-[#FAF7F2]/95 backdrop-blur-md px-6 py-5 border-b border-[#D4A96A]/20 flex items-center justify-between z-10">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#1B4332] text-white flex items-center justify-center">
+                  <Scale className="h-5 w-5 text-[#D4A96A]" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold font-display text-[#1B4332]">
+                    {isRtl ? 'المقارنة المباشرة بين المستشفيات' : 'Direct Hospital Comparison'}
+                  </h3>
+                  <p className="text-xs text-text-muted">
+                    {isRtl ? 'مقارنة شاملة للاعتمادات، التخصصات، المزايا وخيارات الحجز' : 'Side-by-side review of accreditations, specialties, and key strengths'}
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsCompareOpen(false)}
+                className="w-9 h-9 rounded-full bg-white border border-[#D4A96A]/20 flex items-center justify-center text-text-muted hover:text-[#1B4332] hover:bg-slate-100 transition-all cursor-pointer"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Comparison Grid Table */}
+            <div className="p-6 overflow-x-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 min-w-[700px] md:min-w-0">
+                {comparedHospitals.map((h) => {
+                  const name = isRtl ? h.nameAr : h.nameEn;
+                  const city = isRtl ? h.cityAr : h.cityEn;
+                  const overview = isRtl ? h.overviewAr : h.overviewEn;
+                  const focus = isRtl ? h.focusAr : h.focusEn;
+                  const specs = isRtl ? h.specialitiesAr : h.specialitiesEn;
+                  const isAllopathy = h.type === 'allopathy';
+
+                  return (
+                    <div
+                      key={h.id}
+                      className="bg-white border border-[#D4A96A]/20 rounded-2xl p-5 flex flex-col justify-between space-y-5 shadow-sm"
+                    >
+                      <div className="space-y-4">
+                        {/* Stream badge */}
+                        <div className="flex items-center justify-between gap-2">
+                          <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold ${
+                            isAllopathy ? 'bg-blue-50 text-blue-700' : 'bg-emerald-50 text-emerald-700'
+                          }`}>
+                            {isAllopathy ? (isRtl ? 'طب حديث' : 'Allopathy') : (isRtl ? 'أيورفيدا' : 'Ayurveda')}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => toggleCompare(h.id)}
+                            className="text-[11px] text-red-600 hover:underline cursor-pointer font-sans"
+                          >
+                            {isRtl ? 'إزالة' : 'Remove'}
+                          </button>
+                        </div>
+
+                        {/* Title */}
+                        <div>
+                          <h4 className="font-bold text-lg text-[#1B4332] font-display line-clamp-2">
+                            {name}
+                          </h4>
+                          <p className="text-xs text-[#D4A96A] font-semibold flex items-center gap-1 mt-1">
+                            <MapPin className="h-3 w-3" />
+                            <span>{city}</span>
+                          </p>
+                        </div>
+
+                        {/* Accreditations */}
+                        <div className="space-y-1.5 pt-2 border-t border-slate-100">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-text-muted block">
+                            {isRtl ? 'الاعتمادات والجودة:' : 'Accreditations:'}
+                          </span>
+                          <div className="flex flex-wrap gap-1">
+                            {h.accreditations.map((acc, i) => (
+                              <span key={i} className="text-[10px] bg-primary-green/10 text-primary-green font-bold px-2 py-0.5 rounded-md">
+                                ✓ {acc}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Primary Specialties */}
+                        <div className="space-y-1.5 pt-2 border-t border-slate-100">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-text-muted block">
+                            {isRtl ? 'أبرز التخصصات:' : 'Key Specialties:'}
+                          </span>
+                          <div className="flex flex-wrap gap-1">
+                            {specs.map((sp, i) => (
+                              <span key={i} className="text-[11px] bg-slate-100 text-[#1B4332] px-2 py-0.5 rounded">
+                                {sp}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Why in Network */}
+                        <div className="space-y-1.5 pt-2 border-t border-slate-100">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4A96A] flex items-center gap-1">
+                            <Sparkles className="h-3 w-3" />
+                            <span>{isRtl ? 'ميزة المستشفى لمرضانا:' : 'Network Strength:'}</span>
+                          </span>
+                          <p className="text-xs text-[#4A5C52] leading-relaxed font-light">
+                            {focus}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Direct action CTA */}
+                      <div className="pt-3 border-t border-slate-100 space-y-2">
+                        <a
+                          href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار عن خطة العلاج في: ${name}` : `Hello TreatInKerala, I would like to inquire about treatment at: ${name}`)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full inline-flex items-center justify-center gap-1.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-3 py-2 rounded-xl text-xs shadow-xs transition-all"
+                        >
+                          <MessageCircle className="h-3.5 w-3.5" />
+                          <span>{isRtl ? 'حجز وطلب تسعيرة عبر واتساب' : 'WhatsApp to Book'}</span>
+                        </a>
+
+                        <Link
+                          href="/get-estimate"
+                          className="w-full inline-flex items-center justify-center gap-1 bg-[#1B4332] hover:bg-[#2D6A4F] text-white font-bold px-3 py-2 rounded-xl text-xs transition-all"
+                        >
+                          <span>{isRtl ? 'طلب خطة علاجية مخصصة' : 'Get Custom Quote'}</span>
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="bg-white px-6 py-4 border-t border-[#D4A96A]/20 flex items-center justify-between text-xs text-text-muted rounded-b-[2rem]">
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="h-4 w-4 text-[#2D6A4F]" />
+                <span>{isRtl ? 'الدفع يتم للمستشفى مباشرة بدون أي عمولات وسيط' : 'Direct hospital billing with 0% coordination fee'}</span>
+              </span>
+
+              <button
+                type="button"
+                onClick={() => setIsCompareOpen(false)}
+                className="font-bold text-[#1B4332] hover:underline cursor-pointer"
+              >
+                {isRtl ? 'إغلاق المقارنة' : 'Close comparison'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

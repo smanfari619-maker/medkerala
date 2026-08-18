@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { TREATMENTS, BLOG_POSTS } from '@/lib/data';
+import { COUNTRY_PAGES_DATA } from '@/lib/countryPages';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://treatinkerala.com';
@@ -16,7 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/patient-stories',
     '/kerala-experience',
     '/blog',
-    '/get-estimate'
+    '/get-estimate',
+    '/hospitals'
   ];
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
@@ -51,6 +53,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             en: `${baseUrl}/en/treatments/${treatment.slug}`,
             ar: `${baseUrl}/ar/treatments/${treatment.slug}`,
+          },
+        },
+      });
+    });
+  });
+
+  // Generate localized entries for country landing pages
+  Object.keys(COUNTRY_PAGES_DATA).forEach((slug) => {
+    locales.forEach((locale) => {
+      sitemapEntries.push({
+        url: `${baseUrl}/${locale}/patients/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.9,
+        alternates: {
+          languages: {
+            en: `${baseUrl}/en/patients/${slug}`,
+            ar: `${baseUrl}/ar/patients/${slug}`,
           },
         },
       });

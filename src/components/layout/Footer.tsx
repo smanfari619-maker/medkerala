@@ -18,22 +18,32 @@ export default function Footer() {
     { href: '/treatments/fertility', label: 'IVF & Fertility Care' },
   ];
 
+  const countryLinks = [
+    { href: '/patients/oman', label: locale === 'ar' ? '🇴🇲 سلطنة عُمان' : '🇴🇲 Oman' },
+    { href: '/patients/saudi-arabia', label: locale === 'ar' ? '🇸🇦 السعودية' : '🇸🇦 Saudi Arabia' },
+    { href: '/patients/uae', label: locale === 'ar' ? '🇦🇪 الإمارات' : '🇦🇪 UAE (Dubai & Abu Dhabi)' },
+    { href: '/patients/maldives', label: locale === 'ar' ? '🇲🇻 جزر المالديف' : '🇲🇻 Maldives' },
+    { href: '/patients/kuwait', label: locale === 'ar' ? '🇰🇼 الكويت' : '🇰🇼 Kuwait' },
+    { href: '/patients/qatar', label: locale === 'ar' ? '🇶🇦 قطر' : '🇶🇦 Qatar' },
+  ];
+
   const quickLinks = [
     { href: '/about', label: tNav('about') },
     { href: '/services', label: tNav('services') },
+    { href: '/hospitals', label: locale === 'ar' ? 'المستشفيات الشريكة' : 'Partner Hospitals' },
     { href: '/why-kerala', label: tNav('whyKerala') },
+    { href: '/patient-stories', label: locale === 'ar' ? 'قصص المرضى' : 'Patient Stories' },
     { href: '/blog', label: tNav('blog') },
     { href: '/faq', label: tNav('faq') },
-    { href: '/contact', label: tNav('contact') },
     { href: '/get-estimate', label: tCommon('getEstimate') },
   ];
 
   return (
     <footer className="bg-[#0A1C15] text-slate-300 pt-16 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-8 border-t border-[#D4A96A]/35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Col */}
-          <div className="space-y-6 lg:pr-8">
+          <div className="space-y-6 lg:pr-4">
             <Link href="/" className="inline-block">
               <img
                 src="/images/logo.svg"
@@ -41,19 +51,19 @@ export default function Footer() {
                 className="h-5 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
               />
             </Link>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-serif italic max-w-sm opacity-90">
+            <p className="text-slate-300 text-sm leading-relaxed font-serif italic max-w-sm opacity-90">
               {t('tagline')}
             </p>
-            <div className="bg-gradient-to-br from-white/5 to-transparent rounded-2xl p-5 border border-white/10 space-y-2 backdrop-blur-sm">
+            <div className="bg-gradient-to-br from-white/5 to-transparent rounded-2xl p-4 border border-white/10 space-y-2 backdrop-blur-sm">
               <span className="text-[10px] font-bold text-[#D4A96A] tracking-widest uppercase block">
                 {t('emergencyLabel')}
               </span>
               <a
                 href={`tel:${SITE_CONFIG.phoneRaw}`}
-                className="flex items-center gap-3 text-white hover:text-[#D4A96A] transition-colors text-base sm:text-lg font-display tracking-wide min-h-[44px]"
+                className="flex items-center gap-2 text-white hover:text-[#D4A96A] transition-colors text-sm font-display tracking-wide min-h-[36px]"
               >
-                <div className="h-8 w-8 rounded-full bg-[#D4A96A]/20 flex items-center justify-center shrink-0">
-                  <Phone className="h-4 w-4 text-[#D4A96A]" />
+                <div className="h-7 w-7 rounded-full bg-[#D4A96A]/20 flex items-center justify-center shrink-0">
+                  <Phone className="h-3.5 w-3.5 text-[#D4A96A]" />
                 </div>
                 <span dir="ltr" className="whitespace-nowrap">{SITE_CONFIG.phone}</span>
               </a>
@@ -86,12 +96,12 @@ export default function Footer() {
                 <span className="absolute start-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
                 {locale === 'ar' ? 'روابط سريعة' : 'Quick Links'}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {quickLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-slate-400 hover:text-white transition-colors duration-200 py-1 min-h-[32px] inline-block"
+                      className="text-xs text-slate-400 hover:text-white transition-colors duration-200 py-0.5 inline-block"
                     >
                       {link.label}
                     </Link>
@@ -127,12 +137,52 @@ export default function Footer() {
                 <span className="absolute start-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
                 {tNav('treatments')}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {treatmentLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-slate-400 hover:text-white transition-colors duration-200 py-1 min-h-[32px] inline-block"
+                      className="text-xs text-slate-400 hover:text-white transition-colors duration-200 py-0.5 inline-block"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Country Guides Col */}
+          <div className="border-b border-white/5 md:border-none pb-2 md:pb-0">
+            {/* Mobile Accordion */}
+            <details className="md:hidden group">
+              <summary className="flex items-center justify-between text-white text-base font-semibold py-2.5 list-none cursor-pointer focus:outline-hidden [&::-webkit-details-marker]:hidden">
+                <span>{locale === 'ar' ? 'المرضى الدوليون' : 'Patient Destinations'}</span>
+                <ChevronRight className="h-4 w-4 text-[#D4A96A] transition-transform duration-200 group-open:rotate-90 rtl:rotate-180" />
+              </summary>
+              <ul className="space-y-1 mt-2 pb-2">
+                {countryLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="flex items-center gap-2 text-sm text-slate-400 hover:text-white py-1.5 min-h-[44px]">
+                      <span>{link.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+
+            {/* Desktop Flat View */}
+            <div className="hidden md:block">
+              <h3 className="text-white/90 text-xs uppercase tracking-[0.2em] font-bold mb-6 pb-3 border-b border-white/10 relative">
+                <span className="absolute start-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
+                {locale === 'ar' ? 'المرضى الدوليون' : 'Patient Destinations'}
+              </h3>
+              <ul className="space-y-2.5">
+                {countryLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-xs text-slate-400 hover:text-white transition-colors duration-200 py-0.5 inline-block"
                     >
                       {link.label}
                     </Link>

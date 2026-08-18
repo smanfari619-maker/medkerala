@@ -9,7 +9,8 @@ import {
   DollarSign, CheckCircle, MessageCircle, ChevronRight, ChevronLeft,
   Minus, Plus, AlertCircle, Phone, Mail,
   ShieldCheck, HeartPulse, Activity, Sparkles, Baby, Sprout, Brain, Shield, PlusCircle, Eye,
-  Home, Building, Award, XCircle, ChevronDown, Search, Globe
+  Home, Building, Award, XCircle, ChevronDown, Search, Globe,
+  Clock, Zap, CheckCircle2, FileText, ArrowRight, Lock, Plane
 } from 'lucide-react';
 
 // ============================================================
@@ -246,46 +247,257 @@ export default function GetEstimatePage() {
     { num: 2, titleEn: 'Contact & Quote', titleAr: 'الاتصال والتقدير', icon: User },
   ];
 
-  // ── Success Screen ──
+  // ── Success / Live Care Portal Screen ──
   if (submitted) {
+    const isUrgentCase = data.urgency === 'urgent' || data.urgency === 'immediate' || data.urgency.toLowerCase().includes('urgent');
+    const waPreFilledText = isRtl
+      ? `مرحباً علاج في كيرلا، أنا ${data.fullName || 'مريض'} من ${data.country || 'الخليج'}. لقد أرسلت للتو طلباً لتقدير تكلفة علاج (${data.speciality || 'استشارة'}). أود تأكيد استلام الحالة ومتابعة الخطة الطبية.`
+      : `Hello TreatInKerala, I am ${data.fullName || 'a patient'} from ${data.country || 'abroad'}. I just submitted an estimate request for ${data.speciality || 'medical treatment'}. Please confirm my case was received and let me know the next steps.`;
+
+    const milestoneSteps = [
+      {
+        num: '01',
+        titleEn: 'Case Submitted & Logged',
+        titleAr: 'تم استلام الحالة وتسجيلها',
+        descEn: 'Your medical details have been securely captured by our triage team.',
+        descAr: 'تم حفظ تفاصيل حالتك الطبية بأمان لدى فريق الفرز الطبي لدينا.',
+        status: 'done',
+      },
+      {
+        num: '02',
+        titleEn: 'Physician & Specialist Review (Active)',
+        titleAr: 'مراجعة الطبيب المنسق والاستشاري (جارٍ الآن)',
+        descEn: 'Our medical doctor coordinator in Calicut reviews your reports within 24 hours.',
+        descAr: 'يقوم طبيبنا المنسق في كالكوت بمراجعة تقاريرك خلال ٢٤ ساعة كحد أقصى.',
+        status: 'active',
+      },
+      {
+        num: '03',
+        titleEn: 'JCI / NABH Hospital Matching',
+        titleAr: 'مطابقة المستشفيات المعتمدة وكبار الجراحين',
+        descEn: 'We consult accredited hospital departments for surgeon availability and suitability.',
+        descAr: 'نستشير كبار الجراحين ورؤساء الأقسام للتحقق من المواعيد وأفضل خطة.',
+        status: 'pending',
+      },
+      {
+        num: '04',
+        titleEn: 'Official Itemized Treatment Quote',
+        titleAr: 'عرض السعر التفصيلي وخطة الإقامة',
+        descEn: 'You receive transparent hospital quotes directly on official letterheads.',
+        descAr: 'نرسل لك عروض الأسعار الرسمية الصادرة من المستشفى مع تفاصيل الإقامة.',
+        status: 'pending',
+      },
+      {
+        num: '05',
+        titleEn: 'Medical Visa & Airport Arrival',
+        titleAr: 'خطاب التأشيرة الطبية والاستقبال في كيرلا',
+        descEn: 'We issue your visa invitation letter, arrange airport pickup, and assign your Arabic coordinator.',
+        descAr: 'نصدر خطاب التأشيرة، نرتب الاستقبال من المطار ونخصص لك منسقاً ومترجماً مرافقاً.',
+        status: 'pending',
+      },
+    ];
+
     return (
-      <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 min-h-screen" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #faf7f2 50%, #f0f9ff 100%)' }}>
-        <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <div className="bg-white rounded-3xl p-10 sm:p-14 border border-emerald-100 shadow-2xl text-center space-y-6">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center mx-auto shadow-lg shadow-emerald-200">
-              <CheckCircle className="h-12 w-12 text-white" />
+      <div
+        className="pt-28 pb-16 lg:pt-36 lg:pb-24 min-h-screen bg-[#FAF7F2]"
+        dir={isRtl ? 'rtl' : 'ltr'}
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8 animate-fade-in">
+          
+          {/* Main Confirmation Hero Card */}
+          <div className="bg-white rounded-[2.5rem] p-8 sm:p-12 border border-[#D4A96A]/20 shadow-xl text-center space-y-6 relative overflow-hidden">
+            {/* Top glowing ambient highlight */}
+            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-[#2D6A4F]/10 blur-3xl pointer-events-none" />
+
+            <div className="w-20 h-20 rounded-3xl bg-[#1B4332] text-white flex items-center justify-center mx-auto shadow-lg shadow-[#1B4332]/20 relative z-10">
+              <CheckCircle className="h-10 w-10 text-[#D4A96A]" />
             </div>
-            
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold text-[#1B4332] font-sans">
-                {isRtl ? 'تم إرسال طلبك بنجاح!' : 'Estimate Request Sent!'}
+
+            <div className="space-y-3 relative z-10 max-w-xl mx-auto">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-[#2D6A4F] border border-emerald-200 text-xs font-bold font-sans">
+                <span className="w-2 h-2 rounded-full bg-[#25D366] animate-ping" />
+                <span>{isRtl ? 'تم فتح ملفك الطبي بنجاح' : 'Medical File Opened Successfully'}</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl font-bold font-display text-[#1B4332]">
+                {isRtl
+                  ? `أهلاً بك ${data.fullName || 'عزيزنا المريض'}، بدأت رحلتك العلاجية`
+                  : `Welcome ${data.fullName || 'Friend'}, Your Healthcare Journey Has Started`}
               </h1>
-              <p className="text-slate-500 text-base leading-relaxed max-w-md mx-auto font-sans font-light">
-                {isRtl 
-                  ? 'تم تسجيل طلبك الطبي بنجاح. لقد أرسلنا رسالة تأكيد إلى بريدك الإلكتروني، وسيتواصل معك منسقنا الطبي المختص بخطة الأسعار وخيارات الرعاية قريباً.'
-                  : 'Your clinical quote request has been securely received! We have sent a confirmation email to your inbox, and our dedicated coordinator will follow up with your detailed treatment options shortly.'}
+
+              <p className="text-text-muted text-sm sm:text-base leading-relaxed font-sans font-light">
+                {isRtl
+                  ? 'تم استلام تفاصيل حالتك الطبية بأمان. فريق التنسيق الطبي لدينا في كيرلا يعمل الآن على إعداد أفضل الخيارات العلاجية وعروض الأسعار المباشرة.'
+                  : 'Your clinical details have been securely logged. Our dedicated medical liaison team in Kerala is now reviewing your requirements to prepare verified hospital options.'}
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-50 to-emerald-50/30 rounded-2xl p-6 text-start border border-emerald-100/50 space-y-4">
-              <p className="text-sm font-bold text-[#1B4332] font-sans">{isRtl ? 'ما هي الخطوات التالية؟' : 'What happens next?'}</p>
+            {/* Urgent Priority Notice if selected */}
+            {isUrgentCase && (
+              <div className="bg-amber-50 border border-amber-300/60 rounded-2xl p-4 text-start flex items-start gap-3 max-w-2xl mx-auto shadow-xs">
+                <Zap className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+                <div className="text-xs space-y-0.5">
+                  <p className="font-bold text-amber-900 font-sans">
+                    {isRtl ? 'حالة ذات أولوية عاجلة ⚡' : 'Priority Urgent Case Flagged ⚡'}
+                  </p>
+                  <p className="text-amber-800/90 leading-relaxed font-light">
+                    {isRtl
+                      ? 'لقد حددت موعد السفر كأمر عاجل. سيقوم استشارينا الطبي بالتواصل معك على واتساب خلال أقل من ساعتين.'
+                      : 'You indicated urgent travel requirements. Our senior coordinator is expediting your review to respond within 2 hours.'}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Instant WhatsApp Action for Peace of Mind */}
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10 max-w-md mx-auto">
+              <a
+                href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(waPreFilledText)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-6 py-3.5 rounded-2xl text-sm shadow-md hover:shadow-lg transition-all font-sans cursor-pointer"
+              >
+                <MessageCircle className="h-5 w-5" />
+                <span>{isRtl ? 'تأكيد الحالة عبر واتساب فوراً' : 'Confirm via WhatsApp Now'}</span>
+              </a>
+            </div>
+
+            <p className="text-[11px] text-text-muted/70 font-sans">
+              {isRtl
+                ? 'رقم التنسيق المباشر: +91 94000 18008 • متاح باللغة العربية والإنجليزية ٢٤/٧'
+                : 'Direct Coordinator Desk: +91 94000 18008 • Available in Arabic & English 24/7'}
+            </p>
+          </div>
+
+          {/* Real-Time Journey Milestones Tracker */}
+          <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-[#D4A96A]/20 shadow-md space-y-6 text-start">
+            <div className="flex items-center justify-between gap-4 border-b border-slate-100 pb-4">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#D4A96A] block font-sans">
+                  {isRtl ? 'متابعة مسار العلاج' : 'Live Care Tracker'}
+                </span>
+                <h3 className="text-xl font-bold font-display text-[#1B4332]">
+                  {isRtl ? 'ماذا يحدث الآن في رحلتك؟' : 'What Happens Next in Your Journey?'}
+                </h3>
+              </div>
+              <div className="hidden sm:flex items-center gap-1.5 bg-[#FAF7F2] border border-[#D4A96A]/30 px-3 py-1.5 rounded-full text-xs font-semibold text-[#1B4332]">
+                <Clock className="h-3.5 w-3.5 text-[#D4A96A]" />
+                <span>{isRtl ? 'زمن الاستجابة: ٢٤ ساعة' : 'Max 24h turnaround'}</span>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {milestoneSteps.map((m) => {
+                const isDone = m.status === 'done';
+                const isActive = m.status === 'active';
+                return (
+                  <div
+                    key={m.num}
+                    className={`flex items-start gap-4 p-4 rounded-2xl border transition-all ${
+                      isActive
+                        ? 'bg-[#F5F8F4] border-[#2D6A4F]/30 shadow-xs ring-1 ring-[#2D6A4F]/10'
+                        : isDone
+                        ? 'bg-white border-slate-200'
+                        : 'bg-white border-slate-100 opacity-60'
+                    }`}
+                  >
+                    <div
+                      className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 text-xs font-bold font-sans ${
+                        isDone
+                          ? 'bg-[#1B4332] text-white'
+                          : isActive
+                          ? 'bg-[#25D366] text-white shadow-xs animate-pulse'
+                          : 'bg-slate-100 text-slate-400'
+                      }`}
+                    >
+                      {isDone ? '✓' : m.num}
+                    </div>
+
+                    <div className="space-y-0.5 text-start flex-1">
+                      <div className="flex items-center justify-between gap-2 flex-wrap">
+                        <h4 className={`text-sm font-bold font-sans ${isActive ? 'text-[#1B4332]' : 'text-slate-800'}`}>
+                          {isRtl ? m.titleAr : m.titleEn}
+                        </h4>
+                        {isActive && (
+                          <span className="text-[10px] font-bold bg-[#2D6A4F]/10 text-[#2D6A4F] px-2 py-0.5 rounded-full uppercase tracking-wider">
+                            {isRtl ? 'قيد التنفيذ الآن' : 'In Progress'}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs text-text-muted font-light leading-relaxed">
+                        {isRtl ? m.descAr : m.descEn}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* What to Prepare in Advance Checklist */}
+          <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-[#D4A96A]/20 shadow-md space-y-6 text-start">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-2xl bg-[#FAF7F2] text-[#2D6A4F] border border-[#2D6A4F]/10 flex items-center justify-center shrink-0">
+                <FileText className="h-5 w-5" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold font-display text-[#1B4332]">
+                  {isRtl ? 'المستندات التي يفضل تجهيزها أثناء الانتظار' : 'Documents to Prepare While You Wait'}
+                </h3>
+                <p className="text-xs text-text-muted">
+                  {isRtl ? 'إرسال هذه التقارير يساعد كبار الجراحين على إعطاء تشخيص فوري دقيق' : 'Having these ready helps our surgeons give you an immediate, accurate assessment'}
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               {[
-                isRtl ? 'يستعرض فريقنا تفاصيل حالتك الطبية' : 'Our team reviews your medical condition details',
-                isRtl ? 'نتواصل مع كبار الاستشاريين في المستشفيات لإعداد الخطة المناسبة' : 'We coordinate with hospital specialists to secure the best plan',
-                isRtl ? 'نرسل لك عروض أسعار مؤكدة وخيارات السكن عبر وسيلة الاتصال المفضلة' : 'We send you confirmed pricing and accommodation bookings to your chosen contact',
-              ].map((txt, i) => (
-                <div key={i} className="flex items-start gap-3 text-sm text-slate-600 font-sans font-light">
-                  <span className="w-6 h-6 rounded-full bg-[#1B4332] text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">{i + 1}</span>
-                  <span>{txt}</span>
+                {
+                  en: 'Recent MRI / CT Scans / X-Rays (within last 6 months)',
+                  ar: 'صور الرنين المغناطيسي أو الأشعة المقطعية الحديثة',
+                },
+                {
+                  en: 'Latest Blood Work & Discharge Summary (if any)',
+                  ar: 'تحاليل الدم الأخيرة أو تقرير الخروج من المستشفى السابق',
+                },
+                {
+                  en: 'Passport Copy of Patient & Traveling Companion',
+                  ar: 'نسخة جواز سفر المريض والمرافق (لإصدار خطاب التأشيرة الطبية)',
+                },
+                {
+                  en: 'List of Current Daily Medications & Dosages',
+                  ar: 'قائمة الأدوية اليومية والجرعات الحالية',
+                },
+              ].map((doc, idx) => (
+                <div
+                  key={idx}
+                  className="bg-[#FAF7F2] border border-[#D4A96A]/20 rounded-xl p-3.5 flex items-start gap-2.5 text-text-dark font-light"
+                >
+                  <CheckCircle2 className="h-4 w-4 text-[#2D6A4F] shrink-0 mt-0.5" />
+                  <span>{isRtl ? doc.ar : doc.en}</span>
                 </div>
               ))}
             </div>
 
-            <button onClick={() => { setSubmitted(false); setStep(1); }}
-              className="text-[#2D6A4F] hover:text-[#1B4332] font-bold text-sm underline transition-colors cursor-pointer font-sans">
-              {isRtl ? 'تقديم طلب جديد' : 'Submit a new request'}
-            </button>
+            <div className="pt-2 flex items-center justify-between border-t border-slate-100 flex-wrap gap-4 text-xs text-text-muted">
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="h-4 w-4 text-[#2D6A4F]" />
+                <span>{isRtl ? 'بياناتك الطبية مشفرة ومحمية بسرية تامة' : 'Your medical data is 100% confidential and secure'}</span>
+              </span>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setSubmitted(false);
+                  setStep(1);
+                }}
+                className="text-[#2D6A4F] hover:text-[#1B4332] font-bold underline cursor-pointer font-sans"
+              >
+                {isRtl ? 'تقديم طلب لحالة أخرى' : 'Submit another estimate request'}
+              </button>
+            </div>
           </div>
+
         </div>
       </div>
     );
@@ -810,7 +1022,7 @@ function InputField({ id, label, required, placeholder, value, onChange, error, 
         {label}{required && <span className="text-red-400 ml-0.5">*</span>}
       </label>
       <input id={id} type={type}
-        className={`w-full px-4 py-3.5 rounded-2xl border-2 text-sm min-h-[48px] focus:outline-none transition-all font-sans text-slate-800 placeholder-slate-400 ${
+        className={`w-full px-4 py-3.5 rounded-2xl border-2 text-base sm:text-sm min-h-[52px] focus:outline-none transition-all font-sans text-slate-800 placeholder-slate-400 ${
           error
             ? 'border-red-300 bg-red-50/30 focus:border-red-400'
             : 'border-slate-200 bg-slate-50/50 hover:border-slate-300 focus:border-[#2D6A4F]/60 focus:bg-white'
