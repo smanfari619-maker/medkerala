@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocale } from 'next-intl';
 import { MessageSquare, X, Send, Bot, User, CheckCircle2, Phone, Mail, Sparkles, ChevronRight, ShieldCheck, HeartPulse, Paperclip, FileText } from 'lucide-react';
 import { submitChatLead, ChatLeadData, ChatAttachment } from '@/app/actions/chat';
+import { getSmartFallbackReply } from '@/lib/chatFallback';
 
 interface Message {
   id: string;
@@ -166,13 +167,12 @@ export default function LiveChatWidget() {
         throw new Error('API failed');
       }
     } catch (err) {
-      console.error(err);
+      console.error('Chat error, using fallback:', err);
+      const fallbackText = getSmartFallbackReply(text, locale);
       const fallbackMsg: Message = {
         id: `asst-err-${Date.now()}`,
         role: 'assistant',
-        content: isRtl
-          ? 'يسعدني خدمتكم! يمكنك ترك رقم واتساب أو بريدك الإلكتروني لأقوم بمشاركتكم برامج العلاج والتكلفة مباشرة.'
-          : "I'd be glad to help! Please feel free to share your email or WhatsApp number so our senior doctors can send you exact treatment quotes.",
+        content: fallbackText,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
       setMessages((prev) => [...prev, fallbackMsg]);
