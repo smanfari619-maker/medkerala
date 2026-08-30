@@ -1,4 +1,5 @@
 'use client';
+/* eslint-disable react-hooks/set-state-in-effect, react-hooks/purity */
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocale } from 'next-intl';

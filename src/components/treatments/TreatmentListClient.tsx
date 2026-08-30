@@ -36,8 +36,23 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSpeciality, setSelectedSpeciality] = useState('All');
   const [sortBy, setSortBy] = useState<'default' | 'price-asc' | 'price-desc'>('default');
+  const [currency, setCurrency] = useState<'USD' | 'OMR' | 'SAR' | 'AED'>('USD');
 
   const isRtl = locale === 'ar';
+
+  const currencyRates: Record<'USD' | 'OMR' | 'SAR' | 'AED', { rate: number; symbolEn: string; symbolAr: string }> = {
+    USD: { rate: 1, symbolEn: '$', symbolAr: '$' },
+    OMR: { rate: 0.385, symbolEn: 'OMR ', symbolAr: 'ر.ع. ' },
+    SAR: { rate: 3.75, symbolEn: 'SAR ', symbolAr: 'ر.س. ' },
+    AED: { rate: 3.67, symbolEn: 'AED ', symbolAr: 'د.إ. ' }
+  };
+
+  const formatPrice = (usdAmount: number) => {
+    const { rate, symbolEn, symbolAr } = currencyRates[currency];
+    const converted = Math.round(usdAmount * rate);
+    const symbol = isRtl ? symbolAr : symbolEn;
+    return `${symbol}${converted.toLocaleString()}`;
+  };
 
   // Icon mapping
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -112,7 +127,8 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
   return (
     <div className="space-y-10">
       {/* Segmented Toggle Control */}
-      <div className="flex justify-center mb-6">
+      {/* Tab Switcher & Currency Toggle Bar */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
         <div className="bg-white border border-[#D4A96A]/15 p-1.5 rounded-2xl inline-flex shadow-sm gap-1.5">
           <button
             onClick={() => {
@@ -140,6 +156,27 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
           >
             {isRtl ? 'حزم العلاج الشاملة (الأوفر)' : 'All-Inclusive Packages'}
           </button>
+        </div>
+
+        {/* Currency Switcher Pill */}
+        <div className="bg-white border border-[#D4A96A]/20 p-1 rounded-2xl inline-flex shadow-xs gap-1">
+          {(['USD', 'OMR', 'SAR', 'AED'] as const).map((curr) => {
+            const isSelected = currency === curr;
+            const label = curr === 'USD' ? '$ USD' : curr === 'OMR' ? '🇴🇲 OMR' : curr === 'SAR' ? '🇸🇦 SAR' : '🇦🇪 AED';
+            return (
+              <button
+                key={curr}
+                onClick={() => setCurrency(curr)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                  isSelected
+                    ? 'bg-[#D4A96A] text-white shadow-xs'
+                    : 'text-text-muted hover:text-primary-dark hover:bg-slate-50'
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -267,7 +304,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
                           {costsFromText}
                         </span>
                         <span className="text-primary-dark group-hover:text-primary-green font-display font-extrabold text-2xl sm:text-3xl transition-colors duration-300">
-                          ${treatment.costTable.keralaMin.toLocaleString()} – ${treatment.costTable.keralaMax.toLocaleString()}
+                          {formatPrice(treatment.costTable.keralaMin)} – {formatPrice(treatment.costTable.keralaMax)}
                         </span>
                         <span className="text-[10px] text-text-muted/70 font-sans mt-0.5">
                           {isRtl ? 'بناءً على التقييم السريري' : 'Confirmed after assessment'}
@@ -366,7 +403,7 @@ export default function TreatmentListClient({ treatments, packages, locale, lear
                           {isRtl ? 'الحزمة الشاملة' : 'All-Inclusive Bundle'}
                         </span>
                         <span className="text-2xl font-extrabold text-primary-green font-display">
-                          ${pkg.costMin.toLocaleString()} – ${pkg.costMax.toLocaleString()}
+                          {formatPrice(pkg.costMin)} – {formatPrice(pkg.costMax)}
                         </span>
                         <span className="text-[10px] text-text-muted/70 font-sans block text-right rtl:text-left mt-0.5">
                           {isRtl ? 'بناءً على التقييم السريري' : 'Confirmed after assessment'}

@@ -35,7 +35,16 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
   };
 }
 
-const treatments = [
+interface AyurvedaTreatmentItem {
+  icon: React.ComponentType<{ className?: string }>;
+  image?: string;
+  en: { name: string; tagline: string; desc: string };
+  ar: { name: string; tagline: string; desc: string };
+  duration: string;
+  cost: string;
+}
+
+const treatments: AyurvedaTreatmentItem[] = [
   {
     icon: Droplets,
     image: '/images/ayurveda_panchakarma.png',
@@ -208,10 +217,10 @@ export default async function AyurvedaPage({ params }: Props) {
                   className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] overflow-hidden hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group flex flex-col"
                 >
                   {/* Optional Image */}
-                  {(t as any).image ? (
+                  {t.image ? (
                     <div className="relative h-48 w-full overflow-hidden">
                       <Image
-                        src={(t as any).image}
+                        src={t.image}
                         alt={content.name}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"

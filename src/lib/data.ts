@@ -1553,6 +1553,382 @@ Harvested in dry deciduous forests across the Indian subcontinent, Shallaki resi
 ### طلب الأعشاب الأصلية المعتمدة
 *احرص دائماً على اختيار مكملات خالية من المعادن الثقيلة ومختبرة معملياً. يستفيد مرضى وزوار علاج في كيرلا من **خصم 5% إلى 10%** على ماركات الأيورفيدا المعتمدة على iHerb باستخدام الرمز **QAO6090** مع شحن سريع إلى دول الخليج وكافة أنحاء العالم.*`,
     image: '/images/ayurveda_treatment_hero.png'
+  },
+  {
+    slug: 'ivf-fertility-treatment-kerala-gcc-guide',
+    title: 'IVF & Fertility Care in Kerala: 2026 Comprehensive Guide for GCC & Global Couples',
+    titleAr: 'دليل علاج العقم وأطفال الأنابيب (IVF) في كيرلا 2026: خيار العائلات الخليجية الأول',
+    excerpt: 'Discover why couples from UAE, Saudi Arabia, Oman, and Qatar choose Kerala for IVF and advanced fertility treatments: high success rates, 70% cost savings, and holistic privacy.',
+    excerptAr: 'تعرف على أسباب اختيار الأزواج من سلطنة عمان والإمارات والسعودية وقطر لكيرلا لإجراء أطفال الأنابيب: معدلات نجاح مرتفعة، توفير 70%، وبيئة استشفاء هادئة تراعي الخصوصية.',
+    aeoSummary: 'Kerala has emerged as a premier IVF destination for GCC couples in 2026, offering 65-75% clinical success rates for blastocyst cycles with PGT-A genetic screening. Costs range between $2,500 and $4,500 (70% lower than UAE or UK) with zero waiting lists, Arabic-speaking female coordinators, and direct 3.5-hour flights.',
+    aeoSummaryAr: 'أصبحت كيرلا الوجهة المفضلة لرحلات أطفال الأنابيب في 2026 بنسب نجاح تصل إلى 65-75% مع فحص الأجنة الوراثي PGT-A. تتراوح تكلفة الدورة بين 2,500 و 4,500 دولار فقط (أقل بـ 70% من دول الخليج والغرب) مع توفير خصوصية تامة ومترجمات عربيات ومدة إقامة لا تتجاوز 18-20 يوماً.',
+    date: 'August 15, 2026',
+    category: 'Fertility & IVF',
+    categoryAr: 'الطب الإنجابي والخصوبة',
+    readTime: '6 min read',
+    image: '/images/caring_doctor_patient_hero.png',
+    content: `For couples navigating the emotionally and financially demanding journey of fertility treatments, Kerala, India has become one of the world's most trusted destinations. Each year, hundreds of couples from the UAE, Saudi Arabia, Oman, Qatar, Kuwait, and the West travel to Kerala for In-Vitro Fertilization (IVF), Intracytoplasmic Sperm Injection (ICSI), and advanced reproductive genetics.
+
+In this guide, we break down why Kerala is a global leader in reproductive medicine, the clinical protocols, exact cost comparisons, and the 18-day medical journey.
+
+## 1. Why GCC Couples Choose Kerala for Fertility Treatments
+
+- **High Clinical Success Rates (65%–75%):** Partner fertility centres in Kozhikode and Kochi utilize advanced time-lapse incubator systems (EmbryoScope) and blastocyst culture (Day 5 transfers), matching or exceeding leading European and American clinics.
+- **Advanced Pre-Implantation Genetic Screening (PGT-A / PGT-M):** High-precision chromosome screening detects chromosomal abnormalities and single-gene hereditary conditions before embryo transfer, maximizing healthy live birth rates.
+- **Substantial Cost Savings (Over 70%):** A complete IVF cycle with ICSI and medications costs $2,500 to $4,500 in Kerala, compared to $9,500–$14,000 in Dubai/Riyadh and $16,000+ in the UK or US.
+- **Stress-Free, Serene Environment:** Stress and elevated cortisol are clinically proven to impair implantation. Kerala’s lush, tranquil climate, comfortable serviced apartments, and gentle pace allow couples to focus entirely on calm recovery.
+- **Cultural Familiarity & Arabic Support:** Dedicated Arabic-speaking female coordinators handle all hospital logistics, translation, appointments, and dietary preferences (100% Halal catering).
+
+## 2. Cost Comparison: Kerala vs. UAE, UK, and USA
+
+| Country | Standard IVF Cycle | IVF + ICSI + PGT-A | Medications & Injections |
+| :--- | :--- | :--- | :--- |
+| **Kerala (India)** | **$2,500 – $3,500** | **$3,800 – $4,800** | **Included / $600** |
+| **UAE (Dubai / Abu Dhabi)** | $8,500 – $12,000 | $12,000 – $16,000 | $2,000 – $3,500 |
+| **Saudi Arabia** | $8,000 – $11,000 | $11,000 – $15,000 | $2,000 – $3,000 |
+| **United Kingdom (Private)** | $9,000 – $13,000 | $14,000 – $18,000 | $2,500 – $4,000 |
+| **United States** | $15,000 – $22,000 | $22,000 – $32,000 | $4,000 – $7,000 |
+
+## 3. The 18-Day Treatment Roadmap in Kerala
+
+A standard IVF cycle is structured smoothly across approximately 18 to 21 days:
+
+- **Days 1–3 (Arrival & Baseline Ultrasound):** Arrival at Calicut (CCJ) or Kochi (COK) airport. Baseline hormonal profile and ultrasound on Day 2 of the menstrual cycle. Tailored gonadotropin stimulation injections begin.
+- **Days 4–9 (Follicular Monitoring):** Regular ultrasound follicular tracking every 48 hours to monitor egg follicle growth and adjust medication dosages.
+- **Days 10–12 (Trigger & Egg Retrieval):** Administration of hCG/GnRH trigger injection, followed by ultrasound-guided egg retrieval under mild sedation (completely painless). Partner semen collection and ICSI fertilization in the embryology lab.
+- **Days 13–17 (Embryo Culture to Blastocyst):** Embryos develop in advanced incubators. High-grade Day 5 blastocysts are selected. Optional biopsy for genetic testing (PGT).
+- **Day 18 (Embryo Transfer):** Painless transfer of the best quality blastocyst into the uterus. Rest and prescription of post-transfer progesterone support.
+- **Follow-up:** Couples can fly home 24–48 hours after embryo transfer. Serum beta-hCG blood pregnancy test is conducted 14 days later at home or in Kerala.
+
+## 4. Complementary Pre-Conception Ayurveda Therapies
+
+Kerala is unique in offering integrative pre-conception care. Many couples opt for a 7-day gentle Ayurvedic preparatory therapy (*Garbhadhana Samskara*) prior to starting ovarian stimulation. Gentle herbal oils and specialized organic nutrition improve uterine blood circulation and restore hormonal balance naturally.
+
+## 5. How TreatInKerala Coordinates Your Visit
+
+TreatInKerala provides complete end-to-end medical logistics:
+- Free initial medical report review with senior reproductive endocrinologists.
+- Official hospital invitation letter for express Indian e-Medical Visas.
+- Airport VIP greeting at Kozhikode (CCJ) with local SIM card and direct chauffeur transfer.
+- Private, fully furnished serviced apartments located minutes from the fertility centre.
+- Dedicated female Arabic coordinator accompanying you to all consultations.`,
+    contentAr: `بالنسبة للأزواج الذين يخوضون رحلة الإنجاب والبحث عن حلم الأبوة والأمومة، أصبحت ولاية كيرلا في الهند إحدى أكثر الوجهات الطبية الموثوقة عالمياً. في كل عام، يسافر مئات الأزواج من سلطنة عمان، والمملكة العربية السعودية، والإمارات، وقطر، والكويت إلى كيرلا لإجراء عمليات أطفال الأنابيب (IVF)، والحقن المجهري (ICSI)، والفحص الوراثي المتقدم للأجنة.
+
+نستعرض في هذا الدليل الشامل أسباب ريادة كيرلا في الطب الإنجابي، وبروتوكولات العلاج، ومقارنة التكاليف الدقيقة، ومسار الرحلة العلاجية خلال 18 يوماً.
+
+## 1. لماذا يفضل الأزواج في الخليج كيرلا لعلاج العقم وأطفال الأنابيب؟
+
+- **نسب نجاح سريرية مرتفعة (65% إلى 75%):** تعتمد مراكز الإخصاب الشريكة في كوزيكود وكوتشي على تقنية مراقبة الأجنة الذكية (EmbryoScope) وزراعة الأجنة حتى مرحلة الكيسة الأريمية (اليوم الخامس Blastocyst)، بما يضاهي أحدث المراكز الأوروبية والأمريكية.
+- **الفحص الجيني المتقدم للأجنة قبل الانغراس (PGT-A / PGT-M):** يتيح الفحص الوراثي الدقيق الكشف عن سلامة الكروموسومات واستبعاد الأمراض الوراثية قبل نقل الجنين، مما يرفع نسب ثبات الحمل الصحي.
+- **توفير مالي استثنائي (أكثر من 70%):** تبلغ تكلفة دورة أطفال الأنابيب الكاملة مع الحقن المجهري والأدوية في كيرلا ما بين 2,500 و 4,500 دولار أمريكي، مقارنة بـ 9,500 إلى 15,000 دولار في دبي والرياض والدوحة.
+- **بيئة استشفاء هادئة وخالية من التوتر:** أثبتت الدراسات الطبية أن التوتر يرفع هرمون الكورتيزول ويؤثر سلباً على انغراس الأجنة. تتميز كيرلا بطبيعتها الخلابة ومناخها الاستوائي المهدئ للأعصاب، مما يمنح الزوجين راحة نفسية تامة.
+- **رعاية تراعي التقاليد والخصوصية التامة:** توفر خدمة "علاج في كيرلا" منسقات ومترجمات عربيات متخصصات يرافقن الزوجة في كافة المواعيد الطبية، مع توفير أطعمة حلال 100% وشقق فندقية عائلية مجهزة.
+
+## 2. جدول مقارنة التكاليف: كيرلا مقابل الخليج وبريطانيا وأمريكا
+
+| الدولة | دورة أطفال الأنابيب القياسية | الحقن المجهري مع الفحص الجيني PGT | الأدوية والتنشيط |
+| :--- | :--- | :--- | :--- |
+| **كيرلا (الهند)** | **2,500 – 3,500 دولار** | **3,800 – 4,800 دولار** | **مشمولة / 600 دولار** |
+| **الإمارات العربية المتحدة** | 8,500 – 12,000 دولار | 12,000 – 16,000 دولار | 2,000 – 3,500 دولار |
+| **المملكة العربية السعودية** | 8,000 – 11,000 دولار | 11,000 – 15,000 دولار | 2,000 – 3,000 دولار |
+| **المملكة المتحدة (خاص)** | 9,000 – 13,000 دولار | 14,000 – 18,000 دولار | 2,500 – 4,000 دولار |
+| **الولايات المتحدة** | 15,000 – 22,000 دولار | 22,000 – 32,000 دولار | 4,000 – 7,000 دولار |
+
+## 3. الجدول الزمني للعلاج في كيرلا (18 - 21 يوماً)
+
+- **الأيام 1–3 (الوصول والفحوصات الأولية):** الاستقبال في مطار كالكوت الدولي (CCJ). إجراء فحص السونار والتحاليل الهرمونية في اليوم الثاني من الدورة الشهرية، وبدء إبر التنشيط الموجهة.
+- **الأيام 4–9 (متابعة نمو البويضات):** إجراء فحص سونار دوري كل 48 ساعة لمتابعة استجابة المبايض وضبط جرعات الدواء بدقة.
+- **الأيام 10–12 (إبرة التفجير وسحب البويضات):** إعطاء الإبرة التفجيرية، ثم إجراء سحب البويضات بتوجيه السونار وتحت تخدير بسيط خفيف دون أي ألم على الإطلاق. يتم تلقيح البويضات مجهرياً (ICSI) في المختبر.
+- **الأيام 13–17 (حضانة الأجنة وفحصها):** تنمو الأجنة في حضانات متطورة حتى اليوم الخامس (Blastocyst)، مع إمكانية أخذ عينة للفحص الجيني.
+- **اليوم 18 (إرجاع الأجنة):** نقل الجنين الأفضل جودة إلى الرحم في إجراء بسيط وسريع يستغرق دقائق قليلة دون تخدير.
+- **المتابعة والعودة:** يمكن للزوجين السفر والعودة للوطن بعد 24 إلى 48 ساعة من نقل الأجنة، وإجراء تحليل هرمون الحمل الرقمي (Beta hCG) بعد 14 يوماً.
+
+## 4. التكامل مع طب الأيورفيدا لتحسين الخصوبة
+
+تنفرد كيرلا بإمكانية الدمج بين أحدث تقنيات الإخصاب وبرامج الأيورفيدا التحضيرية للرحم قبل بدء التنشيط، مما يسهم في تنشيط الدورة الدموية في منطقة الحوض وتخفيف التوتر وإعداد بطانة الرحم لاستقبال الجنين.
+
+## 5. كيف تساعدك منصة "علاج في كيرلا"؟
+
+- مراجعة استشارية مجانية لتقاريركم الطبية مع كبار أطباء الإخصاب.
+- إصدار خطاب الدعوة الطبية للحصول على التأشيرة الإلكترونية السريعة خلال 24 ساعة.
+- استقبال خاص في المطار وتوفير شريحة اتصال وسيارة خاصة.
+- حجز شقق فندقية راقية ومريحة قريبة من المركز الطبي.
+- مرافقة منسقة عربية طوال المواعيد لضمان الراحة التامة والسرية المطلقة.`
+  },
+  {
+    slug: 'robotic-knee-joint-replacement-kerala',
+    title: 'Robotic Knee Replacement in Kerala: Advanced Precision, Costs & Fast Recovery',
+    titleAr: 'استبدال مفصل الركبة بالروبوت في كيرلا: دقة متناهية وتكاليف ميسرة وسرعة تعافي',
+    excerpt: 'Explore advanced 3D robotic-assisted total knee replacement in Kerala: sub-millimeter precision, same-day walking, US FDA implants, and 75% savings over Gulf & UK hospitals.',
+    excerptAr: 'اكتشف تقنية استبدال مفصل الركبة بمساعدة الروبوت ثلاثي الأبعاد في كيرلا: دقة متناهية، مشي في نفس اليوم، غرسات تيتانيوم معتمدة، وتوفير 75% مقارنة بمستشفيات الخليج وبريطانيا.',
+    aeoSummary: 'Robotic knee replacement in Kerala combines 3D CT surgical navigation (Mako/Stryker systems) with sub-millimeter implant placement, reducing soft tissue trauma and enabling patients to walk within 24 hours. Costs in JCI-accredited Kerala hospitals range from $4,500 to $7,500, inclusive of surgery, US FDA implants, hospital stay, and 14 days of inpatient physiotherapy.',
+    aeoSummaryAr: 'تجمع جراحة استبدال مفصل الركبة بالروبوت في كيرلا بين التخطيط ثلاثي الأبعاد الموجه بالأشعة المقطعية والدقة المتناهية في تركيب المفصل، مما يقلل تلف الأنسجة ويتيح للمريض المشي خلال 24 ساعة. تتراوح التكلفة الإجمالية في مستشفيات كيرلا الحاصلة على JCI بين 4,500 و 7,500 دولار متضمنة المفصل المعتمد والجراحة والإقامة والتأهيل الطبيعي.',
+    date: 'August 20, 2026',
+    category: 'Orthopaedics',
+    categoryAr: 'جراحة العظام والمفاصل',
+    readTime: '7 min read',
+    image: '/images/allopathy_treatment_hero.png',
+    content: `Chronic osteoarthritis and severe knee joint degeneration can severely restrict mobility and quality of life. For decades, traditional knee replacement relied heavily on manual alignment guides. In 2026, robotic-assisted knee arthroplasty in Kerala has transformed orthopedic outcomes with computerized precision and fast-track rehabilitation.
+
+This clinical guide explains how robotic knee replacement works, why international patients travel to Kerala, the cost savings, and what to expect during post-op recovery.
+
+## 1. What is Robotic-Assisted Knee Replacement?
+
+Robotic knee surgery does not mean a machine performs the operation autonomously. Rather, a specialized robotic arm (such as the Stryker Mako or Smith & Nephew NAVIO system) acts as an ultra-precise extension of the senior orthopedic surgeon's hands:
+
+- **Pre-Operative 3D CT Virtual Modeling:** A detailed 3D model of your unique joint anatomy is created prior to incision. The surgeon plans the exact size, orientation, and bone cuts down to 0.5 millimeters and 0.5 degrees.
+- **Haptic Boundary Protection:** During bone resurfacing, the robotic arm restricts the surgeon within predefined virtual boundaries. This eliminates accidental injury to surrounding cruciate ligaments, arteries, and nerves.
+- **Dynamic Joint Balancing:** The computer evaluates tension across the collateral ligaments in real time throughout the knee's full range of flexion and extension, ensuring a natural, balanced feel.
+
+## 2. Key Benefits Over Conventional Knee Replacement
+
+- **50% Less Post-Surgical Pain:** Minimal damage to periarticular soft tissues drastically lowers inflammation and requirement for heavy narcotic analgesics.
+- **Walk Within 24 Hours:** Patients are assisted onto their feet on the same day or morning after surgery.
+- **Longer Implant Lifespan (20+ Years):** Sub-millimeter mechanical alignment ensures balanced wear distribution across the ceramic/polyethylene bearing surfaces.
+- **Natural Knee Kinematics:** Enhanced stability allows patients to climb stairs, bend, and pray with greater ease and stability.
+
+## 3. Transparent Cost Comparison
+
+| Procedure | Kerala (JCI Hospital) | UAE (Dubai/Abu Dhabi) | United Kingdom | United States |
+| :--- | :--- | :--- | :--- | :--- |
+| **Single Robotic Knee Replacement** | **$4,500 – $6,500** | $18,000 – $24,000 | $17,000 – $22,000 | $45,000 – $60,000 |
+| **Bilateral (Both Knees) Robotic** | **$8,000 – $11,500** | $32,000 – $42,000 | $30,000 – $38,000 | $80,000 – $110,000 |
+| **Implants Used** | **US FDA Titanium/Ceramic** | US FDA Titanium/Ceramic | US FDA Titanium/Ceramic | US FDA Titanium/Ceramic |
+| **14-Day Inpatient Physiotherapy** | **Included in Package** | Extra ($3,000+) | Extra ($2,500+) | Extra ($6,000+) |
+
+## 4. The 14-Day Recovery & Rehabilitation Journey in Kerala
+
+- **Day 1 (Arrival & Pre-Op Diagnostics):** Direct airport pickup from Calicut (CCJ). Hospital admission, 3D CT imaging of the joint, cardiology clearance, and blood work.
+- **Day 2 (Robotic Surgery):** The procedure lasts 75–90 minutes under regional spinal anesthesia with epidural pain control.
+- **Days 3–5 (In-Hospital Mobilization):** Guided standing and walking with a walker within 24 hours. Continuous Passive Motion (CPM) therapy to restore knee flexion up to 90 degrees.
+- **Days 6–12 (Transition to Serviced Apartment & Daily Physiotherapy):** Discharge to comfortable nearby accommodation. A dedicated physiotherapist conducts twice-daily muscle strengthening and gait training sessions.
+- **Day 13–14 (Stitch Removal & Fit-to-Fly Clearance):** Final X-ray review by the chief orthopedic surgeon, issuance of international medical travel clearance, and return flight home.
+
+## 5. Why Choose Kerala for Joint Surgery?
+
+Kerala is home to renowned orthopedic hospital centres like Aster MIMS, Meitra Hospital, and Baby Memorial Hospital in Calicut. Surgeons boast over 15–25 years of specialized joint replacement experience, with thousands of successful cases handled annually.
+
+TreatInKerala manages your complete travel, hospital bookings, Arabic translation, wheelchair-friendly airport transfers, and private recovery accommodation.`,
+    contentAr: `يعد تآكل وخشونة مفصل الركبة المتقدمة من أكثر الحالات المسببة للألم وصعوبة الحركة لكبار السن. لسنوات طويلة، كانت جراحة استبدال المفصل تعتمد على التقدير اليدوي للجراح. أما في عام 2026، فقد أحدثت تقنية استبدال المفاصل بالروبوت ثلاثي الأبعاد في مستشفيات كيرلا نقلة نوعية في دقة الجراحة وسرعة استعادة القدرة على المشي.
+
+يشرح هذا الدليل الطبي المعتمد كيفية عمل استبدال الركبة بالروبوت، وفوائده، وجدول التكاليف المقارن، وبرنامج التأهيل الطبيعي بعد العملية.
+
+## 1. كيف تعمل جراحة استبدال الركبة بمساعدة الروبوت؟
+
+لا تعني جراحة الروبوت أن الجهاز يجري العملية بمفرده، بل يعمل الذراع الروبوتي المتطور (مثل نظام Stryker Mako أو Smith & Nephew) كأداة فائقة الدقة بتوجيه مباشر من استشاري جراحة العظام:
+
+- **بناء نموذج ثلاثي الأبعاد افتراضي قبل العملية:** يتم إجراء أشعة مقطعية دقيقة للركبة لإنشاء نموذج ثلاثي الأبعاد يوضح تضاريس العظام بدقة. يحدد الجراح القياسات ومسار قطع العظم بدقة تصل إلى 0.5 ملم ونصف درجة زاوية.
+- **حماية الأنسجة والأربطة بنظام الأمان اللمسي:** يمنع الروبوت الجراح تلقائياً من تجاوز الحدود التشريحية المرسومة، مما يمنع إلحاق أي ضرر بالأربطة الجانبية والأوعية الدموية والأعصاب المحيطة بالمفصل.
+- **موازنة ديناميكية لأربطة الركبة:** يقيس الكمبيوتر توتر الأربطة أثناء ثني الركبة وبسطها في الوقت الفعلي داخل غرفة العمليات، مما يمنح المريض إحساساً طبيعياً وثباتاً كاملاً عند المشي.
+
+## 2. المزايا السريرية لجراحة الروبوت مقارنة بالجراحة التقليدية
+
+- **ألم أقل بنسبة 50% بعد العملية:** يؤدي الحفاظ على الأنسجة المحيطة بالمفصل إلى انخفاض التورم والحاجة للمسكنات القوية.
+- **المشي خلال 24 ساعة:** يستطيع المريض الوقوف والمشي بمساعدة أخصائي العلاج الطبيعي في نفس يوم العملية أو صباح اليوم التالي.
+- **عمر افتراضي أطول للمفصل (أكثر من 20 عاماً):** التوزيع المتوازن للضغط يقلل من احتكاك وتآكل أسطح المفصل الاصطناعي على المدى الطويل.
+- **حركة وثني طبيعي للركبة:** يستعيد المريض القدرة على صعود الدرج والجلوس في الصلاة بسلاسة أكبر.
+
+## 3. مقارنة تكاليف استبدال مفصل الركبة
+
+| الإجراء | مستشفيات كيرلا (JCI) | الإمارات (دبي/أبوظبي) | بريطانيا (خاص) | الولايات المتحدة |
+| :--- | :--- | :--- | :--- | :--- |
+| **استبدال ركبة واحدة بالروبوت** | **4,500 – 6,500 دولار** | 18,000 – 24,000 دولار | 17,000 – 22,000 دولار | 45,000 – 60,000 دولار |
+| **استبدال الركبتين معاً بالروبوت** | **8,000 – 11,500 دولار** | 32,000 – 42,000 دولار | 30,000 – 38,000 دولار | 80,000 – 110,000 دولار |
+| **نوعية المفصل المستخدم** | **تيتانيوم وسيراميك أمريكي (FDA)** | تيتانيوم أمريكي (FDA) | تيتانيوم معتمد | تيتانيوم أمريكي (FDA) |
+| **برنامج العلاج الطبيعي (14 يوماً)** | **شامل في الحزمة** | تكلفة إضافية (3,000$+) | تكلفة إضافية | تكلفة إضافية (6,000$+) |
+
+## 4. مسار الرحلة العلاجية والتأهيل في كيرلا (14 يوماً)
+
+- **اليوم 1 (الوصول والتقييم الشامل):** استقبال في مطار كالكوت، دخول المستشفى، إجراء الأشعة المقطعية ثلاثية الأبعاد، وتخطيط القلب وفحوصات الدم.
+- **اليوم 2 (إجراء الجراحة):** تستغرق الجراحة من 75 إلى 90 دقيقة تحت تخدير نصفي مع تحكم متطور بالألم.
+- **الأيام 3–5 (بدء الحركة في المستشفى):** المشي بمساعدة المشاية، واستخدام جهاز التحريك السلبي للركبة (CPM) للوصول لدرجة ثني 90 درجة.
+- **الأيام 6–12 (الانتقال لشقة النقاهة وجلسات العلاج الطبيعي):** الخروج إلى شقة فندقية مجهزة مع جلسات علاج طبيعي يومية مكثفة لتقوية عضلات الفخذ واستعادة المشي بدون مساعدة.
+- **اليوم 13–14 (مراجعة الجراح وتصريح الطيران):** إجراء أشعة سينية نهائية، وفك الغرز الطبية، والحصول على تقرير السفر والعودة للوطن.
+
+## 5. خدمات علاج في كيرلا الشاملة
+
+نحن نضمن لك ولعائلتك تجربة علاجية مريحة تشمل الاستقبال من المطار بسيارات مهيأة للكراسي المتحركة، وتوفير مترجم مرافق، وحجز شقق قريبة من المستشفى، وتنسيق كافة المواعيد مع كبار جراحي العظام في كيرلا.`
+  },
+  {
+    slug: 'ayurvedic-vs-surgical-spine-care-sciatica-slip-disc',
+    title: 'Slip Disc & Sciatica Treatment in Kerala: Non-Surgical Ayurveda vs. Microdiscectomy',
+    titleAr: 'علاج الانزلاق الغضروفي وعرق النسا في كيرلا: الأيورفيدا الطبيعية أم الجراحة المجهرية؟',
+    excerpt: 'Confused between spine surgery and Ayurvedic healing for disc herniation and sciatica? Learn the clinical criteria, success rates, and integrated recovery options in Kerala.',
+    excerptAr: 'هل تعاني من آلام الديسك وعرق النسا وتحتار بين الجراحة والعلاج الطبيعي؟ تعرف على المعايير الطبية لاختيار الأيورفيدا أو الجراحة المجهرية وخيارات العلاج في كيرلا.',
+    aeoSummary: 'For herniated discs and sciatica, Kerala offers a unique clinical advantage: non-surgical Ayurvedic therapy (Kadi Basti and herbal traction) resolves over 80% of uncomplicated disc bulges within 14-21 days without surgery. For severe cases with neurological deficits, minimally invasive microdiscectomy at JCI tertiary hospitals provides instant relief at $3,500–$5,500.',
+    aeoSummaryAr: 'تقدم كيرلا ميزة فريدة لمرضى الانزلاق الغضروفي وعرق النسا: تنجح علاجات الأيورفيدا المتخصصة (كادي باستي والتكميد بالأعشاب) في علاج أكثر من 80% من حالات الديسك البسيطة والمتوسطة خلال 14-21 يوماً دون جراحة. بينما توفر الجراحة المجهرية طفيفة التوغل حلاً فورياً للحالات المعقدة بتكلفة تتراوح بين 3,500 و 5,500 دولار فقط.',
+    date: 'August 24, 2026',
+    category: 'Spine & Neuro Care',
+    categoryAr: 'العمود الفقري والأعصاب',
+    readTime: '7 min read',
+    image: '/images/ayurveda_treatment_hero.png',
+    content: `Severe lower back pain, lumbar disc herniation (slip disc), and sciatica radiating down the leg are among the most debilitating conditions faced by working professionals and elderly patients. When diagnosed with a slip disc, patients are often told that open spine fusion surgery is the only path forward.
+
+Kerala has become the global capital for integrative spine care because it offers patients two world-class treatment pathways: authentic non-surgical Ayurvedic spine rehabilitation and minimally invasive microdiscectomy spine surgery.
+
+## 1. Non-Surgical Ayurvedic Spine Therapy: How Does It Work?
+
+For over 80% of patients with mild to moderate disc bulges, nerve root irritation, and lumbar spondylosis, non-surgical Ayurvedic therapies at NABH-accredited centres (such as Arya Vaidya Sala Kottakkal and specialized spine hospitals in Kozhikode) achieve permanent pain relief without surgery.
+
+- **Kadi Basti (Medicated Herbal Oil Reservoir):** A specialized herbal paste reservoir is placed over the lumbosacral spine and filled with warm, medicated oils (*Mahanarayana* and *Ksheerabala Thailam*). The deep herbal absorption reduces inflammation around the compressed nerve root and rehydrates degenerated intervertebral discs.
+- **Patra Pinda Sweda (Elakizhi Herbal Poultice):** Heated herbal poultices packed with anti-inflammatory medicinal leaves and medicated oils improve spinal microcirculation and relieve chronic lumbar muscle spasm.
+- **Kashaya Basti & Matra Basti (Medicated Enemas):** Classical Ayurvedic systemic therapies that eliminate vata-related neurological inflammation, restoring systemic flexibility and spinal tissue nutrition.
+- **Duration & Expected Results:** A 14 to 21-day inpatient program restores spinal mobility and achieves significant nerve decompression without a single incision.
+
+## 2. When is Minimally Invasive Spine Surgery (Microdiscectomy) Required?
+
+While conservative therapy is ideal for most, certain clinical presentations strictly require surgical decompression:
+
+- **Red Flag Symptoms:** Progressive loss of leg sensation, "foot drop" (inability to lift the foot while walking), or cauda equina syndrome (loss of bowel/bladder control).
+- **Extruded / Free Fragment Discs:** When the disc nucleus pulposus has completely broken through the outer annulus and physically pinches the spinal cord.
+- **Procedure:** Performed through a tiny 1.5 cm incision using high-definition surgical microscopes and neuro-navigation at Aster MIMS or Meitra Hospital. Recovery is rapid: patients walk within 6 hours and are discharged within 24–48 hours.
+
+## 3. Decision Matrix: Which Pathway is Right for You?
+
+| Clinical Feature | Choose Ayurvedic Spine Care | Choose Minimally Invasive Surgery |
+| :--- | :--- | :--- |
+| **Symptom Duration** | Chronic back pain (> 3 months) or recurring flare-ups | Sudden acute severe sciatica with neurological deficits |
+| **MRI Findings** | Disc bulge, protrusion, mild canal stenosis | Extruded fragment, severe nerve root impingement |
+| **Muscle Weakness** | Normal muscle strength, pain on bending | Progressive weakness (e.g., foot drop) |
+| **Treatment Timeline** | 14 to 21 days inpatient wellness stay | 2 days hospital stay + 7 days recovery |
+| **Average Cost** | **$1,200 – $2,200 (Full Inpatient Stay & Food)** | **$3,500 – $5,500 (Surgery & Hospital)** |
+
+## 4. Cost Comparison: Kerala vs Gulf and West
+
+| Treatment Option | Kerala | UAE / Saudi Arabia | United Kingdom / USA |
+| :--- | :--- | :--- | :--- |
+| **21-Day Complete Ayurvedic Spine Package** | **$1,500 – $2,500** | Not available authentically | $6,000 – $9,000 |
+| **Microdiscectomy Spine Surgery** | **$3,500 – $5,500** | $14,000 – $22,000 | $18,000 – $40,000 |
+
+## 5. Free Medical Review with TreatInKerala
+
+Unsure which path is clinically indicated for your spine condition? You can upload your latest lumbar spine MRI scan and X-rays to TreatInKerala. Our medical coordination team shares your scans simultaneously with both a **Senior Neurosurgeon** and a **Senior Ayurvedic Spine Vaidya**, providing you with an objective, dual-perspective treatment plan within 48 hours.`,
+    contentAr: `تعتبر آلام أسفل الظهر الحادة، والانزلاق الغضروفي (الديسك)، وآلام عرق النسا الممتدة إلى الساقين من أكثر المشاكل الصحية انتشاراً وإعاقة للحياة اليومية. وعند تشخيص الحالة بالديسك، يعتقد الكثير من المرضى أن الجراحة المفتوحة وتثبيت الفقرات هي الخيار الوحيد.
+
+تتميز ولاية كيرلا في الهند بأنها المركز العالمي الأول للرعاية التكاملية للعمود الفقري، حيث تتيح للمريض خيارين طبيين عالميين: العلاج الطبيعي الأيورفيدي المتخصص بدون جراحة، أو الجراحات المجهرية طفيفة التوغل للحالات المتقدمة.
+
+## 1. العلاج الطبيعي الأيورفيدي للديسك وعرق النسا (بدون جراحة)
+
+في أكثر من 80% من حالات الانزلاق الغضروفي وبروز الفقرات وتضيق القناة الشوكية البسيط إلى المتوسط، تحقق برامج الأيورفيدا المتخصصة في مراكز كيرلا المعتمدة (مثل مراكز أريا فايديا سالا كوتاكال ومستشفيات كوزيكود) شفاءً تاماً واستعادة كاملة للحركة:
+
+- **كادي باستي (حوض الزيوت الطبية للفقرات Kadi Basti):** يتم عمل حزام دائري من العجين العشبي الخاص حول الفقرات القطنية المصابة، وملؤه بزيوت طبية دافئة مخصصة. تعمل الزيوت على اختراق الأنسجة العميقة وتخفيف التهاب العصب المضغوط وترطيب الغضاريف الجافة.
+- **إيلاكيلي والتكميد بالأعشاب الطبية (Elakizhi):** استخدام كمادات الأعشاب الطبية الدافئة المغذية للأنسجة لتحسين الدورة الدموية الدقيقة حول العمود الفقري وإزالة التشنجات العضلية المزمنة.
+- **العلاجات العشبية الداخلية لتنقية الأعصاب (Kashaya & Matra Basti):** تركيبات عشبية طبيعية معتمدة تعمل على تخفيف التهاب الأعصاب الجذري واستعادة مرونة العمود الفقري.
+- **المدة والنتائج:** يستمر البرنامج العلاجي الداخلي من 14 إلى 21 يوماً متواصلاً، حيث يعود المريض إلى ممارسة حياته الطبيعية دون أي شق جراحي.
+
+## 2. متى تكون الجراحة المجهرية طفيفة التوغل (Microdiscectomy) ضرورية؟
+
+رغم نجاح العلاج الطبيعي لأغلب الحالات، إلا أن هناك علامات سريرية تستوجب التدخل الجراحي الفوري لحماية الأعصاب:
+
+- **الأعراض التحذيرية الخطيرة:** فقدان الإحساس المتزايد في الساق، أو حدوث سقوط القدم (Foot Drop - عدم القدرة على رفع مشط القدم أثناء المشي)، أو تأثر التحكم في المثانة والأمعاء.
+- **انفجار الغضروف وخروج النواة بالكامل (Extruded Disc):** عند انفصال جزء غضروفي وضغطه الشديد والمباشر على الحبل الشوكي.
+- **الإجراء:** يتم إجراء استئصال الغضروف المجهري عبر شق جراحي دقيق جداً لا يتجاوز 1.5 سم باستخدام الميكروسكوب الجراحي في مستشفيات كيرلا المتقدمة مثل أستر ميمس وميترا. يمشي المريض بعد 6 ساعات ويغادر المستشفى خلال 24 إلى 48 ساعة.
+
+## 3. جدول المقارنة: كيف تختار العلاج الأنسب لحالتك؟
+
+| الحالة والتشخيص | خيار الأيورفيدا والعلاج الطبيعي | خيار الجراحة المجهرية |
+| :--- | :--- | :--- |
+| **مدة الأعراض** | آلام مزمنة منذ أكثر من 3 أشهر أو نوبات متكررة | ألم حاد ومفاجئ مع خدر وفقدان إحساس متزايد |
+| **نتيجة الرنين المغناطيسي (MRI)** | بروز غضروفي، احتكاك فقرات، التهاب عرق النسا | انفجار الغضروف وانضغاط العصب الحاد |
+| **القوة العضلية** | القوة العضلية طبيعية مع وجود ألم عند الانحناء | ضعف عضلي ملحوظ (مثل سقوط مشط القدم) |
+| **مدة البرنامج** | إقامة علاجية 14 إلى 21 يوماً في منتجع طبي | يومان في المستشفى + أسبوع نقاهة |
+| **متوسط التكلفة** | **1,200 – 2,200 دولار (شامل السكن والعلاج والوجبات)** | **3,500 – 5,500 دولار (شامل الجراحة والمستشفى)** |
+
+## 4. مقارنة التكاليف مع دول الخليج والغرب
+
+| نوع العلاج | كيرلا | دول الخليج (الإمارات والسعودية) | بريطانيا وأمريكا |
+| :--- | :--- | :--- | :--- |
+| **باقة علاج الديسك بالأيورفيدا (21 يوماً)** | **1,500 – 2,500 دولار** | غير متوفر بأصالته | 6,000 – 9,000 دولار |
+| **جراحة الديسك المجهرية بالمنظار** | **3,500 – 5,500 دولار** | 14,000 – 22,000 دولار | 18,000 – 40,000 دولار |
+
+## 5. استشارة طبية مجانية لتقاريرك
+
+إذا كنت محتاراً في اختيار الطريقة الأنسب لحالتك، يمكنك إرسال صورة الرنين المغناطيسي (MRI) لأسفل الظهر والتقارير الطبية إلى فريق "علاج في كيرلا". سنعرض تقاريرك بالتوازي على **استشاري جراحة المخ والأعصاب** و**كبير أطباء الأيورفيدا للعمود الفقري** لنقدم لك خطة علاجية متوازنة ودقيقة ومجانية خلال 48 ساعة.`
+  },
+  {
+    slug: 'dental-tourism-kerala-implants-smile-makeover',
+    title: 'Dental Tourism in Kerala: Full Arch Implants & Smile Makeovers in 7 Days',
+    titleAr: 'سياحة طب الأسنان في كيرلا: زراعة الفك الكامل وتجميل الابتسامة في 7 أيام',
+    excerpt: 'Save up to 80% on All-on-4 and All-on-6 dental implants and porcelain veneers in Kerala. Enjoy international standard dental care combined with a tranquil tropical holiday.',
+    excerptAr: 'وفر حتى 80% في زراعة الأسنان للفك الكامل وعدسات الفينير في كيرلا. استمتع بأعلى المعايير العالمية لطب الأسنان مع إجازة سياحية واستجمام في أحضان الطبيعة.',
+    aeoSummary: 'Dental tourism in Kerala provides international patients with All-on-4 and All-on-6 full arch titanium implants and custom monolithic zirconia crowns completed in 5 to 7 days. At $1,800–$2,800 per full arch (compared to $15,000+ in the UK, USA, or UAE), clinics feature 3D CBCT digital scanning, computer-guided implantology, and lifetime warranties.',
+    aeoSummaryAr: 'تقدم سياحة الأسنان في كيرلا زراعة الأسنان للفك الكامل (All-on-4 و All-on-6) وتيجان الزركونيا الرقمية خلال 5 إلى 7 أيام فقط. تبلغ التكلفة 1,800 إلى 2,800 دولار للفك الكامل (بتوفير 80% مقارنة ببريطانيا والخليج وأمريكا) مع استخدام أحدث تقنيات الأشعة المقطعية ثلاثية الأبعاد وضمان مدى الحياة للغرسات.',
+    date: 'August 28, 2026',
+    category: 'Dental Care',
+    categoryAr: 'طب وتجميل الأسنان',
+    readTime: '6 min read',
+    image: '/images/allopathy_treatment_hero.png',
+    content: `Dental restorations in Europe, North America, and the Gulf have become increasingly prohibitive in cost. A full mouth reconstruction or complete arch dental implants can easily cost upwards of $20,000 to $40,000. 
+
+As a result, Kerala has become a primary global dental tourism destination. International patients travel to Calicut and Kochi to receive world-class dental restorations—including immediate loading implants, All-on-4/All-on-6 complete arches, and CAD/CAM zirconia smile makeovers—all completed within a 7-day tropical holiday.
+
+## 1. Why Kerala is the Smart Choice for Dental Restorations
+
+- **Up to 80% Cost Savings:** The cost of an entire full-arch titanium implant with premium zirconia prosthetics in Kerala is less than the price of single tooth implants in London, New York, or Dubai.
+- **Express 5-to-7 Day Protocols:** Advanced in-house digital CAD/CAM milling laboratories produce high-precision zirconia crowns within 48 to 72 hours, eliminating the need for months of waiting between stages.
+- **Top International Materials:** Partner dental hubs exclusively use Swiss and German titanium implants (Nobel Biocare, Straumann, Osstem) featuring international lifetime warranties.
+- **Painless, Digitally Guided Surgery:** 3D Cone Beam CT (CBCT) imaging and computer-generated surgical splints ensure flapless, minimally invasive implant placement with virtually zero pain or bleeding.
+
+## 2. Complete Dental Treatment Cost Breakdown
+
+| Dental Treatment | Kerala Partner Hub | UAE (Dubai/Abu Dhabi) | United Kingdom | United States |
+| :--- | :--- | :--- | :--- | :--- |
+| **Single Titanium Implant + Zirconia Crown** | **$450 – $650** | $2,200 – $3,500 | $2,800 – $4,000 | $4,000 – $6,000 |
+| **All-on-4 Full Arch Fixed Teeth** | **$1,800 – $2,500** | $9,000 – $14,000 | $12,000 – $18,000 | $20,000 – $30,000 |
+| **All-on-6 Full Arch Premium Zirconia** | **$2,600 – $3,400** | $12,000 – $18,000 | $15,000 – $22,000 | $25,000 – $35,000 |
+| **Porcelain / E-Max Veneers (Per Tooth)** | **$150 – $220** | $700 – $1,200 | $800 – $1,300 | $1,200 – $2,000 |
+| **Full Mouth Smile Makeover (16–20 Veneers)** | **$2,800 – $4,000** | $14,000 – $22,000 | $16,000 – $25,000 | $24,000 – $38,000 |
+
+## 3. The 7-Day Dental & Holiday Schedule
+
+- **Day 1 (Arrival & 3D Digital Scan):** Chauffeur pickup from Calicut International Airport (CCJ). Full mouth 3D CBCT scan, intraoral digital camera scan, and digital smile design review with the chief prosthodontist.
+- **Day 2 (Guided Implant Placement / Prep):** Guided, painless surgical placement of titanium implants under local anesthesia. Digital impression sent to the in-house CAD/CAM milling lab.
+- **Days 3–4 (Kerala Sightseeing & Relaxation):** While your custom monolithic zirconia bridge is milled and glazed, enjoy relaxing backwater cruises, traditional spice market tours, or Ayurvedic rejuvenating massages.
+- **Day 5 (Trial Fitting & Occlusion Check):** Trial fitting in the clinic to verify bite alignment, esthetics, and gum contouring.
+- **Day 6 (Final Cementation & Smile Reveal):** Permanent fixation of your custom radiant smile. Final clinical photography and bite verification.
+- **Day 7 (Return Flight):** Complimentary drop-off at Kozhikode Airport with your warranty card, international implant passport, and oral hygiene care kit.
+
+## 4. How TreatInKerala Takes Care of Everything
+
+Planning dental treatment with TreatInKerala is simple:
+1. **Send your dental OPG X-ray or smile photos via WhatsApp or our secure portal.**
+2. Receive a personalized treatment plan and guaranteed quotation within 24 hours.
+3. We arrange your hotel booking, airport chauffeur, and English/Arabic speaking personal coordinator.`,
+    contentAr: `ارتفعت تكاليف علاج وتجميل الأسنان في أوروبا وأمريكا ودول الخليج بشكل كبير، حيث يمكن أن تتجاوز تكلفة زراعة الفك الكامل أو تجميل الابتسامة الشامل 20,000 إلى 40,000 دولار أمريكي.
+
+لهذا السبب، برزت ولاية كيرلا في الهند بوصفها إحدى أبرز وجهات سياحة طب الأسنان في العالم. يسافر المرضى الدوليون إلى كالكوت وكوتشي لإجراء زراعة الأسنان الفورية، وأنظمة الفك الكامل (All-on-4 و All-on-6)، وابتسامة هوليود بالزركونيا وعدسات الإيماكس—كل ذلك خلال إجازة سياحية ممتعة مدتها 7 أيام فقط.
+
+## 1. لماذا تعد كيرلا الخيار الأمثل لزراعة وتجميل الأسنان؟
+
+- **توفير مالي يصل إلى 80%:** تكلفة زراعة الفك الكامل من التيتانيوم وتيجان الزركونيا الفاخرة في كيرلا أقل من تكلفة زراعة سن واحد في لندن أو نيويورك أو دبي.
+- **إنجاز فائق السرعة خلال 5 إلى 7 أيام:** تمتلك المراكز الشريكة مختبرات رقمية داخلية بتقنية CAD/CAM لتصميم وتصنيع تيجان وجسور الزركونيا بدقة متناهية خلال 48 إلى 72 ساعة فقط.
+- **أفضل الخامات والمواد العالمية:** تستخدم مراكزنا غرسات التيتانيوم السويسرية والألمانية المعتمدة عالمياً (مثل نوبل بيوكير وستراومان وأوستيم) مع بطاقة ضمان دولية مدى الحياة.
+- **جراحة رقمية موجهة وبدون ألم:** يتيح التصوير بالأشعة المقطعية ثلاثية الأبعاد (CBCT) والماسحات الضوئية زراعة الأسنان عبر ثقوب مجهرية بدون شق جراحي مؤلم أو نزيف.
+
+## 2. جدول مقارنة أسعار علاجات وتجميل الأسنان
+
+| الإجراء الطبي | مراكز كيرلا الشريكة | الإمارات (دبي/أبوظبي) | بريطانيا (خاص) | الولايات المتحدة |
+| :--- | :--- | :--- | :--- | :--- |
+| **زراعة السن الواحد مع تاج زركونيا** | **450 – 650 دولار** | 2,200 – 3,500 دولار | 2,800 – 4,000 دولار | 4,000 – 6,000 دولار |
+| **زراعة الفك الكامل All-on-4** | **1,800 – 2,500 دولار** | 9,000 – 14,000 دولار | 12,000 – 18,000 دولار | 20,000 – 30,000 دولار |
+| **زراعة الفك الكامل All-on-6 زركونيا** | **2,600 – 3,400 دولار** | 12,000 – 18,000 دولار | 15,000 – 22,000 دولار | 25,000 – 35,000 دولار |
+| **عدسة الفينير/الإيماكس (للسن الواحد)** | **150 – 220 دولار** | 700 – 1,200 دولار | 800 – 1,300 دولار | 1,200 – 2,000 دولار |
+| **ابتسامة هوليود كاملة (16-20 سن)** | **2,800 – 4,000 دولار** | 14,000 – 22,000 دولار | 16,000 – 25,000 دولار | 24,000 – 38,000 دولار |
+
+## 3. برنامج رحلة الأسنان والسياحة في كيرلا (7 أيام)
+
+- **اليوم 1 (الوصول والتشخيص الرقمي ثلاثي الأبعاد):** استقبال بسيارة خاصة من مطار كالكوت (CCJ). إجراء الأشعة المقطعية ثلاثية الأبعاد، والمسح الرقمي للفم، وتصميم الابتسامة ثلاثي الأبعاد مع كبير أطباء الزراعة والتركيبات.
+- **اليوم 2 (زراعة الأسنان الموجهة بالكمبيوتر):** إجراء الزراعة الدقيقة تحت التخدير الموضعي بدون ألم، وإرسال المقاسات الرقمية لمختبر الخزف والزركونيا.
+- **الأيام 3–4 (سياحة واستجمام في كيرلا):** أثناء تصنيع وتلميع جسور الزركونيا في المعمل، استمتع بجولات في الطبيعة الخضراء والقوارب النهرية والمنازل العائمة أو جلسات المساج الأيورفيدي المنعشة.
+- **اليوم 5 (جلسة التجربة والقياس):** تجربة التركيبات للتأكد التام من الإطباق والشكل الجمالي وراحة اللثة.
+- **اليوم 6 (التثبيت النهائي للابتسامة الجديدة):** تثبيت التيجان الدائمة نهائياً، والتقاط الصور النهائية واستلام بطاقة الضمان الدولية.
+- **اليوم 7 (العودة للوطن):** التوصيل للمطار مع حقيبة العناية بالأسنان وشهادة الضمان الدولي للغرسات.
+
+## 4. كيف تبدأ رحلتك العلاجية مع "علاج في كيرلا"؟
+
+1. **أرسل صورة أشعة البانوراما للأسنان (OPG) أو صور الابتسامة عبر واتساب.**
+2. استلم خطة العلاج وعرض السعر المضمون خلال 24 ساعة.
+3. نقوم بترتيب إقامتك الفندقية، والمواصلات، والمترجم المرافق لتستمتع بأسنان جديدة وابتسامة مشرقة بأقل تكلفة.`
   }
 ];
 

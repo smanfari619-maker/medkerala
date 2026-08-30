@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, HeartHandshake, Mail, Phone, CheckCircle2, User, Globe, Stethoscope } from 'lucide-react';
+import { MessageCircle, X, Send, HeartHandshake, Mail, Phone, CheckCircle2, User, Globe } from 'lucide-react';
 import { useLocale } from 'next-intl';
 import { SITE_CONFIG } from '@/lib/config';
 import { submitEnquiry } from '@/app/actions/enquiry';
@@ -89,12 +89,23 @@ export default function WhatsAppFAB() {
   const t = isRtl ? botMessages.ar : botMessages.en;
 
   const treatmentOptions = [
-    { en: 'Orthopedics & Joints', ar: 'علاج العظام والمفاصل' },
+    { en: 'Orthopedics & Knee Replacement', ar: 'جراحة العظام واستبدال الركبة' },
+    { en: 'Spine & Sciatica Care', ar: 'علاج العمود الفقري وعرق النسا' },
     { en: 'Cardiac (Heart) Care', ar: 'جراحة القلب والأوعية' },
     { en: 'Ayurveda & Panchakarma', ar: 'الأيورفيدا والاستشفاء الطبيعي' },
+    { en: 'IVF & Fertility Treatment', ar: 'علاج العقم وأطفال الأنابيب' },
+    { en: 'Dental Implants & Smile', ar: 'زراعة وتجميل الأسنان' },
     { en: 'Cancer (Oncology) Care', ar: 'علاج الأورام والسرطان' },
-    { en: 'Neurology & Spine', ar: 'المخ والأعصاب والعمود الفقري' },
     { en: 'General Medical Opinion', ar: 'استشارة طبية عامة' }
+  ];
+
+  const popularCountries = [
+    { nameEn: 'Oman', nameAr: 'سلطنة عمان', flag: '🇴🇲' },
+    { nameEn: 'Saudi Arabia', nameAr: 'المملكة العربية السعودية', flag: '🇸🇦' },
+    { nameEn: 'UAE', nameAr: 'الإمارات', flag: '🇦🇪' },
+    { nameEn: 'Kuwait', nameAr: 'الكويت', flag: '🇰🇼' },
+    { nameEn: 'Qatar', nameAr: 'قطر', flag: '🇶🇦' },
+    { nameEn: 'United Kingdom', nameAr: 'بريطانيا', flag: '🇬🇧' },
   ];
 
   // Auto-delay FAB appearance
@@ -470,29 +481,54 @@ Thank you.`;
               </form>
             )}
 
-            {/* STEP 2: Country Input */}
+            {/* STEP 2: Country Input with Quick Select Chips */}
             {step === 2 && !isTyping && (
-              <form onSubmit={handleNext} className="flex gap-2">
-                <div className="relative flex-grow">
-                  <Globe className="absolute left-3 top-3.5 h-4 w-4 text-slate-400 rtl:right-3 rtl:left-auto" />
-                  <input
-                    type="text"
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
-                    placeholder={t.placeholderCountry}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-[#2D6A4F]/60 rtl:pr-9 rtl:pl-4"
-                    autoFocus
-                    required
-                  />
+              <div className="space-y-2.5">
+                <div className="flex flex-wrap gap-1.5 justify-center">
+                  {popularCountries.map((c, i) => {
+                    const countryName = isRtl ? c.nameAr : c.nameEn;
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => {
+                          setCountry(countryName);
+                          setIsTyping(true);
+                          setTimeout(() => {
+                            setIsTyping(false);
+                            setStep(3);
+                          }, 500);
+                        }}
+                        className="bg-[#FAF7F2] hover:bg-[#2D6A4F] hover:text-white border border-[#D4A96A]/25 text-slate-700 px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer flex items-center gap-1 shadow-2xs"
+                      >
+                        <span>{c.flag}</span>
+                        <span>{countryName}</span>
+                      </button>
+                    );
+                  })}
                 </div>
-                <button
-                  type="submit"
-                  disabled={!country.trim()}
-                  className="bg-[#2D6A4F] text-white p-3.5 rounded-xl hover:bg-[#1B4332] disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
-                >
-                  <Send className="h-4 w-4 rtl:rotate-180" />
-                </button>
-              </form>
+                <form onSubmit={handleNext} className="flex gap-2">
+                  <div className="relative flex-grow">
+                    <Globe className="absolute left-3 top-3.5 h-4 w-4 text-slate-400 rtl:right-3 rtl:left-auto" />
+                    <input
+                      type="text"
+                      value={country}
+                      onChange={(e) => setCountry(e.target.value)}
+                      placeholder={t.placeholderCountry}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-[#2D6A4F]/60 rtl:pr-9 rtl:pl-4"
+                      autoFocus
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={!country.trim()}
+                    className="bg-[#2D6A4F] text-white p-3.5 rounded-xl hover:bg-[#1B4332] disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                  >
+                    <Send className="h-4 w-4 rtl:rotate-180" />
+                  </button>
+                </form>
+              </div>
             )}
 
             {/* STEP 3: Treatment Options */}

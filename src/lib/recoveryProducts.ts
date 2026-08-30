@@ -353,14 +353,27 @@ export function getRecoveryProductsForTreatment(slug: string): RecoveryProduct[]
 
 export function getRecoveryProductsForBlog(blogSlug: string, category: string = ''): RecoveryProduct[] {
   const lower = (blogSlug + ' ' + category).toLowerCase();
+  if (lower.includes('fertility') || lower.includes('ivf') || lower.includes('pregnancy')) {
+    const fertProducts = RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('fertility'));
+    if (fertProducts.length > 0) return fertProducts;
+  }
+  if (lower.includes('dental') || lower.includes('teeth') || lower.includes('implant') || lower.includes('smile')) {
+    const dentalProducts = RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('dental'));
+    if (dentalProducts.length > 0) return dentalProducts;
+  }
+  if (lower.includes('spine') || lower.includes('sciatica') || lower.includes('disc') || lower.includes('neuro')) {
+    const neuroProducts = RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('neurosurgery'));
+    if (neuroProducts.length > 0) return neuroProducts;
+  }
+  if (lower.includes('joint') || lower.includes('knee') || lower.includes('hip') || lower.includes('ortho')) {
+    const orthoProducts = RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('orthopaedics'));
+    if (orthoProducts.length > 0) return orthoProducts;
+  }
   if (lower.includes('ayurveda') || lower.includes('panchakarma') || lower.includes('herb')) {
     return RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('ayurveda'));
   }
   if (lower.includes('cardiac') || lower.includes('bypass') || lower.includes('heart')) {
     return RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('cardiac'));
-  }
-  if (lower.includes('joint') || lower.includes('knee') || lower.includes('ortho')) {
-    return RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('orthopaedics'));
   }
   if (lower.includes('supplement') || lower.includes('recovery')) {
     return [

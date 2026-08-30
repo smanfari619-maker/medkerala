@@ -234,21 +234,72 @@ export default async function BlogPostPage({ params }: Props) {
         { name: 'Organize Local Currency', text: 'Carry a small amount of Indian Rupees (INR) for local transactions.' }
       ]
     );
-  } else if (slug === 'joint-replacement-kerala-gcc-guide') {
+  } else if (slug === 'joint-replacement-kerala-gcc-guide' || slug === 'robotic-knee-joint-replacement-kerala') {
     howToSchema = getHowToSchema(
-      isRtl ? 'كيف تخطط لاستبدال المفاصل في كيرلا' : 'How to Plan Joint Replacement in Kerala',
+      isRtl ? 'كيف تخطط لاستبدال مفصل الركبة بالروبوت في كيرلا' : 'How to Plan Robotic Knee Replacement in Kerala',
       isRtl ? [
-        { name: 'الاستشارة والتقييم', text: 'أرسل أشعة X-ray للركبة أو الورك لتقييم الحالة مجاناً.' },
-        { name: 'اختيار الغرسات الطبية', text: 'يستخدم جراحونا غرسات التيتانيوم المعتمدة من FDA الأمريكية.' },
-        { name: 'السفر والإقامة', text: 'رحلات مباشرة قصيرة (3.5 ساعات من مسقط) وإقامات ملائمة للثقافة الخليجية.' },
-        { name: 'العملية الجراحية', text: 'تتم الجراحة في مستشفيات حاصلة على اعتماد JCI.' },
-        { name: 'التأهيل ما بعد الجراحة', text: 'جلسات علاج طبيعي يومية لاستعادة الحركة قبل العودة للوطن.' }
+        { name: 'الاستشارة والتقييم', text: 'أرسل أشعة X-ray أو الرنين للركبة لتقييم الحالة مجاناً وبناء النموذج ثلاثي الأبعاد.' },
+        { name: 'اختيار الغرسات الطبية', text: 'يستخدم جراحونا غرسات التيتانيوم والسيراميك المعتمدة من FDA الأمريكية.' },
+        { name: 'السفر والإقامة', text: 'رحلات مباشرة قصيرة (3.5 ساعات من الخليج) وإقامات ملائمة للثقافة الخليجية.' },
+        { name: 'العملية الجراحية بالروبوت', text: 'تتم الجراحة بدقة 0.5 ملم في مستشفيات كيرلا المعتمدة دولياً JCI.' },
+        { name: 'التأهيل والمشي في 24 ساعة', text: 'المشي في اليوم الأول وجلسات علاج طبيعي يومية لاستعادة الحركة قبل السفر.' }
       ] : [
-        { name: 'Initial Consultation', text: 'Share your X-rays for a free preliminary evaluation by our orthopedic surgeons.' },
-        { name: 'Implant Selection', text: 'We exclusively use US FDA-approved titanium implants for long-lasting results.' },
+        { name: 'Initial Consultation', text: 'Share your X-rays or MRI scans for free 3D virtual modeling by our orthopedic surgeons.' },
+        { name: 'Implant Selection', text: 'We exclusively use US FDA-approved titanium/ceramic implants for long-lasting performance.' },
         { name: 'Travel & Accommodation', text: 'Enjoy short 3.5-hour direct flights from GCC and culturally customized Halal stays.' },
-        { name: 'The Surgical Procedure', text: 'Surgery is performed at a JCI-accredited facility with advanced modular operating theatres.' },
-        { name: 'Post-Surgery Rehabilitation', text: 'Undergo customized daily physiotherapy for 10-14 days to restore pain-free mobility.' }
+        { name: 'Robotic Surgical Procedure', text: 'Surgery is executed with sub-millimeter precision at a JCI-accredited facility.' },
+        { name: 'Post-Op Rehab & 24h Walking', text: 'Walk within 24 hours followed by structured daily physiotherapy.' }
+      ]
+    );
+  } else if (slug === 'ivf-fertility-treatment-kerala-gcc-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'خطوات رحلة علاج أطفال الأنابيب في كيرلا' : 'Step-by-Step IVF Journey in Kerala',
+      isRtl ? [
+        { name: 'المراجعة الطبية الأولية', text: 'إرسال الفحوصات الهرمونية الحالية للحصول على خطة علاج مجانية مخصصة.' },
+        { name: 'إصدار التأشيرة والسفر', text: 'استخراج التأشيرة الطبية الإلكترونية خلال 24 ساعة والوصول في اليوم الثاني من الدورة.' },
+        { name: 'تنشيط المبيض ومتابعة السونار', text: 'إعطاء بروتوكول التنشيط ومتابعة نمو البويضات بدقة كل 48 ساعة.' },
+        { name: 'سحب البويضات والتلقيح المجهري', text: 'سحب البويضات بدون ألم والتلقيح بتقنية الحقن المجهري ICSI وفحص الأجنة PGT.' },
+        { name: 'إرجاع الجنين والعودة للوطن', text: 'نقل الجنين عالي الجودة في اليوم الخامس، والسفر للوطن بعد 24-48 ساعة.' }
+      ] : [
+        { name: 'Initial Medical Evaluation', text: 'Share current hormonal profiles for a free customized treatment blueprint.' },
+        { name: 'E-Visa & Travel', text: 'Receive hospital invitation letter within 24 hours and arrive on Day 2 of menstrual cycle.' },
+        { name: 'Ovarian Stimulation & Monitoring', text: 'Targeted gonadotropin injections and ultrasound tracking every 48 hours.' },
+        { name: 'Painless Egg Retrieval & ICSI', text: 'Egg collection under mild sedation, ICSI fertilization, and PGT embryo screening.' },
+        { name: 'Blastocyst Transfer & Fly Home', text: 'Painless Day 5 embryo transfer and fly home safely after 24 to 48 hours.' }
+      ]
+    );
+  } else if (slug === 'ayurvedic-vs-surgical-spine-care-sciatica-slip-disc') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيف يتم علاج الانزلاق الغضروفي وعرق النسا في كيرلا' : 'How Slip Disc & Sciatica are Treated in Kerala',
+      isRtl ? [
+        { name: 'التقييم المزدوج للرنين المغناطيسي', text: 'مراجعة صورة الرنين المغناطيسي مع جراح أعصاب وطبيب أيورفيدا بالتوازي.' },
+        { name: 'تحديد المسار العلاجي', text: 'اختيار علاج الأيورفيدا الطبيعي (80% من الحالات) أو الجراحة المجهرية طفيفة التوغل.' },
+        { name: 'العلاج الطبيعي الأيورفيدي المكثف', text: 'جلسات كادي باستي وتكميد الأعشاب والحقن الزيتية لتخفيف ضغط العصب وترطيب الغضاريف.' },
+        { name: 'الجراحة المجهرية طفيفة التوغل', text: 'استئصال الغضروف عبر شق 1.5 سم تحت الميكروسكوب في حال وجود عجز عصبي.' },
+        { name: 'استعادة الحركة والوقاية', text: 'تمارين تقوية عضلات الجذع والعودة للحياة الطبيعية بدون ألم.' }
+      ] : [
+        { name: 'Dual MRI Medical Review', text: 'MRI evaluated simultaneously by a Senior Neurosurgeon and an Ayurvedic Vaidya.' },
+        { name: 'Treatment Pathway Selection', text: 'Selecting non-surgical Ayurveda (80% of cases) vs. minimally invasive microdiscectomy.' },
+        { name: 'Intensive Ayurvedic Therapy', text: 'Kadi Basti, herbal poultices, and medicated oil therapies to decompress nerves.' },
+        { name: 'Minimally Invasive Microdiscectomy', text: '1.5 cm microscopic nerve decompression when acute motor weakness is present.' },
+        { name: 'Core Strengthening & Pain-Free Return', text: 'Targeted spine strengthening and postural training for lifelong wellness.' }
+      ]
+    );
+  } else if (slug === 'dental-tourism-kerala-implants-smile-makeover') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'خطوات زراعة الفك الكامل وتجميل الأسنان في 7 أيام' : 'How to Complete 7-Day Full Arch Dental Implants in Kerala',
+      isRtl ? [
+        { name: 'التشخيص الرقمي والأشعة المقطعية', text: 'إجراء الأشعة المقطعية ثلاثية الأبعاد CBCT وتصميم الابتسامة بالكمبيوتر في اليوم الأول.' },
+        { name: 'الزراعة الرقمية الموجهة', text: 'تثبيت غرسات التيتانيوم المعتمدة بدون جراحة مؤلمة في اليوم الثاني.' },
+        { name: 'التصنيع الرقمي CAD/CAM', text: 'تصنيع تيجان الزركونيا الفاخرة بدقة متناهية خلال 48 ساعة بينما تستمتع بإجازتك في كيرلا.' },
+        { name: 'جلسة القياس والتجربة', text: 'فحص الإطباق وراحة اللثة والشكل الجمالي للابتسامة.' },
+        { name: 'التثبيت النهائي واستلام بطاقة الضمان', text: 'تثبيت الابتسامة الدائمة واستلام شهادة الضمان الدولي للغرسات مدى الحياة.' }
+      ] : [
+        { name: '3D CBCT Digital Diagnostics', text: 'Full mouth 3D scanning and computer-guided smile design on Day 1.' },
+        { name: 'Flapless Guided Implant Placement', text: 'Minimally invasive titanium implant placement under local anesthesia on Day 2.' },
+        { name: 'In-House CAD/CAM Milling', text: 'Monolithic zirconia bridge milled with precision while you tour Kerala.' },
+        { name: 'Trial Fitting & Occlusion Check', text: 'Verifying bite alignment and esthetic smile line in the dental suite.' },
+        { name: 'Permanent Cementation & Lifetime Warranty', text: 'Fixing your permanent radiant smile and issuing your international implant passport.' }
       ]
     );
   }
