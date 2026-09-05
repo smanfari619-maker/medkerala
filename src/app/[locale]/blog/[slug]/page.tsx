@@ -3,9 +3,9 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { BLOG_POSTS } from '@/lib/data';
-import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Zap } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Zap, HelpCircle } from 'lucide-react';
 import { Metadata } from 'next';
-import { getBreadcrumbSchema, getHowToSchema } from '@/lib/schemas';
+import { getBreadcrumbSchema, getHowToSchema, getFAQSchema } from '@/lib/schemas';
 import BlogRecoveryCallout from '@/components/blog/BlogRecoveryCallout';
 import { getRecoveryProductsForBlog } from '@/lib/recoveryProducts';
 
@@ -16,11 +16,18 @@ import { getRecoveryProductsForBlog } from '@/lib/recoveryProducts';
 //   ### H3 headings
 //   **bold** inline
 //   - bullet list items
+//   1. ordered list items
+//   | markdown table |
 //   blank lines → paragraph breaks
 function RichContent({ content }: { content: string }) {
   const lines = content.split('\n');
   const elements: React.ReactNode[] = [];
   let bulletBuffer: string[] = [];
+  let orderedBuffer: string[] = [];
+  let tableBuffer: string[] = [];
+
+  const parseBold = (text: string) =>
+    text.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-[#1B4332]">$1</strong>');
 
   const flushBullets = (key: string) => {
     if (bulletBuffer.length === 0) return;
@@ -37,32 +44,115 @@ function RichContent({ content }: { content: string }) {
     bulletBuffer = [];
   };
 
-  const parseBold = (text: string) =>
-    text.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-[#1B4332]">$1</strong>');
+  const flushOrdered = (key: string) => {
+    if (orderedBuffer.length === 0) return;
+    elements.push(
+      <ol key={key} className="space-y-2.5 my-4 list-decimal list-inside text-slate-700 text-base leading-relaxed pl-1">
+        {orderedBuffer.map((item, i) => (
+          <li key={i} className="pl-1 text-slate-700 leading-relaxed">
+            <span dangerouslySetInnerHTML={{ __html: parseBold(item) }} />
+          </li>
+        ))}
+      </ol>
+    );
+    orderedBuffer = [];
+  };
+
+  const flushTable = (key: string) => {
+    if (tableBuffer.length < 2) {
+      tableBuffer.forEach((tLine, i) => {
+        elements.push(
+          <p key={`${key}-p-${i}`} className="text-slate-700 text-base leading-[1.85] mb-0"
+            dangerouslySetInnerHTML={{ __html: parseBold(tLine) }}
+          />
+        );
+      });
+      tableBuffer = [];
+      return;
+    }
+
+    const parseRow = (line: string) =>
+      line
+        .split('|')
+        .map(cell => cell.trim())
+        .filter((cell, idx, arr) => idx > 0 && idx < arr.length - 1);
+
+    const headers = parseRow(tableBuffer[0]);
+    const rowLines = tableBuffer.slice(1).filter(l => !l.includes('---'));
+    const rows = rowLines.map(parseRow);
+
+    elements.push(
+      <div key={key} className="overflow-x-auto my-6 rounded-2xl border border-slate-200/90 shadow-sm bg-white">
+        <table className="min-w-full divide-y divide-slate-200 text-sm sm:text-base">
+          <thead className="bg-[#FAF7F2] text-[#1B4332]">
+            <tr>
+              {headers.map((h, i) => (
+                <th
+                  key={i}
+                  className="px-4 py-3.5 text-start font-bold text-xs sm:text-sm uppercase tracking-wider font-sans border-b border-slate-200"
+                  dangerouslySetInnerHTML={{ __html: parseBold(h) }}
+                />
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100">
+            {rows.map((row, rIdx) => (
+              <tr key={rIdx} className={rIdx % 2 === 0 ? 'bg-white hover:bg-emerald-50/20 transition-colors' : 'bg-slate-50/60 hover:bg-emerald-50/30 transition-colors'}>
+                {row.map((cell, cIdx) => (
+                  <td
+                    key={cIdx}
+                    className="px-4 py-3 whitespace-normal text-slate-700 text-sm sm:text-base leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: parseBold(cell) }}
+                  />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+    tableBuffer = [];
+  };
+
+  const flushAll = (key: string) => {
+    flushBullets(`${key}-b`);
+    flushOrdered(`${key}-o`);
+    flushTable(`${key}-t`);
+  };
 
   lines.forEach((line, idx) => {
     const trimmed = line.trim();
 
-    if (trimmed.startsWith('## ')) {
+    if (trimmed.startsWith('|') && trimmed.endsWith('|')) {
       flushBullets(`bl-${idx}`);
+      flushOrdered(`ol-${idx}`);
+      tableBuffer.push(trimmed);
+    } else if (trimmed.startsWith('## ')) {
+      flushAll(`all-${idx}`);
       elements.push(
         <h2 key={idx} className="text-2xl font-bold text-[#1B4332] mt-10 mb-4 pb-2 border-b border-slate-100 font-sans">
           {trimmed.slice(3)}
         </h2>
       );
     } else if (trimmed.startsWith('### ')) {
-      flushBullets(`bl-${idx}`);
+      flushAll(`all-${idx}`);
       elements.push(
         <h3 key={idx} className="text-lg font-bold text-[#2D6A4F] mt-6 mb-2 font-sans">
           {trimmed.slice(4)}
         </h3>
       );
     } else if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+      flushTable(`tbl-${idx}`);
+      flushOrdered(`ol-${idx}`);
       bulletBuffer.push(trimmed.slice(2));
+    } else if (/^\d+\.\s/.test(trimmed)) {
+      flushTable(`tbl-${idx}`);
+      flushBullets(`bl-${idx}`);
+      orderedBuffer.push(trimmed.replace(/^\d+\.\s/, ''));
     } else if (trimmed === '') {
-      flushBullets(`bl-${idx}`);
+      flushAll(`all-${idx}`);
     } else {
-      flushBullets(`bl-${idx}`);
+      flushAll(`all-${idx}`);
       elements.push(
         <p key={idx} className="text-slate-700 text-base leading-[1.85] mb-0"
           dangerouslySetInnerHTML={{ __html: parseBold(trimmed) }}
@@ -71,7 +161,7 @@ function RichContent({ content }: { content: string }) {
     }
   });
 
-  flushBullets('final');
+  flushAll('final');
 
   return <div className="space-y-3">{elements}</div>;
 }
@@ -302,6 +392,84 @@ export default async function BlogPostPage({ params }: Props) {
         { name: 'Permanent Cementation & Lifetime Warranty', text: 'Fixing your permanent radiant smile and issuing your international implant passport.' }
       ]
     );
+  } else if (slug === 'cancer-treatment-oncology-kerala-costs-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيف يتم التخطيط لعلاج السرطان في كيرلا' : 'How Cancer Treatment is Planned in Kerala',
+      isRtl ? [
+        { name: 'التقييم المجاني من لجنة الأورام', text: 'إرسال تقارير الخزعة والأشعة المقطعية لمراجعتها من قِبل لجنة الأورام المشتركة خلال 48 ساعة.' },
+        { name: 'إصدار التأشيرة الطبية الإلكترونية', text: 'استلام خطاب دعوة المستشفى الرسمي لاستخراج التأشيرة الطبية للهند خلال 24 ساعة.' },
+        { name: 'فحص PET-CT الرقمي وإعادة التقييم', text: 'إجراء الفحوصات والمسح البوزيتروني في اليوم الأول لتحديد مرحلة الورم بدقة.' },
+        { name: 'تنفيذ البروتوكول العلاجي', text: 'بدء الجلسات الإشعاعية الموجهة بتروبيم أو الكيماوي أو الجراحة بالروبوت في بيئة معقمة.' },
+        { name: 'الرعاية التأهيلية الداعمة', text: 'برامج التغذية وجلسات الأيورفيدا الطبية لتخفيف الإجهاد واستعادة القوة قبل السفر.' }
+      ] : [
+        { name: 'Free Tumor Board Evaluation', text: 'Submit biopsy reports and scans for joint review by senior oncologists within 48 hours.' },
+        { name: 'E-Medical Visa Invitation', text: 'Receive official hospital visa invitation letter for fast-track processing within 24 hours.' },
+        { name: 'Digital PET-CT Restaging', text: 'Complete day-one diagnostic restaging to pinpoint tumor margins with sub-millimeter precision.' },
+        { name: 'Therapy Administration', text: 'Commence targeted TrueBeam radiotherapy, chemotherapy cycles, or robotic surgery.' },
+        { name: 'Integrative Supportive Recovery', text: 'Targeted nutrition and medically supervised Ayurveda to relieve fatigue and restore vitality.' }
+      ]
+    );
+  } else if (slug === 'bariatric-gastric-sleeve-surgery-kerala-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'خطوات عملية تكميم المعدة بالمنظار في كيرلا' : 'Step-by-Step Laparoscopic Sleeve Gastrectomy in Kerala',
+      isRtl ? [
+        { name: 'التقييم الأيضي الأولي', text: 'إرسال الوزن والطول والتاريخ المرضي للتقييم المجاني من قِبل جراح السمنة.' },
+        { name: 'الوصول والفحوصات الشاملة', text: 'إجراء فحوصات الدم، وتخطيط القلب، ومنظار المعدة التشخيصي في اليوم الأول.' },
+        { name: 'العملية بالمنظار والدباسات الأمريكية', text: 'إجراء التكميم خلال 60 دقيقة بدباسات FDA ثلاثية وفحص التسريب المباشر.' },
+        { name: 'المشي وبدء مرحلة السوائل', text: 'المشي بعد 4 ساعات وبدء شرب السوائل الشفافة بعد أشعة الصبغة في اليوم الثاني.' },
+        { name: 'الخروج وجدول التغذية', text: 'استلام الخطة الغذائية للأشهر القادمة وشهادة اللياقة للسفر والعودة للوطن بأمان.' }
+      ] : [
+        { name: 'Initial Metabolic Assessment', text: 'Submit your BMI and medical history for free review by our bariatric surgical team.' },
+        { name: 'Arrival & Pre-Op Diagnostics', text: 'Complete comprehensive blood panels, cardiology clearance, and endoscopy on Day 1.' },
+        { name: 'Laparoscopic Keyhole Surgery', text: '60-minute procedure utilizing US FDA endoscopic tri-staplers with intraoperative leak test.' },
+        { name: 'Early Walking & Liquid Diet', text: 'Walk within 4 hours and transition to clear liquids following contrast scan verification.' },
+        { name: 'Discharge & Nutritional Roadmap', text: 'Receive your 4-stage dietary plan and fit-to-fly clearance certificate.' }
+      ]
+    );
+  } else if (slug === 'advanced-eye-surgery-lasik-cataract-kerala-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'خطوات تصحيح النظر بالكونتورا ليزك وزراعة العدسات' : 'How Contoura Vision LASIK & Cataract Surgery Work',
+      isRtl ? [
+        { name: 'فحص البنتاكام وقياس تضاريس القرنية', text: 'مسح 22,000 نقطة على سطح القرنية أو قياس أبعاد العين للعدسة ثلاثية البؤرة.' },
+        { name: 'جلسة الليزر بدون ألم (15 دقيقة)', text: 'تطبيق قطرات تخدير موضعي وتصحيح النظر بالليزر خلال دقيقتين لكل عين.' },
+        { name: 'الراحة وارتداء النظارة الواقية', text: 'الاسترخاء في الفندق لبضع ساعات مع بدء استقرار الرؤية الواضحة.' },
+        { name: 'فحص المصباح الشقي في اليوم التالي', text: 'التأكد من التئام القرنية وتحقيق حدة إبصار 6/6 أو أفضل.' },
+        { name: 'استلام قطرات التعافي والسفر', text: 'الحصول على تصريح الطيران وقطرات الترطيب والعودة للوطن برؤية حادة.' }
+      ] : [
+        { name: 'Pentacam Topography Mapping', text: 'Map 22,000 corneal elevation points or optical biometry for trifocal lens selection.' },
+        { name: 'Painless 15-Minute Laser Treatment', text: 'Topical numbing drops applied with high-precision laser correction taking 2 minutes per eye.' },
+        { name: 'Short Rest with Protective Glasses', text: 'Rest at your hotel for 3-4 hours as sharp crystal vision begins to set in.' },
+        { name: 'Next-Day Slit-Lamp Verification', text: 'Verify corneal healing and achieve 20/20 or sharper uncorrected visual acuity.' },
+        { name: 'Eye Drop Kit & Fly Home', text: 'Receive flight clearance and lubricating drop supply for clear glasses-free vision.' }
+      ]
+    );
+  } else if (slug === 'laser-kidney-stone-surgery-rirs-kerala-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'خطوات تفتيت حصوات الكلى بالمنظار المرن والليزر RIRS' : 'How RIRS Flexible Laser Kidney Stone Surgery Works',
+      isRtl ? [
+        { name: 'التشخيص بالأشعة المقطعية منخفضة الجرعة', text: 'تحديد حجم وموقع وكثافة الحصوة بدقة متناهية فور الوصول.' },
+        { name: 'التفتيت بالمنظار المرن والليزر', text: 'إدخال المنظار عبر مجرى البول الطبيعي وتفتيت الحصوة إلى بودرة ناعمة دون جراحة.' },
+        { name: 'وضع دعامة الحالب المؤقتة', text: 'تثبيت دعامة سيليكون دقيقة لضمان تصريف البول براحة تامة ومنع الانسداد.' },
+        { name: 'المشي والخروج خلال 24 ساعة', text: 'المشي وتناول الطعام الطبيعي بعد ساعات والخروج من المستشفى في اليوم التالي.' },
+        { name: 'تحليل الحصوة والوقاية من تكرارها', text: 'فحص عينة الحصوة بالأشعة تحت الحمراء وتقديم بروتوكول غذائي وأيورفيدي لمنع عودتها.' }
+      ] : [
+        { name: 'Low-Dose CT KUB Scan', text: 'Accurately map stone diameter, density (Hounsfield units), and calyx location on Day 1.' },
+        { name: 'Incision-Free Laser Dusting', text: 'Flexible digital scope navigates natural urinary tract to vaporize stone into fine sand.' },
+        { name: 'Temporary DJ Stent Placement', text: 'Insert soft double-J silicone stent to ensure unobstructed renal drainage and comfort.' },
+        { name: 'Walk & Discharge in 24 Hours', text: 'Mobilize within 3 hours, enjoy light meals, and discharge comfortably the next morning.' },
+        { name: 'Metabolic Stone Prevention', text: 'Infrared stone analysis paired with dietary and herbal protocols to prevent future stones.' }
+      ]
+    );
+  }
+
+  let faqSchema: Record<string, unknown> | null = null;
+  if (post.faqs && post.faqs.length > 0) {
+    faqSchema = getFAQSchema(
+      post.faqs.map(f => ({
+        q: isRtl ? f.qAr : f.q,
+        a: isRtl ? f.aAr : f.a
+      }))
+    );
   }
 
   return (
@@ -318,6 +486,12 @@ export default async function BlogPostPage({ params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        />
+      )}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
       <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
@@ -391,6 +565,27 @@ export default async function BlogPostPage({ params }: Props) {
                 ? 'ملاحظة: المعلومات الواردة في هذه المقالة هي لأغراض إرشادية وتثقيفية فقط، ولا تحل محل الاستشارة الطبية المباشرة من الطبيب المعالج.'
                 : 'Note: The medical statistics and estimates presented are for educational purposes. Personal treatment costs are generated based on your diagnostic reports.'}
             </div>
+
+            {post.faqs && post.faqs.length > 0 && (
+              <div className="mt-12 pt-8 border-t border-slate-100 space-y-6">
+                <h3 className="text-xl sm:text-2xl font-bold font-display text-primary-dark flex items-center gap-2">
+                  <HelpCircle className="h-5 w-5 text-primary-green shrink-0" />
+                  <span>{locale === 'ar' ? 'الأسئلة الشائعة والأجوبة الطبية المباشرة' : 'Frequently Asked Questions (Clinical Answers)'}</span>
+                </h3>
+                <div className="space-y-4">
+                  {post.faqs.map((faq, fIdx) => (
+                    <div key={fIdx} className="bg-[#FAF7F2] p-6 rounded-2xl border border-[#D4A96A]/30 space-y-2.5">
+                      <h4 className="text-base sm:text-lg font-bold text-[#1B4332] leading-snug">
+                        {isRtl ? faq.qAr : faq.q}
+                      </h4>
+                      <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                        {isRtl ? faq.aAr : faq.a}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Contextual Product Referral Callout (iHerb Rewards) */}

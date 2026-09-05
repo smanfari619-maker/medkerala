@@ -51,6 +51,12 @@ export interface BlogPost {
   content: string;
   contentAr: string;
   image?: string;
+  faqs?: {
+    q: string;
+    qAr: string;
+    a: string;
+    aAr: string;
+  }[];
 }
 
 export const TREATMENTS: Treatment[] = [
@@ -1929,6 +1935,484 @@ Planning dental treatment with TreatInKerala is simple:
 1. **أرسل صورة أشعة البانوراما للأسنان (OPG) أو صور الابتسامة عبر واتساب.**
 2. استلم خطة العلاج وعرض السعر المضمون خلال 24 ساعة.
 3. نقوم بترتيب إقامتك الفندقية، والمواصلات، والمترجم المرافق لتستمتع بأسنان جديدة وابتسامة مشرقة بأقل تكلفة.`
+  },
+  {
+    slug: 'cancer-treatment-oncology-kerala-costs-guide',
+    title: 'Cancer Treatment in Kerala (India): 2026 Costs, TrueBeam Radiotherapy, Chemotherapy & Top Oncology Centers',
+    titleAr: 'علاج الأورام والسرطان في كيرلا الهند: دليل شامل للتكاليف، العلاج الإشعاعي بتروبيم، والكيماوي في أفضل المستشفيات',
+    excerpt: 'Complete 2026 guide to cancer treatment in Kerala, India. Compare PET-CT, TrueBeam Varian radiotherapy, surgical oncology, and chemotherapy costs with JCI standards and zero wait times.',
+    excerptAr: 'الدليل الشامل لعلاج الأورام والسرطان في كيرلا لعام 2026. مقارنة تكاليف الفحص البوزيتروني PET-CT، العلاج الإشعاعي بتروبيم، الجراحة، والكيماوي مع معايير JCI وبدون انتظار.',
+    aeoSummary: 'Cancer treatment in Kerala, India costs 70% to 85% less than in the US, UK, or UAE, with complete regimens ranging from $3,500 to $7,500. Kerala\'s JCI-accredited oncology centers feature TrueBeam Varian image-guided stereotactic radiotherapy, digital PET-CT staging, multidisciplinary tumor boards, and integrated Ayurvedic supportive care to mitigate chemotherapy side effects.',
+    aeoSummaryAr: 'تبلغ تكلفة علاج الأورام والسرطان في كيرلا بالهند أقل بنسبة 70% إلى 85% مقارنة بالولايات المتحدة وبريطانيا والخليج، حيث تتراوح البرامج العلاجية المتكاملة بين 3,500 و 7,500 دولار. تتميز مستشفيات كيرلا المعتمدة دولياً بتقنيات تروبيم فاريان للإشعاع الموجه، وتصوير PET-CT الرقمي، ولجان الأورام المشتركة، مع رعاية أيورفيدية داعمة للتعافي.',
+    date: 'September 02, 2026',
+    category: 'Cancer Care',
+    categoryAr: 'علاج الأورام والسرطان',
+    readTime: '8 min read',
+    image: '/images/allopathy_treatment_hero.png',
+    content: `A cancer diagnosis requires fast, decisive clinical action. However, for patients facing months of NHS backlogs in the United Kingdom or catastrophic out-of-pocket costs in North America, Africa, and the Middle East, delays can feel unbearable.
+
+Kerala has emerged as one of South Asia's leading comprehensive cancer care destinations. Combining JCI-accredited multi-specialty oncology centers, world-class TrueBeam stereotactic radiotherapy, robotic surgical oncology, and multidisciplinary tumor boards, Kerala provides international patients with rapid, compassionate treatment at 70% to 85% less than Western private hospitals.
+
+## 1. Why International Patients Choose Kerala for Cancer Treatment
+
+- **Immediate Access & Zero Waiting Lists:** Patients can receive a full diagnostic restaging—including digital PET-CT, biopsy review, and genetic profiling—within 48 hours of landing in Kerala.
+- **TrueBeam Image-Guided Stereotactic Radiotherapy:** Pinpoint radiation targeting tumors with sub-millimeter precision in short 5-to-10 minute daily sessions, protecting vital organs and healthy surrounding tissue.
+- **Joint Multidisciplinary Tumor Boards:** Every patient's file is reviewed jointly by a medical oncologist, surgical oncologist, radiation oncologist, and radiologist to determine the safest, most effective treatment protocol.
+- **US FDA-Approved Oncology Therapeutics:** Full access to targeted therapies, modern immunotherapy (Keytruda, Opdivo), and standardized chemotherapy protocols at direct Indian pharmaceutical pricing.
+- **Integrative Ayurvedic Oncology Support:** Medically supervised supportive therapies to rebuild appetite, maintain white blood cell counts, and combat chemotherapy-induced peripheral neuropathy and extreme fatigue.
+
+## 2. 2026 Cancer Treatment Cost Comparison Breakdown
+
+The table below outlines typical costs across major global healthcare systems compared to Kerala's accredited private oncology hubs:
+
+| Cancer Procedure / Therapy | Kerala JCI Hub | UAE (Dubai/Abu Dhabi) | United Kingdom (Private) | United States |
+| :--- | :--- | :--- | :--- | :--- |
+| **Digital PET-CT Whole Body Scan** | **$280 – $380** | $1,800 – $2,600 | $2,200 – $3,200 | $4,500 – $7,000 |
+| **Chemotherapy (Per Cycle)** | **$350 – $750** | $2,500 – $5,000 | $3,500 – $6,500 | $7,000 – $15,000 |
+| **TrueBeam Radiotherapy (Full Course)** | **$2,800 – $4,200** | $14,000 – $22,000 | $18,000 – $28,000 | $35,000 – $60,000 |
+| **Radical Mastectomy (Breast Cancer)** | **$2,400 – $3,600** | $11,000 – $16,000 | $14,000 – $20,000 | $25,000 – $45,000 |
+| **Laparoscopic Colorectal Resection** | **$3,800 – $5,200** | $15,000 – $22,000 | $19,000 – $26,000 | $38,000 – $65,000 |
+| **Robotic Prostatectomy (Da Vinci)** | **$5,500 – $7,200** | $20,000 – $28,000 | $22,000 – $32,000 | $45,000 – $75,000 |
+
+## 3. High-Precision Oncology Technologies in Kerala
+
+Top medical centers in Calicut and Kochi house the latest medical engineering systems:
+
+- **TrueBeam Linac System:** Uses respiratory gating and dynamic volumetric modulated arc therapy (VMAT) to deliver high radiation doses to tumors while the patient breathes naturally, minimizing heart and lung exposure.
+- **Da Vinci Xi Surgical Robot:** Enables 3D high-definition visualization and wristed instruments that bend and rotate far beyond the human hand, ideal for delicate prostate, gynecological, and esophageal tumor removals with minimal blood loss.
+- **Flow Cytometry & Next-Generation Sequencing (NGS):** In-house molecular pathology testing to identify specific cancer gene mutations (e.g., EGFR, ALK, BRCA1/2, HER2) to pair patients with targeted oral therapies.
+
+## 4. The Healing Role of Medically Supervised Ayurveda
+
+Kerala is internationally renowned as the birthplace of authentic Ayurveda. In our integrated hospital networks, modern oncologists collaborate with clinical Ayurvedic doctors (Vaidyas):
+
+- **Chemotherapy Supportive Care:** Herbal decoctions and medicated ghee therapies that soothe mucositis, restore gut lining, and alleviate nausea.
+- **Neuropathy & Joint Pain Management:** Medicated warm oil massages (Kizhi and Abhyanga) to restore circulation and ease peripheral tingling in hands and feet.
+- **Stress & Sleep Recovery:** Shirodhara (gentle pouring of medicated herbal oils over the forehead) to calm the nervous system and relieve treatment-related anxiety.
+
+## 5. Step-by-Step International Patient Journey
+
+1. **Complimentary Tumor Board Review:** Submit your histopathology reports, biopsy slides, and CT/MRI scans securely through TreatInKerala. Our chief oncologists provide a written preliminary roadmap within 48 hours.
+2. **Medical E-Visa Within 24 Hours:** We issue an official hospital invitation letter for express e-Medical Visa processing.
+3. **Airport Arrival & Private Coordination:** Meet your dedicated personal medical coordinator at Calicut (CCJ) or Kochi (COK) airport with hotel transfers and local connectivity.
+4. **Day 1 Re-evaluation & Scans:** Blood work, digital PET-CT staging, and detailed in-person consultation with your chief oncologist.
+5. **Therapy Execution:** Smooth execution of planned surgical resection, chemotherapy cycles, or outpatient TrueBeam radiation sessions.
+6. **Recovery & Fit-to-Fly Certification:** Final assessment, comprehensive discharge summary, take-home medication supply, and post-departure telehealth tracking.`,
+    contentAr: `يتطلب تشخيص السرطان تحركاً علاجياً سريعاً ودقيقاً دون أي تأخير. ومع ذلك، يواجه العديد من المرضى في بريطانيا وأوروبا وأفريقيا ودول الخليج قوائم انتظار طويلة أو تكاليف باهظة في المستشفيات الخاصة.
+
+برزت ولاية كيرلا في الهند بوصفها إحدى أهم وجهات علاج الأورام المتكاملة في آسيا. بفضل شبكة مستشفيات الأورام المعتمدة دولياً من اللجنة المشتركة الدولية (JCI)، وأحدث أجهزة العلاج الإشعاعي الموجه تروبيم (TrueBeam)، وجراحة الأورام بالروبوت، واللجان الطبية المشتركة (Tumor Boards)، تقدم كيرلا للمرضى رعاية عالمية متميزة بتكلفة تقل بنسبة 70% إلى 85% عن الغرب.
+
+## 1. لماذا يختار المرضى الدوليون كيرلا لعلاج الأورام؟
+
+- **بدء العلاج الفوري دون قوائم انتظار:** يخضع المريض لإعادة التقييم الشامل وفحص الـ PET-CT الرقمي ومراجعة الخزعات خلال 48 ساعة فقط من وصوله إلى كيرلا.
+- **العلاج الإشعاعي عالي الدقة بتروبيم (TrueBeam):** توجيه حزم إشعاعية فائقة الدقة نحو الورم بدقة تقل عن مليمتر واحد خلال جلسات سريعة مدتها 5-10 دقائق، مما يحمي الأنسجة السليمة والأعضاء الحيوية المجاورة.
+- **لجنة الأورام متعددة التخصصات (Tumor Board):** تتم مناقشة كل حالة بالتفصيل بين استشاري علاج الأورام الكيماوي، وجراح الأورام، واستشاري العلاج الإشعاعي لتحديد خطة علاجية مخصصة ومحكمة.
+- **أحدث الأدوية والعلاجات المناعية المعتمدة من FDA:** توافر أحدث بروتوكولات العلاج الكيماوي، والعلاجات الموجهة، والعلاج المناعي بأسعار التصنيع الدوائي الهندي المعتمد.
+- **الرعاية الأيورفيدية التكميلية تحت إشراف طبي:** برامج طبيعية معتمدة لتخفيف إجهاد العلاج الكيماوي، واستعادة الشهية، وتسكين التهابات الأعصاب الطرفية المصاحبة للعلاج.
+
+## 2. جدول مقارنة تكاليف علاج الأورام بين كيرلا ودول العالم (2026)
+
+| الإجراء الطبي أو العلاج | مستشفيات كيرلا المعتمدة JCI | الإمارات (دبي/أبوظبي) | بريطانيا (القطاع الخاص) | الولايات المتحدة |
+| :--- | :--- | :--- | :--- | :--- |
+| **فحص الجسم الكامل بالـ PET-CT** | **280 – 380 دولار** | 1,800 – 2,600 دولار | 2,200 – 3,200 دولار | 4,500 – 7,000 دولار |
+| **جرعة الكيماوي (لكل جلسة)** | **350 – 750 دولار** | 2,500 – 5,000 دولار | 3,500 – 6,500 دولار | 7,000 – 15,000 دولار |
+| **برنامج إشعاع تروبيم (الكورس الكامل)** | **2,800 – 4,200 دولار** | 14,000 – 22,000 دولار | 18,000 – 28,000 دولار | 35,000 – 60,000 دولار |
+| **استئصال ورم الثدي الجذري** | **2,400 – 3,600 دولار** | 11,000 – 16,000 دولار | 14,000 – 20,000 دولار | 25,000 – 45,000 دولار |
+| **استئصال أورام القولون بالمنظار** | **3,800 – 5,200 دولار** | 15,000 – 22,000 دولار | 19,000 – 26,000 دولار | 38,000 – 65,000 دولار |
+| **استئصال البروستاتا بالروبوت دافنشي** | **5,500 – 7,200 دولار** | 20,000 – 28,000 دولار | 22,000 – 32,000 دولار | 45,000 – 75,000 دولار |
+
+## 3. التقنيات المتطورة في مراكز أورام كيرلا
+
+- **جهاز فاريان تروبيم (Varian TrueBeam):** يستخدم تقنيات التتبع التنفسي وتعديل شدة الحزمة الحجمية (VMAT) لقصف الخلايا السرطانية بدقة مع المحافظة على سلامة الرئة والقلب أثناء تنفس المريض الطبيعي.
+- **جراحة الروبوت دافنشي Xi:** تتيح للجراح رؤية ثلاثية الأبعاد مكبرة 10 مرات مع أذرع روبوتية تلتف بدقة فائقة لا تتيحها اليد البشرية، مثالية لأورام المسالك، القولون، والنساء.
+- **الفحوصات الجينية والتشخيص الجزيئي (NGS):** تحديد الطفرات الوراثية للورم لاختيار الدواء الموجه الأكثر فعالية للحالة.
+
+## 4. دور الأيورفيدا الداعم في مسار الشفاء
+
+تعتبر كيرلا الموطن التاريخي لطب الأيورفيدا. في مراكزنا الشريكة، يعمل أطباء الأورام بالتنسيق مع أطباء الأيورفيدا لتقديم:
+- **دعم الجهاز الهضمي والشهية:** وصفات عشبية لتلطيف التهابات الفم واستعادة قوة المعدة أثناء جرعات الكيماوي.
+- **تخفيف آلام والتهابات الأعصاب:** كمادات الزيوت الطبية الدافئة (كيجي وأبهيانغا) لتنشيط الدورة الدموية في الأطراف.
+- **تهدئة الجهاز العصبي:** جلسات الشيرودارا المهدئة لتقليل القلق وتحسين جودة النوم.
+
+## 5. خطوات رحلة العلاج للمرضى الدوليين
+
+1. **التقييم الأولي للتقارير والخزعات:** أرسل تقارير الخزعة والأشعة المقطعية عبر واتساب لعرضها مجاناً على لجنة الأورام واستلام خطة العلاج والتكلفة خلال 48 ساعة.
+2. **إصدار التأشيرة الطبية الإلكترونية:** نرسل خطاب الدعوة الرسمي من المستشفى لإنهاء التأشيرة خلال 24 ساعة.
+3. **الاستقبال بمطار كالكوت أو كوتشي:** سائق خاص ومترجم مرافق باللغة العربية طوال فترة إقامتك.
+4. **اليوم الأول (الفحوصات والمطابقة):** إجراء فحص PET-CT والتحاليل المخبرية ولقاء رئيس قسم الأورام.
+5. **تنفيذ العلاج:** إجراء الجراحة أو تلقي جلسات الإشعاع أو الكيماوي في بيئة طبية راقية ومعقمة.
+6. **شهادة اللياقة للسفر والمتابعة:** استلام التقرير الطبي الشامل وجدول المتابعة عن بُعد عبر الإنترنت بعد العودة للوطن.`,
+    faqs: [
+      {
+        q: 'How much does cancer treatment typically cost in Kerala, India?',
+        qAr: 'كم تبلغ تكلفة علاج السرطان في كيرلا بالهند في العادة؟',
+        a: 'A complete course of cancer care in Kerala typically ranges from $3,500 to $7,500 depending on the staging and whether treatment requires surgery, TrueBeam radiotherapy, or chemotherapy cycles. This offers a 70% to 85% cost saving compared to US, UK, or Gulf private healthcare.',
+        aAr: 'تتراوح تكلفة كورس علاج السرطان المتكامل في كيرلا عادة بين 3,500 و 7,500 دولار أمريكي بحسب مرحلة الورم ونوع العلاج المطلوب (جراحة، علاج إشعاعي بتروبيم، أو جرعات كيماوي)، مما يوفر 70% إلى 85% مقارنة بالأسعار في أمريكا وبريطانيا والخليج.'
+      },
+      {
+        q: 'How quickly can treatment begin after arriving in Kerala?',
+        qAr: 'ما مدى سرعة بدء العلاج بعد الوصول إلى كيرلا؟',
+        a: 'With TreatInKerala, diagnostic restaging (including PET-CT and blood panels) occurs within 24 hours of arrival. Treatment plans finalized by the Multidisciplinary Tumor Board usually commence within 48 to 72 hours of admission.',
+        aAr: 'مع علاج في كيرلا، يتم إجراء الفحوصات وإعادة التقييم (بما في ذلك فحص PET-CT والتحاليل) خلال 24 ساعة من الوصول، وتبدأ خطة العلاج المعتمدة من لجنة الأورام خلال 48 إلى 72 ساعة فقط.'
+      },
+      {
+        q: 'Can family members stay with the patient during treatment?',
+        qAr: 'هل يمكن لأفراد العائلة الإقامة مع المريض أثناء فترة العلاج؟',
+        a: 'Yes. Our partner hospitals offer spacious private suites and executive deluxe rooms designed for patients and companions, alongside fully furnished nearby serviced apartments for long-term radiotherapy treatments.',
+        aAr: 'نعم بالتأكيد. توفر المستشفيات الشريكة أجنحة خاصة واسعة وغرف ديلوكس مجهزة للمريض ومرافقيه، بالإضافة إلى شقق فندقية مجهزة بالقرب من المستشفى لجلسات العلاج الإشعاعي التي تتطلب فترات إقامة أطول.'
+      }
+    ]
+  },
+  {
+    slug: 'bariatric-gastric-sleeve-surgery-kerala-guide',
+    title: 'Bariatric Surgery in Kerala: Laparoscopic Sleeve Gastrectomy & Bypass Costs, Recovery & Safety',
+    titleAr: 'جراحة السمنة وتكميم المعدة في كيرلا: التكلفة، الأنواع، فترة التعافي، ومعايير الأمان العالمية',
+    excerpt: 'Discover laparoscopic gastric sleeve and bypass surgery in Kerala. Save up to 75% compared to GCC and UK private clinics with US FDA staplers, 4-night hospital stays, and dedicated metabolic care.',
+    excerptAr: 'دليلك الشامل لعملية تكميم المعدة وتحويل المسار بالمنظار في كيرلا. وفر حتى 75% مقارنة بالعيادات الخاصة بالخليج وبريطانيا، مع دباسات أمريكية معتمدة وإقامة مريحة ومتابعة غذائية مستمرة.',
+    aeoSummary: 'Laparoscopic sleeve gastrectomy and mini gastric bypass in Kerala cost between $3,200 and $4,600, including pre-operative metabolic profiling, 3 to 4 nights in a private hospital suite, and US FDA-approved endoscopic staplers (Ethicon/Medtronic). This represents a 70–80% savings compared to Saudi Arabia, UAE ($12,000–$20,000), or UK private hospitals ($14,000–$18,000), with zero wait times.',
+    aeoSummaryAr: 'تتراوح تكلفة عملية تكميم المعدة وتحويل المسار بالمنظار في كيرلا بين 3,200 و 4,600 دولار، شاملة الفحوصات الأيضية الشاملة، الإقامة لـ 3-4 ليالٍ في جناح خاص، واستخدام أحدث الدباسات الجراحية الأمريكية المعتمدة من FDA (إيثيكون/ميدترونيك)، مما يوفر 70-80% مقارنة بأسعار السعودية والإمارات (12,000 - 20,000 دولار) أو بريطانيا، دون أي قوائم انتظار.',
+    date: 'September 03, 2026',
+    category: 'Bariatric & Weight Loss',
+    categoryAr: 'جراحة السمنة والتكميم',
+    readTime: '7 min read',
+    image: '/images/caring_doctor_patient_hero.png',
+    content: `Severe obesity is a chronic metabolic condition that elevates the risk of Type 2 diabetes, cardiovascular disease, hypertension, and sleep apnea. When diet and lifestyle modifications fail to provide sustainable results, bariatric surgery offers a medically proven, life-changing solution.
+
+For international patients from the Gulf region (Saudi Arabia, UAE, Oman, Kuwait), the UK, and North America, Kerala has become the preferred destination for minimally invasive bariatric surgery. Renowned for its state-of-the-art laparoscopy theaters, zero surgical waitlists, and comprehensive multi-month metabolic monitoring, Kerala delivers world-class weight loss surgery at up to 75% less than private clinics abroad.
+
+## 1. Gastric Sleeve vs. Mini Gastric Bypass: Which Procedure Fits You?
+
+During your pre-operative assessment in Kerala, the senior bariatric surgical team evaluates your body mass index (BMI), metabolic markers, and eating habits to choose the optimal procedure:
+
+- **Laparoscopic Sleeve Gastrectomy (LSG):** The surgeon removes approximately 75–80% of the stomach using laparoscopic keyhole incisions, creating a narrow gastric tube resembling a banana. This restricts food capacity and sharply suppresses ghrelin (the hunger hormone). It is ideal for patients with a BMI of 32.5+ or those with binge-eating tendencies.
+- **Roux-en-Y Gastric Bypass (RYGB):** Creates a small stomach pouch connected directly to the middle section of the small intestine. This provides both restriction and malabsorption, making it the gold standard for individuals with severe Type 2 diabetes or chronic gastroesophageal reflux disease (GERD).
+- **One Anastomosis / Mini Gastric Bypass (MGB):** A streamlined bypass technique with a single connection that offers rapid surgical time, remarkable diabetes resolution, and exceptional long-term weight reduction.
+
+## 2. 2026 Bariatric Surgery Cost Comparison Table
+
+| Procedure | Kerala JCI / NABH Hub | Saudi Arabia / UAE | United Kingdom (Private) | United States |
+| :--- | :--- | :--- | :--- | :--- |
+| **Laparoscopic Sleeve Gastrectomy** | **$3,200 – $4,200** | $11,000 – $18,000 | $12,000 – $16,000 | $18,000 – $28,000 |
+| **Mini Gastric Bypass (OAGB)** | **$3,600 – $4,600** | $13,000 – $20,000 | $14,000 – $18,000 | $22,000 – $32,000 |
+| **Roux-en-Y Gastric Bypass (RYGB)** | **$4,000 – $5,200** | $15,000 – $22,000 | $15,000 – $20,000 | $24,000 – $35,000 |
+| **Pre-Op Metabolic Screening Panel** | **Included** | $1,200 – $2,000 | $1,500 – $2,200 | $2,500 – $4,000 |
+| **Hospital Stay (Private Room)** | **3 to 4 Nights Included** | 1 to 2 Nights Only | 1 to 2 Nights Only | 1 Night Only |
+
+## 3. Advanced Safety Standards & FDA-Approved Stapling
+
+Patient safety is paramount. Our partner hospitals adhere to strict clinical safety measures:
+
+- **US FDA-Approved Endoscopic Staplers:** We exclusively use premium Ethicon Endo-Surgery (Echelon Flex) or Medtronic (Signia Tri-Staple) devices with continuous tissue compression to create hermetic, leak-proof staple lines.
+- **Intraoperative Triple Leak Testing:** Every surgery includes an air-leak test and methylene blue dye test under direct vision before completion.
+- **Early Mobilization Protocol:** Patients walk within 4 to 6 hours post-surgery to prevent deep vein thrombosis (DVT) and speed recovery.
+- **In-House Clinical Nutritionist:** A customized 4-stage post-operative dietary roadmap (clear liquids, full liquids, purees, and soft solid foods) tailored to Gulf and international dietary preferences.
+
+## 4. The 5-Day Surgical & Holiday Schedule in Kerala
+
+- **Day 1 (Arrival & Pre-Op Workup):** Airport reception in Calicut or Kochi. Comprehensive cardiometabolic profiling, upper GI endoscopy, pulmonary check, and anesthesiology clearance.
+- **Day 2 (Laparoscopic Surgery):** 60-to-90 minute procedure under general anesthesia via 4 tiny 5-to-10mm keyhole punctures. Transferred to private room; walking within hours.
+- **Day 3 (Post-Op Gastrografin Scan & Liquid Diet):** Contrast swallow test confirming perfect gastric transit. Transition to clear water, electrolyte broths, and herbal infusions.
+- **Day 4 (Discharge to Recovery Hotel):** Discharge from hospital to a comfortable, peaceful serviced resort or partner hotel. Final consultation with your bariatric surgeon and chief clinical dietitian.
+- **Day 5 (Follow-up & Fit-to-Fly Clearance):** Wound check, removal of waterproof dressings, issuance of medical fitness certificate, and flight home.
+
+## 5. Expected Weight Loss & Health Benefits
+
+- **Excess Weight Loss:** Patients typically lose 60% to 75% of their excess body weight within the first 12 to 18 months.
+- **Diabetes Remission:** Up to 85% of Type 2 diabetes patients achieve normal blood sugar levels without insulin or oral hypoglycemics within weeks of surgery.
+- **Hypertension & Sleep Apnea:** Significant reduction in blood pressure and resolution of obstructive sleep apnea in over 75% of cases.`,
+    contentAr: `تُعد السمنة المفرطة مرضاً أيضياً مزمناً يزيد من احتمالية الإصابة بالسكري من النوع الثاني، وارتفاع ضغط الدم، وأمراض القلب، وانقطاع التنفس أثناء النوم. وعندما تفشل الحميات والتمارين الرياضية في تحقيق نتائج مستدامة، تمثل جراحة السمنة بالمنظار حلاً طبياً جذرياً وفعالاً.
+
+بالنسبة للمرضى في دول الخليج (السعودية، الإمارات، عمان، الكويت، قطر) وبريطانيا، أصبحت كيرلا في الهند الوجهة الأولى لجراحات السمنة المتطورة. بفضل غرف العمليات المجهزة بمناظير 4K، والخبرة الجراحية العالية، وانعدام قوائم الانتظار، مع توفير مالي يصل إلى 75% مقارنة بالمستشفيات الخاصة بالخليج.
+
+## 1. تكميم المعدة أم تحويل المسار: أيهما أنسب لحالتك؟
+
+خلال الفحص الأولي في كيرلا، يقيم استشاري جراحة السمنة مؤشر كتلة الجسم (BMI) والأمراض المصاحبة ونمط التغذية لاختيار الأنسب:
+
+- **تكميم المعدة بالمنظار (Laparoscopic Sleeve Gastrectomy):** يستأصل الجراح حوالي 75-80% من حجم المعدة عبر ثقوب صغيرة بالمنظار، لتصبح المعدة في شكل أنبوب رفيع يشبه الموزة. يؤدي هذا لتقليل كمية الطعام المستوعبة وتثبيط هرمون الجوع (الجريلين) بشكل كبير. مناسب جداً للمرضى الذين يعانون من زيادة في الشهية أو كتلة جسم فوق 32.5.
+- **تحويل مسار المعدة التقليدي (Roux-en-Y):** تصغير المعدة وتوصيلها مباشرة بمنتصف الأمعاء الدقيقة. يُعد المعيار الذهبي لعلاج مرضى السكري المزمن والذين يعانون من ارتجاع مريئي حاد (الحموضة).
+- **تحويل المسار المصغر (Mini Gastric Bypass):** تقنية حديثة بوصلة واحدة تجمع بين سرعة الإجراء الجراحي والشفاء الفائق من السكري وتحقيق نزول ممتاز في الوزن.
+
+## 2. جدول مقارنة تكاليف عمليات السمنة بين كيرلا ودول الخليج والعالم (2026)
+
+| نوع العملية | مستشفيات كيرلا المعتمدة JCI | السعودية والإمارات | بريطانيا (الخاص) | الولايات المتحدة |
+| :--- | :--- | :--- | :--- | :--- |
+| **تكميم المعدة بالمنظار (Sleeve)** | **3,200 – 4,200 دولار** | 11,000 – 18,000 دولار | 12,000 – 16,000 دولار | 18,000 – 28,000 دولار |
+| **تحويل المسار المصغر (Mini Bypass)** | **3,600 – 4,600 دولار** | 13,000 – 20,000 دولار | 14,000 – 18,000 دولار | 22,000 – 32,000 دولار |
+| **تحويل مسار المعدة التقليدي (Roux-en-Y)** | **4,000 – 5,200 دولار** | 15,000 – 22,000 دولار | 15,000 – 20,000 دولار | 24,000 – 35,000 دولار |
+| **الفحوصات والأشعة ومناظير ما قبل الجراحة** | **مشمولة بالكامل** | 1,200 – 2,000 دولار | 1,500 – 2,200 دولار | 2,500 – 4,000 دولار |
+| **الإقامة في المستشفى (جناح خاص)** | **3 إلى 4 ليالٍ مشمولة** | ليلة إلى ليلتين فقط | ليلة إلى ليلتين فقط | ليلة واحدة فقط |
+
+## 3. أعلى معايير الأمان والدباسات الأمريكية المعتمدة
+
+- **دباسات جراحية ذكية معتمدة من FDA:** استخدام حصري لأحدث دباسات إيثيكون الأمريكية (Ethicon Echelon Flex) أو ميدترونيك (Medtronic Tri-Staple) لضمان تدبيس ثلاثي مانع للتسرب.
+- **اختبار التسريب الثلاثي أثناء العملية:** يتم إجراء اختبار ضغط الهواء ومحلول الميثيلين الأزرق أثناء الجراحة للتأكد القاطع من سلامة خط التدبيس.
+- **بروتوكول المشي المبكر:** يمشي المريض بعد 4 إلى 6 ساعات من العملية لتنشيط الدورة الدموية وتجنب التجلطات وتسريع التعافي.
+- **خطة غذائية متكاملة للمريض الخليجي:** جدول غذائي مفصل مقسم لـ 4 مراحل (سوائل شفافة، سوائل كاملة، طعام مهروس، وطعام لين) بإشراف أخصائية تغذية علاجية مع متابعة عبر واتساب.
+
+## 4. خطة الرحلة والعلاج في كيرلا (5 أيام)
+
+- **اليوم 1 (الوصول والفحوصات):** استقبال من مطار كالكوت أو كوتشي، إجراء فحوصات الدم، وتخطيط القلب، وسونار البطن، واستشارة طبيب التخدير وجراح السمنة.
+- **اليوم 2 (إجراء العملية بالمنظار):** مدة العملية 60-90 دقيقة عبر 4 فتحات مجهرية صغيرة جداً (5-10 ملم). العودة للجناح الخاص والبدء بالمشي بعد ساعات قليلة.
+- **اليوم 3 (أشعة التأكد وبدء السوائل):** إجراء أشعة الصبغة للتأكد من سلامة المعدة والبدء بشرب الماء والعصائر الشفافة والمشروبات الدافئة.
+- **اليوم 4 (الخروج إلى الفندق):** الانتقال للإقامة في فندق مريح للاستجمام، مع مراجعة خطة التغذية والأدوية والمكملات.
+- **اليوم 5 (الفحص النهائي واستلام تقرير السفر):** فحص الجروح والتأكد من اللياقة التامة لركوب الطائرة والعودة للوطن بأمان.
+
+## 5. النتائج المتوقعة بعد العملية
+
+- **فقدان الوزن الزائد:** يفقد المريض من 60% إلى 75% من وزنه الزائد خلال أول 12 إلى 18 شهراً.
+- **علاج السكري من النوع الثاني:** يشفى أكثر من 85% من مرضى السكري ويستغنون عن حقن الإنسولين وحبوب السكر خلال أسابيع قليلة بعد الجراحة.
+- **السيطرة على ضغط الدم ومشاكل المفاصل:** انخفاض ملحوظ في ضغط الدم والتخلص من آلام الركبة والظهر الناتجة عن الوزن الزائد.`,
+    faqs: [
+      {
+        q: 'Who qualifies for bariatric surgery in Kerala?',
+        qAr: 'من هو المؤهل لإجراء عملية السمنة والتكميم في كيرلا؟',
+        a: 'Candidates typically have a Body Mass Index (BMI) of 35 or higher, or a BMI of 32.5+ accompanied by obesity-related health conditions such as Type 2 diabetes, severe hypertension, or joint degeneration. Our surgical team reviews your height, weight, and medical history free of charge.',
+        aAr: 'المرشحون للعملية عادة هم من يملكون مؤشر كتلة جسم (BMI) يبلغ 35 فأكثر، أو 32.5 فأكثر مع وجود أمراض مصاحبة كمرض السكري أو ضغط الدم أو مشاكل المفاصل. يراجع فريقنا الجراحي بياناتك مجاناً لتحديد أهليتك للعملية.'
+      },
+      {
+        q: 'How long do I need to stay in Kerala for gastric sleeve surgery?',
+        qAr: 'ما هي مدة الإقامة المطلوبة في كيرلا لإجراء عملية التكميم؟',
+        a: 'A total of 5 to 6 days is recommended. This includes 1 day for pre-operative testing, 3 nights of comfortable inpatient observation, and 1 to 2 days in a restful partner hotel before receiving fit-to-fly clearance.',
+        aAr: 'يُنصح بالإقامة لمدة 5 إلى 6 أيام في المجمل. يشمل ذلك يوماً للفحوصات، و 3 ليالٍ في المستشفى للملاحظة والراحة، ويوم أو يومين في فندق مريح قبل استلام شهادة اللياقة للسفر والعودة للوطن.'
+      },
+      {
+        q: 'Are surgical staplers reused, and what is the risk of leaks?',
+        qAr: 'هل يتم إعادة استخدام الدباسات الجراحية، وما هي نسبة حدوث التسريب؟',
+        a: 'Never. Our partner JCI and NABH hospitals exclusively utilize brand-new, single-use US FDA-approved titanium endoscopic staplers (Ethicon or Medtronic). Due to mandatory intraoperative triple leak testing, our partners maintain a leak complication rate below 0.3%, well below international benchmarks.',
+        aAr: 'لا على الإطلاق. تستخدم المستشفيات الشريكة دباسات تيتانيوم أمريكية أصلية تستخدم لمرة واحدة فقط ومعتمدة من FDA (إيثيكون أو ميدترونيك). وبفضل فحص التسريب الثلاثي أثناء الجراحة، تقل نسبة المضاعفات عن 0.3%، وهي أقل من المعدلات الدولية.'
+      }
+    ]
+  },
+  {
+    slug: 'advanced-eye-surgery-lasik-cataract-kerala-guide',
+    title: 'Eye Surgery in Kerala: Contoura Vision LASIK & Trifocal Cataract Implants in 3 Days',
+    titleAr: 'جراحة العيون وتصحيح النظر في كيرلا: كونتورا فيجن ليزك وإزالة المياه البيضاء بالعدسات الذكية في ٣ أيام',
+    excerpt: 'Achieve 20/15 sharp vision with Contoura Vision LASIK and Alcon PanOptix trifocal cataract lenses in Kerala. Top JCI eye hubs, blade-free technology, and 70% cost savings within a 72-hour trip.',
+    excerptAr: 'استعد حدة إبصار فائقة مع الكونتورا فيجن ليزك وزراعة العدسات ثلاثية البؤرة (بان أوبتيكس) للمياه البيضاء في كيرلا. أحدث أجهزة الليزر العالمية، بدون ألم، وتوفير 70% خلال رحلة مدتها 3 أيام.',
+    aeoSummary: 'Advanced eye surgery in Kerala provides blade-free Contoura Vision LASIK for both eyes at $650–$950 (vs $3,000–$4,500 in the UK/USA/UAE) and micro-incision phaco cataract surgery with premium trifocal IOLs (Alcon PanOptix/Zeiss) at $750–$1,150 per eye. Procedures take under 20 minutes under topical anesthetic drops, providing sharp glasses-free vision within 24 hours.',
+    aeoSummaryAr: 'تقدم كيرلا جراحات العيون المتقدمة بتقنية كونتورا فيجن ليزك للعينين بتكلفة 650 إلى 950 دولار (مقارنة بـ 3,000 - 4,500 دولار في بريطانيا والإمارات وأمريكا)، وإزالة المياه البيضاء بالموجات فوق الصوتية وزراعة العدسات الذكية ثلاثية البؤرة (ألكون بان أوبتيكس وزايس) بتكلفة 750 إلى 1,150 دولار للعين. تستغرق العملية أقل من 20 دقيقة بقطرات تخدير موضعي، ويستعيد المريض الرؤية الحادة بدون نظارة خلال 24 ساعة.',
+    date: 'September 04, 2026',
+    category: 'Eye Care & LASIK',
+    categoryAr: 'طب العيون وتصحيح النظر',
+    readTime: '6 min read',
+    image: '/images/allopathy_treatment_hero.png',
+    content: `Clear, natural vision without the encumbrance of thick eyeglasses or daily contact lenses is one of the most liberating improvements in modern medicine. Yet in the UK, United States, and across the Arabian Gulf, premium refractive laser procedures and advanced cataract surgeries command exorbitant prices.
+
+Kerala has established itself as an international center of ophthalmic excellence. Hosting dedicated eye hospitals equipped with WaveLight EX500 excimer lasers, Alcon Centurion phacoemulsification systems, and German Zeiss imaging platforms, Kerala enables international patients to achieve pristine visual acuity within a brief 3-day tropical trip.
+
+## 1. Contoura Vision vs. Traditional LASIK vs. SMILE
+
+Refractive technology has evolved beyond standard prescription correction to create customized corneal optics:
+
+- **Traditional LASIK:** Corrects standard sphere and cylinder errors based on regular prescription glasses numbers.
+- **Wavefront-Guided LASIK:** Measures subtle optical aberrations throughout the entire eye structure.
+- **Contoura Vision (Topography-Guided):** The cutting edge of laser vision correction. It maps 22,000 unique elevation points on the surface of your cornea, correcting not only nearsightedness and astigmatism, but also microscopic corneal irregularities. Over 65% of patients achieve 20/15 or better visual acuity—sharper than normal human vision—with significantly reduced nighttime glare and halos.
+- **SMILE (Small Incision Lenticule Extraction):** A blade-free, flapless procedure ideal for athletes and patients with dry eyes, using a femtosecond laser to extract a microscopic disc of tissue through a tiny 2mm keyhole.
+
+## 2. Premium Cataract Surgery: Permanent Freedom from Glasses
+
+Modern cataract surgery is no longer just about removing cloudiness; it is a refractive procedure to restore lifelong vision at all distances:
+
+- **Monofocal Intraocular Lenses (IOLs):** Correct distance vision clearly, though reading glasses are still needed for close-up phone or book reading.
+- **Trifocal Lenses (Alcon PanOptix / Zeiss AT LISA):** The premier choice for complete glasses independence. Provides seamless, crisp focus across three distinct zones: near (reading a smartphone), intermediate (computer screens and car dashboard), and distance (driving and landscapes).
+- **Toric IOLs:** Specifically engineered to neutralize pre-existing astigmatism while replacing the cataract lens.
+
+## 3. 2026 Eye Surgery Cost Comparison Table
+
+| Procedure | Kerala Partner Hub | UAE (Dubai/Abu Dhabi) | United Kingdom (Private) | United States |
+| :--- | :--- | :--- | :--- | :--- |
+| **Contoura Vision LASIK (Both Eyes)** | **$650 – $950** | $2,800 – $4,200 | $3,500 – $5,000 | $4,500 – $6,500 |
+| **Blade-Free SMILE Laser (Both Eyes)** | **$1,100 – $1,500** | $3,600 – $5,200 | $4,200 – $5,800 | $5,000 – $7,200 |
+| **Phaco Cataract + Monofocal IOL (Per Eye)** | **$380 – $550** | $1,800 – $2,800 | $2,500 – $3,800 | $3,500 – $5,000 |
+| **Phaco Cataract + Alcon PanOptix Trifocal (Per Eye)** | **$750 – $1,150** | $3,400 – $5,000 | $4,000 – $5,600 | $5,500 – $7,800 |
+| **Corneal Pentacam & Biometry Diagnostic Suite** | **Included** | $400 – $700 | $500 – $800 | $800 – $1,200 |
+
+## 4. The 72-Hour Vision Correction Itinerary
+
+- **Day 1 (Comprehensive Digital Diagnostics):** Airport pickup to the eye institute. Comprehensive 2-hour evaluation including Pentacam corneal topography, pachymetry (corneal thickness measurement), tear film analysis, and dilated retinal examination. Custom treatment plan finalized.
+- **Day 2 (15-Minute Laser Procedure):** Numbing eye drops applied (no injections or needles). The laser treatment takes approximately 10 to 15 minutes for both eyes with zero pain. Relax in the clinic lounge for 1 hour before returning to your hotel with protective sunglasses.
+- **Day 3 (Next-Day Checkup & Fit-to-Fly):** Slit-lamp examination by the chief refractive surgeon. 98% of patients read the bottom lines of the eye chart with 20/20 or better clarity. Medical clearance issued for flight departure.
+
+## 5. Post-Procedure Eye Care & Recovery
+
+- **Eye Drop Regimen:** Antibiotic, anti-inflammatory, and preservative-free lubricating drops are provided at discharge.
+- **Precautions:** Avoid rubbing eyes, swimming, or wearing eye makeup for 1 to 2 weeks.
+- **Screen Time:** Gentle screen use can resume within 24 to 48 hours following your procedure.`,
+    contentAr: `إن الحصول على رؤية واضحة وطبيعية دون الحاجة للنظارات الطبية السميكة أو العدسات اللاصقة اليومية يُعد من أعظم إنجازات طب وجراحة العيون الحديث. ومع ذلك، في بريطانيا وأمريكا ودول الخليج، تتطلب عمليات تصحيح النظر بالليزر وجراحات المياه البيضاء المتقدمة مبالغ طائلة.
+
+أصبحت ولاية كيرلا في الهند مركزاً عالمياً لجراحات العيون المتقدمة. بفضل توفر أحدث أجهزة الليزر الألمانية مثل WaveLight EX500 وأجهزة تفتيت المياه البيضاء بالموجات الصوتية Alcon Centurion والعدسات الذكية الأمريكية والألمانية، تتيح كيرلا للمرضى استعادة حدة الإبصار بدقة فائقة خلال رحلة سياحية قصيرة مدتها 3 أيام فقط.
+
+## 1. كونتورا فيجن مقابل الليزك التقليدي وتقنية سمايل (SMILE)
+
+تطورت تقنيات تصحيح النظر من مجرد قياس النظارة إلى مسح بصري ثلاثي الأبعاد لسطح القرنية:
+
+- **الليزك التقليدي:** يعالج قصر وطول النظر والاستجماتيزم وفقاً لقياس النظارة المعتاد.
+- **تقنية كونتورا فيجن (Contoura Vision):** أحدث طفرة عالمية في تصحيح النظر بتوجيه تضاريس القرنية. يقوم الجهاز بمسح 22,000 نقطة ارتفاع دقيقة على سطح القرنية، مما يعالج أدق التعرجات المجهرية. يحقق أكثر من 65% من المرضى حدة نظر 20/15 (أقوى من 6/6 الطبيعية)، مع رؤية ليلية فائقة دون هالات ضوئية.
+- **تقنية سمايل (SMILE):** تقنية بدون رفع شريحة القرنية (Flapless)، ممتازة للرياضيين ولمن يعانون من جفاف العين، حيث يُستخرج جزء مجهري من نسيج القرنية عبر ثقب صغير لا يتجاوز 2 ملم.
+
+## 2. جراحة المياه البيضاء وزراعة العدسات الذكية ثلاثية البؤرة
+
+لم تعد عملية إزالة المياه البيضاء تقتصر على إزالة الغباش، بل أصبحت عملية لتصحيح النظر مدى الحياة والاستغناء عن النظارة:
+
+- **العدسات أحادية البؤرة (Monofocal):** توفر رؤية ممتازة للمسافات البعيدة، مع الحاجة لنظارة قراءة للأشياء القريبة.
+- **العدسات ثلاثية البؤرة الذكية (Alcon PanOptix / Zeiss):** الخيار الذهبي للاستغناء التام عن النظارات. توفر رؤية حادة في المسافات الثلاث: القريبة (قراءة الجوال والكتب)، المتوسطة (الكمبيوتر وشاشات السيارة)، والبعيدة (القيادة والمناظر الطبيعية).
+- **العدسات التوريك (Toric):** مخصصة لعلاج الاستجماتيزم بدقة عالية أثناء إزالة المياه البيضاء.
+
+## 3. جدول مقارنة أسعار جراحات العيون وتصحيح النظر (2026)
+
+| نوع الإجراء الطبي | مراكز كيرلا الشريكة | الإمارات (دبي/أبوظبي) | بريطانيا (خاص) | الولايات المتحدة |
+| :--- | :--- | :--- | :--- | :--- |
+| **كونتورا فيجن ليزك للعينين** | **650 – 950 دولار** | 2,800 – 4,200 دولار | 3,500 – 5,000 دولار | 4,500 – 6,500 دولار |
+| **عملية سمايل بدون شفرة للعينين** | **1,100 – 1,500 دولار** | 3,600 – 5,200 دولار | 4,200 – 5,800 دولار | 5,000 – 7,200 دولار |
+| **مياه بيضاء + عدسة أحادية (للعين)** | **380 – 550 دولار** | 1,800 – 2,800 دولار | 2,500 – 3,800 دولار | 3,500 – 5,000 دولار |
+| **مياه بيضاء + عدسة بان أوبتيكس ثلاثية** | **750 – 1,150 دولار** | 3,400 – 5,000 دولار | 4,000 – 5,600 دولار | 5,500 – 7,800 دولار |
+| **الفحوصات وتصوير القرنية بالبنتاكام** | **مشمولة مجاناً** | 400 – 700 دولار | 500 – 800 دولار | 800 – 1,200 دولار |
+
+## 4. جدول رحلة تصحيح النظر في كيرلا (3 أيام)
+
+- **اليوم 1 (الفحوصات الرقمية الشاملة):** استقبال من المطار والتوجه للمركز لإجراء فحص البنتاكام وسمك القرنية وفحص قاع العين لتحديد الإجراء الأنسب بدقة.
+- **اليوم 2 (جلسة الليزر - 15 دقيقة فقط):** استخدام قطرات تخدير موضعي بدون إبر أو ألم. مدة الليزر دقيقتان لكل عين والعملية بالكامل 15 دقيقة. العودة للفندق للراحة وارتداء نظارة واقية.
+- **اليوم 3 (فحص اليوم التالي وتصريح السفر):** فحص العين بالمجهر والتأكد من حدة الرؤية (أكثر من 98% يحققون رؤية 6/6 أو أفضل فوراً)، استلام قطرات التعافي والسفر للوطن بأمان.
+
+## 5. تعليمات العناية بعد تصحيح النظر
+
+- استخدام قطرات الترطيب والمضاد الحيوي الموصوفة بانتظام.
+- تجنب فرك العينين أو ملامسة الماء للعين أثناء الاستحمام في الأيام الثلاثة الأولى.
+- يمكن استخدام شاشات الهاتف والكمبيوتر باعتدال بدءاً من اليوم الثاني.`,
+    faqs: [
+      {
+        q: 'Is LASIK or Contoura Vision painful?',
+        qAr: 'هل عملية تصحيح النظر بالليزك أو الكونتورا فيجن مؤلمة؟',
+        a: 'No. Anesthetic eye drops completely numb the surface of your eyes before the procedure begins. You may experience a mild sensation of pressure for about 20 seconds, but no pain. Most patients report only mild scratchiness for 3 to 4 hours post-surgery before clear vision settles in.',
+        aAr: 'لا على الإطلاق. يتم وضع قطرات تخدير موضعي تجعل العين خالية من أي إحساس بالألم. قد يشعر المريض بضغط بسيط جداً لمدة 20 ثانية أثناء العملية فقط. وبعد العملية يزول أي شعور خفيف بالانزعاج خلال 3 إلى 4 ساعات لتصبح الرؤية صافية تماماً.'
+      },
+      {
+        q: 'How soon can I fly after Contoura Vision or cataract surgery?',
+        qAr: 'متى يمكنني ركوب الطائرة بعد عملية تصحيح النظر أو المياه البيضاء؟',
+        a: 'International patients are safely cleared to fly 24 to 48 hours after surgery following their mandatory next-day slit-lamp examination. Cabin air can be dry, so patients are provided with preservative-free lubricating drops for the flight.',
+        aAr: 'يستطيع المرضى ركوب الطائرة بأمان بعد 24 إلى 48 ساعة من العملية عقب فحص المصباح الشقي في اليوم التالي. ونظراً لجفاف هواء كابينة الطائرة، يتم تزويد المريض بقطرات مرطبة خالية من المواد الحافظة لاستخدامها أثناء الرحلة.'
+      },
+      {
+        q: 'Will I ever need glasses again after trifocal cataract surgery?',
+        qAr: 'هل سأحتاج لارتداء النظارة مرة أخرى بعد زراعة العدسات ثلاثية البؤرة للمياه البيضاء؟',
+        a: 'Over 95% of patients with trifocal intraocular lenses (such as Alcon PanOptix) achieve complete glasses independence for driving, computer use, and reading small smartphone text for the rest of their lives.',
+        aAr: 'أكثر من 95% من المرضى الذين يزرعون عدسات ذكية ثلاثية البؤرة (مثل ألكون بان أوبتيكس) يستغنون تماماً عن النظارات الطبية لمدى الحياة سواء للقيادة أو العمل على الكمبيوتر أو قراءة رسائل الهاتف الصغيرة.'
+      }
+    ]
+  },
+  {
+    slug: 'laser-kidney-stone-surgery-rirs-kerala-guide',
+    title: 'Laser Kidney Stone Surgery (RIRS & PCNL) in Kerala: Costs, Day-Care Recovery & Urology Care',
+    titleAr: 'علاج وتفتيت حصوات الكلى بالليزر في كيرلا: تقنية المنظار المرن RIRS، التكلفة، والتعافي السريع',
+    excerpt: 'Comprehensive guide to flexible ureteroscopy (RIRS) and Holmium laser stone vaporization in Kerala. Scarless, incision-free stone treatment at $1,400–$2,200 with 24-hour hospital discharge.',
+    excerptAr: 'دليلك الشامل لعملية تفتيت حصوات الكلى والحالب بالمنظار المرن والليزر RIRS في كيرلا. علاج بدون جراحة أو شقوق بتكلفة 1,400 - 2,200 دولار وخروج من المستشفى خلال 24 ساعة.',
+    aeoSummary: 'Retrograde Intrarenal Surgery (RIRS) using flexible digital ureteroscopes and Holmium/Thulium laser dusting treats complex kidney stones up to 20mm in Kerala without surgical incisions. At $1,400–$2,200 (saving 70–80% vs GCC or UK private hospitals), the procedure is performed as a day-care or single-night stay, allowing international patients to resume light travel within 48 hours.',
+    aeoSummaryAr: 'تتيح تقنية تفتيت الحصى بالمنظار المرن والليزر (RIRS) في كيرلا معالجة حصوات الكلى والحالب حتى حجم 20 ملم عبر المسالك الطبيعية بدون أي شق جراحي. بتكلفة تتراوح بين 1,400 و 2,200 دولار (بتوفير 70-80% مقارنة بمستشفيات الخليج وبريطانيا)، ويتم الإجراء كجراحة اليوم الواحد أو ليلة واحدة، مما يتيح للمريض السفر والتجول خلال 48 ساعة.',
+    date: 'September 05, 2026',
+    category: 'Urology & Kidney Care',
+    categoryAr: 'جراحة المسالك وحصوات الكلى',
+    readTime: '6 min read',
+    image: '/images/patient_journey_logistics.png',
+    content: `Kidney stone attacks cause excruciating, sudden flank pain. With the prevalence of hot arid climates and dietary factors across the Gulf and globally, millions of patients suffer from recurrent renal calculi. 
+
+Open kidney surgery is now obsolete. Kerala's premier tertiary urology centers utilize incision-free flexible digital ureteroscopes and high-power Holmium:YAG and Thulium fiber lasers. Known as Retrograde Intrarenal Surgery (RIRS), this technique vaporizes kidney stones into fine dust through natural anatomical pathways with zero surgical incisions, zero scars, and virtually no blood loss.
+
+## 1. Understanding the Options: RIRS vs. Mini-PCNL vs. ESWL
+
+The choice of stone removal depends on stone diameter, density (Hounsfield units on CT), and anatomical location:
+
+- **RIRS (Flexible Ureterorenoscopy Laser Dusting):** The primary choice for stones up to 20mm in the kidney or upper ureter. A microscopic, flexible digital scope is navigated through the urethra and bladder directly into the kidney calyces. A laser fiber pulverizes the stone into fine sand that washes out naturally.
+- **Mini-PCNL (Miniaturized Percutaneous Nephrolithotomy):** Recommended for large staghorn stones exceeding 20mm. A tiny 5mm keyhole puncture is made in the flank under ultrasound guidance, allowing a miniature nephroscope and laser to break and suction the stone fragments instantly.
+- **URS (Semi-Rigid Ureteroscopy):** Ideal for stones lodged in the mid-to-lower ureter causing acute urinary obstruction.
+- **ESWL (Extracorporeal Shock Wave Lithotripsy):** Non-invasive sound waves applied externally for small soft stones (<10mm).
+
+## 2. 2026 Urology & Stone Surgery Cost Comparison Table
+
+| Procedure | Kerala JCI Hub | UAE (Dubai/Abu Dhabi) | United Kingdom (Private) | United States |
+| :--- | :--- | :--- | :--- | :--- |
+| **RIRS Flexible Laser Stone Dusting** | **$1,400 – $2,200** | $6,500 – $10,000 | $7,500 – $11,000 | $12,000 – $20,000 |
+| **Mini-PCNL (For Large Stones >20mm)** | **$1,800 – $2,600** | $8,000 – $12,000 | $9,000 – $13,000 | $15,000 – $25,000 |
+| **Semi-Rigid Ureteroscopy (URS Laser)** | **$950 – $1,400** | $4,500 – $7,000 | $5,000 – $8,000 | $8,500 – $14,000 |
+| **Low-Dose CT KUB (3D Stone Mapping)** | **$70 – $110** | $600 – $1,100 | $700 – $1,200 | $1,500 – $2,800 |
+| **Hospital Stay (Private Room)** | **1 Night Included** | Day Care Only | Day Care Only | Outpatient Only |
+
+## 3. The Technology: High-Definition Digital Scopes & Laser Dusting
+
+- **Digital Flexible Video Scopes:** Ultra-slim scopes (7.5 French) with 270-degree bidirectional deflection to reach difficult lower pole kidney stones.
+- **High-Frequency Holmium & Thulium Lasers:** Operate in "dusting" mode, transforming stones into particles smaller than 1mm, preventing painful fragment passage.
+- **Temporary Double-J (DJ) Stenting:** A soft, hair-thin silicone stent is placed temporarily in the ureter to ensure smooth urine drainage and prevent swelling.
+
+## 4. The 48-Hour Stone Treatment Schedule in Kerala
+
+- **Day 1 (Arrival & Diagnostic Confirmation):** Airport reception in Calicut or Kochi. Low-dose non-contrast CT KUB scan and renal biochemistry panel to determine precise stone dimensions.
+- **Day 2 (Laser Procedure & Same-Day Recovery):** 45-minute procedure under spinal or light general anesthesia. Return to your private room, walk within 3 hours, and enjoy light meals.
+- **Day 3 (Discharge & Sightseeing / Flight):** Discharge after morning sonogram review. Receive clearance for light sightseeing or air travel back to the GCC or home country.
+
+## 5. Metabolic Stone Analysis & Recurrence Prevention
+
+In Kerala, treatment does not end with stone extraction. Partner centers provide a combined modern urology and Ayurvedic metabolic evaluation:
+- **Infrared Stone Spectroscopy:** Identifies exact crystal composition (Calcium Oxalate, Uric Acid, Struvite, Cystine).
+- **Ayurvedic Herbal Nephroprotection:** Natural botanical formulations such as Punarnava, Gokshura, and Varunadi Kashayam to maintain alkaline urinary pH and prevent stone recrystallization.`,
+    contentAr: `تعتبر نوبات حصوات الكلى والمسالك البولية من أشد الآلام التي تصيب الإنسان. وبسبب العوامل المناخية الحارة والعادات الغذائية في منطقة الخليج ومختلف أنحاء العالم، يعاني ملايين المرضى من حصوات الكلى المتكررة.
+
+أصبحت الجراحة المفتوحة لحصوات الكلى شيئاً من الماضي. تعتمد مراكز جراحة المسالك البولية في كيرلا على أحدث المناظير الرقمية المرنة فائقة الدقة وأجهزة ليزر الهولميوم والثوليوم المتقدمة. من خلال تقنية تفتيت الحصى بالمنظار المرن (RIRS)، يتم تحويل الحصوات إلى رذاذ ناعم عبر مجرى البول الطبيعي دون أي شق جراحي، ودون ندبات أو نزيف، مع خروج سريع من المستشفى خلال 24 ساعة.
+
+## 1. مقارنة التقنيات الحديثة: المنظار المرن (RIRS) مقابل PCNL والتفتيت بالموجات
+
+يعتمد اختيار الإجراء الأنسب على حجم الحصوة، موقعها في الكلية أو الحالب، وكثافتها بالأشعة المقطعية:
+
+- **المنظار المرن وتفتيت الحصى بالليزر (RIRS):** الخيار الأول للحصوات حتى حجم 20 ملم داخل الكلى أو الحالب العلوي. يتم تمرير منظار مرن مجهري عبر الإحليل والمثانة ليصل إلى تجاويف الكلى الداخلية، ويطلق ألياف الليزر لتفتيت الحصوة إلى بودرة ناعمة تخرج مع البول تلقائياً دون ألم.
+- **منظار الكلى المصغر عبر الجلد (Mini-PCNL):** مخصص للحصوات الكبيرة المتشعبة التي يتجاوز حجمها 20 ملم. يتم إجراء ثقب مجهري صغير (5 ملم) في الخاصرة تحت التوجيه بالأشعة الصوتية لتفتيت وسحب الحصوة فوراً.
+- **منظار الحالب شبه الصلب (URS):** مثالي لحصوات الحالب الأوسط والسفلي التي تسبب انسداداً حاداً في البول.
+- **التفتيت بالموجات التصادمية الخارجية (ESWL):** موجات صوتية خارجية للحصوات الصغيرة واللينة أقل من 10 ملم.
+
+## 2. جدول مقارنة أسعار عمليات تفتيت الحصى بالليزر (2026)
+
+| الإجراء الطبي | مراكز كيرلا المعتمدة JCI | الإمارات والسعودية | بريطانيا (خاص) | الولايات المتحدة |
+| :--- | :--- | :--- | :--- | :--- |
+| **تفتيت الحصى بالمنظار المرن والليزر RIRS** | **1,400 – 2,200 دولار** | 6,500 – 10,000 دولار | 7,500 – 11,000 دولار | 12,000 – 20,000 دولار |
+| **منظار الكلى المصغر عبر الجلد Mini-PCNL** | **1,800 – 2,600 دولار** | 8,000 – 12,000 دولار | 9,000 – 13,000 دولار | 15,000 – 25,000 دولار |
+| **تفتيت حصوات الحالب بالمنظار URS** | **950 – 1,400 دولار** | 4,500 – 7,000 دولار | 5,000 – 8,000 دولار | 8,500 – 14,000 دولار |
+| **الأشعة المقطعية ثلاثية الأبعاد CT KUB** | **70 – 110 دولار** | 600 – 1,100 دولار | 700 – 1,200 دولار | 1,500 – 2,800 دولار |
+| **الإقامة بالمستشفى (جناح خاص)** | **ليلة واحدة مشمولة** | جراحة يوم واحد فقط | جراحة يوم واحد فقط | جراحة عيادات خارجية |
+
+## 3. مميزات أحدث أجهزة الليزر والمناظير في كيرلا
+
+- **مناظير رقمية مرنة بدوران 270 درجة:** تتيح الالتفاف والمرونة للوصول إلى الحصوات الصعبة في القطب السفلي للكلية.
+- **ليزر الهولميوم والثوليوم عالي التردد:** تفتيت الحصوة إلى غبار مجهري (Dusting) بحجم أقل من 1 ملم لمنع انحشار بقايا الحصوات أثناء التبول.
+- **دعامة الحالب المزدوجة (DJ Stent):** تركيب دعامة سيليكون رفيعة ومؤقتة في الحالب لضمان تدفق البول بسلاسة ومنع أي انتفاخ مؤقت بعد التفتيت.
+
+## 4. برنامج علاج الحصوات السريع في كيرلا (48 ساعة)
+
+- **اليوم 1 (الوصول والتشخيص):** استقبال من مطار كالكوت أو كوتشي، إجراء الأشعة المقطعية وتحاليل وظائف الكلى لتحديد موقع الحصوة بدقة متناهية.
+- **اليوم 2 (جلسة الليزر بالمنظار):** تستغرق العملية 30 إلى 45 دقيقة تحت التخدير النصفي أو العام الخفيف. العودة للجناح الخاص والمشي وتناول وجبة خفيفة بعد ساعتين.
+- **اليوم 3 (الفحص النهائي والخروج):** فحص بالأشعة التلفزيونية والتأكد من تفتيت الحصوة بالكامل، واستلام تقرير السفر والعودة للوطن أو الاستمتاع بإجازة في كيرلا.
+
+## 5. تحليل الحصوات والوقاية من عودتها
+
+في مراكزنا، لا ينتهي العلاج بتفتيت الحصوة فقط، بل نقدم:
+- **تحليل الحصوات بالأشعة تحت الحمراء:** لمعرفة نوع الأملاح المكونة للحصوة (أوكسالات، حمض يوريك، فوسفات).
+- **البروتوكول الأيورفيدي الطبيعي:** أعشاب طبيعية مطهرة للمسالك مثل "بونارنافا" و"غوكشورا" لمنع ترسب الأملاح وتوازن حموضة البول بشكل دائم.`,
+    faqs: [
+      {
+        q: 'How long does the RIRS laser kidney stone procedure take?',
+        qAr: 'كم من الوقت تستغرق عملية تفتيت الحصوات بالمنظار المرن والليزر RIRS؟',
+        a: 'The actual laser procedure typically takes between 30 and 60 minutes depending on the stone\'s size and hardness. It is performed under spinal or light general anesthesia with zero surgical incisions.',
+        aAr: 'تستغرق العملية الفعلية بالليزر ما بين 30 إلى 60 دقيقة بحسب حجم الحصوة وصلابتها. وتتم تحت تخدير نصفي أو عام خفيف دون أي شق جراحي على الإطلاق.'
+      },
+      {
+        q: 'How long must the DJ stent stay in place after RIRS?',
+        qAr: 'كم من الوقت يجب أن تبقى دعامة الحالب (DJ Stent) بعد العملية؟',
+        a: 'The temporary double-J stent usually stays in place for 7 to 14 days to allow the ureter to heal smoothly. It can be easily removed through a quick 2-minute outpatient procedure, or removed back in your home country with simple local anesthesia.',
+        aAr: 'تبقى دعامة الحالب المؤقتة عادة لمدة 7 إلى 14 يوماً لضمان التئام الحالب بسلاسة. ويمكن إزالتها في كيرلا عبر إجراء بسيط يستغرق دقيقتين في العيادة، أو إزالتها في بلدك عند طبيب المسالك المحلي بكل سهولة.'
+      },
+      {
+        q: 'When can international patients fly home after laser stone surgery?',
+        qAr: 'متى يمكن للمريض السفر بالطائرة بعد عملية تفتيت الحصوات بالليزر؟',
+        a: 'Most international patients are medically cleared to fly within 24 to 48 hours after their procedure following a confirmation ultrasound that urine flow is unobstructed.',
+        aAr: 'يحصل معظم المرضى الدوليين على تقرير اللياقة الطبية للسفر خلال 24 إلى 48 ساعة بعد العملية، وذلك بعد إجراء تصوير تلفزيوني والتأكد من تدفق البول بانتظام وبدون أي انسداد.'
+      }
+    ]
   }
 ];
 

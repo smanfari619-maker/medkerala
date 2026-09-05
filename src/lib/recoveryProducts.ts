@@ -375,6 +375,25 @@ export function getRecoveryProductsForBlog(blogSlug: string, category: string = 
   if (lower.includes('cardiac') || lower.includes('bypass') || lower.includes('heart')) {
     return RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('cardiac'));
   }
+  if (lower.includes('cancer') || lower.includes('oncology') || lower.includes('tumor')) {
+    const oncoProducts = RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('oncology'));
+    if (oncoProducts.length > 0) return oncoProducts;
+  }
+  if (lower.includes('bariatric') || lower.includes('sleeve') || lower.includes('weight') || lower.includes('gastric') || lower.includes('gastro')) {
+    const gastroProducts = RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('gastroenterology'));
+    if (gastroProducts.length > 0) return gastroProducts;
+  }
+  if (lower.includes('eye') || lower.includes('lasik') || lower.includes('cataract') || lower.includes('vision') || lower.includes('refractive') || lower.includes('ophthalmology')) {
+    const eyeProducts = RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('ophthalmology'));
+    if (eyeProducts.length > 0) return eyeProducts;
+  }
+  if (lower.includes('kidney') || lower.includes('stone') || lower.includes('urology') || lower.includes('rirs')) {
+    return [
+      RECOVERY_PRODUCTS.find(p => p.id === 'ayurveda-turmeric')!,
+      RECOVERY_PRODUCTS.find(p => p.id === 'cardiac-omega3')!,
+      RECOVERY_PRODUCTS.find(p => p.id === 'gastro-probiotics')!
+    ].filter(Boolean);
+  }
   if (lower.includes('supplement') || lower.includes('recovery')) {
     return [
       RECOVERY_PRODUCTS.find(p => p.id === 'ortho-collagen')!,
