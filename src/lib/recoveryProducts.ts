@@ -342,6 +342,62 @@ export const RECOVERY_PRODUCTS: RecoveryProduct[] = [
     badge: 'Vision Shield',
     badgeAr: 'حماية النظر',
     treatmentSlugs: ['ophthalmology']
+  },
+
+  // 9. HAIR & SCALP RECOVERY (ALOPECIA / INDRALUPTA)
+  {
+    id: 'hair-biotin-complex',
+    name: 'High-Potency Biotin 10,000mcg with Keratin & Bamboo Silica',
+    nameAr: 'بيوتين عالي الفعالية ١٠,٠٠٠ ميكروغرام مع الكيراتين والسيليكا',
+    brand: 'Sports Research / Solgar',
+    category: 'Follicular Regrowth',
+    categoryAr: 'إنبات وتقوية بصيلات الشعر',
+    benefit: 'Stimulates keratin production and accelerates hair follicle reactivation following Ayurvedic scalp therapies.',
+    benefitAr: 'يعزز إنتاج الكيراتين ويسرع تنشيط بصيلات الشعر الخاملة بعد جلسات علاج فروة الرأس الأيورفيدية.',
+    rating: 4.8,
+    reviewCount: 22400,
+    estimatedPrice: '$18 – $28',
+    searchQuery: 'Biotin 10000 mcg Keratin Hair Growth',
+    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&auto=format&fit=crop&q=80',
+    badge: 'Hair Regrowth Essential',
+    badgeAr: 'أساسي لإنبات الشعر',
+    treatmentSlugs: ['ayurveda']
+  },
+  {
+    id: 'hair-ayurvedic-bhringraj-amla',
+    name: 'Organic Bhringraj & Amla Hair Density Rasayana',
+    nameAr: 'مستخلص بهرينغراج وأملا العضوي لكثافة الشعر',
+    brand: 'Organic India / Himalaya',
+    category: 'Ayurvedic Hair Rasayana',
+    categoryAr: 'مقويات الأيورفيدا لصحة وبصيلات الشعر',
+    benefit: 'Traditional Ayurvedic botanical combination that pacifies Pitta dosha in the scalp and restores follicle vitality.',
+    benefitAr: 'تركيبة عشبية أيورفيدية تقليدية لتهدئة طاقة البيتا في فروة الرأس وتغذية جذور الشعر وتقليل التساقط المناعي.',
+    rating: 4.9,
+    reviewCount: 9800,
+    estimatedPrice: '$16 – $26',
+    searchQuery: 'Organic Bhringraj Amla Hair Tonic',
+    imageUrl: 'https://images.unsplash.com/photo-1608248597359-2e11894d07b4?w=600&auto=format&fit=crop&q=80',
+    badge: 'Pitta Pacifying',
+    badgeAr: 'مهدئ للبيتا',
+    treatmentSlugs: ['ayurveda']
+  },
+  {
+    id: 'hair-saw-palmetto',
+    name: 'Saw Palmetto Berry Extract with Pumpkin Seed Oil',
+    nameAr: 'مستخلص البلميط المنشاري مع زيت بذور اليقطين',
+    brand: 'Now Foods / Doctor\'s Best',
+    category: 'DHT & Scalp Micro-Circulation',
+    categoryAr: 'دعم الدورة الدموية ومقاومة تساقط الشعر',
+    benefit: 'Natural standardized phytosterols supporting scalp micro-circulation and shielding hair follicles from inflammatory stress.',
+    benefitAr: 'فيتوستيرولات نباتية طبيعية لدعم تدفق الدم الدقيق إلى فروة الرأس وحماية البصيلات من الإجهاد الالتهابي.',
+    rating: 4.7,
+    reviewCount: 16500,
+    estimatedPrice: '$17 – $27',
+    searchQuery: 'Saw Palmetto Pumpkin Seed Oil Hair',
+    imageUrl: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=600&auto=format&fit=crop&q=80',
+    badge: 'Natural Scalp Shield',
+    badgeAr: 'حماية طبيعية للبصيلات',
+    treatmentSlugs: ['ayurveda']
   }
 ];
 
@@ -353,6 +409,13 @@ export function getRecoveryProductsForTreatment(slug: string): RecoveryProduct[]
 
 export function getRecoveryProductsForBlog(blogSlug: string, category: string = ''): RecoveryProduct[] {
   const lower = (blogSlug + ' ' + category).toLowerCase();
+  if (lower.includes('alopecia') || lower.includes('hair') || lower.includes('indralupta') || lower.includes('baldness')) {
+    return [
+      RECOVERY_PRODUCTS.find(p => p.id === 'hair-biotin-complex')!,
+      RECOVERY_PRODUCTS.find(p => p.id === 'hair-ayurvedic-bhringraj-amla')!,
+      RECOVERY_PRODUCTS.find(p => p.id === 'hair-saw-palmetto')!
+    ].filter(Boolean);
+  }
   if (lower.includes('fertility') || lower.includes('ivf') || lower.includes('pregnancy')) {
     const fertProducts = RECOVERY_PRODUCTS.filter(p => p.treatmentSlugs.includes('fertility'));
     if (fertProducts.length > 0) return fertProducts;

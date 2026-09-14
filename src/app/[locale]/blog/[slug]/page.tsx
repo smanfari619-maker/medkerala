@@ -460,6 +460,57 @@ export default async function BlogPostPage({ params }: Props) {
         { name: 'Metabolic Stone Prevention', text: 'Infrared stone analysis paired with dietary and herbal protocols to prevent future stones.' }
       ]
     );
+  } else if (slug === 'alopecia-areata-ayurvedic-treatment-kerala') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'خطوات علاج الثعلبة البقعية بالأيورفيدا في كيرلا' : 'How Ayurvedic Alopecia Regrowth Works in Kerala',
+      isRtl ? [
+        { name: 'التقييم الأيورفيدي الشامل', text: 'فحص نمط طاقات الجسم (الدوشا) وتحديد درجة التهاب البيتا وتأثر بصيلات الشعر.' },
+        { name: 'التطهير والتنقية الداخلية (فيريتشانا)', text: 'طرد السموم الصفراوية والشوائب من الكبد والدم لوقف الهجوم المناعي على البصيلات.' },
+        { name: 'جلسات تاكرادارا المهدئة للأعصاب', text: 'سكب تيار اللبن الرائب العشبي على الرأس لخفض الكورتيزول وإخماد حرارة الجهاز العصبي.' },
+        { name: 'لبخات شيروليبا وتنشيط البصيلات', text: 'تطبيق معجون الأعشاب الطبية والعلق الطبي المعقم لإذابة الانسدادات وإعادة تدفق الدم للبصيلات.' },
+        { name: 'مرحلة إعادة الإنبات وتثبيت النتائج', text: 'تناول المقويات العشبية (راسايانا) لإنبات الشعر الزغبي وتحويله إلى شعر طبيعي كثيف.' }
+      ] : [
+        { name: 'Initial Ayurvedic Dosha Assessment', text: 'Evaluate body constitution (Prakriti) and map localized Pitta-Rakta follicular inflammation.' },
+        { name: 'Systemic Detoxification (Virechana)', text: 'Flush liver toxins and metabolic waste from the bloodstream to halt autoimmune follicular attack.' },
+        { name: 'Neuro-Endocrine Calming (Takradhara)', text: 'Continuous herbal buttermilk drizzle to lower cortisol and soothe central nervous system heat.' },
+        { name: 'Shirolepa & Follicular Re-Activation', text: 'Potent botanical scalp pastes paired with sterile leech therapy to restore micro-capillary circulation.' },
+        { name: 'Rasayana Regrowth Maintenance', text: 'Targeted oral herbal formulations to convert fine vellus sprouts into thick, pigmented terminal hair.' }
+      ]
+    );
+  } else if (slug === 'uk-europe-nhs-waitlist-medical-tourism-kerala') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'خطوات تجاوز قوائم انتظار NHS وإجراء الجراحة في كيرلا' : 'How UK & European Patients Schedule Surgery in Kerala',
+      isRtl ? [
+        { name: 'إرسال التقارير الطبية والأشعة', text: 'مشاركة ملفات وأشعة NHS عبر بوابتنا الآمنة للتقييم المجاني من قِبل كبار الجراحين.' },
+        { name: 'استلام خطة الأسعار الثابتة', text: 'الحصول على عرض سعر شفاف شامل كافة تكاليف الجراحة والإقامة والنقاهة خلال 48 ساعة.' },
+        { name: 'إصدار التأشيرة الطبية السريعة', text: 'استخراج التأشيرة الطبية الإلكترونية للهند عبر الإنترنت خلال 3 إلى 4 أيام بخطاب دعوة معتمد.' },
+        { name: 'الوصول والفحوصات في 24 ساعة', text: 'استقبال خاص من المطار وإتمام فحوصات ما قبل الجراحة في اليوم الأول من الوصول.' },
+        { name: 'إجراء العملية والنقاهة التأهيلية', text: 'إجراء الجراحة بأحدث الروبوتات الطبية وبدء التأهيل الطبيعي قبل العودة للوطن بتصريح السفر.' }
+      ] : [
+        { name: 'Submit NHS Medical Reports & Scans', text: 'Share your diagnostic imaging and clinical records for free review by our senior consultant panel.' },
+        { name: 'Receive Fixed-Price Treatment Plan', text: 'Get an all-inclusive binding package estimate covering surgery, private suite, and rehab within 48 hours.' },
+        { name: 'Fast-Track e-Medical Visa', text: 'Receive our official hospital invitation letter and obtain your Indian e-visa online within 3 to 4 days.' },
+        { name: 'Arrival & Pre-Op Diagnostics', text: 'Direct airport reception, pre-anesthesia health screening, and surgical consultation on Day 1.' },
+        { name: 'Surgery & Supervised Recovery', text: 'Undergo precision surgery with FDA-approved implants, complete physiotherapy, and fly home safely.' }
+      ]
+    );
+  } else if (slug === 'usa-canada-medical-tourism-kerala-costs-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيف ينسق مرضى أمريكا وكندا رحلتهم العلاجية في كيرلا' : 'How US & Canadian Patients Plan Surgery in Kerala',
+      isRtl ? [
+        { name: 'الاستشارة الافتراضية مع الجراح', text: 'مراجعة التقارير الطبية وتحديد نوع العملية وموعدها عبر مكالمة فيديو مباشرة.' },
+        { name: 'استلام فاتورة الباقة المعتمدة', text: 'الحصول على تفصيل شفاف للتكاليف مع رموز التأمين الدولية (ICD-10) المؤهلة لـ HSA/FSA.' },
+        { name: 'حجز الطيران والتأشيرة الإلكترونية', text: 'حجز رحلة طيران مريحة واستخراج التأشيرة الطبية الهندية عبر الإنترنت خلال 72 ساعة.' },
+        { name: 'الرعاية الجراحية بجناح خاص 1:1', text: 'إجراء العملية في مستشفى معتمد من JCI مع تمريض خاص مفرغ وغرسات أمريكية أصلية.' },
+        { name: 'استلام السجل الرقمي وتصريح الطيران', text: 'الحصول على التقارير الرقمية الكاملة وفواتير الخصم الضريبي والعودة للوطن بأمان.' }
+      ] : [
+        { name: 'Virtual Specialist Consultation', text: 'Review diagnostic scans directly with a chief surgeon via secure high-definition telemedicine.' },
+        { name: 'Itemized Transparent Quote', text: 'Receive an all-inclusive binding quote with international ICD-10 codes suitable for HSA/FSA filing.' },
+        { name: 'Flight & 72-Hour e-Medical Visa', text: 'Book comfortable one-stop flights and receive instant hospital invitation documentation for visa approval.' },
+        { name: 'JCI Surgery & 1:1 Nursing Suite', text: 'Undergo procedure with US FDA-approved implants supported by round-the-clock dedicated nursing.' },
+        { name: 'Digital Post-Op Dossier & Fly Home', text: 'Receive digitized operative summaries, high-resolution scans, and formal fit-to-fly documentation.' }
+      ]
+    );
   }
 
   let faqSchema: Record<string, unknown> | null = null;
