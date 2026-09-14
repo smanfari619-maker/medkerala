@@ -1,9 +1,36 @@
 User-agent: *
 Allow: /
 
+# Explicit AI and Search Agents (AEO Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # Disallow Next.js internals
 Disallow: /_next/
 Disallow: /_vercel/
 Disallow: /api/
 
 Sitemap: https://treatinkerala.com/sitemap.xml
+# LLM Knowledge Standard: https://treatinkerala.com/llms.txt
+

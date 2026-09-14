@@ -226,27 +226,63 @@ export default async function BlogPostPage({ params }: Props) {
   // Get related posts (excluding current)
   const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 2);
 
+  const isAyurveda = slug.includes('ayurveda') || slug.includes('alopecia') || slug.includes('panchakarma') || slug.includes('herb');
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': ['Article', 'MedicalWebPage'],
     headline: title,
     description: isRtl ? post.excerptAr : post.excerpt,
     articleSection: category,
     datePublished: post.date,
+    inLanguage: locale,
     author: {
       '@type': 'Person',
       name: 'Muhsina TP',
-      jobTitle: 'Chief Medical Coordinator',
+      jobTitle: isRtl ? 'كبير المنسقين الطبيين' : 'Chief Medical Coordinator',
       url: 'https://treatinkerala.com',
+      worksFor: {
+        '@type': 'MedicalOrganization',
+        name: 'TreatInKerala',
+      },
+    },
+    reviewedBy: {
+      '@type': 'Person',
+      name: isAyurveda ? 'Dr. S. Warrier (Chief Ayurvedic Vaidya)' : 'Dr. M. Nair (Senior Consultant Surgeon)',
+      jobTitle: isAyurveda ? (isRtl ? 'كبير أطباء الأيورفيدا' : 'Chief Ayurvedic Medical Officer') : (isRtl ? 'كبير استشاريي الجراحة' : 'Senior Consultant Surgeon & Clinical Director'),
+    },
+    medicalAudience: {
+      '@type': 'MedicalAudience',
+      audienceType: 'Patient',
     },
     publisher: {
-      '@type': 'Organization',
+      '@type': 'MedicalOrganization',
       name: 'TreatInKerala',
+      url: 'https://treatinkerala.com',
+      logo: 'https://treatinkerala.com/images/logo.svg',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `https://treatinkerala.com/${locale}/blog/${slug}`,
     },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'p', 'h2'],
+    },
+    ...(slug === 'alopecia-areata-ayurvedic-treatment-kerala' ? {
+      about: [
+        {
+          '@type': 'MedicalCondition',
+          name: 'Alopecia Areata',
+          alternateName: ['Indralupta', 'Autoimmune Hair Loss', 'Kalitya'],
+          code: {
+            '@type': 'MedicalCode',
+            code: 'L63.9',
+            codingSystem: 'ICD-10',
+          },
+        },
+      ],
+    } : {}),
   };
 
   const breadcrumbSchema = getBreadcrumbSchema([

@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
 interface AyurvedaTreatmentItem {
   icon: React.ComponentType<{ className?: string }>;
   image?: string;
+  link?: string;
   en: { name: string; tagline: string; desc: string };
   ar: { name: string; tagline: string; desc: string };
   duration: string;
@@ -93,10 +94,20 @@ const treatments: AyurvedaTreatmentItem[] = [
     duration: '14–21 days',
     cost: 'From $1,200',
   },
+  {
+    icon: Droplets,
+    image: '/images/ayurveda_shirodhara.png',
+    link: '/blog/alopecia-areata-ayurvedic-treatment-kerala',
+    en: { name: 'Alopecia & Scalp Therapy (Indralupta)', tagline: 'Natural Follicle Regrowth', desc: 'A specialized clinical protocol combining Shirolepa (herbal scalp packs), Takradhara (cooling buttermilk stream), and sterile leech therapy (Jalaukavacharana) to re-open micro-capillaries and treat Alopecia Areata at the root.' },
+    ar: { name: 'علاج الثعلبة وإنبات الشعر (إندرالوبتا)', tagline: 'إعادة إنبات البصيلات طبيعياً', desc: 'بروتوكول سريري متخصص يجمع بين لبخات شيروليبا العشبية وتاكرادارا والعلاج بالعلق الطبي المعقم لإعادة تنشيط البصيلات الخاملة وعلاج الثعلبة البقعية من الجذور.' },
+    duration: '14–21 days',
+    cost: 'From $950',
+  },
 ];
 
 
 const conditions = [
+  { en: 'Alopecia Areata & Hair Loss (Indralupta)', ar: 'الثعلبة البقعية وتساقط الشعر (إندرالوبتا)', link: '/blog/alopecia-areata-ayurvedic-treatment-kerala' },
   { en: 'Chronic Back & Joint Pain', ar: 'آلام الظهر والمفاصل المزمنة' },
   { en: 'Arthritis & Spondylitis', ar: 'التهاب المفاصل والفقرات' },
   { en: 'Stress, Anxiety & Insomnia', ar: 'التوتر، القلق والأرق' },
@@ -239,14 +250,33 @@ export default async function AyurvedaPage({ params }: Props) {
                     <span className="text-[#D4A96A] font-bold text-xs uppercase tracking-widest mb-1 block">
                       {content.tagline}
                     </span>
-                    <h3 className="text-xl font-bold text-text-dark mb-3">{content.name}</h3>
+                    <h3 className="text-xl font-bold text-text-dark mb-3">
+                      {t.link ? (
+                        <Link href={t.link} className="hover:text-[#2D6A4F] transition-colors inline-flex items-center gap-1.5">
+                          <span>{content.name}</span>
+                          <ArrowRight className="h-4 w-4 shrink-0 text-[#2D6A4F] rtl:rotate-180" />
+                        </Link>
+                      ) : (
+                        content.name
+                      )}
+                    </h3>
                     <p className="text-text-muted text-base leading-relaxed flex-grow">{content.desc}</p>
                     <div className="mt-5 pt-5 border-t border-slate-100 flex items-center justify-between text-sm">
                       <span className="flex items-center gap-1.5 text-text-muted font-medium">
                         <Clock className="h-4 w-4 text-[#2D6A4F]" />
                         {t.duration}
                       </span>
-                      <span className="font-bold text-[#2D6A4F]">{t.cost}</span>
+                      <div className="flex items-center gap-3">
+                        <span className="font-bold text-[#2D6A4F]">{t.cost}</span>
+                        {t.link && (
+                          <Link
+                            href={t.link}
+                            className="text-xs bg-[#2D6A4F]/10 hover:bg-[#2D6A4F] text-[#2D6A4F] hover:text-white font-bold px-3 py-1.5 rounded-full transition-all duration-200"
+                          >
+                            {isRtl ? 'الدليل السريري' : 'Clinical Guide'}
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -277,9 +307,22 @@ export default async function AyurvedaPage({ params }: Props) {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {conditions.map((c) => (
-                  <div key={c.en} className="flex items-center gap-3 bg-white border border-[#D4A96A]/15 rounded-[2rem] px-4 py-3 hover:border-[#2D6A4F]/25 hover:shadow-xs transition-all duration-300">
-                    <CheckCircle className="h-4.5 w-4.5 text-[#2D6A4F] shrink-0" />
-                    <span className="text-text-dark font-medium text-sm">{isRtl ? c.ar : c.en}</span>
+                  <div key={c.en} className="flex items-center justify-between gap-3 bg-white border border-[#D4A96A]/15 rounded-[2rem] px-4 py-3 hover:border-[#2D6A4F]/25 hover:shadow-xs transition-all duration-300">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="h-4.5 w-4.5 text-[#2D6A4F] shrink-0" />
+                      {c.link ? (
+                        <Link href={c.link} className="text-text-dark hover:text-[#2D6A4F] font-medium text-sm underline decoration-slate-300 hover:decoration-[#2D6A4F]">
+                          {isRtl ? c.ar : c.en}
+                        </Link>
+                      ) : (
+                        <span className="text-text-dark font-medium text-sm">{isRtl ? c.ar : c.en}</span>
+                      )}
+                    </div>
+                    {c.link && (
+                      <Link href={c.link} className="text-[11px] font-bold text-[#2D6A4F] shrink-0 hover:underline">
+                        {isRtl ? 'عرض' : 'View'}
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>
