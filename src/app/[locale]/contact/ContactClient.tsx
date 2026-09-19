@@ -82,24 +82,25 @@ export default function ContactPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Col: Contact Info & Address */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 shadow-sm hover:shadow-lg transition-all duration-300 space-y-6">
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-xs space-y-6">
               <h2 className="text-2xl font-bold text-text-dark pb-3 border-b border-slate-100">
                 {locale === 'ar' ? 'معلومات الاتصال المباشر' : 'Direct Contact'}
               </h2>
               
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
-                  <div className="h-10 w-10 bg-primary-green/10 rounded-xl flex items-center justify-center shrink-0">
-                    <MessageCircle className="h-5 w-5 text-primary-green" />
+                  <div className="h-10 w-10 bg-emerald-50 border border-emerald-100 rounded-xl flex items-center justify-center shrink-0">
+                    <MessageCircle className="h-5 w-5 text-[#1B4332]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-text-dark">{locale === 'ar' ? 'دردشة واتساب الفورية' : 'Instant WhatsApp Support'}</h4>
+                    <h4 className="font-bold text-text-dark">{locale === 'ar' ? 'دردشة واتساب الفورية (الخط الرئيسي)' : 'Instant WhatsApp (Main)'}</h4>
                     <a
                       href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
-                      className="text-primary-green hover:underline font-semibold block text-lg min-h-[44px] flex items-center"
+                      className="text-[#1B4332] hover:text-[#2D6A4F] hover:underline font-bold block text-lg min-h-[44px] flex items-center"
                       target="_blank"
                       rel="noopener noreferrer"
+                      dir="ltr"
                     >
                       {SITE_CONFIG.phone}
                     </a>
@@ -107,18 +108,47 @@ export default function ContactPage() {
                 </li>
 
                 <li className="flex items-start gap-4">
-                  <div className="h-10 w-10 bg-primary-green/10 rounded-xl flex items-center justify-center shrink-0">
-                    <Phone className="h-5 w-5 text-primary-green" />
+                  <div className="h-10 w-10 bg-emerald-50 border border-emerald-100 rounded-xl flex items-center justify-center shrink-0">
+                    <MessageCircle className="h-5 w-5 text-[#1B4332]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-text-dark">{locale === 'ar' ? 'رقم الطوارئ المتاح 24/7' : '24/7 Coordinator Hotline'}</h4>
-                    <a
-                      href={`tel:${SITE_CONFIG.phoneRaw}`}
-                      className="text-text-dark hover:text-primary-green font-semibold block text-lg min-h-[44px] flex items-center"
-                      dir="ltr"
-                    >
-                      {SITE_CONFIG.phone}
-                    </a>
+                    <h4 className="font-bold text-text-dark">{locale === 'ar' ? 'خط التنسيق الإضافي (واتساب)' : 'Secondary Coordination Line'}</h4>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <a
+                        href={`https://wa.me/${SITE_CONFIG.whatsappSecondaryRaw}`}
+                        className="text-[#1B4332] hover:text-[#2D6A4F] hover:underline font-semibold block text-base min-h-[36px] flex items-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        dir="ltr"
+                      >
+                        {SITE_CONFIG.phoneSecondary}
+                      </a>
+                    </div>
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="h-10 w-10 bg-emerald-50 border border-emerald-100 rounded-xl flex items-center justify-center shrink-0">
+                    <Phone className="h-5 w-5 text-[#1B4332]" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-text-dark">{locale === 'ar' ? 'أرقام الاتصال الهاتفي 24/7' : '24/7 Phone Hotlines'}</h4>
+                    <div className="space-y-1">
+                      <a
+                        href={`tel:${SITE_CONFIG.phoneRaw}`}
+                        className="text-slate-800 hover:text-[#1B4332] font-semibold block text-base min-h-[32px] flex items-center"
+                        dir="ltr"
+                      >
+                        {SITE_CONFIG.phone} <span className="text-xs text-[#D4A96A] font-bold ml-2">({locale === 'ar' ? 'الرئيسي' : 'Primary'})</span>
+                      </a>
+                      <a
+                        href={`tel:${SITE_CONFIG.phoneSecondaryRaw}`}
+                        className="text-slate-800 hover:text-[#1B4332] font-semibold block text-base min-h-[32px] flex items-center"
+                        dir="ltr"
+                      >
+                        {SITE_CONFIG.phoneSecondary} <span className="text-xs text-slate-500 ml-2">({locale === 'ar' ? 'الخط الإضافي' : 'Secondary'})</span>
+                      </a>
+                    </div>
                   </div>
                 </li>
 

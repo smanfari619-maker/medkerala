@@ -3,6 +3,12 @@ export const SITE_CONFIG = {
   phone: '+91 94005 28836',
   phoneRaw: '+919400528836',
   whatsappRaw: '919400528836',
+
+  // Secondary coordination contact information
+  phoneSecondary: '+91 94000 18008',
+  phoneSecondaryRaw: '+919400018008',
+  whatsappSecondaryRaw: '919400018008',
+
   email: 'treatinkerala@gmail.com',
 
   // Pricing policies
