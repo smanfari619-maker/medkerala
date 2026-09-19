@@ -364,8 +364,8 @@ export default function GetEstimatePage() {
 
             <p className="text-[11px] text-text-muted/70 font-sans">
               {isRtl
-                ? 'رقم التنسيق المباشر: +91 94000 18008 • متاح باللغة العربية والإنجليزية ٢٤/٧'
-                : 'Direct Coordinator Desk: +91 94000 18008 • Available in Arabic & English 24/7'}
+                ? `رقم التنسيق المباشر: ${SITE_CONFIG.phone} • متاح باللغة العربية والإنجليزية ٢٤/٧`
+                : `Direct Coordinator Desk: ${SITE_CONFIG.phone} • Available in Arabic & English 24/7`}
             </p>
           </div>
 

@@ -164,7 +164,7 @@ export async function submitEnquiry(data: EnquiryData) {
                   <td>
                     <strong>TreatInKerala Coordination Desk</strong><br/>
                     Hilite Business Park, Calicut, Kerala, India<br/>
-                    <a href="mailto:treatinkerala@gmail.com" style="color: #BAD7B0; text-decoration: none;">treatinkerala@gmail.com</a> | <span style="color: #BAD7B0;">+91 94000 18008</span>
+                    <a href="mailto:treatinkerala@gmail.com" style="color: #BAD7B0; text-decoration: none;">treatinkerala@gmail.com</a> | <span style="color: #BAD7B0;">+91 94005 28836</span>
                   </td>
                 </tr>
               </table>

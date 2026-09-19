@@ -1,8 +1,8 @@
 export const SITE_CONFIG = {
   // Main coordination contact information
-  phone: '+91 94000 18008',
-  phoneRaw: '+919400018008',
-  whatsappRaw: '919400018008',
+  phone: '+91 94005 28836',
+  phoneRaw: '+919400528836',
+  whatsappRaw: '919400528836',
   email: 'treatinkerala@gmail.com',
 
   // Pricing policies

@@ -180,7 +180,7 @@
     "budgetRange": "Approximate Budget (treatment + stay)",
     "notes": "Anything else we should know?",
     "submitBtn": "Send My Request — Free, No Obligation",
-    "whatsappFallback": "Prefer WhatsApp? Send us your details directly at +91 94000 18008",
+    "whatsappFallback": "Prefer WhatsApp? Send us your details directly at +91 94005 28836",
     "thankYou": "Thank you!",
     "successMessage": "Submission successful! We have sent a confirmation email to your inbox. Our team will review your details and reach out within 24 hours via WhatsApp or email."
   },
@@ -211,29 +211,64 @@
     "step3Title": "3. Select & Travel",
     "step3Desc": "Choose your hospital and concierge package. We handle the visa, lodging, and pickup.",
     "bookBtn": "Select Package & Consult",
-    "tourHeading": "Post-Treatment Recuperation & Tours",
-    "tourSubheading": "Vetted medical-safe getaways designed for relaxation, wheelchair accessibility, and zero physical strain. Perfect for post-surgery healing or companion sightseeing.",
+    "tourHeading": "Heal Your Body. Restore Your Soul.",
+    "tourSubheading": "Every package includes a dedicated guide who speaks your language, handles all logistics, and ensures you experience Kerala's healing culture safely and comfortably. Prices include guide, transport, and accommodation.",
     "tours": {
       "houseboat": {
         "title": "The Backwater Retreat",
         "location": "Alleppey / Kumarakom",
         "duration": "2 Days / 1 Night",
-        "desc": "The ultimate post-surgery recovery. Float through serene backwaters in a luxury AC houseboat with zero physical exertion. Organic customized meals included.",
-        "benefit": "Ideal for post-surgery rest"
+        "price": "From $220 / person",
+        "desc": "Float through serene backwaters in a luxury AC houseboat. Zero physical exertion. Organic Ayurvedic meals, sunrise meditation, and complete silence. Your personal guide arranges everything on board.",
+        "benefit": "Ideal for post-surgery rest & emotional reset"
       },
       "munnar": {
-        "title": "High-Altitude Wellness",
+        "title": "High-Altitude Wellness Escape",
         "location": "Munnar Hill Station",
         "duration": "3 Days / 2 Nights",
-        "desc": "Breathe pure mountain air in Kerala's premium hill station. Perfect for Ayurvedic detoxes, stress relief, and pre-treatment relaxation.",
-        "benefit": "Great for Ayurvedic wellness"
+        "price": "From $310 / person",
+        "desc": "Breathe pure mountain air at 1,600m altitude in Kerala's finest hill station. Includes guided Ayurvedic detox sessions, forest walks at your own pace, and therapeutic silence in tea estate bungalows.",
+        "benefit": "Deep stress relief & Ayurvedic detox"
       },
       "kochi": {
-        "title": "Coastal Heritage",
-        "location": "Kochi & Marari",
+        "title": "Coastal Heritage & Sea Breeze",
+        "location": "Fort Kochi & Marari Beach",
         "duration": "Full Day / Overnight",
-        "desc": "A light, wheelchair-accessible cultural tour for family companions. Includes historic Fort Kochi and a relaxing evening by the Arabian Sea.",
-        "benefit": "Perfect for family companions"
+        "price": "From $160 / person",
+        "desc": "A light wheelchair-accessible cultural tour for patients and companions. Includes historic Fort Kochi, Portuguese-era spice markets, and a peaceful Arabian Sea sunset dinner.",
+        "benefit": "Light activity — perfect for family companions"
+      },
+      "thekkady": {
+        "title": "Spice Forest & Wildlife Retreat",
+        "location": "Thekkady / Periyar",
+        "duration": "3 Days / 2 Nights",
+        "price": "From $285 / person",
+        "desc": "Heal your senses inside a 350 sq km wildlife sanctuary. Gentle bamboo-raft lake cruises, guided organic spice farm walks, elephant sightings from a safe jeep, and forest-edge cottages with herbal oil treatments.",
+        "benefit": "Deeply grounding — connects mind & nature"
+      },
+      "wayanad": {
+        "title": "Wayanad Mental Wellness Trek",
+        "location": "Wayanad Tribal Highlands",
+        "duration": "3 Days / 2 Nights",
+        "price": "From $265 / person",
+        "desc": "Scientifically the most biodiverse region in South India. Stay in eco-treehouse lodges, visit indigenous tribal healing villages, practice morning yoga by waterfalls, and participate in forest bathing therapy (Shinrin-yoku).",
+        "benefit": "Best for anxiety, burnout & emotional healing"
+      },
+      "varkala": {
+        "title": "Varkala Cliff & Sea Therapy",
+        "location": "Varkala, South Kerala",
+        "duration": "4 Days / 3 Nights",
+        "price": "From $340 / person",
+        "desc": "Perched 30 metres above the Arabian Sea. Combine daily yoga with accredited Ayurveda therapists, cliffside meditation, therapeutic sea swimming, and zero-noise evenings at a luxury cliff resort. Guide included for all sessions.",
+        "benefit": "Physical & emotional healing through sea & yoga"
+      },
+      "circuit": {
+        "title": "Full Kerala Healing Circuit",
+        "location": "Kochi → Munnar → Thekkady → Alleppey",
+        "duration": "8 Days / 7 Nights",
+        "price": "From $890 / person",
+        "desc": "The ultimate whole-body healing journey. A seamlessly guided eight-day private circuit through Kerala's four healing landscapes: city culture, mountain altitude, wildlife jungle, and backwater silence. Fully translated, chauffeured, and zero planning required from you.",
+        "benefit": "Complete mind-body renewal — our flagship tour"
       }
     },
     "tourBookBtn": "Inquire About This Tour"

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { BLOG_POSTS } from '@/lib/data';
-import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Zap, HelpCircle } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Zap, HelpCircle, ExternalLink } from 'lucide-react';
 import { Metadata } from 'next';
 import { getBreadcrumbSchema, getHowToSchema, getFAQSchema } from '@/lib/schemas';
 import BlogRecoveryCallout from '@/components/blog/BlogRecoveryCallout';
@@ -26,8 +26,21 @@ function RichContent({ content }: { content: string }) {
   let orderedBuffer: string[] = [];
   let tableBuffer: string[] = [];
 
-  const parseBold = (text: string) =>
-    text.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-[#1B4332]">$1</strong>');
+  const parseInline = (text: string) => {
+    // Parse **bold** and [link text](url) markdown
+    const withBold = text.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-[#1B4332]">$1</strong>');
+    // Internal links styled in brand green; external links open in new tab
+    return withBold.replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      (_, label, href) => {
+        const isExternal = href.startsWith('http');
+        const attrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
+        return `<a href="${href}" class="font-semibold text-[#2D6A4F] underline underline-offset-2 hover:text-[#1B4332] transition-colors"${attrs}>${label}</a>`;
+      }
+    );
+  };
+  // Keep alias for backwards compat inside the renderer
+  const parseBold = parseInline;
 
   const flushBullets = (key: string) => {
     if (bulletBuffer.length === 0) return;
@@ -223,10 +236,42 @@ export default async function BlogPostPage({ params }: Props) {
 
   const aeoSummary = isRtl ? post.aeoSummaryAr : post.aeoSummary;
 
-  // Get related posts (excluding current)
-  const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 2);
+  // Get topically related posts (same category first, then fallback to most recent)
+  const relatedPosts = [
+    ...BLOG_POSTS.filter((p) => p.slug !== slug && p.category === post.category),
+    ...BLOG_POSTS.filter((p) => p.slug !== slug && p.category !== post.category),
+  ].slice(0, 3);
 
-  const isAyurveda = slug.includes('ayurveda') || slug.includes('alopecia') || slug.includes('panchakarma') || slug.includes('herb');
+  // Determine if this is an Ayurveda-focused post (exclude country-guide posts)
+  const isAyurveda = !slug.includes('-to-kerala-') &&
+    (slug.includes('ayurveda') || slug.includes('alopecia') || slug.includes('panchakarma') || slug.includes('herb'));
+
+  // ── Per-post internal link cards (treatments / hospitals / services) ──────
+  // Each entry: { href, labelEn, labelAr, descEn, descAr }
+  const INTERNAL_LINK_MAP: Record<string, { href: string; labelEn: string; labelAr: string; descEn: string; descAr: string }[]> = {
+    'oman-to-kerala-medical-tourism-guide': [
+      { href: '/treatments/orthopaedics', labelEn: 'Robotic Joint Replacement', labelAr: 'استبدال المفاصل بالروبوت', descEn: 'Stryker Mako & Cuvis robotic systems. Walk within 24 hours.', descAr: 'أنظمة روبوت ستريكر ماكو وكيوفيس. المشي خلال 24 ساعة.' },
+      { href: '/treatments/cardiac', labelEn: 'Cardiac Bypass Surgery (CABG)', labelAr: 'جراحة القلب المفتوح', descEn: 'JCI-accredited coronary bypass. $6,000–$10,000 all-inclusive.', descAr: 'قلب مفتوح معتمد JCI. يشمل الإقامة والغرسات الأمريكية.' },
+      { href: '/treatments/ayurveda', labelEn: 'Ayurvedic Post-Op Rehabilitation', labelAr: 'التعافي التأهيلي بالأيورفيدا', descEn: 'Medically supervised Kizhi & Pizhichil therapies post-surgery.', descAr: 'جلسات الكيشي والبيشيشيل الطبية للتعافي بعد الجراحة.' },
+      { href: '/hospitals', labelEn: 'Partner JCI Hospitals in Calicut', labelAr: 'مستشفياتنا المعتمدة في كالكوت', descEn: 'Aster MIMS, Meitra & Baby Memorial — fully Arabic-capable.', descAr: 'أستر ميمز، ميترا، بيبي ميموريال — طواقم طبية عربية.' },
+      { href: '/patients/oman', labelEn: 'Oman Patient Hub', labelAr: 'مركز المرضى العمانيين', descEn: 'Tailored info: visa, flights, costs and cultural support for Omani patients.', descAr: 'دليل التأشيرة، الرحلات، التكاليف والدعم الثقافي للمرضى العمانيين.' },
+    ],
+    'maldives-to-kerala-medical-treatment-guide': [
+      { href: '/treatments/cardiac', labelEn: 'Pediatric & Adult Cardiology', labelAr: 'قلب الأطفال والبالغين', descEn: 'ASD / VSD closures and coronary bypass. Dedicated Pediatric ICU.', descAr: 'إغلاق ثقوب القلب والقلب المفتوح. عناية مركزة متخصصة للأطفال.' },
+      { href: '/treatments/oncology', labelEn: 'Advanced Cancer Treatment', labelAr: 'علاج الأورام المتقدم', descEn: 'TrueBeam radiotherapy, digital PET-CT staging & robotic oncological surgery.', descAr: 'علاج إشعاعي تروبيم وفحص PET-CT الرقمي والجراحة الروبوتية للأورام.' },
+      { href: '/treatments/orthopaedics', labelEn: 'Orthopedic Surgery (Knee & Spine)', labelAr: 'جراحة العظام (الركبة والعمود الفقري)', descEn: 'Robotic knee replacement & endoscopic discectomy — walk within 24 hours.', descAr: 'استبدال الركبة بالروبوت وإزالة الانزلاق الغضروفي بالمنظار.' },
+      { href: '/hospitals', labelEn: 'Top Hospitals in Trivandrum & Kochi', labelAr: 'أفضل مستشفيات تريفاندروم وكوتشين', descEn: 'KIMSHEALTH, Ananthapuri, Aster Medcity — Aasandha-linked facilities.', descAr: 'كيمز هيلث، أنانثابوري، أستر ميدسيتي — مرتبطة ببرنامج اساندا.' },
+      { href: '/patients/maldives', labelEn: 'Maldives Patient Hub', labelAr: 'مركز المرضى المالديفيين', descEn: 'Complete guide: 90-day visa-free entry, Aasandha, flights from Malé.', descAr: 'دليل شامل: دخول بدون تأشيرة 90 يوماً، اساندا، رحلات من مالي.' },
+    ],
+    'uae-dubai-to-kerala-medical-tourism-guide': [
+      { href: '/treatments/dental', labelEn: 'Premium Dental Implants & Smile Makeover', labelAr: 'زراعة الأسنان الفاخرة وابتسامة هوليوود', descEn: 'Swiss Straumann / Nobel Biocare implants. All-on-4 from AED 8,500.', descAr: 'غرسات Straumann و Nobel Biocare. الفك الكامل من 8,500 درهم.' },
+      { href: '/treatments/orthopaedics', labelEn: 'Robotic Knee & Hip Replacement', labelAr: 'استبدال الركبة والورك بالروبوت', descEn: 'Stryker Mako robotic precision. Save AED 48,000–62,000 vs. Dubai.', descAr: 'روبوت ستريكر ماكو. وفر 48,000 إلى 62,000 درهم مقارنة بدبي.' },
+      { href: '/treatments/ayurveda', labelEn: 'Ayurvedic Recovery Retreats', labelAr: 'منتجعات النقاهة الأيورفيدية', descEn: 'Phase 2 healing in Wayanad & Kumarakom luxury eco-estates.', descAr: 'مرحلة التعافي في منتجعات واياناد وكوماراكوم الطبيعية الفاخرة.' },
+      { href: '/hospitals', labelEn: 'JCI Hospitals in Kerala', labelAr: 'المستشفيات المعتمدة JCI في كيرلا', descEn: 'Browse accredited multi-specialty hospitals across Calicut, Kochi & Trivandrum.', descAr: 'تصفح المستشفيات المتخصصة المعتمدة في كوزيكود وكوتشين وتريفاندروم.' },
+      { href: '/patients/uae', labelEn: 'UAE Patient Hub', labelAr: 'مركز المرضى الإماراتيين', descEn: 'Emirati & UAE expat guide: visa, flights, services and cost estimates.', descAr: 'دليل المرضى الإماراتيين والمقيمين: التأشيرة والرحلات وتقديرات التكاليف.' },
+    ],
+  };
+  const internalLinks = INTERNAL_LINK_MAP[slug] ?? [];
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -547,6 +592,57 @@ export default async function BlogPostPage({ params }: Props) {
         { name: 'Digital Post-Op Dossier & Fly Home', text: 'Receive digitized operative summaries, high-resolution scans, and formal fit-to-fly documentation.' }
       ]
     );
+  } else if (slug === 'oman-to-kerala-medical-tourism-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيف تحجز علاجك الطبي من عمان إلى كيرلا' : 'How Omani Patients Book Medical Treatment in Kerala',
+      isRtl ? [
+        { name: 'مشاركة التقارير واستلام خطاب الدعوة', text: 'أرسل تقاريرك عبر الواتساب (+91 94005 28836) ليُصدر فريقنا خطاب الدعوة الطبي الرسمي خلال 24 ساعة.' },
+        { name: 'التقديم على التأشيرة الطبية الإلكترونية', text: 'قدّم على التأشيرة الطبية الهندية عبر الموقع الرسمي بخطاب الدعوة. تصدر عادة خلال 24 إلى 48 ساعة.' },
+        { name: 'احجز رحلتك المباشرة من مسقط', text: 'احجز رحلتك على طيران السلام أو الطيران العماني أو إنديا إكسبريس من مسقط (MCT) أو صلالة (SLL) إلى كوزيكود (CCJ) أو كوتشين (COK).' },
+        { name: 'الاستقبال في المطار والإيداع في المستشفى', text: 'يستقبلك منسقنا الذي يتحدث العربية بسيارة خاصة من المطار مباشرة إلى المستشفى.' },
+        { name: 'العلاج والتعافي والعودة', text: 'أتمم عمليتك وجلسات التأهيل في كيرلا، وعد إلى عمان بتصريح السفر بعد إتمام العلاج.' }
+      ] : [
+        { name: 'Share Reports & Receive Visa Invitation', text: 'Send your medical files via WhatsApp. We issue the official hospital visa invitation within 24 hours.' },
+        { name: 'Apply for e-Medical Visa Online', text: 'Submit the Indian e-Medical Visa application using our invitation letter. Typically approved in 24-48 hours.' },
+        { name: 'Book Direct Flight from Muscat', text: 'Book SalamAir, Oman Air, or Air India Express from Muscat (MCT) or Salalah (SLL) to Calicut (CCJ) or Kochi (COK).' },
+        { name: 'Airport Reception & Hospital Admission', text: 'Our Arabic-speaking coordinator greets you at the airport and escorts you directly to the hospital.' },
+        { name: 'Complete Treatment & Fly Home', text: 'Undergo your surgery or therapy program, complete rehabilitation, and receive fit-to-fly clearance.' }
+      ]
+    );
+  } else if (slug === 'maldives-to-kerala-medical-treatment-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيف يسافر المريض المالديفي للعلاج في كيرلا' : 'How Maldivian Patients Travel to Kerala for Treatment',
+      isRtl ? [
+        { name: 'إرسال التقارير واستلام خطاب الموعد', text: 'أرسل تقاريرك لفريق علاج في كيرلا للحصول على خطاب الموعد الرسمي لتقديمه عند الوصول.' },
+        { name: 'السفر بدون تأشيرة مسبقة (حتى 90 يوماً)', text: 'يُعفى مواطنو المالديف من التأشيرة المسبقة للإقامات حتى 90 يوماً. احمل جوازك وخطاب الموعد.' },
+        { name: 'احجز رحلتك المباشرة من مالي (75 دقيقة)', text: 'احجز رحلتك المباشرة مع طيران المالديف أو إنديجو من مطار فيلانا (MLE) إلى تريفاندروم (TRV) أو كوتشين (COK).' },
+        { name: 'التنسيق مع برنامج اساندا (إن وجد)', text: 'إذا كانت حالتك مؤهلة لبرنامج اساندا، تأكد من حصولك على نموذج الإحالة الطبية الرسمي من طبيبك في المالديف.' },
+        { name: 'الاستقبال وبدء العلاج', text: 'يستقبلك فريقنا في المطار ويرافقك لجميع مواعيد الاستشارة والفحوصات حتى إتمام العلاج.' }
+      ] : [
+        { name: 'Share Reports & Receive Appointment Letter', text: 'Send your medical records to TreatInKerala. Receive the official hospital appointment letter within 24 hours.' },
+        { name: 'Travel Visa-Free (Up to 90 Days)', text: 'Maldivian nationals enter India visa-free for medical stays up to 90 days. Bring your passport and appointment letter.' },
+        { name: 'Book 75-Minute Direct Flight from Malé', text: 'Book Maldivian Airlines or IndiGo from Velana (MLE) to Trivandrum (TRV) or Kochi (COK).' },
+        { name: 'Coordinate Aasandha Approval (if applicable)', text: 'If using Aasandha insurance, secure your official overseas referral form from your Maldivian specialist.' },
+        { name: 'Airport Reception & Full Care', text: 'Our team receives you at the airport and coordinates all consultations, procedures, and follow-up visits.' }
+      ]
+    );
+  } else if (slug === 'uae-dubai-to-kerala-medical-tourism-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيف ينظم المريض من الإمارات رحلته العلاجية إلى كيرلا' : 'How UAE Residents Plan Their Medical Trip to Kerala',
+      isRtl ? [
+        { name: 'مشاركة التقارير واستلام خطاب التأشيرة', text: 'أرسل ملفاتك الطبية لنصدر خطاب الدعوة الرسمي لاستخراج التأشيرة الطبية الإلكترونية خلال 24 ساعة.' },
+        { name: 'التقديم على التأشيرة الطبية الإلكترونية', text: 'قدّم على التأشيرة الهندية عبر الإنترنت. تصدر خلال 24 إلى 48 ساعة بموجب خطاب الدعوة.' },
+        { name: 'احجز رحلتك المباشرة من دبي أو أبوظبي', text: 'احجز رحلتك على طيران الإمارات أو فلاي دبي أو الاتحاد أو العربية للطيران من DXB أو AUH أو SHJ إلى CCJ أو COK.' },
+        { name: 'المرحلة الأولى: الجراحة أو علاج الأسنان (الأيام 1-5)', text: 'أتمم تدخلك الجراحي أو ترميم أسنانك في المستشفى المعتمد بإشراف جراح دولي متخصص.' },
+        { name: 'المرحلة الثانية: النقاهة الأيورفيدية (الأيام 6-14) والعودة', text: 'انتقل إلى منتجع الأيورفيدا للتعافي الشامل، ثم عد إلى الإمارات بكامل النشاط والحيوية.' }
+      ] : [
+        { name: 'Share Reports & Receive Visa Invitation', text: 'Submit your medical files and we issue the official hospital invitation for e-Medical Visa within 24 hours.' },
+        { name: 'Apply for Indian e-Medical Visa Online', text: 'Submit the e-Medical Visa application. Approval typically arrives electronically within 24-48 hours.' },
+        { name: 'Book Direct Flight from Dubai or Abu Dhabi', text: 'Book Emirates, flydubai, Etihad, or Air Arabia from DXB / AUH / SHJ to Calicut (CCJ) or Kochi (COK).' },
+        { name: 'Phase 1: Surgery or Dental Restoration (Days 1–5)', text: 'Complete your procedure in a JCI-accredited facility under the care of internationally trained surgeons.' },
+        { name: 'Phase 2: Ayurvedic Recovery & Return (Days 6–14)', text: 'Transition to a medically supervised Ayurvedic retreat, then fly home revitalized to the UAE.' }
+      ]
+    );
   }
 
   let faqSchema: Record<string, unknown> | null = null;
@@ -675,6 +771,32 @@ export default async function BlogPostPage({ params }: Props) {
             )}
           </div>
 
+          {/* Internal Link Cards — Treatments / Hospitals / Country Hubs */}
+          {internalLinks.length > 0 && (
+            <div className="mt-10 pt-8 border-t border-slate-100">
+              <h3 className="text-lg sm:text-xl font-bold font-display text-primary-dark flex items-center gap-2 mb-5">
+                <ExternalLink className="h-5 w-5 text-primary-green shrink-0" />
+                <span>{isRtl ? 'صفحات ذات صلة — العلاجات والمستشفيات والخدمات' : 'Related Treatments, Hospitals & Services'}</span>
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {internalLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href as Parameters<typeof Link>[0]['href']}
+                    className="group block bg-[#FAF7F2] border border-[#D4A96A]/30 rounded-2xl p-5 hover:border-primary-green/40 hover:shadow-md transition-all duration-300"
+                  >
+                    <p className="font-bold text-[#1B4332] text-sm group-hover:text-primary-green transition-colors leading-snug">
+                      {isRtl ? link.labelAr : link.labelEn}
+                    </p>
+                    <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                      {isRtl ? link.descAr : link.descEn}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Contextual Product Referral Callout (iHerb Rewards) */}
           <BlogRecoveryCallout
             locale={locale}
@@ -707,7 +829,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mt-16 space-y-6">
             <h3 className="text-xl sm:text-2xl font-bold font-display text-primary-dark pb-2 border-b border-[#D4A96A]/35 flex items-center gap-2">
               <BookOpen className="h-5 w-5 text-primary-green" />
-              <span>{locale === 'ar' ? 'مقالات ذات صلة' : 'Related Articles'}</span>
+              <span>{locale === 'ar' ? 'مقالات ذات صلة' : 'You May Also Find These Useful'}</span>
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

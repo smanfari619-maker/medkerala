@@ -1,7 +1,7 @@
 import React from 'react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import { ArrowRight, MessageCircle, Info, Star, MapPin, Clock, HeartPulse, ShieldCheck } from 'lucide-react';
+import { ArrowRight, MessageCircle, Info, Star, MapPin, Clock, HeartPulse, ShieldCheck, Leaf, Globe } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
 import Image from 'next/image';
 
@@ -205,13 +205,13 @@ export default async function PackagesPage({ params }: Props) {
 
         </div>
 
-        {/* NEW TOUR PACKAGES SECTION */}
+        {/* HEALING TOURS SECTION */}
         <section className="mb-24 pt-8 border-t border-[#D4A96A]/20">
           <div className="mb-12 space-y-3 rtl:text-right">
             <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-[#D4A96A]" />
               <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
-                {isRtl ? 'الاستجمام السياحي' : 'Medical Wellness Tours'}
+                {isRtl ? 'جولات الشفاء الطبيعي' : 'Guided Healing & Wellness Tours'}
               </span>
             </div>
             <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332]">
@@ -220,56 +220,149 @@ export default async function PackagesPage({ params }: Props) {
             <p className="text-text-muted font-light leading-[1.65] text-base sm:text-lg max-w-2xl">
               {t('tourSubheading')}
             </p>
+
+            {/* Guide Service Badge */}
+            <div className="flex flex-wrap gap-3 pt-2">
+              {[
+                { icon: <Globe className="h-3.5 w-3.5" />, label: isRtl ? 'مرشد يتحدث لغتك' : 'Guide speaks your language' },
+                { icon: <Leaf className="h-3.5 w-3.5" />, label: isRtl ? 'مواصلات وإقامة شاملة' : 'Transport & lodging included' },
+                { icon: <Star className="h-3.5 w-3.5 fill-[#D4A96A] text-[#D4A96A]" />, label: isRtl ? 'ترجمة طبية فورية' : 'Real-time medical translation' },
+              ].map((badge, i) => (
+                <span key={i} className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2D6A4F] bg-emerald-50 border border-emerald-100 px-3 py-1.5 rounded-full">
+                  {badge.icon}
+                  {badge.label}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {['houseboat', 'munnar', 'kochi'].map((key) => (
-              <div key={key} className="bg-white border border-[#D4A96A]/35 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-                <div className="relative h-56 w-full overflow-hidden">
+          {/* 3-column grid for 6 individual tours */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {(['houseboat', 'munnar', 'kochi', 'thekkady', 'wayanad', 'varkala'] as const).map((key) => (
+              <div key={key} className="bg-white border border-[#D4A96A]/30 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+                <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src={`/images/tours_${key}.png`}
                     alt={t(`tours.${key}.title`)}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    onError={() => {}} // graceful fallback
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-primary-dark font-sans flex items-center gap-1 shadow-sm">
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-primary-dark font-sans flex items-center gap-1 shadow-sm">
                     <Clock className="h-3 w-3 text-primary-green" />
                     <span>{t(`tours.${key}.duration`)}</span>
                   </div>
-                </div>
-                
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-start justify-between gap-2 mb-3">
-                    <h3 className="text-xl font-bold text-text-dark font-display">{t(`tours.${key}.title`)}</h3>
+                  {/* Price badge */}
+                  <div className="absolute bottom-3 right-3 bg-[#1B4332]/90 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-[11px] font-bold font-sans shadow-lg">
+                    {t(`tours.${key}.price`)}
                   </div>
-                  
-                  <div className="flex items-center gap-1.5 text-xs text-text-muted font-bold font-sans mb-4">
-                    <MapPin className="h-3.5 w-3.5 text-[#D4A96A]" />
+                </div>
+
+                <div className="p-5 flex flex-col flex-grow">
+                  <h3 className="text-base font-bold text-text-dark font-display leading-snug mb-2">
+                    {t(`tours.${key}.title`)}
+                  </h3>
+                  <div className="flex items-center gap-1.5 text-xs text-text-muted font-semibold mb-3">
+                    <MapPin className="h-3 w-3 text-[#D4A96A] shrink-0" />
                     <span>{t(`tours.${key}.location`)}</span>
                   </div>
-                  
-                  <p className="text-sm text-text-muted leading-relaxed font-sans flex-grow">
+                  <p className="text-xs text-text-muted leading-relaxed font-sans flex-grow mb-4">
                     {t(`tours.${key}.desc`)}
                   </p>
-                  
-                  <div className="mt-5 pt-4 border-t border-slate-100 space-y-4">
-                    <div className="flex items-center gap-2 text-xs font-bold text-primary-green bg-emerald-50/50 p-2.5 rounded-lg border border-emerald-100">
-                      <HeartPulse className="h-4 w-4 shrink-0" />
-                      <span>{t(`tours.${key}.benefit`)}</span>
-                    </div>
-                    
-                    <a
-                      href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً، أود الاستفسار عن جولة ${t(`tours.${key}.title`)}` : `Hello, I would like to inquire about the ${t(`tours.${key}.title`)} add-on.`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full bg-white border border-primary-green text-primary-green hover:bg-primary-green hover:text-white text-center py-3 px-4 rounded-xl text-sm font-bold font-sans flex items-center justify-center transition-all duration-300"
-                    >
-                      {t('tourBookBtn')}
-                    </a>
+
+                  <div className="flex items-center gap-2 text-[11px] font-bold text-primary-green bg-emerald-50 px-3 py-2 rounded-lg border border-emerald-100 mb-4">
+                    <HeartPulse className="h-3.5 w-3.5 shrink-0" />
+                    <span>{t(`tours.${key}.benefit`)}</span>
                   </div>
+
+                  <a
+                    href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً، أود الاستفسار عن جولة: ${t(`tours.${key}.title`)}` : `Hello TreatInKerala, I would like to book or inquire about the "${t(`tours.${key}.title`)}" wellness tour.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full border border-primary-green text-primary-green hover:bg-primary-green hover:text-white text-center py-2.5 px-4 rounded-xl text-sm font-bold font-sans flex items-center justify-center gap-1.5 transition-all duration-300"
+                  >
+                    <MessageCircle className="h-3.5 w-3.5" />
+                    {t('tourBookBtn')}
+                  </a>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Flagship: Full Kerala Healing Circuit — Full Width Card */}
+          <div className="bg-gradient-to-br from-[#1B4332] to-[#2D6A4F] rounded-[2.25rem] overflow-hidden shadow-2xl relative group">
+            <div className="absolute inset-0 bg-[url('/images/tours_circuit.png')] bg-cover bg-center opacity-20 group-hover:opacity-25 transition-opacity duration-700" />
+            <div className="relative z-10 p-8 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="space-y-5">
+                {/* Flagship Label */}
+                <div className="flex items-center gap-2">
+                  <span className="bg-[#D4A96A] text-white text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                    <Star className="h-3 w-3 fill-white" />
+                    {isRtl ? 'الباقة الرائدة' : 'Flagship Package'}
+                  </span>
+                  <span className="text-xs text-white/60 font-semibold">
+                    {t('tours.circuit.duration')}
+                  </span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-bold text-white font-display leading-tight">
+                  {t('tours.circuit.title')}
+                </h3>
+
+                <div className="flex items-center gap-2 text-white/70 text-sm font-semibold">
+                  <MapPin className="h-4 w-4 text-[#D4A96A] shrink-0" />
+                  <span>{t('tours.circuit.location')}</span>
+                </div>
+
+                <p className="text-white/80 text-sm leading-relaxed font-sans max-w-lg">
+                  {t('tours.circuit.desc')}
+                </p>
+
+                <div className="flex items-center gap-2 text-[#D4A96A] text-sm font-bold bg-white/10 px-4 py-2.5 rounded-xl border border-white/10 w-fit">
+                  <HeartPulse className="h-4 w-4 shrink-0" />
+                  {t('tours.circuit.benefit')}
+                </div>
+              </div>
+
+              <div className="flex flex-col items-start lg:items-end gap-5">
+                {/* Price Block */}
+                <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-6 py-5 text-center lg:text-right rtl:lg:text-left">
+                  <p className="text-white/60 text-xs font-bold uppercase tracking-wider mb-1">
+                    {isRtl ? 'السعر يبدأ من' : 'Starting from'}
+                  </p>
+                  <p className="text-4xl font-extrabold text-[#D4A96A] font-display">$890</p>
+                  <p className="text-white/60 text-xs font-sans mt-1">
+                    {isRtl ? 'للشخص، يشمل كل شيء' : 'per person, all-inclusive'}
+                  </p>
+                </div>
+
+                {/* What is included */}
+                <ul className="space-y-2 text-sm text-white/80 font-sans">
+                  {[
+                    isRtl ? '✓ مرشد يتكلم لغتك طوال الرحلة' : '✓ Personal bilingual guide (8 days)',
+                    isRtl ? '✓ سائق خاص بين جميع المواقع' : '✓ Private chauffeur between all sites',
+                    isRtl ? '✓ 7 ليالٍ إقامة في فنادق مختارة' : '✓ 7 nights curated eco-resort stays',
+                    isRtl ? '✓ ترجمة طبية فورية عند الحاجة' : '✓ Medical translation on-demand',
+                    isRtl ? '✓ جلسات أيورفيدا يومية مشمولة' : '✓ Daily Ayurvedic healing sessions',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-[#D4A96A] font-bold shrink-0">{item.substring(0, 1)}</span>
+                      <span>{item.substring(2)}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار عن باقة رحلة كيرلا العلاجية الشاملة (8 أيام - تبدأ من 890$)` : `Hello TreatInKerala, I'm interested in the Full Kerala Healing Circuit package (8 Days, from $890/person). Please share details.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full lg:w-auto bg-[#D4A96A] hover:bg-[#c49a5e] text-white font-bold px-8 py-4 rounded-2xl text-base flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl min-h-[52px]"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  {isRtl ? 'احجز الرحلة الكاملة' : 'Book the Full Circuit'}
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 

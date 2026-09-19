@@ -191,8 +191,8 @@ export async function submitChatLead(data: ChatLeadData) {
 
             <div style="background-color: #E8F0EC; padding: 16px; border-radius: 12px; text-align: center; margin-top: 24px;">
               <p style="margin: 0; font-size: 13px; color: #1B4332; font-weight: bold;">Have urgent questions or medical reports to share right away?</p>
-              <a href="https://wa.me/919400018008" target="_blank" style="background-color: #25D366; color: white; padding: 10px 20px; border-radius: 25px; font-weight: bold; text-decoration: none; display: inline-block; font-size: 13px; margin-top: 10px;">
-                💬 Message Us directly on WhatsApp (+91 94000 18008)
+              <a href="https://wa.me/919400528836" target="_blank" style="background-color: #25D366; color: white; padding: 10px 20px; border-radius: 25px; font-weight: bold; text-decoration: none; display: inline-block; font-size: 13px; margin-top: 10px;">
+                💬 Message Us directly on WhatsApp (+91 94005 28836)
               </a>
             </div>
 
