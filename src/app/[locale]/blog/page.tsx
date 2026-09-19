@@ -36,22 +36,22 @@ export default async function BlogPage({ params }: Props) {
   ]);
 
   return (
-    <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-[#FAF7F2] min-h-screen border-b border-[#D4A96A]/35">
+    <div className="pt-36 pb-16 lg:pt-44 lg:pb-24 bg-[#FAF7F2] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <span className="text-[#D4A96A] font-bold text-sm uppercase tracking-widest block">
-            {locale === 'ar' ? 'المدونة الطبية والإرشادية' : 'Guides & Expert Resources'}
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-semibold font-display text-primary-dark tracking-tight">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold">
+            <span>{locale === 'ar' ? 'المدونة الطبية والإرشادية' : 'Guides & Expert Resources'}</span>
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-bold font-display text-text-dark tracking-tight leading-tight">
             {locale === 'ar' ? 'دليل السياحة العلاجية والتعافي في كيرلا' : 'TreatInKerala Travel & Health Guide'}
           </h1>
-          <p className="text-lg text-text-muted">
+          <p className="text-base sm:text-lg text-text-muted leading-relaxed max-w-2xl mx-auto">
             {locale === 'ar'
               ? 'مقالات طبية متخصصة، وأدلة المكملات الغذائية للتعافي، وتفاصيل مقارنة الأسعار وإرشادات التأشيرة الطبية للهند.'
               : 'Expert clinical guides, post-surgery recovery supplements, treatment cost comparisons, and travel logistics.'}

@@ -123,7 +123,7 @@ export default async function AyurvedaPage({ params }: Props) {
   const ayurvedaProducts = getRecoveryProductsForTreatment('ayurveda');
 
   return (
-    <div className="flex flex-col w-full overflow-x-hidden bg-[#FAF7F2] text-[#1A1A2E] pt-32 lg:pt-40">
+    <div className="flex flex-col w-full overflow-x-hidden bg-[#FAF7F2] text-text-dark pt-32 lg:pt-40">
 
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 relative overflow-hidden">
@@ -132,19 +132,15 @@ export default async function AyurvedaPage({ params }: Props) {
             
             {/* Left: Content */}
             <div className="text-center lg:text-start space-y-6">
-              <div className="flex items-center justify-center lg:justify-start gap-3 mb-2">
-                <span className="h-px w-8 bg-[#D4A96A]" />
-                <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
-                  {isRtl ? 'الطب الأيورفيدي الأصيل — كيرلا' : 'Authentic Ayurveda — Kerala'}
-                </span>
-                <span className="h-px w-8 bg-[#D4A96A] lg:hidden" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold mb-2">
+                <span>{isRtl ? 'الطب الأيورفيدي الأصيل — كيرلا' : 'Authentic Ayurveda — Kerala'}</span>
               </div>
-              <h1 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl lg:text-6xl text-[#1B4332]">
+              <h1 className="font-display font-bold tracking-tight text-3xl sm:text-5xl lg:text-6xl text-text-dark leading-tight">
                 {isRtl
                   ? 'الشفاء العميق بقوة طب الأيورفيدا في كيرلا'
                   : 'Start Your Healing Journey with Authentic Ayurveda'}
               </h1>
-              <p className="text-lg text-text-muted font-sans leading-relaxed">
+              <p className="text-base sm:text-lg text-text-muted font-sans leading-relaxed">
                 {isRtl
                   ? 'كيرلا هي مهد طب الأيورفيدا الأصيل. أكثر من 5,000 سنة من الحكمة الطبية مُدمجة في برامج علاج حديثة تحت إشراف أطباء أيورفيديين معتمدين.'
                   : 'Kerala is the true birthplace of Ayurveda. Here, over 5,000 years of ancient healing wisdom meets modern comfort. Let our certified Ayurvedic doctors craft a highly personalized rejuvenation programme just for you.'}
@@ -152,7 +148,7 @@ export default async function AyurvedaPage({ params }: Props) {
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
                 <Link
                   href="/get-estimate"
-                  className="bg-[#2D6A4F] hover:bg-[#1B4332] text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2"
+                  className="btn-primary text-base px-8 py-4 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>{isRtl ? 'احصل على برنامجك المخصص' : 'Get Your Custom Programme'}</span>
                   <ArrowRight className="h-5 w-5 shrink-0 rtl:rotate-180" />
@@ -162,8 +158,7 @@ export default async function AyurvedaPage({ params }: Props) {
 
             {/* Right: Image */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#D4A96A]/20 to-transparent rounded-[2.5rem] blur-2xl transform translate-x-4 translate-y-4" />
-              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-[#D4A96A]/20 aspect-[4/3] group">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 aspect-[4/3] group bg-slate-100">
                 <Image
                   src="/images/ayurveda_treatment_hero.png"
                   alt="Authentic Kerala Ayurveda"
@@ -176,7 +171,7 @@ export default async function AyurvedaPage({ params }: Props) {
           </div>
 
           {/* Stats bar */}
-          <div className="bg-white/80 backdrop-blur-lg border border-[#D4A96A]/20 rounded-[2.25rem] p-6 sm:p-8 shadow-[0_20px_50px_rgba(212,169,106,0.06)] relative z-20 -mb-24 mt-8 lg:mt-0">
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-xs relative z-20 -mb-24 mt-8 lg:mt-0">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center divide-y lg:divide-y-0 lg:divide-x divide-slate-100 rtl:divide-x-reverse">
               {[
                 { val: '5,000+', label: isRtl ? 'سنة من الحكمة الطبية' : 'Years of Medical Wisdom' },
@@ -185,7 +180,7 @@ export default async function AyurvedaPage({ params }: Props) {
                 { val: '24/7', label: isRtl ? 'دعم منسق مرافق' : 'Coordinator Support' },
               ].map((stat) => (
                 <div key={stat.val} className="space-y-1.5 pt-4 first:pt-0 lg:pt-0">
-                  <span className="text-3xl sm:text-4xl font-extrabold font-display text-primary-green block">
+                  <span className="text-3xl sm:text-4xl font-extrabold font-display text-[#1B4332] block">
                     {stat.val}
                   </span>
                   <h3 className="text-sm font-bold text-text-dark font-sans">{stat.label}</h3>
@@ -196,23 +191,17 @@ export default async function AyurvedaPage({ params }: Props) {
         </div>
       </section>
 
-
-
       {/* ── KEY TREATMENTS ───────────────────────────────────── */}
       <section className="py-20 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
-                {isRtl ? 'العلاجات الأيورفيدية الرئيسية' : 'Core Ayurvedic Treatments'}
-              </span>
-              <span className="h-px w-8 bg-[#D4A96A]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold mb-3">
+              <span>{isRtl ? 'العلاجات الأيورفيدية الرئيسية' : 'Core Ayurvedic Treatments'}</span>
             </div>
-            <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332] mb-4">
+            <h2 className="font-display font-bold tracking-tight text-3xl sm:text-4xl text-text-dark mb-4">
               {isRtl ? 'علاجات كيرلا الأيورفيدية الأصيلة' : 'Authentic Kerala Ayurveda Therapies'}
             </h2>
-            <p className="text-text-muted text-lg">
+            <p className="text-text-muted text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
               {isRtl
                 ? 'كل علاج يُصمَّم خصيصاً لحالتك بعد استشارة طبيب أيورفيدي معتمد.'
                 : 'Every therapy is personalised after an in-depth consultation with a certified Ayurvedic physician.'}
@@ -225,53 +214,53 @@ export default async function AyurvedaPage({ params }: Props) {
               return (
                 <div
                   key={t.en.name}
-                  className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] overflow-hidden hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group flex flex-col"
+                  className="bg-white border border-slate-200 rounded-3xl overflow-hidden hover:border-[#1B4332]/40 shadow-xs hover:shadow-md transition-all duration-300 group flex flex-col"
                 >
                   {/* Optional Image */}
                   {t.image ? (
-                    <div className="relative h-48 w-full overflow-hidden">
+                    <div className="relative h-52 w-full overflow-hidden bg-slate-100">
                       <Image
                         src={t.image}
                         alt={content.name}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-xl shadow-sm">
-                        <t.icon className="h-5 w-5 text-[#2D6A4F]" />
+                      <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-xl shadow-xs">
+                        <t.icon className="h-5 w-5 text-[#1B4332]" />
                       </div>
                     </div>
                   ) : (
-                    <div className="h-12 w-12 rounded-2xl bg-[#2D6A4F]/10 flex items-center justify-center m-8 mb-0 group-hover:bg-[#2D6A4F] transition-colors duration-300">
-                      <t.icon className="h-6 w-6 text-[#2D6A4F] group-hover:text-white transition-colors duration-300" />
+                    <div className="h-12 w-12 rounded-2xl bg-[#1B4332]/10 flex items-center justify-center m-8 mb-0 group-hover:bg-[#1B4332] transition-colors duration-300">
+                      <t.icon className="h-6 w-6 text-[#1B4332] group-hover:text-white transition-colors duration-300" />
                     </div>
                   )}
 
-                  <div className="p-8 flex flex-col flex-grow">
-                    <span className="text-[#D4A96A] font-bold text-xs uppercase tracking-widest mb-1 block">
+                  <div className="p-7 sm:p-8 flex flex-col flex-grow">
+                    <span className="text-[#D4A96A] font-bold text-xs mb-1 block">
                       {content.tagline}
                     </span>
-                    <h3 className="text-xl font-bold text-text-dark mb-3">
+                    <h3 className="text-xl font-bold text-text-dark mb-3 group-hover:text-[#1B4332] transition-colors">
                       {t.link ? (
-                        <Link href={t.link} className="hover:text-[#2D6A4F] transition-colors inline-flex items-center gap-1.5">
+                        <Link href={t.link} className="hover:text-[#1B4332] transition-colors inline-flex items-center gap-1.5">
                           <span>{content.name}</span>
-                          <ArrowRight className="h-4 w-4 shrink-0 text-[#2D6A4F] rtl:rotate-180" />
+                          <ArrowRight className="h-4 w-4 shrink-0 text-[#1B4332] rtl:rotate-180" />
                         </Link>
                       ) : (
                         content.name
                       )}
                     </h3>
-                    <p className="text-text-muted text-base leading-relaxed flex-grow">{content.desc}</p>
+                    <p className="text-text-muted text-sm leading-relaxed flex-grow">{content.desc}</p>
                     <div className="mt-5 pt-5 border-t border-slate-100 flex items-center justify-between text-sm">
-                      <span className="flex items-center gap-1.5 text-text-muted font-medium">
-                        <Clock className="h-4 w-4 text-[#2D6A4F]" />
+                      <span className="flex items-center gap-1.5 text-text-muted font-medium text-xs">
+                        <Clock className="h-3.5 w-3.5 text-[#1B4332]" />
                         {t.duration}
                       </span>
                       <div className="flex items-center gap-3">
-                        <span className="font-bold text-[#2D6A4F]">{t.cost}</span>
+                        <span className="font-bold text-[#1B4332] text-sm">{t.cost}</span>
                         {t.link && (
                           <Link
                             href={t.link}
-                            className="text-xs bg-[#2D6A4F]/10 hover:bg-[#2D6A4F] text-[#2D6A4F] hover:text-white font-bold px-3 py-1.5 rounded-full transition-all duration-200"
+                            className="text-xs bg-[#1B4332]/10 hover:bg-[#1B4332] text-[#1B4332] hover:text-white font-bold px-3 py-1.5 rounded-full transition-all duration-200"
                           >
                             {isRtl ? 'الدليل السريري' : 'Clinical Guide'}
                           </Link>
@@ -297,21 +286,21 @@ export default async function AyurvedaPage({ params }: Props) {
                   {isRtl ? 'الحالات التي يعالجها الأيورفيدا' : 'Conditions Treated'}
                 </span>
               </div>
-              <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl text-[#1B4332] mb-6">
+              <h2 className="font-display font-bold tracking-tight text-3xl sm:text-4xl text-text-dark mb-6">
                 {isRtl ? 'ما الذي يمكن للأيورفيدا علاجه؟' : 'What Can Ayurveda Treat?'}
               </h2>
-              <p className="text-text-muted text-lg leading-relaxed mb-8">
+              <p className="text-text-muted text-base sm:text-lg leading-relaxed mb-8">
                 {isRtl
                   ? 'الأيورفيدا فعّال في علاج مجموعة واسعة من الحالات الصحية المزمنة والمتكررة، وكذلك للوقاية وتحسين جودة الحياة.'
                   : 'Ayurveda is highly effective for a broad range of chronic and recurring health conditions, as well as preventive wellness and quality-of-life enhancement.'}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {conditions.map((c) => (
-                  <div key={c.en} className="flex items-center justify-between gap-3 bg-white border border-[#D4A96A]/15 rounded-[2rem] px-4 py-3 hover:border-[#2D6A4F]/25 hover:shadow-xs transition-all duration-300">
+                  <div key={c.en} className="flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-2xl px-4 py-3 hover:border-[#1B4332]/30 hover:shadow-2xs transition-all duration-200">
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="h-4.5 w-4.5 text-[#2D6A4F] shrink-0" />
+                      <CheckCircle className="h-4.5 w-4.5 text-[#1B4332] shrink-0" />
                       {c.link ? (
-                        <Link href={c.link} className="text-text-dark hover:text-[#2D6A4F] font-medium text-sm underline decoration-slate-300 hover:decoration-[#2D6A4F]">
+                        <Link href={c.link} className="text-text-dark hover:text-[#1B4332] font-semibold text-sm">
                           {isRtl ? c.ar : c.en}
                         </Link>
                       ) : (
@@ -319,7 +308,7 @@ export default async function AyurvedaPage({ params }: Props) {
                       )}
                     </div>
                     {c.link && (
-                      <Link href={c.link} className="text-[11px] font-bold text-[#2D6A4F] shrink-0 hover:underline">
+                      <Link href={c.link} className="text-[11px] font-bold text-[#1B4332] shrink-0 hover:underline">
                         {isRtl ? 'عرض' : 'View'}
                       </Link>
                     )}
@@ -329,8 +318,8 @@ export default async function AyurvedaPage({ params }: Props) {
             </div>
 
             {/* Why Kerala box */}
-            <div className="rounded-[2.25rem] overflow-hidden shadow-2xl flex flex-col h-full border border-[#D4A96A]/20">
-              <div className="relative h-64 sm:h-72 w-full">
+            <div className="rounded-3xl overflow-hidden shadow-xl flex flex-col h-full border border-slate-200">
+              <div className="relative h-64 sm:h-72 w-full bg-slate-100">
                 <Image
                   src="/images/kerala_wellness_resort_hero.png"
                   alt="Kerala Wellness Resort"
@@ -362,7 +351,7 @@ export default async function AyurvedaPage({ params }: Props) {
                 ].map((pt) => (
                   <div key={pt.en} className="flex items-start gap-3">
                     <Shield className="h-5 w-5 text-[#D4A96A] shrink-0 mt-0.5" />
-                    <p className="text-white/85 text-base leading-relaxed">{isRtl ? pt.ar : pt.en}</p>
+                    <p className="text-slate-200 text-sm sm:text-base leading-relaxed">{isRtl ? pt.ar : pt.en}</p>
                   </div>
                 ))}
               </div>
@@ -380,21 +369,17 @@ export default async function AyurvedaPage({ params }: Props) {
       />
 
       {/* ── CTA BAND ─────────────────────────────────────────── */}
-      <section className="bg-[#1B4332] border-t border-[#D4A96A]/20 py-16 lg:py-24">
+      <section className="bg-[#111827] border-t border-slate-800 py-16 lg:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <span className="h-px w-8 bg-[#D4A96A]" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
-              {isRtl ? 'ابدأ رحلة شفائك' : 'Start Your Healing Journey'}
-            </span>
-            <span className="h-px w-8 bg-[#D4A96A]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-white text-xs font-bold mb-2">
+            <span>{isRtl ? 'ابدأ رحلة شفائك' : 'Start Your Healing Journey'}</span>
           </div>
-          <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-4xl sm:text-5xl text-white">
+          <h2 className="font-display font-bold tracking-tight text-3xl sm:text-5xl text-white">
             {isRtl
               ? 'دعنا نُصمم برنامجك الأيورفيدي الشخصي'
               : 'Let Us Design Your Personal Ayurveda Programme'}
           </h2>
-          <p className="text-white/75 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             {isRtl
               ? 'أخبرنا عن حالتك وسيتواصل معك منسقنا الطبي خلال 24 ساعة بخطة علاج مخصصة وتكاليف دقيقة.'
               : 'Tell us about your condition and our medical coordinator will contact you within 24 hours with a personalised treatment plan and accurate cost estimate.'}
@@ -402,18 +387,18 @@ export default async function AyurvedaPage({ params }: Props) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link
               href="/get-estimate"
-              className="bg-[#D4A96A] hover:bg-[#c49355] text-white font-bold px-10 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="bg-[#D4A96A] hover:bg-[#c49355] text-[#111827] font-bold px-8 py-3.5 rounded-full text-base shadow-md hover:shadow-lg transition-all duration-200 min-h-[48px] flex items-center justify-center gap-2 w-full sm:w-auto cursor-pointer"
             >
               <span>{isRtl ? 'احصل على تقدير مجاني' : 'Get Free Estimate'}</span>
-              <ArrowRight className="h-5 w-5 shrink-0" />
+              <ArrowRight className="h-4 w-4 shrink-0 rtl:rotate-180" />
             </Link>
             <a
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-10 py-4 rounded-full text-lg transition-all duration-300 min-h-[48px] flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-3.5 rounded-full text-base transition-all duration-200 min-h-[48px] flex items-center justify-center gap-2 w-full sm:w-auto shadow-md"
             >
-              <MessageCircle className="h-5 w-5 shrink-0" />
+              <MessageCircle className="h-4 w-4 shrink-0" />
               <span>{isRtl ? 'واتساب الآن' : 'WhatsApp Now'}</span>
             </a>
           </div>

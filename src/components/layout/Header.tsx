@@ -83,7 +83,7 @@ export default function Header() {
     <header
       className={`left-0 right-0 top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'fixed bg-[#FAF7F2]/96 backdrop-blur-md shadow-sm border-b border-[#D4A96A]/20 py-2'
+          ? 'fixed bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200/80 py-2.5'
           : 'absolute bg-transparent py-3.5'
       }`}
     >
@@ -95,12 +95,12 @@ export default function Header() {
             <img
               src="/images/logo.svg"
               alt="TreatInKerala Logo"
-              className="h-5 w-auto object-contain"
+              className="h-6 w-auto object-contain"
             />
           </Link>
 
           {/* ── Desktop Navigation ── */}
-          <nav className="hidden lg:flex items-center gap-0.5">
+          <nav className="hidden lg:flex items-center gap-1">
             {primaryNav.map((item) => {
               const isActive = activeLink(item.href);
               return (
@@ -109,8 +109,8 @@ export default function Header() {
                   href={item.href}
                   className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                     isActive
-                      ? 'text-[#2D6A4F] bg-[#2D6A4F]/8 font-semibold'
-                      : 'text-[#4A4A6A] hover:text-[#2D6A4F] hover:bg-[#2D6A4F]/5'
+                      ? 'text-[#1B4332] bg-[#1B4332]/8 font-semibold'
+                      : 'text-[#374151] hover:text-[#1B4332] hover:bg-[#1B4332]/5'
                   }`}
                 >
                   {item.label}
@@ -122,10 +122,10 @@ export default function Header() {
             <div className="relative" ref={moreRef}>
               <button
                 onClick={() => setMoreOpen((v) => !v)}
-                className={`flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer ${
+                className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer ${
                   isMoreActive
-                    ? 'text-[#2D6A4F] bg-[#2D6A4F]/8 font-semibold'
-                    : 'text-[#4A4A6A] hover:text-[#2D6A4F] hover:bg-[#2D6A4F]/5'
+                    ? 'text-[#1B4332] bg-[#1B4332]/8 font-semibold'
+                    : 'text-[#374151] hover:text-[#1B4332] hover:bg-[#1B4332]/5'
                 }`}
                 aria-expanded={moreOpen}
               >
@@ -136,23 +136,22 @@ export default function Header() {
               </button>
 
               {moreOpen && (
-                <div className="absolute top-full mt-2 start-0 w-48 bg-white rounded-2xl shadow-xl border border-[#D4A96A]/30 py-2 z-50 animate-fade-in">
-                  {/* subtle divider between sections */}
+                <div className="absolute top-full mt-2 start-0 w-48 bg-white rounded-2xl shadow-xl border border-slate-200/90 py-2 z-50 animate-fade-in">
                   {secondaryNav.map((item, i) => {
                     const Icon = item.icon;
                     const isActive = activeLink(item.href);
                     return (
                       <React.Fragment key={item.href}>
                         {i === 2 && (
-                          <div className="my-1.5 mx-3 border-t border-[#D4A96A]/30" />
+                          <div className="my-1.5 mx-3 border-t border-slate-100" />
                         )}
                         <Link
                           href={item.href}
                           onClick={() => setMoreOpen(false)}
                           className={`flex items-center gap-2.5 px-4 py-2.5 text-sm font-medium transition-colors duration-150 ${
                             isActive
-                              ? 'text-[#2D6A4F] bg-[#2D6A4F]/6'
-                              : 'text-[#4A4A6A] hover:text-[#2D6A4F] hover:bg-[#FAF7F2]'
+                              ? 'text-[#1B4332] bg-[#1B4332]/6 font-semibold'
+                              : 'text-[#374151] hover:text-[#1B4332] hover:bg-slate-50'
                           }`}
                         >
                           <Icon className="h-4 w-4 flex-shrink-0 text-[#D4A96A]" />
@@ -167,17 +166,17 @@ export default function Header() {
           </nav>
 
           {/* ── Desktop Right Actions ── */}
-          <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <LocaleSwitcher />
 
-            <div className="w-px h-5 bg-[#D4A96A]/25 mx-0.5" />
+            <div className="w-px h-5 bg-slate-200 mx-0.5" />
 
             {/* WhatsApp availability pill */}
             <a
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-2 rounded-full border border-[#25D366]/30 hover:border-[#25D366]/60 hover:bg-emerald-50/60 text-[#1B4332] transition-all duration-300 text-xs font-semibold group"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#25D366]/40 hover:border-[#25D366] bg-emerald-50/50 hover:bg-emerald-50 text-[#1B4332] transition-all duration-200 text-xs font-semibold group shadow-2xs"
               aria-label="Chat on WhatsApp"
             >
               <span className="relative flex h-1.5 w-1.5 shrink-0">
@@ -185,17 +184,12 @@ export default function Header() {
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#25D366]" />
               </span>
               <MessageCircle className="h-3.5 w-3.5 text-[#25D366]" />
-              <span>{isRtl ? 'متاح' : 'Chat'}</span>
+              <span>{isRtl ? 'متاح الآن' : 'Chat'}</span>
             </a>
 
             <Link
               href="/get-estimate"
-              className="text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-md whitespace-nowrap inline-flex items-center justify-center cursor-pointer"
-              style={{
-                background: 'linear-gradient(135deg, rgba(186,215,176,1) 0%, rgba(154,207,136,1) 100%)',
-                boxShadow: 'inset 0 0 20px rgba(255,255,255,0.3)',
-                color: '#2D5A27',
-              }}
+              className="btn-primary text-sm font-semibold px-5 py-2.5 whitespace-nowrap inline-flex items-center justify-center cursor-pointer"
             >
               {tCommon('getEstimate')}
             </Link>
@@ -206,12 +200,7 @@ export default function Header() {
             <LocaleSwitcher />
             <Link
               href="/get-estimate"
-              className="hidden md:inline-flex text-xs font-semibold px-4 py-2 rounded-full transition-all duration-300 shadow-sm hover:shadow-md whitespace-nowrap items-center justify-center cursor-pointer"
-              style={{
-                background: 'linear-gradient(135deg, rgba(186,215,176,1) 0%, rgba(154,207,136,1) 100%)',
-                boxShadow: 'inset 0 0 20px rgba(255,255,255,0.3)',
-                color: '#2D5A27',
-              }}
+              className="hidden md:inline-flex btn-primary text-xs font-semibold px-4 py-2 whitespace-nowrap items-center justify-center cursor-pointer"
             >
               {tCommon('getEstimate')}
             </Link>

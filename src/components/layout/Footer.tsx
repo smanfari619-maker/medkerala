@@ -39,7 +39,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0A1C15] text-slate-300 pt-16 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-8 border-t border-[#D4A96A]/35">
+    <footer className="bg-[#111827] text-slate-300 pt-16 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-10 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Col */}
@@ -48,19 +48,19 @@ export default function Footer() {
               <img
                 src="/images/logo.svg"
                 alt="TreatInKerala Logo"
-                className="h-5 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+                className="h-6 w-auto object-contain brightness-0 invert opacity-95 hover:opacity-100 transition-opacity"
               />
             </Link>
-            <p className="text-slate-300 text-sm leading-relaxed font-serif italic max-w-sm opacity-90">
+            <p className="text-slate-300 text-sm leading-relaxed font-serif italic max-w-sm">
               {t('tagline')}
             </p>
-            <div className="bg-gradient-to-br from-white/5 to-transparent rounded-2xl p-4 border border-white/10 space-y-2 backdrop-blur-sm">
-              <span className="text-[10px] font-bold text-[#D4A96A] tracking-widest uppercase block">
+            <div className="bg-slate-800/60 rounded-2xl p-4 border border-slate-700/60 space-y-2">
+              <span className={`text-[11px] font-bold text-[#D4A96A] ${locale === 'ar' ? '' : 'tracking-wider uppercase'} block`}>
                 {t('emergencyLabel')}
               </span>
               <a
                 href={`tel:${SITE_CONFIG.phoneRaw}`}
-                className="flex items-center gap-2 text-white hover:text-[#D4A96A] transition-colors text-sm font-display tracking-wide min-h-[36px]"
+                className="flex items-center gap-2 text-white hover:text-[#D4A96A] transition-colors text-sm font-semibold min-h-[36px]"
               >
                 <div className="h-7 w-7 rounded-full bg-[#D4A96A]/20 flex items-center justify-center shrink-0">
                   <Phone className="h-3.5 w-3.5 text-[#D4A96A]" />
@@ -92,8 +92,8 @@ export default function Footer() {
 
             {/* Desktop Flat View */}
             <div className="hidden md:block">
-              <h3 className="text-white/90 text-xs uppercase tracking-[0.2em] font-bold mb-6 pb-3 border-b border-white/10 relative">
-                <span className="absolute start-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
+              <h3 className={`text-white text-xs font-bold mb-6 pb-3 border-b border-slate-800 relative ${locale === 'ar' ? '' : 'uppercase tracking-wider'}`}>
+                <span className="absolute start-0 bottom-0 w-8 h-[2px] bg-[#D4A96A]"></span>
                 {locale === 'ar' ? 'روابط سريعة' : 'Quick Links'}
               </h3>
               <ul className="space-y-2.5">
@@ -101,7 +101,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-xs text-slate-400 hover:text-white transition-colors duration-200 py-0.5 inline-block"
+                      className="text-xs text-slate-300 hover:text-white transition-colors duration-200 py-0.5 inline-block"
                     >
                       {link.label}
                     </Link>
@@ -122,7 +122,7 @@ export default function Footer() {
               <ul className="space-y-1 mt-2 pb-2">
                 {treatmentLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="flex items-center gap-2 text-sm text-slate-400 hover:text-white py-1.5 min-h-[44px]">
+                    <Link href={link.href} className="flex items-center gap-2 text-sm text-slate-300 hover:text-white py-1.5 min-h-[44px]">
                       <ChevronRight className="h-3.5 w-3.5 text-[#D4A96A] shrink-0 rtl:rotate-180" />
                       <span>{link.label}</span>
                     </Link>
@@ -133,8 +133,8 @@ export default function Footer() {
 
             {/* Desktop Flat View */}
             <div className="hidden md:block">
-              <h3 className="text-white/90 text-xs uppercase tracking-[0.2em] font-bold mb-6 pb-3 border-b border-white/10 relative">
-                <span className="absolute start-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
+              <h3 className={`text-white text-xs font-bold mb-6 pb-3 border-b border-slate-800 relative ${locale === 'ar' ? '' : 'uppercase tracking-wider'}`}>
+                <span className="absolute start-0 bottom-0 w-8 h-[2px] bg-[#D4A96A]"></span>
                 {tNav('treatments')}
               </h3>
               <ul className="space-y-2.5">
@@ -142,7 +142,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-xs text-slate-400 hover:text-white transition-colors duration-200 py-0.5 inline-block"
+                      className="text-xs text-slate-300 hover:text-white transition-colors duration-200 py-0.5 inline-block"
                     >
                       {link.label}
                     </Link>
@@ -163,7 +163,7 @@ export default function Footer() {
               <ul className="space-y-1 mt-2 pb-2">
                 {countryLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="flex items-center gap-2 text-sm text-slate-400 hover:text-white py-1.5 min-h-[44px]">
+                    <Link href={link.href} className="flex items-center gap-2 text-sm text-slate-300 hover:text-white py-1.5 min-h-[44px]">
                       <span>{link.label}</span>
                     </Link>
                   </li>
@@ -173,8 +173,8 @@ export default function Footer() {
 
             {/* Desktop Flat View */}
             <div className="hidden md:block">
-              <h3 className="text-white/90 text-xs uppercase tracking-[0.2em] font-bold mb-6 pb-3 border-b border-white/10 relative">
-                <span className="absolute start-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
+              <h3 className={`text-white text-xs font-bold mb-6 pb-3 border-b border-slate-800 relative ${locale === 'ar' ? '' : 'uppercase tracking-wider'}`}>
+                <span className="absolute start-0 bottom-0 w-8 h-[2px] bg-[#D4A96A]"></span>
                 {locale === 'ar' ? 'المرضى الدوليون' : 'Patient Destinations'}
               </h3>
               <ul className="space-y-2.5">
@@ -182,7 +182,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-xs text-slate-400 hover:text-white transition-colors duration-200 py-0.5 inline-block"
+                      className="text-xs text-slate-300 hover:text-white transition-colors duration-200 py-0.5 inline-block"
                     >
                       {link.label}
                     </Link>
@@ -203,19 +203,19 @@ export default function Footer() {
               <ul className="space-y-3 mt-2 pb-2 text-sm">
                 <li className="flex items-start gap-3 py-1.5">
                   <MapPin className="h-5 w-5 text-[#D4A96A] shrink-0 mt-0.5" />
-                  <span className="text-slate-400">
+                  <span className="text-slate-300">
                     {locale === 'ar' ? SITE_CONFIG.officeAddressAr : SITE_CONFIG.officeAddressEn}
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-[#D4A96A] shrink-0" />
-                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-slate-400 hover:text-white py-1.5 min-h-[44px] flex items-center">
+                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-slate-300 hover:text-white py-1.5 min-h-[44px] flex items-center">
                     {SITE_CONFIG.email}
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <MessageCircle className="h-5 w-5 text-[#D4A96A] shrink-0" />
-                  <a href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`} className="text-slate-400 hover:text-white py-1.5 min-h-[44px] flex items-center" target="_blank" rel="noopener noreferrer">
+                  <a href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`} className="text-slate-300 hover:text-white py-1.5 min-h-[44px] flex items-center" target="_blank" rel="noopener noreferrer">
                     {SITE_CONFIG.phone}
                   </a>
                 </li>
@@ -224,12 +224,12 @@ export default function Footer() {
 
             {/* Desktop Flat View */}
             <div className="hidden md:block">
-              <h3 className="text-white/90 text-xs uppercase tracking-[0.2em] font-bold mb-6 pb-3 border-b border-white/10 relative">
-                <span className="absolute start-0 bottom-0 w-8 h-[1px] bg-[#D4A96A]"></span>
+              <h3 className={`text-white text-xs font-bold mb-6 pb-3 border-b border-slate-800 relative ${locale === 'ar' ? '' : 'uppercase tracking-wider'}`}>
+                <span className="absolute start-0 bottom-0 w-8 h-[2px] bg-[#D4A96A]"></span>
                 {locale === 'ar' ? 'مكتبنا الرئيسي' : 'Head Office'}
               </h3>
               <ul className="space-y-4 text-sm">
-                <li className="flex items-start gap-3 text-slate-400">
+                <li className="flex items-start gap-3 text-slate-300">
                   <MapPin className="h-4 w-4 text-[#D4A96A] shrink-0 mt-0.5" />
                   <span className="leading-relaxed">
                     {locale === 'ar'
@@ -240,7 +240,7 @@ export default function Footer() {
                 <li>
                   <a
                     href={`mailto:${SITE_CONFIG.email}`}
-                    className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors min-h-[32px]"
+                    className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors min-h-[32px]"
                   >
                     <Mail className="h-4 w-4 text-[#D4A96A] shrink-0" />
                     <span>{SITE_CONFIG.email}</span>

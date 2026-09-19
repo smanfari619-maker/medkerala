@@ -6,8 +6,8 @@
   --color-primary-light: #B7E4C7;
   --color-accent-gold: #D4A96A;
   --color-bg-clay: #FAF7F2;
-  --color-text-dark: #1A1A2E;
-  --color-text-muted: #3D3D5C;
+  --color-text-dark: #111827;
+  --color-text-muted: #4B5563;
   --color-badge-bg: #F0EDE8;
 
   --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -26,7 +26,7 @@
 
 :root {
   --background: #FAF7F2;
-  --foreground: #1A1A2E;
+  --foreground: #111827;
 }
 
 body {
@@ -36,6 +36,43 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
+}
+
+/* Base surface utility classes */
+.section-warm {
+  background-color: #FAF7F2;
+}
+
+.section-white {
+  background-color: #FFFFFF;
+}
+
+/* Unified Button Primitive Classes */
+.btn-primary {
+  background-color: #1B4332;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(27, 67, 50, 0.2);
+}
+.btn-primary:hover {
+  background-color: #2D6A4F;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.25);
+}
+
+.btn-secondary {
+  border: 1px solid #1B4332;
+  color: #1B4332;
+  font-weight: 600;
+  border-radius: 9999px;
+  background-color: transparent;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary:hover {
+  background-color: #1B4332;
+  color: #FFFFFF;
 }
 
 /* Custom transitions and scrollbar */
@@ -94,27 +131,34 @@ body {
   font-weight: 500 !important;
 }
 
-/* Reset letter spacing for Arabic text readability (letter spacing ruins Arabic text script connection) */
+/* Reset letter spacing and uppercase for Arabic text readability */
 [dir="rtl"] *,
 [dir="rtl"] ::placeholder {
   letter-spacing: 0 !important;
 }
 
+[dir="rtl"] .eyebrow,
+[dir="rtl"] [class*="tracking-"],
+[dir="rtl"] [class*="uppercase"] {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
 /* Premium Sanctuary Design Easing and Organic Glows */
 .glow-card {
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glow-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 48px -12px rgba(212, 169, 106, 0.12), 
-              0 8px 32px -8px rgba(45, 106, 79, 0.04);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -8px rgba(27, 67, 50, 0.10), 
+              0 4px 16px -4px rgba(212, 169, 106, 0.08);
 }
 
 .glow-card-green:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 48px -12px rgba(45, 106, 79, 0.15), 
-              0 0 40px -10px rgba(212, 169, 106, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -8px rgba(45, 106, 79, 0.12), 
+              0 0 24px -6px rgba(212, 169, 106, 0.06);
 }
 
 /* Softer global transitions */
