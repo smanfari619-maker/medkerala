@@ -193,7 +193,7 @@ export default async function HomePage({ params }: Props) {
               </h1>
 
               {/* Subheadline — light weight, generous line height */}
-              <p className="text-base sm:text-lg lg:text-xl text-[#3D3D5C] font-light leading-[1.65] max-w-[540px] animate-title-slide" style={{ animationDelay: '550ms' }}>
+              <p className="text-base sm:text-lg lg:text-xl text-[#3D3D5C] font-normal leading-[1.7] max-w-[540px] animate-title-slide" style={{ animationDelay: '550ms' }}>
                 {tHero('subheadlineShort')}
               </p>
 
@@ -223,7 +223,7 @@ export default async function HomePage({ params }: Props) {
               </div>
 
               {/* Trust Indicators Bar on Mobile & Desktop */}
-              <div className="flex flex-wrap items-center justify-start gap-y-2 gap-x-3 sm:gap-x-4 pt-2 text-xs text-[#5D6B64] animate-title-slide" style={{ animationDelay: '850ms' }}>
+              <div className="flex flex-wrap items-center justify-start gap-y-2 gap-x-3 sm:gap-x-4 pt-2 text-[13px] text-[#4A5C52] font-medium animate-title-slide" style={{ animationDelay: '850ms' }}>
                 <span className="flex items-center gap-1.5 font-medium">
                   <ShieldCheck className="h-3.5 w-3.5 text-[#2D6A4F] shrink-0" />
                   <span>{isRtl ? 'تنسيق مجاني 100%' : '100% Free Coordination'}</span>
@@ -400,7 +400,7 @@ export default async function HomePage({ params }: Props) {
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A]">
                 {isRtl ? 'لماذا كيرلا؟' : 'Why Kerala?'}
               </span>
             </div>
@@ -414,7 +414,7 @@ export default async function HomePage({ params }: Props) {
             </h2>
 
             {/* Body */}
-            <p className="text-text-muted font-light leading-[1.75] text-base sm:text-[17px] mb-8 max-w-lg">
+            <p className="text-[#3D4F45] font-normal leading-[1.75] text-base sm:text-[17px] mb-8 max-w-lg">
               {isRtl
                 ? 'تجمع كيرلا بين أعلى معايير السلامة في المستشفيات المعتمدة دولياً (JCI / NABH) وتكاليف تقل بنسبة تصل إلى 80% مقارنة بالمملكة المتحدة والولايات المتحدة ودول الخليج — دون أي تنازل على جودة الرعاية.'
                 : 'Kerala unites the highest international hospital accreditation standards (JCI & NABH) with treatment costs up to 80% lower than the UK, US, or GCC — without compromising care quality by a single measure.'}
@@ -441,7 +441,7 @@ export default async function HomePage({ params }: Props) {
               ].map((f, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <span className="text-[#D4A96A] text-xs mt-1 shrink-0">{f.icon}</span>
-                  <p className="text-[#4A5C52] text-sm leading-relaxed rtl:text-right">
+                  <p className="text-[#4A5C52] text-[15px] leading-relaxed rtl:text-right">
                     {isRtl ? f.ar : f.en}
                   </p>
                 </div>
@@ -470,7 +470,7 @@ export default async function HomePage({ params }: Props) {
 
 
       {/* ─── 4. HOW IT WORKS ────────────────────────────────────────────────── */}
-      <section className="py-12 sm:py-16 lg:py-28 bg-[#FAF7F2] border-y border-[#D4A96A]/20 relative overflow-hidden">
+      <section className="py-10 sm:py-14 lg:py-20 bg-[#FAF7F2] border-y border-[#D4A96A]/20 relative overflow-hidden">
         
         {/* Decorative ambient leaf circle */}
         <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#2D6A4F]/5 blur-3xl pointer-events-none" />
@@ -478,10 +478,10 @@ export default async function HomePage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           
           {/* Section Header */}
-          <div className="mb-10 sm:mb-16 space-y-4 rtl:text-right max-w-3xl">
+          <div className="mb-8 sm:mb-12 space-y-3 rtl:text-right max-w-3xl">
             <div className="flex items-center gap-3">
               <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A]">
                 {isRtl ? 'خطوات التنسيق' : 'Coordination Process'}
               </span>
             </div>
@@ -490,48 +490,48 @@ export default async function HomePage({ params }: Props) {
               {isRtl ? 'كيف نرتب علاجك؟ ثلاث خطوات بسيطة.' : 'How we coordinate your medical journey.'}
             </h2>
             
-            <p className="text-text-muted font-light leading-[1.75] text-base sm:text-lg max-w-2xl">
+            <p className="text-[#4A5C52] font-normal leading-[1.75] text-base sm:text-lg max-w-2xl">
               {isRtl
                 ? 'ثلاث خطوات فقط تفصلك عن الحصول على رعاية طبية بمستوى عالمي في كيرلا.'
                 : 'Three straightforward stages stand between you and premium accredited healthcare.'}
             </p>
           </div>
 
-          {/* Cards Grid with Connecting Path */}
+          {/* Cards Grid — Stacked cleanly on mobile, 3-col on desktop */}
           <div className="relative">
             
             {/* Connecting Line — Desktop Only */}
-            <div className="hidden md:block absolute top-[60px] left-[12%] right-[12%] h-0.5 border-t border-dashed border-[#D4A96A]/30 z-0" />
+            <div className="hidden md:block absolute top-[52px] left-[12%] right-[12%] h-0.5 border-t border-dashed border-[#D4A96A]/30 z-0" />
 
-            <div className="flex overflow-x-auto no-scrollbar scroll-momentum snap-x snap-mandatory md:grid md:grid-cols-3 md:overflow-visible gap-6 md:gap-8 sm:gap-12 relative z-10 pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0" dir={isRtl ? 'rtl' : 'ltr'}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 relative z-10" dir={isRtl ? 'rtl' : 'ltr'}>
               {steps.map((step, idx) => {
                 const Icon = step.icon;
                 return (
                   <div
                     key={idx}
-                    className="relative bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-8 flex flex-col gap-8 hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group snap-start shrink-0 w-[85vw] md:w-auto"
+                    className="relative bg-white border border-[#2D6A4F]/12 rounded-2xl p-5 sm:p-6 md:p-7 flex flex-col gap-4 sm:gap-5 shadow-xs hover:border-[#2D6A4F]/30 hover:shadow-md transition-all duration-300 group text-left rtl:text-right"
                   >
                     <div className="flex items-center justify-between w-full gap-2">
-                      {/* Number Indicator & Badge Pill */}
+                      {/* Step Number & Category Badge */}
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="w-9 h-9 rounded-full bg-[#FAF7F2] text-[#D4A96A] border border-[#D4A96A]/25 flex items-center justify-center text-xs font-semibold font-display shadow-inner shrink-0">
+                        <span className="w-8 h-8 rounded-lg bg-[#1B4332] text-white flex items-center justify-center text-xs font-bold font-display shadow-2xs shrink-0">
                           {step.num}
                         </span>
-                        <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#2D6A4F]/8 text-[#2D6A4F] border border-[#2D6A4F]/15 whitespace-nowrap">
+                        <span className="text-xs font-medium px-2.5 py-1 rounded-md bg-[#2D6A4F]/8 text-[#2D6A4F] border border-[#2D6A4F]/15 whitespace-nowrap">
                           {isRtl ? step.badgeAr : step.badgeEn}
                         </span>
                       </div>
-                      {/* Premium Circle Icon Holder */}
-                      <div className="w-13 h-13 rounded-2xl bg-[#FAF7F2] text-[#2D6A4F] border border-[#2D6A4F]/10 flex items-center justify-center shrink-0 shadow-sm relative group-hover:scale-105 transition-all duration-300">
-                        <Icon className="h-5.5 w-5.5" />
+                      {/* Icon Holder */}
+                      <div className="w-10 h-10 rounded-xl bg-[#FAF7F2] text-[#2D6A4F] border border-[#2D6A4F]/10 flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 group-hover:bg-[#1B4332] group-hover:text-white transition-all duration-300">
+                        <Icon className="h-5 w-5" />
                       </div>
                     </div>
 
-                    <div className="space-y-3 text-left rtl:text-right">
-                      <h3 className="text-xl font-display font-medium text-[#1B4332] tracking-tight">
+                    <div className="space-y-2">
+                      <h3 className="text-lg sm:text-xl font-display font-semibold text-[#1B4332] tracking-tight">
                         {isRtl ? step.titleAr : step.titleEn}
                       </h3>
-                      <p className="text-[#4A5C52] text-sm font-light leading-relaxed">
+                      <p className="text-[#4A5C52] text-[15px] font-normal leading-relaxed">
                         {isRtl ? step.descAr : step.descEn}
                       </p>
                     </div>
@@ -542,13 +542,13 @@ export default async function HomePage({ params }: Props) {
           </div>
 
           {/* Premium CTA Button */}
-          <div className="mt-16 text-center relative z-10">
+          <div className="mt-8 sm:mt-12 text-center relative z-10">
             <Link
               href="/get-estimate"
-              className="inline-flex items-center gap-2.5 bg-[#1B4332] hover:bg-[#2D6A4F] text-white font-medium text-sm px-8 py-4 rounded-full transition-all duration-300 shadow-sm hover:shadow-md group"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#1B4332] hover:bg-[#2D6A4F] active:scale-[0.98] text-white font-medium text-sm sm:text-base px-7 py-3.5 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md group"
             >
               <span>{isRtl ? 'بدء التنسيق الطبي مجاناً' : 'Begin Free Coordination'}</span>
-              <ArrowRight className={`h-4 w-4 transition-transform duration-300 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
+              <ArrowRight className={`h-4 w-4 transition-transform duration-200 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1'}`} />
             </Link>
           </div>
         </div>
@@ -561,7 +561,7 @@ export default async function HomePage({ params }: Props) {
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A]">
                 {isRtl ? 'التزاماتنا' : 'Our Commitments'}
               </span>
             </div>
@@ -573,12 +573,12 @@ export default async function HomePage({ params }: Props) {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
             {/* CARD 1: Zero Hidden Fees (Top Left - 5 cols) */}
-            <div className="col-span-1 md:col-span-5 bg-[#F4F6F5] rounded-[24px] p-8 flex flex-col justify-between relative overflow-hidden group">
-              <div className="relative z-10 space-y-2 mb-20">
+            <div className="col-span-1 md:col-span-5 bg-[#F4F6F5] rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden group">
+              <div className="relative z-10 space-y-2 mb-10 sm:mb-14">
                 <h3 className="text-[22px] font-medium text-[#2C3E35]">
                   {isRtl ? 'لا رسوم خفية' : 'Zero Hidden Fees'}
                 </h3>
-                <p className="text-[#5D6B64] text-sm leading-relaxed max-w-[240px]">
+                <p className="text-[#4A5C52] text-[15px] leading-relaxed max-w-[260px]">
                   {isRtl ? 'تدفع للمستشفى مباشرة. التنسيق مجاني كلياً وبدون أي عمولات.' : 'You pay hospitals directly. Our coordination is 100% complimentary.'}
                 </p>
               </div>
@@ -601,12 +601,12 @@ export default async function HomePage({ params }: Props) {
             </div>
 
             {/* CARD 2: 35+ Countries Served (Top Right - 7 cols) */}
-            <div className="col-span-1 md:col-span-7 bg-[#F4F6F5] rounded-[24px] p-8 flex flex-col justify-between relative overflow-hidden group">
-              <div className="relative z-10 space-y-2 mb-20">
+            <div className="col-span-1 md:col-span-7 bg-[#F4F6F5] rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden group">
+              <div className="relative z-10 space-y-2 mb-10 sm:mb-14">
                 <h3 className="text-[22px] font-medium text-[#2C3E35]">
                   {isRtl ? '٣٥+ دولة خدمناها' : '35+ Countries Served'}
                 </h3>
-                <p className="text-[#5D6B64] text-sm leading-relaxed max-w-[280px]">
+                <p className="text-[#4A5C52] text-[15px] leading-relaxed max-w-[280px]">
                   {isRtl ? 'أكثر من ١٢٠٠ مريض دولي وثقوا بنا لتلقي العلاج في كيرلا.' : '1,200+ international patients have trusted us for their treatment.'}
                 </p>
               </div>
@@ -629,12 +629,12 @@ export default async function HomePage({ params }: Props) {
             </div>
 
             {/* CARD 3: Free Rebooking (Bottom Left - 6 cols) */}
-            <div className="col-span-1 md:col-span-6 bg-[#F4F6F5] rounded-[24px] p-8 flex flex-col justify-between relative overflow-hidden group">
-              <div className="relative z-10 space-y-2 mb-20">
+            <div className="col-span-1 md:col-span-6 bg-[#F4F6F5] rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden group">
+              <div className="relative z-10 space-y-2 mb-10 sm:mb-14">
                 <h3 className="text-[22px] font-medium text-[#2C3E35]">
                   {isRtl ? 'إعادة جدولة مجانية' : 'Free Rebooking'}
                 </h3>
-                <p className="text-[#5D6B64] text-sm leading-relaxed max-w-[280px]">
+                <p className="text-[#4A5C52] text-[15px] leading-relaxed max-w-[280px]">
                   {isRtl ? 'أي مضاعفات أو تأخير في السفر؟ نعيد الترتيب بدون أي تكلفة إضافية.' : 'Any travel complications? We rearrange everything at zero extra charge.'}
                 </p>
               </div>
@@ -656,12 +656,12 @@ export default async function HomePage({ params }: Props) {
             </div>
 
             {/* CARD 4: 30-Day Post-Care (Bottom Right - 6 cols) */}
-            <div className="col-span-1 md:col-span-6 bg-[#F4F6F5] rounded-[24px] p-8 flex flex-col justify-between relative overflow-hidden group">
-              <div className="relative z-10 space-y-2 mb-20">
+            <div className="col-span-1 md:col-span-6 bg-[#F4F6F5] rounded-2xl p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden group">
+              <div className="relative z-10 space-y-2 mb-10 sm:mb-14">
                 <h3 className="text-[22px] font-medium text-[#2C3E35]">
                   {isRtl ? '٣٠ يوم رعاية' : '30-Day Post-Care'}
                 </h3>
-                <p className="text-[#5D6B64] text-sm leading-relaxed max-w-[260px]">
+                <p className="text-[#4A5C52] text-[15px] leading-relaxed max-w-[260px]">
                   {isRtl ? 'متابعة طبية دقيقة عبر واتساب لمدة ٣٠ يوماً بعد عودتك سالماً لبلدك.' : 'Dedicated WhatsApp follow-up for 30 days after you return home.'}
                 </p>
               </div>
@@ -694,7 +694,7 @@ export default async function HomePage({ params }: Props) {
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A]">
                 {isRtl ? 'قصص المرضى' : 'Patient Experiences'}
               </span>
             </div>
@@ -702,7 +702,7 @@ export default async function HomePage({ params }: Props) {
             <h2 className="font-display font-normal tracking-[-0.03em] leading-[1.08] text-3xl sm:text-4xl lg:text-5xl text-[#1B4332]">
               {isRtl ? 'ماذا يقول مرضانا؟' : 'Heard from our patients'}
             </h2>
-            <p className="text-text-muted font-light leading-[1.65] text-base sm:text-lg max-w-2xl">
+            <p className="text-[#4A5C52] font-normal leading-[1.7] text-base sm:text-lg max-w-2xl">
               {isRtl
                 ? 'تجارب حقيقية من مرضى سافروا من جميع أنحاء العالم للعلاج في كيرلا.'
                 : 'Real experiences from patients who travelled from across the world for treatment in Kerala.'}
@@ -711,7 +711,7 @@ export default async function HomePage({ params }: Props) {
 
           <div className="flex overflow-x-auto md:overflow-visible no-scrollbar scroll-momentum snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0" dir={isRtl ? 'rtl' : 'ltr'}>
             {testimonials.map((t, idx) => (
-              <div key={idx} className="bg-[#F5F8F4] rounded-[24px] p-7 flex flex-col gap-5 border border-[#E8EDE6] hover:border-[#2D6A4F]/25 hover:shadow-lg transition-all duration-300 group rtl:text-right snap-start shrink-0 w-[85vw] md:w-auto">
+              <div key={idx} className="bg-[#F5F8F4] rounded-2xl p-5 sm:p-6 flex flex-col gap-4 border border-[#E8EDE6] hover:border-[#2D6A4F]/25 hover:shadow-lg transition-all duration-300 group rtl:text-right snap-start shrink-0 w-[85vw] md:w-auto">
                 {/* Header: Stars & Stay Badge */}
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1">
@@ -727,14 +727,14 @@ export default async function HomePage({ params }: Props) {
                 {/* Quote */}
                 <div className="relative">
                   <Quote className="absolute -top-1 -left-1 rtl:-right-1 rtl:left-auto h-8 w-8 text-[#2D6A4F]/10 shrink-0" />
-                  <p className="text-[#2C3E35] text-sm leading-relaxed font-light pl-6 rtl:pl-0 rtl:pr-6">
+                  <p className="text-[#2C3E35] text-[15px] leading-relaxed font-normal pl-6 rtl:pl-0 rtl:pr-6">
                     {isRtl ? t.quoteAr : t.quoteEn}
                   </p>
                 </div>
 
                 {/* Hospital Badge Tag */}
                 <div className="pt-2">
-                  <span className="text-[11px] text-[#4A5C52] bg-white/80 border border-[#D4A96A]/20 px-2.5 py-1 rounded-md inline-block">
+                  <span className="text-xs text-[#4A5C52] font-medium bg-white/80 border border-[#D4A96A]/20 px-2.5 py-1 rounded-md inline-block">
                     🏥 {isRtl ? t.hospitalAr : t.hospitalEn}
                   </span>
                 </div>
@@ -748,8 +748,8 @@ export default async function HomePage({ params }: Props) {
                       </p>
                       <ShieldCheck className="h-3.5 w-3.5 text-[#2D6A4F]" />
                     </div>
-                    <p className="text-[11px] text-text-muted/70 mt-0.5">{isRtl ? t.countryAr : t.countryEn}</p>
-                    <p className="text-[11px] font-medium text-[#2D6A4F] mt-0.5">{isRtl ? t.treatmentAr : t.treatmentEn}</p>
+                    <p className="text-xs text-[#5D6B64] mt-0.5">{isRtl ? t.countryAr : t.countryEn}</p>
+                    <p className="text-xs font-semibold text-[#2D6A4F] mt-0.5">{isRtl ? t.treatmentAr : t.treatmentEn}</p>
                   </div>
                   <div className="text-end shrink-0">
                     <span className="text-xl font-bold text-[#2D6A4F] font-display">{t.saving}</span>
@@ -779,7 +779,7 @@ export default async function HomePage({ params }: Props) {
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A]">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A]">
                 {isRtl ? 'الأسئلة الشائعة' : 'Support FAQ'}
               </span>
             </div>
@@ -788,7 +788,7 @@ export default async function HomePage({ params }: Props) {
               {isRtl ? 'لديك أسئلة؟ لدينا إجابات.' : 'Have questions? We have answers.'}
             </h2>
             {/* Description */}
-            <p className="text-text-muted font-light leading-[1.65] text-base sm:text-lg max-w-2xl">
+            <p className="text-[#4A5C52] font-normal leading-[1.7] text-base sm:text-lg max-w-2xl">
               {tFAQ('subheading')}
             </p>
           </div>
@@ -799,13 +799,13 @@ export default async function HomePage({ params }: Props) {
                 key={key}
                 className="group py-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer"
               >
-                <summary className="flex items-center justify-between gap-4 focus:outline-hidden min-h-[44px]">
-                  <h3 className="text-base sm:text-lg font-medium text-primary-dark transition-colors duration-300 group-hover:text-[#2D6A4F] text-start">
+                <summary className="flex items-center justify-between gap-4 focus:outline-hidden min-h-[52px]">
+                  <h3 className="text-[17px] sm:text-lg font-semibold text-[#1B4332] transition-colors duration-300 group-hover:text-[#2D6A4F] text-start leading-snug">
                     {tFAQ(`q${key}`)}
                   </h3>
-                  <ChevronDown className="h-4.5 w-4.5 text-text-muted/60 transition-transform duration-300 group-open:-rotate-180 shrink-0" />
+                  <ChevronDown className="h-5 w-5 text-[#5D6B64] transition-transform duration-300 group-open:-rotate-180 shrink-0" />
                 </summary>
-                <p className="mt-2 text-text-muted font-light leading-[1.65] text-sm sm:text-base text-start">
+                <p className="mt-3 text-[#4A5C52] font-normal leading-[1.75] text-[15px] sm:text-base text-start">
                   {tFAQ(`a${key}`)}
                 </p>
               </details>
@@ -830,7 +830,7 @@ export default async function HomePage({ params }: Props) {
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="h-px w-8 bg-[#D4A96A]" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A96A] font-sans">
+            <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A] font-sans">
               {isRtl ? 'ابدأ اليوم' : 'Get Started'}
             </span>
             <span className="h-px w-8 bg-[#D4A96A]" />
@@ -842,7 +842,7 @@ export default async function HomePage({ params }: Props) {
           </h2>
 
           {/* Subtitle */}
-          <p className="text-text-muted font-light leading-[1.65] text-base sm:text-lg max-w-xl mx-auto">
+          <p className="text-[#4A5C52] font-normal leading-[1.7] text-base sm:text-lg max-w-xl mx-auto">
             {isRtl
               ? 'تحدث مباشرة مع منسقنا الطبي الآن. نرد خلال دقائق ونساعدك في ترتيب كل التفاصيل.'
               : 'Chat directly with our medical coordinator now. We respond within minutes to help you organize every detail.'}

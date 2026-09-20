@@ -4,15 +4,14 @@ import React, { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import {
-  Home, Stethoscope, FileText, MessageCircle, MoreHorizontal,
+  Home, Stethoscope, Calculator, MessageCircle, MoreHorizontal,
   Leaf, Package, Building2, HelpCircle, ShieldAlert, X, PhoneCall, BookOpen,
-  Globe, Sparkles, Send
+  Globe, Sparkles, Send, FileText
 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
 
 export default function MobileBottomNav() {
   const t = useTranslations('Nav');
-  const tCommon = useTranslations('Common');
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -51,101 +50,105 @@ export default function MobileBottomNav() {
 
   return (
     <>
-      {/* Fixed Luxury Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-xl border-t border-[#D4A96A]/30 pb-[env(safe-area-inset-bottom,8px)] md:hidden shadow-[0_-8px_24px_rgba(0,0,0,0.06)]">
-        <nav className="flex justify-around items-center h-[68px] px-2 max-w-lg mx-auto" dir={isRtl ? 'rtl' : 'ltr'}>
+      {/* Floating Glassmorphic Dock */}
+      <div className="fixed bottom-3 sm:bottom-4 left-3 right-3 sm:left-1/2 sm:-translate-x-1/2 sm:w-full max-w-md z-50 md:hidden pointer-events-none pb-[env(safe-area-inset-bottom,0px)]">
+        <nav
+          className="pointer-events-auto bg-[#FAF7F2]/92 backdrop-blur-2xl border border-white/90 shadow-[0_12px_32px_rgba(27,67,50,0.12),0_2px_8px_rgba(0,0,0,0.04)] ring-1 ring-black/[0.04] rounded-[14px] p-1 flex items-center justify-between gap-0.5 transition-all duration-300"
+          dir={isRtl ? 'rtl' : 'ltr'}
+          aria-label="Mobile Navigation"
+        >
           {/* Home */}
           <Link
             href="/"
-            className={`flex flex-col items-center justify-center flex-1 h-full tap-active relative ${
-              activeLink('/') ? 'text-[#1B4332] font-bold' : 'text-[#5D6B64]'
+            className={`flex-1 flex flex-col items-center justify-center py-1.5 rounded-[10px] transition-all duration-200 tap-active ${
+              activeLink('/')
+                ? 'bg-[#1B4332]/10 text-[#1B4332] font-bold shadow-2xs'
+                : 'text-[#5D6B64] hover:text-[#1B4332]'
             }`}
           >
-            <Home className={`h-5 w-5 mb-1 transition-transform ${activeLink('/') ? 'scale-110 text-[#2D6A4F]' : ''}`} />
-            <span className="text-[10px] tracking-tight">{t('home')}</span>
-            {activeLink('/') && (
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2D6A4F] absolute bottom-1.5 shadow-xs" />
-            )}
+            <Home className={`h-4.5 w-4.5 transition-transform ${activeLink('/') ? 'scale-110 text-[#1B4332]' : ''}`} />
+            <span className="text-[11px] tracking-tight mt-0.5 leading-tight">{t('home')}</span>
           </Link>
 
           {/* Treatments */}
           <Link
             href="/treatments"
-            className={`flex flex-col items-center justify-center flex-1 h-full tap-active relative ${
-              activeLink('/treatments') ? 'text-[#1B4332] font-bold' : 'text-[#5D6B64]'
+            className={`flex-1 flex flex-col items-center justify-center py-1.5 rounded-[10px] transition-all duration-200 tap-active ${
+              activeLink('/treatments')
+                ? 'bg-[#1B4332]/10 text-[#1B4332] font-bold shadow-2xs'
+                : 'text-[#5D6B64] hover:text-[#1B4332]'
             }`}
           >
-            <Stethoscope className={`h-5 w-5 mb-1 transition-transform ${activeLink('/treatments') ? 'scale-110 text-[#2D6A4F]' : ''}`} />
-            <span className="text-[10px] tracking-tight">{t('treatments')}</span>
-            {activeLink('/treatments') && (
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2D6A4F] absolute bottom-1.5 shadow-xs" />
-            )}
+            <Stethoscope className={`h-4.5 w-4.5 transition-transform ${activeLink('/treatments') ? 'scale-110 text-[#1B4332]' : ''}`} />
+            <span className="text-[11px] tracking-tight mt-0.5 leading-tight">{t('treatments')}</span>
           </Link>
 
-          {/* Center Concierge AI Live Chat */}
+          {/* Center Compact Luxury Concierge Chat */}
           <button
             type="button"
             onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
-            className="flex flex-col items-center justify-center flex-1 h-full relative group tap-active cursor-pointer"
-            aria-label="Open AI Live Chat"
+            className="flex-1 flex flex-col items-center justify-center py-1.5 rounded-[10px] bg-gradient-to-tr from-[#1B4332] via-[#2D6A4F] to-[#1E513B] text-white shadow-[0_2px_8px_rgba(27,67,50,0.25)] ring-1 ring-white/60 transition-all duration-200 tap-active group hover:brightness-105 cursor-pointer relative"
+            aria-label="Open AI Concierge Chat"
           >
-            <div className="absolute -top-3.5 bg-gradient-to-tr from-[#1B4332] via-[#2D6A4F] to-[#1B4332] text-white p-3 rounded-full shadow-[0_6px_20px_rgba(27,67,50,0.45)] border-2 border-[#FAF7F2] flex items-center justify-center transition-all group-active:scale-95">
-              <span className="relative flex h-2 w-2 absolute top-1 right-1">
+            <div className="relative">
+              <Sparkles className="h-4.5 w-4.5 text-[#BAD7B0] group-hover:rotate-12 transition-transform duration-300" />
+              <span className="absolute -top-1 -right-1.5 flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-80" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]" />
               </span>
-              <MessageCircle className="h-5.5 w-5.5 text-[#BAD7B0]" />
             </div>
-            <span className="text-[10px] font-bold text-[#1B4332] mt-7 tracking-tight">
-              {isRtl ? 'استشارة فورية' : 'Live Chat'}
+            <span className="text-[11px] font-bold tracking-tight mt-0.5 leading-tight text-white whitespace-nowrap">
+              {isRtl ? 'محادثة' : 'Chat'}
             </span>
           </button>
 
           {/* Get Estimate */}
           <Link
             href="/get-estimate"
-            className={`flex flex-col items-center justify-center flex-1 h-full tap-active relative ${
-              activeLink('/get-estimate') ? 'text-[#1B4332] font-bold' : 'text-[#5D6B64]'
+            className={`flex-1 flex flex-col items-center justify-center py-1.5 rounded-[10px] transition-all duration-200 tap-active ${
+              activeLink('/get-estimate')
+                ? 'bg-[#1B4332]/10 text-[#1B4332] font-bold shadow-2xs'
+                : 'text-[#5D6B64] hover:text-[#1B4332]'
             }`}
           >
-            <FileText className={`h-5 w-5 mb-1 transition-transform ${activeLink('/get-estimate') ? 'scale-110 text-[#2D6A4F]' : ''}`} />
-            <span className="text-[10px] tracking-tight">{isRtl ? 'تسعيرة' : 'Estimate'}</span>
-            {activeLink('/get-estimate') && (
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2D6A4F] absolute bottom-1.5 shadow-xs" />
-            )}
+            <Calculator className={`h-4.5 w-4.5 transition-transform ${activeLink('/get-estimate') ? 'scale-110 text-[#1B4332]' : ''}`} />
+            <span className="text-[11px] tracking-tight mt-0.5 leading-tight">{isRtl ? 'تسعيرة' : 'Estimate'}</span>
           </Link>
 
           {/* More menu trigger */}
           <button
             onClick={() => setDrawerOpen(true)}
-            className="flex flex-col items-center justify-center flex-1 h-full tap-active text-[#5D6B64] cursor-pointer"
+            className={`flex-1 flex flex-col items-center justify-center py-1.5 rounded-[10px] transition-all duration-200 tap-active text-[#5D6B64] hover:text-[#1B4332] cursor-pointer ${
+              drawerOpen ? 'bg-[#1B4332]/10 text-[#1B4332] font-bold' : ''
+            }`}
+            aria-label="More navigation links"
           >
-            <MoreHorizontal className="h-5 w-5 mb-1" />
-            <span className="text-[10px] font-medium tracking-tight">{isRtl ? 'المزيد' : 'More'}</span>
+            <MoreHorizontal className="h-4.5 w-4.5" />
+            <span className="text-[11px] tracking-tight mt-0.5 leading-tight">{isRtl ? 'المزيد' : 'More'}</span>
           </button>
         </nav>
       </div>
 
-      {/* Drawer bottom sheet */}
+      {/* Luxury Drawer Bottom Sheet */}
       {drawerOpen && (
         <div className="fixed inset-0 z-[65] md:hidden">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-[#1A1A2E]/60 backdrop-blur-xs transition-opacity duration-300"
+            className="absolute inset-0 bg-[#1A1A2E]/50 backdrop-blur-sm transition-opacity duration-300 animate-fade-in"
             onClick={() => setDrawerOpen(false)}
           />
 
           {/* Bottom Card */}
           <div
-            className="absolute bottom-0 left-0 right-0 bg-[#FAF7F2] rounded-t-[2.25rem] border-t border-[#D4A96A]/35 pb-[calc(2.5rem+env(safe-area-inset-bottom,16px))] p-5 sm:p-6 space-y-5 max-h-[85vh] overflow-y-auto scroll-momentum animate-sheet-up shadow-2xl"
+            className="absolute bottom-0 left-0 right-0 bg-[#FAF7F2] rounded-t-[18px] border-t border-[#D4A96A]/30 pb-[calc(3rem+env(safe-area-inset-bottom,16px))] p-5 sm:p-6 space-y-4 max-h-[85vh] overflow-y-auto scroll-momentum animate-sheet-up shadow-[0_-12px_40px_rgba(0,0,0,0.18)]"
           >
             {/* Grabber line */}
-            <div className="w-12 h-1.5 bg-[#D4A96A]/40 rounded-full mx-auto" />
+            <div className="w-12 h-1 bg-[#D4A96A]/40 rounded-full mx-auto" />
 
             {/* Header & Quick Language Toggle */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between pt-1">
               <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#2D6A4F]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#2D6A4F] animate-pulse" />
                 <h3 className="text-base font-bold font-display text-[#1B4332]">
                   {isRtl ? 'دليل علاج في كيرلا' : 'TreatInKerala Directory'}
                 </h3>
@@ -153,14 +156,15 @@ export default function MobileBottomNav() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={toggleLocale}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#D4A96A]/30 text-xs font-semibold text-[#1B4332] shadow-2xs tap-active cursor-pointer"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-[10px] bg-white border border-[#D4A96A]/30 text-xs font-semibold text-[#1B4332] shadow-2xs tap-active cursor-pointer"
                 >
                   <Globe className="h-3.5 w-3.5 text-[#D4A96A]" />
                   <span>{isRtl ? 'English' : 'العربية'}</span>
                 </button>
                 <button
                   onClick={() => setDrawerOpen(false)}
-                  className="p-1.5 rounded-full bg-black/5 text-[#4A4A6A] hover:bg-black/10 active:scale-95 cursor-pointer"
+                  className="p-1.5 rounded-[10px] bg-black/5 text-[#4A4A6A] hover:bg-black/10 active:scale-95 cursor-pointer"
+                  aria-label="Close menu"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -172,10 +176,10 @@ export default function MobileBottomNav() {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] text-white shadow-md tap-active"
+              className="flex items-center justify-between p-3.5 rounded-[14px] bg-gradient-to-r from-[#1B4332] to-[#2D6A4F] text-white shadow-md tap-active ring-1 ring-white/20"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center shadow-xs">
+                <div className="w-10 h-10 rounded-[10px] bg-[#25D366] text-white flex items-center justify-center shadow-xs">
                   <MessageCircle className="h-5 w-5" />
                 </div>
                 <div className="text-left rtl:text-right">
@@ -187,7 +191,7 @@ export default function MobileBottomNav() {
             </a>
 
             {/* Grid of menu items */}
-            <div className="grid grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-2 gap-2.5 pt-1">
               {secondaryItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeLink(item.href);
@@ -196,13 +200,13 @@ export default function MobileBottomNav() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setDrawerOpen(false)}
-                    className={`flex items-center gap-2.5 p-3 rounded-2xl border text-xs font-medium tap-active transition-all ${
+                    className={`flex items-center gap-2.5 p-3 rounded-[12px] border text-xs font-medium tap-active transition-all ${
                       isActive
                         ? 'bg-[#2D6A4F]/10 border-[#2D6A4F]/30 text-[#1B4332] font-semibold'
-                        : 'bg-white border-[#D4A96A]/25 text-[#1A1A2E] hover:bg-slate-50 shadow-2xs'
+                        : 'bg-white border-[#D4A96A]/20 text-[#1A1A2E] hover:bg-slate-50 shadow-2xs'
                     }`}
                   >
-                    <span className={`p-2 rounded-xl shrink-0 ${isActive ? 'bg-[#2D6A4F] text-white' : 'bg-[#FAF7F2] text-[#2D6A4F] border border-[#D4A96A]/20'}`}>
+                    <span className={`p-2 rounded-[8px] shrink-0 ${isActive ? 'bg-[#2D6A4F] text-white' : 'bg-[#FAF7F2] text-[#2D6A4F] border border-[#D4A96A]/20'}`}>
                       <Icon className="h-4 w-4" />
                     </span>
                     <span className="truncate">{item.label}</span>
@@ -213,6 +217,7 @@ export default function MobileBottomNav() {
           </div>
         </div>
       )}
+
     </>
   );
 }

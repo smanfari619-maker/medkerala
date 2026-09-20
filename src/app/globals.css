@@ -36,6 +36,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
+  /* Accessibility: ensure comfortable default size on all screens */
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Accessibility: Do not allow font-light on mobile body text — too thin for older visitors */
+@media (max-width: 767px) {
+  p, li, .font-light {
+    font-weight: 400;
+  }
 }
 
 /* Base surface utility classes */

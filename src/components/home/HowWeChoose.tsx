@@ -118,7 +118,7 @@ export default function HowWeChoose() {
             return (
               <div
                 key={item.num}
-                className={`bg-white border border-[#D4A96A]/15 rounded-[2rem] p-7 sm:p-8 flex flex-col justify-between hover:border-[#2D6A4F]/35 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group text-left rtl:text-right ${
+                className={`bg-white border border-[#D4A96A]/15 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#2D6A4F]/35 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group text-left rtl:text-right ${
                   isWide ? 'lg:col-span-1 md:col-span-1' : ''
                 }`}
               >
@@ -142,7 +142,7 @@ export default function HowWeChoose() {
                     {isRtl ? item.titleAr : item.titleEn}
                   </h3>
 
-                  <p className="text-[#4A5C52] text-sm font-light leading-relaxed">
+                  <p className="text-[#4A5C52] text-[15px] font-normal leading-relaxed">
                     {isRtl ? item.descAr : item.descEn}
                   </p>
                 </div>
@@ -151,7 +151,7 @@ export default function HowWeChoose() {
           })}
 
           {/* 6th Card: Ethics & Direct Billing Callout */}
-          <div className="bg-gradient-to-br from-[#1B4332] to-[#2D6A4F] text-white rounded-[2rem] p-7 sm:p-8 flex flex-col justify-between shadow-lg relative overflow-hidden text-left rtl:text-right">
+          <div className="bg-gradient-to-br from-[#1B4332] to-[#2D6A4F] text-white rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-lg relative overflow-hidden text-left rtl:text-right">
             <div className="space-y-4 relative z-10">
               <div className="flex items-center gap-2 text-xs font-semibold text-[#D4A96A] uppercase tracking-wider">
                 <Lock className="h-4 w-4 text-[#D4A96A]" />
