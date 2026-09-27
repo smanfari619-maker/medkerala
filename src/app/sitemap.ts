@@ -3,7 +3,7 @@ import { TREATMENTS, BLOG_POSTS } from '@/lib/data';
 import { COUNTRY_PAGES_DATA } from '@/lib/countryPages';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://treatinkerala.com';
+  const baseUrl = 'https://www.treatinkerala.com';
   const locales = ['en', 'ar'];
 
   const staticPages = [

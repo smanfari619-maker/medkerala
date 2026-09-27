@@ -74,13 +74,13 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>) {
     openGraph: {
       title,
       description,
-      url: 'https://treatinkerala.com',
+      url: 'https://www.treatinkerala.com',
       siteName: 'TreatInKerala',
       locale: locale === 'ar' ? 'ar_SA' : 'en_US',
       type: 'website',
       images: [
         {
-          url: 'https://treatinkerala.com/images/caring_doctor_patient_hero.png',
+          url: 'https://www.treatinkerala.com/images/caring_doctor_patient_hero.png',
           width: 800,
           height: 1000,
           alt: locale === 'ar' ? 'علاج في كيرلا' : 'TreatInKerala',
@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>) {
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://treatinkerala.com/images/caring_doctor_patient_hero.png'],
+      images: ['https://www.treatinkerala.com/images/caring_doctor_patient_hero.png'],
     },
     icons: {
       icon: '/favicon.ico',

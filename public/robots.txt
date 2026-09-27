@@ -31,6 +31,6 @@ Disallow: /_next/
 Disallow: /_vercel/
 Disallow: /api/
 
-Sitemap: https://treatinkerala.com/sitemap.xml
-# LLM Knowledge Standard: https://treatinkerala.com/llms.txt
+Sitemap: https://www.treatinkerala.com/sitemap.xml
+# LLM Knowledge Standard: https://www.treatinkerala.com/llms.txt
 
