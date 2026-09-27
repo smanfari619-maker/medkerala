@@ -3343,6 +3343,366 @@ Kerala is exceptionally accessible from all seven Emirates, with multiple direct
         aAr: 'توفر كبرى شركات الطيران رحلات يومية مباشرة من الإمارات إلى كيرلا عبر طيران الإمارات، وفلاي دبي، والاتحاد للطيران، والعربية للطيران، وإنديا إكسبريس، من مطارات دبي وأبوظبي والشارقة إلى كوزيكود، وكوتشين، وتريفاندروم، وكانور.'
       }
     ]
+  },
+  {
+    slug: 'saudi-arabia-to-kerala-medical-tourism-guide',
+    title: 'Saudi Arabia to Kerala Medical Tourism Guide 2026: Direct Flights, SAR Costs & VIP Arabic Care',
+    titleAr: 'دليل السياحة العلاجية من السعودية إلى كيرلا 2026: الرحلات المباشرة، التكاليف بالريال والتنسيق العربي VIP',
+    excerpt: 'A complete clinical guide for patients from Riyadh, Jeddah, and Dammam traveling to Kerala in 2026. Explore direct flights, 70-80% SAR savings on robotic surgeries and cardiac bypass, 24h e-visa letters, and dedicated Arabic patient care.',
+    excerptAr: 'دليل طبي وتنفيذي متكامل للمرضى القادمين من الرياض وجدة والدمام للعلاج في كيرلا 2026. يشمل الرحلات المباشرة، وتوفير 70-80% بالريال السعودي، وخطاب التأشيرة الطبية خلال 24 ساعة، والرعاية العربية المتكاملة.',
+    aeoSummary: 'In 2026, thousands of Saudi patients travel from Riyadh, Jeddah, and Dammam to Kerala for robotic joint replacement, cardiac bypass (CABG), spine discectomy, and Ayurvedic rehabilitation. With direct 4.5-hour flights via Saudia and Air India Express, SAR savings of 70-80% compared to private Saudi clinics, and full Arabic language coordination at JCI-accredited hospitals, Kerala has become the GCC premier medical travel destination.',
+    aeoSummaryAr: 'في عام 2026، يتوجه آلاف المرضى السعوديين من الرياض وجدة والدمام إلى كيرلا لإجراء جراحات المفاصل بالروبوت والقلب المفتوح والانزلاق الغضروفي ونقاهة الأيورفيدا. مع توفر رحلات مباشرة خلال 4.5 ساعات، وتوفير 70-80% بالريال السعودي مقارنة بالمستشفيات الخاصة بالمملكة، ورعاية عربية كاملة في مستشفيات معتمدة دولياً (JCI).',
+    date: 'October 12, 2026',
+    category: 'Patient Guides',
+    categoryAr: 'أدلة المرضى',
+    readTime: '8 min read',
+    content: `For decades, families across the Kingdom of Saudi Arabia have held a profound affinity for Kerala — originally as a lush holiday escape, but increasingly as the premier medical haven in Asia. In 2026, healthcare costs in Saudi Arabia's top-tier private hospitals (in Riyadh, Jeddah, and the Eastern Province) continue to rise, and long waits for elective surgeries in public medical cities prompt patients to seek fast, world-class alternatives.
+
+Kerala offers the ideal solution: JCI and NABH-accredited multi-specialty hospitals, US FDA-approved implants, internationally trained chief surgeons, and dedicated Arabic-speaking care coordinators — all at **70% to 80% lower cost** than private Saudi facilities.
+
+Whether you require [Robotic Knee Replacement](/treatments/orthopaedics), complex [Cardiac Bypass Surgery (CABG)](/treatments/cardiac), laparoscopic bariatrics, or restorative [Ayurvedic Rehabilitation](/treatments/ayurveda), this guide explains why and how Saudi patients plan their medical trips to Kerala with complete confidence.
+
+## 1. Why Saudi Patients Choose Kerala Over Other Destinations
+
+While Turkey, Germany, and Thailand attract international patients, Kerala stands out for Saudi families due to unique clinical and cultural factors:
+
+- **100% Halal Food & Arabic Hospital Concierge:** Major partner hospitals in Calicut (Kozhikode) and Kochi (such as Aster MIMS, Meitra, and Baby Memorial) feature dedicated International Patient Departments staffed with fluent Arabic coordinators. In-room dining is strictly Halal, prayer rooms (Musallas) are readily accessible, and female Arabic translators are provided for women's healthcare.
+- **Family-Centric Private Suites:** Saudi patients often travel with loved ones or caregivers. Hospital inpatient rooms are spacious executive suites with adjacent companion beds, en-suite kitchenettes, and Wi-Fi.
+- **Historic Cultural Familiarity:** Thousands of healthcare professionals in the Kingdom originate from Kerala, creating an innate sense of trust and familiarity for Saudi patients arriving in the state.
+- **Direct 4.5-Hour Flight Connectivity:** Daily non-stop flights from King Khalid International (Riyadh), King Abdulaziz International (Jeddah), and King Fahd International (Dammam) land directly in Calicut (CCJ) and Kochi (COK).
+
+## 2. 2026 Procedure Cost Comparison: Saudi Arabia vs. Kerala
+
+Below is an itemized cost comparison showing procedure expenses in Saudi private tertiary hospitals versus all-inclusive medical packages at JCI-accredited partner hospitals in Kerala.
+
+| Medical Procedure | Saudi Arabia (Private Sector) | Kerala JCI Hospital (Package) | Average SAR Savings |
+| :--- | :--- | :--- | :--- |
+| **Robotic Knee Replacement (Single)** | SAR 65,000 – SAR 85,000 | **SAR 17,000 – SAR 24,000** | **Save ~SAR 55,000 (73%)** |
+| **Robotic Knee Replacement (Bilateral)** | SAR 110,000 – SAR 145,000 | **SAR 28,000 – SAR 38,000** | **Save ~SAR 90,000 (74%)** |
+| **Coronary Artery Bypass (CABG)** | SAR 140,000 – SAR 220,000 | **SAR 24,000 – SAR 36,000** | **Save ~SAR 130,000 (78%)** |
+| **Endoscopic Spine Discectomy** | SAR 50,000 – SAR 75,000 | **SAR 14,000 – SAR 19,000** | **Save ~SAR 42,000 (72%)** |
+| **Laparoscopic Sleeve Gastrectomy** | SAR 45,000 – SAR 65,000 | **SAR 12,500 – SAR 16,500** | **Save ~SAR 38,000 (75%)** |
+| **Full Executive Master Health Check** | SAR 7,500 – SAR 15,000 | **SAR 1,500 – SAR 2,800** | **Save ~SAR 8,000 (80%)** |
+
+*Note: Kerala package costs include surgeon and anaesthetist fees, private executive hospital suite stay, FDA-approved implants (Stryker, Zimmer, Medtronic), pre-operative workup, inpatient medications, and initial physiotherapy.*
+
+## 3. Direct Flight Schedules from the Kingdom
+
+Travel between Saudi Arabia and Kerala is seamless, with non-stop direct routes operating daily:
+
+- **From Riyadh (RUH):** Non-stop flights via **Saudia**, **Air India Express**, and **Flynas** direct to Kozhikode Calicut (CCJ) and Cochin International (COK). Flight duration: ~4 hours 30 mins.
+- **From Jeddah (JED):** Daily non-stop routes via **Saudia** and **Air India Express** to Calicut (CCJ) and Kochi (COK). Flight duration: ~5 hours.
+- **From Dammam / Khobar (DMM):** Direct flights via **Air India Express** and connecting Gulf carriers (Emirates, Qatar Airways, Gulf Air) with brief layovers. Flight duration: ~4 hours 15 mins.
+
+Upon arrival at Calicut (CCJ) or Kochi (COK), your TreatInKerala personal coordinator receives you and your family right outside customs with private air-conditioned VIP transport.
+
+## 4. Indian e-Medical Visa Process for Saudi Nationals
+
+Securing an Indian Medical Visa from Saudi Arabia is quick and completed entirely online without visiting the embassy:
+
+1. **Submit Medical Scans for Clinical Review:** Send recent MRI, X-rays, or medical summaries via our secure portal or [WhatsApp Concierge](https://wa.me/919400528836).
+2. **Receive Free Treatment Proposal & Visa Invitation:** Within 24 hours, our consultant panel provides a transparent binding estimate and issues an official **Hospital Visa Invitation Letter** with government-stamped credentials.
+3. **Apply Online for e-Medical Visa:** Complete the 5-minute form on the official Indian Visa online portal (indianvisaonline.gov.in) uploading your passport copy and our hospital invitation letter.
+4. **Visa Issued in 24 to 48 Hours:** The electronic visa is granted via email. It grants a 60-day triple-entry stay and allows up to two medical attendants (family members or companions) on Medical Attendant e-Visas.
+
+## 5. The "Dual-Phase Healing" Protocol: Surgery + Ayurvedic Recovery
+
+Saudi patients visiting Kerala enjoy an exclusive therapeutic advantage unavailable in Western or Middle Eastern clinics:
+
+- **Phase 1: Precision Hospital Care (Days 1 to 5):** The patient undergoes surgery (such as robotic joint replacement or spinal decompression) in an internationally accredited hospital. Mobility is achieved within 24 hours under the care of certified physiotherapists.
+- **Phase 2: Ayurvedic Convalescence & Wellness (Days 6 to 14):** Instead of spending post-discharge days in a sterile hospital room, the patient and family transition to an accredited wellness resort or nature retreat in the lush hills of Wayanad or coastal Kozhikode. Medically supervised herbal oil therapies (Abhyanga, Kizhi), gentle joint mobilization, and wholesome nutrition accelerate tissue repair, soothe inflammation, and restore total vitality before your flight home.
+
+## 6. How TreatInKerala Coordinates Your Journey
+
+From the moment you contact us, our team manages every detail of your medical journey:
+- **Free Second Opinion:** Direct review by senior clinical department directors.
+- **Transparent Fixed-Price Quotes:** No hidden hospital charges or surprise bills.
+- **Airport VIP Greeter:** Fast airport clearance, private transport, and local SIM cards.
+- **Dedicated Arabic Concierge:** On-ground coordinator accompanying you to consultations and diagnostic appointments.
+- **Post-Discharge Follow-Up:** Telemedicine follow-ups scheduled with your surgeon after you return home to Riyadh, Jeddah, or Dammam.
+
+Ready to explore treatment options for yourself or a family member? [Request a personalized cost estimate](/get-estimate) today to speak directly with our senior medical team.`,
+    contentAr: `لعقود طويلة، احتفظت العائلات في المملكة العربية السعودية بمكانة خاصة لولاية كيرلا الهندية — في البداية بوصفها وجهة سياحية طبيعية ساحرة، ولكنها أصبحت اليوم الوجهة الطبية الأولى والأكثر موثوقية في آسيا. في عام 2026، ومع الارتفاع الكبير في تكاليف المستشفيات الخاصة بالرياض وجدة والمنطقة الشرقية، وقوائم الانتظار الطويلة في المدن الطبية الحكومية، يفضل آلاف المرضى السعوديين السفر إلى كيرلا للحصول على رعاية جراحية فورية فائقة الدقة.
+
+تقدم كيرلا المعادلة المثالية: مستشفيات تخصصية كبرى حاصلة على اعتمادات دولية مرموقة مثل الاعتماد الأمريكي الدولي (JCI) والاعتماد الوطني الهندي (NABH)، وأحدث تقنيات الروبوت الجراحي وغرسات معتمدة من هيئة الغذاء والدواء الأمريكية (US FDA)، مع طواقم طبية ومنسقين يتحدثون العربية بطلاقة — وكل ذلك **بتوفير يتراوح بين 70% إلى 80%** مقارنة بالمستشفيات الخاصة في المملكة.
+
+سواء كنت بحاجة إلى [استبدال مفصل الركبة بالروبوت](/treatments/orthopaedics)، أو جراحة [القلب المفتوح ومجازة الشريان التاجي (CABG)](/treatments/cardiac)، أو جراحة الانزلاق الغضروفي بالمنظار، أو برامج [التأهيل والاستشفاء بالأيورفيدا](/treatments/ayurveda)، يوضح لك هذا الدليل كافة التفاصيل لتنظيم رحلتك العلاجية بكل راحة وطمأنينة.
+
+## 1. لماذا يفضل المرضى السعوديون كيرلا عن غيرها؟
+
+على الرغم من وجود وجهات كتركيا وتايلاند وألمانيا، تنفرد كيرلا بمزايا استثنائية تناسب المريض والأسرة السعودية:
+
+- **وجبات حلال 100% وتنسيق طبي باللغة العربية:** تضم المستشفيات الشريكة في كوزيكود (كالكوت) وكوتشين (مثل أستر ميمز، وميترا، وبيبي ميموريال) أقساماً مخصصة لرعاية المرضى الدوليين بطواقم تتحدث العربية بطلاقة. الوجبات المقدمة في الغرف حلال بالكامل، والمصليات مهيأة داخل المستشفى، وتتوفر مترجمات وممرضات لرعاية المريضات بكل خصوصية.
+- **أجنحة تنفيذية عائلية خاصة:** يرافق المريض السعودي في الغالب أفراد من أسرته. توفر مستشفيات كيرلا أجنحة خاصة واسعة مجهزة بأسرة مريحة للمرافقين، ومطبخ صغير، وإنترنت فائق السرعة لتوفير أقصى درجات الراحة المنزلية.
+- **الألفة والروابط التاريخية والثقافية:** يعمل الآلاف من الأطباء والكوادر التمريضية القادمة من كيرلا في المستشفيات السعودية، مما يولد شعوراً كبيراً بالأمان والثقة العميقة لدى المريض السعودي فور وصوله.
+- **رحلات طيران مباشرة خلال 4.5 ساعات فقط:** تتوفر يومياً رحلات مباشرة منتظمة من مطار الملك خالد بالرياض، ومطار الملك عبد العزيز بجدة، ومطار الملك فهد بالدمام إلى مطاري كوزيكود (CCJ) وكوتشين (COK).
+
+## 2. مقارنة التكاليف لعام 2026: السعودية مقابل كيرلا
+
+يوضح الجدول التالي مقارنة دقيقة بين تكاليف العمليات الجراحية في القطاع الخاص بالمملكة العربية السعودية وباقات العلاج الشاملة في المستشفيات المعتمدة دولياً في كيرلا:
+
+| الإجراء الطبي | القطاع الخاص في السعودية | مستشفيات كيرلا المعتمدة JCI | متوسط التوفير بالريال السعودي |
+| :--- | :--- | :--- | :--- |
+| **استبدال مفصل الركبة بالروبوت (مفصل واحد)** | 65,000 – 85,000 ر.س | **17,000 – 24,000 ر.س** | **توفير ~55,000 ر.س (73%)** |
+| **استبدال مفصل الركبة بالروبوت (للرُكبتين معاً)** | 110,000 – 145,000 ر.س | **28,000 – 38,000 ر.س** | **توفير ~90,000 ر.س (74%)** |
+| **جراحة القلب المفتوح (CABG)** | 140,000 – 220,000 ر.س | **24,000 – 36,000 ر.س** | **توفير ~130,000 ر.س (78%)** |
+| **استئصال الغضروف القطني بالمنظار** | 50,000 – 75,000 ر.س | **14,000 – 19,000 ر.س** | **توفير ~42,000 ر.س (72%)** |
+| **تكميم المعدة بالمنظار** | 45,000 – 65,000 ر.س | **12,500 – 16,500 ر.س** | **توفير ~38,000 ر.س (75%)** |
+| **الفحص الطبي الشامل VIP** | 7,500 – 15,000 ر.س | **1,500 – 2,800 ر.س** | **توفير ~8,000 ر.س (80%)** |
+
+*ملاحظة: تشمل باقات كيرلا أتعاب الجراح وطاقم التخدير، والإقامة في جناح تنفيذي خاص، والغرسات الأمريكية الأصلية (Stryker، Zimmer، Medtronic)، والتحاليل والأشعة، وأدوية التنويم، وجلسات العلاج الطبيعي.*
+
+## 3. خطوط الطيران المباشرة من مدن المملكة
+
+يتميز السفر بين السعودية وكيرلا بالسهولة والسرعة عبر رحلات يومية بدون توقف:
+
+- **من الرياض (RUH):** رحلات مباشرة عبر **الخطوط السعودية**، و**طيران الهند إكسبريس**، و**طيران ناس** إلى مطاري كوزيكود (CCJ) وكوتشين (COK). مدة الرحلة: 4 ساعات ونصف تقريباً.
+- **من جدة (JED):** رحلات يومية مباشرة عبر **الخطوط السعودية** و**طيران الهند إكسبريس** إلى كوزيكود وكوتشين. مدة الرحلة: 5 ساعات.
+- **من الدمام والخبر (DMM):** رحلات مباشرة عبر **طيران الهند إكسبريس** أو عبر رحلات مريحة بوقفة قصيرة عبر طيران الخليج وطيران الإمارات. مدة الرحلة: 4 ساعات و15 دقيقة.
+
+فور هبوط الطائرة في المطار، يكون المنسق الشخصي من خدمة علاج في كيرلا بانتظارك وأسرتك بسيارة مكيفة خاصة لنقلك مباشرة إلى المستشفى أو مقر الإقامة.
+
+## 4. خطوات الحصول على التأشيرة الطبية الإلكترونية للمواطنين والمقيمين
+
+يتم استخراج التأشيرة الطبية الهندية الإلكترونية (e-Medical Visa) عبر الإنترنت دون الحاجة لمراجعة السفارة أو القنصلية:
+
+1. **إرسال التقارير الطبية:** شارك أحدث صور الرنين المغناطيسي أو التقارير الطبية عبر موقعنا أو عبر [واتساب المنسق الطبي](https://wa.me/919400528836).
+2. **استلام خطة العلاج وخطاب الدعوة:** خلال 24 ساعة، يقدم فريق الاستشاريين خطة واضحة ومحددة السعر، ويُصدر خطاب دعوة رسمي معتمد من المستشفى.
+3. **التقديم عبر البوابة الرسمية:** قم بتعبئة النموذج عبر البوابة الحكومية الرسمية (indianvisaonline.gov.in) وإرفاق صورة الجواز وخطاب الدعوة الطبي.
+4. **صدور التأشيرة خلال 24 إلى 48 ساعة:** تصل التأشيرة إلكترونياً عبر البريد الإلكتروني صالحة لمدة 60 يوماً مع إمكانية الدخول المتعدد، ويحق للمريض استخراج تأشيرتين للمرافقين (Medical Attendant Visa).
+
+## 5. ميزة "التعافي المزدوج": الجراحة الحديثة تليها نقاهة الأيورفيدا
+
+تنفرد كيرلا بنهج علاجي لا نظير له في العالم يجمع بين الطب المتقدم والاستشفاء الطبيعي:
+
+- **المرحلة الأولى: الجراحة المتقدمة (الأيام 1 إلى 5):** إتمام الإجراء الجراحي (مثل تغيير المفصل بالروبوت أو جراحة العمود الفقري) في المستشفى المعتمد دولياً، مع بدء المشي خلال 24 ساعة بمساعدة العلاج الطبيعي.
+- **المرحلة الثانية: الاستشفاء بالأيورفيدا (الأيام 6 إلى 14):** بدلاً من قضاء فترة النقاهة داخل غرف المستشفى، ينتقل المريض وعائلته إلى منتجع صحي هادئ في أحضان طبيعة واياناد الخضراء أو كوزيكود، حيث يخضع لجلسات التدليك بالزيوت الطبية المضادة للالتهابات (أبهيانجا وكيشي) وغذاء عضوي صحي يساعد على سرعة التئام الأنسجة وإزالة الإجهاد قبل السفر للوطن.
+
+## 6. خدماتنا الشاملة لك ولعائلتك
+
+يتكفل فريق علاج في كيرلا بكافة التفاصيل من لحظة تواصلك الأول:
+- **رأي طبي ثانٍ مجاني** من كبار رؤساء الأقسام الجراحية.
+- **عروض أسعار ثابتة ومضمونة** دون أي تكاليف خفية.
+- **استقبال VIP وتوفير شرائح الاتصال المحلية** فور الوصول.
+- **مرافقة شخصية طوال فترة العلاج** بواسطة منسقين يتحدثون العربية.
+- **متابعة دورية عبر الاتصال المرئي** مع طبيبك المعالج بعد عودتك إلى الرياض أو جدة أو الدمام.
+
+هل ترغب في معرفة الخطة المناسبة لحالتك أو لحالة أحد أفراد أسرتك؟ [احصل على تقدير تكلفة مجاني](/get-estimate) الآن وتواصل مباشرة مع أطبائنا المتخصصين.`,
+    faqs: [
+      {
+        q: 'How much do Saudi patients save on robotic surgeries in Kerala compared to private hospitals in the Kingdom?',
+        qAr: 'كم يوفر المريض السعودي في جراحات الروبوت في كيرلا مقارنة بالمستشفيات الخاصة بالمملكة؟',
+        a: 'Saudi patients typically save between 70% and 75% on robotic joint replacements and spine surgeries. For example, a robotic total knee replacement in private hospitals in Riyadh or Jeddah costs SAR 65,000 to SAR 85,000, whereas an all-inclusive JCI-accredited package in Kerala costs between SAR 17,000 and SAR 24,000 using identical US FDA-approved Stryker Mako implants.',
+        aAr: 'يوفر المريض السعودي عادة ما بين 70% إلى 75% في جراحات استبدال المفاصل بالروبوت وجراحات العمود الفقري. فعلى سبيل المثال، تبلغ تكلفة استبدال الركبة بالروبوت في مستشفيات الرياض أو جدة الخاصة ما بين 65,000 و 85,000 ريال، بينما تبلغ في مستشفيات كيرلا المعتمدة دولياً ما بين 17,000 و 24,000 ريال سعودي فقط مع استخدام نفس الغرسات الأمريكية الأصلية المعتمدة عالمياً.'
+      },
+      {
+        q: 'Are food and hospital facilities culturally comfortable and Halal for Saudi families?',
+        qAr: 'هل الأطعمة والمرافق في مستشفيات كيرلا مهيأة ومريحة للعائلات السعودية من حيث الحلال والخصوصية؟',
+        a: 'Yes, completely. Kerala has an extensive Islamic cultural heritage and close ties to Saudi Arabia. Partner hospitals serve 100% certified Halal dining, provide designated prayer rooms, offer Arabic television channels, and employ Arabic-speaking patient coordinators and female nursing staff for complete privacy.',
+        aAr: 'نعم بكل تأكيد. ترتبط كيرلا بروابط تاريخية وثقافية وطيدة مع المملكة العربية السعودية. تقدم جميع المستشفيات الشريكة وجبات حلال معتمدة 100%، وتوفر مصليات مهيأة، وقنوات تلفزيونية عربية، بالإضافة إلى منسقين طبيين يتحدثون العربية بطلاقة وممرضات لتأمين أقصى درجات الخصوصية للمريضات.'
+      },
+      {
+        q: 'How long does it take to obtain an Indian Medical Visa from Saudi Arabia?',
+        qAr: 'كم يستغرق استخراج التأشيرة الطبية الإلكترونية الهندية من السعودية؟',
+        a: 'The Indian e-Medical Visa is generally approved online within 24 to 48 hours. TreatInKerala issues the official hospital invitation letter on registered hospital letterhead within 24 hours of reviewing your medical reports, allowing you to submit your visa application immediately.',
+        aAr: 'تصدر التأشيرة الطبية الإلكترونية للهند عادة خلال 24 إلى 48 ساعة فقط عبر الإنترنت. حيث يصدر فريق علاج في كيرلا خطاب الدعوة الرسمي المعتمد من المستشفى خلال 24 ساعة من استلام تقاريرك، مما يمكنك من رفع طلب التأشيرة فوراً وبكل سهولة.'
+      },
+      {
+        q: 'Can family members or caregivers accompany the patient on the trip?',
+        qAr: 'هل يمكن لأفراد العائلة أو المرافقين السفر مع المريض في نفس الرحلة؟',
+        a: 'Yes. Up to two family members or attendants can obtain Medical Attendant e-Visas linked directly to the patient primary e-Medical Visa. Furthermore, partner hospitals provide executive inpatient suites with comfortable companion beds and kitchenettes.',
+        aAr: 'نعم بالتأكيد. يحق لمرافقَين اثنين من أفراد العائلة الحصول على تأشيرة مرافق طبي (Medical Attendant Visa) مقترنة بالتأشيرة الطبية للمريض. كما توفر المستشفيات أجنحة تنويم تنفيذية خاصة مزودة بأسرة مريحة للمرافقين ومطبخ صغير لتوفير أقصى درجات الراحة.'
+      }
+    ]
+  },
+  {
+    slug: 'stroke-rehabilitation-neuro-recovery-kerala-guide',
+    title: 'Post-Stroke Rehabilitation & Paralysis Recovery in Kerala: Integrating Robotic Physiotherapy & Ayurvedic Neuro-Care',
+    titleAr: 'علاج وتأهيل الجلطات الدماغية والشلل في كيرلا: دمج العلاج الطبيعي الروبوتي وطب الأعصاب الأيورفيدي',
+    excerpt: 'An evidence-based clinical guide to intensive post-stroke rehabilitation in Kerala. Learn how combining modern neuro-physiotherapy with classical Ayurvedic neuro-therapies (Navarakkizhi, Shirodhara) accelerates motor recovery and neuroplasticity at 80% lower cost.',
+    excerptAr: 'دليل سريري شامل لبرامج تأهيل السكتة الدماغية واستعادة الحركة في كيرلا. تعرف على كيفية دمج العلاج الطبيعي الروبوتي مع علاجات الأيورفيدا العصبية الأصيلة (النافاراكيزي والشيرودارا) لتحفيز التلدن العصبي بتكلفة أقل بنسبة 80%.',
+    aeoSummary: 'Kerala integrative post-stroke recovery model combines 4-6 daily hours of robotic gait therapy, occupational therapy, and speech rehabilitation with classical Ayurvedic neurovascular therapies (Navarakkizhi, Shirodhara, Ksheerabasti). This dual-modality approach maximizes neuroplasticity for hemiplegia, spasticity, and aphasia during the critical 12-month post-stroke window at an all-inclusive cost of $2,800 to $4,500 per month.',
+    aeoSummaryAr: 'يجمع نموذج تأهيل الجلطات الدماغية في كيرلا بين 4 إلى 6 ساعات يومياً من العلاج الطبيعي وأجهزة المشي الروبوتية وجلسات النطق، إلى جانب علاجات الأيورفيدا العصبية المتخصصة (نافاراكيزي، شيرودارا، باستي الحليبي). يعزز هذا النهج المزدوج التلدن العصبي واستعادة حركة الأطراف المشلولة بتكلفة شهرية شاملة تتراوح بين 2,800 و 4,500 دولار.',
+    date: 'October 14, 2026',
+    category: 'Recovery & Wellness',
+    categoryAr: 'التعافي والعافية',
+    readTime: '9 min read',
+    content: `A cerebrovascular accident (stroke) changes a family life in seconds. While emergency thrombolysis or clot retrieval in an acute ICU saves lives, the critical challenge begins once the patient is medically stabilized: **how to regain lost mobility, speech, and functional independence.**
+
+In North America, the UK, and the GCC, standard inpatient stroke rehabilitation faces major structural constraints: insurance coverage frequently caps inpatient stays at 2 to 3 weeks, and private neuro-rehab facilities cost between **$20,000 and $40,000 per month**. Outpatient care typically provides only 45 minutes of physical therapy two or three times a week — far below the therapeutic intensity needed to retrain the brain.
+
+Kerala has emerged as a global center of excellence for intensive, restorative neuro-rehabilitation. By uniquely combining **advanced Western neuro-physiotherapy (robotic gait trainers, balance systems, occupational therapy)** with **classical Kerala Ayurvedic neuro-therapies (Pakshaghata Chikitsa, Navarakkizhi, Ksheeradhara)**, patients receive 4 to 6 hours of structured daily therapy in a supportive inpatient setting — achieving remarkable functional restoration at an all-inclusive cost of **$2,800 to $4,500 per month**.
+
+## 1. The Critical "Neuroplasticity Window"
+
+Neuroplasticity is the brain innate ability to rewire undamaged neural circuits and form new pathways to bypass injured tissue. Clinical research confirms that the rate of neuroplastic recovery peaks within the **first 3 to 12 months** following an ischemic or hemorrhagic stroke.
+
+To stimulate neuroplasticity effectively, the brain requires:
+- **High Repetition & Frequency:** Hundreds of daily movement repetitions rather than occasional weekly exercises.
+- **Multimodal Stimulation:** Combining physical resistance, sensory inputs, motor re-education, and cognitive activation.
+- **Optimized Cerebral Microcirculation:** Enhancing capillary blood flow and reducing neuro-inflammation around penumbra areas.
+
+Kerala inpatient neuro-rehabilitation centers are custom-designed around this exact biological mandate.
+
+## 2. The Dual-Modality Protocol: Modern Neuro-Rehab Meets Ayurvedic Neurology
+
+What sets Kerala apart from any other healthcare destination is the seamless synergy between Western clinical monitoring and traditional Ayurvedic neurology:
+
+### Modern Neuro-Rehabilitation Components:
+- **Robotic Gait Training & Dynamic Body-Weight Support:** Allows non-ambulatory hemiplegic patients to practice natural walking patterns safely without fear of falling.
+- **Constraint-Induced Movement Therapy (CIMT):** Retrains weak upper limbs and fine finger motor control for feeding, writing, and grooming.
+- **Speech & Swallow Therapy (VitalStim):** Intensive treatment for dysarthria, aphasia, and post-stroke dysphagia to prevent aspiration.
+- **Continuous Medical Monitoring:** In-house consultant neurologists, blood pressure management, and periodic neuro-imaging reviews.
+
+### Classical Kerala Ayurvedic Neuro-Therapies:
+In Ayurvedic medicine, stroke-induced paralysis is classified as *Pakshaghata* (a severe disorder of the central *Vata* bio-energy). Specialized clinical treatments include:
+- **Navarakkizhi (Shashtika Shali Pinda Sweda):** Massage with boluses of rare medicinal Navara rice cooked in milk and decoctions of *Sida cordifolia* (Bala). This deeply nourishes atrophied muscle fibers, relaxes severe spasticity, and stimulates neuromuscular transmission.
+- **Ksheeradhara & Shirodhara:** Continuous rhythmic pouring of medicated herbal milk or warm medicinal oils over the forehead, calming autonomic hyperarousal, lowering cortisol, and encouraging neuro-endocrine balance.
+- **Shirobasti & Nasya:** Retention of warm medicated herbal oil on the head in a specialized leather cap, combined with nasal administration of herbal extracts that cross the cribriform plate to stimulate cerebral circulation.
+- **Medhya Rasayanas:** Proprietary oral herbal compounds containing *Bacopa monnieri* (Brahmi), *Withania somnifera* (Ashwagandha), and *Centella asiatica* (Mandukaparni) clinically documented to support synaptic plasticity and cognitive clarity.
+
+## 3. Monthly Neuro-Rehab Cost Comparison
+
+Intensive stroke recovery requires weeks or months of sustained therapy. Below is a realistic monthly cost comparison for full inpatient neuro-rehabilitation:
+
+| Inpatient Neuro-Rehab Facility | Typical Inpatient Stay Covered | Monthly Estimated Cost | Daily Direct Therapy Hours |
+| :--- | :--- | :--- | :--- |
+| **United States (Private Rehab)** | 14 – 21 Days (Then Outpatient) | $32,000 – $48,000 | 2 – 3 Hours / Day |
+| **United Kingdom (Private Sector)** | 14 Days (NHS Caps Apply) | $24,000 – $38,000 | 1.5 – 2.5 Hours / Day |
+| **GCC (Saudi Arabia / UAE Private)** | 2 – 4 Weeks | $18,000 – $32,000 | 2 – 3 Hours / Day |
+| **Kerala Integrative Neuro Center** | **28 to 45 Days (Full Program)** | **$2,800 – $4,500 (All-Inclusive)** | **4 – 6 Hours / Day** |
+
+*Kerala inpatient packages include: Private executive room with companion lodging, 3 daily doctor consultations, twice-daily physical & occupational therapy sessions, specialized Ayurvedic therapies with authentic herbal oils, in-room nursing care, and physician-prescribed nutritious dining for patient and caregiver.*
+
+## 4. The 28-to-42 Day Recovery Timeline
+
+Each patient rehabilitation plan is strictly customized based on initial functional independence measures (FIM score) and medical stability:
+
+- **Week 1 (Diagnostic Assessment & Spasticity Relief):** Comprehensive functional evaluation by neurologist, physiatrist, and Ayurvedic Vaidya. Daily gentle oil therapies to soften severe muscle contractures and improve peripheral circulation.
+- **Week 2 (Core Activation & Assisted Standing):** Progression from bed-mobility to safe transfers. Robotic gait harness training begins alongside targeted muscle-strengthening Navarakkizhi applications.
+- **Week 3 (Upper Limb Control & Gait Re-Education):** Focus on bilateral hand coordination, finger dexterity, and active stepping. Dedicated speech and cognitive retraining sessions.
+- **Week 4 (Independent Walking & Daily Living Skills):** Stair climbing practice, balance board drills, and ADL (activities of daily living) mastery (dressing, bathing, eating independently).
+- **Week 5 to 6 (Consolidation & Home Exercise Program):** Discharge planning, transition training for family caregivers, and a digitized home-maintenance exercise and dietary regimen.
+
+## 5. Candidate Suitability: Who Benefits Most?
+
+Integrative neuro-rehabilitation in Kerala is particularly beneficial for:
+- Patients within the first **2 to 18 months** following an ischemic or hemorrhagic stroke.
+- Chronic stroke survivors (even beyond 2 years) suffering from severe limb spasticity, joint stiffness, and mobility plateaus.
+- Patients with traumatic brain injury (TBI), hypoxic brain injuries, or incomplete spinal cord injuries.
+- Individuals requiring specialized rehabilitation for Parkinson disease, multi-system atrophy, or peripheral neuropathies.
+
+*Requirement: The patient must be medically stable (free from active acute cardiac failure, uncontrolled systemic infections, or acute respiratory compromise).*
+
+## 6. How to Plan Your Medical Journey with TreatInKerala
+
+1. **Complimentary Scan & Record Review:** Submit recent brain MRI/CT scans, discharge summaries, and a brief video of the patient current mobility via our secure portal or [WhatsApp Concierge](https://wa.me/919400528836).
+2. **Personalized Multidisciplinary Roadmap:** Our panel of senior neuro-consultants and Ayurvedic physicians outlines expected functional goals, recommended duration of stay (e.g., 28 or 42 days), and a fixed transparent cost estimate.
+3. **Official Hospital Invitation & e-Medical Visa:** We provide stamped visa documentation for both the patient and family caregivers to secure fast online approval within 24 to 48 hours.
+4. **Wheelchair Airport Transfer & Full Concierge:** We arrange non-stop flights, specialized tarmac wheelchair assistance, and private medical transport directly to the rehabilitation facility in Kozhikode (Calicut) or Kochi.
+
+Give your loved one the best opportunity for neurological recovery. [Request a personalized evaluation](/get-estimate) today to consult with our neuro-rehabilitation team.`,
+    contentAr: `تغير السكتة أو الجلطة الدماغية مجرى حياة المريض وأسرته في لحظات معدودة. وفي حين أن التدخل الطبي الطارئ في وحدات العناية المركزة ينقذ حياة المريض، فإن التحدي الحقيقي يبدأ فور استقرار العلامات الحيوية: **كيف يستعيد المريض قدرته على المشي، والتحدث، واستقلاليته اليومية؟**
+
+في دول الخليج العربي وأوروبا وأمريكا الشمالية، تواجه مراكز التأهيل التقليدية عوائق كبرى: فشركات التأمين تحدد مدة التنويم بأسبوعين إلى ثلاثة أسابيع فقط، بينما تصل تكاليف مراكز التأهيل الخاصة إلى **18,000 إلى 35,000 دولار شهرياً**. وبعد الخروج، يقتصر العلاج الخارجي على 45 دقيقة يومين أو ثلاثة أسبوعياً — وهو أقل بكثير من الكثافة العلاجية اللازمة لإعادة برمجة الدماغ واستعادة حركة الأطراف.
+
+برزت ولاية كيرلا الهندية كمركز امتياز عالمي للتأهيل العصبي المكثف. فمن خلال الدمج الفريد بين **العلاج الطبيعي العصبي الحديث (أجهزة المشي الروبوتية، وتدريب التوازن، وعلاج النطق والبلع)** و**طب الأعصاب الأيورفيدي الأصيل (علاج شلل الأطراف - باكشاغاتا، والنافاراكيزي، والشيرودارا)**، يتلقى المريض برنامجاً مكثفاً يمتد من 4 إلى 6 ساعات يومياً داخل المركز بتكلفة شهرية شاملة تتراوح بين **2,800 و 4,500 دولار فقط**.
+
+## 1. النافذة الذهبية لـ "التلدن العصبي" (Neuroplasticity)
+
+التلدن العصبي هو قدرة خلايا الدماغ السليمة المتبقية على تكوين مسارات وروابط عصبية جديدة لتعويض الخلايا المتضررة من الجلطة. وتؤكد الأبحاث السريرية أن أعلى معدل لاستجابة الدماغ للتعافي وإعادة التعلم الحركي يكون خلال **الأشهر الـ 3 إلى 12 الأولى** بعد السكتة الدماغية.
+
+ولتحفيز التلدن العصبي بنجاح، يحتاج الدماغ إلى:
+- **تكرار حركي مكثف:** مئات الحركات اليومية المتكررة بدلاً من التمارين البسيطة المتباعدة.
+- **تحفيز متعدد الحواس:** الجمع بين المقاومة العضلية، والتحفيز الحسي عبر الزيوت الطبية، وإعادة التدريب الحركي.
+- **تنشيط الدورة الدموية الدماغية الدقيقة:** خفض الالتهابات العصبية وتحسين تدفق الدم للمناطق المحيطة بموضع الجلطة.
+
+تم تصميم برامج التأهيل العصبي التخصصية في كيرلا لتحقيق هذه المتطلبات البيولوجية بأعلى درجات الدقة.
+
+## 2. البروتوكول المزدوج: العلاج الطبيعي الحديث يلتقي بالأيورفيدا العصبية
+
+ما يجعل تجربة كيرلا فريدة عالمياً هو التناغم التام بين الإشراف الطبي الغربي الدقيق وعلاجات الأيورفيدا العصبية العريقة:
+
+### مكونات العلاج الطبيعي والتأهيلي الحديث:
+- **التدريب الروبوتي على المشي (Robotic Gait Trainers):** أجهزة روبوتية تدعم وزن جسم المريض بالكامل، مما يمكن المصابين بالشلل النصفي من ممارسة المشي الطبيعي بأمان تام ودون أي خوف من السقوط.
+- **العلاج الحركي بالتقييد الإجباري (CIMT):** تدريب مكثف لليد الضعيفة وأصابع اليد لإعادة مهارات الإمساك وتناول الطعام والكتابة.
+- **تأهيل النطق والبلع (VitalStim & Speech Therapy):** معالجة صعوبات البلع (الديسفاجيا) لمنع دخول السوائل للرئة، وتدريب عضلات الوجه واللسان لاستعادة مخارج الحروف.
+- **إشراف طبي عصبي مستمر:** أطباء أعصاب متخصصون لمراقبة ضغط الدم والسيولة ومراجعة الفحوصات بانتظام.
+
+### علاجات الأيورفيدا العصبية التخصصية:
+يُصنف شلل الجلطة الدماغية في الأيورفيدا تحت مسمى *باكشاغاتا* (اضطراب حاد في طاقة فاتا العصبية المركزية). وتشمل بروتوكولات العلاج:
+- **النافاراكيزي (Navarakkizhi):** تدليك طبي خاص باستخدام كمادات ساخنة من أرز النافارا الطبي النادر المطهو في الحليب وخلاصة نبات "بالا" المقوي للأعصاب. يغذي هذا الإجراء الألياف العضلية الضامرة، ويزيل التشنج العضلي الحاد (Spasticity)، وينشط التوصيل العصبي العضلي.
+- **الكشيرادارا والشيرودارا (Ksheeradhara & Shirodhara):** سكب مستمر وبإيقاع مهدئ لتيار من الحليب الطبي أو الزيوت العشبية الدافئة على الجبين، مما يخفض هرمونات التوتر، ويهدئ الجهاز العصبي اللاإرادي، ويهيئ الدماغ للتعافي.
+- **الشيروباستي والناسيا (Shirobasti & Nasya):** تثبيت الزيوت الطبية على الرأس بقبعة جلدية خاصة، وتقطير الخلاصات العشبية عبر الأنف لتحفيز الدورة الدموية الدماغية عبر الأغشية الشمية.
+- **المقويات العصبية العشبية (Medhya Rasayanas):** تركيبات عشبية نقية تحتوي على "البراهيمي" و"الأشواغاندا" المثبتة علمياً في دعم الروابط المشبكية وتحسين التركيز والذاكرة.
+
+## 3. مقارنة التكلفة الشهرية للتأهيل العصبي للمرضى المنومين
+
+يتطلب تأهيل الجلطات برامج مستمرة لعدة أسابيع. يوضح الجدول التالي مقارنة التكاليف الشهرية لبرامج التنويم التأهيلي الكامل:
+
+| مركز التأهيل العصبي المنوم | مدة التنويم المغطاة عادة | التكلفة الشهرية التقديرية | ساعات العلاج المباشر يومياً |
+| :--- | :--- | :--- | :--- |
+| **الولايات المتحدة (مراكز التأهيل الخاصة)** | 14 – 21 يوماً (ثم علاج خارجي) | 32,000 – 48,000 دولار | 2 – 3 ساعات يومياً |
+| **بريطانيا (القطاع الخاص)** | 14 يوماً (حدود NHS صارمة) | 24,000 – 38,000 دولار | 1.5 – 2.5 ساعة يومياً |
+| **دول الخليج (المستشفيات الخاصة بالرياض/دبي)** | 2 – 4 أسابيع | 18,000 – 32,000 دولار | 2 – 3 ساعات يومياً |
+| **مراكز التأهيل المتكاملة في كيرلا** | **28 إلى 45 يوماً (برنامج كامل)** | **2,800 – 4,500 دولار (شامل بالكامل)** | **4 – 6 ساعات يومياً** |
+
+*تشمل باقة كيرلا: غرفة خاصة واسعة ومجهزة مع سرير وإقامة للمرافق، و3 استشارات طبية يومياً، وجلستين يومياً من العلاج الطبيعي والوظيفي، وجلسات الأيورفيدا العصبية بالزيوت الطبية الأصلية، وخدمات التمريض، والوجبات الصحية الموصوفة طبياً للمريض والمرافق.*
+
+## 4. الخطة التأهيلية خلال 28 إلى 42 يوماً
+
+يتم تصميم برنامج كل مريض بشكل فردي وفقاً لمستوى استقلاليته الحركية والحالة العامة:
+
+- **الأسبوع الأول (التقييم الشامل وتخفيف التشنج):** فحص دقيق من قِبل طبيب الأعصاب، وأخصائي العلاج الطبيعي، وطبيب الأيورفيدا (فيديا). بدء التدليك بالزيوت الدافئة لتليين الأوتار المتيبسة وتنشيط الدورة الدموية.
+- **الأسبوع الثاني (تنشيط عضلات الجذع والوقوف بمساعدة):** الانتقال من السرير إلى الكرسي بأمان، وبدء التدريب على أجهزة المشي الروبوتية مع جلسات النافاراكيزي لتقوية العضلات.
+- **الأسبوع الثالث (التحكم في اليد وإعادة تدريب المشي):** التركيز على حركات اليد الدقيقة، وتناسق الخطوات، وجلسات مكثفة للنطق وتحسين مخارج الحروف.
+- **الأسبوع الرابع (المشي المستقل وممارسة الحياة اليومية):** صعود الدرج، وتمارين التوازن، والتدريب على ارتداء الملابس وتناول الطعام بمفردك.
+- **الأسابيع 5 إلى 6 (تثبيت النتائج وبرنامج المنزل):** وضع خطة التمارين المستمرة في المنزل، وتدريب المرافق على مساعدة المريض، وتسليم الخطة الغذائية والعلاجية الكاملة.
+
+## 5. الحالات الأكثر استفادة من هذا البرنامج
+
+يعد برنامج التأهيل التكاملي في كيرلا مثالياً للحالات التالية:
+- المرضى في غضون **الأشهر الـ 2 إلى 18 الأولى** بعد الجلطة الإقفارية أو النزفية.
+- حالات الجلطات القديمة (حتى بعد عامين) التي تعاني من تيبس وتشنج العضلات وتوقف التقدم الحركي.
+- حالات إصابات الدماغ الرضحية (TBI) وإصابات الحبل الشوكي الجزئية.
+- حالات مرض باركنسون والتصلب المتعدد واعتلال الأعصاب المحيطية.
+
+*شرط القبول: أن تكون الحالة الطبية العامة للمريض مستقرة (خلو المريض من فشل القلب الحاد، أو الالتهابات الميكروبية الحادة، أو الاعتماد على أجهزة التنفس الصناعي).*
+
+## 6. خطوات تنظيم رحلة علاج الجلطة مع TreatInKerala
+
+1. **مراجعة الأشعة والتقارير مجاناً:** أرسل تقارير الأشعة المقطعية أو الرنين المغناطيسي مع فيديو قصير يوضح حركة المريض الحالية عبر موقعنا أو عبر [واتساب المنسق الطبي](https://wa.me/919400528836).
+2. **استلام الخطة التأهيلية وعرض السعر الشامل:** يحدد فريقنا أهداف التحسن المتوقعة، ومدة الإقامة الموصى بها (28 أو 42 يوماً)، والتكلفة الثابتة الشاملة.
+3. **خطاب الدعوة والتأشيرة الطبية الإلكترونية:** نصدر خطاب المستشفى الرسمي المعتمد خلال 24 ساعة لاستخراج التأشيرة الطبية للمريض وتأشيرات المرافقين عبر الإنترنت بكل سهولة.
+4. **استقبال خاص بالكراسي المتحركة وسيارات مجهزة:** نوفر خدمة النقل الطبي المجهز بسيارة خاصة من مطار كوزيكود (CCJ) أو كوتشين (COK) مباشرة إلى المركز التأهيلي.
+
+امنح مريضك أفضل فرصة ممكنة لاستعادة حركته واستقلاليته. [اطلب تقييماً لحالتك الآن](/get-estimate) وتحدث مباشرة مع أطباء التأهيل المتخصصين.`,
+    faqs: [
+      {
+        q: 'Can a stroke patient still regain mobility if the stroke occurred over a year ago?',
+        qAr: 'هل يمكن لمريض السكتة الدماغية استعادة الحركة إذا مضى على الجلطة أكثر من عام؟',
+        a: 'Yes. While the fastest recovery occurs within the first 6 to 12 months, chronic stroke patients (even 2 to 3 years post-stroke) often achieve meaningful improvements. Intensive Kerala neuro-therapies like Navarakkizhi significantly relieve muscle spasticity, break joint contractures, and stimulate dormant neuroplastic pathways to improve walking balance and arm control.',
+        aAr: 'نعم بالتأكيد. على الرغم من أن الاستجابة الأسرع تكون خلال الأشهر الـ 6 إلى 12 الأولى، فإن مرضى الجلطات المزمنة (حتى بعد مرور عامين إلى ثلاثة) يحققون تحسناً ملحوظاً. تساعد علاجات كيرلا المكثفة مثل النافاراكيزي على إزالة تشنج وتيبس العضلات والمفاصل، وإعادة تنشيط المسارات العصبية الخاملة لتحسين التوازن والمشي وحركة اليد.'
+      },
+      {
+        q: 'How many weeks of inpatient neuro-rehabilitation are typically recommended?',
+        qAr: 'كم أسبوعاً يُنصح به عادة لبرنامج التنويم التأهيلي العصبي؟',
+        a: 'The recommended duration is between 28 and 42 days (4 to 6 weeks). Neurological recovery and brain rewiring require daily sustained repetition. Inpatient stays of 4 weeks allow sufficient time to progress from muscle spasticity reduction to functional standing, assisted walking, and self-care skills.',
+        aAr: 'المدة المثالية الموصى بها تتراوح بين 28 إلى 42 يوماً (من 4 إلى 6 أسابيع). فالتعافي العصبي وإعادة برمجة الدماغ يتطلبان تكراراً يومياً مستمراً. تتيح إقامة 4 أسابيع وقتاً كافياً للتدرج من تليين العضلات المتشنجة إلى الوقوف، والمشي بمساعدة، واستعادة مهارات الاعتماد على النفس.'
+      },
+      {
+        q: 'Can family members stay in the same room with the patient during rehabilitation?',
+        qAr: 'هل يمكن للمرافقين أو أفراد الأسرة الإقامة في نفس الغرفة مع المريض خلال فترة التأهيل؟',
+        a: 'Yes. Private executive rooms and suites are designed with family accommodation in mind, featuring an adjacent attendant bed, attached modern bathroom, Wi-Fi, and personalized dietary options for both patient and companion.',
+        aAr: 'نعم بالتأكيد. تم تصميم الأجنحة والغرف التنفيذية الخاصة لتتسع للمرافق بشكل مريح جداً، حيث تتوفر أسرّة مخصصة للمرافقين، وحمام خاص مجهز، وإنترنت فائق السرعة، ووجبات صحية للمريض والمرافق طوال فترة الإقامة.'
+      },
+      {
+        q: 'How does TreatInKerala assist with airport arrivals for wheelchair or bed-bound patients?',
+        qAr: 'كيف تساعد خدمة علاج في كيرلا في استقبال المرضى مستخدمي الكراسي المتحركة من المطار؟',
+        a: 'We coordinate full tarmac wheelchair or stretcher assistance directly with airport authorities at Calicut (CCJ) or Kochi (COK). A private, air-conditioned ambulance or wheelchair-accessible vehicle receives the patient right outside the terminal and transfers them smoothly to the neuro-rehabilitation center.',
+        aAr: 'نقوم بالتنسيق الكامل مع سلطات مطار كوزيكود (CCJ) أو كوتشين (COK) لتوفير كراسٍ متحركة أو نقالات خاصة من باب الطائرة. وتكون سيارة إسعاف مجهزة أو سيارة مخصصة للكراسي المتحركة بانتظار المريض خارج الصالة لنقله بكل راحة وسلاسة إلى المركز التأهيلي.'
+      }
+    ]
   }
 ];
 

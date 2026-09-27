@@ -48,16 +48,19 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>) {
   const { locale } = await params;
   
   const title = locale === 'ar' 
-    ? 'السياحة العلاجية في كيرلا | رعاية صحية عالمية التكلفة | TreatInKerala' 
-    : 'Kerala Medical Tourism | World-Class Care at a Fraction of the Cost | TreatInKerala';
+    ? 'العلاج في كيرلا والسياحة العلاجية | رعاية صحية عالمية التكلفة | TreatInKerala' 
+    : 'Treatment in Kerala | Kerala Medical Tourism & Surgery | TreatInKerala';
 
   const description = locale === 'ar'
-    ? 'تربط علاج في كيرلا المرضى الدوليين بأفضل المستشفيات ومراكز الأيورفيدا في كيرلا. خدمات متكاملة للسياحة العلاجية من كالكوت - تأشيرات، سفر، إقامة، وتنسيق العلاج.'
-    : 'TreatInKerala connects international patients to Kerala\'s best hospitals and Ayurveda centres. End-to-end medical tourism services from Calicut — visa, travel, accommodation, treatment coordination and more.';
+    ? 'تربط علاج في كيرلا (TreatInKerala) المرضى الدوليين بأفضل المستشفيات المعتمدة ومراكز الأيورفيدا في كيرلا. خدمات متكاملة للعلاج في كيرلا: تأشيرات، استقبال، وتنسيق العلاج.'
+    : 'TreatInKerala connects international patients to Kerala\'s best hospitals, top surgeons, and Ayurveda centres. End-to-end medical treatment in Kerala with visa, travel, and Arabic concierge support.';
 
   return {
     title,
     description,
+    verification: {
+      google: 'MyqEVZGO-b3Dv7y4yNJRthbl5IeaYJCmlrnpmWsdqAI',
+    },
     alternates: {
       canonical: locale === 'en' ? '/en' : '/ar',
       languages: {

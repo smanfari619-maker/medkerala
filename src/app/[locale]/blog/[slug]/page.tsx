@@ -270,6 +270,19 @@ export default async function BlogPostPage({ params }: Props) {
       { href: '/hospitals', labelEn: 'JCI Hospitals in Kerala', labelAr: 'المستشفيات المعتمدة JCI في كيرلا', descEn: 'Browse accredited multi-specialty hospitals across Calicut, Kochi & Trivandrum.', descAr: 'تصفح المستشفيات المتخصصة المعتمدة في كوزيكود وكوتشين وتريفاندروم.' },
       { href: '/patients/uae', labelEn: 'UAE Patient Hub', labelAr: 'مركز المرضى الإماراتيين', descEn: 'Emirati & UAE expat guide: visa, flights, services and cost estimates.', descAr: 'دليل المرضى الإماراتيين والمقيمين: التأشيرة والرحلات وتقديرات التكاليف.' },
     ],
+    'saudi-arabia-to-kerala-medical-tourism-guide': [
+      { href: '/patients/saudi-arabia', labelEn: 'Saudi Patient Hub', labelAr: 'مركز المرضى السعوديين', descEn: 'Flights from Riyadh/Jeddah/Dammam, e-visa guide, and SAR cost comparisons.', descAr: 'رحلات الرياض وجدة والدمام، دليل التأشيرة، ومقارنة التكاليف بالريال.' },
+      { href: '/treatments/orthopaedics', labelEn: 'Robotic Joint Replacement', labelAr: 'استبدال المفاصل بالروبوت', descEn: 'Stryker Mako precision knee replacement. Save up to SAR 55,000.', descAr: 'استبدال الركبة بروبوت ماكو. توفير حتى 55,000 ريال سعودي.' },
+      { href: '/treatments/cardiac', labelEn: 'Coronary Bypass (CABG)', labelAr: 'جراحة القلب المفتوح', descEn: 'JCI-accredited heart surgery with US FDA implants. From SAR 24,000.', descAr: 'جراحة قلب معتمدة JCI مع غرسات أمريكية أصلية. تبدأ من 24,000 ريال.' },
+      { href: '/treatments/ayurveda', labelEn: 'Ayurvedic Convalescence', labelAr: 'النقاهة والاستشفاء بالأيورفيدا', descEn: 'Medically supervised Phase 2 healing in Wayanad and Calicut retreats.', descAr: 'المرحلة الثانية للاستشفاء في منتجعات واياناد وكوزيكود الطبيعية.' },
+      { href: '/hospitals', labelEn: 'Top Hospitals in Calicut & Kochi', labelAr: 'أفضل المستشفيات في كوزيكود وكوتشين', descEn: 'Aster MIMS, Meitra, Baby Memorial — executive suites and Arabic coordinators.', descAr: 'أستر ميمز، ميترا، بيبي ميموريال — أجنحة تنفيذية وطواقم عربية.' },
+    ],
+    'stroke-rehabilitation-neuro-recovery-kerala-guide': [
+      { href: '/treatments/neurosurgery', labelEn: 'Neurology & Neurosurgery', labelAr: 'طب وجراحة المخ والأعصاب', descEn: 'Comprehensive neuro-diagnostics, 3T MRI, and consultant neurologist reviews.', descAr: 'تشخيص عصبي متكامل، رنين مغناطيسي 3 تسلا، وإشراف كبار استشاريي الأعصاب.' },
+      { href: '/treatments/ayurveda', labelEn: 'Ayurvedic Neuro-Rehabilitation', labelAr: 'التأهيل العصبي بالأيورفيدا', descEn: 'Authentic Navarakkizhi, Shirodhara & Ksheerabasti for paralysis recovery.', descAr: 'جلسات النافاراكيزي والشيرودارا والباستي الحليبي لاستعادة حركة الأطراف.' },
+      { href: '/hospitals', labelEn: 'Inpatient Rehabilitation Facilities', labelAr: 'مرافق التنويم التأهيلي المتطورة', descEn: 'Dedicated neuro-physiotherapy, robotic gait training, and private rooms.', descAr: 'علاج طبيعي عصبي مكثف، تدريب روبوتي على المشي، وغرف خاصة مجهزة.' },
+      { href: '/packages', labelEn: 'All-Inclusive Treatment Packages', labelAr: 'باقات العلاج الشاملة', descEn: 'Transparent 28-day and 42-day intensive inpatient recovery packages.', descAr: 'باقات علاج شاملة لمدة 28 أو 42 يوماً مع إقامة مريحة للمرافق.' },
+    ],
   };
   const internalLinks = INTERNAL_LINK_MAP[slug] ?? [];
 
@@ -641,6 +654,40 @@ export default async function BlogPostPage({ params }: Props) {
         { name: 'Book Direct Flight from Dubai or Abu Dhabi', text: 'Book Emirates, flydubai, Etihad, or Air Arabia from DXB / AUH / SHJ to Calicut (CCJ) or Kochi (COK).' },
         { name: 'Phase 1: Surgery or Dental Restoration (Days 1–5)', text: 'Complete your procedure in a JCI-accredited facility under the care of internationally trained surgeons.' },
         { name: 'Phase 2: Ayurvedic Recovery & Return (Days 6–14)', text: 'Transition to a medically supervised Ayurvedic retreat, then fly home revitalized to the UAE.' }
+      ]
+    );
+  } else if (slug === 'saudi-arabia-to-kerala-medical-tourism-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'كيف ينسق المريض السعودي رحلته العلاجية إلى كيرلا' : 'How Saudi Patients Book Medical Treatment in Kerala',
+      isRtl ? [
+        { name: 'إرسال التقارير واستلام خطاب الدعوة الطبية', text: 'شارك تقاريرك الطبية وصور الأشعة عبر الواتساب لإصدار خطاب الدعوة الرسمي من المستشفى خلال 24 ساعة.' },
+        { name: 'التقديم على التأشيرة الطبية الإلكترونية', text: 'قدّم على التأشيرة الطبية الهندية وتأشيرات المرافقين عبر البوابة الحكومية. تصدر خلال 24 إلى 48 ساعة.' },
+        { name: 'حجز الرحلة المباشرة من الرياض أو جدة أو الدمام', text: 'احجز طيرانك المباشر مع الخطوط السعودية أو طيران الهند إكسبريس أو طيران ناس إلى كوزيكود أو كوتشين.' },
+        { name: 'الاستقبال الخاص والإقامة في الجناح العائلي', text: 'يستقبلك منسقنا الذي يتحدث العربية بسيارة خاصة ويوصلك لجناحك العائلي المجهز بالمستشفى.' },
+        { name: 'إتمام العملية ونقاهة الأيورفيدا والعودة', text: 'أجرِ عمليتك الجراحية بدقة عالية، وانتقل لنقاهة الأيورفيدا في منتجعات واياناد قبل العودة للمملكة.' }
+      ] : [
+        { name: 'Submit Scans & Receive Hospital Visa Invitation', text: 'Share your medical reports and scans via WhatsApp to receive your official hospital visa invitation within 24 hours.' },
+        { name: 'Apply for Indian e-Medical Visa Online', text: 'Submit the e-Medical Visa application for patient and companions online. Approval is granted in 24 to 48 hours.' },
+        { name: 'Book Direct Flight from Riyadh, Jeddah, or Dammam', text: 'Book non-stop flights via Saudia, Air India Express, or Flynas directly to Calicut (CCJ) or Kochi (COK).' },
+        { name: 'VIP Airport Reception & Executive Family Suite', text: 'Our Arabic-speaking concierge meets you at the airport and escorts your family to your private hospital suite.' },
+        { name: 'Undergo Surgery, Ayurvedic Recovery & Fly Home', text: 'Complete precision surgery with FDA implants, enjoy restorative Phase 2 Ayurvedic wellness, and fly home safely.' }
+      ]
+    );
+  } else if (slug === 'stroke-rehabilitation-neuro-recovery-kerala-guide') {
+    howToSchema = getHowToSchema(
+      isRtl ? 'خطوات برنامج تأهيل السكتة الدماغية واستعادة الحركة في كيرلا' : 'How Integrative Stroke Rehabilitation Works in Kerala',
+      isRtl ? [
+        { name: 'التقييم الطبي ومراجعة أشعة الرنين مجاناً', text: 'أرسل تقارير الأشعة المقطعية والرنين المغناطيسي وفيديو لحركة المريض ليراجعها كبار أطباء الأعصاب.' },
+        { name: 'استلام الخطة التأهيلية وعرض السعر الشامل', text: 'احصل على جدول زمني مخصص (28 أو 42 يوماً) وعرض سعر شفاف شامل الإقامة والعلاجات للمريض والمرافق.' },
+        { name: 'إصدار التأشيرة وترتيبات السفر والكراسي المتحركة', text: 'نصدر خطاب التأشيرة الطبية وننسق خدمة الكراسي المتحركة من باب الطائرة بمطار كوزيكود أو كوتشين.' },
+        { name: 'بدء البرنامج المكثف (العلاج الطبيعي والأيورفيدا)', text: 'تلقي 4 إلى 6 ساعات يومياً من أجهزة المشي الروبوتية، وعلاج النطق، والكمادات الحليبية (نافاراكيزي).' },
+        { name: 'استعادة الحركة والتوازن والعودة ببرنامج منزلي', text: 'تحقيق استقلالية المشي والاعتماد على النفس، واستلام برنامج التمارين والمقويات العصبية للمنزل.' }
+      ] : [
+        { name: 'Free Neuro-Consultation & MRI Scan Review', text: 'Submit brain MRI/CT scans and mobility video for multidisciplinary review by neurologists and Ayurvedic Vaidyas.' },
+        { name: 'Receive Structured Roadmap & All-Inclusive Quote', text: 'Receive a personalized 28-to-42 day recovery plan and fixed binding quote covering private suite and companion care.' },
+        { name: 'Fast-Track Medical Visa & Wheelchair Airport Care', text: 'Obtain e-Medical Visas with our invitation letter, accompanied by specialized tarmac wheelchair airport transfer.' },
+        { name: 'Daily 4–6 Hour Intensive Dual-Modality Therapy', text: 'Engage in robotic gait training, speech therapy, and neuromuscular Navarakkizhi herbal milk therapies daily.' },
+        { name: 'Functional Milestone Mastery & Home Protocol', text: 'Achieve assisted/independent walking and self-care skills, with transition training and home exercise guides.' }
       ]
     );
   }
