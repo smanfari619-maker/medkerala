@@ -41,6 +41,7 @@ export default async function HomePage({ params }: Props) {
 
   const testimonials = [
     {
+      initials: 'KA',
       nameEn: 'Khalid A.',
       nameAr: 'خالد ع.',
       countryEn: 'UAE — Dubai',
@@ -48,31 +49,47 @@ export default async function HomePage({ params }: Props) {
       flagEmoji: '🇦🇪',
       treatmentEn: 'Cardiac Bypass Surgery',
       treatmentAr: 'جراحة القلب المفتوح',
-      hospitalEn: 'Aster MIMS Hospital, Calicut',
+      headlineEn: 'Saved 70% vs. Dubai on Heart Bypass at Aster MIMS',
+      headlineAr: 'وفّرت أكثر من 70% مقارنة بدبي مع مستشفى أستر ميمز',
+      hospitalEn: 'Aster MIMS, Calicut',
       hospitalAr: 'مستشفى أستر ميمز، كالكوت',
       stayEn: '14 Days Stay',
       stayAr: 'إقامة ١٤ يوماً',
-      quoteEn: 'My cardiologist in Dubai quoted me AED 220,000. TreatInKerala arranged the same surgery at Aster MIMS for a fraction of that. The coordinator met me at the airport, stayed with us daily, and handled every single thing. My wife felt completely at ease. We saved over 70% and I\'m fully recovered.',
-      quoteAr: 'طلب مني طبيبي في دبي 220,000 درهم. رتّب لي فريق علاج في كيرلا نفس الجراحة في مستشفى أستر بجزء بسيط من تلك التكلفة. استقبلنا المنسق في المطار وكان معنا كل يوم. وفّرنا أكثر من 70% وتعافيت تماماً.',
-      saving: '70%+',
+      quoteEn: 'My cardiologist in Dubai quoted AED 220,000. TreatInKerala arranged the same surgery at Aster MIMS at a fraction of that. Coordinator received us at Calicut airport, assisted daily, and handled all hospital formalities. Fully recovered.',
+      quoteAr: 'طلب مني طبيبي في دبي 220,000 درهم. رتّب لي فريق علاج في كيرلا نفس الجراحة في أستر ميمز بتوفير هائل. استقبلنا المنسق من المطار وتولى كافة الإجراءات الطبية باحترافية.',
+      statEn: '70%+',
+      statAr: '٧٠٪+',
+      statLabelEn: 'Cost Saved',
+      statLabelAr: 'توفير التكلفة',
+      outcomeEn: 'Full Clinical Recovery',
+      outcomeAr: 'تعافي سريري تام',
     },
     {
+      initials: 'EO',
       nameEn: 'Emmanuel O.',
       nameAr: 'إيمانويل أو.',
       countryEn: 'Nigeria — Lagos',
       countryAr: 'نيجيريا — لاغوس',
       flagEmoji: '🇳🇬',
       treatmentEn: 'Knee Replacement',
-      treatmentAr: 'استبدال الركبة',
+      treatmentAr: 'استبدال مفصل الركبة',
+      headlineEn: 'Walking Pain-Free in 48 Hours After 2 Years of Suffering',
+      headlineAr: 'مشيت بدون ألم خلال 48 ساعة بعد عامين من المعاناة',
       hospitalEn: 'Baby Memorial Hospital',
       hospitalAr: 'مستشفى بيبي ميموريال',
       stayEn: '18 Days Stay',
       stayAr: 'إقامة ١٨ يوماً',
-      quoteEn: 'I had been living with severe knee pain for two years. A friend told me about TreatInKerala. Within 48 hours of sending my MRI, I had a full cost breakdown. The hospital stay was clean, the surgeons were brilliant, and the team sorted out my visa letter without any hassle. I walked without pain for the first time in years.',
-      quoteAr: 'عانيت من آلام الركبة الشديدة لمدة عامين. أخبرني صديق عن علاج في كيرلا. خلال 48 ساعة من إرسال صور الأشعة، تلقيت تفاصيل التكلفة الكاملة. كان المستشفى نظيفاً والجراحون رائعين والفريق رتّب لي التأشيرة بدون أي متاعب.',
-      saving: '65%+',
+      quoteEn: 'Within 48 hours of sending my knee MRI, I had a confirmed surgical estimate. The surgeons were brilliant, the hospital spotless, and the team sorted out my medical visa seamlessly. Walked comfortably right away.',
+      quoteAr: 'عانيت من آلام الركبة لعامين. بعد 48 ساعة من إرسال الأشعة، تلقيت خطة جراحية واضحة والتأشيرة كاملة. جراحون بارعون ورعاية ممتازة جعلتني أمشي بدون ألم مجدداً.',
+      statEn: '65%+',
+      statAr: '٦٥٪+',
+      statLabelEn: 'Cost Saved',
+      statLabelAr: 'توفير التكلفة',
+      outcomeEn: 'Pain-Free Mobility',
+      outcomeAr: 'استعادة الحركة بدون ألم',
     },
     {
+      initials: 'SM',
       nameEn: 'Sarah M.',
       nameAr: 'سارة م.',
       countryEn: 'United Kingdom — Birmingham',
@@ -80,13 +97,20 @@ export default async function HomePage({ params }: Props) {
       flagEmoji: '🇬🇧',
       treatmentEn: 'Ayurveda & Panchakarma',
       treatmentAr: 'الأيورفيدا والبانشاكارما',
+      headlineEn: 'Complete Burnout Reset with Kottakkal Arya Vaidya Sala',
+      headlineAr: 'تجديد كامل للنشاط والتخلص من الإرهاق مع كوتاكال',
       hospitalEn: 'Kottakkal Arya Vaidya Sala Partner',
       hospitalAr: 'مركز شريك لكوتاكال أريا فايديا سالا',
       stayEn: '21 Days Retreat',
       stayAr: 'إقامة ٢١ يوماً',
-      quoteEn: 'I came for a 14-day Panchakarma retreat after burning out completely at work. The coordinator arranged everything — the wellness resort, the Ayurvedic doctors, even a short backwater houseboat trip during my recovery week. I left feeling like a completely different person. I\'m already planning my return.',
-      quoteAr: 'جئت لإجراء دورة بانشاكارما لمدة 14 يوماً بعد إرهاق شديد في العمل. رتّب المنسق كل شيء — المنتجع وأطباء الأيورفيدا وحتى رحلة بالقارب خلال أسبوع التعافي. غادرت وأنا شخص مختلف تماماً.',
-      saving: 'Transformed',
+      quoteEn: 'Burned out at work, I booked a 14-day residential detox. The coordinator arranged everything: consultations with chief Vaidyas, custom herbal therapies, and a quiet recovery houseboat stay. Returned completely renewed.',
+      quoteAr: 'عانيت من إجهاد شديد في العمل وجئت للاستشفاء. رتّب الفريق كل شيء: استشارة كبار أطباء الأيورفيدا، وجلسات العلاج العشبي، ورحلة هادئة في قنوات كيرلا المائية. شعرت بتجدد حقيقي.',
+      statEn: 'Renewed',
+      statAr: 'تجدد تام',
+      statLabelEn: 'Health Outcome',
+      statLabelAr: 'النتيجة الصحية',
+      outcomeEn: '100% Rejuvenated',
+      outcomeAr: 'استعادة كامل الطاقة',
     },
   ];
 
@@ -711,49 +735,74 @@ export default async function HomePage({ params }: Props) {
 
           <div className="flex overflow-x-auto md:overflow-visible no-scrollbar scroll-momentum snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0" dir={isRtl ? 'rtl' : 'ltr'}>
             {testimonials.map((t, idx) => (
-              <div key={idx} className="bg-[#F5F8F4] rounded-2xl p-5 sm:p-6 flex flex-col gap-4 border border-[#E8EDE6] hover:border-[#2D6A4F]/25 hover:shadow-lg transition-all duration-300 group rtl:text-right snap-start shrink-0 w-[85vw] md:w-auto">
-                {/* Header: Stars & Stay Badge */}
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-[#D4A96A] text-[#D4A96A]" />
-                    ))}
-                  </div>
-                  <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white text-[#2D6A4F] border border-[#2D6A4F]/15 shadow-2xs">
-                    {isRtl ? t.stayAr : t.stayEn}
-                  </span>
-                </div>
+              <div
+                key={idx}
+                className="bg-white rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-emerald-950/10 shadow-xs hover:shadow-md transition-all duration-300 rtl:text-right snap-start shrink-0 w-[88vw] md:w-auto"
+              >
+                <div>
+                  {/* Top Bar: Patient Profile + Stay Duration */}
+                  <div className="flex items-start justify-between gap-3 mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-2xl bg-[#1B4332] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-xs">
+                        {t.initials}
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-1.5">
+                          <span className="font-bold text-[#1B4332] text-sm">
+                            {t.flagEmoji} {isRtl ? t.nameAr : t.nameEn}
+                          </span>
+                          <ShieldCheck className="h-3.5 w-3.5 text-primary-green shrink-0" />
+                        </div>
+                        <p className="text-xs text-text-muted">{isRtl ? t.countryAr : t.countryEn}</p>
+                      </div>
+                    </div>
 
-                {/* Quote */}
-                <div className="relative">
-                  <Quote className="absolute -top-1 -left-1 rtl:-right-1 rtl:left-auto h-8 w-8 text-[#2D6A4F]/10 shrink-0" />
-                  <p className="text-[#2C3E35] text-[15px] leading-relaxed font-normal pl-6 rtl:pl-0 rtl:pr-6">
-                    {isRtl ? t.quoteAr : t.quoteEn}
+                    <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#FAF7F2] text-[#8C6D37] border border-[#D4A96A]/25 shrink-0">
+                      {isRtl ? t.stayAr : t.stayEn}
+                    </span>
+                  </div>
+
+                  {/* Procedure & Hospital Tags */}
+                  <div className="flex flex-wrap items-center gap-1.5 mb-3.5">
+                    <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-emerald-50 text-[#1B4332] border border-emerald-100">
+                      {isRtl ? t.treatmentAr : t.treatmentEn}
+                    </span>
+                    <span className="text-xs text-text-muted bg-slate-50 border border-slate-200/70 px-2.5 py-1 rounded-lg">
+                      🏥 {isRtl ? t.hospitalAr : t.hospitalEn}
+                    </span>
+                  </div>
+
+                  {/* Standout Headline (The Big Win) */}
+                  <h3 className="text-base font-bold text-[#1B4332] mb-2 leading-snug">
+                    {isRtl ? t.headlineAr : t.headlineEn}
+                  </h3>
+
+                  {/* Short, Digestible Testimonial Snippet */}
+                  <p className="text-[#3D5245] text-xs sm:text-sm leading-relaxed font-light mb-5">
+                    &ldquo;{isRtl ? t.quoteAr : t.quoteEn}&rdquo;
                   </p>
                 </div>
 
-                {/* Hospital Badge Tag */}
-                <div className="pt-2">
-                  <span className="text-xs text-[#4A5C52] font-medium bg-white/80 border border-[#D4A96A]/20 px-2.5 py-1 rounded-md inline-block">
-                    🏥 {isRtl ? t.hospitalAr : t.hospitalEn}
-                  </span>
-                </div>
-
-                {/* Footer */}
-                <div className="mt-auto pt-4 border-t border-[#E8EDE6] flex items-center justify-between gap-3">
-                  <div>
-                    <div className="flex items-center gap-1.5">
-                      <p className="font-semibold text-[#1B4332] text-sm">
-                        {t.flagEmoji} {isRtl ? t.nameAr : t.nameEn}
-                      </p>
-                      <ShieldCheck className="h-3.5 w-3.5 text-[#2D6A4F]" />
+                {/* Outcome & Rating Footer */}
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+                  <div className="space-y-1">
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-[#D4A96A] text-[#D4A96A]" />
+                      ))}
                     </div>
-                    <p className="text-xs text-[#5D6B64] mt-0.5">{isRtl ? t.countryAr : t.countryEn}</p>
-                    <p className="text-xs font-semibold text-[#2D6A4F] mt-0.5">{isRtl ? t.treatmentAr : t.treatmentEn}</p>
+                    <span className="text-[11px] font-medium text-text-muted block">
+                      {isRtl ? t.outcomeAr : t.outcomeEn}
+                    </span>
                   </div>
-                  <div className="text-end shrink-0">
-                    <span className="text-xl font-bold text-[#2D6A4F] font-display">{t.saving}</span>
-                    <p className="text-[10px] text-text-muted/60 uppercase tracking-wide">{isRtl ? 'توفير' : 'saved'}</p>
+
+                  <div className="bg-[#FAF7F2] px-3 py-1.5 rounded-xl border border-[#D4A96A]/25 text-end shrink-0">
+                    <span className="text-base font-extrabold text-[#1B4332] block font-display leading-tight">
+                      {isRtl ? t.statAr : t.statEn}
+                    </span>
+                    <span className="text-[10px] text-[#8C6D37] font-semibold uppercase tracking-wider block">
+                      {isRtl ? t.statLabelAr : t.statLabelEn}
+                    </span>
                   </div>
                 </div>
               </div>
