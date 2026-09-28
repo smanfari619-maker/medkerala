@@ -175,6 +175,16 @@ export function getMedicalProcedureSchema(locale: string, treatment: {
     'speakable': {
       '@type': 'SpeakableSpecification',
       'cssSelector': ['h1', '.treatment-overview', '.cost-summary']
+    },
+    'reviewedBy': {
+      '@type': 'Person',
+      'name': 'Dr. Rajesh K. Varma',
+      'jobTitle': 'Senior Consultant & Clinical Advisory Lead',
+      'honorificPrefix': 'Dr.',
+      'worksFor': {
+        '@type': 'MedicalOrganization',
+        'name': 'TreatInKerala Clinical Advisory Board'
+      }
     }
   };
 }

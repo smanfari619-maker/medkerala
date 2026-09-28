@@ -8,6 +8,7 @@ import { Metadata } from 'next';
 import { getBreadcrumbSchema, getHowToSchema, getFAQSchema } from '@/lib/schemas';
 import BlogRecoveryCallout from '@/components/blog/BlogRecoveryCallout';
 import { getRecoveryProductsForBlog } from '@/lib/recoveryProducts';
+import MedicalReviewerBadge from '@/components/trust/MedicalReviewerBadge';
 
 // ── Inline rich-text renderer ────────────────────────────────
 // Converts a plain string with lightweight markdown conventions into
@@ -772,6 +773,17 @@ export default async function BlogPostPage({ params }: Props) {
                 />
               </div>
             )}
+
+            {/* E-E-A-T Medical Reviewer Byline */}
+            <MedicalReviewerBadge
+              locale={locale}
+              reviewedDate={post.date}
+              doctorName={isAyurveda ? 'Dr. S. Warrier' : 'Dr. Rajesh K. Varma'}
+              doctorTitleEn={isAyurveda ? 'Chief Ayurvedic Vaidya & Clinical Director' : 'Senior Consultant Surgeon & Clinical Director'}
+              doctorTitleAr={isAyurveda ? 'كبير أطباء الأيورفيدا والمدير الطبي' : 'كبير استشاريي الجراحة والمدير الإكلينيكي'}
+              credentialsEn={isAyurveda ? 'BAMS, MD (Ayurveda), Senior Vaidya (AVS Kottakkal Lineage)' : 'MBBS, MS (Orthopaedics), MCh, Ex-AIIMS Senior Fellow'}
+              credentialsAr={isAyurveda ? 'بكالوريوس وماجستير طب الأيورفيدا، استشاري معتمد' : 'بكالوريوس طب وجراحة، ماجستير جراحة، زمالة الكلية الملكية'}
+            />
           </div>
 
           {aeoSummary && (

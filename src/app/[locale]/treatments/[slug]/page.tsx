@@ -26,6 +26,8 @@ import { Metadata } from 'next';
 import { getMedicalProcedureSchema, getBreadcrumbSchema, getFAQSchema } from '@/lib/schemas';
 import RecoveryEssentialsSection from '@/components/treatments/RecoveryEssentialsSection';
 import { getRecoveryProductsForTreatment } from '@/lib/recoveryProducts';
+import MedicalReviewerBadge from '@/components/trust/MedicalReviewerBadge';
+import ClinicalQualityMetrics from '@/components/trust/ClinicalQualityMetrics';
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -232,6 +234,11 @@ export default async function TreatmentDetailPage({ params }: Props) {
               {tCommon('getEstimate')}
             </Link>
           </div>
+
+          {/* E-E-A-T Medical Reviewer Byline */}
+          <div className="pt-2">
+            <MedicalReviewerBadge locale={locale} />
+          </div>
         </div>
       </section>
 
@@ -344,6 +351,9 @@ export default async function TreatmentDetailPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* E-E-A-T Clinical Quality & Safety Benchmarks */}
+      <ClinicalQualityMetrics locale={locale} />
 
       {/* 4. DOCTOR PROFILES */}
       <section className="py-20 bg-white">
