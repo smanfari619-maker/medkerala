@@ -8,7 +8,7 @@ import {
   Search, ChevronRight, MessageCircle,
   LayoutGrid, X, Check, Scale, Sparkles,
   ChevronDown, ChevronUp, CheckSquare, Square,
-  ShieldCheck, ArrowRight, Info
+  ShieldCheck, ArrowRight, Info, Plane
 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
 
@@ -389,6 +389,104 @@ export default function HospitalsDirectoryPage() {
               ? 'تصفح قائمتنا المنسقة لأهم المستشفيات الحديثة (الطب الغربي) والمراكز الطبية التقليدية (الأيورفيدا) المعتمدة.'
               : 'Browse our curated list of world-class quaternary care hospitals (Allopathy) and certified authentic healing resorts (Ayurveda).'}
           </p>
+        </div>
+
+        {/* ── Tri-Hub Regional Landing Pages Showcase ── */}
+        <div className="mb-12 max-w-5xl mx-auto">
+          <div className="text-center mb-5">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-[#D4A96A] block">
+              {isRtl ? 'المراكز الطبية الإقليمية الرئيسية' : 'Explore Kerala Regional Healthcare Hubs'}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Kochi */}
+            <Link
+              href="/hospitals/kochi"
+              className="group bg-white p-5 rounded-2xl border border-emerald-950/10 hover:border-primary-green/40 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-primary-green">
+                    {isRtl ? 'وسط كيرلا' : 'Central Kerala'}
+                  </span>
+                  <span className="text-[10px] font-semibold text-text-muted flex items-center gap-1">
+                    <Plane className="h-3 w-3 text-[#D4A96A]" /> COK Airport
+                  </span>
+                </div>
+                <h3 className="text-base font-bold text-[#1B4332] group-hover:text-primary-green transition-colors">
+                  {isRtl ? 'كوتشين (إرناكولام)' : 'Kochi (Ernakulam)'}
+                </h3>
+                <p className="text-xs text-[#4A5C52] mt-1.5 leading-relaxed font-light">
+                  {isRtl
+                    ? 'عاصمة الرعاية الرباعية وزراعة الأعضاء وجراحة الروبوت. أستر وأمريتا وليكشور.'
+                    : 'Metropolitan hub for organ transplants, oncology & robotic surgery. Aster Medcity, Amrita & Lakeshore.'}
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-primary-green">
+                <span>{isRtl ? 'عرض مستشفيات كوتشين' : 'Explore Kochi Hub'}</span>
+                <ArrowRight className={`h-3.5 w-3.5 group-hover:translate-x-1 transition-transform ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
+              </div>
+            </Link>
+
+            {/* Calicut */}
+            <Link
+              href="/hospitals/calicut"
+              className="group bg-white p-5 rounded-2xl border border-emerald-950/10 hover:border-primary-green/40 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-primary-green">
+                    {isRtl ? 'شمال كيرلا' : 'North Kerala'}
+                  </span>
+                  <span className="text-[10px] font-semibold text-text-muted flex items-center gap-1">
+                    <Plane className="h-3 w-3 text-[#D4A96A]" /> CCJ Airport
+                  </span>
+                </div>
+                <h3 className="text-base font-bold text-[#1B4332] group-hover:text-primary-green transition-colors">
+                  {isRtl ? 'كوزيكود (كالكوت)' : 'Calicut (Kozhikode)'}
+                </h3>
+                <p className="text-xs text-[#4A5C52] mt-1.5 leading-relaxed font-light">
+                  {isRtl
+                    ? 'عاصمة المستشفيات الرقمية وجراحة القلب والأعصاب. مستشفى ميترا، ميمس، وبيبي التذكاري.'
+                    : 'Digital healthcare & cardiac excellence. Meitra Hospital, Aster MIMS & Baby Memorial.'}
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-primary-green">
+                <span>{isRtl ? 'عرض مستشفيات كالكوت' : 'Explore Calicut Hub'}</span>
+                <ArrowRight className={`h-3.5 w-3.5 group-hover:translate-x-1 transition-transform ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
+              </div>
+            </Link>
+
+            {/* Kottakkal */}
+            <Link
+              href="/hospitals/kottakkal"
+              className="group bg-white p-5 rounded-2xl border border-emerald-950/10 hover:border-primary-green/40 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-[#D4A96A]/20 text-[#8C6D37]">
+                    {isRtl ? 'عاصمة الأيورفيدا' : 'Ayurveda Capital'}
+                  </span>
+                  <span className="text-[10px] font-semibold text-text-muted flex items-center gap-1">
+                    <Plane className="h-3 w-3 text-[#D4A96A]" /> 40m CCJ
+                  </span>
+                </div>
+                <h3 className="text-base font-bold text-[#1B4332] group-hover:text-primary-green transition-colors">
+                  {isRtl ? 'كوتاكال (مالابورام)' : 'Kottakkal (Malappuram)'}
+                </h3>
+                <p className="text-xs text-[#4A5C52] mt-1.5 leading-relaxed font-light">
+                  {isRtl
+                    ? 'مقر آريا فايديا سالا (AVS) وتراث الأشتوفايديا. باقات شلل، ديسك، وتنسيق فلل عائلية.'
+                    : 'Global seat of Arya Vaidya Sala (AVS). Stroke rehab, severe spine care & family recovery villas.'}
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-primary-green">
+                <span>{isRtl ? 'عرض مركز كوتاكال' : 'Explore Kottakkal Hub'}</span>
+                <ArrowRight className={`h-3.5 w-3.5 group-hover:translate-x-1 transition-transform ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
+              </div>
+            </Link>
+          </div>
         </div>
 
         {/* Search & Filter Controls */}

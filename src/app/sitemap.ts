@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { TREATMENTS, BLOG_POSTS } from '@/lib/data';
 import { COUNTRY_PAGES_DATA } from '@/lib/countryPages';
+import { getAllRegionalHubSlugs } from '@/lib/regionalHubs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.treatinkerala.com';
@@ -71,6 +72,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             en: `${baseUrl}/en/patients/${slug}`,
             ar: `${baseUrl}/ar/patients/${slug}`,
+          },
+        },
+      });
+    });
+  });
+
+  // Generate localized entries for regional hospital hubs (Kochi, Calicut, Kottakkal)
+  getAllRegionalHubSlugs().forEach((city) => {
+    locales.forEach((locale) => {
+      sitemapEntries.push({
+        url: `${baseUrl}/${locale}/hospitals/${city}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.85,
+        alternates: {
+          languages: {
+            en: `${baseUrl}/en/hospitals/${city}`,
+            ar: `${baseUrl}/ar/hospitals/${city}`,
           },
         },
       });
