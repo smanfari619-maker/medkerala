@@ -37,7 +37,7 @@ export default function HubDetailClient({ hub, allHubs }: Props) {
   return (
     <div className={`min-h-screen bg-[#FDFBF7] text-[#1B4332] ${isRtl ? 'rtl' : 'ltr'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       {/* ── Breadcrumb & Hub Switcher Bar ── */}
-      <section className="bg-white border-b border-emerald-950/10 pt-6 pb-4">
+      <section className="bg-white border-b border-emerald-950/10 pt-28 sm:pt-32 lg:pt-36 pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs text-text-muted mb-4">
