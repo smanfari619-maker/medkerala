@@ -38,6 +38,12 @@ export default function Footer() {
     { href: '/get-estimate', label: tCommon('getEstimate') },
   ];
 
+  const regionalHubLinks = [
+    { href: '/hospitals/kochi', label: locale === 'ar' ? 'كوتشين (إرناكولام)' : 'Kochi' },
+    { href: '/hospitals/calicut', label: locale === 'ar' ? 'كوزيكود (كالكوت)' : 'Calicut' },
+    { href: '/hospitals/kottakkal', label: locale === 'ar' ? 'كوتاكال (آريا فايديا سالا)' : 'Kottakkal' },
+  ];
+
   return (
     <footer className="bg-[#111827] text-slate-300 pt-16 pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-10 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -256,6 +262,22 @@ export default function Footer() {
                     <MessageCircle className="h-4 w-4 text-[#D4A96A] shrink-0" />
                     <span dir="ltr">{SITE_CONFIG.phone}</span>
                   </a>
+                </li>
+                <li className="pt-3 border-t border-slate-800">
+                  <span className="text-[11px] font-bold text-[#D4A96A] uppercase tracking-wider block mb-2">
+                    {locale === 'ar' ? 'المراكز الطبية الإقليمية:' : 'Regional Hub Desks:'}
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {regionalHubLinks.map((hub) => (
+                      <Link
+                        key={hub.href}
+                        href={hub.href}
+                        className="text-xs text-slate-300 hover:text-white transition-colors bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-700/60 inline-block"
+                      >
+                        {hub.label}
+                      </Link>
+                    ))}
+                  </div>
                 </li>
               </ul>
             </div>

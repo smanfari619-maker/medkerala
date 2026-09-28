@@ -214,6 +214,30 @@ export default function MobileBottomNav() {
                 );
               })}
             </div>
+
+            {/* Regional Hubs Quick Access */}
+            <div className="pt-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#D4A96A] block mb-2 px-1">
+                {isRtl ? 'المراكز الطبية الإقليمية' : 'Regional Medical Hubs'}
+              </span>
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { href: '/hospitals/kochi', nameEn: 'Kochi', nameAr: 'كوتشين', subEn: 'Transplants', subAr: 'زراعة الأعضاء' },
+                  { href: '/hospitals/calicut', nameEn: 'Calicut', nameAr: 'كوزيكود', subEn: 'Cardiac & Spine', subAr: 'القلب والأعصاب' },
+                  { href: '/hospitals/kottakkal', nameEn: 'Kottakkal', nameAr: 'كوتاكال', subEn: 'Ayurveda AVS', subAr: 'أيورفيدا كوتاكال' },
+                ].map((hub) => (
+                  <Link
+                    key={hub.href}
+                    href={hub.href}
+                    onClick={() => setDrawerOpen(false)}
+                    className="p-2.5 rounded-[12px] bg-white border border-[#D4A96A]/25 hover:border-primary-green/40 shadow-2xs text-center flex flex-col items-center justify-center transition-all tap-active"
+                  >
+                    <span className="text-xs font-bold text-[#1B4332]">{isRtl ? hub.nameAr : hub.nameEn}</span>
+                    <span className="text-[9px] text-[#4A5C52] leading-tight mt-0.5">{isRtl ? hub.subAr : hub.subEn}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}
