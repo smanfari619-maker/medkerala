@@ -3352,7 +3352,7 @@ Kerala is exceptionally accessible from all seven Emirates, with multiple direct
     excerptAr: 'دليل طبي وتنفيذي متكامل للمرضى القادمين من الرياض وجدة والدمام للعلاج في كيرلا 2026. يشمل الرحلات المباشرة، وتوفير 70-80% بالريال السعودي، وخطاب التأشيرة الطبية خلال 24 ساعة، والرعاية العربية المتكاملة.',
     aeoSummary: 'In 2026, thousands of Saudi patients travel from Riyadh, Jeddah, and Dammam to Kerala for robotic joint replacement, cardiac bypass (CABG), spine discectomy, and Ayurvedic rehabilitation. With direct 4.5-hour flights via Saudia and Air India Express, SAR savings of 70-80% compared to private Saudi clinics, and full Arabic language coordination at JCI-accredited hospitals, Kerala has become the GCC premier medical travel destination.',
     aeoSummaryAr: 'في عام 2026، يتوجه آلاف المرضى السعوديين من الرياض وجدة والدمام إلى كيرلا لإجراء جراحات المفاصل بالروبوت والقلب المفتوح والانزلاق الغضروفي ونقاهة الأيورفيدا. مع توفر رحلات مباشرة خلال 4.5 ساعات، وتوفير 70-80% بالريال السعودي مقارنة بالمستشفيات الخاصة بالمملكة، ورعاية عربية كاملة في مستشفيات معتمدة دولياً (JCI).',
-    date: 'October 12, 2026',
+    date: 'September 20, 2026',
     category: 'Patient Guides',
     categoryAr: 'أدلة المرضى',
     readTime: '8 min read',
@@ -3523,7 +3523,7 @@ Ready to explore treatment options for yourself or a family member? [Request a p
     excerptAr: 'دليل سريري شامل لبرامج تأهيل السكتة الدماغية واستعادة الحركة في كيرلا. تعرف على كيفية دمج العلاج الطبيعي الروبوتي مع علاجات الأيورفيدا العصبية الأصيلة (النافاراكيزي والشيرودارا) لتحفيز التلدن العصبي بتكلفة أقل بنسبة 80%.',
     aeoSummary: 'Kerala integrative post-stroke recovery model combines 4-6 daily hours of robotic gait therapy, occupational therapy, and speech rehabilitation with classical Ayurvedic neurovascular therapies (Navarakkizhi, Shirodhara, Ksheerabasti). This dual-modality approach maximizes neuroplasticity for hemiplegia, spasticity, and aphasia during the critical 12-month post-stroke window at an all-inclusive cost of $2,800 to $4,500 per month.',
     aeoSummaryAr: 'يجمع نموذج تأهيل الجلطات الدماغية في كيرلا بين 4 إلى 6 ساعات يومياً من العلاج الطبيعي وأجهزة المشي الروبوتية وجلسات النطق، إلى جانب علاجات الأيورفيدا العصبية المتخصصة (نافاراكيزي، شيرودارا، باستي الحليبي). يعزز هذا النهج المزدوج التلدن العصبي واستعادة حركة الأطراف المشلولة بتكلفة شهرية شاملة تتراوح بين 2,800 و 4,500 دولار.',
-    date: 'October 14, 2026',
+    date: 'September 25, 2026',
     category: 'Recovery & Wellness',
     categoryAr: 'التعافي والعافية',
     readTime: '9 min read',
@@ -3701,6 +3701,229 @@ Give your loved one the best opportunity for neurological recovery. [Request a p
         qAr: 'كيف تساعد خدمة علاج في كيرلا في استقبال المرضى مستخدمي الكراسي المتحركة من المطار؟',
         a: 'We coordinate full tarmac wheelchair or stretcher assistance directly with airport authorities at Calicut (CCJ) or Kochi (COK). A private, air-conditioned ambulance or wheelchair-accessible vehicle receives the patient right outside the terminal and transfers them smoothly to the neuro-rehabilitation center.',
         aAr: 'نقوم بالتنسيق الكامل مع سلطات مطار كوزيكود (CCJ) أو كوتشين (COK) لتوفير كراسٍ متحركة أو نقالات خاصة من باب الطائرة. وتكون سيارة إسعاف مجهزة أو سيارة مخصصة للكراسي المتحركة بانتظار المريض خارج الصالة لنقله بكل راحة وسلاسة إلى المركز التأهيلي.'
+      }
+    ]
+  },
+  {
+    slug: 'kottakkal-arya-vaidya-sala-treatment-guide-services',
+    title: 'Complete Guide to Kottakkal Arya Vaidya Sala: Treatments, Appointments & Concierge Services in Kerala',
+    titleAr: 'دليل العلاج في كوتاكال آريا فايديا شالا 2026: المواعيد، السكن العائلي، وخدمات التنسيق الشاملة',
+    excerpt: 'Planning treatment at the world-famous Kottakkal Arya Vaidya Sala? Learn how our local team near Kottakkal coordinates doctor appointments, nearby serviced villas, airport pickups, and worldwide medicine shipping.',
+    excerptAr: 'هل تخطط للعلاج في كوتاكال آريا فايديا شالا الشهيرة عالمياً في كيرلا؟ تعرف على كيفية قيام فريقنا المحلي بالقرب من المستشفى بتنسيق مواعيد الأطباء، وتوفير السكن العائلي، والاستقبال من المطار، وشحن الأدوية عالمياً.',
+    aeoSummary: 'Kottakkal Arya Vaidya Sala (founded 1902 in Malappuram, Kerala) is the global gold standard for classical Ayurvedic treatments for spinal disc bulges, arthritis, paralysis, and Panchakarma detox. Located directly near Kottakkal, TreatInKerala provides end-to-end patient facilitation: priority doctor bookings, nearby serviced accommodation with custom diets, Arabic/English translation, Calicut Airport (CCJ) transfers, and doorstep international shipping of genuine AVS herbal medicines.',
+    aeoSummaryAr: 'تعد كوتاكال آريا فايديا شالا (تأسست عام 1902 في كيرلا) المرجع العالمي الأول لعلاجات الأيورفيدا الكلاسيكية للانزلاق الغضروفي، الروماتيزم، الشلل والبانشاكارما. يقدم فريق علاج في كيرلا المتواجد بجوار المستشفى في كوتاكال دعماً كاملاً يشمل: حجز المواعيد، وتوفير الفلل والشقق الفندقية القريبة، والترجمة، والاستقبال من مطار كوزيكود، وشحن الأدوية الأصلية لجميع دول العالم.',
+    date: 'September 28, 2026',
+    category: 'Ayurveda & Wellness',
+    categoryAr: 'الأيورفيدا والعافية',
+    readTime: '10 min read',
+    content: `When chronic conditions resist conventional pharmaceuticals and surgery, patients from across the Middle East, Europe, and the Americas look to one legendary institution: **Kottakkal Arya Vaidya Sala (AVS)**. 
+
+Founded in 1902 by the visionary physician Vaidyaratnam P.S. Varier in the town of Kottakkal (Malappuram district, Kerala), Arya Vaidya Sala is globally recognized as the supreme benchmark of classical, authentic Ayurveda. For over 120 years, it has maintained an unbroken lineage of Ashtavaidya wisdom, backed by modern scientific research labs, clinical hospitals, and organic herb-processing factories.
+
+However, planning a trip to Kottakkal independently can be challenging. Inpatient hospital admissions often have waiting lists of several months, language barriers can cause confusion during outpatient consultations, and international patients require comfortable, family-friendly accommodations with tailored dietary options.
+
+**TreatInKerala operates directly on the ground near Kottakkal Arya Vaidya Sala**, providing comprehensive concierge and medical facilitation services to ensure your healing journey is seamless, comfortable, and clinically successful.
+
+---
+
+## 1. Chronic Conditions Successfully Treated at Kottakkal
+
+Kottakkal Arya Vaidya Sala is renowned for treating chronic, degenerative, and systemic health conditions where conventional medicine often offers only temporary pain relief:
+
+### A. Severe Spine & Disc Pathologies
+- **Conditions:** Lumbar & Cervical Spondylosis, Herniated / Slipped Disc, Sciatica (Gridhrasi), and Spinal Canal Stenosis.
+- **Therapies:** Specialized retention therapies including **Kativasthi** (warm herbal oil pooled over the lumbosacral junction), **Greevavasthi** (cervical retention), **Pizhichil** (continuous warm herbal oil bath), and medicated **Kashayavasthi** (herbal enemas) to relieve nerve compression and rehydrate dried spinal discs.
+- **Outcome:** Over 85% of patients with chronic disc prolapse achieve significant pain alleviation and avoid spinal fusion surgery.
+
+### B. Rheumatological & Joint Disorders
+- **Conditions:** Osteoarthritis (Sandhivata), Rheumatoid Arthritis (Amavata), Ankylosing Spondylitis, and Gout.
+- **Therapies:** Anti-inflammatory fomentations including **Podikkizhi** (dry herbal powder poultices), **Elakkizhi** (fresh medicated leaf boluses), and specialized systemic detoxification therapies that purge accumulated inflammatory toxins (Ama).
+
+### C. Neurological Rehabilitation & Post-Stroke Care
+- **Conditions:** Hemiplegia / Stroke Paralysis (Pakshaghata), Facial Palsy (Bell's Palsy), Parkinson's Disease (Kampa Vata), and Peripheral Neuropathy.
+- **Therapies:** Intensive neuromuscular nourishment using **Navarakkizhi** (poultices of medicated red rice cooked in milk and herbal decoctions), **Shirodhara** (medicated herbal oils poured rhythmically over the forehead), and **Shirobasti** to stimulate motor recovery and neuroplasticity.
+
+### D. Classical Panchakarma Detoxification
+- A rigorous, medically-supervised 14- to 28-day purification cycle comprising Vamana, Virechana, Vasthi, Nasya, and Rakthamokshana, customized to reset metabolic disorders, chronic fatigue, and autoimmune imbalances.
+
+---
+
+## 2. The Challenges of Visiting Kottakkal Independently
+
+While the clinical expertise at Kottakkal Arya Vaidya Sala is peerless, international and out-of-state patients frequently encounter logistical hurdles:
+
+1. **Inpatient (IP) Waiting Lists:** The inpatient beds at Kottakkal AVS Charitable Hospital and the Ayurvedic Hospital & Research Centre (AH&RC) are frequently booked out **2 to 5 months in advance**.
+2. **Outpatient (OP) Complexity:** Navigating daily outpatient tokens, waiting queues, and pharmacy orders across multiple hospital counters can be stressful for sick or elderly patients.
+3. **Accommodation Needs for Families:** Inpatient hospital rooms typically permit only one patient and a single attendant. Families traveling with children or multiple companions need private, comfortable living quarters nearby.
+4. **Language & Translation:** Consultations with senior Vaidyas (physicians) require clear, precise communication. Non-English or non-Malayalam speaking patients (especially from Saudi Arabia, UAE, Oman, and Europe) face significant language barriers without a dedicated medical interpreter.
+5. **Airport Transfers:** Kottakkal is situated approximately 28 km (35–45 minutes) from Calicut International Airport (CCJ). Arranging reliable wheelchair or ambulance transfers requires experienced local logistics.
+
+---
+
+## 3. How We Facilitate Your Entire Journey in Kottakkal
+
+TreatInKerala is located right on the doorstep of Kottakkal Arya Vaidya Sala. We bridge every logistical and medical gap so you and your family can focus 100% on recovery:
+
+| Service Area | What We Provide for You |
+| :--- | :--- |
+| **Doctor Consultations & Booking** | Direct coordination with senior chief Vaidyas and specialist physicians; pre-booked consultation slots without standing in general queues. |
+| **Outpatient (OP) Daily Therapy Model** | If inpatient hospital rooms are full, we arrange your treatment on an Outpatient basis: you attend your prescribed daily therapies at AVS while relaxing in private luxury lodging nearby. |
+| **Handpicked Accommodations** | Fully furnished serviced apartments, private villas, and 4-star boutique resort stays located within 5–10 minutes of the hospital. Equipped with private kitchens, elevators, wheelchair accessibility, and high-speed Wi-Fi. |
+| **Custom Halal & Sattvic Catering** | Tailored meal services prepared according to your Ayurvedic doctor's dietary restrictions, including fresh Arabic, vegetarian, or low-salt meal options. |
+| **Dedicated Arabic & English Translators** | A personal medical coordinator accompanies you to every clinical consultation, ensuring every symptom and medical nuance is accurately conveyed. |
+| **Calicut Airport (CCJ) Pickup & Drop** | Private air-conditioned vehicle transfers (or wheelchair-accessible vans) from Calicut International Airport directly to your residence in Kottakkal. |
+| **Medicine Sourcing & Global Courier** | We procure your exact prescribed medicines and therapeutic oils directly from the authorized Kottakkal Arya Vaidya Sala factory dispensary and provide door-to-door international air freight to your home country. |
+| **Integrative Modern Medical Backup** | If you require an emergency MRI scan, digital X-rays, or cross-consultation with modern allopathic specialists, we arrange immediate appointments at nearby Aster MIMS Kottakkal. |
+
+---
+
+## 4. Typical Treatment Durations & Estimated Costs
+
+Ayurvedic healing operates on biological cellular cycles. Depending on the chronicity of your condition, typical protocols range from 14 to 28 days:
+
+### Treatment Packages Overview
+
+- **14-Day Rejuvenation & Detox (Panchakarma):** $1,100 – $1,800
+  - *Includes:* Daily doctor visits, 2 therapy sessions daily with certified therapists, prescribed medicines during treatment, luxury serviced lodging, and coordinator support.
+- **21-Day Spine, Sciatica & Slip Disc Protocol:** $1,800 – $2,700
+  - *Includes:* Targeted Kativasthi, Pizhichil, Kizhi therapies, internal herbal decoctions, private family apartment, Calicut airport transfers, and translation.
+- **28-Day Stroke Rehabilitation & Severe Arthritis:** $2,500 – $3,900
+  - *Includes:* Intensive neuromuscular restoration, Navarakkizhi, Shirodhara, daily physician monitoring, dedicated attendant support, and post-discharge home medicine kit.
+
+*Note: You pay partner institutions directly at transparent published rates. TreatInKerala handles all coordination, bookings, local accommodation, and translations.*
+
+---
+
+## 5. Step-by-Step: How to Begin Your Kottakkal Journey
+
+1. **Submit Your Reports:** Share your recent medical history, MRI or X-ray reports, and a brief description of symptoms via our [Contact Form](/contact) or directly via [WhatsApp (+91 94005 28836)](https://wa.me/919400528836).
+2. **Preliminary Physician Review:** Our clinical coordinators review your records with senior Ayurvedic doctors in Kottakkal to assess your candidacy and recommend treatment length.
+3. **Receive Itinerary & Housing Options:** We send you an itemized proposal covering expected treatment days, lodging choices (serviced villas vs. resorts), and transport logistics.
+4. **e-Medical Visa Support:** We issue official documentation within 24 hours to help you secure Indian e-Medical Visas online for yourself and accompanying family members.
+5. **Arrival & Daily Care:** Our team greets you at Calicut International Airport (CCJ), checks you into your Kottakkal residence, and accompanies you to your initial consultation at Arya Vaidya Sala.
+
+---
+
+## Conclusion: World-Class Traditional Healing, Handled With Care
+
+Kottakkal Arya Vaidya Sala represents the pinnacle of holistic health and natural regenerative medicine. With TreatInKerala's specialized local presence, you gain all the clinical benefits of this legendary center without any of the stress of travel logistics, waiting lists, or language barriers.
+
+[Contact Our Kottakkal Coordination Team](/contact) today or [Request a Free Treatment Assessment](/get-estimate) to begin your path to lasting vitality.`,
+    contentAr: `عندما تفشل العقاقير التقليدية والجراحات المؤلمة في حل المشكلات الصحية المزمنة، يتجه المرضى من مختلف دول الخليج العربي وأوروبا وأمريكا إلى صرح طبي أسطوري واحد: **مؤسسة كوتاكال آريا فايديا شالا (Kottakkal Arya Vaidya Sala)**.
+
+تأسست هذه المؤسسة العريقة عام 1902 على يد الطبيب الحكيم فيديا راتنام بي إس فارير في بلدة كوتاكال (بمحافظة مالابورام في كيرلا، الهند). وعلى مدار أكثر من 120 عاماً، رسخت كوتاكال مكانتها بوصفها المرجع العالمي الأول لطب الأيورفيدا الكلاسيكي الأصيل، الذي يجمع بين حكمة أطباء كيرلا التاريخيين (أشتفايديا) وأحدث مختبرات الأبحاث الدوائية والمستشفيات السريرية المعتمدة.
+
+ومع ذلك، فإن تنظيم رحلة علاجية إلى كوتاكال بشكل فردي قد يواجه بعض الصعوبات: فقوائم الانتظار للتنويم في مستشفى أبحاث الأيورفيدا (AH&RC) تمتد غالباً لعدة أشهر، وصعوبة حاجز اللغة، بالإضافة إلى حاجة العائلات القادمة من الخليج إلى سكن مريح ومستقل ومجهز بالكامل.
+
+**يتواجد فريق "علاج في كيرلا" (TreatInKerala) مباشرة بجوار مؤسسة كوتاكال آريا فايديا شالا**، لنقدم لك ولعائلتك منظومة متكاملة من الخدمات والتسهيلات لضمان رحلة علاجية مريحة وناجحة بكل المقاييس.
+
+---
+
+## 1. أبرز الحالات والأمراض التي تعالجها كوتاكال بنجاح فائق
+
+تشتهر كوتاكال بتقديم حلول جذرية لأصعب المشكلات الصحية المستعصية التي تكتفي المستشفيات الحديثة بإعطاء مسكنات مؤقتة لها:
+
+### أ. أمراض العمود الفقري والانزلاق الغضروفي (الديسك)
+- **الحالات:** ديسك الرقبة والظهر، عرق النسا (Sciatica)، تضيق القناة الشوكية، وخشونة الفقرات وتآكل الغضاريف.
+- **البروتوكول العلاجي:** جلسات **كاتيفاستي** (تثبيت الزيوت الطبية الدافئة بحلقة عجين حول الفقرات القطنية لتغذية الغضروف المضغوط)، وجلسات **بيزيتشيل** (حمام الزيت العشبي الدافئ المتدفق)، وحقن **كاشايافاستي** العشبية لتنظيف الأعصاب وتخفيف الضغط على الجذور العصبية دون جراحة.
+- **النتائج:** يستعيد أكثر من 85% من المرضى حركتهم الطبيعية ويتفادون جراحات تثبيت الفقرات الخطرة.
+
+### ب. أمراض الروماتيزم والمفاصل
+- **الحالات:** التهاب المفاصل الروماتويدي (الروماتيزم)، خشونة الركبة والمفاصل، والتهاب الفقار اللاصق، والنقرس.
+- **البروتوكول العلاجي:** كمادات الأعشاب الطبية الحارة مثل **بوديكيزي** و**إيلاكيزي**، مع برامج تخلص الجسم من السموم الالتهابية المترسبة داخل المفاصل.
+
+### ج. تأهيل الجلطات الدماغية والشلل
+- **الحالات:** الشلل النصفي الناتج عن السكتة الدماغية، شلل العصب السابع (شلل الوجه)، ومرض باركنسون، والاعتلال العصبي السكري.
+- **البروتوكول العلاجي:** استخدام جلسات **النافاراكيزي** (التدليك بأرز النافارا الطبي المطبوخ بالحليب وخلاصة الأعشاب المقوية للعضلات)، وجلسات **الشيرودارا** (صب الزيت الطبي على الجبين) لتحفيز التلدن العصبي وتغذية الخلايا الدماغية.
+
+### د. البانشاكارما وتطهير الجسم الكامل
+- برنامج طبي دقيق لتنظيف الجسم من السموم المتراكمة وإعادة التوازن الأيضي والهرموني، وتعزيز المناعة ومحاربة الشيخوخة.
+
+---
+
+## 2. تحديات السفر الفردي إلى كوتاكال
+
+على الرغم من المكانة الطبية الرفيعة لكوتاكال، إلا أن المرضى الدوليين يواجهون عادة صعوبات عملية:
+
+1. **قوائم الانتظار الطويلة للتنويم (IP):** غرف المرضى المنومين في مستشفى أبحاث كوتاكال تكون محجوزة مسبقاً قبل **شهرين إلى 5 أشهر**.
+2. **إجراءات العيادات الخارجية (OP):** نظام حجز المواعيد اليومية وصرف الأدوية من عدة مبانٍ ومخازن قد يكون مجهداً للمرضى وكبار السن.
+3. **احتياجات العائلات والمرافقين:** غرف المستشفى مخصصة لمريض ومرافق واحد فقط، في حين تفضل العائلات الخليجية الإقامة معاً في شقق أو فلل مستقلة وواسعة.
+4. **حاجز اللغة:** التواصل الدقيق مع كبار الأطباء (الفيديا) يتطلب ترجمة فورية ونقل دقيق للأعراض والتقارير الطبية السابقة.
+5. **المسافة والتنقل من المطار:** تبعد كوتاكال حوالي 28 كم (35 إلى 45 دقيقة بالسيارة) عن مطار كوزيكود الدولي (CCJ)، مما يتطلب ترتيب استقبال ونقل مجهز ومريح.
+
+---
+
+## 3. كيف يغطي فريقنا كافة الخدمات لك بجوار كوتاكال؟
+
+نحن متواجدون في قلب كوتاكال، لنضمن لك تجربة علاجية سلسة خالية من أي توتر:
+
+| الخدمة | كيف نخدمك ونوفر لك الراحة الكاملة؟ |
+| :--- | :--- |
+| **حجز مواعيد كبار الأطباء** | ننسق مسبقاً مع كبار أطباء الأيورفيدا الاستشاريين في كوتاكال لضمان معاينتك دون انتظار في الطوابير العامة. |
+| **نظام العيادات الخارجية المتكامل (OP)** | في حال عدم توفر غرف تنويم فورية بالمستشفى، نرتب لك خطة العلاج اليومي بالعيادات الخارجية؛ حيث تتلقى جلساتك في كوتاكال يومياً ثم تعود لراحتك في فيلا أو شقة فندقية فاخرة خاصة بك. |
+| **سكن مخصص للعائلات بجوار المستشفى** | فلل مستقلة، شقق فندقية حديثة، ومنتجعات هادئة تبعد 5 إلى 10 دقائق فقط عن المستشفى، مزودة بمطابخ ومصاعد ومداخل ملائمة للكراسي المتحركة. |
+| **وجبات صحية وطعام حلال حسب الحمية** | ترتيب وجبات صحية مطابقة لتوجيهات طبيب الأيورفيدا مع خيارات طعام عربية وحلال ونباتية طازجة. |
+| **مترجمون عرب مرافقون مجاناً** | يرافقك منسق طبي يتحدث العربية بطلاقة في كافة الاستشارات لشرح التاريخ المرضي وفهم تعليمات الأدوية بدقة. |
+| **استقبال وتوديع من مطار كوزيكود (CCJ)** | سيارة خاصة مكيفة أو سيارة مجهزة للكراسي المتحركة تستقبلك فور خروجك من صالة الوصول إلى مقر سكنك بكوتاكال. |
+| **شحن الأدوية الأصلية لجميع دول العالم** | نشتري أدويتك وزيوتك العلاجية الموصوفة مباشرة من صيدلية مصنع كوتاكال الرسمية ونشحنها جواً حتى باب بيتك في السعودية، الإمارات، عمان، قطر، الكويت، أو أي دولة أخرى. |
+| **فحوصات الطب الحديث المرافقة** | إذا احتجت لأشعة رنين مغناطيسي (MRI)، أو تحاليل دم، أو استشارة طبيب باطني أو قلب، ننقلك مباشرة لمستشفى أستر ميمز كوتاكال المجاور. |
+
+---
+
+## 4. مدة العلاج وتكاليف الباقات التقديرية
+
+يعتمد الشفاء بالأيورفيدا على تجديد الخلايا الحيوية، وتتراوح مدة البرامج بين 14 و 28 يوماً:
+
+- **باقة البانشاكارما وتجديد النشاط (14 يوماً):** 1,100 – 1,800 دولار أمريكي.
+  - *تشمل:* الاستشارات اليومية، جلستين علاجيتين بالزيوت يومياً، كافة الأدوية أثناء الإقامة، السكن الفندقي المريح، والمترجم الخاص.
+- **باقة علاج الديسك والانزلاق الغضروفي (21 يوماً):** 1,800 – 2,700 دولار أمريكي.
+  - *تشمل:* جلسات كاتيفاستي وبيزيتشيل المكثفة، السكن العائلي، النقل من مطار كوزيكود، والترجمة الكاملة.
+- **باقة تأهيل الجلطات وأمراض المفاصل الشديدة (28 يوماً):** 2,500 – 3,900 دولار أمريكي.
+  - *تشمل:* جلسات النافاراكيزي والشيرودارا اليومية، الإشراف الطبي المستمر، شقة مجهزة للمريض ومرافقيه، وحقيبة الأدوية والمتابعة.
+
+*ملاحظة: الأسعار شفافة تماماً بدون أي رسوم خفية، وتدفع تكاليف العلاج للمستشفى مباشرة.*
+
+---
+
+## 5. خطوات تنظيم رحلتك مع TreatInKerala
+
+1. **إرسال التقارير الطبية:** أرسل تقرير الرنين المغناطيسي أو الفحوصات عبر [نموذج الاتصال](/contact) أو مباشرة عبر [واتساب المنسق الطبي (+91 94005 28836)](https://wa.me/919400528836).
+2. **دراسة الحالة مجاناً:** يراجع أطباؤنا الاستشاريون في كوتاكال تقاريرك ويحددون مدة البرنامج المتوقعة ونسبة الاستجابة.
+3. **استلام خطة السفر وخيارات السكن:** نرسل لك ملفاً كاملاً بالبروتوكول العلاجي المقترح، وصور الفلل والشقق المتاحة بالقرب من كوتاكال.
+4. **إصدار التأشيرة الطبية الإلكترونية:** نصدر لك خطاب الدعوة الطبي الرسمي المعتمد خلال 24 ساعة لاستخراج التأشيرة لك ولمرافقيك عبر الإنترنت.
+5. **الوصول وبدء العلاج:** يستقبلك فريقنا في مطار كوزيكود وينقلك إلى كوتاكال للراحة ثم بدء الاستشارة الأولى وبدء جلسات الشفاء.
+
+---
+
+## ابدأ رحلتك إلى عاصمة الشفاء الطبيعي
+
+تعتبر مؤسسة كوتاكال آريا فايديا شالا قمة الطب الطبيعي في العالم. وبفضل وجود فريقنا المتخصص في كوتاكال، ستحصل على أرقى مستويات العلاج براحة وأمان واطمئنان تام.
+
+[تواصل مع منسق كوتاكال الآن](/contact) أو [اطلب خطة علاجية مخصصة](/get-estimate) وتحدث مباشرة مع أطبائنا المتخصصين.`,
+    faqs: [
+      {
+        q: 'How far is Kottakkal Arya Vaidya Sala from Calicut International Airport (CCJ)?',
+        qAr: 'كم تبعد كوتاكال آريا فايديا شالا عن مطار كوزيكود الدولي (CCJ)؟',
+        a: 'Kottakkal is located approximately 28 km from Calicut International Airport (Karippur / CCJ), taking around 35 to 45 minutes by car. TreatInKerala provides private, air-conditioned airport transfers directly to your accommodation in Kottakkal, including wheelchair assistance.',
+        aAr: 'تبعد كوتاكال حوالي 28 كيلومتراً عن مطار كوزيكود الدولي (كاريور / CCJ)، وتستغرق الرحلة بالسيارة ما بين 35 إلى 45 دقيقة. ويوفر فريقنا خدمة الاستقبال الخاص بالسيارات المكيفة أو المجهزة للكراسي المتحركة مباشرة من صالة المطار إلى مقر سكنك في كوتاكال.'
+      },
+      {
+        q: 'Can I receive treatment at Kottakkal Arya Vaidya Sala if inpatient (IP) rooms are fully booked?',
+        qAr: 'هل يمكنني تلقي العلاج في كوتاكال إذا كانت غرف التنويم (IP) بالمستشفى محجوزة بالكامل؟',
+        a: 'Yes, absolutely. We arrange Outpatient (OP) therapy packages where you consult with chief AVS physicians and complete your prescribed 2-to-3-hour daily therapies at the hospital, while staying comfortably in private luxury villas or serviced apartments arranged by TreatInKerala nearby.',
+        aAr: 'نعم بالتأكيد. نقوم بترتيب باقة العيادات الخارجية (OP)، حيث تقابل كبار أطباء كوتاكال وتتلقى جلسات العلاج اليومية الموصوفة (ساعتين إلى 3 ساعات) في المستشفى، وتعيش براحة تامة في فلل أو شقق فندقية مجهزة بالكامل بالقرب من المركز مع عائلتك.'
+      },
+      {
+        q: 'Do you provide Arabic translators for doctor consultations in Kottakkal?',
+        qAr: 'هل توفرون مترجمين يتحدثون العربية أثناء استشارات الأطباء في كوتاكال؟',
+        a: 'Yes. Our dedicated patient care coordinators speak fluent Arabic and English. They accompany you into every consultation room, ensuring that your symptoms, past medical history, and prescribed dietary rules are clearly understood.',
+        aAr: 'نعم. لدينا منسقون طبيون يتحدثون العربية والإنجليزية بطلاقة. يرافقونك خطوة بخطوة في غرف استشارات الأطباء، ويشرحون كل الأعراض بدقة، ويوضحون لك طريقة استخدام الأدوية والمحاذير الغذائية.'
+      },
+      {
+        q: 'Can TreatInKerala ship authentic Kottakkal medicines to my home country after my treatment?',
+        qAr: 'هل يمكن لخدمة علاج في كيرلا شحن أدوية كوتاكال الأصلية إلى بلدي بعد انتهاء العلاج؟',
+        a: 'Yes. We procure genuine medicines, oils, and Kashayams directly from the Kottakkal Arya Vaidya Sala factory dispensary, package them securely to pharmaceutical air standards, and ship them via international air courier (DHL/FedEx) directly to your doorstep in the GCC, UK, USA, or Europe.',
+        aAr: 'نعم بكل تأكيد. نقوم بشراء الأدوية والزيوت والمستخلصات العشبية الأصلية مباشرة من صيدلية مصنع كوتاكال الرسمية، وتغليفها وفق معايير الشحن الجوي الدوائي الدولي، وشحنها عبر شركات الشحن السريع حتى باب بيتك في دول الخليج أو أوروبا أو أمريكا.'
       }
     ]
   }
