@@ -56,16 +56,18 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>) {
     : 'TreatInKerala connects international patients to Kerala\'s best hospitals, top surgeons, and Ayurveda centres. End-to-end medical treatment in Kerala with visa, travel, and Arabic concierge support.';
 
   return {
+    metadataBase: new URL('https://www.treatinkerala.com'),
     title,
     description,
     verification: {
       google: 'MyqEVZGO-b3Dv7y4yNJRthbl5IeaYJCmlrnpmWsdqAI',
     },
     alternates: {
-      canonical: locale === 'en' ? '/en' : '/ar',
+      canonical: `https://www.treatinkerala.com/${locale}`,
       languages: {
-        en: '/en',
-        ar: '/ar',
+        en: 'https://www.treatinkerala.com/en',
+        ar: 'https://www.treatinkerala.com/ar',
+        'x-default': 'https://www.treatinkerala.com/en',
       },
     },
     other: {

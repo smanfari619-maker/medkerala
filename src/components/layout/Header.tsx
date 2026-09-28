@@ -91,7 +91,7 @@ export default function Header() {
         <div className="flex items-center justify-between gap-4">
 
           {/* ── Logo ── */}
-          <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
+          <Link href="/" className="flex items-center gap-2 group flex-shrink-0" aria-label="TreatInKerala Homepage">
             <img
               src="/images/logo.svg"
               alt="TreatInKerala Logo"

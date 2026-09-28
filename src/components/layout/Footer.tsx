@@ -50,7 +50,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Col */}
           <div className="space-y-6 lg:pr-4">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block" aria-label="TreatInKerala Homepage">
               <img
                 src="/images/logo.svg"
                 alt="TreatInKerala Logo"

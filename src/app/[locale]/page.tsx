@@ -25,10 +25,52 @@ import { getFAQSchema } from '@/lib/schemas';
 import CostComparison from '@/components/home/CostComparison';
 import HeroSlider from '@/components/home/HeroSlider';
 import HowWeChoose from '@/components/home/HowWeChoose';
-
+import { Metadata } from 'next';
 
 interface Props {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const isAr = locale === 'ar';
+
+  const title = isAr
+    ? 'العلاج في كيرلا والسياحة العلاجية | رعاية صحية عالمية بمستشفيات معتمدة | TreatInKerala'
+    : 'Treatment in Kerala | Kerala Medical Tourism & Surgery | TreatInKerala';
+
+  const description = isAr
+    ? 'تربطك علاج في كيرلا بأفضل مستشفيات كيرلا المعتمدة دولياً، وكبار الجراحين، ومراكز الأيورفيدا الأصلية. خدمات استقبال وتنسيق طبي وتأشيرات واستشارة مجانية.'
+    : 'TreatInKerala connects international patients to Kerala\'s best JCI-accredited hospitals, renowned surgeons, and authentic Ayurveda centres. Complete medical concierge with zero markup.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://www.treatinkerala.com/${locale}`,
+      languages: {
+        en: 'https://www.treatinkerala.com/en',
+        ar: 'https://www.treatinkerala.com/ar',
+        'x-default': 'https://www.treatinkerala.com/en',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://www.treatinkerala.com/${locale}`,
+      siteName: 'TreatInKerala',
+      locale: isAr ? 'ar_AR' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: 'https://www.treatinkerala.com/images/caring_doctor_patient_hero.png',
+          width: 800,
+          height: 1000,
+          alt: title,
+        },
+      ],
+    },
+  };
 }
 
 export default async function HomePage({ params }: Props) {
@@ -424,7 +466,7 @@ export default async function HomePage({ params }: Props) {
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A]">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#8C6D37]">
                 {isRtl ? 'لماذا كيرلا؟' : 'Why Kerala?'}
               </span>
             </div>
@@ -505,7 +547,7 @@ export default async function HomePage({ params }: Props) {
           <div className="mb-8 sm:mb-12 space-y-3 rtl:text-right max-w-3xl">
             <div className="flex items-center gap-3">
               <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A]">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#8C6D37]">
                 {isRtl ? 'خطوات التنسيق' : 'Coordination Process'}
               </span>
             </div>
@@ -585,7 +627,7 @@ export default async function HomePage({ params }: Props) {
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A]">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#8C6D37]">
                 {isRtl ? 'التزاماتنا' : 'Our Commitments'}
               </span>
             </div>
@@ -718,7 +760,7 @@ export default async function HomePage({ params }: Props) {
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A]">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#8C6D37]">
                 {isRtl ? 'قصص المرضى' : 'Patient Experiences'}
               </span>
             </div>
@@ -828,7 +870,7 @@ export default async function HomePage({ params }: Props) {
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-4">
               <span className="h-px w-8 bg-[#D4A96A]" />
-              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A]">
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#8C6D37]">
                 {isRtl ? 'الأسئلة الشائعة' : 'Support FAQ'}
               </span>
             </div>
@@ -879,7 +921,7 @@ export default async function HomePage({ params }: Props) {
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="h-px w-8 bg-[#D4A96A]" />
-            <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#B8923A] font-sans">
+            <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#8C6D37] font-sans">
               {isRtl ? 'ابدأ اليوم' : 'Get Started'}
             </span>
             <span className="h-px w-8 bg-[#D4A96A]" />
