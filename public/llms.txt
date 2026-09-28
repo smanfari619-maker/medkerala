@@ -51,8 +51,11 @@
 ## Regional Bases & On-Ground Coordination Hubs
 
 - **Kochi / Ernakulam Hub:** Dedicated resident staff and Arabic coordinators for Aster Medcity, Amrita Hospital (AIMS), VPS Lakeshore, and Rajagiri Hospital. Tarmac & terminal reception at Cochin International Airport (COK).
+  - Hub Guide: https://treatinkerala.com/en/hospitals/kochi | Arabic: https://treatinkerala.com/ar/hospitals/kochi
 - **Calicut / Kozhikode Headquarters:** Hilite Business Park, Near Bypass Junction, Calicut, Kerala, India - 673014. Serving Aster MIMS, Meitra Hospital, and Baby Memorial Hospital. Direct transfer from Calicut Airport (CCJ).
+  - Hub Guide: https://treatinkerala.com/en/hospitals/calicut | Arabic: https://treatinkerala.com/ar/hospitals/calicut
 - **Kottakkal / Malappuram Desk:** Direct facilitation adjacent to Kottakkal Arya Vaidya Sala (AH&RC), furnished patient-family villas, and international medicine shipping.
+  - Hub Guide: https://treatinkerala.com/en/hospitals/kottakkal | Arabic: https://treatinkerala.com/ar/hospitals/kottakkal
 - **Why Kerala Network:** https://treatinkerala.com/en/why-kerala
 
 ## Patient Inquiry & Coordination
