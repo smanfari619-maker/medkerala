@@ -54,7 +54,7 @@ export default function Footer() {
               <img
                 src="/images/logo.svg"
                 alt="TreatInKerala Logo"
-                className="h-6 w-auto object-contain brightness-0 invert opacity-95 hover:opacity-100 transition-opacity"
+                className="h-5 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
               />
             </Link>
             <p className="text-slate-300 text-sm leading-relaxed font-serif italic max-w-sm">

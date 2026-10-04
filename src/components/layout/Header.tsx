@@ -95,7 +95,7 @@ export default function Header() {
             <img
               src="/images/logo.svg"
               alt="TreatInKerala Logo"
-              className="h-6 w-auto object-contain"
+              className="h-[18px] sm:h-5 w-auto object-contain transition-opacity hover:opacity-90"
             />
           </Link>
 
