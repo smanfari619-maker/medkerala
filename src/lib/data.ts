@@ -1426,8 +1426,8 @@ Virtually all major surgeries require prophylactic intravenous antibiotics to el
 
 ---
 
-### Patient Partner Savings
-*TreatInKerala has partnered with iHerb to provide international patients with direct access to certified authentic brands with global express delivery to the UAE, Saudi Arabia, Oman, Kuwait, and the UK. Use code **QAO6090** at checkout for **5% to 10% off** your recovery order.*`,
+### Clinical Advice on Post-Surgery Supplements
+*Always consult with your treating surgeon and clinical team before initiating any post-operative supplement regimen, especially blood thinners or high-potency herbal compounds, to ensure complete alignment with your hospital discharge protocol.*`,
     contentAr: `إن الخضوع لعملية جراحية — سواء كانت استبدال مفصل الركبة، أو مجازة الشريان التاجي (القلب المفتوح)، أو التدخلات بالمنظار — يضع الجسم تحت ضغط تمثيلي وغذائي كبير. وبينما تمثل الدقة الجراحية في مستشفيات كيرلا حجر الأساس، فإن المكملات الغذائية الدقيقة تسرع إعادة بناء الأنسجة، وتقلل الالتهاب، وتقصر مدة فترة النقاهة بشكل ملحوظ.
 
 يقدم هذا الدليل مراجعة سريرية لأهم المكملات الغذائية الموصى بها طبياً لعام 2026.
@@ -1461,8 +1461,8 @@ Virtually all major surgeries require prophylactic intravenous antibiotics to el
 
 ---
 
-### خصم حصري للمرضى
-*توفر علاج في كيرلا للمرضى إمكانية طلب هذه المكملات الموثوقة عبر iHerb مع شحن سريع إلى الإمارات والسعودية وعمان والكويت وبريطانيا. استخدم الرمز **QAO6090** عند الدفع للحصول على **خصم 5% إلى 10%** على طلبك.*`,
+### إشعار سريري هام للمرضى
+*يرجى استشارة فريقك الجراحي المعالج في المستشفى قبل البدء في أي مكملات غذائية أو أعشاب بعد العملية، للتأكد من توافقها التام مع أدويتك الموصوفة وسلامتك الصحية.*`,
     image: '/images/allopathy_treatment_hero.png'
   },
   {
@@ -1521,8 +1521,8 @@ Harvested in dry deciduous forests across the Indian subcontinent, Shallaki resi
 
 ---
 
-### Where to Buy Certified Authentic Herbs
-*Ensure your Ayurvedic herbs are third-party tested for heavy metals and purity. TreatInKerala patients receive **5% to 10% off** authentic Ayurvedic brands on iHerb using partner code **QAO6090** with fast shipping to the GCC and worldwide.*`,
+### Quality & Purity Assurance
+*Ensure your Ayurvedic herbs are sourced directly from accredited Ayurvedic hospital dispensaries (such as Kottakkal Arya Vaidya Sala) or verified third-party tested pharmacies with zero heavy-metal contamination.*`,
     contentAr: `تعتبر كيرلا الموطن التاريخي الأول لطب الأيورفيدا الأصيل. كل عام، يكمل آلاف الزوار الدوليين برامج تنقية الجسم (البانشاكارما) في مراكز كوتاكال وكوزيكود وواياناد.
 
 ولكن بعد انتهاء فترة إقامتك في كيرلا، فإن مواصلة البرنامج العشبي في منزلك أمر ضروري للحفاظ على نتائج الشفاء والنشاط الدائم. فيما يلي أهم 5 مستخلصات عشبية أيورفيدية موثقة سريرياً يمكن طلبها مع شحن دولي مباشر لمنزلك.
@@ -1556,8 +1556,8 @@ Harvested in dry deciduous forests across the Indian subcontinent, Shallaki resi
 
 ---
 
-### طلب الأعشاب الأصلية المعتمدة
-*احرص دائماً على اختيار مكملات خالية من المعادن الثقيلة ومختبرة معملياً. يستفيد مرضى وزوار علاج في كيرلا من **خصم 5% إلى 10%** على ماركات الأيورفيدا المعتمدة على iHerb باستخدام الرمز **QAO6090** مع شحن سريع إلى دول الخليج وكافة أنحاء العالم.*`,
+### ضمان الجودة والنقاء للأعشاب
+*احرص دائماً على الحصول على الأدوية والأعشاب الأيورفيدية مباشرة من صيدليات المستشفيات المعتمدة (مثل آريا فايديا كوتاكال) أو الصيدليات المعتمدة الخاضعة لاختبارات نقاء صارمة خالية من المعادن الثقيلة.*`,
     image: '/images/ayurveda_treatment_hero.png'
   },
   {
@@ -3924,6 +3924,437 @@ Kottakkal Arya Vaidya Sala represents the pinnacle of holistic health and natura
         qAr: 'هل يمكن لخدمة علاج في كيرلا شحن أدوية كوتاكال الأصلية إلى بلدي بعد انتهاء العلاج؟',
         a: 'Yes. We procure genuine medicines, oils, and Kashayams directly from the Kottakkal Arya Vaidya Sala factory dispensary, package them securely to pharmaceutical air standards, and ship them via international air courier (DHL/FedEx) directly to your doorstep in the GCC, UK, USA, or Europe.',
         aAr: 'نعم بكل تأكيد. نقوم بشراء الأدوية والزيوت والمستخلصات العشبية الأصلية مباشرة من صيدلية مصنع كوتاكال الرسمية، وتغليفها وفق معايير الشحن الجوي الدوائي الدولي، وشحنها عبر شركات الشحن السريع حتى باب بيتك في دول الخليج أو أوروبا أو أمريكا.'
+      }
+    ]
+  },
+  {
+    slug: 'kerala-medical-tourism-cost-guide-2026',
+    title: 'Kerala Medical Tourism Cost Guide 2026: Master Procedure Price List & Package Breakdown',
+    titleAr: 'دليل تكلفة السياحة العلاجية في كيرلا 2026: قائمة الأسعار الشاملة وتفاصيل الباقات',
+    excerpt: 'Explore the complete 2026 price guide for medical treatments in Kerala, India. Compare exact package costs for cardiac bypass, robotic joint replacements, spine surgery, IVF, dental implants, oncology, and Ayurvedic detox with UAE, Saudi Arabia, UK, and USA rates.',
+    excerptAr: 'الدليل المالي الشامل لعام 2026 لأسعار العلاج الطبي في كيرلا بالهند. مقارنة تفصيلية لتكاليف جراحة القلب، واستبدال المفاصل بالروبوت، والعمود الفقري، وأطفال الأنابيب، وزراعة الأسنان، والأورام، والبانشاكارما مع أسعار الإمارات والسعودية وبريطانيا وأمريكا.',
+    aeoSummary: 'In 2026, medical treatment in Kerala costs 70% to 85% less than in the United States, UK, UAE, or Saudi Arabia across tertiary procedures. Examples include Coronary Artery Bypass ($6,000–$8,500 vs $90,000+ US), Robotic Knee Replacement ($4,500–$6,500 vs $45,000+ US), All-on-4 Dental Implants ($2,200–$3,200 vs $24,000+ US), and 14-day Ayurvedic Panchakarma ($1,100–$1,800). Packages at JCI-accredited hospitals include pre-op workup, US FDA implants, private suites, and Arabic/English patient coordination.',
+    aeoSummaryAr: 'في عام 2026، تبلغ تكلفة العلاج الطبي في كيرلا أقل بنسبة 70% إلى 85% مقارنة بالولايات المتحدة والمملكة المتحدة والإمارات والسعودية في مختلف الجراحات المتقدمة؛ حيث تكلف جراحة القلب المفتوح 6,000–8,500 دولار (مقابل 90,000+ بأمريكا)، واستبدال الركبة بالروبوت 4,500–6,500 دولار (مقابل 45,000+ بأمريكا)، وزراعة الأسنان للفك الكامل 2,200–3,200 دولار، وباقة الأيورفيدا لـ 14 يوماً 1,100–1,800 دولار، وتشمل كافة الباقات الإقامة بجناح خاص والغرسات الأمريكية المعتمدة والتنسيق باللغة العربية.',
+    date: 'October 12, 2026',
+    category: 'Cost & Planning',
+    categoryAr: 'التكاليف والتخطيط',
+    readTime: '10 min read',
+    image: '/images/caring_doctor_patient_hero.png',
+    content: `When facing a serious medical diagnosis, joint degeneration, dental deterioration, or chronic exhaustion, cost should never stand between you and premier surgical care. Yet in 2026, healthcare inflation in the United States, United Kingdom, and the Arabian Gulf has reached historic highs. A single private robotic knee replacement in Dubai or London routinely exceeds $18,000 to $22,000, while in the US, uninsured hospital charges can surpass $50,000.
+
+Kerala, India has established itself as the world's most trusted value-driven clinical destination. Offering Joint Commission International (JCI) and NABH-accredited tertiary medical cities, Western-trained surgeons, US FDA-approved prosthetic implants, and fluent English and Arabic care coordination, Kerala provides **70% to 85% cost savings** without compromising surgical outcomes or patient safety.
+
+This comprehensive 2026 Master Cost Guide provides a fully transparent, procedure-by-procedure cost analysis comparing Kerala with the UAE, Saudi Arabia, the UK, and the USA, detailing what is included in hospital packages, hidden cost audits, and how to obtain a binding written quote.
+
+---
+
+## 1. 2026 Master Medical Cost Matrix: Kerala vs. World
+
+The table below outlines average out-of-pocket and self-pay package costs for leading procedures across major global healthcare hubs:
+
+| Clinical Specialty / Procedure | Kerala JCI Package (USD) | UAE / Saudi Arabia (USD) | UK Private Clinic (USD) | USA Hospital List (USD) | Net Patient Savings |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Coronary Artery Bypass (CABG)** | **$6,000 – $8,500** | $25,000 – $38,000 | $35,000 – $52,000 | $90,000 – $140,000 | **75% – 85%** |
+| **Robotic Knee Replacement (Single)** | **$4,500 – $6,500** | $17,000 – $24,000 | $18,000 – $25,000 | $35,000 – $55,000 | **72% – 80%** |
+| **Bilateral Knee Replacement (Both)** | **$7,500 – $9,800** | $28,000 – $38,000 | $32,000 – $44,000 | $65,000 – $95,000 | **73% – 80%** |
+| **Total Hip Replacement** | **$4,800 – $6,800** | $18,000 – $25,000 | $17,500 – $24,000 | $40,000 – $60,000 | **70% – 78%** |
+| **Microscopic Lumbar Discectomy** | **$3,200 – $4,600** | $12,500 – $18,000 | $13,000 – $19,000 | $35,000 – $50,000 | **72% – 78%** |
+| **Cervical Spine Disc Replacement** | **$4,200 – $5,900** | $16,000 – $23,000 | $16,500 – $24,000 | $45,000 – $70,000 | **72% – 80%** |
+| **All-on-4 Full Arch Dental Implants** | **$2,200 – $3,200** | $7,500 – $11,500 | $10,000 – $15,000 | $24,000 – $34,000 | **70% – 88%** |
+| **Single Tooth Implant + Zirconia Crown**| **$450 – $650** | $1,800 – $2,600 | $2,200 – $3,200 | $3,500 – $5,500 | **75% – 85%** |
+| **IVF Cycle with ICSI & Blastocyst** | **$2,500 – $3,800** | $8,500 – $12,500 | $9,000 – $14,000 | $18,000 – $26,000 | **70% – 78%** |
+| **Laparoscopic Sleeve Gastrectomy** | **$3,400 – $4,800** | $12,000 – $17,500 | $11,000 – $16,000 | $18,000 – $28,000 | **70% – 75%** |
+| **Cataract Surgery (Both Eyes, Multifocal)**| **$1,200 – $1,800** | $4,500 – $6,500 | $5,500 – $7,500 | $7,000 – $11,000 | **72% – 80%** |
+| **Laser Kidney Stone Removal (RIRS)** | **$1,400 – $2,200** | $5,500 – $8,000 | $6,000 – $9,000 | $12,000 – $18,000 | **72% – 78%** |
+| **14-Day Inpatient Panchakarma Detox** | **$1,100 – $1,800** | Not Available | $4,500 – $7,000 | $6,000 – $9,500 | **75% – 80%** |
+
+*Note: All Kerala package figures are comprehensive and include surgeon fees, modular operating room time, approved prosthetic hardware, inpatient private suite room accommodation, and post-operative in-hospital physiotherapy.*
+
+---
+
+## 2. What Is Included in a Kerala Medical Package?
+
+One of the largest sources of anxiety for medical travelers is the fear of hidden fees, unexpected add-ons, or escalating hospital bills. At TreatInKerala, our partner hospitals operate under **Fixed All-Inclusive Clinical Packages**:
+
+1. **Surgical Team Fees:** Chief consultant surgeon, assistant surgeons, anesthesiologists, and intraoperative surgical nurses.
+2. **Operating Suite & Technology:** Laminar flow positive-pressure modular operation theaters, robotic navigation software licenses (Mako, Cuvis, Da Vinci), and sterilization consumables.
+3. **Internationally Certified Implants:** Genuine US FDA and CE-marked titanium prostheses, ceramic bearings, and coronary stents manufactured by market leaders (Stryker, Zimmer Biomet, Medtronic, Abbott, Straumann). Implants carry lifetime serial number registration cards.
+4. **Deluxe Private Suite Accommodation:** Inpatient room with motorized medical bed, en-suite bathroom, flat-screen satellite TV, Wi-Fi, and a dedicated pull-out bed for an accompanying family member.
+5. **Diagnostics & Pathology:** Pre-anesthesia clearance, digital ECG, chest X-rays, routine surgical blood panels, and post-operative progress imaging.
+6. **In-Hospital Physical Therapy:** Twice-daily bedside rehabilitation sessions to ensure independent weight-bearing before discharge.
+7. **Hospital Medications & Surgical Dressings:** Antibiotics, pain management infusions, anticoagulants, and wound care dressings throughout the hospital stay.
+8. **TreatInKerala Concierge Services:** Airport pickup and return transfers, local 5G SIM card, hospital appointment fast-tracking, and dedicated Arabic/English care managers.
+
+---
+
+## 3. Speciality Cost Deep-Dives
+
+### A. [Robotic Orthopedics & Joint Replacement](/treatments/orthopaedics)
+- **Single Robotic Knee:** $4,500 – $6,500 | Hospital Stay: 3–4 days | Recommended Total Stay: 12–14 days.
+- **Bilateral Robotic Knee:** $7,500 – $9,800 | Both knees operated in the same session, saving on dual anesthesia and hospital charges.
+- **Key Advantage:** Sub-millimeter accuracy through CT-guided robotic arms reduces soft-tissue disruption, enabling 92% of patients to walk with support within 24 hours of surgery.
+
+### B. [Cardiac Sciences & CABG](/treatments/cardiac)
+- **Coronary Artery Bypass (CABG):** $6,000 – $8,500 | Hospital Stay: 6–8 days | Recommended Total Stay: 16–21 days.
+- **Heart Valve Replacement (Single):** $7,000 – $9,500 | Mechanical or tissue valves.
+- **Key Advantage:** Chief cardiac surgeons in Calicut and Kochi boast over 25 years of surgical experience with CABG survival rates exceeding 98.8%, matching the Cleveland Clinic benchmarks.
+
+### C. [Dental Implants & Smile Makeovers](/treatments/dental)
+- **All-on-4 Full Arch (Titanium + Zirconia):** $2,200 – $3,200 per jaw | Turnaround: 5–7 days.
+- **Key Advantage:** Digital intraoral 3D scanning eliminates impressions. Monolithic zirconia arches are milled in-house within 48 hours with lifetime warranties.
+
+### D. [IVF & Reproductive Medicine](/treatments/ivf)
+- **Complete IVF Cycle with ICSI:** $2,500 – $3,800 | Includes hormonal stimulation monitoring, ultrasound tracking, egg retrieval, ICSI fertilization, and embryo transfer.
+- **Key Advantage:** Blastocyst stage (Day 5) transfer and optional PGT-A chromosomal testing produce clinical pregnancy success rates of 65% to 75% for women under 38.
+
+### E. [Classical Ayurveda & Panchakarma Detox](/treatments/ayurveda)
+- **14-Day Inpatient Panchakarma:** $1,100 – $1,800 (covers private room, daily 2-hour medical therapies, organic Ayurvedic diet, and daily doctor consultations).
+- **21-Day Chronic Spine / Arthritis Protocol:** $1,600 – $2,600.
+- **Key Advantage:** 100% authentic herbal decoctions prepared from classical Sanskrit pharmacopeias in pristine nature retreats or Ayurvedic hospital facilities.
+
+---
+
+## 4. Hidden Cost Audit: Flights, Visas, Food & Companion Living
+
+To budget accurately for your medical travel, you must account for non-hospital expenses. Here is a realistic breakdown:
+
+- **Direct Flight Tickets:**
+  - *From UAE / Oman:* $220 – $380 round-trip.
+  - *From Saudi Arabia / Kuwait:* $320 – $480 round-trip.
+  - *From UK / Europe:* $650 – $950 round-trip.
+  - *From USA / Canada:* $1,050 – $1,450 round-trip.
+- **Indian e-Medical Visa:** $40 to $80 depending on nationality, processed online in 24 to 48 hours.
+- **Companion Living & Serviced Apartments:** If your companion prefers an off-campus serviced apartment or hotel during your 10 to 14-day convalescence, premium executive apartments adjacent to major hospitals range between **$30 and $65 per night**, complete with kitchens and daily housekeeping.
+- **Dining & Groceries:** Kerala offers fresh tropical fruits, organic produce, and Halal Middle Eastern and Western cuisine. Average daily food costs for a companion range from **$10 to $20 per day**.
+
+---
+
+## 5. How to Get a Fixed Binding Estimate Before Booking Flights
+
+You never need to book a flight or commit financially without knowing your exact medical expenses:
+
+1. **Step 1: Share Diagnostic Reports:** Send recent MRI scans, X-rays, CT angiograms, or clinical summaries via our encrypted portal or [WhatsApp Concierge (+91 94005 28836)](https://wa.me/919400528836).
+2. **Step 2: Senior Specialist Evaluation:** Within 24 to 48 hours, our department directors evaluate your case and confirm surgical eligibility.
+3. **Step 3: Written Cost Blueprint:** You receive an itemized, transparent document outlining procedure costs, room category, length of stay, implant brand, and total package price.
+4. **Step 4: Visa Invitation Letter:** Once you approve the plan, we issue the official Indian Government hospital invitation letter to ensure instant e-Medical visa approval.
+
+Take the first step toward world-class healthcare without the financial burden. [Request your free medical estimate](/get-estimate) today.`,
+    contentAr: `عند مواجهة تشخيص طبي دقيق، أو تآكل متقدم في المفاصل، أو تلف في الأسنان، أو إرهاق مزمن، لا ينبغي للمال أن يقف عائقاً بينك وبين أرقى مستويات الرعاية الجراحية. ومع ذلك، في عام 2026، وصلت تكاليف الرعاية الصحية الخاصة في دول الخليج والمملكة المتحدة والولايات المتحدة إلى مستويات قياسية؛ حيث تتجاوز تكلفة استبدال الركبة بالروبوت في العيادات الخاصة بدبي أو لندن ما بين 18,000 إلى 22,000 دولار، بينما تتخطى الفواتير غير المؤمنة في أمريكا 50,000 دولار.
+
+برزت ولاية كيرلا بالهند بوصفها الوجهة السريرية الأكثر موثوقية واعتدالاً في التكلفة على مستوى العالم؛ بفضل مستشفياتها المعتمدة دولياً من اللجنة المشتركة الدولية (JCI) والاعتماد الوطني الهندي (NABH)، ونخبة جراحيها المدربين في الغرب، واستخدام الغرسات الأمريكية المعتمدة من FDA، وتوفير منسقين يتحدثون العربية بطلاقة، محققة **توفيراً مالياً يتراوح بين 70% إلى 85%** دون أي مساومة على معايير الأمان والنتائج السريرية.
+
+يقدم هذا الدليل المالي الشامل لعام 2026 مقارنة دقيقة لكافة الإجراءات الجراحية مع دول الخليج وبريطانيا وأمريكا، مع تفصيل محتويات الباقات الشاملة، والتدقيق في المصاريف المصاحبة، وكيفية الحصول على عرض سعر ملزم وثابت.
+
+---
+
+## 1. جدول مقارنة التكاليف الشامل لعام 2026: كيرلا مقابل العالم
+
+يوضح الجدول التالي متوسط تكلفة الباقات العلاجية الشاملة للعمليات الرائدة في كبرى العواصم الطبية (بالدولار الأمريكي):
+
+| التخصص / الإجراء الجراحي | باقة كيرلا الشاملة (JCI) | الإمارات / السعودية | القطاع الخاص في بريطانيا | المستشفيات الأمريكية | نسبة التوفير الصافي |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **جراحة القلب المفتوح (CABG)** | **$6,000 – $8,500** | $25,000 – $38,000 | $35,000 – $52,000 | $90,000 – $140,000 | **75% – 85%** |
+| **استبدال مفصل الركبة بالروبوت (مفرد)** | **$4,500 – $6,500** | $17,000 – $24,000 | $18,000 – $25,000 | $35,000 – $55,000 | **72% – 80%** |
+| **استبدال الركبتين معاً بالروبوت** | **$7,500 – $9,800** | $28,000 – $38,000 | $32,000 – $44,000 | $65,000 – $95,000 | **73% – 80%** |
+| **استبدال مفصل الورك بالكامل** | **$4,800 – $6,800** | $18,000 – $25,000 | $17,500 – $24,000 | $40,000 – $60,000 | **70% – 78%** |
+| **استئصال الغضروف القطني بالمجهر** | **$3,200 – $4,600** | $12,500 – $18,000 | $13,000 – $19,000 | $35,000 – $50,000 | **72% – 78%** |
+| **استبدال ديسك الرقبة الصناعي** | **$4,200 – $5,900** | $16,000 – $23,000 | $16,500 – $24,000 | $45,000 – $70,000 | **72% – 80%** |
+| **زراعة الأسنان للفك الكامل (All-on-4)** | **$2,200 – $3,200** | $7,500 – $11,500 | $10,000 – $15,000 | $24,000 – $34,000 | **70% – 88%** |
+| **زرعة سن واحدة مع تاج الزركونيا** | **$450 – $650** | $1,800 – $2,600 | $2,200 – $3,200 | $3,500 – $5,500 | **75% – 85%** |
+| **أطفال الأنابيب مع الحقن المجهري ICSI**| **$2,500 – $3,800** | $8,500 – $12,500 | $9,000 – $14,000 | $18,000 – $26,000 | **70% – 78%** |
+| **تكميم المعدة بالمنظار** | **$3,400 – $4,800** | $12,000 – $17,500 | $11,000 – $16,000 | $18,000 – $28,000 | **70% – 75%** |
+| **المياه البيضاء للعينين (عدسات ذكية)** | **$1,200 – $1,800** | $4,500 – $6,500 | $5,500 – $7,500 | $7,000 – $11,000 | **72% – 80%** |
+| **تفتيت حصوات الكلى بالليزر (RIRS)** | **$1,400 – $2,200** | $5,500 – $8,000 | $6,000 – $9,000 | $12,000 – $18,000 | **72% – 78%** |
+| **باقة البانشاكارما بالأيورفيدا (14 يوماً)** | **$1,100 – $1,800** | غير متوفرة | $4,500 – $7,000 | $6,000 – $9,500 | **75% – 80%** |
+
+*ملاحظة: كافة الأسعار في كيرلا تشمل الجراحة، والإقامة في أجنحة خاصة، والغرسات الأصلية المعتمدة، والتخدير، والفحوصات، والعلاج الطبيعي.*
+
+---
+
+## 2. ما الذي تتضمنه الباقة العلاجية الشاملة في كيرلا؟
+
+لإزالة أي قلق بخصوص الفواتير غير المتوقعة أو الرسوم الخفية، تعتمد مستشفياتنا الشريكة مبدأ **الباقة السريرية الثابتة الشاملة**:
+
+1. **أتعاب الفريق الجراحي:** الاستشاري الأول، الجراحون المساعدون، استشاري التخدير، وطاقم تمريض العمليات المتخصص.
+2. **غرفة العمليات والتقنيات:** غرف عمليات معقمة بنظام تدفق الهواء الرقائقي الإيجابي، وترخيص برمجيات الملاحة الروبوتية (Mako، Cuvis، Da Vinci).
+3. **الغرسات الطبية المعتمدة دولياً:** غرسات التيتانيوم ومفاصل السيراميك والدعامات القلبية الأصلية المعتمدة من FDA الأمريكية والعلامة الأوروبية CE من كبرى الشركات العالمية (Stryker، Zimmer Biomet، Medtronic، Abbott). وتأتي مع بطاقة ضمان ورقم تسلسلي دولي.
+4. **الإقامة في جناح تنفيذي خاص:** غرفة خاصة مجهزة بسرير إلكتروني، وحمام مجهز، وتلفزيون مع قنوات عربية، وإنترنت سريع، وسرير مستقل لمرافق المريض.
+5. **الفحوصات والأشعة:** تقييم التخدير، وتخطيط القلب الرقمي، وأشعة الصدر، والتحاليل المخبرية الروتينية، وأشعة ما بعد الجراحة.
+6. **العلاج الطبيعي والتأهيلي اليومي:** جلستان يومياً داخل المستشفى لضمان قدرة المريض على المشي والحركة بثقة قبل الخروج.
+7. **الأدوية والمستهلكات أثناء التنويم:** المضادات الحيوية، والمسكنات، ومميعات الدم، والغيارات الجراحية طوال فترة البقاء بالمستشفى.
+8. **خدمات التنسيق الفندقي والميداني:** الاستقبال والتوديع بسيارة خاصة من المطار، وشريحة اتصال محلية 5G، وتسهيل الإجراءات الإدارية، ومرافقة منسق يتحدث العربية بطلاقة.
+
+---
+
+## 3. تفاصيل التكاليف حسب التخصصات الرئيسية
+
+### أ. [جراحة العظام واستبدال المفاصل بالروبوت](/treatments/orthopaedics)
+- **مفصل الركبة المفرد بالروبوت:** 4,500 – 6,500 دولار | التنويم: 3–4 أيام | الإقامة الإجمالية الموصى بها: 12–14 يوماً.
+- **استبدال الركبتين معاً بالروبوت:** 7,500 – 9,800 دولار | يتم إجراء الجراحة في جلسة واحدة لتفادي تكرار التخدير وخفض التكلفة.
+- **الميزة الحصرية:** يتيح الذراع الروبوتي دقة مليمترية متناهية في تركيب المفصل، مما يمكن 92% من المرضى من المشي خلال 24 ساعة من الجراحة.
+
+### ب. [جراحة وأمراض القلب](/treatments/cardiac)
+- **جراحة القلب المفتوح ومجازة الشريان (CABG):** 6,000 – 8,500 دولار | التنويم: 6–8 أيام | الإقامة الإجمالية الموصى بها: 16–21 يوماً.
+- **تغيير صمام القلب:** 7,000 – 9,500 دولار | صمامات ميكانيكية أو نسيجية معتمدة.
+- **الميزة الحصرية:** يمتلك كبار جراحي القلب في كالكوت وكوتشين خبرة تتجاوز 25 عاماً مع نسب نجاح تفوق 98.8%.
+
+### ج. [زراعة وتجميل الأسنان](/treatments/dental)
+- **زراعة الفك الكامل (All-on-4):** 2,200 – 3,200 دولار للفك الواحد | مدة الإجراء: 5–7 أيام.
+- **الميزة الحصرية:** المسح الرقمي ثلاثي الأبعاد وتصنيع جسور الزركونيا الصلبة خلال 48 ساعة مع ضمان دولي مدى الحياة.
+
+### د. [علاج العقم وأطفال الأنابيب](/treatments/ivf)
+- **دورة أطفال الأنابيب الكاملة مع الحقن المجهري (ICSI):** 2,500 – 3,800 دولار.
+- **الميزة الحصرية:** زراعة الأجنة لمرحلة الكيسة الأريمية (اليوم الخامس) وفحص الكروموسومات PGT-A بنسب نجاح سريرية تتراوح بين 65% و 75%.
+
+### هـ. [علاجات الأيورفيدا الأصلية والبانشاكارما](/treatments/ayurveda)
+- **باقة البانشاكارما والتطهير (14 يوماً):** 1,100 – 1,800 دولار (شاملة الإقامة، والجلسات اليومية لمدة ساعتين، والغذاء الأيورفيدي، والفحوصات).
+- **باقة علاج الديسك والانزلاق الغضروفي (21 يوماً):** 1,600 – 2,600 دولار.
+
+---
+
+## 4. تدقيق التكاليف الجانبية: الطيران، التأشيرة، المعيشة
+
+- **تذاكر الطيران المباشرة:**
+  - *من الإمارات وعمان:* 220 – 380 دولار ذهاباً وإياباً.
+  - *من السعودية والكويت:* 320 – 480 دولار ذهاباً وإياباً.
+  - *من بريطانيا وأوروبا:* 650 – 950 دولار ذهاباً وإياباً.
+- **التأشيرة الطبية الإلكترونية:** تصدر خلال 24 إلى 48 ساعة عبر الإنترنت برسوم تتراوح بين 40 إلى 80 دولاراً.
+- **شقق المرافقين الفندقية:** في حال رغبة المرافقين بالإقامة خارج المستشفى، تتوفر شقق فندقية راقية ومجهزة بمطبخ بجوار المستشفيات بأسعار تتراوح بين **30 إلى 65 دولاراً لليلة**.
+- **الوجبات والمصاريف اليومية:** الوجبات الحلال والمطاعم العربية والعالمية متوفرة بتكلفة تتراوح بين **10 إلى 20 دولاراً يومياً**.
+
+---
+
+## 5. كيف تحصل على عرض سعر ملزم وثابت قبل حجز الطيران؟
+
+1. **إرسال التقارير الطبية:** شارك أحدث صور الأشعة السينية أو الرنين المغناطيسي أو التقارير عبر بوابتنا الآمنة أو عبر [واتساب المنسق الطبي (+91 94005 28836)](https://wa.me/919400528836).
+2. **دراسة الحالة مجاناً:** يراجع كبار الاستشاريين ورؤساء الأقسام ملفك الطبي خلال 24 إلى 48 ساعة لتحديد الخطة الجراحية.
+3. **استلام عرض السعر المكتوب:** تتلقى وثيقة تفصيلية واضحة تشمل تكلفة العملية، وفئة الغرفة، ومدة الإقامة، ونوع الغرسات، والتكلفة الإجمالية الثابتة.
+4. **إصدار خطاب الدعوة للتأشيرة:** نصدر خطاب المستشفى الرسمي المعتمد فوراً لتسهيل استخراج التأشيرة الطبية لك ولمرافقيك.
+
+ابدأ رحلة علاجك بأعلى جودة عالمية وبأفضل تكلفة مدروسة. [اطلب تقييم حالتك وعرض السعر الآن](/get-estimate).`,
+    faqs: [
+      {
+        q: 'Are there any hidden costs or surprise medical fees beyond the package price?',
+        qAr: 'هل توجد أي تكاليف خفية أو رسوم طبية مفاجئة تتجاوز سعر الباقة المتفق عليه؟',
+        a: 'No. TreatInKerala packages are all-inclusive and fixed. They encompass surgeon fees, operating theater charges, US FDA implants, private room stay, routine medications, pre-op tests, and airport transfers. The only instances where costs may adjust are if a patient presents unexpected acute comorbidities requiring unrelated ICU management, which is always discussed transparently beforehand.',
+        aAr: 'لا، فالباقات العلاجية التي نقدمها ثابتة وشاملة لكافة بنود الجراحة، وأتعاب الأطباء، والغرسات الأصلية، والتنويم بجناح خاص، والتحاليل، والأدوية، والاستقبال من المطار. ولا تتغير التكلفة إلا في حال وجود أمراض مزمنة مفاجئة تتطلب تدخلاً طارئاً غير مرتبط بالجراحة، ويتم توضيح ذلك بكل شفافية ومسبقاً.'
+      },
+      {
+        q: 'What currencies can international patients pay in at hospitals in Kerala?',
+        qAr: 'ما هي العملات التي يمكن للمرضى الدوليين الدفع بها في مستشفيات كيرلا؟',
+        a: 'Partner hospitals accept major international currencies including US Dollars (USD), UAE Dirhams (AED), Saudi Rials (SAR), Omani Rials (OMR), Kuwaiti Dinars (KWD), British Pounds (GBP), and Euros (EUR) via bank wire transfer, international credit cards, or foreign exchange desks on campus.',
+        aAr: 'تقبل المستشفيات الشريكة كافة العملات الدولية الرئيسية بما في ذلك الدولار الأمريكي، والدرهم الإماراتي، والريال السعودي، والريال العماني، والدينار الكويتي، والجنيه الإسترليني، واليورو؛ وذلك عبر التحويلات البنكية المباشرة، أو البطاقات الائتمانية الدولية، أو مكاتب الصرافة المعتمدة داخل المستشفى.'
+      },
+      {
+        q: 'Are the prosthetic implants used in Kerala identical to those in the US and Europe?',
+        qAr: 'هل الغرسات والمفاصل الصناعية المستخدمة في كيرلا مطابقة لتلك المستخدمة بأمريكا وأوروبا؟',
+        a: 'Yes, 100%. Our partner hospitals exclusively utilize genuine US FDA and European CE-approved implants manufactured by global market leaders such as Stryker, Zimmer Biomet, DePuy Synthes, and Straumann. Patients receive an official manufacturer warranty passport with device serial numbers.',
+        aAr: 'نعم بنسبة 100٪؛ حيث تستخدم مستشفياتنا الشريكة حصرياً مفاصل وغرسات معتمدة من هيئة الغذاء والدواء الأمريكية FDA والعلامة الأوروبية CE من كبرى الشركات العالمية مثل Stryker و Zimmer Biomet و Straumann. ويحصل المريض على جواز ضمان رسمي يحتوي على الأرقام التسلسلية الدقيقة للغرسة.'
+      },
+      {
+        q: 'How quickly can I receive a free medical evaluation and binding cost estimate?',
+        qAr: 'ما مدى سرعة استلام التقييم الطبي المجاني وعرض السعر الملزم؟',
+        a: 'Once you submit your diagnostic scans and medical reports via our website or WhatsApp (+91 94005 28836), our senior clinical directors review your case and provide an itemized treatment proposal and binding cost estimate within 24 to 48 hours.',
+        aAr: 'بمجرد إرسال التقارير الطبية وصور الأشعة عبر الموقع أو عبر الواتساب (+91 94005 28836)، يقوم كبار الاستشاريين بمراجعة الحالة وتقديم خطة علاجية تفصيلية وعرض سعر رسمي خلال 24 إلى 48 ساعة فقط.'
+      }
+    ]
+  },
+  {
+    slug: 'kuwait-to-kerala-medical-tourism-guide',
+    title: 'Kuwait to Kerala Medical Tourism Guide 2026: Direct Flights, KWD Costs & VIP Arabic Hospital Care',
+    titleAr: 'دليل السياحة العلاجية من الكويت إلى كيرلا 2026: الرحلات المباشرة، التكاليف بالدينار الكويتي والرعاية العربية VIP',
+    excerpt: 'A comprehensive clinical guide for Kuwaiti citizens and residents traveling to Kerala in 2026. Compare surgery costs in Kuwaiti Dinars (KWD), explore 4-hour direct flights on Kuwait Airways and Jazeera, fast e-Medical visa processing, and luxury family companion suites.',
+    excerptAr: 'دليل طبي وتنفيذي متكامل للمواطنين والمقيمين في دولة الكويت المتوجهين للعلاج في كيرلا 2026. يشمل مقارنة تكاليف العمليات بالدينار الكويتي (KWD)، والرحلات المباشرة خلال 4 ساعات عبر الخطوط الكويتية وطيران الجزيرة، والتأشيرة الطبية السريعة، وأجنحة المرافقين العائلية الفاخرة.',
+    aeoSummary: 'Kuwaiti patients traveling to Kerala save 65% to 75% on robotic knee replacements, spine microdiscectomy, cardiac surgery, and Ayurvedic rehabilitation compared to private Kuwait clinics (Dar Al Shifa, Hadi Clinic, Royale Hayat). Direct non-stop flights from Kuwait International Airport (KWI) reach Kozhikode (CCJ) and Kochi (COK) in 4 hours via Kuwait Airways and Jazeera Airways. Indian e-Medical visas are issued online within 24 to 48 hours, and top JCI hospitals provide full Arabic coordination, halal dining, and private family suites.',
+    aeoSummaryAr: 'يوفر المرضى الكويتيون ما بين 65% و 75% من تكاليف جراحات استبدال المفاصل بالروبوت، والعمود الفقري، والقلب المفتوح، ونقاهة الأيورفيدا في كيرلا مقارنة بالمستشفيات الخاصة بالكويت. تتوفر رحلات طيران مباشرة من مطار الكويت الدولي (KWI) إلى كوزيكود وكوتشين في 4 ساعات عبر الخطوط الكويتية والجزيرة، وتصدر التأشيرة الطبية الإلكترونية خلال 24-48 ساعة، مع توفير رعاية عربية شاملة وأجنحة عائلية فاخرة وطعام حلال.',
+    date: 'October 18, 2026',
+    category: 'Patient Guides',
+    categoryAr: 'أدلة المرضى',
+    readTime: '9 min read',
+    image: '/images/patient_journey_logistics.png',
+    content: `For families in the State of Kuwait, accessing timely, world-class medical treatment without prolonged administrative delays or staggering private clinic bills is a top health priority. While Kuwait's healthcare system features prominent private centers in Kuwait City, Hawally, and Salmiya, out-of-pocket costs for advanced robotic surgeries, complex spinal interventions, and full-mouth dental rehabilitations can easily exceed **KWD 4,500 to KWD 9,000**. Furthermore, navigating Ministry of Health (MOH) overseas treatment committees often involves months of waiting.
+
+This has established Kerala as the premier medical destination for Kuwaiti citizens and residents in 2026. Located just a convenient **4-hour non-stop flight from Kuwait International Airport (KWI)**, Kerala offers Joint Commission International (JCI) accredited tertiary medical institutions, Western-trained consultant surgeons, and 100% Halal hospital environments with dedicated Arabic-speaking care managers — all at **65% to 75% lower cost**.
+
+Whether you require a [Robotic Knee Replacement](/treatments/orthopaedics), complex [Spine Microdiscectomy](/treatments/spine), advanced [IVF treatment](/treatments/ivf), or restorative [Ayurvedic Rehabilitation](/treatments/ayurveda), this comprehensive 2026 guide explains everything Kuwaiti patients need to know.
+
+---
+
+## 1. Why Kuwaiti Patients Choose Kerala
+
+Kerala provides a reassuring combination of clinical excellence and cultural comfort tailored for Kuwaiti families:
+
+- **Full Arabic Language Coordination:** From the moment you arrive, dedicated Arabic-speaking medical concierges accompany you through every diagnostic test, doctor consultation, and hospital admission.
+- **Family-Centric Inpatient Suites:** Medical travel in Kuwait is fundamentally a family experience. JCI partner hospitals in Calicut (Kozhikode) and Kochi feature large executive suites with separate companion bedrooms, en-suite kitchenettes, Wi-Fi, and flat-screen satellite TVs with Arabic channels.
+- **Strictly Halal Inpatient Dining:** In-room dining departments prepare fresh, customized Halal menus tailored to Arabic tastes, complete with Arabic tea, cardamoms, and traditional options.
+- **Dedicated Prayer Spaces:** Multi-faith prayer halls and dedicated Mosques (Musallas) with Qibla indicators are located directly within hospital facilities.
+- **Immediate Scheduling:** Unlike overseas government approvals that take months, private patients in Kerala can be admitted and scheduled for surgery within 48 to 72 hours of arrival.
+
+---
+
+## 2. 2026 Cost Comparison: Private Kuwait vs. Kerala JCI Hospitals (in KWD)
+
+The financial advantage for Kuwaiti patients is dramatic. Below is an itemized comparison of common procedures priced in **Kuwaiti Dinars (KWD)**:
+
+| Medical Procedure | Private Hospital in Kuwait (KWD) | Kerala JCI Package (KWD) | Net Patient Savings |
+| :--- | :--- | :--- | :--- |
+| **Robotic Knee Replacement (Single)** | KWD 4,800 – KWD 6,500 | **KWD 1,450 – KWD 1,950** | **Save KWD 3,350 – 4,550 (70%)** |
+| **Robotic Knee Replacement (Bilateral)** | KWD 8,500 – KWD 11,500 | **KWD 2,350 – KWD 3,100** | **Save KWD 6,150 – 8,400 (72%)** |
+| **Coronary Artery Bypass (CABG)** | KWD 11,000 – KWD 16,000 | **KWD 1,950 – KWD 2,800** | **Save KWD 9,050 – 13,200 (80%)** |
+| **Microscopic Lumbar Discectomy** | KWD 3,800 – KWD 5,200 | **KWD 1,100 – KWD 1,550** | **Save KWD 2,700 – 3,650 (70%)** |
+| **All-on-4 Dental Implants (Per Jaw)** | KWD 2,800 – KWD 4,200 | **KWD 680 – KWD 980** | **Save KWD 2,120 – 3,220 (75%)** |
+| **Complete IVF Cycle with ICSI** | KWD 2,400 – KWD 3,500 | **KWD 850 – KWD 1,250** | **Save KWD 1,550 – 2,250 (65%)** |
+| **Laparoscopic Sleeve Gastrectomy** | KWD 3,200 – KWD 4,500 | **KWD 1,050 – KWD 1,450** | **Save KWD 2,150 – 3,050 (68%)** |
+| **14-Day Inpatient Panchakarma Detox** | Not Available Locally | **KWD 350 – KWD 550** | **Unmatched Value** |
+
+*Note: Kerala package costs include surgeon and anesthesia fees, private room stay, US FDA-approved prosthetic implants (Stryker, Zimmer Biomet), pre-operative workup, inpatient medications, and initial physiotherapy.*
+
+---
+
+## 3. Direct Flight Schedules: Kuwait City (KWI) to Kerala
+
+Travel connectivity between Kuwait and Kerala is exceptionally fast and convenient:
+
+- **Kuwait Airways:** Operates regular direct non-stop flights from Kuwait International Airport (KWI) to **Kozhikode Calicut (CCJ)** and **Cochin International (COK)**. Flight duration is approximately **4 hours and 15 minutes**.
+- **Jazeera Airways:** Offers direct flights and affordable premium options connecting Kuwait directly to Kochi and Kozhikode.
+- **Air India Express:** Daily direct services offering comfortable travel schedules for patients and accompanying family members.
+- **Transit Options:** Premier connecting flights with short 1-hour layovers are also available via Emirates (via Dubai) and Qatar Airways (via Doha).
+- **VIP Airport Pickups:** Your TreatInKerala coordinator welcomes you right outside terminal customs with a private air-conditioned vehicle to escort you directly to your hospital suite or pre-booked serviced apartment.
+
+---
+
+## 4. Indian e-Medical Visa Protocol for Kuwaiti Nationals & Residents
+
+Obtaining an Indian Medical Visa from Kuwait is 100% online, eliminating the need to wait in queues at embassy visa centers:
+
+1. **Submit Diagnostic Reports:** Send your MRI, X-rays, or medical reports via our secure website or [WhatsApp Concierge (+91 94005 28836)](https://wa.me/919400528836).
+2. **Receive Free Treatment Proposal:** Within 24 hours, our consultant medical board reviews your case and provides an itemized treatment proposal in KWD and USD.
+3. **Official Hospital Visa Invitation Letter:** We issue a government-stamped Hospital Visa Invitation Letter containing your passport details and treatment schedule.
+4. **Online e-Medical Visa Application:** Complete the short online application on the official Indian Visa portal (indianvisaonline.gov.in). The e-Medical Visa is typically approved via email within **24 to 48 hours**, granting a 60-day triple-entry stay with visas for up to two family companions.
+
+---
+
+## 5. The "Dual-Phase Protocol": Modern Surgery + Ayurvedic Rejuvenation
+
+Many Kuwaiti patients visiting Kerala choose our signature **Dual-Phase Healing Journey**:
+
+- **Phase 1: Precision Hospital Care (Days 1–5):** The patient undergoes surgery (such as robotic joint replacement or spinal micro-decompression) in a world-class JCI hospital in Calicut or Kochi. Under the care of specialized physical therapists, the patient begins walking within 24 hours.
+- **Phase 2: Restorative Ayurvedic Convalescence (Days 6–14):** After hospital discharge, instead of confining yourself to a city hotel, you transition with your family to a tranquil Ayurvedic wellness estate in Wayanad or coastal Calicut. Medically supervised herbal oil treatments (Abhyanga, Kizhi), targeted joint therapies, and wholesome nutrition soothe post-operative inflammation, eliminate stiffness, and restore energy before your flight home to Kuwait.
+
+---
+
+## 6. How TreatInKerala Takes Care of Everything
+
+From the initial report review to your safe return to Kuwait, TreatInKerala provides 360-degree support:
+- **Free Second Medical Opinions** from senior department heads.
+- **Binding Transparent Estimates** in Kuwaiti Dinars with zero hidden costs.
+- **Airport Greeter & Private VIP Transfers.**
+- **Bilingual Arabic/English Patient Care Managers.**
+- **Assistance with Family Serviced Apartments** near leading hospitals.
+- **Post-Return Telemedicine Consultations** with your operating surgeon.
+
+Experience world-class healthcare with the warmth of Kerala hospitality. [Request your personalized estimate today](/get-estimate) or chat with our medical team on WhatsApp.`,
+    contentAr: `بالنسبة للعائلات في دولة الكويت، يمثل الحصول على علاج طبي فائق الجودة دون تأخير أو قوائم انتظار طويلة في لجان العلاج بالخارج، ودون دفع فواتير خيالية في العيادات الخاصة، أولوية قصوى. وعلى الرغم من تطور المراكز الطبية الخاصة في مدينة الكويت وحولي والسالمية، فإن تكلفة العمليات الجراحية الكبرى كاستبدال المفاصل بالروبوت، وجراحات العمود الفقري، وزراعة الأسنان الكاملة، تتراوح بسهولة بين **4,500 إلى 9,000 دينار كويتي**. كما أن الانتظار للحصول على موافقة إدارة العلاج بالخارج بوزارة الصحة قد يستغرق أشهراً طويلة.
+
+هذا الواقع جعل من ولاية كيرلا بالهند الوجهة المفضلة الأولى للمواطنين والمقيمين في الكويت في عام 2026؛ حيث تبعد **4 ساعات فقط برحلة طيران مباشرة من مطار الكويت الدولي (KWI)**، وتوفر صروحاً طبية حاصلة على الاعتماد الأمريكي الدولي (JCI)، ونخبة من كبار الجراحين المدربين في الغرب، وبيئة استشفائية إسلامية حلال 100% مع منسقين يتحدثون العربية بطلاقة — وكل ذلك **بتوفير مالي يتراوح بين 65% إلى 75%**.
+
+سواء كنت تبحث عن [استبدال مفصل الركبة بالروبوت](/treatments/orthopaedics)، أو جراحة [الانزلاق الغضروفي بالمجهر](/treatments/spine)، أو برامج [أطفال الأنابيب المتقدمة](/treatments/ivf)، أو [التأهيل الشامل بالأيورفيدا](/treatments/ayurveda)، يقدم لك هذا الدليل كل ما تحتاج لمعرفته بالتفصيل.
+
+---
+
+## 1. لماذا يفضل المرضى الكويتيون العلاج في كيرلا؟
+
+تجمع كيرلا بين القوة السريرية والراحة النفسية والاجتماعية التي تبحث عنها العائلات الكويتية:
+
+- **تنسيق طبي ومترجمون عرب متفرغون:** يرافقك منسق طبي كيرلي يتحدث العربية بطلاقة في كافة الاستشارات، والفحوصات، وتفاصيل التنويم لتسهيل التواصل بدقة متناهية.
+- **أجنحة خاصة واسعة تتسع للمرافقين والعائلات:** تحرص العائلات الكويتية على مرافقة المريض؛ لذا توفر المستشفيات الشريكة في كوزيكود (كالكوت) وكوتشين أجنحة تنفيذية مجهزة بغرف ملحقة ومريحة للمرافقين، ومطبخ صغير، وإنترنت سريع، وقنوات فضائية عربية.
+- **وجبات حلال 100% ومصليات مهيأة:** تقدم مطاعم المستشفيات وجبات حلال طازجة ومعدّة خصيصاً لتناسب الذوق الخليجي، مع توفير القهوة والشاي العربي، وتضم المستشفيات مصليات ومساجد داخلية مع اتجاه القبلة.
+- **جدولة العمليات فوراً دون انتظار:** يستطيع المريض الكويتي إجراء الفحوصات والعملية خلال 48 إلى 72 ساعة من وصوله دون أي تأخير بيروقراطي.
+
+---
+
+## 2. جدول مقارنة التكاليف لعام 2026: مستشفيات الكويت الخاصة مقابل كيرلا (بالدينار الكويتي KWD)
+
+يوضح الجدول التالي التوفير الحقيقي للمريض الكويتي بالدينار الكويتي:
+
+| الإجراء الطبي الجراحي | القطاع الخاص في الكويت (KWD) | باقة كيرلا الشاملة JCI (KWD) | صافي التوفير للمريض |
+| :--- | :--- | :--- | :--- |
+| **استبدال مفصل الركبة بالروبوت (مفرد)** | 4,800 – 6,500 د.ك | **1,450 – 1,950 د.ك** | **توفير 3,350 – 4,550 د.ك (70%)** |
+| **استبدال الركبتين معاً بالروبوت** | 8,500 – 11,500 د.ك | **2,350 – 3,100 د.ك** | **توفير 6,150 – 8,400 د.ك (72%)** |
+| **جراحة القلب المفتوح (CABG)** | 11,000 – 16,000 د.ك | **1,950 – 2,800 د.ك** | **توفير 9,050 – 13,200 د.ك (80%)** |
+| **استئصال الغضروف القطني بالمجهر** | 3,800 – 5,200 د.ك | **1,100 – 1,550 د.ك** | **توفير 2,700 – 3,650 د.ك (70%)** |
+| **زراعة الأسنان للفك الكامل (All-on-4)** | 2,800 – 4,200 د.ك | **680 – 980 د.ك** | **توفير 2,120 – 3,220 د.ك (75%)** |
+| **دورة أطفال الأنابيب مع الحقن المجهري** | 2,400 – 3,500 د.ك | **850 – 1,250 د.ك** | **توفير 1,550 – 2,250 د.ك (65%)** |
+| **تكميم المعدة بالمنظار** | 3,200 – 4,500 د.ك | **1,050 – 1,450 د.ك** | **توفير 2,150 – 3,050 د.ك (68%)** |
+| **باقة البانشاكارما بالأيورفيدا (14 يوماً)**| غير متوفرة محلياً | **350 – 550 د.ك** | **قيمة استشفائية لا تُضاهى** |
+
+*تشمل باقات كيرلا: أتعاب كبار الجراحين والتخدير، التنويم في جناح خاص، الغرسات الأمريكية الأصلية (Stryker، Zimmer Biomet)، التحاليل والفحوصات، الأدوية، والعلاج الطبيعي داخل المستشفى.*
+
+---
+
+## 3. خطوط الطيران المباشرة: من مطار الكويت إلى كيرلا
+
+- **الخطوط الجوية الكويتية:** رحلات مباشرة منتظمة من مطار الكويت الدولي (KWI) إلى مطار كوزيكود (CCJ) ومطار كوتشين (COK) خلال **4 ساعات و15 دقيقة** فقط.
+- **طيران الجزيرة:** خيارات سفر مريحة ومباشرة بأسعار ممتازة لرحلات الذهاب والعودة إلى كوتشين وكوزيكود.
+- **طيران إنديا إكسبريس:** رحلات يومية مباشرة تناسب أوقات المرضى وعائلاتهم.
+- **خيارات الترانزيت المريحة:** تتوفر رحلات ترانزيت محطة واحدة سريعة جداً عبر طيران الإمارات والخطوط القطرية.
+- **الاستقبال والتنقل VIP:** يستقبلك منسقنا الخاص عند بوابة المطار بسيارة مكيّفة حديثة لنقلك مباشرة إلى مقر إقامتك المجهز.
+
+---
+
+## 4. خطوات إصدار التأشيرة الطبية الإلكترونية للمواطنين والمقيمين في الكويت
+
+تتم إجراءات التأشيرة الطبية الهندية عبر الإنترنت بكل سهولة دون الحاجة لزيارة السفارة أو مكاتب التأشيرات:
+
+1. **إرسال التقارير الطبية والأشعة:** أرسل صور الرنين المغناطيسي والتقارير عبر موقعنا أو عبر [واتساب المنسق الطبي (+91 94005 28836)](https://wa.me/919400528836).
+2. **استلام الخطة العلاجية وعرض السعر بالدينار الكويتي:** يراجع كبار الاستشاريين حالتك ويحددون مدة العلاج والتكلفة الثابتة الشاملة.
+3. **إصدار خطاب الدعوة المعتمد من المستشفى:** نصدر خطاب دعوة رسمي معتمد من المستشفى ببيانات جواز سفرك لتقديمه مع طلب التأشيرة.
+4. **التقديم الإلكتروني السريع:** تقدم عبر الموقع الرسمي للتأشيرة الهندية (indianvisaonline.gov.in)، وتصدر التأشيرة الإلكترونية خلال **24 إلى 48 ساعة** صالحة للدخول المتعدد مع تأشيرات للمرافقين.
+
+---
+
+## 5. نموذج الشفاء المزدوج: جراحة المستشفى ونقاهة الأيورفيدا
+
+يفضل العديد من المرضى الكويتيين الاستفادة من تجربة التعافي المزدوج:
+- **المرحلة الأولى: الجراحة المتقدمة بالمستشفى (الأيام 1 إلى 5):** إجراء الجراحة الدقيقة (مثل استبدال الركبة بالروبوت أو جراحة الديسك) في مستشفى معتمد من JCI، وبدء المشي والعلاج الطبيعي خلال 24 ساعة.
+- **المرحلة الثانية: الاستجمام والنقاهة بالأيورفيدا (الأيام 6 إلى 14):** الانتقال إلى منتجع طبي هادئ وسط مزارع الشاي والطبيعة الساحرة في واياناد أو كوزيكود؛ حيث يتلقى المريض جلسات تدليك الزيوت الطبية الدافئة (أبهيانجا وكيشي) التي تخفف الألم والتورم وتجدد الحيوية قبل العودة إلى الكويت.
+
+---
+
+## 6. كيف يرتب فريق TreatInKerala كافة تفاصيل رحلتك؟
+
+- استشارة ثانية مجانية من رؤساء الأقسام الطبية.
+- باقات أسعار واضحة وثابتة بالدينار الكويتي دون أي تكاليف مخفية.
+- استقبال VIP من المطار وسيارات خاصة مجهزة.
+- منسق طبي يتحدث العربية مرافق لك في كافة المواعيد.
+- ترتيب شقق وفلل فندقية فاخرة للعائلات والمرافقين بجوار المستشفى.
+- متابعة استشارية عبر الفيديو بعد عودتك إلى الكويت مع الجراح المشرف.
+
+احصل على أرقى رعاية جراحية عالمية براحة واطمئنان تام. [اطلب عرض السعر وخطة علاجك الآن](/get-estimate) وتحدث مباشرة مع فريقنا الطبي.`,
+    faqs: [
+      {
+        q: 'Do Kuwaiti citizens need to visit the Indian Embassy in Kuwait to obtain a medical visa?',
+        qAr: 'هل يحتاج المواطن الكويتي لزيارة السفارة الهندية في الكويت لاستخراج التأشيرة الطبية؟',
+        a: 'No. Kuwaiti citizens and residents can apply completely online for the Indian e-Medical Visa. TreatInKerala issues the mandatory official Hospital Visa Invitation Letter within 24 hours. You upload this letter on the official visa portal, and your electronic visa is granted via email within 24 to 48 hours.',
+        aAr: 'لا، يتم التقديم بالكامل عبر الإنترنت للحصول على التأشيرة الطبية الإلكترونية (e-Medical Visa). ويصدر فريقنا خطاب الدعوة الطبي المعتمد من المستشفى خلال 24 ساعة، ثم تقوم برفعه على بوابة التأشيرات وتصدر تأشيرتك وتأشيرات مرافبيك خلال 24 إلى 48 ساعة فقط.'
+      },
+      {
+        q: 'How much can a patient from Kuwait save on major surgeries in Kerala?',
+        qAr: 'كم يمكن للمريض القادم من الكويت توفيره في العمليات الجراحية الكبرى في كيرلا؟',
+        a: 'Kuwaiti patients save between 65% and 75% on tertiary procedures. For example, a robotic single knee replacement costs KWD 1,450–1,950 in Kerala compared to KWD 4,800–6,500 in Kuwait private clinics, saving over KWD 3,300 while using identical US FDA-approved Stryker or Zimmer implants.',
+        aAr: 'يوفر المريض ما بين 65% إلى 75% من تكاليف العمليات المتقدمة؛ فعلى سبيل المثال، تبلغ تكلفة استبدال الركبة بالروبوت في كيرلا ما بين 1,450 إلى 1,950 دينار كويتي مقارنة بـ 4,800 إلى 6,500 دينار في المستشفيات الخاصة بالكويت، محققاً توفيراً يتجاوز 3,300 دينار مع استخدام نفس الغرسات الأمريكية المعتمدة.'
+      },
+      {
+        q: 'Can family companions stay in the hospital room with the patient in Kerala?',
+        qAr: 'هل يمكن للمرافقين من أفراد العائلة الإقامة في نفس غرفة المريض بالمستشفى في كيرلا؟',
+        a: 'Yes. Inpatient rooms at our partner hospitals are spacious executive suites featuring an adjoining bed for an accompanying family member, modern attached bathrooms, Wi-Fi, and personalized dining services for both patient and companion.',
+        aAr: 'نعم بالتأكيد. تم تصميم الأجنحة والغرف التنفيذية بمستشفياتنا الشريكة لتتسع للمرافق بكل راحة؛ حيث تتوفر أسرّة مخصصة للمرافقين، وحمام خاص مجهز، وإنترنت فائق السرعة، وخدمات تقديم وجبات مخصصة للمريض ومرافقه.'
+      },
+      {
+        q: 'Which airlines offer non-stop flights from Kuwait to Kerala airports?',
+        qAr: 'ما هي شركات الطيران التي توفر رحلات مباشرة بدون توقف من الكويت إلى مطارات كيرلا؟',
+        a: 'Kuwait Airways, Jazeera Airways, and Air India Express operate direct non-stop flights from Kuwait International Airport (KWI) to Calicut (CCJ) and Kochi (COK), with flight times of approximately 4 hours and 15 minutes.',
+        aAr: 'تسيّر الخطوط الجوية الكويتية، وطيران الجزيرة، وإنديا إكسبريس رحلات مباشرة منتظمة بدون توقف من مطار الكويت الدولي (KWI) إلى مطاري كوزيكود (CCJ) وكوتشين (COK)، وتستغرق الرحلة حوالي 4 ساعات و15 دقيقة فقط.'
       }
     ]
   }

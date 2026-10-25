@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import {
@@ -9,6 +9,7 @@ import {
   Globe, Sparkles, Send, FileText
 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
+import QuickInquiryModal from './QuickInquiryModal';
 
 export default function MobileBottomNav() {
   const t = useTranslations('Nav');
@@ -17,6 +18,13 @@ export default function MobileBottomNav() {
   const router = useRouter();
   const isRtl = locale === 'ar';
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [inquiryOpen, setInquiryOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOpenInquiry = () => setInquiryOpen(true);
+    window.addEventListener('open-quick-inquiry', handleOpenInquiry);
+    return () => window.removeEventListener('open-quick-inquiry', handleOpenInquiry);
+  }, []);
 
   const toggleLocale = () => {
     const nextLocale = locale === 'en' ? 'ar' : 'en';
@@ -46,6 +54,7 @@ export default function MobileBottomNav() {
     { href: '/blog', label: t('blog'), icon: BookOpen },
     { href: '/faq', label: t('faq'), icon: HelpCircle },
     { href: '/contact', label: t('contact'), icon: PhoneCall },
+    { href: '#', label: isRtl ? 'المساعد الذكي (Maya AI)' : 'AI Assistant Maya', icon: Sparkles, isAiChat: true },
   ];
 
   return (
@@ -83,22 +92,22 @@ export default function MobileBottomNav() {
             <span className="text-[11px] tracking-tight mt-0.5 leading-tight">{t('treatments')}</span>
           </Link>
 
-          {/* Center Compact Luxury Concierge Chat */}
+          {/* Center Compact Luxury Concierge Consultation */}
           <button
             type="button"
-            onClick={() => window.dispatchEvent(new CustomEvent('open-ai-chat'))}
+            onClick={() => setInquiryOpen(true)}
             className="flex-1 flex flex-col items-center justify-center py-1.5 rounded-[10px] bg-gradient-to-tr from-[#1B4332] via-[#2D6A4F] to-[#1E513B] text-white shadow-[0_2px_8px_rgba(27,67,50,0.25)] ring-1 ring-white/60 transition-all duration-200 tap-active group hover:brightness-105 cursor-pointer relative"
-            aria-label="Open AI Concierge Chat"
+            aria-label="Open Quick Medical Inquiry"
           >
             <div className="relative">
-              <Sparkles className="h-4.5 w-4.5 text-[#BAD7B0] group-hover:rotate-12 transition-transform duration-300" />
+              <MessageCircle className="h-4.5 w-4.5 text-[#BAD7B0] group-hover:scale-110 transition-transform duration-200" />
               <span className="absolute -top-1 -right-1.5 flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-80" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]" />
               </span>
             </div>
             <span className="text-[11px] font-bold tracking-tight mt-0.5 leading-tight text-white whitespace-nowrap">
-              {isRtl ? 'محادثة' : 'Chat'}
+              {isRtl ? 'استشارة' : 'Inquire'}
             </span>
           </button>
 
@@ -195,6 +204,26 @@ export default function MobileBottomNav() {
               {secondaryItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeLink(item.href);
+
+                if (item.isAiChat) {
+                  return (
+                    <button
+                      key="ai-chat"
+                      type="button"
+                      onClick={() => {
+                        setDrawerOpen(false);
+                        window.dispatchEvent(new CustomEvent('open-ai-chat'));
+                      }}
+                      className="flex items-center gap-2.5 p-3 rounded-[12px] border text-xs font-medium tap-active transition-all bg-emerald-50/50 border-[#2D6A4F]/30 text-[#1B4332] shadow-2xs hover:bg-emerald-50 text-left rtl:text-right cursor-pointer"
+                    >
+                      <span className="p-2 rounded-[8px] shrink-0 bg-[#2D6A4F] text-white">
+                        <Sparkles className="h-4 w-4" />
+                      </span>
+                      <span className="truncate font-semibold">{item.label}</span>
+                    </button>
+                  );
+                }
+
                 return (
                   <Link
                     key={item.href}
@@ -241,6 +270,12 @@ export default function MobileBottomNav() {
           </div>
         </div>
       )}
+
+      {/* Quick 4-Field Inquiry Modal */}
+      <QuickInquiryModal
+        isOpen={inquiryOpen}
+        onClose={() => setInquiryOpen(false)}
+      />
 
     </>
   );

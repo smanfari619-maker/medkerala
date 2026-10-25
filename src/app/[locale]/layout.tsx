@@ -143,7 +143,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="bg-[#FAF7F2] text-[#1A1A2E] font-sans antialiased flex flex-col min-h-screen">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <Header />
-          <main className="flex-grow pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
+          <main className="flex-grow">
             {children}
           </main>
           <Footer />

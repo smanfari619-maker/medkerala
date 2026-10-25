@@ -24,8 +24,6 @@ import {
 } from 'lucide-react';
 import { Metadata } from 'next';
 import { getMedicalProcedureSchema, getBreadcrumbSchema, getFAQSchema } from '@/lib/schemas';
-import RecoveryEssentialsSection from '@/components/treatments/RecoveryEssentialsSection';
-import { getRecoveryProductsForTreatment } from '@/lib/recoveryProducts';
 import MedicalReviewerBadge from '@/components/trust/MedicalReviewerBadge';
 import ClinicalQualityMetrics from '@/components/trust/ClinicalQualityMetrics';
 
@@ -142,6 +140,26 @@ export default async function TreatmentDetailPage({ params }: Props) {
     return Math.round(((compare - kerala) / compare) * 100);
   };
 
+  const clinicalSnapshots: Record<string, { stayEn: string; stayAr: string; recoverEn: string; recoverAr: string }> = {
+    cardiac: { stayEn: '5 – 7 Days Inpatient', stayAr: '٥ – ٧ أيام تنويم', recoverEn: '16 – 21 Days', recoverAr: '١٦ – ٢١ يوماً' },
+    orthopaedics: { stayEn: '3 – 4 Days Inpatient', stayAr: '٣ – ٤ أيام تنويم', recoverEn: '12 – 14 Days', recoverAr: '١٢ – ١٤ يوماً' },
+    dental: { stayEn: 'Day-Care (Outpatient)', stayAr: 'عيادات خارجية (يومي)', recoverEn: '5 – 7 Days', recoverAr: '٥ – ٧ أيام' },
+    ivf: { stayEn: 'Day-Care (Outpatient)', stayAr: 'عيادات خارجية (يومي)', recoverEn: '14 – 18 Days', recoverAr: '١٤ – ١٨ يوماً' },
+    ayurveda: { stayEn: '14 – 28 Days Inpatient', stayAr: '١٤ – ٢٨ يوماً إقامة', recoverEn: 'Immediate Restorative', recoverAr: 'تعافي فوري وتجديد' },
+    oncology: { stayEn: '3 – 7 Days / Outpatient', stayAr: '٣ – ٧ أيام / خارجي', recoverEn: 'Per Regimen Protocol', recoverAr: 'حسب البروتوكول الطبي' },
+    spine: { stayEn: '2 – 4 Days Inpatient', stayAr: '٢ – ٤ أيام تنويم', recoverEn: '10 – 14 Days', recoverAr: '١٠ – ١٤ يوماً' },
+    gastroenterology: { stayEn: '2 – 3 Days Inpatient', stayAr: '٢ – ٣ أيام تنويم', recoverEn: '7 – 10 Days', recoverAr: '٧ – ١٠ أيام' },
+    ophthalmology: { stayEn: 'Day-Care (1 – 2 Hours)', stayAr: 'جراحة اليوم الواحد (ساعتان)', recoverEn: '24 – 48 Hours', recoverAr: '٢٤ – ٤٨ ساعة' },
+    urology: { stayEn: '1 – 2 Days Inpatient', stayAr: '١ – ٢ يوم تنويم', recoverEn: '3 – 5 Days', recoverAr: '٣ – ٥ أيام' }
+  };
+
+  const snapshot = clinicalSnapshots[slug] || {
+    stayEn: '3 – 5 Days Inpatient',
+    stayAr: '٣ – ٥ أيام تنويم',
+    recoverEn: '10 – 14 Days',
+    recoverAr: '١٠ – ١٤ يوماً'
+  };
+
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: isRtl ? 'الرئيسية' : 'Home', url: `https://treatinkerala.com/${locale}` },
     { name: isRtl ? 'العلاجات' : 'Treatments', url: `https://treatinkerala.com/${locale}/treatments` },
@@ -155,8 +173,6 @@ export default async function TreatmentDetailPage({ params }: Props) {
       a: isRtl ? faq.aAr : faq.a
     }))
   );
-
-  const recoveryProducts = getRecoveryProductsForTreatment(slug);
 
   return (
     <div className="flex flex-col w-full overflow-x-hidden animate-fade-in pt-36 lg:pt-44 bg-[#FAF7F2]">
@@ -180,7 +196,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold mb-2">
             <span>{speciality}</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-bold font-display text-text-dark tracking-tight max-w-4xl mx-auto leading-tight">
@@ -222,14 +238,14 @@ export default async function TreatmentDetailPage({ params }: Props) {
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار عن تكلفة علاج: ${title}` : `Hello TreatInKerala, I would like to inquire about the cost of: ${title}`)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-3.5 rounded-full text-base shadow-md hover:shadow-lg transition-all duration-200 min-h-[48px] flex items-center justify-center gap-2 font-sans whitespace-nowrap cursor-pointer"
+              className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-3.5 rounded-xl text-base shadow-md hover:shadow-lg transition-all duration-200 min-h-[48px] flex items-center justify-center gap-2 font-sans whitespace-nowrap cursor-pointer"
             >
               <MessageCircle className="h-5 w-5 text-white shrink-0" />
               <span>{isRtl ? 'استشارة فورية عبر واتساب' : 'WhatsApp Inquiry'}</span>
             </a>
             <Link
               href="/get-estimate"
-              className="btn-primary w-full sm:w-auto px-8 py-3.5 text-base whitespace-nowrap cursor-pointer"
+              className="btn-primary w-full sm:w-auto px-8 py-3.5 text-base whitespace-nowrap cursor-pointer rounded-xl"
             >
               {tCommon('getEstimate')}
             </Link>
@@ -242,12 +258,40 @@ export default async function TreatmentDetailPage({ params }: Props) {
         </div>
       </section>
 
+      {/* 1.5 AEO DIRECT ANSWER SNAPSHOT */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-10 mb-8 relative z-20">
+        <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-xs">
+          <div className="flex items-center gap-2 text-xs font-bold text-[#1B4332] uppercase tracking-wider mb-4 pb-3 border-b border-slate-100">
+            <span className="h-2 w-2 rounded-full bg-[#1B4332] shrink-0"></span>
+            <span>{isRtl ? 'ملخص سريري سريع (AEO Direct Fact Snapshot)' : 'Direct Clinical Fact Snapshot (AEO Direct Answer)'}</span>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="border-l-2 rtl:border-l-0 rtl:border-r-2 border-[#1B4332] px-3.5 py-1">
+              <span className="text-xs text-text-muted block font-sans mb-0.5">{isRtl ? 'مدة التنويم بالمستشفى' : 'Hospital Stay'}</span>
+              <span className="text-base sm:text-lg font-bold text-text-dark font-display">{isRtl ? snapshot.stayAr : snapshot.stayEn}</span>
+            </div>
+            <div className="border-l-2 rtl:border-l-0 rtl:border-r-2 border-[#D4A96A] px-3.5 py-1">
+              <span className="text-xs text-text-muted block font-sans mb-0.5">{isRtl ? 'اللياقة للسفر بالطائرة' : 'Fit-to-Fly Timeline'}</span>
+              <span className="text-base sm:text-lg font-bold text-text-dark font-display">{isRtl ? snapshot.recoverAr : snapshot.recoverEn}</span>
+            </div>
+            <div className="border-l-2 rtl:border-l-0 rtl:border-r-2 border-emerald-600 px-3.5 py-1">
+              <span className="text-xs text-text-muted block font-sans mb-0.5">{isRtl ? 'الاعتماد السريري' : 'Hospital Accreditation'}</span>
+              <span className="text-base sm:text-lg font-bold text-text-dark font-display">JCI & NABH Certified</span>
+            </div>
+            <div className="border-l-2 rtl:border-l-0 rtl:border-r-2 border-amber-600 px-3.5 py-1">
+              <span className="text-xs text-text-muted block font-sans mb-0.5">{isRtl ? 'معدل التوفير المالي' : 'Average Savings'}</span>
+              <span className="text-base sm:text-lg font-bold text-[#1B4332] font-display">{calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}% – {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.usa)}%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 2. OVERVIEW & WHY KERALA */}
-      <section className="py-20 bg-[#FAF7F2]">
+      <section className="py-16 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Overview Left - Bento Card */}
-            <div className="lg:col-span-7 bg-white border border-slate-200 p-8 sm:p-10 rounded-3xl shadow-xs flex flex-col justify-center space-y-6">
+            <div className="lg:col-span-7 bg-white border border-slate-200 p-8 sm:p-10 rounded-2xl shadow-xs flex flex-col justify-center space-y-6">
               <h2 className="text-2xl sm:text-3xl font-bold font-display text-text-dark">
                 {locale === 'ar' ? 'نظرة عامة على الإجراء' : 'Procedure Overview'}
               </h2>
@@ -257,7 +301,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
             </div>
 
             {/* Why Kerala Right - Bento Card */}
-            <div className="lg:col-span-5 bg-white border border-slate-200 p-8 sm:p-10 rounded-3xl shadow-xs space-y-6 relative overflow-hidden group">
+            <div className="lg:col-span-5 bg-white border border-slate-200 p-8 sm:p-10 rounded-2xl shadow-xs space-y-6 relative overflow-hidden group">
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-10 rounded-xl bg-emerald-50 flex items-center justify-center border border-emerald-100">
@@ -285,7 +329,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
       <section className="py-20 bg-white border-y border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold mb-3">
               <span>{locale === 'ar' ? 'الشفافية في الأسعار' : 'Transparent Pricing'}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold font-display text-text-dark">
@@ -298,7 +342,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
             </p>
           </div>
 
-          <div className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xs">
+          <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
             <table className="w-full text-center border-collapse" dir={isRtl ? 'rtl' : 'ltr'}>
               <thead>
                 <tr className="bg-[#FAF7F2] font-semibold text-sm sm:text-base border-b border-slate-200">
@@ -373,9 +417,9 @@ export default async function TreatmentDetailPage({ params }: Props) {
             {treatment.doctors.map((doc, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-3xl border border-slate-200 shadow-xs space-y-4 text-center md:text-left rtl:md:text-right flex flex-col items-center md:items-start"
+                className="bg-white p-8 rounded-2xl border border-slate-200 shadow-xs space-y-4 text-center md:text-left rtl:md:text-right flex flex-col items-center md:items-start"
               >
-                <div className="h-14 w-14 rounded-2xl bg-emerald-50 flex items-center justify-center mb-1 border border-emerald-100">
+                <div className="h-14 w-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-1 border border-emerald-100">
                   <Stethoscope className="h-7 w-7 text-[#1B4332]" />
                 </div>
                 <div className="space-y-1 text-center md:text-left rtl:md:text-right">
@@ -407,15 +451,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* 5. POST-OP RECOVERY ESSENTIALS (iHerb Rewards Referral) */}
-      <RecoveryEssentialsSection
-        locale={locale}
-        treatmentName={title}
-        treatmentSlug={slug}
-        products={recoveryProducts}
-      />
-
-      {/* 6. TREATMENT FAQS */}
+      {/* 5. TREATMENT FAQS */}
       <section className="py-20 bg-[#FAF7F2] border-t border-slate-200">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -466,7 +502,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/get-estimate"
-              className="bg-[#D4A96A] hover:bg-[#c49355] text-[#111827] font-bold px-8 py-3.5 rounded-full text-base shadow-md hover:shadow-lg transition-all duration-200 min-h-[48px] inline-flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
+              className="bg-[#D4A96A] hover:bg-[#c49355] text-[#111827] font-bold px-8 py-3.5 rounded-xl text-base shadow-md hover:shadow-lg transition-all duration-200 min-h-[48px] inline-flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
             >
               <span>{tCommon('getEstimate')}</span>
               <ArrowRight className="h-5 w-5 shrink-0 rtl:rotate-180" />
@@ -475,7 +511,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-3.5 rounded-full text-base shadow-md hover:shadow-lg transition-all duration-200 min-h-[48px] inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-3.5 rounded-xl text-base shadow-md hover:shadow-lg transition-all duration-200 min-h-[48px] inline-flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <MessageCircle className="h-5 w-5 shrink-0" />
               <span>{tCommon('whatsAppUs')}</span>

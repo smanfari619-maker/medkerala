@@ -81,10 +81,10 @@ export default async function TreatmentsPage({ params }: Props) {
         </div>
 
         {/* Pricing Transparency Explainer Banner */}
-        <div className="bg-white border border-[#D4A96A]/15 rounded-[2rem] p-6 mb-10 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all duration-300">
+        <div className="bg-white border border-[#D4A96A]/20 rounded-2xl p-5 sm:p-6 mb-10 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between shadow-xs relative overflow-hidden group hover:shadow-md transition-all duration-300">
           <div className="absolute left-0 rtl:left-auto rtl:right-0 top-0 bottom-0 w-1.5 bg-[#D4A96A]"></div>
           <div className="flex gap-3.5 items-start sm:items-center z-10">
-            <div className="h-8 w-8 rounded-full bg-white border border-[#D4A96A]/20 flex items-center justify-center shrink-0 mt-0.5 sm:mt-0 shadow-xs">
+            <div className="h-8 w-8 rounded-lg bg-[#FAF7F2] border border-[#D4A96A]/20 flex items-center justify-center shrink-0 mt-0.5 sm:mt-0 shadow-2xs">
               <Info className="h-4 w-4 text-[#D4A96A]" />
             </div>
             <p className="font-sans text-sm text-text-muted leading-relaxed max-w-3xl">
@@ -112,10 +112,10 @@ export default async function TreatmentsPage({ params }: Props) {
         />
 
         {/* Dynamic CTA Strip */}
-        <div className="mt-16 bg-primary-dark text-white rounded-3xl p-8 lg:p-12 border border-accent-gold/20 relative overflow-hidden shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="mt-16 bg-primary-dark text-white rounded-2xl p-8 lg:p-10 border border-accent-gold/20 relative overflow-hidden shadow-lg flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="absolute inset-0 bg-radial-gradient from-[#2D6A4F]/20 to-transparent -z-10 opacity-70"></div>
           <div className="space-y-3 text-center md:text-left max-w-xl">
-            <span className="inline-flex items-center gap-1 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-accent-gold uppercase font-sans">
+            <span className="inline-flex items-center gap-1 bg-white/10 px-2.5 py-1 rounded-md text-xs font-semibold tracking-wider text-accent-gold uppercase font-sans">
               <ShieldCheck className="h-3.5 w-3.5" />
               {locale === 'ar' ? 'عرض سعر مخصص' : 'Personalised Estimates'}
             </span>
@@ -132,7 +132,7 @@ export default async function TreatmentsPage({ params }: Props) {
           </div>
           <Link
             href="/get-estimate"
-            className="bg-primary-green hover:bg-white text-white hover:text-primary-green font-bold px-8 py-4 rounded-full text-lg shadow-md hover:shadow-lg transition-all duration-300 min-h-[48px] whitespace-nowrap cursor-pointer shrink-0 font-sans"
+            className="btn-primary text-base px-8 py-3.5 whitespace-nowrap shadow-md hover:shadow-lg inline-flex items-center justify-center shrink-0 cursor-pointer font-sans"
           >
             {tCommon('getEstimate')}
           </Link>

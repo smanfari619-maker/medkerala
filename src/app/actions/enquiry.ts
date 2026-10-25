@@ -173,13 +173,14 @@ export async function submitEnquiry(data: EnquiryData) {
         `,
       };
 
-      // Execute both sends concurrently
-      await Promise.all([
-        transporter.sendMail(adminMailOptions),
-        transporter.sendMail(patientMailOptions),
-      ]);
+      // Execute sends: always alert Admin; only send auto-reply to patient if a personal email was provided
+      const emailSends = [transporter.sendMail(adminMailOptions)];
+      if (data.email && data.email.includes('@') && !data.email.endsWith('@treatinkerala.com')) {
+        emailSends.push(transporter.sendMail(patientMailOptions));
+      }
+      await Promise.all(emailSends);
       
-      console.log(`[Email Sent] Admin & Patient notification emails sent successfully for ${referenceId}`);
+      console.log(`[Email Sent] Admin notification email sent successfully for ${referenceId}`);
     } else {
       console.warn('[Email Skipped] Nodemailer credentials are not set in environment variables. Set SMTP_USER and SMTP_PASS in .env.local to activate email delivery.');
     }

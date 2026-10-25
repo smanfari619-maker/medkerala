@@ -11,6 +11,7 @@ import {
   MessageCircle,
 } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/config';
+import WhatsAppButton from '@/components/common/WhatsAppButton';
 
 export default function HowItWorksStepper() {
   const locale = useLocale();
@@ -102,19 +103,19 @@ export default function HowItWorksStepper() {
 
         {/* Single Focused Consultation CTA */}
         <div className="text-center pt-2">
-          <a
+          <WhatsAppButton
             href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(
               isRtl
                 ? 'مرحباً، أود استشارة منسق طبي ومشاركة تقاريري.'
                 : 'Hello, I have my medical reports and would like a doctor review.'
             )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full text-base font-semibold bg-[#1B4332] hover:bg-[#2D6A4F] text-white transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer"
+            topic="How It Works Stepper: Free Doctor Review"
+            buttonText="How It Works WhatsApp Button"
+            className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-2xl text-sm sm:text-base font-semibold bg-[#1B4332] hover:bg-[#2D6A4F] text-white transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer whitespace-nowrap"
           >
-            <MessageCircle className="h-5 w-5 text-[#25D366]" />
-            <span>{isRtl ? 'أرسل تقاريرك لاستشارة مجانية' : 'Send Reports for Free Doctor Review'}</span>
-          </a>
+            <MessageCircle className="h-5 w-5 text-[#25D366] fill-[#25D366] shrink-0" />
+            <span>{isRtl ? 'استشر طبيباً مجاناً عبر واتساب' : 'Free Doctor Review on WhatsApp'}</span>
+          </WhatsAppButton>
         </div>
 
       </div>

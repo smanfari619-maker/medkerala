@@ -490,7 +490,7 @@ export default function HospitalsDirectoryPage() {
         </div>
 
         {/* Search & Filter Controls */}
-        <div className="bg-white border border-[#D4A96A]/15 rounded-[2.25rem] p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 mb-10 max-w-4xl mx-auto relative overflow-hidden">
+        <div className="bg-white border border-[#D4A96A]/20 rounded-2xl p-6 md:p-7 shadow-xs hover:shadow-md transition-all duration-300 mb-10 max-w-4xl mx-auto relative overflow-hidden">
           {/* Decorative ambient background glows */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-green/5 rounded-full filter blur-3xl pointer-events-none" />
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-gold/5 rounded-full filter blur-3xl pointer-events-none" />
@@ -618,17 +618,17 @@ export default function HospitalsDirectoryPage() {
               return (
                 <div
                   key={hospital.id}
-                  className={`bg-white border rounded-[2.25rem] p-6 sm:p-8 hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between group glow-card-green relative ${
+                  className={`bg-white border rounded-2xl p-6 sm:p-7 hover:border-[#2D6A4F]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group glow-card-green relative ${
                     selectedCompare.includes(hospital.id)
                       ? 'border-[#2D6A4F] ring-2 ring-[#2D6A4F]/20'
-                      : 'border-[#D4A96A]/15'
+                      : 'border-[#D4A96A]/20'
                   }`}
                   dir={isRtl ? 'rtl' : 'ltr'}
                 >
                   <div>
                     {/* Upper row: Stream & Accreditations & Compare button */}
                     <div className="flex items-start justify-between gap-4 mb-4 flex-wrap">
-                      <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold font-sans uppercase tracking-wider ${
+                      <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold font-sans uppercase tracking-wider ${
                         isAllopathy 
                           ? 'bg-blue-50 text-blue-700 border border-blue-100'
                           : 'bg-emerald-50 text-emerald-700 border border-emerald-100'
@@ -642,7 +642,7 @@ export default function HospitalsDirectoryPage() {
                         <button
                           type="button"
                           onClick={() => toggleCompare(hospital.id)}
-                          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold font-sans transition-all cursor-pointer ${
+                          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all cursor-pointer ${
                             selectedCompare.includes(hospital.id)
                               ? 'bg-[#1B4332] text-white shadow-xs'
                               : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
@@ -789,7 +789,7 @@ export default function HospitalsDirectoryPage() {
         )}
 
         {/* Global CTA */}
-        <div className="bg-primary-dark text-white rounded-3xl p-8 lg:p-12 border border-accent-gold/20 text-center space-y-6 max-w-4xl mx-auto shadow-lg relative overflow-hidden">
+        <div className="bg-primary-dark text-white rounded-2xl p-8 lg:p-10 border border-accent-gold/20 text-center space-y-6 max-w-4xl mx-auto shadow-lg relative overflow-hidden">
           <div className="absolute inset-0 bg-radial-gradient from-primary-green/20 to-transparent -z-10 opacity-70"></div>
           <h3 className="text-2xl sm:text-3xl font-semibold font-display">
             {isRtl ? 'هل تحتاج لمساعدة في اختيار المستشفى؟' : 'Need help selecting the best hospital?'}
@@ -804,7 +804,7 @@ export default function HospitalsDirectoryPage() {
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3 rounded-full text-base shadow-md hover:shadow-lg transition-all duration-300 min-h-[44px] flex items-center justify-center gap-2 cursor-pointer font-sans w-full sm:w-auto"
+              className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3 rounded-xl text-base shadow-md hover:shadow-lg transition-all duration-300 min-h-[44px] flex items-center justify-center gap-2 cursor-pointer font-sans w-full sm:w-auto"
             >
               <MessageCircle className="h-5 w-5 text-white shrink-0" />
               <span>{isRtl ? 'استشارة مجانية عبر واتساب' : 'Consult via WhatsApp'}</span>

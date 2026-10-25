@@ -3,29 +3,60 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { BLOG_POSTS } from '@/lib/data';
-import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Zap, HelpCircle, ExternalLink } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, ArrowRight, BookOpen, Zap, HelpCircle, ExternalLink, MessageCircle } from 'lucide-react';
 import { Metadata } from 'next';
 import { getBreadcrumbSchema, getHowToSchema, getFAQSchema } from '@/lib/schemas';
-import BlogRecoveryCallout from '@/components/blog/BlogRecoveryCallout';
-import { getRecoveryProductsForBlog } from '@/lib/recoveryProducts';
 import MedicalReviewerBadge from '@/components/trust/MedicalReviewerBadge';
+import BlogQuickFacts from '@/components/blog/BlogQuickFacts';
+import BlogTableOfContents from '@/components/blog/BlogTableOfContents';
+import BlogMidArticleCTA from '@/components/blog/BlogMidArticleCTA';
+import WhatsAppButton from '@/components/common/WhatsAppButton';
+import { SITE_CONFIG } from '@/lib/config';
+
+// ── Extract H2 headings for Table of Contents ──────────────────
+function extractHeadings(content: string): { id: string; text: string }[] {
+  const headings: { id: string; text: string }[] = [];
+  const lines = content.split('\n');
+  let count = 0;
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith('## ')) {
+      count++;
+      const text = trimmed.slice(3).replace(/\*\*/g, '').trim();
+      headings.push({ id: `section-${count}`, text });
+    }
+  }
+  return headings;
+}
 
 // ── Inline rich-text renderer ────────────────────────────────
 // Converts a plain string with lightweight markdown conventions into
 // styled React elements. Supports:
-//   ## H2 headings
+//   ## H2 headings (with anchor IDs for TOC)
 //   ### H3 headings
 //   **bold** inline
 //   - bullet list items
 //   1. ordered list items
 //   | markdown table |
 //   blank lines → paragraph breaks
-function RichContent({ content }: { content: string }) {
+function RichContent({
+  content,
+  locale,
+  postTitle,
+  category,
+}: {
+  content: string;
+  locale: string;
+  postTitle: string;
+  category: string;
+}) {
   const lines = content.split('\n');
   const elements: React.ReactNode[] = [];
   let bulletBuffer: string[] = [];
   let orderedBuffer: string[] = [];
   let tableBuffer: string[] = [];
+  let h2Count = 0;
+  let ctaInjected = false;
 
   const parseInline = (text: string) => {
     // Parse **bold** and [link text](url) markdown
@@ -143,8 +174,27 @@ function RichContent({ content }: { content: string }) {
       tableBuffer.push(trimmed);
     } else if (trimmed.startsWith('## ')) {
       flushAll(`all-${idx}`);
+      h2Count++;
+
+      // Inject high-converting lead review hook at Section 3 (sweet spot for high-intent readers)
+      if (h2Count === 3 && !ctaInjected) {
+        elements.push(
+          <BlogMidArticleCTA
+            key={`mid-cta-${idx}`}
+            locale={locale}
+            postTitle={postTitle}
+            category={category}
+          />
+        );
+        ctaInjected = true;
+      }
+
       elements.push(
-        <h2 key={idx} className="text-2xl font-bold text-[#1B4332] mt-10 mb-4 pb-2 border-b border-slate-100 font-sans">
+        <h2
+          key={idx}
+          id={`section-${h2Count}`}
+          className="scroll-mt-24 text-2xl font-bold text-[#1B4332] mt-10 mb-4 pb-2 border-b border-slate-100 font-sans"
+        >
           {trimmed.slice(3)}
         </h2>
       );
@@ -176,6 +226,18 @@ function RichContent({ content }: { content: string }) {
   });
 
   flushAll('final');
+
+  // Fallback: If article had fewer than 3 headings, insert CTA before conclusion
+  if (!ctaInjected) {
+    elements.push(
+      <BlogMidArticleCTA
+        key="mid-cta-fallback"
+        locale={locale}
+        postTitle={postTitle}
+        category={category}
+      />
+    );
+  }
 
   return <div className="space-y-3">{elements}</div>;
 }
@@ -234,6 +296,7 @@ export default async function BlogPostPage({ params }: Props) {
   const title = isRtl ? post.titleAr : post.title;
   const category = isRtl ? post.categoryAr : post.category;
   const content = isRtl ? post.contentAr : post.content;
+  const headings = extractHeadings(content);
 
   const aeoSummary = isRtl ? post.aeoSummaryAr : post.aeoSummary;
 
@@ -740,7 +803,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
 
         {/* Article Header */}
-        <article className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/90 shadow-xs space-y-6">
+        <article className="bg-white rounded-2xl p-6 sm:p-10 border border-slate-200/90 shadow-2xs space-y-6">
           <div className="space-y-4">
             <span className="inline-block bg-[#FAF7F2] border border-[#1B4332]/15 text-[#1B4332] px-3.5 py-1 rounded-md text-xs font-semibold">
               {category}
@@ -798,9 +861,20 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           )}
 
+          {/* At-a-Glance Clinical & Travel Highlights */}
+          <BlogQuickFacts locale={locale} category={category} />
+
+          {/* Table of Contents with Instant Section Jumping */}
+          <BlogTableOfContents locale={locale} headings={headings} />
+
           {/* Long-form content */}
           <div className="border-b border-slate-100 pb-10">
-            <RichContent content={content} />
+            <RichContent
+              content={content}
+              locale={locale}
+              postTitle={title}
+              category={category}
+            />
 
             <div className="bg-amber-50/70 border border-amber-200/60 p-5 rounded-2xl text-xs sm:text-sm text-amber-900 mt-10 leading-relaxed">
               {locale === 'ar'
@@ -856,14 +930,8 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           )}
 
-          {/* Contextual Product Referral Callout (iHerb Rewards) */}
-          <BlogRecoveryCallout
-            locale={locale}
-            products={getRecoveryProductsForBlog(slug, post.category)}
-          />
-
-          {/* Inline CTA */}
-          <div className="bg-[#FAF7F2] rounded-2xl p-6 sm:p-8 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+          {/* Inline CTA (Dual Choice: WhatsApp or Detailed Estimate Form) */}
+          <div className="bg-[#FAF7F2] rounded-2xl p-6 sm:p-8 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xs">
             <div className="space-y-1.5 text-center sm:text-left rtl:sm:text-right">
               <h4 className="font-bold text-lg text-text-dark">
                 {locale === 'ar' ? 'هل ترغب في الحصول على استشارة مخصصة؟' : 'Need details for your condition?'}
@@ -874,12 +942,27 @@ export default async function BlogPostPage({ params }: Props) {
                   : 'Share your records with our panel doctors and receive a free estimate within 48 hours.'}
               </p>
             </div>
-            <Link
-              href="/get-estimate"
-              className="btn-primary text-base px-6 py-3 whitespace-nowrap shadow-sm hover:shadow-md inline-block shrink-0 cursor-pointer"
-            >
-              {tCommon('getEstimate')}
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+              <WhatsAppButton
+                href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(
+                  isRtl
+                    ? `مرحباً علاج في كيرلا، أود الاستفسار بخصوص مقال: "${title}"`
+                    : `Hello TreatInKerala, I would like to inquire regarding: "${title}"`
+                )}`}
+                topic={`Blog Bottom CTA: ${post.slug}`}
+                buttonText="Blog Bottom WhatsApp Button"
+                className="btn-primary text-sm sm:text-base px-5 py-2.5 whitespace-nowrap shadow-xs hover:shadow-sm inline-flex items-center justify-center gap-2 shrink-0 cursor-pointer w-full sm:w-auto text-center"
+              >
+                <MessageCircle className="h-4 w-4" />
+                <span>{isRtl ? 'استشر عبر واتساب' : 'Chat on WhatsApp'}</span>
+              </WhatsAppButton>
+              <Link
+                href="/get-estimate"
+                className="btn-secondary text-sm sm:text-base px-5 py-2.5 whitespace-nowrap shadow-xs hover:shadow-sm inline-flex items-center justify-center shrink-0 cursor-pointer w-full sm:w-auto text-center"
+              >
+                {tCommon('getEstimate')}
+              </Link>
+            </div>
           </div>
         </article>
 

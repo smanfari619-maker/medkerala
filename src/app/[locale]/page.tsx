@@ -12,11 +12,15 @@ import {
   HeartHandshake,
   Star,
   CheckCircle2,
+  FileText,
+  Lock,
+  Sparkles,
 } from 'lucide-react';
 import { getFAQSchema } from '@/lib/schemas';
 import HeroSlider from '@/components/home/HeroSlider';
 import TreatmentCostCarousel from '@/components/home/TreatmentCostCarousel';
 import HowItWorksStepper from '@/components/home/HowItWorksStepper';
+import WhatsAppButton from '@/components/common/WhatsAppButton';
 import { Metadata } from 'next';
 
 interface Props {
@@ -168,14 +172,13 @@ export default async function HomePage({ params }: Props) {
               <h1 className="font-display font-normal tracking-[-0.03em] text-3xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] text-[#1B4332] leading-[1.12]">
                 {isRtl ? (
                   <>
-                    رعاية طبية راقية، <br />
-                    تنظيم دقيق، <span className="text-[#2D6A4F]">وراحة بال تامة.</span>
+                    رعاية جراحية وطبية متقدمة في كيرلا، <br />
+                    <span className="text-[#2D6A4F]">بتوفير يصل إلى 70% وبأسعار المستشفى الرسمية.</span>
                   </>
                 ) : (
                   <>
-                    Every step coordinated. <br />
-                    Every detail handled. <br />
-                    <span className="text-[#2D6A4F]">You focus on healing.</span>
+                    World-Class Surgery & Care in Kerala. <br />
+                    <span className="text-[#2D6A4F]">Up to 70% Savings. Direct Hospital Rates.</span>
                   </>
                 )}
               </h1>
@@ -183,21 +186,21 @@ export default async function HomePage({ params }: Props) {
               {/* Concise Subheadline with plenty of breathing room */}
               <p className="text-base sm:text-lg text-[#4A5C52] leading-relaxed max-w-xl">
                 {isRtl
-                  ? 'نربطك مباشرة بكبار الجراحين والمستشفيات المعتمدة دولياً في كيرلا. أسعار رسمية من المستشفى بدون أي هوامش، ومرافقة شخصية طوال رحلتك.'
-                  : 'We connect you directly to Kerala\'s premier JCI & NABH accredited hospitals and renowned surgeons. Direct hospital billing, zero markups, and personal bedside care.'}
+                  ? 'نربطك مباشرة بكبار الجراحين والمستشفيات المعتمدة دولياً (JCI و NABH). خدمات مجانية بالكامل: مترجم طبي عربي مرافق، استقبال المطار، وخطابات التأشيرة العلاجية بدون أي هوامش وسيط.'
+                  : 'Direct access to Kerala’s premier JCI & NABH accredited hospital network and top surgical teams. 100% complimentary Arabic medical coordinator, airport pickup, and zero agency fees.'}
               </p>
 
               {/* Focused Conversion Action Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-                <a
+                <WhatsAppButton
                   href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(
                     isRtl
                       ? 'مرحباً، أود استشارة منسق طبي حول العلاج في كيرلا.'
                       : 'Hello, I would like to consult with a medical coordinator regarding treatment in Kerala.'
                   )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-base font-semibold bg-[#1B4332] hover:bg-[#2D6A4F] text-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                  topic="Hero Consultation"
+                  buttonText="Hero Main WhatsApp CTA"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-xl text-base font-semibold bg-[#1B4332] hover:bg-[#2D6A4F] text-white shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group"
                 >
                   <span className="relative flex h-2.5 w-2.5 shrink-0">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75" />
@@ -205,19 +208,29 @@ export default async function HomePage({ params }: Props) {
                   </span>
                   <MessageCircle className="h-5 w-5 text-[#25D366] group-hover:scale-110 transition-transform" />
                   <span>{tCommon('whatsAppUs')}</span>
-                </a>
+                </WhatsAppButton>
 
                 <Link
                   href="/get-estimate"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-base font-semibold bg-white border border-[#D4A96A]/40 text-[#1B4332] hover:bg-slate-50 transition-all duration-300 shadow-xs hover:shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-base font-semibold bg-white border border-[#D4A96A]/40 text-[#1B4332] hover:bg-slate-50 transition-all duration-300 shadow-2xs hover:shadow-xs"
                 >
                   <span>{tCommon('getEstimate')}</span>
                   <ArrowRight className={`h-4 w-4 text-[#D4A96A] ${isRtl ? 'rotate-180' : ''}`} />
                 </Link>
               </div>
 
+              {/* High-Converting Arabic & Response Time Reassurance Badge */}
+              <div className="inline-flex items-center gap-2 text-xs text-[#2D6A4F] font-semibold bg-[#2D6A4F]/8 px-3.5 py-1.5 rounded-full w-fit max-w-full">
+                <span className="shrink-0 whitespace-nowrap text-sm">🇦🇪 🇴🇲 🇸🇦</span>
+                <span className="leading-snug">
+                  {isRtl
+                    ? 'فريق طبي عربي متواجد الآن عبر واتساب • الرد خلال 15 دقيقة'
+                    : 'Arabic-speaking coordinator active now on WhatsApp • 15 min reply'}
+                </span>
+              </div>
+
               {/* 3 Core Trust Reassurances (Clean, Minimalist, No Clutter) */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-[#1B4332]/10 text-xs sm:text-[13px] text-[#4A5C52]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 border-t border-[#1B4332]/10 text-xs sm:text-[13px] text-[#4A5C52]">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="h-4 w-4 text-[#2D6A4F] shrink-0" />
                   <span className="font-medium">{isRtl ? 'مستشفيات JCI و NABH معتمدة' : 'JCI & NABH Hospitals'}</span>
@@ -236,7 +249,7 @@ export default async function HomePage({ params }: Props) {
 
             {/* Right Visual Panel: Clean and Uncluttered */}
             <div className="lg:col-span-5 relative w-full flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/80 bg-white">
+              <div className="relative w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-white/80 bg-white">
                 <HeroSlider
                   isRtl={isRtl}
                   slides={[
@@ -298,6 +311,94 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
+      {/* ─── EXPRESS CLINICAL REPORT REVIEW HOOK (HIGH CONVERSION) ─────────── */}
+      <section className="relative py-8 sm:py-12 bg-white border-b border-[#D4A96A]/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-[#1B4332] via-[#24543F] to-[#133024] text-white shadow-lg overflow-hidden">
+            {/* Ambient pattern */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#D4A96A]/10 blur-3xl"
+            />
+            
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left Column: Clinical Value & Offer */}
+              <div className="lg:col-span-7 space-y-4 text-left rtl:text-right">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4A96A]/20 border border-[#D4A96A]/40 text-[#FAF7F2] text-xs font-bold tracking-wide">
+                  <Sparkles className="h-3.5 w-3.5 text-[#D4A96A]" />
+                  <span>{isRtl ? 'تقييم سريري مجاني خلال 24 ساعة' : 'Free 24-Hour Clinical Evaluation'}</span>
+                </div>
+
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-normal text-white leading-tight">
+                  {isRtl ? (
+                    <>
+                      هل لديك تقارير طبية أو أشعة رنين (MRI)؟ <br />
+                      <span className="text-[#BAD7B0]">احصل على رأي كبار الجراحين وعرض السعر مجاناً.</span>
+                    </>
+                  ) : (
+                    <>
+                      Have an MRI Scan or Medical Report? <br />
+                      <span className="text-[#BAD7B0]">Get a Senior Surgeon’s Opinion & Quotation.</span>
+                    </>
+                  )}
+                </h2>
+
+                <p className="text-slate-200 text-sm sm:text-base leading-relaxed max-w-2xl">
+                  {isRtl
+                    ? 'أرسل صور الأشعة أو التقارير الطبية مباشرة عبر واتساب. يراجعها استشاريون متخصصون في مستشفيات كيرلا المعتمدة ويقدمون لك خطة علاجية وعرض سعر رسمي خلال 24 ساعة بدون أي التزام.'
+                    : 'Send your diagnostic scans or doctor summaries on WhatsApp. Senior surgical teams at our JCI & NABH accredited hospitals will evaluate your case and prepare an itemized hospital estimate within 24 hours.'}
+                </p>
+
+                {/* 3 badges */}
+                <div className="flex flex-wrap items-center gap-4 pt-1 text-xs text-slate-300">
+                  <div className="flex items-center gap-1.5">
+                    <Lock className="h-3.5 w-3.5 text-[#BAD7B0]" />
+                    <span>{isRtl ? 'سرية طبية تامة 100%' : '100% Confidential'}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-[#BAD7B0]" />
+                    <span>{isRtl ? 'بدون أي التزام مالي' : 'Zero Financial Obligation'}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <HeartHandshake className="h-3.5 w-3.5 text-[#BAD7B0]" />
+                    <span>{isRtl ? 'مترجم وأطباء يتحدثون العربية' : 'Arabic & English Support'}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Direct WhatsApp Action */}
+              <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-stretch lg:items-end gap-3.5">
+                <WhatsAppButton
+                  href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(
+                    isRtl
+                      ? 'مرحباً علاج في كيرلا، لدي تقارير طبية وأشعة أود إرسالها لتقييم كبار الجراحين والحصول على عرض سعر.'
+                      : 'Hello TreatInKerala, I have medical reports/scans and would like a doctor review and hospital estimate.'
+                  )}`}
+                  topic="Send Medical Reports for 24h Review"
+                  buttonText="Express Review Banner: Send Reports on WhatsApp"
+                  className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-[0_6px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_8px_32px_rgba(37,211,102,0.55)] transition-all cursor-pointer group text-center whitespace-nowrap"
+                >
+                  <MessageCircle className="h-5 w-5 shrink-0 fill-current group-hover:scale-110 transition-transform" />
+                  <span>{isRtl ? 'إرسال التقارير عبر واتساب' : 'Send Reports on WhatsApp'}</span>
+                </WhatsAppButton>
+
+                <Link
+                  href="/get-estimate"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-semibold bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors text-center"
+                >
+                  <FileText className="h-4 w-4 text-[#BAD7B0]" />
+                  <span>{isRtl ? 'أو املأ استمارة التقدير الإلكترونية' : 'Or Fill Estimate Form Online'}</span>
+                </Link>
+
+                <p className="text-[11px] text-slate-300 text-center lg:text-right rtl:lg:text-left mt-1">
+                  {isRtl ? '⚡ الرد عادةً في أقل من 15 دقيقة عبر واتساب' : '⚡ Direct WhatsApp response within 15 minutes'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── 2. TOP PROCEDURES & TRANSPARENT SAVINGS ───────────────────────── */}
       <TreatmentCostCarousel />
 
@@ -308,7 +409,7 @@ export default async function HomePage({ params }: Props) {
 
             {/* Left — High-end serene photography */}
             <div className="lg:col-span-5 relative">
-              <div className="relative aspect-[4/3] sm:aspect-[1] rounded-3xl overflow-hidden shadow-xl border border-white/80">
+              <div className="relative aspect-[4/3] sm:aspect-[1] rounded-2xl overflow-hidden shadow-lg border border-white/80">
                 <Image
                   src="/images/kerala_hero_bg.png"
                   alt={isRtl ? 'مناظر كيرلا الخلابة' : 'Kerala tranquil backwaters'}
@@ -436,7 +537,7 @@ export default async function HomePage({ params }: Props) {
             {testimonials.map((t, idx) => (
               <div
                 key={idx}
-                className="bg-[#FAF7F2] rounded-3xl p-8 border border-[#1B4332]/8 flex flex-col justify-between rtl:text-right"
+                className="bg-[#FAF7F2] rounded-2xl p-7 border border-[#1B4332]/8 flex flex-col justify-between rtl:text-right"
               >
                 <div>
                   {/* Rating Stars */}
@@ -496,7 +597,7 @@ export default async function HomePage({ params }: Props) {
             </h2>
           </div>
 
-          <div className="divide-y divide-[#E0E7DC] bg-white rounded-3xl p-6 sm:p-8 border border-[#1B4332]/8 shadow-xs">
+          <div className="divide-y divide-[#E0E7DC] bg-white rounded-2xl p-6 sm:p-8 border border-[#1B4332]/8 shadow-xs">
             {faqKeys.map((key) => (
               <details
                 key={key}
@@ -537,23 +638,23 @@ export default async function HomePage({ params }: Props) {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <a
+            <WhatsAppButton
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(
                 isRtl
                   ? 'مرحباً، أود استشارة منسق طبي حول خطة العلاج.'
                   : 'Hello, I would like to consult with a medical coordinator regarding my treatment plan.'
               )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-base font-semibold bg-[#25D366] hover:bg-[#22c55e] text-slate-950 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer w-full sm:w-auto"
+              topic="Bottom Ready to Heal CTA"
+              buttonText="Bottom Full-Width WhatsApp CTA"
+              className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-xl text-base font-semibold bg-[#25D366] hover:bg-[#22c55e] text-slate-950 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer w-full sm:w-auto"
             >
               <MessageCircle className="h-5 w-5" />
               <span>{tCommon('whatsAppUs')}</span>
-            </a>
+            </WhatsAppButton>
 
             <Link
               href="/get-estimate"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all duration-300 w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-base font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all duration-300 w-full sm:w-auto"
             >
               <span>{tCommon('getEstimate')}</span>
               <ArrowRight className={`h-4 w-4 ${isRtl ? 'rotate-180' : ''}`} />

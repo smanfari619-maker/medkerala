@@ -19,12 +19,37 @@ export function getMedicalOrganizationSchema(locale: string) {
       'addressCountry': 'IN',
       'postalCode': '673014'
     },
+    'priceRange': '$$',
+    'currenciesAccepted': 'USD, AED, SAR, OMR, KWD, QAR, GBP, EUR',
+    'paymentAccepted': 'Cash, Credit Card, Bank Wire Transfer',
+    'contactPoint': [
+      {
+        '@type': 'ContactPoint',
+        'telephone': '+919400528836',
+        'contactType': 'international patient medical coordinator',
+        'email': 'treatinkerala@gmail.com',
+        'availableLanguage': ['English', 'Arabic', 'Malayalam'],
+        'areaServed': ['AE', 'SA', 'OM', 'KW', 'QA', 'BH', 'GB', 'US']
+      }
+    ],
     'medicalSpecialty': [
       'Cardiology',
-      'Orthopedics',
-      'Gynecology',
+      'Cardiovascular Surgery',
+      'Orthopedic Surgery',
+      'Joint Replacement',
+      'Dentistry',
+      'Dental Implantology',
+      'Reproductive Endocrinology & Infertility',
+      'In Vitro Fertilization',
+      'Ayurvedic Medicine',
+      'Panchakarma',
       'Oncology',
-      'Neurology'
+      'Neurology',
+      'Neurosurgery & Spine Surgery',
+      'Gastroenterology',
+      'Bariatric Surgery',
+      'Ophthalmology',
+      'Urology'
     ],
     'areaServed': [
       { '@type': 'Country', 'name': 'United Arab Emirates', 'identifier': 'AE' },

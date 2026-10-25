@@ -176,6 +176,14 @@ export default function Header() {
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                import('@/lib/whatsappTracking').then(({ trackWhatsAppClick }) => {
+                  trackWhatsAppClick({
+                    topic: 'Header Bar Contact',
+                    buttonText: 'Header WhatsApp Live Pill',
+                  });
+                });
+              }}
               className="flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[#25D366]/40 hover:border-[#25D366] bg-emerald-50/50 hover:bg-emerald-50 text-[#1B4332] transition-all duration-200 text-xs font-semibold group shadow-2xs"
               aria-label="Chat on WhatsApp"
             >

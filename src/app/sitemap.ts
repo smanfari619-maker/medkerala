@@ -10,8 +10,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     '',
     '/treatments',
+    '/packages',
     '/ayurveda',
     '/services',
+    '/about',
     '/why-kerala',
     '/faq',
     '/contact',

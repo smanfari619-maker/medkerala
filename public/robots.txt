@@ -32,5 +32,7 @@ Disallow: /_vercel/
 Disallow: /api/
 
 Sitemap: https://www.treatinkerala.com/sitemap.xml
-# LLM Knowledge Standard: https://www.treatinkerala.com/llms.txt
+# LLM Knowledge Standard (AEO / AI Search Ingestion)
+# Index: https://www.treatinkerala.com/llms.txt
+# Deep Knowledge Base: https://www.treatinkerala.com/llms-full.txt
 
