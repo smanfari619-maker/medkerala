@@ -5,6 +5,7 @@ import { getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import GlobalWhatsAppTracker from '@/components/common/GlobalWhatsAppTracker';
 import { Inter, Tajawal, Sora } from 'next/font/google';
 import dynamic from 'next/dynamic';
 import '../globals.css';
@@ -142,6 +143,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       </head>
       <body className="bg-[#FAF7F2] text-[#1A1A2E] font-sans antialiased flex flex-col min-h-screen">
         <NextIntlClientProvider messages={messages} locale={locale}>
+          <GlobalWhatsAppTracker />
           <Header />
           <main className="flex-grow">
             {children}

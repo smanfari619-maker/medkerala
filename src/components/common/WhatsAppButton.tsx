@@ -30,6 +30,7 @@ export default function WhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel}
+      data-whatsapp-label={buttonText}
       onClick={() => {
         trackWhatsAppClick({ topic, buttonText });
       }}
