@@ -64,11 +64,6 @@ export function getMedicalOrganizationSchema(locale: string) {
       { '@type': 'Country', 'name': 'Nigeria', 'identifier': 'NG' },
       { '@type': 'Country', 'name': 'Kenya', 'identifier': 'KE' }
     ],
-    'sameAs': [
-      'https://www.wikidata.org/wiki/Q1186',
-      'https://en.wikipedia.org/wiki/Ayurveda',
-      'https://en.wikipedia.org/wiki/National_Accreditation_Board_for_Hospitals_%26_Healthcare_Providers'
-    ]
   };
 }
 

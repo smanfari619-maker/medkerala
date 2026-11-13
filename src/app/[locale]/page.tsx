@@ -8,13 +8,11 @@ import {
   MessageCircle,
   ChevronDown,
   ShieldCheck,
-  Building2,
   HeartHandshake,
   Star,
   CheckCircle2,
   FileText,
   Lock,
-  Sparkles,
 } from 'lucide-react';
 import { getFAQSchema } from '@/lib/schemas';
 import HeroSlider from '@/components/home/HeroSlider';
@@ -72,7 +70,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   const tCommon = await getTranslations({ locale, namespace: 'Common' });
-  const tHero = await getTranslations({ locale, namespace: 'Hero' });
   const tFAQ = await getTranslations({ locale, namespace: 'FAQ' });
 
   const isRtl = locale === 'ar';
@@ -312,62 +309,53 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* ─── EXPRESS CLINICAL REPORT REVIEW HOOK (HIGH CONVERSION) ─────────── */}
-      <section className="relative py-8 sm:py-12 bg-white border-b border-[#D4A96A]/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-[#1B4332] via-[#24543F] to-[#133024] text-white shadow-lg overflow-hidden">
-            {/* Ambient pattern */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#D4A96A]/10 blur-3xl"
-            />
-            
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Left Column: Clinical Value & Offer */}
-              <div className="lg:col-span-7 space-y-4 text-left rtl:text-right">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4A96A]/20 border border-[#D4A96A]/40 text-[#FAF7F2] text-xs font-bold tracking-wide">
-                  <Sparkles className="h-3.5 w-3.5 text-[#D4A96A]" />
-                  <span>{isRtl ? 'تقييم سريري مجاني خلال 24 ساعة' : 'Free 24-Hour Clinical Evaluation'}</span>
+      <section className="border-b border-[#D4A96A]/20 bg-white py-8 sm:py-10 lg:py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl bg-[#1B4332] p-5 text-white shadow-md sm:p-7 lg:p-9">
+            <div className="grid grid-cols-1 items-center gap-7 lg:grid-cols-[minmax(0,1.55fr)_minmax(17rem,0.8fr)] lg:gap-10 xl:gap-14">
+              <div className="space-y-4 text-left rtl:text-right">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-[#F3E8D5]">
+                  <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-[#D4A96A]" />
+                  <span>{isRtl ? 'مراجعة سريرية خلال 24 ساعة' : 'Clinical review within 24 hours'}</span>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-normal text-white leading-tight">
+                <h2 className="max-w-3xl text-[1.65rem] font-medium leading-tight tracking-[-0.025em] text-white sm:text-3xl lg:text-[2.15rem]">
                   {isRtl ? (
                     <>
-                      هل لديك تقارير طبية أو أشعة رنين (MRI)؟ <br />
-                      <span className="text-[#BAD7B0]">احصل على رأي كبار الجراحين وعرض السعر مجاناً.</span>
+                      هل لديك أشعة أو تقرير طبي؟{' '}
+                      <span className="text-[#C7D9C5]">احصل على رأي جراح وتقدير للمستشفى.</span>
                     </>
                   ) : (
                     <>
-                      Have an MRI Scan or Medical Report? <br />
-                      <span className="text-[#BAD7B0]">Get a Senior Surgeon’s Opinion & Quotation.</span>
+                      Have a scan or medical report?{' '}
+                      <span className="text-[#C7D9C5]">Get a surgeon’s opinion and hospital estimate.</span>
                     </>
                   )}
                 </h2>
 
-                <p className="text-slate-200 text-sm sm:text-base leading-relaxed max-w-2xl">
+                <p className="max-w-2xl text-sm leading-6 text-white/80 sm:text-base sm:leading-7">
                   {isRtl
-                    ? 'أرسل صور الأشعة أو التقارير الطبية مباشرة عبر واتساب. يراجعها استشاريون متخصصون في مستشفيات كيرلا المعتمدة ويقدمون لك خطة علاجية وعرض سعر رسمي خلال 24 ساعة بدون أي التزام.'
-                    : 'Send your diagnostic scans or doctor summaries on WhatsApp. Senior surgical teams at our JCI & NABH accredited hospitals will evaluate your case and prepare an itemized hospital estimate within 24 hours.'}
+                    ? 'أرسل صور الأشعة أو ملخص الطبيب عبر واتساب. يراجع الفريق الطبي حالتك ويعدّ تقديراً مفصلاً من المستشفى خلال 24 ساعة.'
+                    : 'Share your MRI, scan, or doctor’s summary. Our partner hospitals will review your case and prepare an itemized estimate within 24 hours.'}
                 </p>
 
-                {/* 3 badges */}
-                <div className="flex flex-wrap items-center gap-4 pt-1 text-xs text-slate-300">
-                  <div className="flex items-center gap-1.5">
-                    <Lock className="h-3.5 w-3.5 text-[#BAD7B0]" />
-                    <span>{isRtl ? 'سرية طبية تامة 100%' : '100% Confidential'}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#BAD7B0]" />
-                    <span>{isRtl ? 'بدون أي التزام مالي' : 'Zero Financial Obligation'}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <HeartHandshake className="h-3.5 w-3.5 text-[#BAD7B0]" />
-                    <span>{isRtl ? 'مترجم وأطباء يتحدثون العربية' : 'Arabic & English Support'}</span>
-                  </div>
-                </div>
+                <ul className="flex flex-wrap gap-x-5 gap-y-2 pt-1 text-xs text-white/75 sm:gap-x-6">
+                  <li className="flex items-center gap-1.5">
+                    <Lock aria-hidden="true" className="h-3.5 w-3.5 text-[#C7D9C5]" />
+                    <span>{isRtl ? 'معلوماتك بسرية' : 'Your details stay private'}</span>
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <CheckCircle2 aria-hidden="true" className="h-3.5 w-3.5 text-[#C7D9C5]" />
+                    <span>{isRtl ? 'دون التزام' : 'No obligation'}</span>
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <HeartHandshake aria-hidden="true" className="h-3.5 w-3.5 text-[#C7D9C5]" />
+                    <span>{isRtl ? 'دعم بالعربية والإنجليزية' : 'Arabic and English support'}</span>
+                  </li>
+                </ul>
               </div>
 
-              {/* Right Column: Direct WhatsApp Action */}
-              <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-stretch lg:items-end gap-3.5">
+              <div className="flex w-full flex-col gap-3 lg:max-w-sm lg:justify-self-end">
                 <WhatsAppButton
                   href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(
                     isRtl
@@ -376,22 +364,22 @@ export default async function HomePage({ params }: Props) {
                   )}`}
                   topic="Send Medical Reports for 24h Review"
                   buttonText="Express Review Banner: Send Reports on WhatsApp"
-                  className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-[0_6px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_8px_32px_rgba(37,211,102,0.55)] transition-all cursor-pointer group text-center whitespace-nowrap"
+                  className="inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#20ba5a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-base"
                 >
-                  <MessageCircle className="h-5 w-5 shrink-0 fill-current group-hover:scale-110 transition-transform" />
-                  <span>{isRtl ? 'إرسال التقارير عبر واتساب' : 'Send Reports on WhatsApp'}</span>
+                  <MessageCircle aria-hidden="true" className="h-5 w-5 shrink-0 fill-current" />
+                  <span>{isRtl ? 'إرسال التقارير عبر واتساب' : 'Send reports on WhatsApp'}</span>
                 </WhatsAppButton>
 
                 <Link
                   href="/get-estimate"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-semibold bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors text-center"
+                  className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/25 bg-white/5 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:text-base"
                 >
-                  <FileText className="h-4 w-4 text-[#BAD7B0]" />
-                  <span>{isRtl ? 'أو املأ استمارة التقدير الإلكترونية' : 'Or Fill Estimate Form Online'}</span>
+                  <FileText aria-hidden="true" className="h-4 w-4 shrink-0 text-[#C7D9C5]" />
+                  <span>{isRtl ? 'طلب تقدير عبر النموذج' : 'Request an estimate online'}</span>
                 </Link>
 
-                <p className="text-[11px] text-slate-300 text-center lg:text-right rtl:lg:text-left mt-1">
-                  {isRtl ? '⚡ الرد عادةً في أقل من 15 دقيقة عبر واتساب' : '⚡ Direct WhatsApp response within 15 minutes'}
+                <p className="text-center text-xs text-white/65 lg:text-right rtl:lg:text-left">
+                  {isRtl ? 'عادةً ما نرد عبر واتساب خلال 15 دقيقة' : 'WhatsApp replies usually arrive within 15 minutes'}
                 </p>
               </div>
             </div>

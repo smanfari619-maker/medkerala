@@ -11,12 +11,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isAr = locale === 'ar';
 
   return {
-    title: isAr 
-      ? 'أفضل مستشفيات كيرلا المعتمدة | أستر ميمس وميترا وبيبي التذكاري' 
-      : 'Best Hospitals in Kerala | JCI & NABH Accredited Partner Networks',
+    title: isAr
+      ? 'دليل مستشفيات كيرلا الشريكة | التخصصات والاعتمادات'
+      : 'Hospitals in Kerala: Partner Directory & Accreditation Status',
     description: isAr
-      ? 'دليل المستشفيات ومراكز الأيورفيدا الشريكة والمعتمدة في كيرلا، الهند. أستر، ميترا، وبيبي التذكاري مع خدمات التنسيق المجانية من علاج في كيرلا.'
-      : 'Explore the directory of top JCI and NABH accredited hospitals in Kozhikode/Calicut and Kochi. Access world-class allopathic care and certified Ayurveda centres.',
+      ? 'تعرّف على المستشفيات ومراكز الأيورفيدا الشريكة في كيرلا حسب المدينة والتخصص، واطّلع على الاعتمادات المدرجة لكل منشأة قبل طلب تقدير للرعاية.'
+      : 'Compare partner hospitals and Ayurveda centres across Kerala by city and specialty. Review each facility’s listed accreditation status, then request a care estimate.',
     alternates: {
       canonical: isAr ? '/ar/hospitals' : '/en/hospitals',
       languages: {

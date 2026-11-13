@@ -31,7 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     locales.forEach((locale) => {
       sitemapEntries.push({
         url: `${baseUrl}/${locale}${page}`,
-        lastModified: new Date(),
         changeFrequency: page === '' ? 'daily' : 'weekly',
         priority: page === '' ? 1.0 : 0.8,
         alternates: {
@@ -49,7 +48,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     locales.forEach((locale) => {
       sitemapEntries.push({
         url: `${baseUrl}/${locale}/treatments/${treatment.slug}`,
-        lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.8,
         alternates: {
@@ -67,7 +65,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     locales.forEach((locale) => {
       sitemapEntries.push({
         url: `${baseUrl}/${locale}/patients/${slug}`,
-        lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.9,
         alternates: {
@@ -85,7 +82,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     locales.forEach((locale) => {
       sitemapEntries.push({
         url: `${baseUrl}/${locale}/hospitals/${city}`,
-        lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.85,
         alternates: {
@@ -103,7 +99,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     locales.forEach((locale) => {
       sitemapEntries.push({
         url: `${baseUrl}/${locale}/blog/${post.slug}`,
-        lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.6,
         alternates: {
