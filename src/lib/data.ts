@@ -550,7 +550,332 @@ export const TREATMENTS: Treatment[] = [
         aAr: 'يلاحظ معظم المرضى تحسناً كبيراً في الرؤية خلال 24 ساعة من عملية الليزك. يستغرق الشفاء التام حوالي أسبوع إلى أسبوعين، ويتعين عليك خلالهما تجنب فرك العين أو السباحة.'
       }
     ]
-  }
+  },
+{
+    "slug": "panchakarma-detox",
+    "name": "Panchakarma Detox & Cleansing",
+    "nameAr": "العلاج الشامل لتطهير الجسم والبانشاكارما",
+    "speciality": "Ayurvedic Medicine",
+    "specialityAr": "طب الأيورفيدا التقليدي",
+    "iconName": "leaf",
+    "tagline": "Complete 5-Stage Cellular Purification & Bio-Balance Restoration",
+    "taglineAr": "تنقية الخلايا الشاملة بخمس مراحل واستعادة التوازن الحيوي للجسم",
+    "overview": "Panchakarma is the gold standard of classical Ayurvedic medicine—a medically supervised five-fold purification process designed to eliminate deep-seated metabolic toxins (Ama), balance the three Doshas (Vata, Pitta, Kapha), and trigger cellular rejuvenation. Administered by senior BAMS/MD Ayurvedic Vaidyas across accredited Green Leaf retreats and NABH hospital centers in Kottakkal and Kozhikode, our customized 14 to 28-day programs integrate classical Purvakarma (preparation with internal and external oleation), Pradhanakarma (five targeted elimination therapies), and Paschatkarma (gradual digestive and immune rebuilding). Ideal for chronic lifestyle disorders, auto-immune conditions, gut dysbiosis, and long-term vitality restoration.",
+    "overviewAr": "تُعد البانشاكارما المعيار الذهبي في طب الأيورفيدا الكلاسيكي—وهي منظومة علاجية خماسية خاضعة للإشراف الطبي التخصصي تهدف إلى استئصال السموم العميقة المتراكمة (آما)، وإعادة التوازن للأخلاط الحيوية الثلاثة (فاتا، بيتا، كافا)، وتنشيط تجدد الخلايا. بإشراف نخبة من كبار أطباء الأيورفيدا (فيديا) في مراكز كوتاكال وكوزيكود الحاصلة على اعتمادات الورقة الخضراء وNABH، تتضمن بروتوكولاتنا الممتدة من 14 إلى 28 يوماً مراحل التهيئة الزيتية (بورفاكارما)، والعلاجات الخمسة لتطهير الأعضاء (براداناكارما)، وإعادة بناء الجهاز الهضمي والمناعة (باشاتكارما). علاج مثالي للأمراض المزمنة، واضطرابات المناعة الذاتية، ومشاكل الجهاز الهضمي، واستعادة طاقة الجسم.",
+    "whyKerala": [
+        "Authentic Ashtavaidya clinical lineage preserved for over 5,000 years without dilution.",
+        "Customized daily therapeutic decoctions prepared freshly from organic Western Ghats medicinal herbs.",
+        "Two synchronous traditional therapists for every patient during daily external therapies.",
+        "Equable tropical monsoon and coastal climate optimal for deep dermal and lymphatic oil absorption."
+    ],
+    "whyKeralaAr": [
+        "سلالة أطباء الأشتافيديا الأصيلة المحفوظة لأكثر من 5,000 عام دون أي تشويه تجاري.",
+        "مستخلصات عشبية طازجة تُعد يومياً خصيصاً لكل مريض من أعشاب جبال غاتس الغربية العضوية.",
+        "معالجان اثنان متزامنان لكل مريض خلال جلسات التدليك والصب الزيتي اليومية.",
+        "مناخ كيرلا الاستوائي اللطيف الذي يفتح مسام الجلد ويسهل التغلغل العميق للزيوت الطبية."
+    ],
+    "costTable": {
+        "keralaMin": 1400,
+        "keralaMax": 2800,
+        "uk": 4800,
+        "usa": 7500,
+        "uae": 3900
+    },
+    "doctors": [
+        {
+            "name": "Dr. H. Prasad (Senior Chief Vaidya)",
+            "nameAr": "د. هـ. براساد (كبير أطباء الأيورفيدا)",
+            "title": "Senior Ayurvedic Physician (BAMS, MD Ayurveda)",
+            "titleAr": "استشاري أول الطب الأيورفيدي والبانشاكارما",
+            "hospital": "Arya Vaidya Sala Partner Network, Kottakkal",
+            "hospitalAr": "شبكة شركاء أريا فايديا سالا، كوتاكال",
+            "exp": "26 Years",
+            "expAr": "٢٦ عاماً"
+        },
+        {
+            "name": "Dr. Radhika Varma",
+            "nameAr": "د. راديكا فارما",
+            "title": "Chief Physician – Panchakarma & Metabolic Rejuvenation",
+            "titleAr": "رئيسة الأطباء – البانشاكارما والتجديد الحيوي",
+            "hospital": "Ayurveda Green Leaf Clinical Center, Calicut",
+            "hospitalAr": "المركز السريري المعتمد للأيورفيدا، كوزيكود",
+            "exp": "19 Years",
+            "expAr": "١٩ عاماً"
+        }
+    ],
+    "faqs": [
+        {
+            "q": "What is the ideal duration for a clinically effective Panchakarma program?",
+            "qAr": "ما هي المدة المثالية لبرنامج بانشاكارما فعال سريرياً؟",
+            "a": "A clinical Panchakarma program requires a minimum of 14 to 21 days (and 28 days for complex chronic conditions). The process cannot be rushed, as the body requires 5–7 days of preliminary oleation (Snehana) and sweating (Swedana) before the elimination procedures can safely take place.",
+            "aAr": "يتطلب علاج البانشاكارما السريري الفعال من 14 إلى 21 يوماً كحد أدنى (و28 يوماً للحالات المزمنة والمعقدة). لا يمكن اختصار هذه المدة لأن الجسم يحتاج إلى 5–7 أيام تمهيدية من التدليك والتليين الزيتي (سنيحانا) والتعريق بالأعشاب (سويدانا) قبل الانتقال لخطوات التطهير الآمنة."
+        },
+        {
+            "q": "What conditions benefit most from Panchakarma therapy?",
+            "qAr": "ما هي الحالات الصحية الأكثر استفادة من علاج البانشاكارما؟",
+            "a": "Panchakarma is remarkably effective for chronic musculoskeletal pain (arthritis, sciatica, spondylitis), gastrointestinal disorders (IBS, acid reflux, chronic constipation), metabolic conditions (fatty liver, early-stage type-2 diabetes, obesity), stress and burnout, and skin conditions such as psoriasis and eczema.",
+            "aAr": "تتميز البانشاكارما بنتائج سريرية مبهرة في علاج آلام المفاصل والعمود الفقري المزمنة (عرق النسا، والتهاب الفقرات، والروماتيزم)، واضطرابات الجهاز الهضمي والقولون العصبي، ومتلازمة الأيض وتراكم الدهون على الكبد، والإرهاق العصبي المزمن، وأمراض الجلد كالصدفية والإكزيما."
+        },
+        {
+            "q": "What is included in the Kerala Panchakarma package?",
+            "qAr": "ما الذي تشمله باقة علاج البانشاكارما في كيرلا؟",
+            "a": "All packages coordinated by TreatInKerala include daily private consultations with chief Vaidyas, twice-daily personalized therapies (90–120 mins), all prescribed internal herbal decoctions, full-board organic Sattvic dining tailored to your constitution, private accommodation, daily yoga/pranayama, and airport transfers.",
+            "aAr": "تشمل كافة الباقات التي تنسقها علاج في كيرلا استشارات يومية خاصة مع كبار الأطباء، وجلستين علاجيتين يومياً (90–120 دقيقة)، وكافة الأدوية والمشروبات العشبية الموصوفة، ووجبات عضوية نباتية كاملة، وإقامة خاصة، وجلسات يوغا وتأمل يومية، واستقبال وتوصيل المطار بسيارة خاصة."
+        }
+    ]
+},
+{
+    "slug": "shirodhara-mental-wellness",
+    "name": "Shirodhara & Neuro-Psychological Healing",
+    "nameAr": "علاج الشيروداهارا والراحة العصبية والنفسية",
+    "speciality": "Ayurvedic Medicine",
+    "specialityAr": "طب الأيورفيدا التقليدي",
+    "iconName": "brain",
+    "tagline": "Rhythmic Forehead Medicated Oil Stream for Insomnia, Anxiety & Nervous Reset",
+    "taglineAr": "تدفق الزيوت الطبية على الجبهة لعلاج الأرق والقلق والصداع وإعادة ضبط الجهاز العصبي",
+    "overview": "Shirodhara is one of Ayurveda’s most renowned and scientifically validated therapeutic modalities. Derived from the Sanskrit words 'Shiro' (head) and 'Dhara' (flow), this therapy involves pouring a continuous, rhythmic, and temperature-regulated stream of customized herbalized oils, medicated buttermilk (Takra), or herbal decoctions over the forehead (the 'Ajna' or third eye chakra). Clinical research demonstrates that Shirodhara triggers deep alpha and theta brainwave states, reduces cortisol and sympathetic hyperactivity, regulates serotonin and melatonin production, and induces deep parasympathetic nervous recovery. It is the premier natural therapy for chronic insomnia, generalized anxiety, tension headaches, migraines, mental exhaustion (burnout), hypertension, and post-traumatic stress.",
+    "overviewAr": "يُعد علاج الشيروداهارا من أشهر وأقوى العلاجات المعتمدة في طب الأيورفيدا لعلاج اضطرابات الجهاز العصبي. يقوم العلاج على صب تيار مستمر ومنتظم بدرجة حرارة مدروسة من الزيوت العشبية الطبية أو اللبن الطبي المخفوق (تاكرادارا) على منطقة الجبهة ومركز الرأس العصبي. تؤكد الأبحاث السريرية أن الشيروداهارا تحفز موجات ألفا وثيتا في الدماغ، وتخفض هرمون التوتر (الكورتيزول)، وتعيد تنظيم إفراز السيروتونين والميلاتونين، مما يدخل الجهاز العصبي في حالة استرخاء عميقة. وهو العلاج الطبيعي الأول للأرق المزمن، والقلق، والصداع النصفي، والإرهاق الذهني والاحتراق النفسي، وضغط الدم المرتفع.",
+    "whyKerala": [
+        "Authentic herbalized sesame and coconut oils infused with over 30 botanical extracts like Brahmi, Shankhpushpi, and Jatamansi.",
+        "Temperature-calibrated bronze and bell-metal vessels (Dhara Patra) ensuring steady therapeutic vibration and capillary relaxation.",
+        "Always preceded by head, neck, and shoulder marma massage to relieve muscular cranial tension.",
+        "Administered in peaceful, noise-insulated heritage healing rooms with certified Kerala therapists."
+    ],
+    "whyKeralaAr": [
+        "استخدام زيوت السمسم وجوز الهند الطبية المعالجة بأكثر من 30 عشبة مهدئة للأعصاب مثل البراهمي والشانكبوشبي.",
+        "أوانٍ نحاسية وبرونزية تراثية مصممة لضمان تدفق اهتزازي منتظم يحفز الدورة الدموية في الشعيرات الدماغية.",
+        "تسبق الجلسة دائماً مساجات لنقاط الطاقة الحيوية (مارما) في الرأس والرقبة والكتفين لإزالة التشنجات العضلية.",
+        "تُجرى الجلسات في غرف علاجية معزولة وهادئة تطل على الطبيعة بإشراف معالجين كيرليين متمرسين."
+    ],
+    "costTable": {
+        "keralaMin": 650,
+        "keralaMax": 1400,
+        "uk": 2200,
+        "usa": 3500,
+        "uae": 1800
+    },
+    "doctors": [
+        {
+            "name": "Dr. K. S. Manoj (Ayurvedic Neuro-Specialist)",
+            "nameAr": "د. ك. س. مانوج (أخصائي الأعصاب بالأيورفيدا)",
+            "title": "Senior Consultant – Manasika & Neuro-Ayurveda",
+            "titleAr": "استشاري أول العلاج النفسي العصبي بالأيورفيدا",
+            "hospital": "Kerala Ayurvedic Center of Excellence, Kozhikode",
+            "hospitalAr": "مركز كيرلا للتميز الأيورفيدي، كوزيكود",
+            "exp": "22 Years",
+            "expAr": "٢٢ عاماً"
+        }
+    ],
+    "faqs": [
+        {
+            "q": "How many sessions of Shirodhara are needed to treat chronic insomnia or anxiety?",
+            "qAr": "كم عدد جلسات الشيروداهارا المطلوبة لعلاج الأرق المزمن أو القلق؟",
+            "a": "While single sessions induce deep relaxation, clinical resolution of chronic sleep disorders, anxiety, or migraines requires a structured protocol of 7, 14, or 21 consecutive daily sessions (45–60 minutes per session) accompanied by internal neuro-tonic herbal decoctions and dietary regulation.",
+            "aAr": "على الرغم من أن الجلسة الأولى تمنح شعوراً رائعاً بالراحة، إلا أن العلاج الجذري للأرق المزمن أو القلق أو الصداع النصفي يتطلب بروتوكولاً متواصلاً من 7 أو 14 أو 21 جلسة يومية متتالية (45 إلى 60 دقيقة للجلسة) مصحوبة بمستخلصات عشبية مغذية للأعصاب وتنظيم غذائي."
+        },
+        {
+            "q": "What is the difference between Ksheeradhara, Takradhara, and classic Shirodhara?",
+            "qAr": "ما الفرق بين كشيرادارا وتاكرادارا والشيروداهارا الكلاسيكية؟",
+            "a": "Classic Shirodhara uses warm medicated herbal oils, ideal for dry, agitated nervous conditions (Vata imbalance). Ksheeradhara utilizes medicated herbal milk, perfect for mental fatigue and headaches. Takradhara uses cool medicated buttermilk infused with Gooseberry (Amla), highly recommended for heat conditions, scalp psoriasis, hypertension, and intense stress.",
+            "aAr": "تستخدم الشيروداهارا الكلاسيكية زيوتاً عشبية دافئة، وهي مثالية لتهدئة الأعصاب وتخفيف التوتر الحاد. أما كشيرادارا فتستخدم حليباً طبياً بالأعشاب يناسب الإجهاد الذهني والصداع، بينما تعتمد تاكرادارا على اللبن الطبي المبرد مع نبات الأملج، وهي مخصصة للحرارة والضغط المرتفع وصدفية فروة الرأس."
+        },
+        {
+            "q": "Are there any post-treatment precautions following a Shirodhara session?",
+            "qAr": "هل هناك محاذير أو تعليمات يجب اتباعها بعد جلسة الشيروداهارا؟",
+            "a": "Yes. Patients are advised to keep the head protected from direct cold wind, air conditioning, and sun exposure immediately following the therapy. A gentle warm-water bath using herbal cleansing powder (Snana Choornam) is taken after a resting period, followed by restful contemplation.",
+            "aAr": "نعم، يُنصح بتجنب التعرض المباشر للهواء البارد أو أجهزة التكييف القوية أو أشعة الشمس الحارقة بعد الجلسة مباشرة. يُترك الزيت الطبي لفترة وجيزة لتمتصه البصيلات، ثم يُغسل بماء فاتر ومسحوق الأعشاب التقليدي يعقبه قسط مريح من الاسترخاء."
+        }
+    ]
+},
+{
+    "slug": "spine-joint-ayurveda",
+    "name": "Ayurvedic Spine & Joint Care (Kizhi & Kativasthi)",
+    "nameAr": "علاج العمود الفقري والمفاصل والديسك بالأيورفيدا",
+    "speciality": "Ayurvedic Medicine",
+    "specialityAr": "طب الأيورفيدا التقليدي",
+    "iconName": "bone",
+    "tagline": "Non-Surgical Reversal of Slip Disc, Sciatica, Osteoarthritis & Spondylosis",
+    "taglineAr": "علاج طبيعي بدون جراحة للانزلاق الغضروفي (الديسك) وعرق النسا وخشونة المفاصل واحتكاك الفقرات",
+    "overview": "Kerala’s non-surgical spine and joint protocols represent one of the greatest triumphs of traditional Ayurveda, drawing thousands of international patients who wish to avoid invasive spinal fusions or premature joint surgeries. Combining localized herbal oil pooling (Kativasthi, Greevavasthi, Januvasthi) with intense therapeutic poultice massage (Elakizhi, Podikizhi, Njavarakizhi) and warm herbal oil streaming (Pizhichil), this specialized clinical pathway addresses the root causes of musculoskeletal degeneration. Medicated herbal oils penetrate articular cartilage and intervertebral discs, reducing neuro-vascular compression, resolving inflammatory cytokines, relieving muscle spasms, and stimulating natural collagen and synovial fluid regeneration.",
+    "overviewAr": "يمثل بروتوكول علاج العمود الفقري والمفاصل في كيرلا أحد أبرز إنجازات طب الأيورفيدا التقليدي، حيث يقصده سنوياً آلاف المرضى الدوليين لتجنب جراحات تثبيت الفقرات وتغيير المفاصل المبكرة. من خلال دمج حمامات الزيت الدافئ الموضعية للفقرات (كاتي فاستي لأسفل الظهر، وجريفا فاستي للرقبة، وجانو فاستي للركبة) مع كمادات الأعشاب الساخنة (إيلاكيزي وبوديكيزي ونجاواراكيزي) وصب الزيوت الملكي (بيجيتشيل)، يستهدف هذا البرنامج جذور الالتهاب والتآكل العظمي. تتغلغل الزيوت العلاجية عميقاً لتخفيف الضغط على الأعصاب، وتغذية الغضاريف المتآكلة، وتحفيز إفراز السائل الزلالي للمفصل طبيعياً.",
+    "whyKerala": [
+        "Documented 85%+ success rate in conservative resolution of lumbar and cervical disc herniation and sciatica.",
+        "Kativasthi technique retains warm medicated herbal oil directly over degenerated vertebrae using a herbal paste reservoir.",
+        "Elakizhi incorporates 12 fresh anti-inflammatory medicinal leaves fried in neem and castor oil.",
+        "Supervised by senior Vaidyas working alongside modern orthopaedic diagnostics (MRI / CT review)."
+    ],
+    "whyKeralaAr": [
+        "نسب نجاح سريرية تتجاوز 85% في علاج الانزلاق الغضروفي القطني وعرق النسا وتجنب العمليات الجراحية.",
+        "تقنية 'كاتي فاستي' الفريدة بحبس الزيوت الطبية الدافئة فوق الفقرات المتضررة باستخدام حزام عجين عشبي مخصص.",
+        "كمادات 'إيلاكيزي' المحضرة من 12 نوعاً من أوراق الأشجار الطبية الطازجة المقلية في زيوت الخروع والنيم.",
+        "إشراف طبي مشترك من كبار أطباء الأيورفيدا مع مراجعة دقيقة لصور الرنين المغناطيسي (MRI) الحديثة للمريض."
+    ],
+    "costTable": {
+        "keralaMin": 1250,
+        "keralaMax": 2600,
+        "uk": 6500,
+        "usa": 11000,
+        "uae": 4500
+    },
+    "doctors": [
+        {
+            "name": "Dr. S. Narayanan (Spine & Marma Vaidya)",
+            "nameAr": "د. س. نارايانان (استشاري الفقرات وطب المارما)",
+            "title": "Senior Specialist – Marma Chikitsa & Spine Rehabilitation",
+            "titleAr": "استشاري أول علاج الفقرات والمفاصل وإصابات المارما",
+            "hospital": "Kottakkal Traditional Spine Care Network",
+            "hospitalAr": "شبكة كوتاكال التخصصية لعلاج العمود الفقري",
+            "exp": "24 Years",
+            "expAr": "٢٤ عاماً"
+        }
+    ],
+    "faqs": [
+        {
+            "q": "Can Ayurvedic treatment truly heal a herniated disc (slip disc) without surgery?",
+            "qAr": "هل يمكن للأيورفيدا علاج الانزلاق الغضروفي (الديسك) فعلياً دون جراحة؟",
+            "a": "Yes. Unless there is acute cauda equina syndrome or progressive neurological loss requiring emergency decompression, clinical studies and decades of Kerala clinical practice show that 85% of disc herniations resolve conservatively. Specialized herbal oils reduce disc dehydration and tissue edema, shrinking the herniation away from pinched nerve roots.",
+            "aAr": "نعم بالتأكيد. ما لم تكن هناك متلازمة ذيل الفرس أو فقدان عصبي حاد يستدعي جراحة طارئة، فإن أكثر من 85% من حالات الديسك والانزلاق الغضروفي تُعالج بنجاح تام في كيرلا. تعمل الزيوت العشبية على امتصاص الالتهاب وتخفيف التورم، مما يسمح للغضروف بالانكماش والابتعاد عن جذر العصب المضغوط."
+        },
+        {
+            "q": "How long should I stay in Kerala for severe spine or knee joint rehabilitation?",
+            "qAr": "ما هي مدة الإقامة المطلوبة في كيرلا لعلاج مشاكل الظهر والركب الشديدة؟",
+            "a": "For mild to moderate joint stiffness or early spondylosis, 14 days is sufficient. For severe multilevel disc herniation, severe sciatica, or grade 3–4 knee osteoarthritis, a full 21 to 28-day inpatient protocol is strongly advised to allow sequential tissue reduction, anti-inflammatory treatment, and muscle strengthening.",
+            "aAr": "للحالات المتوسطة واحتكاك المفاصل المبكر، تكفي إقامة مدتها 14 يوماً. أما لحالات الانزلاق الغضروفي المتعدد، أو عرق النسا الشديد، أو خشونة الركبة المتقدمة، يُوصى بشدة ببرنامج علاجي مدته 21 إلى 28 يوماً لضمان التخلص الكامل من الالتهاب وتقوية الأربطة المحيطة بالمفصل."
+        },
+        {
+            "q": "What specific therapies are performed during spine and joint care?",
+            "qAr": "ما هي الجلسات العلاجية المحددة التي يخضع لها مريض الظهر والمفاصل؟",
+            "a": "Daily therapies typically include Abhyanga with specific Vata-pacifying oils (such as Sahacharadi and Dhanwantharam), Kativasthi / Januvasthi (warm oil reservoir), Elakizhi (herbal leaf bolus massage), Pizhichil (continuous warm medicated oil bath), and gentle supervised Ayurvedic stretches.",
+            "aAr": "تشمل الجلسات اليومية مساج الأبهيانجا بزيوت مخصصة لتسكين الأعصاب (مثل زيت ساهاتشارادي ودنوانتارام)، وتطبيق حمامات الزيت الدافئ الموضعي (كاتي فاستي وجانو فاستي)، وكمادات أوراق الأعشاب الساخنة (إيلاكيزي)، وصب الزيت الدافئ الملكي (بيجيتشيل)، مع تمارين شد علاجية بإشراف الطبيب."
+        }
+    ]
+},
+{
+    "slug": "rasayana-anti-aging",
+    "name": "Rasayana & Anti-Aging Cellular Vitality",
+    "nameAr": "علاج الراسايانا ومكافحة الشيخوخة وتجديد الخلايا",
+    "speciality": "Ayurvedic Medicine",
+    "specialityAr": "طب الأيورفيدا التقليدي",
+    "iconName": "leaf",
+    "tagline": "Immunomodulatory Therapy for DNA Protection, Cellular Longevity & Vigor",
+    "taglineAr": "العلاج المناعي المتقدم لحماية الخلايا، وتأخير علامات التقدم بالسن، واستعادة الحيوية والنشاط",
+    "overview": "Rasayana is the classical Ayurvedic science of longevity, immune resilience, and cellular revitalization. In Ayurvedic pathophysiology, 'Rasa' represents the prime nutrient fluid produced by digestion that sustains blood, muscle, bone, and vitality (Ojas). Rasayana therapy systematically detoxifies this biological fluid, activates micro-circulatory channels (Srotas), and infuses tissues with adaptogenic phytomolecules. Utilizing gold and pearl-calcinated mineral bhasmas, wild forest honey, organic Amla, and rare rejuvenating formulations (such as Chyawanprash and Brahma Rasayana) alongside daily herbal steam and tissue-enriching Pizhichil therapies, this program slows down biological aging, boosts cognitive function, restores libido, strengthens immunity against pathogens, and promotes enduring youthful vitality.",
+    "overviewAr": "تُمثل 'الراسايانا' علم الأيورفيدا الكلاسيكي لإطالة العمر والشباب الحيوي وتعزيز المناعة. في فسيولوجيا الأيورفيدا، تعني كلمة 'راسا' السائل الحيوي الأساسي الناتج عن الهضم والذي يغذي الدم والعضلات والعظام ويولد طاقة المناعة العظمى (أوجاس). تعمل علاجات الراسايانا على تنقية هذا السائل الحيوي بعمق، وتوسيع القنوات الدقيقة في الأنسجة، وتغذية الخلايا بمركبات عشبية نادرة. باستخدام الأعشاب المجددة (مثل الأملج العضوي ومستخلصات الشياوانبراش وبراهما راسايانا) مع حمامات الزيوت الملكية الدافئة (بيجيتشيل)، يعمل هذا البرنامج على إبطاء الشيخوخة البيولوجية، وتحسين الذاكرة، ورفع كفاءة الجهاز المناعي، واستعادة الحيوية والنشاط.",
+    "whyKerala": [
+        "Preserves the rare classical formulations of Kaya Kalpa (total body transformation).",
+        "Uses organic medicinal ingredients freshly harvested from pristine tropical forests in Kerala.",
+        "Includes Njavarakizhi—massage with organic Kerala red rice cooked in cow milk and herbal decoction.",
+        "Comprehensive biochemical assessment and personalized longevity roadmap for home continuation."
+    ],
+    "whyKeralaAr": [
+        "الحفاظ على أسرار بروتوكول 'كايا كالبا' التراثي لإعادة تجديد خلايا وأنسجة الجسم بالكامل.",
+        "استخدام مكونات وأعشاب طبية نادرة تُحصد طازجة من غابات كيرلا الاستوائية المحمية.",
+        "يشمل علاج 'نجاواراكيزي' الملكي باستخدام أرز كيرلا الطبي المطهو بحليب الأبقار ومنقوع الأعشاب لتغذية البشرة والعضلات.",
+        "تقييم كيميائي وحيوي شامل مع تزويد المريض بخطة منزلية متكاملة لنمط الحياة والمكملات بعد عودته."
+    ],
+    "costTable": {
+        "keralaMin": 1500,
+        "keralaMax": 3200,
+        "uk": 5500,
+        "usa": 8800,
+        "uae": 4500
+    },
+    "doctors": [
+        {
+            "name": "Dr. H. Prasad (Senior Chief Vaidya)",
+            "nameAr": "د. هـ. براساد (كبير أطباء الأيورفيدا)",
+            "title": "Senior Ayurvedic Physician (BAMS, MD Ayurveda)",
+            "titleAr": "استشاري أول الطب الأيورفيدي والبانشاكارما",
+            "hospital": "Arya Vaidya Sala Partner Network, Kottakkal",
+            "hospitalAr": "شبكة شركاء أريا فايديا سالا، كوتاكال",
+            "exp": "26 Years",
+            "expAr": "٢٦ عاماً"
+        }
+    ],
+    "faqs": [
+        {
+            "q": "What is the ideal age to undergo Rasayana rejuvenation therapy?",
+            "qAr": "ما هو السن المناسب للخضوع لبرنامج الراسايانا لتجديد الشباب؟",
+            "a": "Classical texts recommend Rasayana for individuals aged 30 and older, as this is when cellular catabolism and oxidative stress naturally begin to accelerate. However, individuals of any adult age recovering from severe illness, burnout, or immune suppression can benefit immensely.",
+            "aAr": "توصي النصوص الطبية القديمة بالبدء في برامج الراسايانا من سن 30 عاماً فما فوق، حيث تبدأ عمليات أكسدة الخلايا في التسارع. ومع ذلك، يمكن لأي شخص بالغ يعاني من الإجهاد الشديد، أو ضعف المناعة، أو يتعافى من مرض طويل الاستفادة القصوى من هذا البرنامج."
+        },
+        {
+            "q": "How does Rasayana therapy differ from ordinary cosmetic wellness spa retreats?",
+            "qAr": "ما الفرق بين علاج الراسايانا وبين جلسات المساج التجميلية في المنتجعات العادية؟",
+            "a": "Cosmetic spas offer temporary superficial muscle relaxation. Clinical Rasayana is a physician-supervised medical intervention that begins with digestive tract purification (to ensure optimal herbal assimilation) followed by targeted medicinal formulas and synchronized therapies designed to change cellular metabolism and immune parameters.",
+            "aAr": "تقدم المنتجعات التجميلية استرخاءً عضلياً سطحياً ومؤقتاً. أما الراسايانا السريرية فهي تدخل طبي بإشراف أطباء يبدأ بتنظيف الجهاز الهضمي (لضمان الامتصاص الكامل للمركبات العشبية) يعقبه استخدام تركيبات علاجية وتدليك متزامن لإعادة برمجة النشاط الخلوي ورفع مناعة الجسم."
+        },
+        {
+            "q": "Can Rasayana help improve memory and mental sharpness?",
+            "qAr": "هل يساعد علاج الراسايانا في تقوية الذاكرة والصفاء الذهني؟",
+            "a": "Yes. A specialized branch called Medhya Rasayana focuses specifically on brain health and neuro-cognitive rejuvenation. Formulations containing Brahmi (Bacopa monnieri), Mandukaparni, and Shankhpushpi are clinically shown to enhance synaptic transmission, focus, and memory recall.",
+            "aAr": "نعم بالتأكيد. هناك فرع تخصصي يُعرف باسم 'ميديا راسايانا' يركز حصرياً على تغذية خلايا المخ وتنشيط الإدراك العصبي. أثبتت الدراسات أن الأعشاب المستخدمة مثل البراهمي تعزز الاتصال بين الخلايا العصبية وترفع مستويات التركيز والذاكرة."
+        }
+    ]
+},
+{
+    "slug": "alopecia-scalp-ayurveda",
+    "name": "Alopecia Areata & Scalp Restoration",
+    "nameAr": "علاج الثعلبة البقعية وإنبات الشعر وتساقط الشعر بالأيورفيدا",
+    "speciality": "Ayurvedic Medicine",
+    "specialityAr": "طب الأيورفيدا التقليدي",
+    "iconName": "leaf",
+    "tagline": "Clinical Protocol (Shirolepa, Takradhara & Jalauka) for Natural Hair Follicle Reactivation",
+    "taglineAr": "بروتوكول سريري متخصص (شيروليبا، تاكرادارا، والعلق الطبي) لإعادة تنشيط البصيلات وإنبات الشعر",
+    "overview": "In Ayurveda, Alopecia Areata and severe patchy hair loss are diagnosed as 'Indralupta'—a condition resulting from Pitta and Vata aggravation obstructing the hair roots with vitiated Kapha and blood (Rakta). While conventional medicine frequently relies on temporary steroid injections and topical minoxidil that carry dependency and rebound risks, Kerala’s Ayurvedic trichology clinics offer an effective, long-lasting biological cure. This specialized clinical protocol combines Shirolepa (dense medicated herbal scalp pastes), Takradhara (cooling herbal buttermilk stream to pacify scalpal inflammation), Nasya (medicated nasal drops delivering liposomal herbs directly to cranial capillaries), and sterile medical leech therapy (Jalaukavacharana) to eliminate micro-vascular congestion, stimulate dormant dermal papilla cells, and promote natural, dense hair regrowth.",
+    "overviewAr": "في طب الأيورفيدا، تُشخص الثعلبة البقعية وتساقط الشعر الشديد باسم 'إندرالوبتا'—وهي حالة ناتجة عن اضطراب حرارة الجسم (بيتا وفاتا) مما يؤدي إلى انسداد بصيلات الشعر بدم وأخلاط راكدة. بينما يعتمد الطب التقليدي على حقن الكورتيزون الموضعية التي غالباً ما تسبب انتكاسات، تقدم عيادات الأيورفيدا في كيرلا علاجاً حيوياً جذرياً ومستداماً. يجمع هذا البروتوكول الطبي المتخصص بين لبخات الأعشاب المركزة لفروة الرأس (شيروليبا)، وصب اللبن الطبي المبرد (تاكرادارا) لتهدئة التهابات الفروة، ونقط الأنف الطبية (ناسيا)، وتطبيق العلق الطبي المعقم (جالاوكا) لإزالة الاحتقان الدموي في الشعيرات الدقيقة وتنشيط بصيلات الشعر الخاملة لإنبات شعر طبيعي وكثيف.",
+    "whyKerala": [
+        "Documented high success rates in treating patch Alopecia Areata, Alopecia Totalis, and chronic telogen effluvium.",
+        "Proprietary Shirolepa scalp formulations made from fresh therapeutic herbs like Gunja, Bhringraj, and Nili.",
+        "Sterile medical leech therapy (Jalaukavacharana) cleanses localized toxic micro-thrombi painlessly.",
+        "Treats both the external follicle and underlying internal auto-immune and metabolic drivers."
+    ],
+    "whyKeralaAr": [
+        "نسب نجاح سريرية موثقة في علاج الثعلبة البقعية، والثعلبة الشاملة، وتساقط الشعر الهرموني والوراثي.",
+        "خلطات 'شيروليبا' العشبية الفريدة لفروة الرأس المحضرة طازجة من أعشاب البرينغراج، والغونجا، والنيلي.",
+        "استخدام العلق الطبي المعقم بطريقة غير مؤلمة لتنقية الشعيرات الدموية الدقيقة وتنشيط تدفق الدم للبصيلات.",
+        "علاج شامل يتعامل مع بصيلات الشعر من الخارج ومع أسباب الخلل المناعي والأيضي الداخلي للجسم."
+    ],
+    "costTable": {
+        "keralaMin": 950,
+        "keralaMax": 1800,
+        "uk": 3500,
+        "usa": 5500,
+        "uae": 2800
+    },
+    "doctors": [
+        {
+            "name": "Dr. Radhika Varma",
+            "nameAr": "د. راديكا فارما",
+            "title": "Chief Physician – Panchakarma & Trichology",
+            "titleAr": "رئيسة الأطباء – البانشاكارما وعلاج أمراض الشعر والجلد",
+            "hospital": "Ayurveda Green Leaf Clinical Center, Calicut",
+            "hospitalAr": "المركز السريري المعتمد للأيورفيدا، كوزيكود",
+            "exp": "19 Years",
+            "expAr": "١٩ عاماً"
+        }
+    ],
+    "faqs": [
+        {
+            "q": "How long does it take to see visible hair regrowth after the Ayurvedic Alopecia protocol?",
+            "qAr": "كم من الوقت يستغرق ظهور الشعر الجديد بعد بروتوكول علاج الثعلبة بالأيورفيدا؟",
+            "a": "The intensive in-clinic protocol in Kerala takes 14 to 21 days. Dormant hair follicles begin producing fine baby hair (vellus hair) within 4 to 8 weeks post-treatment, progressively maturing into terminal, pigmented, thick hair over the subsequent 3 to 6 months with customized home herbal oils.",
+            "aAr": "يستغرق البروتوكول العلاجي المكثف في كيرلا من 14 إلى 21 يوماً. تبدأ البصيلات الخاملة في إنتاج زغب شعر ناعم جديد خلال 4 إلى 8 أسابيع بعد العلاج، ويكتمل نموه ليصبح شعراً طبيعياً كثيفاً خلال 3 إلى 6 أشهر مع الاستمرار على الزيوت العشبية المنزلية الموصوفة."
+        },
+        {
+            "q": "Is sterile leech therapy (Jalaukavacharana) painful or unsafe?",
+            "qAr": "هل العلاج بالعلق الطبي المعقم (جالاوكا) مؤلم أو غير آمن؟",
+            "a": "It is completely safe, highly hygienic, and virtually painless. Certified Ayurvedic hospitals use laboratory-bred, single-use sterile medical leeches. The leech injects a natural biological anaesthetic and vasodilator (hirudin) upon latching, causing only a momentary mild prickling sensation while dramatically restoring micro-circulation around dead follicle zones.",
+            "aAr": "هو علاج آمن تماماً، معقم، وغير مؤلم إطلاقاً. تستخدم المستشفيات المعتمدة علقاً طبياً معقماً ومربى مخبرياً للاستخدام لمرة واحدة فقط. يفرز العلق فور ملامسته الفروة مادة مخدرة طبيعية وموسعة للشرايين (الهيرودين)، مما يسبب وخزة طفيفة جداً تكاد لا تُذكر، ويعيد تدفق الدم للأماكن المصابة."
+        },
+        {
+            "q": "Does this Ayurvedic protocol work for hereditary male/female pattern baldness?",
+            "qAr": "هل يعالج هذا البروتوكول الأيورفيدي الصلع الوراثي عند الرجال والنساء؟",
+            "a": "While completely dormant or scarred follicles in advanced genetic baldness cannot always be fully revived, this protocol is highly effective in stopping active progressive thinning, strengthening existing miniaturized follicles, reducing scalpal DHT sensitivity, and increasing overall hair density.",
+            "aAr": "في حالات الصلع الوراثي المتقدمة جداً التي تلاشت فيها البصيلات تماماً، قد لا تعود كافة البصيلات، ولكن هذا البروتوكول ممتاز في إيقاف التساقط المستمر، وتكثيف الشعر الضعيف، وحماية البصيلات من هرمون الصلع (DHT)، ومضاعفة سماكة الشعرة."
+        }
+    ]
+}
 ];
 
 export const BLOG_POSTS: BlogPost[] = [

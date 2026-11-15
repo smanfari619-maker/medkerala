@@ -47,6 +47,7 @@ const treatments: AyurvedaTreatmentItem[] = [
   {
     icon: Droplets,
     image: '/images/ayurveda_panchakarma.png',
+    link: '/treatments/panchakarma-detox',
     en: { name: 'Panchakarma', tagline: 'The Ultimate Detox', desc: 'A 7–28 day comprehensive detoxification programme that eliminates deep-rooted toxins, restores dosha balance and rejuvenates the entire system. Ideal for chronic conditions and complete body reset.' },
     ar: { name: 'بانشاكارما', tagline: 'برنامج التطهير الشامل', desc: 'برنامج تطهير شامل لمدة 7 إلى 28 يوماً يزيل السموم العميقة ويستعيد التوازن الكامل للجسم. مثالي للحالات المزمنة وإعادة تنشيط الجسم بالكامل.' },
     duration: '7–28 days',
@@ -55,6 +56,7 @@ const treatments: AyurvedaTreatmentItem[] = [
   {
     icon: Wind,
     image: '/images/ayurveda_shirodhara.png',
+    link: '/treatments/shirodhara-mental-wellness',
     en: { name: 'Shirodhara', tagline: 'Mind & Stress Therapy', desc: 'A continuous stream of warm medicated oil is gently poured on the forehead in a steady rhythmic flow. Profoundly relaxes the nervous system and treats insomnia, anxiety and migraines.' },
     ar: { name: 'شيروداهارا', tagline: 'علاج التوتر والعقل', desc: 'تدفق مستمر من الزيت الدافئ المُعطّر على الجبهة بإيقاع منتظم. يريح الجهاز العصبي ويعالج الأرق والقلق والصداع النصفي.' },
     duration: '45–60 min/session',
@@ -71,6 +73,7 @@ const treatments: AyurvedaTreatmentItem[] = [
   {
     icon: Leaf,
     image: '/images/ayurveda_kizhi.png',
+    link: '/treatments/spine-joint-ayurveda',
     en: { name: 'Kizhi (Elakizhi)', tagline: 'Herbal Poultice Therapy', desc: 'Medicated herbal leaves or powders are tied in muslin boluses and applied over the body after dipping in warm herbal oil. Highly effective for arthritis, joint pain and musculoskeletal disorders.' },
     ar: { name: 'كيزي (إيلاكيزي)', tagline: 'العلاج بكمادات الأعشاب', desc: 'أوراق وأعشاب طبية مُحكمة في كمادات قماشية تُطبَّق على الجسم بعد تدفئتها بزيت عشبي. فعّالة جداً للمفاصل والتهاب المفاصل والاضطرابات العضلية الهيكلية.' },
     duration: '45–60 min',
@@ -87,6 +90,7 @@ const treatments: AyurvedaTreatmentItem[] = [
   {
     icon: Sparkles,
     image: '/images/ayurveda_rasayana.png',
+    link: '/treatments/rasayana-anti-aging',
     en: { name: 'Rasayana (Rejuvenation)', tagline: 'Anti-Ageing & Vitality', desc: 'A holistic anti-ageing programme combining diet, herbal supplements, lifestyle changes and specific therapies to revitalise the body, improve immunity and slow cellular ageing.' },
     ar: { name: 'راساياناً (الشباب الدائم)', tagline: 'مكافحة الشيخوخة والحيوية', desc: 'برنامج شامل لمكافحة الشيخوخة يجمع بين النظام الغذائي والمكملات العشبية وتغييرات نمط الحياة والعلاجات المحددة لتنشيط الجسم وتحسين المناعة.' },
     duration: '14–21 days',
@@ -95,7 +99,7 @@ const treatments: AyurvedaTreatmentItem[] = [
   {
     icon: Droplets,
     image: '/images/ayurveda_shirodhara.png',
-    link: '/blog/alopecia-areata-ayurvedic-treatment-kerala',
+    link: '/treatments/alopecia-scalp-ayurveda',
     en: { name: 'Alopecia & Scalp Therapy (Indralupta)', tagline: 'Natural Follicle Regrowth', desc: 'A specialized clinical protocol combining Shirolepa (herbal scalp packs), Takradhara (cooling buttermilk stream), and sterile leech therapy (Jalaukavacharana) to re-open micro-capillaries and treat Alopecia Areata at the root.' },
     ar: { name: 'علاج الثعلبة وإنبات الشعر (إندرالوبتا)', tagline: 'إعادة إنبات البصيلات طبيعياً', desc: 'بروتوكول سريري متخصص يجمع بين لبخات شيروليبا العشبية وتاكرادارا والعلاج بالعلق الطبي المعقم لإعادة تنشيط البصيلات الخاملة وعلاج الثعلبة البقعية من الجذور.' },
     duration: '14–21 days',
@@ -105,13 +109,13 @@ const treatments: AyurvedaTreatmentItem[] = [
 
 
 const conditions = [
-  { en: 'Alopecia Areata & Hair Loss (Indralupta)', ar: 'الثعلبة البقعية وتساقط الشعر (إندرالوبتا)', link: '/blog/alopecia-areata-ayurvedic-treatment-kerala' },
-  { en: 'Chronic Back & Joint Pain', ar: 'آلام الظهر والمفاصل المزمنة' },
-  { en: 'Arthritis & Spondylitis', ar: 'التهاب المفاصل والفقرات' },
-  { en: 'Stress, Anxiety & Insomnia', ar: 'التوتر، القلق والأرق' },
+  { en: 'Alopecia Areata & Hair Loss (Indralupta)', ar: 'الثعلبة البقعية وتساقط الشعر (إندرالوبتا)', link: '/treatments/alopecia-scalp-ayurveda' },
+  { en: 'Chronic Back & Joint Pain', ar: 'آلام الظهر والمفاصل المزمنة', link: '/treatments/spine-joint-ayurveda' },
+  { en: 'Arthritis & Spondylitis', ar: 'التهاب المفاصل والفقرات', link: '/treatments/spine-joint-ayurveda' },
+  { en: 'Stress, Anxiety & Insomnia', ar: 'التوتر، القلق والأرق', link: '/treatments/shirodhara-mental-wellness' },
   { en: 'Skin Disorders (Psoriasis, Eczema)', ar: 'أمراض الجلد (الصدفية، الإكزيما)' },
   { en: 'Neurological Conditions', ar: 'الاضطرابات العصبية' },
-  { en: 'Obesity & Metabolic Disorders', ar: 'السمنة واضطرابات الأيض' },
+  { en: 'Obesity & Metabolic Disorders', ar: 'السمنة واضطرابات الأيض', link: '/treatments/panchakarma-detox' },
 ];
 
 export default async function AyurvedaPage({ params }: Props) {

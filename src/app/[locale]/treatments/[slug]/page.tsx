@@ -146,6 +146,11 @@ export default async function TreatmentDetailPage({ params }: Props) {
     dental: { stayEn: 'Day-Care (Outpatient)', stayAr: 'عيادات خارجية (يومي)', recoverEn: '5 – 7 Days', recoverAr: '٥ – ٧ أيام' },
     ivf: { stayEn: 'Day-Care (Outpatient)', stayAr: 'عيادات خارجية (يومي)', recoverEn: '14 – 18 Days', recoverAr: '١٤ – ١٨ يوماً' },
     ayurveda: { stayEn: '14 – 28 Days Inpatient', stayAr: '١٤ – ٢٨ يوماً إقامة', recoverEn: 'Immediate Restorative', recoverAr: 'تعافي فوري وتجديد' },
+    'panchakarma-detox': { stayEn: '14 – 28 Days Retreat/Hospital', stayAr: '١٤ – ٢٨ يوماً إقامة علاجية', recoverEn: 'Immediate Cellular Reset', recoverAr: 'تجديد حيوي فوري ونشاط مستمر' },
+    'shirodhara-mental-wellness': { stayEn: '7 – 14 Days Residential', stayAr: '٧ – ١٤ يوماً إقامة مريحة', recoverEn: 'Immediate Nervous Calm', recoverAr: 'تهدئة عصبية فورية وتحسن النوم' },
+    'spine-joint-ayurveda': { stayEn: '14 – 21 Days Inpatient', stayAr: '١٤ – ٢١ يوماً علاج مكثف', recoverEn: 'Post-Therapy Mobility', recoverAr: 'مرونة مفصلية وتحسن حركي دائم' },
+    'rasayana-anti-aging': { stayEn: '14 – 21 Days Inpatient', stayAr: '١٤ – ٢١ يوماً إقامة وتجديد', recoverEn: 'Sustained Vitality Boost', recoverAr: 'حيوية خلوية ومناعة معززة' },
+    'alopecia-scalp-ayurveda': { stayEn: '14 – 21 Days Residential', stayAr: '١٤ – ٢١ يوماً علاج متخصص', recoverEn: '4 – 8 Weeks Follicle Regrowth', recoverAr: 'نمو بصيلات جديدة خلال ٤ - ٨ أسابيع' },
     oncology: { stayEn: '3 – 7 Days / Outpatient', stayAr: '٣ – ٧ أيام / خارجي', recoverEn: 'Per Regimen Protocol', recoverAr: 'حسب البروتوكول الطبي' },
     spine: { stayEn: '2 – 4 Days Inpatient', stayAr: '٢ – ٤ أيام تنويم', recoverEn: '10 – 14 Days', recoverAr: '١٠ – ١٤ يوماً' },
     gastroenterology: { stayEn: '2 – 3 Days Inpatient', stayAr: '٢ – ٣ أيام تنويم', recoverEn: '7 – 10 Days', recoverAr: '٧ – ١٠ أيام' },
@@ -210,7 +215,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
           <div className="pt-8">
             <div className="inline-flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-2xl mx-auto">
               {/* Price Card */}
-              <div className="bg-white border border-slate-200 rounded-2xl px-8 py-5 shadow-xs text-center sm:text-left rtl:sm:text-right flex flex-col justify-center">
+              <div className="bg-white border border-slate-200 rounded-2xl px-8 py-5 shadow-xs text-center sm:text-left rtl:sm:text-right flex flex-col justify-center cost-summary">
                 <span className="text-xs font-bold text-text-muted block mb-1">
                   {isRtl ? 'النطاق التقديري في كيرلا:' : 'Kerala Est. Range:'}
                 </span>
@@ -295,7 +300,7 @@ export default async function TreatmentDetailPage({ params }: Props) {
               <h2 className="text-2xl sm:text-3xl font-bold font-display text-text-dark">
                 {locale === 'ar' ? 'نظرة عامة على الإجراء' : 'Procedure Overview'}
               </h2>
-              <p className="text-text-muted text-base sm:text-lg leading-relaxed font-sans">
+              <p className="text-text-muted text-base sm:text-lg leading-relaxed font-sans treatment-overview">
                 {overview}
               </p>
             </div>
