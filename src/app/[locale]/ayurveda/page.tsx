@@ -119,10 +119,10 @@ export default async function AyurvedaPage({ params }: Props) {
   const isRtl = locale === 'ar';
 
   return (
-    <div className="flex flex-col w-full overflow-x-hidden bg-[#FAF7F2] text-text-dark pt-32 lg:pt-40">
+    <div className="flex flex-col w-full overflow-x-hidden bg-[#FAF7F2] text-text-dark">
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 relative overflow-hidden">
+      <section className="pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center mb-16">
             
