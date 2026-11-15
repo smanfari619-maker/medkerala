@@ -3,12 +3,13 @@ import { ShieldCheck, Activity, Award, CheckCircle2, FileCheck, HeartPulse } fro
 
 interface Props {
   locale: string;
+  isAyurveda?: boolean;
 }
 
-export default function ClinicalQualityMetrics({ locale }: Props) {
+export default function ClinicalQualityMetrics({ locale, isAyurveda = false }: Props) {
   const isRtl = locale === 'ar';
 
-  const metrics = [
+  const modernMetrics = [
     {
       icon: Activity,
       stat: '< 0.38%',
@@ -51,6 +52,51 @@ export default function ClinicalQualityMetrics({ locale }: Props) {
     }
   ];
 
+  const ayurvedaMetrics = [
+    {
+      icon: ShieldCheck,
+      stat: '100%',
+      labelEn: 'Western Ghats Herbal Purity',
+      labelAr: 'أعشاب عضوية نقية وطازجة 100%',
+      subEn: 'Authentic pharmacopoeia prepared freshly from certified organic Western Ghats medicinal flora.',
+      subAr: 'مستخلصات عشبية طازجة تُعد خصيصاً لكل مريض من أعشاب جبال غاتس الغربية العضوية وفق معايير GMP.',
+      color: 'text-primary-green',
+      bg: 'bg-emerald-50'
+    },
+    {
+      icon: Award,
+      stat: 'Green Leaf',
+      labelEn: 'NABH & Green Leaf Certified Centers',
+      labelAr: 'اعتماد الورقة الخضراء وNABH',
+      subEn: 'Highest statutory certification by Government of Kerala for clinical hygiene and traditional authenticity.',
+      subAr: 'أعلى تصنيف رسمي صادر عن حكومة كيرلا للمراكز والمصحات الملتزمة بالمعايير الصحية الصارمة.',
+      color: 'text-[#8C6D37]',
+      bg: 'bg-[#D4A96A]/15'
+    },
+    {
+      icon: Activity,
+      stat: '20+ Yrs',
+      labelEn: 'Senior Vaidya Experience',
+      labelAr: 'خبرة كبار أطباء الأيورفيدا (فيديا)',
+      subEn: 'Headed by certified BAMS and MD (Ayurveda) physicians rooted in unbroken Ashtavaidya lineage.',
+      subAr: 'أطباء استشاريون يحملون درجات البكالوريوس والماجستير السريرية مع خبرة تزيد عن 20 عاماً.',
+      color: 'text-[#1B4332]',
+      bg: 'bg-slate-100'
+    },
+    {
+      icon: FileCheck,
+      stat: '0% Surcharge',
+      labelEn: 'Direct Hospital Billing Protocol',
+      labelAr: 'دفع مباشر للمستشفى والمصحة',
+      subEn: 'No agency markups or hidden booking commissions. Official itemized billing directly from the hospital.',
+      subAr: 'التزام كامل بالشفافية؛ فواتير مباشرة من المستشفى أو المصحة بدون أي رسوم وساطة أو عمولات خفية.',
+      color: 'text-primary-green',
+      bg: 'bg-emerald-50'
+    }
+  ];
+
+  const metrics = isAyurveda ? ayurvedaMetrics : modernMetrics;
+
   return (
     <div className="w-full max-w-7xl mx-auto my-12 px-4 sm:px-6 lg:px-8">
       <div className="bg-white rounded-3xl p-6 sm:p-8 border border-emerald-950/10 shadow-sm relative overflow-hidden">
@@ -64,20 +110,26 @@ export default function ClinicalQualityMetrics({ locale }: Props) {
                 <HeartPulse className="h-4 w-4" />
               </span>
               <span className="text-xs font-bold uppercase tracking-wider text-[#D4A96A]">
-                {isRtl ? 'معايير الأمان والجودة الإكلينيكية' : 'Clinical Quality & Safety Benchmarks'}
+                {isAyurveda
+                  ? (isRtl ? 'معايير الأصالة والاعتمادات السريرية' : 'Authenticity & Clinical Benchmarks')
+                  : (isRtl ? 'معايير الأمان والجودة الإكلينيكية' : 'Clinical Quality & Safety Benchmarks')}
               </span>
             </div>
             <h3 className="text-xl sm:text-2xl font-extrabold text-[#1B4332]">
-              {isRtl
-                ? 'مؤشرات الأمان الطبي وفق الاعتمادات الدولية في كيرلا'
-                : 'International Healthcare Safety Standards in Kerala'}
+              {isAyurveda
+                ? (isRtl ? 'معايير الجودة والاعتمادات الرسمية لطب الأيورفيدا في كيرلا' : 'Statutory Quality & Traditional Authenticity in Kerala')
+                : (isRtl ? 'مؤشرات الأمان الطبي وفق الاعتمادات الدولية في كيرلا' : 'International Healthcare Safety Standards in Kerala')}
             </h3>
           </div>
 
           <p className="text-xs text-text-muted max-w-md">
-            {isRtl
-              ? 'تلتزم المستشفيات الشريكة بأعلى بروتوكولات الرعاية السريرية المعترف بها عالمياً لدى JCI و NABH.'
-              : 'Our partner institutions adhere to verified clinical protocols audited regularly by international bodies.'}
+            {isAyurveda
+              ? (isRtl
+                  ? 'تخضع المراكز والمصحات الشريكة لرقابة حكومية صارمة وفق معايير الورقة الخضراء واعتمادات NABH لضمان أصالة العلاج.'
+                  : 'Partner retreats and clinical hospitals adhere strictly to statutory Green Leaf & NABH AYUSH standards.')
+              : (isRtl
+                  ? 'تلتزم المستشفيات الشريكة بأعلى بروتوكولات الرعاية السريرية المعترف بها عالمياً لدى JCI و NABH.'
+                  : 'Our partner institutions adhere to verified clinical protocols audited regularly by international bodies.')}
           </p>
         </div>
 

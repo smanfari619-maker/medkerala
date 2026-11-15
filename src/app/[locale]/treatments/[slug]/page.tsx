@@ -20,7 +20,9 @@ import {
   Activity,
   Brain,
   Shield,
-  Eye
+  Eye,
+  ShieldCheck,
+  Check
 } from 'lucide-react';
 import { Metadata } from 'next';
 import { getMedicalProcedureSchema, getBreadcrumbSchema, getFAQSchema } from '@/lib/schemas';
@@ -105,6 +107,11 @@ export default async function TreatmentDetailPage({ params }: Props) {
     notFound();
   }
 
+  const isAyurveda =
+    treatment.speciality === 'Ayurvedic Medicine' ||
+    treatment.slug.includes('ayurveda') ||
+    ['panchakarma-detox', 'shirodhara-mental-wellness', 'rasayana-anti-aging', 'spine-joint-ayurveda', 'alopecia-scalp-ayurveda'].includes(treatment.slug);
+
   // Icons matching map
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     heart: Heart,
@@ -141,29 +148,50 @@ export default async function TreatmentDetailPage({ params }: Props) {
   };
 
   const clinicalSnapshots: Record<string, { stayEn: string; stayAr: string; recoverEn: string; recoverAr: string }> = {
-    cardiac: { stayEn: '5 – 7 Days Inpatient', stayAr: '٥ – ٧ أيام تنويم', recoverEn: '16 – 21 Days', recoverAr: '١٦ – ٢١ يوماً' },
-    orthopaedics: { stayEn: '3 – 4 Days Inpatient', stayAr: '٣ – ٤ أيام تنويم', recoverEn: '12 – 14 Days', recoverAr: '١٢ – ١٤ يوماً' },
+    cardiac: { stayEn: '5 – 7 Days Inpatient', stayAr: '٥ – ٧ أيام تنويم بالمستشفى', recoverEn: '16 – 21 Days', recoverAr: '١٦ – ٢١ يوماً' },
+    orthopaedics: { stayEn: '3 – 4 Days Inpatient', stayAr: '٣ – ٤ أيام تنويم بالمستشفى', recoverEn: '12 – 14 Days', recoverAr: '١٢ – ١٤ يوماً' },
     dental: { stayEn: 'Day-Care (Outpatient)', stayAr: 'عيادات خارجية (يومي)', recoverEn: '5 – 7 Days', recoverAr: '٥ – ٧ أيام' },
     ivf: { stayEn: 'Day-Care (Outpatient)', stayAr: 'عيادات خارجية (يومي)', recoverEn: '14 – 18 Days', recoverAr: '١٤ – ١٨ يوماً' },
-    ayurveda: { stayEn: '14 – 28 Days Inpatient', stayAr: '١٤ – ٢٨ يوماً إقامة', recoverEn: 'Immediate Restorative', recoverAr: 'تعافي فوري وتجديد' },
-    'panchakarma-detox': { stayEn: '14 – 28 Days Retreat/Hospital', stayAr: '١٤ – ٢٨ يوماً إقامة علاجية', recoverEn: 'Immediate Cellular Reset', recoverAr: 'تجديد حيوي فوري ونشاط مستمر' },
-    'shirodhara-mental-wellness': { stayEn: '7 – 14 Days Residential', stayAr: '٧ – ١٤ يوماً إقامة مريحة', recoverEn: 'Immediate Nervous Calm', recoverAr: 'تهدئة عصبية فورية وتحسن النوم' },
-    'spine-joint-ayurveda': { stayEn: '14 – 21 Days Inpatient', stayAr: '١٤ – ٢١ يوماً علاج مكثف', recoverEn: 'Post-Therapy Mobility', recoverAr: 'مرونة مفصلية وتحسن حركي دائم' },
-    'rasayana-anti-aging': { stayEn: '14 – 21 Days Inpatient', stayAr: '١٤ – ٢١ يوماً إقامة وتجديد', recoverEn: 'Sustained Vitality Boost', recoverAr: 'حيوية خلوية ومناعة معززة' },
-    'alopecia-scalp-ayurveda': { stayEn: '14 – 21 Days Residential', stayAr: '١٤ – ٢١ يوماً علاج متخصص', recoverEn: '4 – 8 Weeks Follicle Regrowth', recoverAr: 'نمو بصيلات جديدة خلال ٤ - ٨ أسابيع' },
-    oncology: { stayEn: '3 – 7 Days / Outpatient', stayAr: '٣ – ٧ أيام / خارجي', recoverEn: 'Per Regimen Protocol', recoverAr: 'حسب البروتوكول الطبي' },
-    spine: { stayEn: '2 – 4 Days Inpatient', stayAr: '٢ – ٤ أيام تنويم', recoverEn: '10 – 14 Days', recoverAr: '١٠ – ١٤ يوماً' },
-    gastroenterology: { stayEn: '2 – 3 Days Inpatient', stayAr: '٢ – ٣ أيام تنويم', recoverEn: '7 – 10 Days', recoverAr: '٧ – ١٠ أيام' },
+    ayurveda: { stayEn: '14 – 28 Days Inpatient', stayAr: '١٤ – ٢٨ يوماً إقامة علاجية', recoverEn: 'Immediate Restorative', recoverAr: 'تعافي فوري وتجديد' },
+    'panchakarma-detox': { stayEn: '14 – 28 Days Inpatient Retreat', stayAr: '١٤ – ٢٨ يوماً إقامة علاجية متكاملة', recoverEn: 'Immediate Cellular Reset', recoverAr: 'تجديد حيوي فوري ونشاط مستمر' },
+    'shirodhara-mental-wellness': { stayEn: '7 – 14 Days Inpatient Retreat', stayAr: '٧ – ١٤ يوماً إقامة علاجية مريحة', recoverEn: 'Immediate Calm & Sleep Reset', recoverAr: 'تهدئة عصبية فورية وتحسن النوم' },
+    'spine-joint-ayurveda': { stayEn: '14 – 21 Days Inpatient Care', stayAr: '١٤ – ٢١ يوماً علاج مكثف', recoverEn: 'Progressive Mobility Restoration', recoverAr: 'مرونة مفصلية وتحسن حركي دائم' },
+    'rasayana-anti-aging': { stayEn: '14 – 21 Days Inpatient Care', stayAr: '١٤ – ٢١ يوماً إقامة وتجديد', recoverEn: 'Sustained Vitality & Immunity', recoverAr: 'حيوية خلوية ومناعة معززة' },
+    'alopecia-scalp-ayurveda': { stayEn: '14 – 21 Days Inpatient Care', stayAr: '١٤ – ٢١ يوماً علاج سريري متخصص', recoverEn: 'Follicle Reactivation 4–8 Wks', recoverAr: 'نمو بصيلات جديدة خلال ٤ - ٨ أسابيع' },
+    oncology: { stayEn: '3 – 7 Days Inpatient', stayAr: '٣ – ٧ أيام / رعاية نهارية', recoverEn: 'Per Clinical Regimen', recoverAr: 'حسب البروتوكول الطبي' },
+    spine: { stayEn: '2 – 4 Days Inpatient', stayAr: '٢ – ٤ أيام تنويم بالمستشفى', recoverEn: '10 – 14 Days', recoverAr: '١٠ – ١٤ يوماً' },
+    gastroenterology: { stayEn: '2 – 3 Days Inpatient', stayAr: '٢ – ٣ أيام تنويم بالمستشفى', recoverEn: '7 – 10 Days', recoverAr: '٧ – ١٠ أيام' },
     ophthalmology: { stayEn: 'Day-Care (1 – 2 Hours)', stayAr: 'جراحة اليوم الواحد (ساعتان)', recoverEn: '24 – 48 Hours', recoverAr: '٢٤ – ٤٨ ساعة' },
-    urology: { stayEn: '1 – 2 Days Inpatient', stayAr: '١ – ٢ يوم تنويم', recoverEn: '3 – 5 Days', recoverAr: '٣ – ٥ أيام' }
+    urology: { stayEn: '1 – 2 Days Inpatient', stayAr: '١ – ٢ يوم تنويم بالمستشفى', recoverEn: '3 – 5 Days', recoverAr: '٣ – ٥ أيام' }
   };
 
   const snapshot = clinicalSnapshots[slug] || {
     stayEn: '3 – 5 Days Inpatient',
-    stayAr: '٣ – ٥ أيام تنويم',
+    stayAr: '٣ – ٥ أيام تنويم بالمستشفى',
     recoverEn: '10 – 14 Days',
     recoverAr: '١٠ – ١٤ يوماً'
   };
+
+  // Dedicated Medical Reviewer metadata per specialty
+  const reviewerDoctorName = isAyurveda
+    ? (isRtl ? 'د. هـ. براساد' : 'Dr. H. Prasad')
+    : (isRtl ? 'د. راجيش ك. فارما' : 'Dr. Rajesh K. Varma');
+
+  const reviewerDoctorTitleEn = isAyurveda
+    ? 'Senior Ayurvedic Physician & Clinical Advisory Lead'
+    : 'Senior Clinical Consultant & Advisory Board Lead';
+
+  const reviewerDoctorTitleAr = isAyurveda
+    ? 'كبير أطباء الأيورفيدا ومستشار الحوكمة السريرية'
+    : 'استشاري أول ورئيس المجلس الطبي الاستشاري';
+
+  const reviewerCredentialsEn = isAyurveda
+    ? 'BAMS, MD (Ayurveda) • 26+ Years Classical Clinical Practice'
+    : 'MBBS, MS (Orthopaedics), MCh, Ex-Senior Registrar AIIMS';
+
+  const reviewerCredentialsAr = isAyurveda
+    ? 'بكالوريوس وماجستير طب الأيورفيدا (BAMS, MD) • خبرة ٢٦ عاماً'
+    : 'بكالوريوس طب وجراحة، ماجستير جراحة العظام، استشاري معتمد';
 
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: isRtl ? 'الرئيسية' : 'Home', url: `https://treatinkerala.com/${locale}` },
@@ -180,7 +208,8 @@ export default async function TreatmentDetailPage({ params }: Props) {
   );
 
   return (
-    <div className="flex flex-col w-full overflow-x-hidden animate-fade-in pt-36 lg:pt-44 bg-[#FAF7F2]">
+    <div className="flex flex-col w-full overflow-x-hidden animate-fade-in pt-32 lg:pt-36 bg-[#FAF8F5]">
+      {/* Schema microdata */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -193,337 +222,437 @@ export default async function TreatmentDetailPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      {/* 1. HERO SECTION */}
-      <section className="pb-16 lg:pb-24 relative overflow-hidden">
-        {/* Large Background Vector Watermark */}
-        <div className="absolute -bottom-24 -right-24 rtl:-left-24 rtl:-right-auto h-96 w-96 opacity-[0.02] text-[#1B4332] pointer-events-none transition-all duration-700 ease-out">
-          <Icon className="w-full h-full" />
-        </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold mb-2">
-            <span>{speciality}</span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-bold font-display text-text-dark tracking-tight max-w-4xl mx-auto leading-tight">
-            {title}
-          </h1>
-          <p className="text-base sm:text-xl text-text-muted max-w-2xl mx-auto font-sans leading-relaxed">
-            {tagline}
-          </p>
-
-          {/* Bento Price & Savings Grid */}
-          <div className="pt-8">
-            <div className="inline-flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-2xl mx-auto">
-              {/* Price Card */}
-              <div className="bg-white border border-slate-200 rounded-2xl px-8 py-5 shadow-xs text-center sm:text-left rtl:sm:text-right flex flex-col justify-center cost-summary">
-                <span className="text-xs font-bold text-text-muted block mb-1">
-                  {isRtl ? 'النطاق التقديري في كيرلا:' : 'Kerala Est. Range:'}
-                </span>
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#1B4332] font-display">
-                  {formatCost(treatment.costTable.keralaMin)} – {formatCost(treatment.costTable.keralaMax)}
-                </span>
-              </div>
-              
-              {/* Savings Card */}
-              <div className="bg-white border border-slate-200 rounded-2xl px-8 py-5 shadow-xs text-center sm:text-left rtl:sm:text-right flex flex-col justify-center">
-                <span className="text-xs font-bold text-text-muted block mb-1">
-                  {isRtl ? 'معدل الوفورات الطبية:' : 'Average Cost Savings:'}
-                </span>
-                <span className="text-3xl sm:text-4xl font-extrabold text-[#D4A96A] font-display">
-                  {isRtl 
-                    ? `وفر حتى ${calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}%` 
-                    : `Save up to ${calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}%`}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
-            <a
-              href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار عن تكلفة علاج: ${title}` : `Hello TreatInKerala, I would like to inquire about the cost of: ${title}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-3.5 rounded-xl text-base shadow-md hover:shadow-lg transition-all duration-200 min-h-[48px] flex items-center justify-center gap-2 font-sans whitespace-nowrap cursor-pointer"
-            >
-              <MessageCircle className="h-5 w-5 text-white shrink-0" />
-              <span>{isRtl ? 'استشارة فورية عبر واتساب' : 'WhatsApp Inquiry'}</span>
-            </a>
-            <Link
-              href="/get-estimate"
-              className="btn-primary w-full sm:w-auto px-8 py-3.5 text-base whitespace-nowrap cursor-pointer rounded-xl"
-            >
-              {tCommon('getEstimate')}
-            </Link>
-          </div>
-
-          {/* E-E-A-T Medical Reviewer Byline */}
-          <div className="pt-2">
-            <MedicalReviewerBadge locale={locale} />
-          </div>
-        </div>
-      </section>
-
-      {/* 1.5 AEO DIRECT ANSWER SNAPSHOT */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-10 mb-8 relative z-20">
-        <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-xs">
-          <div className="flex items-center gap-2 text-xs font-bold text-[#1B4332] uppercase tracking-wider mb-4 pb-3 border-b border-slate-100">
-            <span className="h-2 w-2 rounded-full bg-[#1B4332] shrink-0"></span>
-            <span>{isRtl ? 'ملخص سريري سريع (AEO Direct Fact Snapshot)' : 'Direct Clinical Fact Snapshot (AEO Direct Answer)'}</span>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div className="border-l-2 rtl:border-l-0 rtl:border-r-2 border-[#1B4332] px-3.5 py-1">
-              <span className="text-xs text-text-muted block font-sans mb-0.5">{isRtl ? 'مدة التنويم بالمستشفى' : 'Hospital Stay'}</span>
-              <span className="text-base sm:text-lg font-bold text-text-dark font-display">{isRtl ? snapshot.stayAr : snapshot.stayEn}</span>
-            </div>
-            <div className="border-l-2 rtl:border-l-0 rtl:border-r-2 border-[#D4A96A] px-3.5 py-1">
-              <span className="text-xs text-text-muted block font-sans mb-0.5">{isRtl ? 'اللياقة للسفر بالطائرة' : 'Fit-to-Fly Timeline'}</span>
-              <span className="text-base sm:text-lg font-bold text-text-dark font-display">{isRtl ? snapshot.recoverAr : snapshot.recoverEn}</span>
-            </div>
-            <div className="border-l-2 rtl:border-l-0 rtl:border-r-2 border-emerald-600 px-3.5 py-1">
-              <span className="text-xs text-text-muted block font-sans mb-0.5">{isRtl ? 'الاعتماد السريري' : 'Hospital Accreditation'}</span>
-              <span className="text-base sm:text-lg font-bold text-text-dark font-display">JCI & NABH Certified</span>
-            </div>
-            <div className="border-l-2 rtl:border-l-0 rtl:border-r-2 border-amber-600 px-3.5 py-1">
-              <span className="text-xs text-text-muted block font-sans mb-0.5">{isRtl ? 'معدل التوفير المالي' : 'Average Savings'}</span>
-              <span className="text-base sm:text-lg font-bold text-[#1B4332] font-display">{calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}% – {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.usa)}%</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. OVERVIEW & WHY KERALA */}
-      <section className="py-16 bg-[#FAF7F2]">
+      {/* ── 1. EDITORIAL HEADER & HERO ─────────────────────────────── */}
+      <section className="border-b border-stone-200/70 pb-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* Overview Left - Bento Card */}
-            <div className="lg:col-span-7 bg-white border border-slate-200 p-8 sm:p-10 rounded-2xl shadow-xs flex flex-col justify-center space-y-6">
-              <h2 className="text-2xl sm:text-3xl font-bold font-display text-text-dark">
-                {locale === 'ar' ? 'نظرة عامة على الإجراء' : 'Procedure Overview'}
-              </h2>
-              <p className="text-text-muted text-base sm:text-lg leading-relaxed font-sans treatment-overview">
-                {overview}
-              </p>
+          
+          {/* Breadcrumb Navigation */}
+          <nav className="flex items-center gap-2 text-xs text-text-muted mb-8 font-sans">
+            <Link href="/" className="hover:text-[#1B4332] transition-colors">
+              {isRtl ? 'الرئيسية' : 'Home'}
+            </Link>
+            <span className="text-slate-300">/</span>
+            <Link href="/treatments" className="hover:text-[#1B4332] transition-colors">
+              {isRtl ? 'العلاجات' : 'Treatments'}
+            </Link>
+            <span className="text-slate-300">/</span>
+            <span className="text-[#1B4332] font-semibold truncate max-w-xs">{title}</span>
+          </nav>
+
+          {/* Main 2-Column Editorial Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            
+            {/* Left Column: Authoritative Medical Narrative (7 cols) */}
+            <div className="lg:col-span-7 space-y-6">
+              
+              {/* Category & Status Badges */}
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1B4332]/10 text-[#1B4332] text-xs font-bold font-sans">
+                  <Icon className="h-3.5 w-3.5" />
+                  <span>{speciality}</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs font-medium font-sans border border-stone-200">
+                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-700" />
+                  <span>{isAyurveda ? (isRtl ? 'اعتماد الورقة الخضراء وNABH' : 'NABH & Green Leaf Certified') : 'JCI & NABH Accredited'}</span>
+                </span>
+              </div>
+
+              {/* Title & Tagline */}
+              <div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#1B4332] tracking-tight leading-tight mb-3">
+                  {title}
+                </h1>
+                <p className="text-lg sm:text-xl text-slate-700 font-sans leading-relaxed">
+                  {tagline}
+                </p>
+              </div>
+
+              {/* Seamless Medical Reviewer Byline */}
+              <div>
+                <MedicalReviewerBadge
+                  locale={locale}
+                  doctorName={reviewerDoctorName}
+                  doctorTitleEn={reviewerDoctorTitleEn}
+                  doctorTitleAr={reviewerDoctorTitleAr}
+                  credentialsEn={reviewerCredentialsEn}
+                  credentialsAr={reviewerCredentialsAr}
+                  specialtyEn={isAyurveda ? 'Classical Panchakarma & Regenerative Herbology' : undefined}
+                  specialtyAr={isAyurveda ? 'طب البانشاكارما الكلاسيكي والعلاجات التجديدية' : undefined}
+                  reviewedDate="2026/2027 Clinical Audit"
+                />
+              </div>
+
+              {/* Procedure Overview */}
+              <div className="pt-2 space-y-4">
+                <h2 className="text-xl sm:text-2xl font-bold font-display text-text-dark">
+                  {isRtl ? 'البروتوكول السريري ونظرة عامة على الإجراء' : 'Clinical Protocol & Procedure Overview'}
+                </h2>
+                <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-sans treatment-overview">
+                  {overview}
+                </p>
+              </div>
+
+              {/* Why Kerala Clinical Care Pillars */}
+              <div className="pt-6">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#8C6D37] mb-4">
+                  {isRtl ? 'المزايا السريرية للعلاج في كيرلا' : 'Clinical Advantages of Treatment in Kerala'}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {whyKeralaList.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-white rounded-xl p-4 border border-stone-200/80 shadow-2xs flex items-start gap-3"
+                    >
+                      <span className="flex items-center justify-center h-6 w-6 rounded-md bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold font-mono shrink-0 mt-0.5">
+                        0{idx + 1}
+                      </span>
+                      <span className="text-sm text-slate-700 leading-relaxed font-sans">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
-            {/* Why Kerala Right - Bento Card */}
-            <div className="lg:col-span-5 bg-white border border-slate-200 p-8 sm:p-10 rounded-2xl shadow-xs space-y-6 relative overflow-hidden group">
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="h-10 w-10 rounded-xl bg-emerald-50 flex items-center justify-center border border-emerald-100">
-                    <Icon className="h-5 w-5 text-[#1B4332]" />
+            {/* Right Column: Structured Advisory Card (5 cols - Sticky) */}
+            <div className="lg:col-span-5">
+              <div className="lg:sticky lg:top-28 bg-white border border-stone-200/90 rounded-2xl p-6 sm:p-7 shadow-xs space-y-6 cost-summary">
+                
+                {/* Cost Header */}
+                <div className="border-b border-stone-100 pb-5">
+                  <span className="text-xs font-bold uppercase tracking-wider text-text-muted block mb-1">
+                    {isRtl ? 'تقدير البرنامج الشامل في كيرلا' : 'Kerala All-Inclusive Estimate'}
+                  </span>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-[#1B4332] font-display">
+                      {formatCost(treatment.costTable.keralaMin)} – {formatCost(treatment.costTable.keralaMax)}
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-text-dark font-sans">
-                    {locale === 'ar' ? 'التعافي في كيرلا' : 'Recovery in Kerala'}
-                  </h3>
+                  <p className="text-xs text-emerald-800 bg-emerald-50/90 px-3 py-1.5 rounded-lg border border-emerald-100/90 mt-3 font-medium flex items-center gap-1.5">
+                    <Check className="h-3.5 w-3.5 text-emerald-700 shrink-0" />
+                    <span>
+                      {isRtl
+                        ? `وفر حتى ${calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}% مقارنة ببريطانيا وأمريكا`
+                        : `Up to ${calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}% lower than UK/US private care`}
+                    </span>
+                  </p>
                 </div>
-                <ul className="space-y-4">
-                  {whyKeralaList.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-[#1B4332] shrink-0 mt-0.5" />
-                      <span className="text-slate-700 text-sm sm:text-base leading-relaxed font-sans">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+
+                {/* Clinical Key Indicators */}
+                <div className="space-y-3.5 text-sm">
+                  <div className="flex items-center justify-between">
+                    <span className="text-text-muted text-xs">{isRtl ? 'مدة الإقامة / التنويم' : 'Hospital / Stay Duration'}</span>
+                    <span className="font-semibold text-text-dark text-xs sm:text-sm">{isRtl ? snapshot.stayAr : snapshot.stayEn}</span>
+                  </div>
+                  <div className="flex items-center justify-between pt-2 border-t border-slate-50">
+                    <span className="text-text-muted text-xs">{isRtl ? 'اللياقة للسفر بالطائرة' : 'Fit-to-Fly Timeline'}</span>
+                    <span className="font-semibold text-text-dark text-xs sm:text-sm">{isRtl ? snapshot.recoverAr : snapshot.recoverEn}</span>
+                  </div>
+                  <div className="flex items-center justify-between pt-2 border-t border-slate-50">
+                    <span className="text-text-muted text-xs">{isRtl ? 'الاعتماد السريري' : 'Hospital Accreditation'}</span>
+                    <span className="font-semibold text-[#1B4332] text-xs sm:text-sm">
+                      {isAyurveda ? (isRtl ? 'الورقة الخضراء وNABH' : 'Green Leaf & NABH') : 'JCI & NABH Certified'}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between pt-2 border-t border-slate-50">
+                    <span className="text-text-muted text-xs">{isRtl ? 'المساعدة اللوجستية' : 'Patient Logistics'}</span>
+                    <span className="font-semibold text-text-dark text-xs sm:text-sm">
+                      {isRtl ? 'استقبال مطار + مترجم مجاناً' : 'Free Airport Pickup & Liaison'}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Primary Action Buttons */}
+                <div className="space-y-3 pt-2">
+                  <Link
+                    href="/get-estimate"
+                    className="w-full btn-primary text-center justify-center py-3.5 rounded-xl font-bold text-sm min-h-[48px] shadow-sm flex items-center gap-2 cursor-pointer"
+                  >
+                    <span>{tCommon('getEstimate')}</span>
+                    <ArrowRight className="h-4 w-4 shrink-0 rtl:rotate-180" />
+                  </Link>
+
+                  <a
+                    href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود الاستفسار عن تفاصيل وتكلفة: ${title}` : `Hello TreatInKerala, I would like to inquire about details and cost for: ${title}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-3.5 rounded-xl text-sm shadow-xs transition-all flex items-center justify-center gap-2 min-h-[48px] cursor-pointer"
+                  >
+                    <MessageCircle className="h-4 w-4 shrink-0" />
+                    <span>{isRtl ? 'استشارة فورية عبر واتساب' : 'WhatsApp Clinical Inquiry'}</span>
+                  </a>
+                </div>
+
+                {/* Trust Guarantee Reassurance */}
+                <div className="pt-3 border-t border-slate-100 text-center text-[11px] text-text-muted space-y-1">
+                  <p>{isRtl ? '✓ فواتير رسمية مباشرة للمستشفى بدون عمولات وساطة' : '✓ Official direct hospital billing with 0% markup'}</p>
+                  <p>{isRtl ? '✓ حماية تامة لسرية البيانات الطبية والتقارير' : '✓ 100% confidential clinical advisory & review'}</p>
+                </div>
+
               </div>
             </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* 3. COST COMPARISON TABLE */}
-      <section className="py-20 bg-white border-y border-slate-200">
+      {/* ── 2. CLINICAL QUALITY & SAFETY BENCHMARKS STRIP ───────────── */}
+      <ClinicalQualityMetrics locale={locale} isAyurveda={isAyurveda} />
+
+      {/* ── 3. TRANSPARENT COST COMPARISON TABLE ─────────────────────── */}
+      <section className="py-16 bg-white border-y border-stone-200/70">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold mb-3">
-              <span>{locale === 'ar' ? 'الشفافية في الأسعار' : 'Transparent Pricing'}</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold font-display text-text-dark">
-              {locale === 'ar' ? 'مقارنة تكلفة العلاج التقديرية' : 'Estimated Cost Comparison'}
+          
+          <div className="text-center mb-10">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#8C6D37] block mb-2">
+              {locale === 'ar' ? 'الشفافية في الأسعار' : 'Transparent Pricing'}
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold font-display text-text-dark">
+              {locale === 'ar' ? 'مقارنة تكلفة العلاج التقديرية دولياً' : 'International Cost Comparison'}
             </h2>
-            <p className="text-text-muted text-base sm:text-lg mt-3 font-sans max-w-2xl mx-auto">
+            <p className="text-text-muted text-sm sm:text-base mt-2 font-sans max-w-2xl mx-auto">
               {locale === 'ar'
-                ? 'قارن تكلفة هذا العلاج في كيرلا بالدول الغربية ودول الخليج.'
-                : 'Compare treatment estimates across major international medical destinations.'}
+                ? 'مقارنة تقديرية لتكلفة هذا الإجراء بين كيرلا والدول الغربية والخليجية لعام ٢٠٢٦ / ٢٠٢٧.'
+                : 'Comparative benchmark of estimated treatment costs across leading international medical destinations.'}
             </p>
           </div>
 
-          <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
+          <div className="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-xs">
             <table className="w-full text-center border-collapse" dir={isRtl ? 'rtl' : 'ltr'}>
               <thead>
-                <tr className="bg-[#FAF7F2] font-semibold text-sm sm:text-base border-b border-slate-200">
-                  <th className="py-4 px-5 text-left rtl:text-right sm:px-8 font-bold text-text-dark">{locale === 'ar' ? 'البلد / الوجهة' : 'Country / Destination'}</th>
-                  <th className="py-4 px-5 sm:px-8 font-bold text-text-dark">{locale === 'ar' ? 'تقدير التكلفة' : 'Estimated Cost'}</th>
-                  <th className="py-4 px-5 sm:px-8 font-bold text-text-dark">{locale === 'ar' ? 'نسبة الوفورات' : 'Savings Percentage'}</th>
+                <tr className="bg-[#FAF8F5] font-semibold text-xs sm:text-sm border-b border-stone-200">
+                  <th className="py-4 px-5 text-left rtl:text-right sm:px-8 font-bold text-text-dark">
+                    {locale === 'ar' ? 'البلد / الوجهة' : 'Country / Destination'}
+                  </th>
+                  <th className="py-4 px-5 sm:px-8 font-bold text-text-dark">
+                    {locale === 'ar' ? 'تقدير التكلفة' : 'Estimated Cost'}
+                  </th>
+                  <th className="py-4 px-5 sm:px-8 font-bold text-text-dark">
+                    {locale === 'ar' ? 'نسبة الوفورات' : 'Savings Advantage'}
+                  </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 text-sm sm:text-base text-slate-700 font-sans">
+              <tbody className="divide-y divide-stone-100 text-sm sm:text-base text-slate-700 font-sans">
                 {/* Kerala */}
-                <tr className="bg-emerald-50/40 font-bold text-[#1B4332]">
+                <tr className="bg-emerald-50/50 font-bold text-[#1B4332]">
                   <td className="py-4 px-5 text-left rtl:text-right sm:px-8 font-display flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-[#1B4332]"></span>
-                    {locale === 'ar' ? 'كيرلا، الهند' : 'Kerala, India'}
+                    <span>{locale === 'ar' ? 'كيرلا، الهند (برنامج متكامل)' : 'Kerala, India (All-Inclusive)'}</span>
                   </td>
-                  <td className="py-4 px-5 sm:px-8 font-extrabold text-lg text-[#1B4332]">{formatCost(treatment.costTable.keralaMin)} – {formatCost(treatment.costTable.keralaMax)}</td>
-                  <td className="py-4 px-5 sm:px-8 text-[#1B4332]">—</td>
+                  <td className="py-4 px-5 sm:px-8 font-extrabold text-lg text-[#1B4332]">
+                    {formatCost(treatment.costTable.keralaMin)} – {formatCost(treatment.costTable.keralaMax)}
+                  </td>
+                  <td className="py-4 px-5 sm:px-8 text-[#1B4332] text-xs sm:text-sm font-semibold">
+                    {isRtl ? 'الوجهة المرجعية' : 'Baseline Reference'}
+                  </td>
                 </tr>
                 {/* UK */}
-                <tr className="hover:bg-slate-50 transition-colors duration-150">
-                  <td className="py-4 px-5 text-left rtl:text-right sm:px-8">{locale === 'ar' ? 'المملكة المتحدة' : 'United Kingdom'}</td>
+                <tr className="hover:bg-stone-50/50 transition-colors">
+                  <td className="py-4 px-5 text-left rtl:text-right sm:px-8">
+                    {locale === 'ar' ? 'المملكة المتحدة (خاص)' : 'United Kingdom (Private)'}
+                  </td>
                   <td className="py-4 px-5 sm:px-8">{formatCost(treatment.costTable.uk)}</td>
-                  <td className="py-4 px-5 sm:px-8 font-bold text-[#D4A96A]">
-                    {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}%
+                  <td className="py-4 px-5 sm:px-8 font-bold text-[#8C6D37]">
+                    {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uk)}% {isRtl ? 'توفير' : 'Savings'}
                   </td>
                 </tr>
                 {/* USA */}
-                <tr className="hover:bg-slate-50 transition-colors duration-150">
-                  <td className="py-4 px-5 text-left rtl:text-right sm:px-8">{locale === 'ar' ? 'الولايات المتحدة' : 'United States'}</td>
+                <tr className="hover:bg-stone-50/50 transition-colors">
+                  <td className="py-4 px-5 text-left rtl:text-right sm:px-8">
+                    {locale === 'ar' ? 'الولايات المتحدة (بدون تأمين)' : 'United States (Self-Pay)'}
+                  </td>
                   <td className="py-4 px-5 sm:px-8">{formatCost(treatment.costTable.usa)}</td>
-                  <td className="py-4 px-5 sm:px-8 font-bold text-[#D4A96A]">
-                    {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.usa)}%
+                  <td className="py-4 px-5 sm:px-8 font-bold text-[#8C6D37]">
+                    {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.usa)}% {isRtl ? 'توفير' : 'Savings'}
                   </td>
                 </tr>
                 {/* UAE */}
-                <tr className="hover:bg-slate-50 transition-colors duration-150">
-                  <td className="py-4 px-5 text-left rtl:text-right sm:px-8">{locale === 'ar' ? 'الإمارات العربية المتحدة' : 'United Arab Emirates'}</td>
+                <tr className="hover:bg-stone-50/50 transition-colors">
+                  <td className="py-4 px-5 text-left rtl:text-right sm:px-8">
+                    {locale === 'ar' ? 'الإمارات العربية المتحدة' : 'United Arab Emirates'}
+                  </td>
                   <td className="py-4 px-5 sm:px-8">{formatCost(treatment.costTable.uae)}</td>
-                  <td className="py-4 px-5 sm:px-8 font-bold text-[#D4A96A]">
-                    {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uae)}%
+                  <td className="py-4 px-5 sm:px-8 font-bold text-[#8C6D37]">
+                    {calculateSavings(treatment.costTable.keralaMin, treatment.costTable.uae)}% {isRtl ? 'توفير' : 'Savings'}
                   </td>
                 </tr>
               </tbody>
             </table>
-            <div className="bg-[#FAF7F2] py-4 px-6 border-t border-slate-200 text-xs text-text-muted font-sans text-center">
-              {locale === 'ar'
-                ? '* نطاق الأسعار أعلاه تقديري لعام ٢٠٢٦ وقد يختلف حسب اختيارك للمستشفى وحالتك السريرية الخاصة. تشمل أسعار كيرلا التنسيق اللوجستي الكامل.'
-                : '* Price ranges are 2026 estimates and vary depending on hospital choice and clinical requirements. Kerala ranges include full travel coordination and logistics.'}
+
+            {/* Inclusions checklist */}
+            <div className="bg-[#FAF8F5] p-5 sm:p-6 border-t border-stone-200">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#1B4332] block mb-3">
+                {isRtl ? 'ما يشمله برنامج العلاج في كيرلا:' : 'What is included in the Kerala Treatment Package:'}
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 text-xs text-slate-700">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-[#1B4332] shrink-0" />
+                  <span>{isRtl ? 'استشارات يومية لكبار الأطباء' : 'Daily Senior Doctor Consultations'}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-[#1B4332] shrink-0" />
+                  <span>{isRtl ? 'الأدوية والزيوت الموصوفة' : 'All Prescribed Medicines & Oils'}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-[#1B4332] shrink-0" />
+                  <span>{isRtl ? 'الإقامة والغذاء الصحي العلاجي' : 'Room Stay & Prescribed Clinical Diet'}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4 text-[#1B4332] shrink-0" />
+                  <span>{isRtl ? 'استقبال وتوديع المطار مجاناً' : 'Free Airport Transfers & Liaison'}</span>
+                </div>
+              </div>
             </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* E-E-A-T Clinical Quality & Safety Benchmarks */}
-      <ClinicalQualityMetrics locale={locale} />
-
-      {/* 4. DOCTOR PROFILES */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-2xl sm:text-3xl font-bold font-display text-text-dark mb-4">
-              {locale === 'ar' ? 'أطباؤنا المشهورون' : 'Our Renowned Specialists'}
+      {/* ── 4. SENIOR CONSULTING SPECIALISTS / VAIDYAS ────────────── */}
+      <section className="py-16 bg-[#FAF8F5]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#8C6D37] block mb-2">
+              {locale === 'ar' ? 'القيادة الإكلينيكية' : 'Clinical Leadership'}
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold font-display text-text-dark">
+              {locale === 'ar' ? 'كبار الأطباء والاستشاريين المعتمدين' : 'Renowned Consulting Specialists'}
             </h2>
-            <p className="text-base sm:text-lg text-text-muted">
+            <p className="text-sm sm:text-base text-text-muted mt-2">
               {locale === 'ar'
-                ? 'استشر نخبة الأطباء وأساتذة الجراحة المؤهلين دولياً في كيرلا.'
-                : 'Certified specialist doctors with international clinical records and credentials.'}
+                ? 'استشر نخبة الأطباء وأساتذة الطب الأيورفيدي والجراحة المؤهلين دولياً في كيرلا.'
+                : 'Accredited specialists and senior consultants with extensive clinical track records.'}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto justify-center">
             {treatment.doctors.map((doc, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-2xl border border-slate-200 shadow-xs space-y-4 text-center md:text-left rtl:md:text-right flex flex-col items-center md:items-start"
+                className="bg-white p-6 rounded-2xl border border-stone-200/90 shadow-2xs space-y-4 flex flex-col justify-between"
               >
-                <div className="h-14 w-14 rounded-xl bg-emerald-50 flex items-center justify-center mb-1 border border-emerald-100">
-                  <Stethoscope className="h-7 w-7 text-[#1B4332]" />
-                </div>
-                <div className="space-y-1 text-center md:text-left rtl:md:text-right">
-                  <h3 className="text-xl font-bold text-text-dark">{isRtl ? doc.nameAr : doc.name}</h3>
-                  <p className="text-[#D4A96A] text-sm font-semibold">{isRtl ? doc.titleAr : doc.title}</p>
-                </div>
-                <div className="w-full pt-4 border-t border-slate-100 text-sm text-text-muted space-y-2.5">
-                  <div className="flex items-center justify-center md:justify-start gap-2 text-slate-700">
-                    <Building className="h-4 w-4 text-[#1B4332] shrink-0" />
-                    <span>{isRtl ? doc.hospitalAr : doc.hospital}</span>
+                <div className="flex items-start gap-4">
+                  <div className="h-12 w-12 rounded-xl bg-emerald-50 text-[#1B4332] flex items-center justify-center shrink-0 border border-emerald-100">
+                    <Stethoscope className="h-6 w-6" />
                   </div>
-                  <div className="flex items-center justify-center md:justify-start gap-2 text-slate-700">
-                    <History className="h-4 w-4 text-[#1B4332] shrink-0" />
-                    <span>{locale === 'ar' ? 'خبرة سريرية:' : 'Clinical Experience:'} {isRtl ? doc.expAr : doc.exp}</span>
+                  <div>
+                    <h3 className="text-lg font-bold text-text-dark">{isRtl ? doc.nameAr : doc.name}</h3>
+                    <p className="text-[#8C6D37] text-xs font-semibold">{isRtl ? doc.titleAr : doc.title}</p>
+                    <p className="text-text-muted text-xs mt-1">{isRtl ? doc.hospitalAr : doc.hospital}</p>
                   </div>
+                </div>
+
+                <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-text-muted">
+                  <span className="flex items-center gap-1.5">
+                    <History className="h-3.5 w-3.5 text-[#1B4332]" />
+                    <span>{locale === 'ar' ? 'الخبرة:' : 'Experience:'} {isRtl ? doc.expAr : doc.exp}</span>
+                  </span>
+
                   <a
                     href={`https://wa.me/${SITE_CONFIG.whatsappRaw}?text=${encodeURIComponent(isRtl ? `مرحباً علاج في كيرلا، أود استشارة الدكتور ${doc.nameAr.replace('د. ', '')} بخصوص علاج: ${title}` : `Hello TreatInKerala, I would like to consult Dr. ${doc.name} regarding: ${title}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 w-full btn-secondary text-xs py-2.5 rounded-xl transition-all text-center flex items-center justify-center gap-1.5 font-sans min-h-[38px] cursor-pointer"
+                    className="text-[#1B4332] hover:text-[#143225] font-bold inline-flex items-center gap-1 hover:underline cursor-pointer"
                   >
-                    <MessageCircle className="h-3.5 w-3.5" />
-                    <span>{isRtl ? `استشارة د. ${doc.nameAr.replace('د. ', '')}` : `Consult ${doc.name}`}</span>
+                    <span>{isRtl ? 'استشارة الطبيب' : 'Inquire Directly'}</span>
+                    <ArrowRight className="h-3 w-3 rtl:rotate-180" />
                   </a>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* 5. TREATMENT FAQS */}
-      <section className="py-20 bg-[#FAF7F2] border-t border-slate-200">
+      {/* ── 5. TREATMENT FREQUENTLY ASKED QUESTIONS ─────────────────── */}
+      <section className="py-16 bg-white border-t border-stone-200/70">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#8C6D37] block mb-2">
+              {locale === 'ar' ? 'إجابات مباشرة' : 'Direct Answers'}
+            </span>
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-text-dark">
-              {locale === 'ar' ? 'الأسئلة الشائعة حول هذا الإجراء' : 'Treatment FAQ'}
+              {locale === 'ar' ? 'الأسئلة الشائعة حول هذا الإجراء' : 'Frequently Asked Questions'}
             </h2>
-            <p className="text-text-muted text-base mt-2">
+            <p className="text-text-muted text-sm sm:text-base mt-2">
               {locale === 'ar'
-                ? 'إجابات على الأسئلة الشائعة حول الفحوصات والعمليات الجراحية والاستشفاء.'
-                : 'Clear answers on clinical processes, packing, recovery times and safety.'}
+                ? 'إجابات طبية واضحة حول الفحوصات، مدة الإقامة، والتعافي السريري.'
+                : 'Clear clinical answers regarding preparation, stay duration, and recovery outcomes.'}
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="divide-y divide-stone-200">
             {treatment.faqs.map((faq, idx) => (
               <details
                 key={idx}
-                className="group border border-slate-200 rounded-2xl bg-white p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-2xs"
+                className="group py-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer"
               >
-                <summary className="flex items-center justify-between gap-1.5 focus:outline-hidden min-h-[44px]">
-                  <h3 className="text-base sm:text-lg font-bold text-text-dark">
+                <summary className="flex items-center justify-between gap-3 text-left rtl:text-right font-medium focus:outline-hidden">
+                  <h3 className="text-base sm:text-lg font-bold text-text-dark group-open:text-[#1B4332] transition-colors">
                     {isRtl ? faq.qAr : faq.q}
                   </h3>
-                  <ChevronDown className="h-5 w-5 text-slate-500 transition-transform duration-300 group-open:-rotate-180 shrink-0" />
+                  <ChevronDown className="h-5 w-5 text-slate-400 transition-transform duration-200 group-open:-rotate-180 shrink-0" />
                 </summary>
-                <p className="mt-4 text-slate-700 leading-relaxed text-sm sm:text-base border-t border-slate-100 pt-4">
+                <p className="mt-3 text-slate-600 leading-relaxed text-sm sm:text-base pr-6 rtl:pr-0 rtl:pl-6 font-sans">
                   {isRtl ? faq.aAr : faq.a}
                 </p>
               </details>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* 6. ESTIMATE REQUEST CTA BAND */}
-      <section className="bg-[#111827] text-white py-16 border-t border-slate-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-bold font-display text-white">
+      {/* ── 6. ESTIMATE REQUEST / REASSURANCE CTA ──────────────────── */}
+      <section className="bg-[#111827] text-white py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#D4A96A] block">
+            {locale === 'ar' ? 'استشارة مجانية وسرية' : 'Free & Confidential Evaluation'}
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-bold font-display text-white max-w-2xl mx-auto leading-tight">
             {locale === 'ar' 
-              ? 'احصل على خطة علاجية مخصصة وعرض أسعار مجاني' 
-              : `Get a Free Estimate for ${title}`}
+              ? `احصل على خطة علاجية مخصصة وعرض أسعار لـ ${title}` 
+              : `Receive a Clinically Validated Treatment Plan for ${title}`}
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
             {locale === 'ar'
-              ? 'أرسل لنا تقاريرك الطبية الحالية. سيقوم فريقنا بمراجعتها وعرضها على الأطباء الاستشاريين وتزويدك بتقرير الأسعار المتكامل خلال 48 ساعة.'
-              : 'Submit your recent medical reports or condition detail. Our expert team will review it with specialists and send you a fully customized cost report within 48 hours.'}
+              ? 'شاركنا تقاريرك الطبية أو أهدافك الصحية. سيقوم أطباؤنا الاستشاريون بمراجعتها وإعداد خطة علاجية مخصصة وعرض تكلفة شامل خلال 48 ساعة.'
+              : 'Share your condition details or medical reports. Our clinical advisory team will coordinate directly with senior specialists to deliver an itemized quotation within 48 hours.'}
           </p>
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <Link
               href="/get-estimate"
-              className="bg-[#D4A96A] hover:bg-[#c49355] text-[#111827] font-bold px-8 py-3.5 rounded-xl text-base shadow-md hover:shadow-lg transition-all duration-200 min-h-[48px] inline-flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
+              className="bg-[#D4A96A] hover:bg-[#c49355] text-[#111827] font-bold px-7 py-3.5 rounded-xl text-sm shadow-md hover:shadow-lg transition-all min-h-[48px] inline-flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
             >
               <span>{tCommon('getEstimate')}</span>
-              <ArrowRight className="h-5 w-5 shrink-0 rtl:rotate-180" />
+              <ArrowRight className="h-4 w-4 shrink-0 rtl:rotate-180" />
             </Link>
             <a
               href={`https://wa.me/${SITE_CONFIG.whatsappRaw}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-3.5 rounded-xl text-base shadow-md hover:shadow-lg transition-all duration-200 min-h-[48px] inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-7 py-3.5 rounded-xl text-sm shadow-md hover:shadow-lg transition-all min-h-[48px] inline-flex items-center justify-center gap-2 w-full sm:w-auto cursor-pointer"
             >
-              <MessageCircle className="h-5 w-5 shrink-0" />
+              <MessageCircle className="h-4 w-4 shrink-0" />
               <span>{tCommon('whatsAppUs')}</span>
             </a>
           </div>
+          <p className="text-[11px] text-slate-400 pt-2">
+            {locale === 'ar'
+              ? 'ملتزمون بأعلى معايير حماية البيانات الطبية والسرية التامة للمرضى.'
+              : 'Strict adherence to international patient confidentiality and data privacy standards.'}
+          </p>
         </div>
       </section>
+
     </div>
   );
 }
