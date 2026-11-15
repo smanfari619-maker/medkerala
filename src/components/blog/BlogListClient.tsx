@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { BlogPost } from '@/lib/data';
-import { Calendar, Clock, ArrowRight, User, BookOpen, Search, X, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Calendar, Clock, Search, X } from 'lucide-react';
 
 interface Props {
   locale: string;
@@ -18,375 +18,235 @@ interface CategoryPillar {
 }
 
 const CATEGORY_PILLARS: CategoryPillar[] = [
-  {
-    id: 'all',
-    labelEn: 'All Guides',
-    labelAr: 'جميع المقالات',
-    matches: () => true,
-  },
+  { id: 'all', labelEn: 'All guides', labelAr: 'جميع الأدلة', matches: () => true },
   {
     id: 'ayurveda',
-    labelEn: '🌿 Ayurveda & Wellness',
-    labelAr: '🌿 الأيورفيدا والاستشفاء',
-    matches: (p) => {
-      const c = `${p.category} ${p.slug}`.toLowerCase();
-      return (
-        c.includes('ayurveda') ||
-        c.includes('wellness') ||
-        c.includes('kottakkal') ||
-        c.includes('panchakarma') ||
-        c.includes('herbs') ||
-        c.includes('recovery') ||
-        c.includes('alopecia') ||
-        c.includes('stroke')
-      );
-    },
+    labelEn: 'Ayurveda & wellness',
+    labelAr: 'الأيورفيدا والعافية',
+    matches: (post) => /ayurveda|wellness|kottakkal|panchakarma|herbs|recovery|alopecia|stroke/i.test(`${post.category} ${post.slug}`),
   },
   {
     id: 'surgeries',
-    labelEn: '🏥 Surgeries & Clinical Care',
-    labelAr: '🏥 الجراحات والعلاجات',
-    matches: (p) => {
-      const c = `${p.category} ${p.slug}`.toLowerCase();
-      return (
-        c.includes('ortho') ||
-        c.includes('cardiac') ||
-        c.includes('bypass') ||
-        c.includes('knee') ||
-        c.includes('spine') ||
-        c.includes('dental') ||
-        c.includes('cancer') ||
-        c.includes('oncology') ||
-        c.includes('fertility') ||
-        c.includes('ivf') ||
-        c.includes('bariatric') ||
-        c.includes('eye') ||
-        c.includes('lasik') ||
-        c.includes('urology') ||
-        c.includes('kidney')
-      );
-    },
+    labelEn: 'Treatments & care',
+    labelAr: 'العلاجات والرعاية',
+    matches: (post) => /ortho|cardiac|bypass|knee|spine|dental|cancer|oncology|fertility|ivf|bariatric|eye|lasik|urology|kidney/i.test(`${post.category} ${post.slug}`),
   },
   {
     id: 'international',
-    labelEn: '🌍 GCC & Country Guides',
-    labelAr: '🌍 أدلة المرضى الدوليين',
-    matches: (p) => {
-      const c = `${p.category} ${p.slug}`.toLowerCase();
-      return (
-        c.includes('saudi') ||
-        c.includes('uae') ||
-        c.includes('dubai') ||
-        c.includes('oman') ||
-        c.includes('maldives') ||
-        c.includes('gcc') ||
-        c.includes('uk') ||
-        c.includes('usa') ||
-        c.includes('countries') ||
-        c.includes('international')
-      );
-    },
+    labelEn: 'Patient destinations',
+    labelAr: 'وجهات المرضى',
+    matches: (post) => /saudi|uae|dubai|oman|maldives|gcc|uk|usa|countries|international/i.test(`${post.category} ${post.slug}`),
   },
   {
     id: 'travel-costs',
-    labelEn: '✈️ Travel, Visa & Costs',
-    labelAr: '✈️ السفر، التأشيرة والتكاليف',
-    matches: (p) => {
-      const c = `${p.category} ${p.slug}`.toLowerCase();
-      return (
-        c.includes('visa') ||
-        c.includes('pack') ||
-        c.includes('logistics') ||
-        c.includes('travel') ||
-        c.includes('cost') ||
-        c.includes('comparison') ||
-        c.includes('turkey') ||
-        c.includes('thailand') ||
-        c.includes('safe') ||
-        c.includes('reviews') ||
-        c.includes('checklists')
-      );
-    },
+    labelEn: 'Travel & costs',
+    labelAr: 'السفر والتكاليف',
+    matches: (post) => /visa|pack|logistics|travel|cost|comparison|turkey|thailand|safe|reviews|checklists/i.test(`${post.category} ${post.slug}`),
   },
 ];
 
+const PAGE_SIZE = 8;
+
 export default function BlogListClient({ locale, posts }: Props) {
   const isRtl = locale === 'ar';
-  const [selectedPillarId, setSelectedPillarId] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedPillarId, setSelectedPillarId] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  // Reverse posts so newest/latest guides appear first
-  const sortedPosts = useMemo(() => {
-    return [...posts].reverse();
-  }, [posts]);
-
-  // Filter posts by active pillar + search query
+  const sortedPosts = useMemo(() => [...posts].reverse(), [posts]);
   const filteredPosts = useMemo(() => {
-    const activePillar = CATEGORY_PILLARS.find((p) => p.id === selectedPillarId) || CATEGORY_PILLARS[0];
-    const query = searchQuery.trim().toLowerCase();
+    const activePillar = CATEGORY_PILLARS.find((pillar) => pillar.id === selectedPillarId) ?? CATEGORY_PILLARS[0];
+    const query = searchQuery.trim().toLocaleLowerCase();
 
     return sortedPosts.filter((post) => {
-      // 1. Pillar match
-      const matchesPillar = activePillar.id === 'all' || activePillar.matches(post);
-      if (!matchesPillar) return false;
-
-      // 2. Search query match
+      if (activePillar.id !== 'all' && !activePillar.matches(post)) return false;
       if (!query) return true;
-      const searchableText = `${post.title} ${post.titleAr} ${post.excerpt} ${post.excerptAr} ${post.category} ${post.slug}`.toLowerCase();
-      return searchableText.includes(query);
+      return `${post.title} ${post.titleAr} ${post.excerpt} ${post.excerptAr} ${post.category} ${post.slug}`
+        .toLocaleLowerCase()
+        .includes(query);
     });
   }, [sortedPosts, selectedPillarId, searchQuery]);
 
-  // Pillar counts
-  const pillarCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
-    CATEGORY_PILLARS.forEach((pillar) => {
-      if (pillar.id === 'all') {
-        counts[pillar.id] = sortedPosts.length;
-      } else {
-        counts[pillar.id] = sortedPosts.filter((p) => pillar.matches(p)).length;
-      }
-    });
-    return counts;
-  }, [sortedPosts]);
+  const pillarCounts = useMemo(() => Object.fromEntries(
+    CATEGORY_PILLARS.map((pillar) => [
+      pillar.id,
+      pillar.id === 'all' ? sortedPosts.length : sortedPosts.filter(pillar.matches).length,
+    ]),
+  ), [sortedPosts]);
 
-  const featuredPost = searchQuery ? null : filteredPosts[0];
-  const regularPosts = searchQuery ? filteredPosts : filteredPosts.slice(1);
+  const showFeatured = selectedPillarId === 'all' && !searchQuery.trim();
+  const featuredPost = showFeatured ? filteredPosts[0] : null;
+  const listPosts = featuredPost ? filteredPosts.slice(1) : filteredPosts;
+  const visiblePosts = listPosts.slice(0, visibleCount);
+  const shownCount = (featuredPost ? 1 : 0) + visiblePosts.length;
+
+  const resetFilters = () => {
+    setSelectedPillarId('all');
+    setSearchQuery('');
+    setVisibleCount(PAGE_SIZE);
+  };
+
+  const renderMeta = (post: BlogPost, compact = false) => (
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] font-medium text-slate-500">
+      <span className="rounded-md border border-[#1B4332]/10 bg-[#F5F3EC] px-2 py-1 text-[#285540]">
+        {isRtl ? post.categoryAr : post.category}
+      </span>
+      <span className="inline-flex items-center gap-1.5">
+        <Calendar aria-hidden="true" className="h-3.5 w-3.5 text-[#B98745]" />
+        {post.date}
+      </span>
+      {!compact && (
+        <span className="inline-flex items-center gap-1.5">
+          <Clock aria-hidden="true" className="h-3.5 w-3.5 text-[#B98745]" />
+          {post.readTime}
+        </span>
+      )}
+    </div>
+  );
 
   return (
-    <div className="space-y-10">
-      
-      {/* ── SEARCH & CLEAN PILLAR BAR ── */}
-      <div className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200/90 shadow-sm space-y-4 max-w-4xl mx-auto">
-        
-        {/* Instant Search Bar */}
-        <div className="relative">
-          <div className="absolute inset-y-0 start-0 ps-4 flex items-center pointer-events-none text-slate-400">
-            <Search className="w-4 h-4" />
-          </div>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder={
-              isRtl
-                ? 'ابحث في المقالات (مثال: كوتاكال، تغيير مفصل الركبة، التأشيرة الطبية، السعودية)...'
-                : 'Search guides (e.g. Kottakkal, Knee replacement, Medical visa, Saudi Arabia)...'
-            }
-            className="w-full ps-11 pe-10 py-3 rounded-2xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-[#1B4332]/30 focus:border-[#1B4332] text-sm bg-slate-50/60 hover:bg-white transition-colors"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute inset-y-0 end-0 pe-3.5 flex items-center text-slate-400 hover:text-slate-600 cursor-pointer"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
-        </div>
-
-        {/* 5 Core Pillars (Clean, Organized, Horizontal Scroll on Mobile) */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none justify-start sm:justify-center">
-          {CATEGORY_PILLARS.map((pillar) => {
-            const isSelected = selectedPillarId === pillar.id;
-            const count = pillarCounts[pillar.id] || 0;
-
-            return (
+    <div className="space-y-9 sm:space-y-12">
+      <section aria-label={isRtl ? 'البحث في الأدلة' : 'Find a guide'} className="mx-auto max-w-5xl">
+        <div className="rounded-[1.5rem] border border-[#e7e5de] bg-white p-3 shadow-[0_10px_35px_-28px_rgba(25,46,36,0.35)] sm:rounded-[1.75rem] sm:p-4">
+          <label className="relative block">
+            <Search aria-hidden="true" className="absolute start-4 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-slate-400" />
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(event) => {
+                setSearchQuery(event.target.value);
+                setVisibleCount(PAGE_SIZE);
+              }}
+              placeholder={isRtl
+                ? 'ابحث عن علاج، وجهة أو نصيحة للسفر...'
+                : 'Search a treatment, destination or travel question…'}
+              aria-label={isRtl ? 'ابحث في الأدلة' : 'Search guides'}
+              className="h-12 w-full rounded-xl border border-[#e6e9e5] bg-[#fbfcfa] ps-11 pe-11 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-[#6c927b] focus:bg-white focus:ring-4 focus:ring-[#1B4332]/[0.07] sm:h-[54px] sm:rounded-2xl sm:text-[15px]"
+            />
+            {searchQuery && (
               <button
-                key={pillar.id}
-                onClick={() => setSelectedPillarId(pillar.id)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-150 shrink-0 cursor-pointer flex items-center gap-2 border ${
-                  isSelected
-                    ? 'bg-[#1B4332] text-white border-[#1B4332] shadow-xs'
-                    : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/80 hover:border-slate-300'
-                }`}
+                type="button"
+                onClick={() => { setSearchQuery(''); setVisibleCount(PAGE_SIZE); }}
+                aria-label={isRtl ? 'مسح البحث' : 'Clear search'}
+                className="absolute end-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-lg text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1B4332]"
               >
-                <span>{isRtl ? pillar.labelAr : pillar.labelEn}</span>
-                <span
-                  className={`text-[11px] px-1.5 py-0.2 rounded-full font-bold ${
-                    isSelected ? 'bg-white/20 text-white' : 'bg-slate-200/70 text-slate-600'
-                  }`}
-                >
-                  {count}
-                </span>
+                <X className="h-4 w-4" />
               </button>
-            );
-          })}
-        </div>
+            )}
+          </label>
 
+          <div className="no-scrollbar -mx-1 mt-3 flex gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label={isRtl ? 'تصفية حسب الموضوع' : 'Filter by topic'}>
+            {CATEGORY_PILLARS.map((pillar) => {
+              const selected = selectedPillarId === pillar.id;
+              return (
+                <button
+                  key={pillar.id}
+                  type="button"
+                  onClick={() => { setSelectedPillarId(pillar.id); setVisibleCount(PAGE_SIZE); }}
+                  aria-pressed={selected}
+                  className={`inline-flex min-h-10 shrink-0 items-center gap-2 rounded-full border px-3.5 text-xs font-semibold transition sm:min-h-11 sm:px-4 sm:text-[13px] ${selected
+                    ? 'border-[#1B4332] bg-[#1B4332] text-white shadow-sm'
+                    : 'border-[#e6e9e5] bg-white text-slate-600 hover:border-[#9ab2a1] hover:bg-[#f7f9f6] hover:text-[#1B4332]'}`}
+                >
+                  <span>{isRtl ? pillar.labelAr : pillar.labelEn}</span>
+                  <span className={`min-w-5 rounded-full px-1.5 py-0.5 text-[10px] leading-none ${selected ? 'bg-white/15 text-white' : 'bg-[#f0f2ee] text-slate-500'}`}>
+                    {pillarCounts[pillar.id]}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#e4e2db] pb-4 text-sm">
+        <p aria-live="polite" className="text-slate-500">
+          <span className="font-semibold text-slate-800">{filteredPosts.length}</span>{' '}
+          {isRtl ? 'دليل للمرضى والعائلات' : filteredPosts.length === 1 ? 'guide for patients and families' : 'guides for patients and families'}
+          {searchQuery && <span className="ms-1 text-slate-400">{isRtl ? `عن «${searchQuery}»` : `for “${searchQuery}”`}</span>}
+        </p>
+        {(searchQuery || selectedPillarId !== 'all') && (
+          <button type="button" onClick={resetFilters} className="rounded-md py-1 font-semibold text-[#1B4332] underline decoration-[#b6c9bb] underline-offset-4 hover:decoration-[#1B4332] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1B4332]">
+            {isRtl ? 'مسح التصفية' : 'Clear filters'}
+          </button>
+        )}
       </div>
 
-      {/* Result Indicator when searching or filtering */}
-      {(searchQuery || selectedPillarId !== 'all') && (
-        <div className="flex items-center justify-between text-xs sm:text-sm text-slate-500 max-w-4xl mx-auto px-2">
-          <span>
-            {isRtl
-              ? `تم العثور على ${filteredPosts.length} مقال`
-              : `Showing ${filteredPosts.length} of ${sortedPosts.length} guides`}
-            {searchQuery && (
-              <span className="font-semibold text-slate-800 ms-1">
-                &ldquo;{searchQuery}&rdquo;
-              </span>
-            )}
-          </span>
-          <button
-            onClick={() => {
-              setSelectedPillarId('all');
-              setSearchQuery('');
-            }}
-            className="text-emerald-700 hover:underline font-semibold cursor-pointer"
-          >
-            {isRtl ? 'إعادة ضبط التصفية' : 'Reset filters'}
+      {filteredPosts.length === 0 ? (
+        <div className="mx-auto max-w-xl rounded-3xl border border-[#e6e9e5] bg-white px-6 py-16 text-center shadow-sm">
+          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f3f5f1] text-[#527560]"><BookOpen className="h-6 w-6" /></span>
+          <h2 className="mt-5 text-xl font-semibold tracking-tight text-slate-900">{isRtl ? 'لم نعثر على أدلة مطابقة' : 'No guides match your search'}</h2>
+          <p className="mt-2 text-sm leading-6 text-slate-500">{isRtl ? 'جرّب عبارة أخرى أو امسح التصفية.' : 'Try a broader search or clear the filters to explore all guides.'}</p>
+          <button type="button" onClick={resetFilters} className="mt-6 inline-flex min-h-11 items-center justify-center rounded-xl bg-[#1B4332] px-5 text-sm font-semibold text-white transition hover:bg-[#2D6A4F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B4332]">
+            {isRtl ? 'عرض جميع الأدلة' : 'Browse all guides'}
           </button>
         </div>
-      )}
-
-      {/* Empty State */}
-      {filteredPosts.length === 0 && (
-        <div className="text-center py-16 bg-white rounded-3xl border border-slate-200 p-8 max-w-xl mx-auto space-y-4">
-          <BookOpen className="w-12 h-12 text-slate-300 mx-auto" />
-          <h3 className="text-lg font-bold text-slate-800">
-            {isRtl ? 'لم يتم العثور على مقالات مطابقة' : 'No matching articles found'}
-          </h3>
-          <p className="text-sm text-slate-500">
-            {isRtl
-              ? 'جرب البحث بكلمة أخرى أو اختر قسماً مختلفاً من الأعلى.'
-              : 'Try searching with different keywords or clear your active category filter.'}
-          </p>
-          <button
-            onClick={() => {
-              setSelectedPillarId('all');
-              setSearchQuery('');
-            }}
-            className="px-5 py-2.5 rounded-full bg-[#1B4332] text-white text-xs sm:text-sm font-semibold hover:bg-[#2D6A4F] transition-colors cursor-pointer"
-          >
-            {isRtl ? 'عرض جميع المقالات' : 'View All Guides'}
-          </button>
-        </div>
-      )}
-
-      {/* Featured Post Card (shown when not actively searching) */}
-      {featuredPost && (
-        <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 group">
-          <div className="p-8 sm:p-10 lg:col-span-8 space-y-6 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="flex flex-wrap items-center gap-3.5 text-xs font-semibold text-text-muted">
-                <span className="bg-[#FAF7F2] border border-[#1B4332]/15 text-[#1B4332] px-3 py-1 rounded-md">
-                  {isRtl ? featuredPost.categoryAr : featuredPost.category}
-                </span>
-                <span className="flex items-center gap-1.5 text-slate-500">
-                  <Calendar className="h-3.5 w-3.5 text-[#D4A96A]" />
-                  <span>{featuredPost.date}</span>
-                </span>
-                <span className="flex items-center gap-1.5 text-slate-500">
-                  <Clock className="h-3.5 w-3.5 text-[#D4A96A]" />
-                  <span>{featuredPost.readTime}</span>
-                </span>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl font-bold text-text-dark group-hover:text-[#1B4332] transition-colors duration-200 leading-snug">
-                <Link href={`/blog/${featuredPost.slug}`}>
-                  {isRtl ? featuredPost.titleAr : featuredPost.title}
-                </Link>
-              </h2>
-
-              <p className="text-text-muted text-base leading-relaxed line-clamp-3">
-                {isRtl ? featuredPost.excerptAr : featuredPost.excerpt}
-              </p>
-            </div>
-
-            <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-text-muted">
-                <User className="h-4 w-4 text-[#1B4332]" />
-                <span>{locale === 'ar' ? 'بواسطة محسنة تي بي' : 'By Muhsina TP'}</span>
-              </div>
-              <Link
-                href={`/blog/${featuredPost.slug}`}
-                className="inline-flex items-center gap-1.5 font-bold text-[#1B4332] hover:text-[#2D6A4F] transition-colors duration-200 min-h-[44px]"
-              >
-                <span>{locale === 'ar' ? 'اقرأ المقال بالكامل' : 'Read Full Guide'}</span>
-                <ArrowRight className="h-4 w-4 rtl:rotate-180" />
+      ) : (
+        <>
+          {featuredPost && (
+            <article className="group overflow-hidden rounded-[1.75rem] border border-[#e5e5de] bg-white shadow-[0_18px_45px_-38px_rgba(27,67,50,0.32)] transition-shadow duration-300 hover:shadow-[0_24px_55px_-36px_rgba(27,67,50,0.38)] lg:grid lg:grid-cols-[1.03fr_0.97fr]">
+              <Link href={`/blog/${featuredPost.slug}`} aria-label={isRtl ? `اقرأ ${featuredPost.titleAr}` : `Read ${featuredPost.title}`} className="relative order-2 block min-h-[230px] overflow-hidden bg-[#e7ede7] sm:min-h-[300px] lg:order-1 lg:min-h-[410px]">
+                {featuredPost.image ? (
+                  <img src={featuredPost.image} alt={isRtl ? featuredPost.titleAr : featuredPost.title} className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]" />
+                ) : <div className="absolute inset-0 flex items-center justify-center text-[#527560]"><BookOpen className="h-12 w-12" /></div>}
+                <span className="absolute start-5 top-5 rounded-full border border-white/50 bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1B4332] shadow-sm backdrop-blur">{isRtl ? 'دليل مختار' : 'Editor’s pick'}</span>
               </Link>
-            </div>
-          </div>
-
-          {/* Visual Cover image banner */}
-          <div className="lg:col-span-4 relative min-h-[240px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200 bg-slate-100">
-            {featuredPost.image ? (
-              <img
-                src={featuredPost.image}
-                alt={isRtl ? featuredPost.titleAr : featuredPost.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            ) : (
-              <div className="absolute inset-0 bg-[#1B4332] flex items-center justify-center">
-                <BookOpen className="h-16 w-16 text-[#D4A96A]" />
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* Regular Posts Grid */}
-      {regularPosts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {regularPosts.map((post) => (
-            <div
-              key={post.slug}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 hover:border-[#1B4332]/40 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group overflow-hidden"
-            >
-              <div>
-                {post.image && (
-                  <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-5 bg-slate-100 border border-slate-100">
-                    <img
-                      src={post.image}
-                      alt={isRtl ? post.titleAr : post.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                )}
-
-                <div className="space-y-4">
-                  <div className="flex flex-wrap items-center gap-3.5 text-xs text-text-muted font-semibold">
-                    <span className="bg-[#FAF7F2] border border-[#1B4332]/15 text-[#1B4332] px-2.5 py-0.5 rounded-md">
-                      {isRtl ? post.categoryAr : post.category}
-                    </span>
-                    <span className="flex items-center gap-1.5 text-slate-500">
-                      <Calendar className="h-3.5 w-3.5 text-[#D4A96A]" />
-                      <span>{post.date}</span>
-                    </span>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-text-dark group-hover:text-[#1B4332] transition-colors duration-200 line-clamp-2 leading-snug">
-                    <Link href={`/blog/${post.slug}`}>
-                      {isRtl ? post.titleAr : post.title}
-                    </Link>
-                  </h3>
-
-                  <p className="text-text-muted text-sm leading-relaxed line-clamp-3">
-                    {isRtl ? post.excerptAr : post.excerpt}
+              <div className="flex flex-col justify-center p-6 sm:p-9 lg:order-2 lg:p-11 xl:p-14">
+                <div className="space-y-5">
+                  {renderMeta(featuredPost)}
+                  <h2 className="text-[1.65rem] font-semibold leading-[1.2] tracking-[-0.035em] text-[#17251d] transition-colors group-hover:text-[#1B4332] sm:text-3xl lg:text-[2.65rem]">
+                    <Link href={`/blog/${featuredPost.slug}`}>{isRtl ? featuredPost.titleAr : featuredPost.title}</Link>
+                  </h2>
+                  <p className="line-clamp-3 max-w-xl text-sm leading-7 text-slate-600 sm:text-[15px]">
+                    {isRtl ? featuredPost.excerptAr : featuredPost.excerpt}
                   </p>
                 </div>
+                <div className="mt-7 flex items-center justify-between border-t border-[#edeee9] pt-5">
+                  <span className="text-xs font-medium text-slate-500">{isRtl ? 'من فريق TreatInKerala' : 'From the TreatInKerala team'}</span>
+                  <Link href={`/blog/${featuredPost.slug}`} className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#1B4332] px-4 text-xs font-semibold text-white transition hover:bg-[#2D6A4F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B4332] sm:px-5 sm:text-sm">
+                    {isRtl ? 'اقرأ الدليل' : 'Read the guide'}
+                    <ArrowRight aria-hidden="true" className="h-4 w-4 rtl:rotate-180" />
+                  </Link>
+                </div>
               </div>
+            </article>
+          )}
 
-              <div className="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between text-sm">
-                <span className="flex items-center gap-1 text-xs text-slate-500 font-medium">
-                  <Clock className="h-3.5 w-3.5 text-[#D4A96A]" />
-                  <span>{post.readTime}</span>
-                </span>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-1 text-[#1B4332] hover:text-[#2D6A4F] font-bold min-h-[44px]"
-                >
-                  <span>{locale === 'ar' ? 'قراءة الدليل' : 'Read Guide'}</span>
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform" />
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 xl:gap-6">
+            {visiblePosts.map((post) => (
+              <article key={post.slug} className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[#e5e5de] bg-white transition duration-300 hover:-translate-y-0.5 hover:border-[#c5d1c7] hover:shadow-[0_16px_35px_-28px_rgba(27,67,50,0.36)]">
+                <Link href={`/blog/${post.slug}`} aria-label={isRtl ? `اقرأ ${post.titleAr}` : `Read ${post.title}`} className="relative block aspect-[1.85/1] overflow-hidden bg-[#e7ede7]">
+                  {post.image ? <img src={post.image} alt={isRtl ? post.titleAr : post.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.04]" /> : <div className="absolute inset-0 flex items-center justify-center text-[#527560]"><BookOpen className="h-8 w-8" /></div>}
                 </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : null}
+                <div className="flex flex-1 flex-col p-5 sm:p-5">
+                  {renderMeta(post, true)}
+                  <h3 className="mt-4 line-clamp-2 text-[17px] font-semibold leading-snug tracking-[-0.02em] text-[#17251d] transition-colors group-hover:text-[#1B4332]">
+                    <Link href={`/blog/${post.slug}`}>{isRtl ? post.titleAr : post.title}</Link>
+                  </h3>
+                  <p className="mt-2.5 line-clamp-3 text-[13px] leading-[1.7] text-slate-600">{isRtl ? post.excerptAr : post.excerpt}</p>
+                  <div className="mt-auto flex items-center justify-between gap-3 border-t border-[#edeee9] pt-4">
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500"><Clock aria-hidden="true" className="h-3.5 w-3.5 text-[#B98745]" />{post.readTime}</span>
+                    <Link href={`/blog/${post.slug}`} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg px-2 text-xs font-semibold text-[#285540] transition hover:bg-[#f3f6f2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1B4332]">
+                      {isRtl ? 'اقرأ الدليل' : 'Read guide'}
+                      <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
 
+          {listPosts.length > visibleCount && (
+            <div className="flex flex-col items-center gap-2 pt-2">
+              <button type="button" onClick={() => setVisibleCount((count) => count + PAGE_SIZE)} className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#cfd9d0] bg-white px-6 text-sm font-semibold text-[#1B4332] shadow-sm transition hover:border-[#1B4332] hover:bg-[#f7f9f6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1B4332]">
+                {isRtl ? 'عرض المزيد من الأدلة' : 'Load more guides'}
+                <ArrowRight aria-hidden="true" className="h-4 w-4 rotate-90" />
+              </button>
+              <span className="text-xs text-slate-400">{isRtl ? `عرض ${shownCount} من ${filteredPosts.length}` : `Showing ${shownCount} of ${filteredPosts.length}`}</span>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 }

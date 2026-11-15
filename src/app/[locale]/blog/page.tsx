@@ -36,25 +36,26 @@ export default async function BlogPage({ params }: Props) {
   ]);
 
   return (
-    <div className="pt-36 pb-16 lg:pt-44 lg:pb-24 bg-[#FAF7F2] min-h-screen">
+    <div className="min-h-screen bg-[#FAF8F3] pb-16 pt-32 sm:pt-36 lg:pb-24 lg:pt-40">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1B4332]/8 text-[#1B4332] text-xs font-bold">
-            <span>{locale === 'ar' ? 'المدونة الطبية والإرشادية' : 'Guides & Expert Resources'}</span>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-9 flex flex-col gap-5 sm:mb-11 lg:mb-14 lg:flex-row lg:items-end lg:justify-between lg:gap-12" dir={isRtl ? 'rtl' : 'ltr'}>
+          <div className="max-w-3xl">
+            <div className="mb-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#527560]">
+              <span className="h-px w-6 bg-[#B98745]" aria-hidden="true" />
+              <span>{locale === 'ar' ? 'مكتبة المرضى' : 'The patient library'}</span>
+            </div>
+            <h1 className="font-display text-[2.25rem] font-semibold leading-[1.12] tracking-[-0.045em] text-[#17251d] sm:text-5xl lg:text-[3.65rem]">
+              {locale === 'ar' ? 'دليل السياحة العلاجية والتعافي في كيرلا' : 'Clear guidance for your care journey'}
+            </h1>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-bold font-display text-text-dark tracking-tight leading-tight">
-            {locale === 'ar' ? 'دليل السياحة العلاجية والتعافي في كيرلا' : 'TreatInKerala Travel & Health Guide'}
-          </h1>
-          <p className="text-base sm:text-lg text-text-muted leading-relaxed max-w-2xl mx-auto">
+          <p className="max-w-xl text-sm leading-7 text-slate-600 sm:text-base lg:pb-1">
             {locale === 'ar'
-              ? 'مقالات طبية متخصصة، وأدلة المكملات الغذائية للتعافي، وتفاصيل مقارنة الأسعار وإرشادات التأشيرة الطبية للهند.'
-              : 'Expert clinical guides, post-surgery recovery supplements, treatment cost comparisons, and travel logistics.'}
+              ? 'مقالات طبية متخصصة، وأدلة التعافي، ومقارنات التكاليف وإرشادات السفر لمساعدتك على التخطيط بثقة.'
+              : 'Practical guides to treatment, recovery, costs and travel—so you and your family can plan with confidence.'}
           </p>
         </div>
 
