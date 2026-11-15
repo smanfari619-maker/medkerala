@@ -1,20 +1,33 @@
 'use client';
 
 import React, { useMemo, useState } from 'react';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import { BlogPost } from '@/lib/data';
 import { ArrowRight, BookOpen, Calendar, Clock, Search, X } from 'lucide-react';
+
+export interface BlogCardData {
+  slug: string;
+  title: string;
+  titleAr: string;
+  excerpt: string;
+  excerptAr: string;
+  date: string;
+  category: string;
+  categoryAr: string;
+  readTime: string;
+  image?: string;
+}
 
 interface Props {
   locale: string;
-  posts: BlogPost[];
+  posts: BlogCardData[];
 }
 
 interface CategoryPillar {
   id: string;
   labelEn: string;
   labelAr: string;
-  matches: (post: BlogPost) => boolean;
+  matches: (post: BlogCardData) => boolean;
 }
 
 const CATEGORY_PILLARS: CategoryPillar[] = [
@@ -86,7 +99,7 @@ export default function BlogListClient({ locale, posts }: Props) {
     setVisibleCount(PAGE_SIZE);
   };
 
-  const renderMeta = (post: BlogPost, compact = false) => (
+  const renderMeta = (post: BlogCardData, compact = false) => (
     <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] font-medium text-slate-500">
       <span className="rounded-md border border-[#1B4332]/10 bg-[#F5F3EC] px-2 py-1 text-[#285540]">
         {isRtl ? post.categoryAr : post.category}
@@ -187,7 +200,7 @@ export default function BlogListClient({ locale, posts }: Props) {
             <article className="group overflow-hidden rounded-[1.75rem] border border-[#e5e5de] bg-white shadow-[0_18px_45px_-38px_rgba(27,67,50,0.32)] transition-shadow duration-300 hover:shadow-[0_24px_55px_-36px_rgba(27,67,50,0.38)] lg:grid lg:grid-cols-[1.03fr_0.97fr]">
               <Link href={`/blog/${featuredPost.slug}`} aria-label={isRtl ? `اقرأ ${featuredPost.titleAr}` : `Read ${featuredPost.title}`} className="relative order-2 block min-h-[230px] overflow-hidden bg-[#e7ede7] sm:min-h-[300px] lg:order-1 lg:min-h-[410px]">
                 {featuredPost.image ? (
-                  <img src={featuredPost.image} alt={isRtl ? featuredPost.titleAr : featuredPost.title} className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]" />
+                  <Image src={featuredPost.image} alt={isRtl ? featuredPost.titleAr : featuredPost.title} fill preload sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition duration-700 ease-out group-hover:scale-[1.03]" />
                 ) : <div className="absolute inset-0 flex items-center justify-center text-[#527560]"><BookOpen className="h-12 w-12" /></div>}
                 <span className="absolute start-5 top-5 rounded-full border border-white/50 bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1B4332] shadow-sm backdrop-blur">{isRtl ? 'دليل مختار' : 'Editor’s pick'}</span>
               </Link>
@@ -216,7 +229,7 @@ export default function BlogListClient({ locale, posts }: Props) {
             {visiblePosts.map((post) => (
               <article key={post.slug} className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[#e5e5de] bg-white transition duration-300 hover:-translate-y-0.5 hover:border-[#c5d1c7] hover:shadow-[0_16px_35px_-28px_rgba(27,67,50,0.36)]">
                 <Link href={`/blog/${post.slug}`} aria-label={isRtl ? `اقرأ ${post.titleAr}` : `Read ${post.title}`} className="relative block aspect-[1.85/1] overflow-hidden bg-[#e7ede7]">
-                  {post.image ? <img src={post.image} alt={isRtl ? post.titleAr : post.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.04]" /> : <div className="absolute inset-0 flex items-center justify-center text-[#527560]"><BookOpen className="h-8 w-8" /></div>}
+                  {post.image ? <Image src={post.image} alt={isRtl ? post.titleAr : post.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover transition duration-700 ease-out group-hover:scale-[1.04]" /> : <div className="absolute inset-0 flex items-center justify-center text-[#527560]"><BookOpen className="h-8 w-8" /></div>}
                 </Link>
                 <div className="flex flex-1 flex-col p-5 sm:p-5">
                   {renderMeta(post, true)}

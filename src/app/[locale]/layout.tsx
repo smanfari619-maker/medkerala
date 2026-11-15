@@ -11,7 +11,7 @@ import dynamic from 'next/dynamic';
 import '../globals.css';
 
 const WhatsAppFAB = dynamic(() => import('@/components/layout/WhatsAppFAB'));
-const LiveChatWidget = dynamic(() => import('@/components/chat/LiveChatWidget'));
+const DeferredLiveChatWidget = dynamic(() => import('@/components/chat/DeferredLiveChatWidget'));
 const MobileBottomNav = dynamic(() => import('@/components/layout/MobileBottomNav'));
 import { getMedicalOrganizationSchema, getLocalBusinessSchema, getAggregateRatingSchema } from '@/lib/schemas';
 
@@ -149,7 +149,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             {children}
           </main>
           <Footer />
-          <LiveChatWidget />
+          <DeferredLiveChatWidget />
           <MobileBottomNav />
         </NextIntlClientProvider>
       </body>

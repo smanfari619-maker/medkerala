@@ -14,11 +14,11 @@ interface Message {
   timestamp: string;
 }
 
-export default function LiveChatWidget() {
+export default function LiveChatWidget({ initialOpen = false }: { initialOpen?: boolean }) {
   const locale = useLocale();
   const isRtl = locale === 'ar';
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(initialOpen);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -151,9 +151,6 @@ export default function LiveChatWidget() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: apiMessages, locale }),
       });
-
-      // Realistic human typing delay
-      await new Promise((resolve) => setTimeout(resolve, 1400));
 
       if (res.ok) {
         const data = await res.json();

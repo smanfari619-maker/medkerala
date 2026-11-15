@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
@@ -829,10 +830,13 @@ export default async function BlogPostPage({ params }: Props) {
 
             {post.image && (
               <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden my-6 border border-slate-100 bg-slate-50">
-                <img
+                <Image
                   src={post.image}
                   alt={isRtl ? post.titleAr : post.title}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                  preload
+                  sizes="(max-width: 768px) 100vw, 900px"
+                  className="object-cover"
                 />
               </div>
             )}

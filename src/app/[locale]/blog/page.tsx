@@ -35,6 +35,12 @@ export default async function BlogPage({ params }: Props) {
     { name: isRtl ? 'المدونة' : 'Blog', url: `https://treatinkerala.com/${locale}/blog` }
   ]);
 
+  // Keep the client-side guide finder lean: full article markdown belongs only
+  // on the individual article route, not in the listing page's RSC payload.
+  const guideCards = BLOG_POSTS.map(({ slug, title, titleAr, excerpt, excerptAr, date, category, categoryAr, readTime, image }) => ({
+    slug, title, titleAr, excerpt, excerptAr, date, category, categoryAr, readTime, image,
+  }));
+
   return (
     <div className="min-h-screen bg-[#FAF8F3] pb-16 pt-32 sm:pt-36 lg:pb-24 lg:pt-40">
       <script
@@ -60,7 +66,7 @@ export default async function BlogPage({ params }: Props) {
         </div>
 
         {/* Interactive Client Listing with Category Filter */}
-        <BlogListClient locale={locale} posts={BLOG_POSTS} />
+        <BlogListClient locale={locale} posts={guideCards} />
       </div>
     </div>
   );
